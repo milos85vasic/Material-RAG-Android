@@ -8913,15 +8913,10 @@ Write Jetpack Compose applications with ready to use building blocks and extend 
 
 <tr>
 
-<td>September 10, 2025</td>
+<td>September 24, 2025</td>
 
 
-<td><a href="/jetpack/androidx/releases/compose-foundation#1.9.1">1.9.1</a></td>
-
-
-
-<td>-</td>
-
+<td><a href="/jetpack/androidx/releases/compose-foundation#1.9.2">1.9.2</a></td>
 
 
 
@@ -8930,7 +8925,12 @@ Write Jetpack Compose applications with ready to use building blocks and extend 
 
 
 
-<td><a href="/jetpack/androidx/releases/compose-foundation#1.10.0-alpha03">1.10.0-alpha03</a></td>
+<td>-</td>
+
+
+
+
+<td><a href="/jetpack/androidx/releases/compose-foundation#1.10.0-alpha04">1.10.0-alpha04</a></td>
 
 
 </tr>
@@ -10440,6 +10440,160 @@ notes.</p>
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <tr><td><a href="/jetpack/androidx/releases/compose-runtime">compose.runtime</a></td><td>Fundamental building blocks of Compose's programming model and state management, and core runtime for the Compose Compiler Plugin to target.</td></tr>
 
   
@@ -11152,7 +11306,7 @@ your app or module:</p>
 <div>
 <div class="ds-selector-tabs"><section><h3 id="groovy" data-text="Groovy" tabindex="-1">Groovy</h3>
 <div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Groovy"><span class="devsite-syntax-n">dependencies</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">{</span>
-<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">implementation</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"androidx.compose.foundation:foundation:1.9.1"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">implementation</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"androidx.compose.foundation:foundation:1.9.2"</span>
 <span class="devsite-syntax-o">}</span>
 
 <span class="devsite-syntax-n">android</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">{</span>
@@ -11170,7 +11324,7 @@ your app or module:</p>
 <span class="devsite-syntax-o">}</span></pre></devsite-code>
 </section><section><h3 id="kts" data-text="Kotlin" tabindex="-1">Kotlin</h3>
 <div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Kotlin"><span class="devsite-syntax-n">dependencies</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
-<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">implementation</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"androidx.compose.foundation:foundation:1.9.1"</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">implementation</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"androidx.compose.foundation:foundation:1.9.2"</span><span class="devsite-syntax-p">)</span>
 <span class="devsite-syntax-p">}</span>
 
 <span class="devsite-syntax-n">android</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
@@ -11353,6 +11507,25 @@ for more information.</p>
 
 <h2 id="version_110_3" data-text="Version 1.10" tabindex="-1">Version 1.10</h2>
 
+<h3 id="1.10.0-alpha04" data-text="Version 1.10.0-alpha04" tabindex="-1">Version 1.10.0-alpha04</h3>
+
+<p>September 24, 2025</p>
+
+<p><code translate="no" dir="ltr">androidx.compose.foundation:foundation-*:1.10.0-alpha04</code> is released. Version 1.10.0-alpha04 contains <a href="https://android.googlesource.com/platform/frameworks/support/+log/cf4bc156e75473f159aa2536c8948d273ac67d97..6ef9c81cf7222a390e0a467d8c8b48d04362fd3d/compose/foundation">these commits</a>.</p>
+
+<p><strong>API Changes</strong></p>
+
+<ul>
+<li><code translate="no" dir="ltr">ScrollIndicatorState</code> implementation added for <code translate="no" dir="ltr">PagerState</code>. (<a href="https://android-review.googlesource.com/#/q/I113b7797decc869e5c0e02e8d58ae384bf79c128">I113b7</a>)</li>
+<li><code translate="no" dir="ltr">ScrollIndicatorState</code> implementation added for <code translate="no" dir="ltr">LazyStaggeredGridState</code>. (<a href="https://android-review.googlesource.com/#/q/I1028e40848a2e95c11b9f43bd3b8177bda726221">I1028e</a>)</li>
+<li><code translate="no" dir="ltr">ScrollIndicatorState</code> implementation added for <code translate="no" dir="ltr">LazyGridState</code>. (<a href="https://android-review.googlesource.com/#/q/I9e50c4ba28b3e8d32e528eee9b40dbf30bc48623">I9e50c</a>)</li>
+<li><code translate="no" dir="ltr">ScrollIndicatorState</code> implementation added for <code translate="no" dir="ltr">LazyListState</code>. (<a href="https://android-review.googlesource.com/#/q/I5ee290fd937bdcd4f8916263f1c848abd9d0313e">I5ee29</a>)</li>
+<li><code translate="no" dir="ltr">ScrollIndicatorState</code> implementation added for <code translate="no" dir="ltr">ScrollState</code>. (<a href="https://android-review.googlesource.com/#/q/I27f667c1749bf373425873806d9d127b19ff0243">I27f66</a>)</li>
+<li>Introduce <code translate="no" dir="ltr">scrollIndicatorState</code> property in <code translate="no" dir="ltr">ScrollableState</code> interface (<a href="https://android-review.googlesource.com/#/q/Idca9393841cf71bde346d7dcc0488c42253be643">Idca93</a>)</li>
+<li>Flag <code translate="no" dir="ltr">isWindowInsetsModifierLocalNodeImplementationEnabled</code> was removed (<a href="https://android-review.googlesource.com/#/q/I15e8fe65062ce9f03947acb8a131856f922d3cde">I15e8f</a>, <a href="https://issuetracker.google.com/issues/440964232">b/440964232</a>)</li>
+<li>Expose <code translate="no" dir="ltr">scrollableArea()</code> modifier that can be used to make the component scrollable with the behaviors of clipping content to its bounds and automatically handling content scroll direction based on Orientation, RTL and the <code translate="no" dir="ltr">reverseScrolling</code> flag. (<a href="https://android-review.googlesource.com/#/q/I9471b1bcf0d738626e8f9a9e2d60ef5d2c9c395a">I9471b</a>, <a href="https://issuetracker.google.com/issues/316559454">b/316559454</a>)</li>
+</ul>
+
 <h3 id="1.10.0-alpha03" data-text="Version 1.10.0-alpha03" tabindex="-1">Version 1.10.0-alpha03</h3>
 
 <p>September 10, 2025</p>
@@ -11440,6 +11613,12 @@ for more information.</p>
 </ul>
 
 <h2 id="version_19_2" data-text="Version 1.9" tabindex="-1">Version 1.9</h2>
+
+<h3 id="1.9.2" data-text="Version 1.9.2" tabindex="-1">Version 1.9.2</h3>
+
+<p>September 24, 2025</p>
+
+<p><code translate="no" dir="ltr">androidx.compose.foundation:foundation-*:1.9.2</code> is released. Version 1.9.2 contains <a href="https://android.googlesource.com/platform/frameworks/support/+log/93a1ed2aac05dbfa192392b9d4ab27c40da53d69..b6177e34a7667c42030e47ee8ecba82f09e2a5de/compose/foundation">these commits</a>.</p>
 
 <h3 id="1.9.1" data-text="Version 1.9.1" tabindex="-1">Version 1.9.1</h3>
 
@@ -16087,7 +16266,7 @@ androidx.ui.text.platform in order to align with androidx policy. (<a href="http
 
 <devsite-content-footer class="nocontent">
   <p>Content and code samples on this page are subject to the licenses described in the <a href="/license">Content License</a>. Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.</p>
-  <p>Last updated 2025-09-10 UTC.</p>
+  <p>Last updated 2025-09-24 UTC.</p>
 </devsite-content-footer>
 
 
@@ -16101,7 +16280,7 @@ androidx.ui.text.platform in order to align with androidx policy. (<a href="http
   
   
     <template class="devsite-content-data-template">
-      [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-09-10 UTC."],[],[],null,[]]
+      [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-09-24 UTC."],[],[],null,[]]
     </template>
   
 </div>
@@ -17195,12 +17374,12 @@ androidx.ui.text.platform in order to align with androidx policy. (<a href="http
         .fully-clickable"
     watch=".android-editorial-and-updates-cards, .android-samples, devsite-content"></android-fully-clickable>
     
-<script nonce="+TazDi1XDHihDSRBU1dWGBLLJ0CY+C">
+<script nonce="x/e+Wcbq6Y7cql//nPEDF8slAUQPF0">
   
   (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
     t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
     E.parentNode.insertBefore(t,E);})(window, document, 'script',
-    'https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/js/app_loader.js', '[3,"en",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android","https://android-dot-devsite-v2-prod.appspot.com",null,null,["/_pwa/android/manifest.json","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/favicon.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png","https://fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,600italic,700,700italic|Roboto+Mono:400,500,700&display=swap"],1,null,[1,6,8,12,14,17,21,25,50,52,63,70,75,76,80,87,91,92,93,97,98,100,101,102,103,104,105,107,108,109,110,112,113,116,117,118,120,122,124,125,126,127,129,130,131,132,133,134,135,136,138,140,141,147,148,149,151,152,156,157,158,159,161,163,164,168,169,170,179,180,182,183,186,191,193,196],"AIzaSyAP-jjEJBzmIyKR4F-3XITp8yM9T1gEEI8","AIzaSyB6xiKGDR5O3Ak2okS4rLkauxGUG7XP0hg","developer.android.com","AIzaSyAQk0fBONSGUqCNznf6Krs82Ap1-NV6J4o","AIzaSyCCxcqdrZ_7QMeLCRY20bh_SXdAYqy70KY",null,null,null,["Cloud__enable_legacy_calculator_redirect","Profiles__enable_stripe_subscription_management","DevPro__enable_free_benefits","Search__enable_suggestions_from_borg","DevPro__enable_firebase_workspaces_card","EngEduTelemetry__enable_engedu_telemetry","Significatio__enable_by_tenant","DevPro__enable_devpro_offers","Cloud__cache_serialized_dynamic_content","Concierge__enable_pushui","Profiles__enable_awarding_url","TpcFeatures__proxy_prod_host","MiscFeatureFlags__developers_footer_image","MiscFeatureFlags__enable_view_transitions","Cloud__enable_cloud_shell_fte_user_flow","Profiles__enable_callout_notifications","MiscFeatureFlags__enable_project_variables","DevPro__enable_cloud_innovators_plus","MiscFeatureFlags__enable_dark_theme","Profiles__enable_playlist_community_acl","Experiments__reqs_query_experiments","Profiles__enable_completecodelab_endpoint","DevPro__remove_eu_tax_intake_form","Profiles__enable_completequiz_endpoint","Profiles__enable_purchase_prompts","Profiles__enable_developer_profiles_callout","Profiles__enable_developer_profile_benefits_ui_redesign","Analytics__enable_clearcut_logging","Search__enable_dynamic_content_confidential_banner","DevPro__enable_google_payments_buyflow","DevPro__enable_code_assist","Profiles__enable_complete_playlist_endpoint","Concierge__enable_remove_info_panel_tags","DevPro__enable_enterprise","Profiles__enable_dashboard_curated_recommendations","Cloud__enable_free_trial_server_call","Cloud__enable_cloud_shell","BookNav__enable_tenant_cache_key","DevPro__enable_nvidia_credits_card","Profiles__enable_user_type","Profiles__enable_developer_profile_pages_as_content","MiscFeatureFlags__emergency_css","TpcFeatures__enable_unmirrored_page_left_nav","Search__enable_page_map","DevPro__enable_google_one_card","MiscFeatureFlags__gdp_dashboard_reskin_enabled","Cloud__enable_cloudx_experiment_ids","MiscFeatureFlags__developers_footer_dark_image","MiscFeatureFlags__enable_explicit_template_dependencies","Profiles__require_profile_eligibility_for_signin","DevPro__enable_developer_subscriptions","Cloud__enable_llm_concierge_chat","Search__enable_ai_search_summaries_for_all","Profiles__enable_recognition_badges","MiscFeatureFlags__enable_variable_operator","DevPro__enable_embed_profile_creation","Cloud__enable_cloud_dlp_service","MiscFeatureFlags__enable_framebox_badge_methods","CloudShell__cloud_code_overflow_menu","Search__enable_ai_eligibility_checks","Profiles__enable_join_program_group_endpoint","MiscFeatureFlags__enable_project_body_class","MiscFeatureFlags__enable_appearance_cookies","Cloud__fast_free_trial","MiscFeatureFlags__enable_variable_operator_index_yaml","Concierge__enable_actions_menu","Profiles__enable_page_saving","DevPro__enable_vertex_credit_card","Profiles__enable_release_notes_notifications","Profiles__enable_profile_collections","Profiles__enable_public_developer_profiles","MiscFeatureFlags__enable_firebase_utm","CloudShell__cloud_shell_button"],null,null,"AIzaSyBLEMok-5suZ67qRPzx0qUtbnLmyT_kCVE","https://developerscontentserving-pa.googleapis.com","AIzaSyCM4QpTRSqP5qI4Dvjt4OAScIN8sOUlO-k","https://developerscontentsearch-pa.googleapis.com",2,4,null,"https://developerprofiles-pa.googleapis.com",[3,"android","Android Developers","developer.android.com",null,"android-dot-devsite-v2-prod.appspot.com",null,null,[null,1,null,null,null,null,null,null,null,null,null,[1],null,null,null,null,null,null,[1],[1,null,null,[1,20],"/recommendations"],null,null,null,[1,null,1],[1,1,null,1,1]],null,[18,null,null,null,null,null,"/images/lockup.png","/images/touchicon-180.png",null,null,null,null,null,null,null,null,null,null,null,null,null,2,null,null,null,"/images/lockup-dark-theme.png",[]],[],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[6,1,14,15,20,22,23,28,29,37,43],null,[[null,null,1],[1,1]],[[null,null,null,null,null,null,null,[["G-QFRN08RN6E"],null,null,[["G-QFRN08RN6E",1]]],null,null,null,null,1],null,[[2,2],[1,1]]],null,4,null,null,null,null,null,null,null,null,null,null,null,null,null,"android.devsite.google"],null,"pk_live_5170syrHvgGVmSx9sBrnWtA5luvk9BwnVcvIi7HizpwauFG96WedXsuXh790rtij9AmGllqPtMLfhe2RSwD6Pn38V00uBCydV4m",1,null,"https://developerscontentinsights-pa.googleapis.com","AIzaSyCg-ZUslalsEbXMfIo9ZP8qufZgo3LSBDU","AIzaSyDxT0vkxnY_KeINtA4LSePJO-4MAZPMRsE","https://developers.googleapis.com",null,null,"AIzaSyBQom12tzI-rybN7Sf-KfeL4nwm-Rf7PmI\n",null,"https://developerslogging.googleapis.com"]')
+    'https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/js/app_loader.js', '[3,"en",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android","https://android-dot-devsite-v2-prod.appspot.com",null,null,["/_pwa/android/manifest.json","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/favicon.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png","https://fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,600italic,700,700italic|Roboto+Mono:400,500,700&display=swap"],1,null,[1,6,8,12,14,17,21,25,50,52,63,70,75,76,80,87,91,92,93,97,98,100,101,102,103,104,105,107,108,109,110,112,113,117,118,120,122,124,125,126,127,129,130,131,132,133,134,135,136,138,140,141,147,148,149,151,152,156,157,158,159,161,163,164,168,169,170,179,180,182,183,186,191,193,196],"AIzaSyAP-jjEJBzmIyKR4F-3XITp8yM9T1gEEI8","AIzaSyB6xiKGDR5O3Ak2okS4rLkauxGUG7XP0hg","developer.android.com","AIzaSyAQk0fBONSGUqCNznf6Krs82Ap1-NV6J4o","AIzaSyCCxcqdrZ_7QMeLCRY20bh_SXdAYqy70KY",null,null,null,["DevPro__enable_free_benefits","DevPro__enable_cloud_innovators_plus","Search__enable_suggestions_from_borg","Search__enable_page_map","CloudShell__cloud_shell_button","MiscFeatureFlags__enable_appearance_cookies","Profiles__enable_public_developer_profiles","MiscFeatureFlags__enable_explicit_template_dependencies","MiscFeatureFlags__emergency_css","Profiles__enable_completequiz_endpoint","MiscFeatureFlags__developers_footer_dark_image","MiscFeatureFlags__enable_project_body_class","Profiles__enable_release_notes_notifications","MiscFeatureFlags__enable_variable_operator","Cloud__enable_cloud_shell_fte_user_flow","Concierge__enable_pushui","Profiles__enable_stripe_subscription_management","Profiles__enable_profile_collections","Search__enable_dynamic_content_confidential_banner","Profiles__enable_callout_notifications","Cloud__enable_legacy_calculator_redirect","Profiles__enable_recognition_badges","EngEduTelemetry__enable_engedu_telemetry","Concierge__enable_actions_menu","Profiles__enable_complete_playlist_endpoint","Profiles__enable_dashboard_curated_recommendations","MiscFeatureFlags__enable_framebox_badge_methods","Profiles__enable_completecodelab_endpoint","DevPro__enable_code_assist","CloudShell__cloud_code_overflow_menu","Profiles__enable_page_saving","Cloud__enable_free_trial_server_call","Significatio__enable_by_tenant","Cloud__enable_cloudx_experiment_ids","Profiles__enable_awarding_url","MiscFeatureFlags__developers_footer_image","DevPro__enable_vertex_credit_card","Profiles__require_profile_eligibility_for_signin","MiscFeatureFlags__enable_firebase_utm","TpcFeatures__enable_unmirrored_page_left_nav","Profiles__enable_developer_profile_benefits_ui_redesign","Search__enable_ai_search_summaries_for_all","MiscFeatureFlags__enable_variable_operator_index_yaml","MiscFeatureFlags__enable_dark_theme","DevPro__enable_nvidia_credits_card","Concierge__enable_remove_info_panel_tags","Cloud__enable_llm_concierge_chat","Cloud__cache_serialized_dynamic_content","DevPro__enable_google_payments_buyflow","Profiles__enable_developer_profile_pages_as_content","DevPro__remove_eu_tax_intake_form","Experiments__reqs_query_experiments","Profiles__enable_purchase_prompts","MiscFeatureFlags__enable_project_variables","Search__enable_ai_eligibility_checks","BookNav__enable_tenant_cache_key","DevPro__enable_devpro_offers","Analytics__enable_clearcut_logging","Cloud__enable_cloud_shell","Profiles__enable_user_type","DevPro__enable_developer_subscriptions","Cloud__enable_cloud_dlp_service","TpcFeatures__proxy_prod_host","DevPro__enable_google_one_card","DevPro__enable_firebase_workspaces_card","Profiles__enable_playlist_community_acl","MiscFeatureFlags__gdp_dashboard_reskin_enabled","DevPro__enable_enterprise","Profiles__enable_join_program_group_endpoint","MiscFeatureFlags__enable_view_transitions","DevPro__enable_embed_profile_creation","Cloud__fast_free_trial","Profiles__enable_developer_profiles_callout"],null,null,"AIzaSyBLEMok-5suZ67qRPzx0qUtbnLmyT_kCVE","https://developerscontentserving-pa.googleapis.com","AIzaSyCM4QpTRSqP5qI4Dvjt4OAScIN8sOUlO-k","https://developerscontentsearch-pa.googleapis.com",2,4,null,"https://developerprofiles-pa.googleapis.com",[3,"android","Android Developers","developer.android.com",null,"android-dot-devsite-v2-prod.appspot.com",null,null,[null,1,null,null,null,null,null,null,null,null,null,[1],null,null,null,null,null,null,[1],[1,null,null,[1,20],"/recommendations"],null,null,null,[1,null,1],[1,1,null,1,1]],null,[18,null,null,null,null,null,"/images/lockup.png","/images/touchicon-180.png",null,null,null,null,null,null,null,null,null,null,null,null,null,2,null,null,null,"/images/lockup-dark-theme.png",[]],[],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[6,1,14,15,20,22,23,28,29,37,43],null,[[null,null,1],[1,1]],[[null,null,null,null,null,null,null,[["G-QFRN08RN6E"],null,null,[["G-QFRN08RN6E",1]]],null,null,null,null,1],null,[[1,1],[2,2]]],null,4,null,null,null,null,null,null,null,null,null,null,null,null,null,"android.devsite.google"],null,"pk_live_5170syrHvgGVmSx9sBrnWtA5luvk9BwnVcvIi7HizpwauFG96WedXsuXh790rtij9AmGllqPtMLfhe2RSwD6Pn38V00uBCydV4m",1,null,"https://developerscontentinsights-pa.googleapis.com","AIzaSyCg-ZUslalsEbXMfIo9ZP8qufZgo3LSBDU","AIzaSyDxT0vkxnY_KeINtA4LSePJO-4MAZPMRsE","https://developers.googleapis.com",null,null,"AIzaSyBQom12tzI-rybN7Sf-KfeL4nwm-Rf7PmI\n",null,"https://developerslogging.googleapis.com"]')
   
 </script>
 

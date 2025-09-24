@@ -1,0 +1,5 @@
+#!/bin/sh
+
+ADDRESS="https://developer.android.com/"
+
+wget --mirror --convert-links --adjust-extension --page-requisites --no-parent --reject=js,css "$ADDRESS"

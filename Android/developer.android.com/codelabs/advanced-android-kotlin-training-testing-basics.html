@@ -21,22 +21,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
 
-    <link rel="manifest" href="../_pwa/android/manifest.json"
+    <link rel="manifest" href="/_pwa/android/manifest.json"
           crossorigin="use-credentials">
-    <link rel="preconnect" href="https://www.gstatic.com/" crossorigin>
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
-    <link rel="preconnect" href="https://apis.google.com/" crossorigin>
-    <link rel="preconnect" href="https://www.google-analytics.com/" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,600italic,700,700italic|Roboto+Mono:400,500,700&amp;display=swap">
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="//apis.google.com" crossorigin>
+    <link rel="preconnect" href="//www.google-analytics.com" crossorigin><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,600italic,700,700italic|Roboto+Mono:400,500,700&display=swap">
       <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Material+Icons&amp;family=Material+Symbols+Outlined&amp;display=block"><link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/css/app.css">
+            href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block"><link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/css/app.css">
       
         <link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/css/dark-theme.css" disabled>
       <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/favicon.svg">
-    <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/touchicon-180.png"><link rel="canonical" href="advanced-android-kotlin-training-testing-basics.html"><link rel="search" type="application/opensearchdescription+xml"
-            title="Android Developers" href="../s/opensearch.xml.html">
+    <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/touchicon-180.png"><link rel="canonical" href="https://developer.android.com/codelabs/advanced-android-kotlin-training-testing-basics"><link rel="search" type="application/opensearchdescription+xml"
+            title="Android Developers" href="https://developer.android.com/s/opensearch.xml">
       <link rel="alternate" hreflang="en"
-          href="advanced-android-kotlin-training-testing-basics.html" /><link rel="alternate" hreflang="x-default" href="advanced-android-kotlin-training-testing-basics.html" /><title>(Deprecated) Advanced Android in Kotlin 05.1: Testing Basics &nbsp;|&nbsp; Android Developers</title>
+          href="https://developer.android.com/codelabs/advanced-android-kotlin-training-testing-basics" /><link rel="alternate" hreflang="x-default" href="https://developer.android.com/codelabs/advanced-android-kotlin-training-testing-basics" /><title>(Deprecated) Advanced Android in Kotlin 05.1: Testing Basics &nbsp;|&nbsp; Android Developers</title>
 
 <meta property="og:title" content="(Deprecated) Advanced Android in Kotlin 05.1: Testing Basics &nbsp;|&nbsp; Android Developers"><meta name="description" content="Learn the basics of testing your Android Kotlin apps. In this codelab you’ll learn to run tests, write basic tests, work with AndroidX Test, as well as test ViewModel and LiveData.">
   <meta property="og:description" content="Learn the basics of testing your Android Kotlin apps. In this codelab you’ll learn to run tests, write basic tests, work with AndroidX Test, as well as test ViewModel and LiveData."><meta property="og:url" content="https://developer.android.com/codelabs/advanced-android-kotlin-training-testing-basics"><meta property="og:locale" content="en">
@@ -54,7 +54,7 @@
   
 
     
-      <link rel="stylesheet" href="https://developer.android.com/extras.css"></head>
+      <link rel="stylesheet" href="/extras.css"></head>
   <body class=""
         template="codelab"
         theme="android-theme"
@@ -74,7 +74,7 @@
     <devsite-progress type="indeterminate" id="app-progress"></devsite-progress>
   
   
-    <a href="advanced-android-kotlin-training-testing-basics.html#main-content" class="skip-link button">
+    <a href="#main-content" class="skip-link button">
       
       Skip to main content
     </a>
@@ -117,7 +117,7 @@
         
 <div class="devsite-product-name-wrapper">
 
-  <a href="../index.html" class="devsite-site-logo-link gc-analytics-event"
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
    data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
    track-name="androidDevelopers" track-metadata-position="nav"
    track-metadata-eventDetail="nav">
@@ -283,7 +283,7 @@
 
           
             <a class="devsite-header-link devsite-top-button button gc-analytics-event "
-    href="../studio.html"
+    href="https://developer.android.com/studio"
     data-category="Site-Wide Custom Events"
     data-label="Site header link: Android Studio"
     >
@@ -373,7 +373,7 @@
     </button>
     <div class="devsite-product-name-wrapper">
 
-  <a href="../index.html" class="devsite-site-logo-link gc-analytics-event"
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
    data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
    track-name="androidDevelopers" track-metadata-position="nav"
    track-metadata-eventDetail="nav">
@@ -404,7 +404,7 @@
 <li class="devsite-nav-item">
 
   
-  <a href="../studio.html"
+  <a href="/studio"
     
        class="devsite-nav-title gc-analytics-event "
     
@@ -587,8 +587,8 @@
 <h2 is-upgraded id="what-you-should-already-know" data-text="What you should already know" tabindex="-1">What you should already know</h2>
 <p>You should be familiar with:</p>
 <ul>
-<li>The following core Android Jetpack libraries:  <a href="../topic/libraries/architecture/viewmodel.html" target="_blank"><code translate="no" dir="ltr">ViewModel</code></a> and  <a href="../topic/libraries/architecture/livedata.html" target="_blank"><code translate="no" dir="ltr">LiveData</code></a></li>
-<li>Application architecture, following the pattern from the  <a href="../jetpack/docs/guide.html" target="_blank">Guide to app architecture</a> and  <a href="https://developer.android.com/courses/kotlin-android-fundamentals/toc" target="_blank">Android Fundamentals codelabs</a></li>
+<li>The following core Android Jetpack libraries:  <a href="https://developer.android.com/topic/libraries/architecture/viewmodel" target="_blank"><code translate="no" dir="ltr">ViewModel</code></a> and  <a href="https://developer.android.com/topic/libraries/architecture/livedata" target="_blank"><code translate="no" dir="ltr">LiveData</code></a></li>
+<li>Application architecture, following the pattern from the  <a href="https://developer.android.com/jetpack/docs/guide" target="_blank">Guide to app architecture</a> and  <a href="https://developer.android.com/courses/kotlin-android-fundamentals/toc" target="_blank">Android Fundamentals codelabs</a></li>
 </ul>
 <h2 class="checklist" is-upgraded id="what-youll-learn" data-text="What you'll learn" tabindex="-1">What you'll learn</h2>
 <p>You&#39;ll learn about the following topics:</p>
@@ -620,8 +620,8 @@
               2. App overview
           </h2>
           <p>In this series of codelabs, you&#39;ll be working with the TO-DO Notes app. The app allows you to write down tasks to complete and displays them in a list. You can then mark them as completed or not, filter them, or delete them.</p>
-<p class="image-container"><img alt="e490df637e1bf10c.gif" style="width: 297.60px" src="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/e490df637e1bf10c.gif"></p>
-<p>This app is written in Kotlin, has several screens, uses Jetpack components, and follows the architecture from a  <a href="../jetpack/docs/guide.html" target="_blank">Guide to app architecture</a>. By learning how to test this app, you&#39;ll be able to test apps that use the same libraries and architecture.</p>
+<p class="image-container"><img alt="e490df637e1bf10c.gif" style="width: 297.60px" src="/static/codelabs/advanced-android-kotlin-training-testing-basics/img/e490df637e1bf10c.gif"></p>
+<p>This app is written in Kotlin, has several screens, uses Jetpack components, and follows the architecture from a  <a href="https://developer.android.com/jetpack/docs/guide" target="_blank">Guide to app architecture</a>. By learning how to test this app, you&#39;ll be able to test apps that use the same libraries and architecture.</p>
 
 
         </google-codelab-step>
@@ -652,7 +652,7 @@ $ git checkout starter_code
           </h2>
           <p>In this task you&#39;ll run the app and explore the code base.</p>
 <aside class="special"><p>This TO-DO app starter code has the same testing setup (folders, library dependencies, and sample tests) as a brand new project created with Android Studio. All of the additional tests and test configuration setup will be covered in these codelabs so that you can apply the same testing practices to your own Android applications.</p>
-<p class="image-container"><img alt="8266c6a9e6059f1.png" style="width: 610.00px" src="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/8266c6a9e6059f1.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/8266c6a9e6059f1_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/8266c6a9e6059f1_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/8266c6a9e6059f1_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/8266c6a9e6059f1_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/8266c6a9e6059f1_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/8266c6a9e6059f1_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/8266c6a9e6059f1_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/8266c6a9e6059f1_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/8266c6a9e6059f1_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/8266c6a9e6059f1_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/8266c6a9e6059f1_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p class="image-container"><img alt="8266c6a9e6059f1.png" style="width: 610.00px" src="/static/codelabs/advanced-android-kotlin-training-testing-basics/img/8266c6a9e6059f1.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/8266c6a9e6059f1_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/8266c6a9e6059f1_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/8266c6a9e6059f1_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/8266c6a9e6059f1_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/8266c6a9e6059f1_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/8266c6a9e6059f1_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/8266c6a9e6059f1_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/8266c6a9e6059f1_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/8266c6a9e6059f1_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/8266c6a9e6059f1_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/8266c6a9e6059f1_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
 </aside>
 <h2 is-upgraded id="step-1:-run-the-sample-app" data-text="Step 1: Run the sample app" tabindex="-1">Step 1: Run the sample app</h2>
 <p>Once you&#39;ve downloaded the TO-DO app, open it in Android Studio and run it. It should compile. Explore the app by doing the following:</p>
@@ -664,9 +664,9 @@ $ git checkout starter_code
 <li>Open the navigation drawer and click <strong>Statistics</strong>.</li>
 <li>Got back to the overview screen, and from the navigation drawer menu, select <strong>Clear completed</strong> to delete all tasks with the <strong>Completed</strong> status</li>
 </ul>
-<p class="image-container"><img alt="483916536f10c42a.png" style="width: 284.50px" src="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/483916536f10c42a.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/483916536f10c42a_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/483916536f10c42a_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/483916536f10c42a_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/483916536f10c42a_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/483916536f10c42a_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/483916536f10c42a_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/483916536f10c42a_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/483916536f10c42a_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/483916536f10c42a_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/483916536f10c42a_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/483916536f10c42a_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p class="image-container"><img alt="483916536f10c42a.png" style="width: 284.50px" src="/static/codelabs/advanced-android-kotlin-training-testing-basics/img/483916536f10c42a.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/483916536f10c42a_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/483916536f10c42a_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/483916536f10c42a_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/483916536f10c42a_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/483916536f10c42a_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/483916536f10c42a_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/483916536f10c42a_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/483916536f10c42a_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/483916536f10c42a_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/483916536f10c42a_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/483916536f10c42a_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
 <h2 is-upgraded id="step-2:-explore-the-sample-app-code" data-text="Step 2: Explore the sample app code" tabindex="-1">Step 2: Explore the sample app code</h2>
-<p>The TO-DO app is based off of the  <a href="https://github.com/android/architecture-samples" target="_blank">Architecture Blueprints</a> testing and architecture sample. The app follows the architecture from a  <a href="../jetpack/docs/guide.html" target="_blank">Guide to app architecture</a>. It uses ViewModels with Fragments, a repository, and Room. If you&#39;re familiar with any of the below examples, this app has a similar architecture:</p>
+<p>The TO-DO app is based off of the  <a href="https://github.com/android/architecture-samples" target="_blank">Architecture Blueprints</a> testing and architecture sample. The app follows the architecture from a  <a href="https://developer.android.com/jetpack/docs/guide" target="_blank">Guide to app architecture</a>. It uses ViewModels with Fragments, a repository, and Room. If you&#39;re familiar with any of the below examples, this app has a similar architecture:</p>
 <ul>
 <li><a href="https://developer.android.com/courses/kotlin-android-fundamentals/toc" target="_blank">Android Kotlin Fundamentals training codelabs</a></li>
 <li><a href="https://codelabs.developers.google.com/advanced-android-kotlin-training/" target="_blank">Advanced Android training codelabs</a></li>
@@ -675,7 +675,7 @@ $ git checkout starter_code
 <li><a href="https://www.udacity.com/course/developing-android-apps-with-kotlin--ud9012" target="_blank">Developing Android Apps with Kotlin Udacity training course</a></li>
 </ul>
 <p>It is more important that you understand the general architecture of the app than have a deep understanding of the logic at any one layer.</p>
-<p class="image-container"><img alt="f2e425a052f7caf7.png" style="width: 624.00px" src="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f2e425a052f7caf7.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f2e425a052f7caf7_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f2e425a052f7caf7_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f2e425a052f7caf7_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f2e425a052f7caf7_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f2e425a052f7caf7_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f2e425a052f7caf7_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f2e425a052f7caf7_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f2e425a052f7caf7_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f2e425a052f7caf7_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f2e425a052f7caf7_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f2e425a052f7caf7_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p class="image-container"><img alt="f2e425a052f7caf7.png" style="width: 624.00px" src="/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f2e425a052f7caf7.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f2e425a052f7caf7_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f2e425a052f7caf7_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f2e425a052f7caf7_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f2e425a052f7caf7_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f2e425a052f7caf7_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f2e425a052f7caf7_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f2e425a052f7caf7_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f2e425a052f7caf7_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f2e425a052f7caf7_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f2e425a052f7caf7_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f2e425a052f7caf7_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
 <p>Here&#39;s the summary of packages you&#39;ll find:</p>
 <table class="vertical-rules">
 <tr><td colspan="2" rowspan="1"><p><strong>Package: </strong><code translate="no" dir="ltr">com.example.android.architecture.blueprints.todoapp</code></p>
@@ -705,7 +705,7 @@ $ git checkout starter_code
 <p><strong>UI layer ( .addedittask, .statistics, .taskdetail, .tasks)</strong></p>
 <p>Each of the UI layer packages contains a fragment and a view model, along with any other classes that are required for the UI (such as an adapter for the task list). The <strong><code translate="no" dir="ltr">TaskActivity</code></strong> is the activity that contains all of the fragments.</p>
 <p><strong>Navigation</strong></p>
-<p>Navigation for the app is controlled by the  <a href="../guide/navigation.html" target="_blank">Navigation component</a>. It is defined in the <code translate="no" dir="ltr">nav_graph.xml</code> file. Navigation is triggered in the view models using the <strong><code translate="no" dir="ltr">Event</code></strong> class; the view models also determine what arguments to pass. The fragments observe the <code translate="no" dir="ltr">Event</code>s and do the actual navigation between screens.</p>
+<p>Navigation for the app is controlled by the  <a href="https://developer.android.com/guide/navigation" target="_blank">Navigation component</a>. It is defined in the <code translate="no" dir="ltr">nav_graph.xml</code> file. Navigation is triggered in the view models using the <strong><code translate="no" dir="ltr">Event</code></strong> class; the view models also determine what arguments to pass. The fragments observe the <code translate="no" dir="ltr">Event</code>s and do the actual navigation between screens.</p>
 
 
         </google-codelab-step>
@@ -724,7 +724,7 @@ $ git checkout starter_code
 <li><code translate="no" dir="ltr">com.example.android.architecture.blueprints.todoapp (androidTest)</code></li>
 <li><code translate="no" dir="ltr">com.example.android.architecture.blueprints.todoapp (test)</code></li>
 </ul>
-<p>These folders are known as  <a href="../studio/build.html#sourcesets" target="_blank">source sets</a>. Source sets are folders containing source code for your app. The source sets, which are colored green (<strong>androidTest</strong> and <strong>test</strong>) contain your tests. When you create a new Android project, you get the following three source sets by default. They are:</p>
+<p>These folders are known as  <a href="https://developer.android.com/studio/build#sourcesets" target="_blank">source sets</a>. Source sets are folders containing source code for your app. The source sets, which are colored green (<strong>androidTest</strong> and <strong>test</strong>) contain your tests. When you create a new Android project, you get the following three source sets by default. They are:</p>
 <ul>
 <li><strong><code translate="no" dir="ltr">main</code></strong>: Contains your app code. This code is shared amongst all different versions of the app you can build (known as  <a href="https://developer.android.com/studio/build/build-variants.html" target="_blank">build variants</a>)</li>
 <li><strong><code translate="no" dir="ltr">androidTest</code></strong>: Contains tests known as instrumented tests.</li>
@@ -734,33 +734,33 @@ $ git checkout starter_code
 <h3 is-upgraded id="local-tests-test-source-set" data-text="Local tests (test source set)" tabindex="-1">Local tests (test source set)</h3>
 <p>These tests are run locally on your development machine&#39;s JVM and do not require an emulator or physical device. Because of this, they run fast, but their fidelity is lower, meaning they act less like they would in the real world.</p>
 <p>In Android Studio local tests are represented by a green and red triangle icon.</p>
-<p class="image-container"><img alt="9060ac11ceb5e66e.png" style="width: 151.50px" src="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/9060ac11ceb5e66e.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/9060ac11ceb5e66e_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/9060ac11ceb5e66e_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/9060ac11ceb5e66e_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/9060ac11ceb5e66e_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/9060ac11ceb5e66e_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/9060ac11ceb5e66e_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/9060ac11ceb5e66e_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/9060ac11ceb5e66e_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/9060ac11ceb5e66e_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/9060ac11ceb5e66e_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/9060ac11ceb5e66e_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p class="image-container"><img alt="9060ac11ceb5e66e.png" style="width: 151.50px" src="/static/codelabs/advanced-android-kotlin-training-testing-basics/img/9060ac11ceb5e66e.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/9060ac11ceb5e66e_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/9060ac11ceb5e66e_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/9060ac11ceb5e66e_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/9060ac11ceb5e66e_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/9060ac11ceb5e66e_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/9060ac11ceb5e66e_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/9060ac11ceb5e66e_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/9060ac11ceb5e66e_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/9060ac11ceb5e66e_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/9060ac11ceb5e66e_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/9060ac11ceb5e66e_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
 <h3 is-upgraded id="instrumented-tests-androidtest-source-set" data-text="Instrumented tests (androidTest source set)" tabindex="-1">Instrumented tests (androidTest source set)</h3>
 <p>These tests run on real or emulated Android devices, so they reflect what will happen in the real world, but are also much slower.</p>
 <p>In Android Studio instrumented tests are represented by an Android with a green and red triangle icon.</p>
-<p class="image-container"><img alt="6df04e9088327cf8.png" style="width: 256.20px" src="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/6df04e9088327cf8.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/6df04e9088327cf8_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/6df04e9088327cf8_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/6df04e9088327cf8_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/6df04e9088327cf8_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/6df04e9088327cf8_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/6df04e9088327cf8_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/6df04e9088327cf8_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/6df04e9088327cf8_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/6df04e9088327cf8_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/6df04e9088327cf8_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/6df04e9088327cf8_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p class="image-container"><img alt="6df04e9088327cf8.png" style="width: 256.20px" src="/static/codelabs/advanced-android-kotlin-training-testing-basics/img/6df04e9088327cf8.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/6df04e9088327cf8_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/6df04e9088327cf8_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/6df04e9088327cf8_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/6df04e9088327cf8_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/6df04e9088327cf8_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/6df04e9088327cf8_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/6df04e9088327cf8_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/6df04e9088327cf8_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/6df04e9088327cf8_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/6df04e9088327cf8_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/6df04e9088327cf8_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
 <h2 is-upgraded id="step-1:-run-a-local-test" data-text="Step 1: Run a local test" tabindex="-1">Step 1: Run a local test</h2>
 <ol type="1">
 <li>Open the <code translate="no" dir="ltr">test</code> folder until you find the <strong>ExampleUnitTest.kt</strong> file.</li>
 <li>Right-click on it and select <strong>Run ExampleUnitTest</strong>.</li>
 </ol>
 <p>You should see the following output in the <strong>Run</strong> window at the bottom of the screen:</p>
-<p class="image-container"><img alt="cb237d020d5ed709.png" style="width: 624.00px" src="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cb237d020d5ed709.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cb237d020d5ed709_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cb237d020d5ed709_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cb237d020d5ed709_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cb237d020d5ed709_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cb237d020d5ed709_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cb237d020d5ed709_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cb237d020d5ed709_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cb237d020d5ed709_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cb237d020d5ed709_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cb237d020d5ed709_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cb237d020d5ed709_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p class="image-container"><img alt="cb237d020d5ed709.png" style="width: 624.00px" src="/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cb237d020d5ed709.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cb237d020d5ed709_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cb237d020d5ed709_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cb237d020d5ed709_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cb237d020d5ed709_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cb237d020d5ed709_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cb237d020d5ed709_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cb237d020d5ed709_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cb237d020d5ed709_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cb237d020d5ed709_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cb237d020d5ed709_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cb237d020d5ed709_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
 <ol type="1" start="3">
 <li>Notice the green checkmarks and expand the test results to confirm that one test called <code translate="no" dir="ltr">addition_isCorrect</code> passed. It&#39;s good to know that addition works as expected!</li>
 </ol>
 <aside class="special"><p><strong>Configuring the Run window</strong></p>
 <p>Make sure that <strong>Show Passed</strong> (check mark icon) to show all passed tests, and <strong>Show Ignored</strong> (cancel sign icon) to show all ignored tests at the top of the <strong>Run</strong> window  are both turned on, otherwise you might not see the same information in your <strong>Run</strong> window.</p>
-<p class="image-container"><img alt="411f4c01a14bb1e2.png" style="width: 238.50px" src="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/411f4c01a14bb1e2.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/411f4c01a14bb1e2_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/411f4c01a14bb1e2_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/411f4c01a14bb1e2_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/411f4c01a14bb1e2_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/411f4c01a14bb1e2_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/411f4c01a14bb1e2_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/411f4c01a14bb1e2_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/411f4c01a14bb1e2_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/411f4c01a14bb1e2_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/411f4c01a14bb1e2_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/411f4c01a14bb1e2_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
-<p>For more information on configuring the <strong>Run</strong> window  <a href="../studio/test.html#view_the_test_results" target="_blank">see the documentation.</a></p>
+<p class="image-container"><img alt="411f4c01a14bb1e2.png" style="width: 238.50px" src="/static/codelabs/advanced-android-kotlin-training-testing-basics/img/411f4c01a14bb1e2.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/411f4c01a14bb1e2_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/411f4c01a14bb1e2_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/411f4c01a14bb1e2_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/411f4c01a14bb1e2_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/411f4c01a14bb1e2_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/411f4c01a14bb1e2_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/411f4c01a14bb1e2_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/411f4c01a14bb1e2_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/411f4c01a14bb1e2_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/411f4c01a14bb1e2_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/411f4c01a14bb1e2_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>For more information on configuring the <strong>Run</strong> window  <a href="https://developer.android.com/studio/test#view_the_test_results" target="_blank">see the documentation.</a></p>
 </aside>
 <aside class="special"><p><strong>Other ways to run tests</strong></p>
 <p>The diagram below shows a few other ways you can run tests in Android Studio. Each is explained below.</p>
-<p class="image-container"><img alt="b984b2bfc5a34299.png" style="width: 610.00px" src="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b984b2bfc5a34299.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b984b2bfc5a34299_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b984b2bfc5a34299_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b984b2bfc5a34299_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b984b2bfc5a34299_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b984b2bfc5a34299_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b984b2bfc5a34299_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b984b2bfc5a34299_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b984b2bfc5a34299_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b984b2bfc5a34299_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b984b2bfc5a34299_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b984b2bfc5a34299_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p class="image-container"><img alt="b984b2bfc5a34299.png" style="width: 610.00px" src="/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b984b2bfc5a34299.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b984b2bfc5a34299_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b984b2bfc5a34299_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b984b2bfc5a34299_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b984b2bfc5a34299_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b984b2bfc5a34299_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b984b2bfc5a34299_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b984b2bfc5a34299_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b984b2bfc5a34299_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b984b2bfc5a34299_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b984b2bfc5a34299_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b984b2bfc5a34299_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
 <ol type="1">
 <li>The <strong>Play</strong> button allows you to rerun the tests you&#39;ve just run. The button below (<strong>Play with a !</strong>) allows you to re-run failed tests.</li>
 </ol>
-<p class="image-container"><img alt="f43a4b77e349dacd.png" style="width: 52.00px" src="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f43a4b77e349dacd.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f43a4b77e349dacd_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f43a4b77e349dacd_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f43a4b77e349dacd_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f43a4b77e349dacd_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f43a4b77e349dacd_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f43a4b77e349dacd_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f43a4b77e349dacd_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f43a4b77e349dacd_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f43a4b77e349dacd_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f43a4b77e349dacd_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f43a4b77e349dacd_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p class="image-container"><img alt="f43a4b77e349dacd.png" style="width: 52.00px" src="/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f43a4b77e349dacd.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f43a4b77e349dacd_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f43a4b77e349dacd_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f43a4b77e349dacd_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f43a4b77e349dacd_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f43a4b77e349dacd_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f43a4b77e349dacd_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f43a4b77e349dacd_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f43a4b77e349dacd_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f43a4b77e349dacd_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f43a4b77e349dacd_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/f43a4b77e349dacd_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
 <ol type="1" start="2">
 <li>You can right-click on any test or class and run them.</li>
 <li>In your code, the side panel marks passed/failed tests with icons. You can click any of these to rerun tests.</li>
@@ -768,7 +768,7 @@ $ git checkout starter_code
 <li>The <strong>Run configurations</strong> drop down in the toolbar allows you to select tests. Currently, <strong>ExampleUnitTest</strong> is selected.</li>
 <li>You can right-click any specific test and run it.</li>
 </ol>
-<p>Note that you can also run tests from the command line, which includes generating HTML test result reports. You can learn more in the  <a href="../studio/test/command-line.html" target="_blank">Test from the command line</a> documentation.</p>
+<p>Note that you can also run tests from the command line, which includes generating HTML test result reports. You can learn more in the  <a href="https://developer.android.com/studio/test/command-line" target="_blank">Test from the command line</a> documentation.</p>
 </aside>
 <h2 is-upgraded id="step-2:-make-the-test-fail" data-text="Step 2: Make the test fail" tabindex="-1">Step 2: Make the test fail</h2>
 <p>Below is the test that you just ran.</p>
@@ -811,7 +811,7 @@ $ git checkout starter_code
 <li>Run the test.</li>
 <li>In the test results, notice an X next to the test.</li>
 </ol>
-<p class="image-container"><img alt="e80a71def694097f.png" style="width: 624.00px" src="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/e80a71def694097f.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/e80a71def694097f_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/e80a71def694097f_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/e80a71def694097f_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/e80a71def694097f_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/e80a71def694097f_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/e80a71def694097f_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/e80a71def694097f_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/e80a71def694097f_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/e80a71def694097f_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/e80a71def694097f_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/e80a71def694097f_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p class="image-container"><img alt="e80a71def694097f.png" style="width: 624.00px" src="/static/codelabs/advanced-android-kotlin-training-testing-basics/img/e80a71def694097f.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/e80a71def694097f_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/e80a71def694097f_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/e80a71def694097f_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/e80a71def694097f_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/e80a71def694097f_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/e80a71def694097f_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/e80a71def694097f_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/e80a71def694097f_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/e80a71def694097f_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/e80a71def694097f_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/e80a71def694097f_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
 <ol type="1" start="4">
 <li>Also notice:</li>
 </ol>
@@ -839,7 +839,7 @@ $ git checkout starter_code
 <span class="devsite-syntax-p">}</span>
 </code></pre></devsite-code>
 <p>Unlike the local test, this test runs on a device (in the example below an emulated Pixel 2 phone):</p>
-<p class="image-container"><img alt="cbc15c3229c7deec.png" style="width: 624.00px" src="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cbc15c3229c7deec.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cbc15c3229c7deec_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cbc15c3229c7deec_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cbc15c3229c7deec_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cbc15c3229c7deec_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cbc15c3229c7deec_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cbc15c3229c7deec_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cbc15c3229c7deec_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cbc15c3229c7deec_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cbc15c3229c7deec_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cbc15c3229c7deec_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cbc15c3229c7deec_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p class="image-container"><img alt="cbc15c3229c7deec.png" style="width: 624.00px" src="/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cbc15c3229c7deec.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cbc15c3229c7deec_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cbc15c3229c7deec_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cbc15c3229c7deec_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cbc15c3229c7deec_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cbc15c3229c7deec_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cbc15c3229c7deec_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cbc15c3229c7deec_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cbc15c3229c7deec_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cbc15c3229c7deec_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cbc15c3229c7deec_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cbc15c3229c7deec_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
 <p>If you have a device attached or an emulator running, you should see the test run on the emulator.</p>
 <aside class="special"><p><strong>What makes this an instrumented test?</strong></p>
 <p>A test is an instrumented test if it needs or benefits from being run on an emulated or real device. Instrumented tests almost always use the Android OS or Android framework. In this test, you&#39;re getting a <code translate="no" dir="ltr">Context</code>, using  <a href="https://developer.android.com/reference/androidx/test/platform/app/InstrumentationRegistry.html" target="_blank"><code translate="no" dir="ltr">InstrumentationRegistry</code></a>. This allows you to get the package name and do a comparison.</p>
@@ -855,7 +855,7 @@ $ git checkout starter_code
               6. Task: Writing your first test
           </h2>
           <p>In this task, you&#39;ll write tests for  <code translate="no" dir="ltr">getActiveAndCompleteStats</code>, which calculates the percentage of active and complete task stats for your app. You can see these numbers on the statistics screen of the app.</p>
-<p class="image-container"><img alt="7abfbf08efb1b623.png" style="width: 223.27px" src="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7abfbf08efb1b623.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7abfbf08efb1b623_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7abfbf08efb1b623_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7abfbf08efb1b623_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7abfbf08efb1b623_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7abfbf08efb1b623_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7abfbf08efb1b623_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7abfbf08efb1b623_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7abfbf08efb1b623_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7abfbf08efb1b623_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7abfbf08efb1b623_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7abfbf08efb1b623_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p class="image-container"><img alt="7abfbf08efb1b623.png" style="width: 223.27px" src="/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7abfbf08efb1b623.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7abfbf08efb1b623_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7abfbf08efb1b623_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7abfbf08efb1b623_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7abfbf08efb1b623_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7abfbf08efb1b623_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7abfbf08efb1b623_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7abfbf08efb1b623_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7abfbf08efb1b623_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7abfbf08efb1b623_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7abfbf08efb1b623_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7abfbf08efb1b623_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
 <h2 is-upgraded id="step-1:-create-a-test-class" data-text="Step 1: Create a test class" tabindex="-1">Step 1: Create a test class</h2>
 <ol type="1">
 <li>In the <code translate="no" dir="ltr">main</code> source set, in <code translate="no" dir="ltr">todoapp.statistics</code>, open <code translate="no" dir="ltr">StatisticsUtils.kt</code>.</li>
@@ -884,25 +884,25 @@ $ git checkout starter_code
 <li>Right click <code translate="no" dir="ltr">getActiveAndCompletedStats</code> and select <strong>Generate</strong> &gt; <strong>Test</strong>.</li>
 </ol>
 <table class="vertical-rules">
-<tr><td colspan="1" rowspan="1"><p class="image-container"><img src="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3b70c7efcc268ae9.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3b70c7efcc268ae9_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3b70c7efcc268ae9_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3b70c7efcc268ae9_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3b70c7efcc268ae9_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3b70c7efcc268ae9_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3b70c7efcc268ae9_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3b70c7efcc268ae9_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3b70c7efcc268ae9_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3b70c7efcc268ae9_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3b70c7efcc268ae9_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3b70c7efcc268ae9_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
-</td><td colspan="1" rowspan="1"><p class="image-container"><img src="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7d73d6de328d5aa0.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7d73d6de328d5aa0_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7d73d6de328d5aa0_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7d73d6de328d5aa0_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7d73d6de328d5aa0_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7d73d6de328d5aa0_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7d73d6de328d5aa0_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7d73d6de328d5aa0_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7d73d6de328d5aa0_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7d73d6de328d5aa0_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7d73d6de328d5aa0_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7d73d6de328d5aa0_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img src="/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3b70c7efcc268ae9.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3b70c7efcc268ae9_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3b70c7efcc268ae9_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3b70c7efcc268ae9_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3b70c7efcc268ae9_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3b70c7efcc268ae9_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3b70c7efcc268ae9_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3b70c7efcc268ae9_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3b70c7efcc268ae9_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3b70c7efcc268ae9_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3b70c7efcc268ae9_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3b70c7efcc268ae9_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+</td><td colspan="1" rowspan="1"><p class="image-container"><img src="/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7d73d6de328d5aa0.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7d73d6de328d5aa0_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7d73d6de328d5aa0_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7d73d6de328d5aa0_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7d73d6de328d5aa0_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7d73d6de328d5aa0_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7d73d6de328d5aa0_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7d73d6de328d5aa0_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7d73d6de328d5aa0_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7d73d6de328d5aa0_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7d73d6de328d5aa0_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/7d73d6de328d5aa0_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
 </td></tr>
 </table>
 <p>The <strong>Create Test</strong> dialog opens:</p>
-<p class="image-container"><img alt="1eb4d2bcea2a5323.png" style="width: 624.00px" src="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/1eb4d2bcea2a5323.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/1eb4d2bcea2a5323_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/1eb4d2bcea2a5323_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/1eb4d2bcea2a5323_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/1eb4d2bcea2a5323_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/1eb4d2bcea2a5323_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/1eb4d2bcea2a5323_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/1eb4d2bcea2a5323_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/1eb4d2bcea2a5323_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/1eb4d2bcea2a5323_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/1eb4d2bcea2a5323_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/1eb4d2bcea2a5323_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p class="image-container"><img alt="1eb4d2bcea2a5323.png" style="width: 624.00px" src="/static/codelabs/advanced-android-kotlin-training-testing-basics/img/1eb4d2bcea2a5323.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/1eb4d2bcea2a5323_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/1eb4d2bcea2a5323_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/1eb4d2bcea2a5323_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/1eb4d2bcea2a5323_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/1eb4d2bcea2a5323_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/1eb4d2bcea2a5323_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/1eb4d2bcea2a5323_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/1eb4d2bcea2a5323_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/1eb4d2bcea2a5323_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/1eb4d2bcea2a5323_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/1eb4d2bcea2a5323_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
 <ol type="1" start="4">
 <li>Change the <strong>Class name:</strong> to <code translate="no" dir="ltr">StatisticsUtilsTest</code> (instead of <code translate="no" dir="ltr">StatisticsUtilsKtTest</code>; it&#39;s slightly nicer not to have KT in the test class name).</li>
 <li><strong>Keep the rest of the defaults.</strong> JUnit 4 is the appropriate testing library. The destination package is correct (it mirrors the location of the <code translate="no" dir="ltr">StatisticsUtils</code> class) and you don&#39;t need to check any of the check boxes (this just generates extra code, but you&#39;ll write your test from scratch).</li>
 <li>Press <strong>OK</strong>.</li>
 </ol>
-<p>The <strong>Choose Destination Directory</strong> dialog opens: <img alt="3342fe4d590f2129.png" style="width: 624.00px" src="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3342fe4d590f2129.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3342fe4d590f2129_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3342fe4d590f2129_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3342fe4d590f2129_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3342fe4d590f2129_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3342fe4d590f2129_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3342fe4d590f2129_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3342fe4d590f2129_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3342fe4d590f2129_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3342fe4d590f2129_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3342fe4d590f2129_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3342fe4d590f2129_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>The <strong>Choose Destination Directory</strong> dialog opens: <img alt="3342fe4d590f2129.png" style="width: 624.00px" src="/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3342fe4d590f2129.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3342fe4d590f2129_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3342fe4d590f2129_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3342fe4d590f2129_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3342fe4d590f2129_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3342fe4d590f2129_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3342fe4d590f2129_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3342fe4d590f2129_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3342fe4d590f2129_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3342fe4d590f2129_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3342fe4d590f2129_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/3342fe4d590f2129_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
 <p>You&#39;ll be making a local test because your function is doing math calculations and won&#39;t include any Android specific code. So, there&#39;s no need to run it on a real or emulated device.</p>
 <ol type="1" start="7">
 <li>Select the <strong><code translate="no" dir="ltr">test</code></strong> directory (not <code translate="no" dir="ltr">androidTest</code>) because you&#39;ll be writing local tests.</li>
 <li>Click <strong>OK</strong>.</li>
 <li>Notice the generated the <code translate="no" dir="ltr">StatisticsUtilsTest</code> class in <code translate="no" dir="ltr">test/statistics/</code>.</li>
 </ol>
-<p class="image-container"><img alt="2fcd839638adcdfc.png" style="width: 624.00px" src="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2fcd839638adcdfc.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2fcd839638adcdfc_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2fcd839638adcdfc_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2fcd839638adcdfc_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2fcd839638adcdfc_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2fcd839638adcdfc_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2fcd839638adcdfc_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2fcd839638adcdfc_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2fcd839638adcdfc_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2fcd839638adcdfc_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2fcd839638adcdfc_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2fcd839638adcdfc_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p class="image-container"><img alt="2fcd839638adcdfc.png" style="width: 624.00px" src="/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2fcd839638adcdfc.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2fcd839638adcdfc_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2fcd839638adcdfc_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2fcd839638adcdfc_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2fcd839638adcdfc_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2fcd839638adcdfc_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2fcd839638adcdfc_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2fcd839638adcdfc_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2fcd839638adcdfc_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2fcd839638adcdfc_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2fcd839638adcdfc_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2fcd839638adcdfc_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
 <h2 is-upgraded id="step-2:-write-your-first-test-function" data-text="Step 2: Write your first test function" tabindex="-1">Step 2: Write your first test function</h2>
 <p>You&#39;re going to write a test that checks:</p>
 <ul>
@@ -972,7 +972,7 @@ $ git checkout starter_code
 <li>Run the test (Right click <code translate="no" dir="ltr">StatisticsUtilsTest</code> and select <strong>Run</strong>).</li>
 </ol>
 <p>It should pass:</p>
-<p class="image-container"><img alt="2d4423767733aac8.png" style="width: 624.00px" src="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2d4423767733aac8.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2d4423767733aac8_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2d4423767733aac8_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2d4423767733aac8_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2d4423767733aac8_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2d4423767733aac8_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2d4423767733aac8_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2d4423767733aac8_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2d4423767733aac8_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2d4423767733aac8_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2d4423767733aac8_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2d4423767733aac8_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p class="image-container"><img alt="2d4423767733aac8.png" style="width: 624.00px" src="/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2d4423767733aac8.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2d4423767733aac8_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2d4423767733aac8_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2d4423767733aac8_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2d4423767733aac8_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2d4423767733aac8_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2d4423767733aac8_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2d4423767733aac8_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2d4423767733aac8_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2d4423767733aac8_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2d4423767733aac8_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/2d4423767733aac8_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
 <h2 is-upgraded id="step-3:-add-the-hamcrest-dependency" data-text="Step 3: Add the Hamcrest dependency" tabindex="-1">Step 3: Add the Hamcrest dependency</h2>
 <p>Because your tests act as documentation of what your code does, it&#39;s nice when they are human readable. Compare the following two assertions:</p>
 <div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Kotlin"><code translate="no" dir="ltr"><span class="devsite-syntax-n">assertEquals</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">result</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-na">completedTasksPercent</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-m">0f</span><span class="devsite-syntax-p">)</span>
@@ -1107,14 +1107,14 @@ $ git checkout starter_code
 <li>Write the minimal code to get the test to pass.</li>
 <li>Repeat for all tests!</li>
 </ol>
-<p class="image-container"><img alt="5408e4b11ef2d3eb.png" style="width: 624.00px" src="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/5408e4b11ef2d3eb.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/5408e4b11ef2d3eb_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/5408e4b11ef2d3eb_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/5408e4b11ef2d3eb_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/5408e4b11ef2d3eb_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/5408e4b11ef2d3eb_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/5408e4b11ef2d3eb_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/5408e4b11ef2d3eb_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/5408e4b11ef2d3eb_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/5408e4b11ef2d3eb_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/5408e4b11ef2d3eb_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/5408e4b11ef2d3eb_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p class="image-container"><img alt="5408e4b11ef2d3eb.png" style="width: 624.00px" src="/static/codelabs/advanced-android-kotlin-training-testing-basics/img/5408e4b11ef2d3eb.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/5408e4b11ef2d3eb_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/5408e4b11ef2d3eb_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/5408e4b11ef2d3eb_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/5408e4b11ef2d3eb_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/5408e4b11ef2d3eb_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/5408e4b11ef2d3eb_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/5408e4b11ef2d3eb_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/5408e4b11ef2d3eb_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/5408e4b11ef2d3eb_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/5408e4b11ef2d3eb_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/5408e4b11ef2d3eb_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
 <p>Instead of starting by fixing the bug, you&#39;ll start by writing the tests first. Then you can confirm that you have tests protecting you from ever accidentally reintroducing these bugs in the future.</p>
 <ol type="1">
 <li>If there is an empty list (<code translate="no" dir="ltr">emptyList()</code>), then both percentages should be 0f.</li>
 <li>If there was an error loading the tasks, the list will be <code translate="no" dir="ltr">null</code>, and both percentages should be 0f.</li>
 <li><strong>Run</strong> your tests and confirm that they <strong>fail</strong>:</li>
 </ol>
-<p class="image-container"><img alt="c7952b977e893441.png" style="width: 624.00px" src="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/c7952b977e893441.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/c7952b977e893441_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/c7952b977e893441_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/c7952b977e893441_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/c7952b977e893441_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/c7952b977e893441_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/c7952b977e893441_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/c7952b977e893441_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/c7952b977e893441_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/c7952b977e893441_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/c7952b977e893441_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/c7952b977e893441_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p class="image-container"><img alt="c7952b977e893441.png" style="width: 624.00px" src="/static/codelabs/advanced-android-kotlin-training-testing-basics/img/c7952b977e893441.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/c7952b977e893441_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/c7952b977e893441_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/c7952b977e893441_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/c7952b977e893441_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/c7952b977e893441_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/c7952b977e893441_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/c7952b977e893441_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/c7952b977e893441_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/c7952b977e893441_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/c7952b977e893441_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/c7952b977e893441_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
 <aside class="special"><p><strong>Why fail?</strong></p>
 <p>Confirming that your test fails is helpful. If your test passes when you haven&#39;t written the code to make it pass, then you know something strange is going on. Perhaps the test always passes (which is a useless test) or the test is not using the right code.</p>
 </aside>
@@ -1140,7 +1140,7 @@ $ git checkout starter_code
 <ol type="1" start="2">
 <li><strong>Run</strong> your tests again and confirm that all tests now pass!</li>
 </ol>
-<p class="image-container"><img alt="cf077166a26ac325.png" style="width: 624.00px" src="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cf077166a26ac325.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cf077166a26ac325_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cf077166a26ac325_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cf077166a26ac325_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cf077166a26ac325_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cf077166a26ac325_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cf077166a26ac325_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cf077166a26ac325_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cf077166a26ac325_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cf077166a26ac325_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cf077166a26ac325_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cf077166a26ac325_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p class="image-container"><img alt="cf077166a26ac325.png" style="width: 624.00px" src="/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cf077166a26ac325.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cf077166a26ac325_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cf077166a26ac325_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cf077166a26ac325_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cf077166a26ac325_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cf077166a26ac325_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cf077166a26ac325_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cf077166a26ac325_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cf077166a26ac325_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cf077166a26ac325_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cf077166a26ac325_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/cf077166a26ac325_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
 <p>By following TDD and writing the tests first, you&#39;ve helped ensure that:</p>
 <ul>
 <li>New functionality always has associated tests; thus your tests act as documentation of what your code does.</li>
@@ -1243,10 +1243,10 @@ $ git checkout starter_code
           <h2 class="step-title" id="7" data-text="Task: Setting up a ViewModel Test with AndroidX Test" tabindex="-1">
               8. Task: Setting up a ViewModel Test with AndroidX Test
           </h2>
-          <p>In the rest of the codelab, you&#39;ll learn how to write tests for two Android classes that are common across most apps -  <a href="../topic/libraries/architecture/viewmodel.html" target="_blank"><code translate="no" dir="ltr">ViewModel</code></a> and  <a href="../topic/libraries/architecture/livedata.html" target="_blank"><code translate="no" dir="ltr">LiveData</code></a>.</p>
+          <p>In the rest of the codelab, you&#39;ll learn how to write tests for two Android classes that are common across most apps -  <a href="https://developer.android.com/topic/libraries/architecture/viewmodel" target="_blank"><code translate="no" dir="ltr">ViewModel</code></a> and  <a href="https://developer.android.com/topic/libraries/architecture/livedata" target="_blank"><code translate="no" dir="ltr">LiveData</code></a>.</p>
 <p>You start by writing tests for the <code translate="no" dir="ltr">TasksViewModel</code>.</p>
 <p>You are going to focus on tests that have all their logic in the view model and do not rely on repository code. Repository code involves asynchronous code, databases, and network calls, which all add test complexity. You&#39;re going to avoid that for now and focus on writing tests for ViewModel functionality that doesn&#39;t directly test any thing in the repository.</p>
-<p class="image-container"><img alt="16d3cf02ddd17181.png" style="width: 624.00px" src="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/16d3cf02ddd17181.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/16d3cf02ddd17181_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/16d3cf02ddd17181_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/16d3cf02ddd17181_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/16d3cf02ddd17181_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/16d3cf02ddd17181_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/16d3cf02ddd17181_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/16d3cf02ddd17181_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/16d3cf02ddd17181_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/16d3cf02ddd17181_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/16d3cf02ddd17181_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/16d3cf02ddd17181_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p class="image-container"><img alt="16d3cf02ddd17181.png" style="width: 624.00px" src="/static/codelabs/advanced-android-kotlin-training-testing-basics/img/16d3cf02ddd17181.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/16d3cf02ddd17181_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/16d3cf02ddd17181_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/16d3cf02ddd17181_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/16d3cf02ddd17181_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/16d3cf02ddd17181_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/16d3cf02ddd17181_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/16d3cf02ddd17181_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/16d3cf02ddd17181_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/16d3cf02ddd17181_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/16d3cf02ddd17181_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/16d3cf02ddd17181_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
 <p>The test you&#39;ll write will check that when you call the <code translate="no" dir="ltr">addNewTask</code> method, the <code translate="no" dir="ltr">Event</code> for opening the new task window is fired. Here&#39;s the app code you&#39;ll be testing.</p>
 <p><strong>TasksViewModel.kt</strong></p>
 <div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Kotlin"><code translate="no" dir="ltr"><span class="devsite-syntax-kd">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">addNewTask</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
@@ -1263,8 +1263,8 @@ $ git checkout starter_code
 <li>Open the class you wish to test, in the <code translate="no" dir="ltr">tasks</code> package,  <code translate="no" dir="ltr">TasksViewModel.</code></li>
 <li>In the code, right-click on the class name <strong><code translate="no" dir="ltr">TasksViewModel</code></strong> -&gt; <strong>Generate</strong> -&gt; <strong>Test</strong>.</li>
 </ol>
-<p class="image-container"><img alt="61f8170f7ba50cf6.png" style="width: 340.50px" src="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/61f8170f7ba50cf6.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/61f8170f7ba50cf6_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/61f8170f7ba50cf6_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/61f8170f7ba50cf6_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/61f8170f7ba50cf6_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/61f8170f7ba50cf6_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/61f8170f7ba50cf6_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/61f8170f7ba50cf6_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/61f8170f7ba50cf6_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/61f8170f7ba50cf6_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/61f8170f7ba50cf6_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/61f8170f7ba50cf6_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
-<aside class="special"><p>You can also use the  <a href="../studio/intro/keyboard-shortcuts.html" target="_blank">keyboard shortcut</a> to open up the <strong>Generate</strong> menu:</p>
+<p class="image-container"><img alt="61f8170f7ba50cf6.png" style="width: 340.50px" src="/static/codelabs/advanced-android-kotlin-training-testing-basics/img/61f8170f7ba50cf6.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/61f8170f7ba50cf6_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/61f8170f7ba50cf6_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/61f8170f7ba50cf6_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/61f8170f7ba50cf6_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/61f8170f7ba50cf6_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/61f8170f7ba50cf6_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/61f8170f7ba50cf6_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/61f8170f7ba50cf6_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/61f8170f7ba50cf6_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/61f8170f7ba50cf6_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/61f8170f7ba50cf6_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<aside class="special"><p>You can also use the  <a href="https://developer.android.com/studio/intro/keyboard-shortcuts" target="_blank">keyboard shortcut</a> to open up the <strong>Generate</strong> menu:</p>
 <ul>
 <li>Windows/Linux: <strong>Alt + Insert</strong></li>
 <li>Mac**: Command + N**</li>
@@ -1389,14 +1389,14 @@ $ git checkout starter_code
 </ul>
 <h3 is-upgraded id="what-is-robolectric" data-text="What is Robolectric?" tabindex="-1">What is Robolectric?</h3>
 <p>The simulated Android environment that AndroidX Test uses for local tests is provided by  <a href="http://robolectric.org/" target="_blank"><strong>Robolectric</strong></a>.  <a href="http://robolectric.org/" target="_blank"><strong>Robolectric</strong></a> is a library that creates a simulated Android environment for tests and runs faster than booting up an emulator or running on a device. Without the Robolectric dependency, you&#39;ll get this error:</p>
-<p class="image-container"><img alt="d1001b21699f5c2f.png" style="width: 624.00px" src="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/d1001b21699f5c2f.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/d1001b21699f5c2f_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/d1001b21699f5c2f_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/d1001b21699f5c2f_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/d1001b21699f5c2f_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/d1001b21699f5c2f_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/d1001b21699f5c2f_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/d1001b21699f5c2f_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/d1001b21699f5c2f_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/d1001b21699f5c2f_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/d1001b21699f5c2f_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/d1001b21699f5c2f_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p class="image-container"><img alt="d1001b21699f5c2f.png" style="width: 624.00px" src="/static/codelabs/advanced-android-kotlin-training-testing-basics/img/d1001b21699f5c2f.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/d1001b21699f5c2f_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/d1001b21699f5c2f_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/d1001b21699f5c2f_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/d1001b21699f5c2f_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/d1001b21699f5c2f_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/d1001b21699f5c2f_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/d1001b21699f5c2f_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/d1001b21699f5c2f_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/d1001b21699f5c2f_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/d1001b21699f5c2f_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/d1001b21699f5c2f_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
 <h3 is-upgraded id="what-does-runwithandroidjunit4::class-do" data-text="What does @RunWith(AndroidJUnit4::class) do?" tabindex="-1">What does <code translate="no" dir="ltr">@RunWith(AndroidJUnit4::class)</code> do?</h3>
 <p>A  <a href="https://github.com/junit-team/junit4/wiki/Test-runners" target="_blank"><strong>test runner</strong></a> is a JUnit component that runs tests. Without a test runner, your tests would not run. There&#39;s a default test runner provided by JUnit that you get automatically.  <a href="https://github.com/junit-team/junit4/wiki/Test-runners#runwith-annotation" target="_blank"><code translate="no" dir="ltr">@RunWith</code></a> swaps out that default test runner.</p>
 <p>The  <a href="https://developer.android.com/training/testing/junit-runner#kotlin" target="_blank"><strong><code translate="no" dir="ltr">AndroidJUnit4</code></strong></a> test runner allows for AndroidX Test to run your test differently depending on whether they are instrumented or local tests.</p>
-<p class="image-container"><img alt="4820a5757fd79a44.png" style="width: 624.00px" src="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/4820a5757fd79a44.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/4820a5757fd79a44_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/4820a5757fd79a44_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/4820a5757fd79a44_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/4820a5757fd79a44_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/4820a5757fd79a44_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/4820a5757fd79a44_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/4820a5757fd79a44_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/4820a5757fd79a44_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/4820a5757fd79a44_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/4820a5757fd79a44_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/4820a5757fd79a44_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p class="image-container"><img alt="4820a5757fd79a44.png" style="width: 624.00px" src="/static/codelabs/advanced-android-kotlin-training-testing-basics/img/4820a5757fd79a44.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/4820a5757fd79a44_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/4820a5757fd79a44_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/4820a5757fd79a44_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/4820a5757fd79a44_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/4820a5757fd79a44_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/4820a5757fd79a44_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/4820a5757fd79a44_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/4820a5757fd79a44_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/4820a5757fd79a44_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/4820a5757fd79a44_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/4820a5757fd79a44_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
 <h2 is-upgraded id="step-6.-fix-robolectric-warnings" data-text="Step 6. Fix Robolectric Warnings" tabindex="-1">Step 6. Fix Robolectric Warnings</h2>
 <p>When you run the code, notice that Robolectric is used.</p>
-<p class="image-container"><img alt="b10f151c068efc90.png" style="width: 624.00px" src="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b10f151c068efc90.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b10f151c068efc90_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b10f151c068efc90_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b10f151c068efc90_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b10f151c068efc90_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b10f151c068efc90_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b10f151c068efc90_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b10f151c068efc90_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b10f151c068efc90_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b10f151c068efc90_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b10f151c068efc90_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b10f151c068efc90_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p class="image-container"><img alt="b10f151c068efc90.png" style="width: 624.00px" src="/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b10f151c068efc90.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b10f151c068efc90_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b10f151c068efc90_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b10f151c068efc90_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b10f151c068efc90_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b10f151c068efc90_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b10f151c068efc90_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b10f151c068efc90_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b10f151c068efc90_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b10f151c068efc90_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b10f151c068efc90_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/b10f151c068efc90_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
 <p>Because of AndroidX Test and the AndroidJunit4 test runner, this is done without you directly writing a single line of Robolectric code!</p>
 <p><strong>You might notice two warnings.</strong></p>
 <ul>
@@ -1521,7 +1521,7 @@ $ git checkout starter_code
 <ol type="1">
 <li>Make a new Kotlin file called <code translate="no" dir="ltr">LiveDataTestUtil.kt</code> in your <code translate="no" dir="ltr">test</code> source set.</li>
 </ol>
-<p class="image-container"><img alt="55518dc429736238.png" style="width: 624.00px" src="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/55518dc429736238.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/55518dc429736238_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/55518dc429736238_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/55518dc429736238_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/55518dc429736238_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/55518dc429736238_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/55518dc429736238_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/55518dc429736238_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/55518dc429736238_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/55518dc429736238_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/55518dc429736238_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/55518dc429736238_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p class="image-container"><img alt="55518dc429736238.png" style="width: 624.00px" src="/static/codelabs/advanced-android-kotlin-training-testing-basics/img/55518dc429736238.png" srcset="https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/55518dc429736238_36.png 36w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/55518dc429736238_48.png 48w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/55518dc429736238_72.png 72w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/55518dc429736238_96.png 96w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/55518dc429736238_480.png 480w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/55518dc429736238_720.png 720w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/55518dc429736238_856.png 856w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/55518dc429736238_960.png 960w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/55518dc429736238_1440.png 1440w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/55518dc429736238_1920.png 1920w,https://developer.android.com/static/codelabs/advanced-android-kotlin-training-testing-basics/img/55518dc429736238_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
 <ol type="1" start="2">
 <li>Copy and paste the code below.</li>
 </ol>
@@ -1751,7 +1751,7 @@ $ git checkout starter_code
 <span class="devsite-syntax-w">    </span>
 <span class="devsite-syntax-p">}</span>
 </code></pre></devsite-code>
-<aside class="warning"><p><strong>Tip:</strong> In the next lessons, you&#39;ll learn a lot more about testing ViewModels. Right now, you can&#39;t test any methods in the view model that use  <a href="../topic/libraries/architecture/coroutines.html#viewmodelscope" target="_blank"><code translate="no" dir="ltr">viewModelScope</code></a>, you&#39;ll see an error that says:</p>
+<aside class="warning"><p><strong>Tip:</strong> In the next lessons, you&#39;ll learn a lot more about testing ViewModels. Right now, you can&#39;t test any methods in the view model that use  <a href="https://developer.android.com/topic/libraries/architecture/coroutines#viewmodelscope" target="_blank"><code translate="no" dir="ltr">viewModelScope</code></a>, you&#39;ll see an error that says:</p>
 <p><code translate="no" dir="ltr">Exception in thread "main" java.lang.IllegalStateException: Module with the Main dispatcher had failed to initialize.</code></p>
 <p>Similarly testing methods that use <code translate="no" dir="ltr">DefaultTaskRepository</code> is tricky, because this calls code in the networking code and database code. You will learn all of this in the following codelabs.</p>
 </aside>
@@ -1810,14 +1810,14 @@ $ git checkout end_codelab_1
 </ul>
 <p>Android developer documentation:</p>
 <ul>
-<li><a href="../jetpack/docs/guide.html" target="_blank">Guide to app architecture</a></li>
+<li><a href="https://developer.android.com/jetpack/docs/guide" target="_blank">Guide to app architecture</a></li>
 <li><a href="https://junit.org/junit4/" target="_blank">JUnit4</a></li>
 <li><a href="http://hamcrest.org/" target="_blank">Hamcrest</a></li>
 <li><a href="http://robolectric.org/" target="_blank">Robolectric Testing library</a></li>
 <li><a href="https://developer.android.com/training/testing/set-up-project" target="_blank">AndroidX Test Library</a></li>
 <li><a href="https://developer.android.com/reference/android/arch/core/executor/testing/package-summary" target="_blank">AndroidX Architecture Components Core Test Library</a></li>
-<li><a href="../studio/build.html#sourcesets" target="_blank">source sets</a></li>
-<li><a href="../studio/test/command-line.html" target="_blank">Test from the command line</a></li>
+<li><a href="https://developer.android.com/studio/build#sourcesets" target="_blank">source sets</a></li>
+<li><a href="https://developer.android.com/studio/test/command-line" target="_blank">Test from the command line</a></li>
 </ul>
 <p>Videos:</p>
 <ul>
@@ -1890,7 +1890,7 @@ $ git checkout end_codelab_1
   <ul class="devsite-footer-promos-list">
     
     <li class="devsite-footer-promo">
-      <a href="https://x.com/AndroidDev"
+      <a href="//x.com/AndroidDev"
          class="devsite-footer-promo-title gc-analytics-event"
          data-category="Site-Wide Custom Events"
        
@@ -1902,11 +1902,11 @@ $ git checkout end_codelab_1
         <picture>
           
           <source class="devsite-dark-theme"
-                  srcset="../_static/android/images/logo-x_dt.svg"
+                  srcset="https://developer.android.com/_static/android/images/logo-x_dt.svg"
                   media="(prefers-color-scheme: dark)">
           
           <img class="devsite-footer-promo-icon"
-                src="../_static/android/images/logo-x.svg"
+                src="/_static/android/images/logo-x.svg"
                 loading="lazy"
                 alt="X">
         </picture>
@@ -1919,7 +1919,7 @@ $ git checkout end_codelab_1
     </li>
     
     <li class="devsite-footer-promo">
-      <a href="https://www.youtube.com/user/androiddevelopers"
+      <a href="//www.youtube.com/user/androiddevelopers"
          class="devsite-footer-promo-title gc-analytics-event"
          data-category="Site-Wide Custom Events"
        
@@ -1931,11 +1931,11 @@ $ git checkout end_codelab_1
         <picture>
           
           <source class="devsite-dark-theme"
-                  srcset="../_static/android/images/logo-youtube_dt.svg"
+                  srcset="https://developer.android.com/_static/android/images/logo-youtube_dt.svg"
                   media="(prefers-color-scheme: dark)">
           
           <img class="devsite-footer-promo-icon"
-                src="https://www.gstatic.com/images/icons/material/product/2x/youtube_48dp.png"
+                src="//www.gstatic.com/images/icons/material/product/2x/youtube_48dp.png"
                 loading="lazy"
                 alt="YouTube">
         </picture>
@@ -1948,7 +1948,7 @@ $ git checkout end_codelab_1
     </li>
     
     <li class="devsite-footer-promo">
-      <a href="https://www.linkedin.com/showcase/androiddev"
+      <a href="//www.linkedin.com/showcase/androiddev"
          class="devsite-footer-promo-title gc-analytics-event"
          data-category="Site-Wide Custom Events"
        
@@ -1960,11 +1960,11 @@ $ git checkout end_codelab_1
         <picture>
           
           <source class="devsite-dark-theme"
-                  srcset="../_static/android/images/logo-linkedin_dt.svg"
+                  srcset="https://developer.android.com/_static/android/images/logo-linkedin_dt.svg"
                   media="(prefers-color-scheme: dark)">
           
           <img class="devsite-footer-promo-icon"
-                src="../_static/android/images/logo-linkedin.svg"
+                src="/_static/android/images/logo-linkedin.svg"
                 loading="lazy"
                 alt="LinkedIn">
         </picture>
@@ -1994,7 +1994,7 @@ $ git checkout end_codelab_1
         
         <li class="devsite-footer-linkbox-item">
           
-          <a href="https://www.android.com/"
+          <a href="//www.android.com"
              class="devsite-footer-linkbox-link gc-analytics-event"
              data-category="Site-Wide Custom Events"
             
@@ -2011,7 +2011,7 @@ $ git checkout end_codelab_1
         
         <li class="devsite-footer-linkbox-item">
           
-          <a href="https://www.android.com/enterprise/"
+          <a href="//www.android.com/enterprise/"
              class="devsite-footer-linkbox-link gc-analytics-event"
              data-category="Site-Wide Custom Events"
             
@@ -2028,7 +2028,7 @@ $ git checkout end_codelab_1
         
         <li class="devsite-footer-linkbox-item">
           
-          <a href="https://www.android.com/security-center/"
+          <a href="//www.android.com/security-center/"
              class="devsite-footer-linkbox-link gc-analytics-event"
              data-category="Site-Wide Custom Events"
             
@@ -2045,7 +2045,7 @@ $ git checkout end_codelab_1
         
         <li class="devsite-footer-linkbox-item">
           
-          <a href="https://source.android.com/"
+          <a href="//source.android.com"
              class="devsite-footer-linkbox-link gc-analytics-event"
              data-category="Site-Wide Custom Events"
             
@@ -2062,7 +2062,7 @@ $ git checkout end_codelab_1
         
         <li class="devsite-footer-linkbox-item">
           
-          <a href="../news%3Fhl=th.html"
+          <a href="/news"
              class="devsite-footer-linkbox-link gc-analytics-event"
              data-category="Site-Wide Custom Events"
             
@@ -2079,7 +2079,7 @@ $ git checkout end_codelab_1
         
         <li class="devsite-footer-linkbox-item">
           
-          <a href="https://android-developers.googleblog.com/"
+          <a href="//android-developers.googleblog.com/"
              class="devsite-footer-linkbox-link gc-analytics-event"
              data-category="Site-Wide Custom Events"
             
@@ -2096,7 +2096,7 @@ $ git checkout end_codelab_1
         
         <li class="devsite-footer-linkbox-item">
           
-          <a href="../podcasts.html"
+          <a href="/podcasts"
              class="devsite-footer-linkbox-link gc-analytics-event"
              data-category="Site-Wide Custom Events"
             
@@ -2123,7 +2123,7 @@ $ git checkout end_codelab_1
         
         <li class="devsite-footer-linkbox-item">
           
-          <a href="../games.html"
+          <a href="/games"
              class="devsite-footer-linkbox-link gc-analytics-event"
              data-category="Site-Wide Custom Events"
             
@@ -2140,7 +2140,7 @@ $ git checkout end_codelab_1
         
         <li class="devsite-footer-linkbox-item">
           
-          <a href="../ml.html"
+          <a href="/ml"
              class="devsite-footer-linkbox-link gc-analytics-event"
              data-category="Site-Wide Custom Events"
             
@@ -2157,7 +2157,7 @@ $ git checkout end_codelab_1
         
         <li class="devsite-footer-linkbox-item">
           
-          <a href="../health-and-fitness.html"
+          <a href="/health-and-fitness"
              class="devsite-footer-linkbox-link gc-analytics-event"
              data-category="Site-Wide Custom Events"
             
@@ -2174,7 +2174,7 @@ $ git checkout end_codelab_1
         
         <li class="devsite-footer-linkbox-item">
           
-          <a href="../media.html"
+          <a href="/media"
              class="devsite-footer-linkbox-link gc-analytics-event"
              data-category="Site-Wide Custom Events"
             
@@ -2191,7 +2191,7 @@ $ git checkout end_codelab_1
         
         <li class="devsite-footer-linkbox-item">
           
-          <a href="../privacy.html"
+          <a href="/privacy"
              class="devsite-footer-linkbox-link gc-analytics-event"
              data-category="Site-Wide Custom Events"
             
@@ -2208,7 +2208,7 @@ $ git checkout end_codelab_1
         
         <li class="devsite-footer-linkbox-item">
           
-          <a href="../training/connectivity/5g.html"
+          <a href="/training/connectivity/5g"
              class="devsite-footer-linkbox-link gc-analytics-event"
              data-category="Site-Wide Custom Events"
             
@@ -2235,7 +2235,7 @@ $ git checkout end_codelab_1
         
         <li class="devsite-footer-linkbox-item">
           
-          <a href="../large-screens.html"
+          <a href="/large-screens"
              class="devsite-footer-linkbox-link gc-analytics-event"
              data-category="Site-Wide Custom Events"
             
@@ -2252,7 +2252,7 @@ $ git checkout end_codelab_1
         
         <li class="devsite-footer-linkbox-item">
           
-          <a href="../wear.html"
+          <a href="/wear"
              class="devsite-footer-linkbox-link gc-analytics-event"
              data-category="Site-Wide Custom Events"
             
@@ -2269,7 +2269,7 @@ $ git checkout end_codelab_1
         
         <li class="devsite-footer-linkbox-item">
           
-          <a href="../chrome-os%3Fhl=th.html"
+          <a href="/chrome-os"
              class="devsite-footer-linkbox-link gc-analytics-event"
              data-category="Site-Wide Custom Events"
             
@@ -2286,7 +2286,7 @@ $ git checkout end_codelab_1
         
         <li class="devsite-footer-linkbox-item">
           
-          <a href="../cars.html"
+          <a href="/cars"
              class="devsite-footer-linkbox-link gc-analytics-event"
              data-category="Site-Wide Custom Events"
             
@@ -2303,7 +2303,7 @@ $ git checkout end_codelab_1
         
         <li class="devsite-footer-linkbox-item">
           
-          <a href="../tv.html"
+          <a href="/tv"
              class="devsite-footer-linkbox-link gc-analytics-event"
              data-category="Site-Wide Custom Events"
             
@@ -2330,7 +2330,7 @@ $ git checkout end_codelab_1
         
         <li class="devsite-footer-linkbox-item">
           
-          <a href="../about/versions/15.html"
+          <a href="/about/versions/15"
              class="devsite-footer-linkbox-link gc-analytics-event"
              data-category="Site-Wide Custom Events"
             
@@ -2347,7 +2347,7 @@ $ git checkout end_codelab_1
         
         <li class="devsite-footer-linkbox-item">
           
-          <a href="../about/versions/14.html"
+          <a href="/about/versions/14"
              class="devsite-footer-linkbox-link gc-analytics-event"
              data-category="Site-Wide Custom Events"
             
@@ -2364,7 +2364,7 @@ $ git checkout end_codelab_1
         
         <li class="devsite-footer-linkbox-item">
           
-          <a href="../about/versions/13.html"
+          <a href="/about/versions/13"
              class="devsite-footer-linkbox-link gc-analytics-event"
              data-category="Site-Wide Custom Events"
             
@@ -2381,7 +2381,7 @@ $ git checkout end_codelab_1
         
         <li class="devsite-footer-linkbox-item">
           
-          <a href="../about/versions/12.html"
+          <a href="/about/versions/12"
              class="devsite-footer-linkbox-link gc-analytics-event"
              data-category="Site-Wide Custom Events"
             
@@ -2398,7 +2398,7 @@ $ git checkout end_codelab_1
         
         <li class="devsite-footer-linkbox-item">
           
-          <a href="../about/versions/11.html"
+          <a href="/about/versions/11"
              class="devsite-footer-linkbox-link gc-analytics-event"
              data-category="Site-Wide Custom Events"
             
@@ -2415,7 +2415,7 @@ $ git checkout end_codelab_1
         
         <li class="devsite-footer-linkbox-item">
           
-          <a href="../about/versions/10.html"
+          <a href="/about/versions/10"
              class="devsite-footer-linkbox-link gc-analytics-event"
              data-category="Site-Wide Custom Events"
             
@@ -2432,7 +2432,7 @@ $ git checkout end_codelab_1
         
         <li class="devsite-footer-linkbox-item">
           
-          <a href="../about/versions/pie.html"
+          <a href="/about/versions/pie"
              class="devsite-footer-linkbox-link gc-analytics-event"
              data-category="Site-Wide Custom Events"
             
@@ -2459,7 +2459,7 @@ $ git checkout end_codelab_1
         
         <li class="devsite-footer-linkbox-item">
           
-          <a href="../studio/intro.html"
+          <a href="/studio/intro"
              class="devsite-footer-linkbox-link gc-analytics-event"
              data-category="Site-Wide Custom Events"
             
@@ -2476,7 +2476,7 @@ $ git checkout end_codelab_1
         
         <li class="devsite-footer-linkbox-item">
           
-          <a href="../guide.html"
+          <a href="/guide"
              class="devsite-footer-linkbox-link gc-analytics-event"
              data-category="Site-Wide Custom Events"
             
@@ -2493,7 +2493,7 @@ $ git checkout end_codelab_1
         
         <li class="devsite-footer-linkbox-item">
           
-          <a href="../reference.html"
+          <a href="/reference"
              class="devsite-footer-linkbox-link gc-analytics-event"
              data-category="Site-Wide Custom Events"
             
@@ -2510,7 +2510,7 @@ $ git checkout end_codelab_1
         
         <li class="devsite-footer-linkbox-item">
           
-          <a href="../studio.html"
+          <a href="/studio"
              class="devsite-footer-linkbox-link gc-analytics-event"
              data-category="Site-Wide Custom Events"
             
@@ -2527,7 +2527,7 @@ $ git checkout end_codelab_1
         
         <li class="devsite-footer-linkbox-item">
           
-          <a href="../ndk.html"
+          <a href="/ndk"
              class="devsite-footer-linkbox-link gc-analytics-event"
              data-category="Site-Wide Custom Events"
             
@@ -2554,7 +2554,7 @@ $ git checkout end_codelab_1
         
         <li class="devsite-footer-linkbox-item">
           
-          <a href="https://issuetracker.google.com/issues/new?component=190923&amp;template=841312"
+          <a href="//issuetracker.google.com/issues/new?component=190923&amp;template=841312"
              class="devsite-footer-linkbox-link gc-analytics-event"
              data-category="Site-Wide Custom Events"
             
@@ -2571,7 +2571,7 @@ $ git checkout end_codelab_1
         
         <li class="devsite-footer-linkbox-item">
           
-          <a href="https://issuetracker.google.com/issues/new?component=192697"
+          <a href="//issuetracker.google.com/issues/new?component=192697"
              class="devsite-footer-linkbox-link gc-analytics-event"
              data-category="Site-Wide Custom Events"
             
@@ -2588,7 +2588,7 @@ $ git checkout end_codelab_1
         
         <li class="devsite-footer-linkbox-item">
           
-          <a href="https://support.google.com/googleplay/android-developer"
+          <a href="//support.google.com/googleplay/android-developer"
              class="devsite-footer-linkbox-link gc-analytics-event"
              data-category="Site-Wide Custom Events"
             
@@ -2658,7 +2658,7 @@ $ git checkout end_codelab_1
     <ul class="devsite-footer-sites-list">
       
       <li class="devsite-footer-sites-item">
-        <a href="../index.html"
+        <a href="//developer.android.com"
            class="devsite-footer-sites-link
                   gc-analytics-event"
            data-category="Site-Wide Custom Events"
@@ -2671,7 +2671,7 @@ $ git checkout end_codelab_1
       </li>
       
       <li class="devsite-footer-sites-item">
-        <a href="https://developer.chrome.com/home"
+        <a href="//developer.chrome.com/home"
            class="devsite-footer-sites-link
                   gc-analytics-event"
            data-category="Site-Wide Custom Events"
@@ -2684,7 +2684,7 @@ $ git checkout end_codelab_1
       </li>
       
       <li class="devsite-footer-sites-item">
-        <a href="https://firebase.google.com/"
+        <a href="//firebase.google.com"
            class="devsite-footer-sites-link
                   gc-analytics-event"
            data-category="Site-Wide Custom Events"
@@ -2697,7 +2697,7 @@ $ git checkout end_codelab_1
       </li>
       
       <li class="devsite-footer-sites-item">
-        <a href="https://cloud.google.com/"
+        <a href="//cloud.google.com"
            class="devsite-footer-sites-link
                   gc-analytics-event"
            data-category="Site-Wide Custom Events"
@@ -2710,7 +2710,7 @@ $ git checkout end_codelab_1
       </li>
       
       <li class="devsite-footer-sites-item">
-        <a href="https://developers.google.com/products/"
+        <a href="//developers.google.com/products/"
            class="devsite-footer-sites-link
                   gc-analytics-event"
            data-category="Site-Wide Custom Events"
@@ -2736,7 +2736,7 @@ $ git checkout end_codelab_1
         
         
         <a class="devsite-footer-utility-link gc-analytics-event"
-           href="https://policies.google.com/privacy"
+           href="//policies.google.com/privacy"
            data-category="Site-Wide Custom Events"
            data-label="Footer Privacy link"
          >
@@ -2750,7 +2750,7 @@ $ git checkout end_codelab_1
         
         
         <a class="devsite-footer-utility-link gc-analytics-event"
-           href="../license%3Fhl=vi.html"
+           href="/license"
            data-category="Site-Wide Custom Events"
            data-label="Footer License link"
          >
@@ -2764,7 +2764,7 @@ $ git checkout end_codelab_1
         
         
         <a class="devsite-footer-utility-link gc-analytics-event"
-           href="../distribute/marketing-tools/brand-guidelines.html"
+           href="/distribute/marketing-tools/brand-guidelines"
            data-category="Site-Wide Custom Events"
            data-label="Footer Brand guidelines link"
          >
@@ -2778,7 +2778,7 @@ $ git checkout end_codelab_1
         
         
         <a class="devsite-footer-utility-link gc-analytics-event"
-           href="advanced-android-kotlin-training-testing-basics.html#"
+           href="#"
            data-category="Site-Wide Custom Events"
            data-label="Footer Manage cookies link"
          
@@ -2796,7 +2796,7 @@ $ git checkout end_codelab_1
         
         
         <a class="devsite-footer-utility-link gc-analytics-event"
-           href="../updates.html"
+           href="/updates"
            data-category="Site-Wide Custom Events"
            data-label="Footer Subscribe link"
          >
@@ -2919,12 +2919,12 @@ $ git checkout end_codelab_1
         .fully-clickable"
     watch=".android-editorial-and-updates-cards, .android-samples, devsite-content"></android-fully-clickable>
     
-<script nonce="WAO82p+O3W31sm5jEmvEIPfN4zQUYJ">
+<script nonce="jhm2OWcAqNF5B/UnKg9mkMgoFb8oCF">
   
   (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
     t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
     E.parentNode.insertBefore(t,E);})(window, document, 'script',
-    'https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/js/app_loader.js', '[3,"en",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android","https://android-dot-devsite-v2-prod.appspot.com",1,null,["/_pwa/android/manifest.json","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/favicon.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png","https://fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,600italic,700,700italic|Roboto+Mono:400,500,700&display=swap"],1,null,[1,6,8,12,14,17,21,25,50,52,63,70,75,76,80,87,91,92,93,97,98,100,101,102,103,104,105,107,108,109,110,112,113,117,118,120,122,124,125,126,127,129,130,131,132,133,134,135,136,138,140,141,147,148,149,151,152,156,157,158,159,161,163,164,168,169,170,179,180,182,183,186,191,193,196],"AIzaSyAP-jjEJBzmIyKR4F-3XITp8yM9T1gEEI8","AIzaSyB6xiKGDR5O3Ak2okS4rLkauxGUG7XP0hg","developer.android.com","AIzaSyAQk0fBONSGUqCNznf6Krs82Ap1-NV6J4o","AIzaSyCCxcqdrZ_7QMeLCRY20bh_SXdAYqy70KY",null,null,null,["DevPro__remove_eu_tax_intake_form","MiscFeatureFlags__enable_appearance_cookies","Concierge__enable_remove_info_panel_tags","DevPro__enable_google_one_card","Experiments__reqs_query_experiments","Profiles__enable_playlist_community_acl","Analytics__enable_clearcut_logging","Profiles__enable_developer_profile_benefits_ui_redesign","Profiles__enable_completequiz_endpoint","DevPro__enable_enterprise","Profiles__enable_stripe_subscription_management","Search__enable_ai_eligibility_checks","MiscFeatureFlags__enable_project_body_class","TpcFeatures__proxy_prod_host","Cloud__cache_serialized_dynamic_content","Significatio__enable_by_tenant","MiscFeatureFlags__gdp_dashboard_reskin_enabled","DevPro__enable_free_benefits","DevPro__enable_code_assist","TpcFeatures__enable_unmirrored_page_left_nav","Profiles__enable_purchase_prompts","Profiles__enable_dashboard_curated_recommendations","MiscFeatureFlags__emergency_css","Concierge__enable_pushui","DevPro__enable_nvidia_credits_card","Profiles__enable_user_type","DevPro__enable_embed_profile_creation","CloudShell__cloud_shell_button","Cloud__enable_cloud_shell","Cloud__enable_cloudx_experiment_ids","MiscFeatureFlags__developers_footer_image","Profiles__require_profile_eligibility_for_signin","Search__enable_dynamic_content_confidential_banner","Profiles__enable_developer_profiles_callout","Cloud__enable_cloud_shell_fte_user_flow","Cloud__enable_llm_concierge_chat","DevPro__enable_developer_subscriptions","Profiles__enable_recognition_badges","Profiles__enable_complete_playlist_endpoint","DevPro__enable_google_payments_buyflow","Profiles__enable_release_notes_notifications","Search__enable_page_map","Profiles__enable_completecodelab_endpoint","Cloud__enable_legacy_calculator_redirect","Concierge__enable_actions_menu","Cloud__fast_free_trial","Profiles__enable_public_developer_profiles","DevPro__enable_cloud_innovators_plus","EngEduTelemetry__enable_engedu_telemetry","MiscFeatureFlags__developers_footer_dark_image","Cloud__enable_free_trial_server_call","MiscFeatureFlags__enable_explicit_template_dependencies","Profiles__enable_join_program_group_endpoint","Profiles__enable_profile_collections","DevPro__enable_vertex_credit_card","Search__enable_ai_search_summaries_for_all","Search__enable_suggestions_from_borg","Profiles__enable_page_saving","MiscFeatureFlags__enable_variable_operator","MiscFeatureFlags__enable_variable_operator_index_yaml","MiscFeatureFlags__enable_dark_theme","Profiles__enable_callout_notifications","Cloud__enable_cloud_dlp_service","Profiles__enable_awarding_url","MiscFeatureFlags__enable_project_variables","MiscFeatureFlags__enable_firebase_utm","BookNav__enable_tenant_cache_key","CloudShell__cloud_code_overflow_menu","DevPro__enable_firebase_workspaces_card","DevPro__enable_devpro_offers","MiscFeatureFlags__enable_view_transitions","MiscFeatureFlags__enable_framebox_badge_methods"],null,null,"AIzaSyBLEMok-5suZ67qRPzx0qUtbnLmyT_kCVE","https://developerscontentserving-pa.googleapis.com","AIzaSyCM4QpTRSqP5qI4Dvjt4OAScIN8sOUlO-k","https://developerscontentsearch-pa.googleapis.com",2,4,null,"https://developerprofiles-pa.googleapis.com",[3,"android","Android Developers","developer.android.com",null,"android-dot-devsite-v2-prod.appspot.com",null,null,[null,1,null,null,null,null,null,null,null,null,null,[1],null,null,null,null,null,null,[1],[1,null,null,[1,20],"/recommendations"],null,null,null,[1,null,1],[1,1,null,1,1]],null,[18,null,null,null,null,null,"/images/lockup.png","/images/touchicon-180.png",null,null,null,null,null,null,null,null,null,null,null,null,null,2,null,null,null,"/images/lockup-dark-theme.png",[]],[],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[6,1,14,15,20,22,23,28,29,37,43],null,[[null,null,1],[1,1]],[[null,null,null,null,null,null,null,[["G-QFRN08RN6E"],null,null,[["G-QFRN08RN6E",1]]],null,null,null,null,1],null,[[2,2],[1,1]]],null,4,null,null,null,null,null,null,null,null,null,null,null,null,null,"android.devsite.google"],null,"pk_live_5170syrHvgGVmSx9sBrnWtA5luvk9BwnVcvIi7HizpwauFG96WedXsuXh790rtij9AmGllqPtMLfhe2RSwD6Pn38V00uBCydV4m",1,null,"https://developerscontentinsights-pa.googleapis.com","AIzaSyCg-ZUslalsEbXMfIo9ZP8qufZgo3LSBDU","AIzaSyDxT0vkxnY_KeINtA4LSePJO-4MAZPMRsE","https://developers.googleapis.com",null,null,"AIzaSyBQom12tzI-rybN7Sf-KfeL4nwm-Rf7PmI\n",null,"https://developerslogging.googleapis.com"]')
+    'https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/js/app_loader.js', '[3,"en",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android","https://android-dot-devsite-v2-prod.appspot.com",1,null,["/_pwa/android/manifest.json","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/favicon.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png","https://fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,600italic,700,700italic|Roboto+Mono:400,500,700&display=swap"],1,null,[1,6,8,12,14,17,21,25,50,52,63,70,75,76,80,87,91,92,93,97,98,100,101,102,103,104,105,107,108,109,110,112,113,117,118,120,122,124,125,126,127,129,130,131,132,133,134,135,136,138,140,141,147,148,149,151,152,156,157,158,159,161,163,164,168,169,170,179,180,182,183,186,191,193,196],"AIzaSyAP-jjEJBzmIyKR4F-3XITp8yM9T1gEEI8","AIzaSyB6xiKGDR5O3Ak2okS4rLkauxGUG7XP0hg","developer.android.com","AIzaSyAQk0fBONSGUqCNznf6Krs82Ap1-NV6J4o","AIzaSyCCxcqdrZ_7QMeLCRY20bh_SXdAYqy70KY",null,null,null,["DevPro__enable_cloud_innovators_plus","DevPro__enable_vertex_credit_card","Concierge__enable_actions_menu","Cloud__enable_llm_concierge_chat","Profiles__enable_developer_profile_benefits_ui_redesign","Search__enable_suggestions_from_borg","Profiles__enable_playlist_community_acl","Cloud__enable_cloud_dlp_service","Profiles__enable_awarding_url","Significatio__enable_by_tenant","EngEduTelemetry__enable_engedu_telemetry","MiscFeatureFlags__enable_variable_operator","Profiles__enable_user_type","Profiles__enable_join_program_group_endpoint","MiscFeatureFlags__enable_project_variables","BookNav__enable_tenant_cache_key","DevPro__enable_developer_subscriptions","MiscFeatureFlags__enable_variable_operator_index_yaml","Cloud__enable_legacy_calculator_redirect","Experiments__reqs_query_experiments","Cloud__enable_cloudx_experiment_ids","MiscFeatureFlags__enable_view_transitions","Profiles__enable_callout_notifications","MiscFeatureFlags__emergency_css","DevPro__enable_enterprise","Concierge__enable_remove_info_panel_tags","Profiles__enable_complete_playlist_endpoint","Search__enable_ai_eligibility_checks","CloudShell__cloud_shell_button","MiscFeatureFlags__developers_footer_dark_image","CloudShell__cloud_code_overflow_menu","Profiles__enable_page_saving","DevPro__enable_google_one_card","DevPro__enable_nvidia_credits_card","Cloud__fast_free_trial","Search__enable_ai_search_summaries_for_all","Profiles__enable_stripe_subscription_management","MiscFeatureFlags__enable_project_body_class","DevPro__enable_free_benefits","DevPro__enable_firebase_workspaces_card","Profiles__enable_purchase_prompts","Cloud__enable_free_trial_server_call","Concierge__enable_pushui","Profiles__enable_public_developer_profiles","TpcFeatures__proxy_prod_host","Cloud__enable_cloud_shell","MiscFeatureFlags__enable_explicit_template_dependencies","Search__enable_dynamic_content_confidential_banner","TpcFeatures__enable_unmirrored_page_left_nav","DevPro__enable_google_payments_buyflow","MiscFeatureFlags__enable_firebase_utm","Profiles__enable_completequiz_endpoint","Profiles__require_profile_eligibility_for_signin","Cloud__enable_cloud_shell_fte_user_flow","Profiles__enable_developer_profiles_callout","DevPro__enable_code_assist","MiscFeatureFlags__enable_framebox_badge_methods","Profiles__enable_dashboard_curated_recommendations","DevPro__remove_eu_tax_intake_form","Profiles__enable_completecodelab_endpoint","MiscFeatureFlags__enable_appearance_cookies","DevPro__enable_devpro_offers","Profiles__enable_profile_collections","MiscFeatureFlags__gdp_dashboard_reskin_enabled","Profiles__enable_recognition_badges","Analytics__enable_clearcut_logging","Profiles__enable_release_notes_notifications","MiscFeatureFlags__enable_dark_theme","MiscFeatureFlags__developers_footer_image","Search__enable_page_map","Cloud__cache_serialized_dynamic_content","DevPro__enable_embed_profile_creation"],null,null,"AIzaSyBLEMok-5suZ67qRPzx0qUtbnLmyT_kCVE","https://developerscontentserving-pa.googleapis.com","AIzaSyCM4QpTRSqP5qI4Dvjt4OAScIN8sOUlO-k","https://developerscontentsearch-pa.googleapis.com",2,4,null,"https://developerprofiles-pa.googleapis.com",[3,"android","Android Developers","developer.android.com",null,"android-dot-devsite-v2-prod.appspot.com",null,null,[null,1,null,null,null,null,null,null,null,null,null,[1],null,null,null,null,null,null,[1],[1,null,null,[1,20],"/recommendations"],null,null,null,[1,null,1],[1,1,null,1,1]],null,[18,null,null,null,null,null,"/images/lockup.png","/images/touchicon-180.png",null,null,null,null,null,null,null,null,null,null,null,null,null,2,null,null,null,"/images/lockup-dark-theme.png",[]],[],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[6,1,14,15,20,22,23,28,29,37,43],null,[[null,null,1],[1,1]],[[null,null,null,null,null,null,null,[["G-QFRN08RN6E"],null,null,[["G-QFRN08RN6E",1]]],null,null,null,null,1],null,[[2,2],[1,1]]],null,4,null,null,null,null,null,null,null,null,null,null,null,null,null,"android.devsite.google"],null,"pk_live_5170syrHvgGVmSx9sBrnWtA5luvk9BwnVcvIi7HizpwauFG96WedXsuXh790rtij9AmGllqPtMLfhe2RSwD6Pn38V00uBCydV4m",1,null,"https://developerscontentinsights-pa.googleapis.com","AIzaSyCg-ZUslalsEbXMfIo9ZP8qufZgo3LSBDU","AIzaSyDxT0vkxnY_KeINtA4LSePJO-4MAZPMRsE","https://developers.googleapis.com",null,null,"AIzaSyBQom12tzI-rybN7Sf-KfeL4nwm-Rf7PmI\n",null,"https://developerslogging.googleapis.com"]')
   
 </script>
 

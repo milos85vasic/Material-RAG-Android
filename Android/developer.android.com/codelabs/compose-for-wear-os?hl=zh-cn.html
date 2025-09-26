@@ -1,0 +1,2239 @@
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html 
+      lang="zh-CN-x-mtfrom-en"
+      dir="ltr">
+  <head>
+    <meta name="google-signin-client-id" content="721724668570-nbkv1cfusk7kk4eni4pjvepaus73b13t.apps.googleusercontent.com">
+    <meta name="google-signin-scope"
+          content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award">
+    <meta property="og:site_name" content="Android Developers">
+    <meta property="og:type" content="website"><meta name="theme-color" content="#34a853"><meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <link rel="manifest" href="/_pwa/android/manifest.json"
+          crossorigin="use-credentials">
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="//apis.google.com" crossorigin>
+    <link rel="preconnect" href="//www.google-analytics.com" crossorigin><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,600italic,700,700italic|Roboto+Mono:400,500,700&display=swap">
+      <link rel="stylesheet"
+            href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block"><link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/css/app.css">
+      
+        <link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/css/dark-theme.css" disabled>
+      <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/favicon.svg">
+    <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/touchicon-180.png"><link rel="canonical" href="https://developer.android.com/codelabs/compose-for-wear-os?hl=zh-cn"><link rel="search" type="application/opensearchdescription+xml"
+            title="Android Developers" href="https://developer.android.com/s/opensearch.xml?hl=zh-cn">
+      <link rel="alternate" hreflang="en"
+          href="https://developer.android.com/codelabs/compose-for-wear-os" /><link rel="alternate" hreflang="x-default" href="https://developer.android.com/codelabs/compose-for-wear-os" /><link rel="alternate" hreflang="zh-Hans"
+          href="https://developer.android.com/codelabs/compose-for-wear-os?hl=zh-cn" /><link rel="alternate" hreflang="zh-Hant"
+          href="https://developer.android.com/codelabs/compose-for-wear-os?hl=zh-tw" /><link rel="alternate" hreflang="fr"
+          href="https://developer.android.com/codelabs/compose-for-wear-os?hl=fr" /><link rel="alternate" hreflang="id"
+          href="https://developer.android.com/codelabs/compose-for-wear-os?hl=id" /><link rel="alternate" hreflang="ja"
+          href="https://developer.android.com/codelabs/compose-for-wear-os?hl=ja" /><link rel="alternate" hreflang="ko"
+          href="https://developer.android.com/codelabs/compose-for-wear-os?hl=ko" /><link rel="alternate" hreflang="pt-BR"
+          href="https://developer.android.com/codelabs/compose-for-wear-os?hl=pt-br" /><link rel="alternate" hreflang="es-419"
+          href="https://developer.android.com/codelabs/compose-for-wear-os?hl=es-419" /><link rel="alternate" hreflang="vi"
+          href="https://developer.android.com/codelabs/compose-for-wear-os?hl=vi" /><title>Compose for Wear OS Codelab &nbsp;|&nbsp; Android Developers</title>
+
+<meta property="og:title" content="Compose for Wear OS Codelab &nbsp;|&nbsp; Android Developers"><meta name="description" content="在此 Codelab 中，您将了解如何使用新版 Compose for Wear OS 和 Material 3 Expressive 组件将所学 Compose 知识运用到穿戴式设备应用开发中。到最后，您将学会在适合腕戴设备的应用中创建简单和高级的可组合函数。">
+  <meta property="og:description" content="在此 Codelab 中，您将了解如何使用新版 Compose for Wear OS 和 Material 3 Expressive 组件将所学 Compose 知识运用到穿戴式设备应用开发中。到最后，您将学会在适合腕戴设备的应用中创建简单和高级的可组合函数。"><meta property="og:url" content="https://developer.android.com/codelabs/compose-for-wear-os?hl=zh-cn"><meta property="og:locale" content="zh_cn"><link rel="alternate machine-translated-from" hreflang="en"
+        href="https://developer.android.com/codelabs/compose-for-wear-os?hl=en">
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+
+    
+      <link rel="stylesheet" href="/extras.css"></head>
+  <body class=""
+        template="codelab"
+        theme="android-theme"
+        type="codelab"
+        
+        
+        appearance
+        
+        layout="docs"
+        
+        
+        
+        
+        display-toc
+        pending>
+  
+    <devsite-progress type="indeterminate" id="app-progress"></devsite-progress>
+  
+  
+    <a href="#main-content" class="skip-link button">
+      
+      跳至主要内容
+    </a>
+    <section class="devsite-wrapper">
+      <devsite-cookie-notification-bar></devsite-cookie-notification-bar><devsite-header role="banner">
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-header--inner" data-nosnippet>
+  <div class="devsite-top-logo-row-wrapper-wrapper">
+    <div class="devsite-top-logo-row-wrapper">
+      <div class="devsite-top-logo-row">
+        <button type="button" id="devsite-hamburger-menu"
+          class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+          data-category="Site-Wide Custom Events"
+          data-label="Navigation menu button"
+          visually-hidden
+          aria-label="打开菜单">
+        </button>
+        
+<div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="androidDevelopers" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-dark-theme.png"
+            media="(prefers-color-scheme: dark)"
+            class="devsite-dark-theme">
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png" class="devsite-site-logo" alt="Android Developers">
+  </picture>
+  
+</a>
+
+
+
+</div>
+        <div class="devsite-top-logo-row-middle">
+          <div class="devsite-header-upper-tabs">
+            
+           </div>
+          
+<devsite-search
+    enable-signin
+    enable-search
+    enable-suggestions
+      enable-query-completion
+    
+    enable-search-summaries
+    
+    tenant-name="Android Developers"
+    
+    
+    
+    
+    
+    >
+  <form class="devsite-search-form" action="https://developer.android.com/s/results?hl=zh-cn" method="GET">
+    <div class="devsite-search-container">
+      <button type="button"
+              search-open
+              class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+              
+              aria-label="打开搜索框"></button>
+      <div class="devsite-searchbox">
+        <input
+          aria-activedescendant=""
+          aria-autocomplete="list"
+          
+          aria-label="搜索"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          autocomplete="off"
+          class="devsite-search-field devsite-search-query"
+          name="q"
+          
+          placeholder="搜索"
+          role="combobox"
+          type="text"
+          value=""
+          >
+          <div class="devsite-search-image material-icons" aria-hidden="true">
+            
+              <svg class="devsite-search-ai-image" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_6641_386)">
+                    <path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14167 15.375 4.875 14.125C3.625 12.8583 3 11.3167 3 9.5C3 7.68333 3.625 6.15 4.875 4.9C6.14167 3.63333 7.68333 3 9.5 3C10.0167 3 10.5167 3.05833 11 3.175C11.4833 3.275 11.9417 3.43333 12.375 3.65L10.825 5.2C10.6083 5.13333 10.3917 5.08333 10.175 5.05C9.95833 5.01667 9.73333 5 9.5 5C8.25 5 7.18333 5.44167 6.3 6.325C5.43333 7.19167 5 8.25 5 9.5C5 10.75 5.43333 11.8167 6.3 12.7C7.18333 13.5667 8.25 14 9.5 14C10.6667 14 11.6667 13.625 12.5 12.875C13.35 12.1083 13.8417 11.15 13.975 10H15.975C15.925 10.6333 15.7833 11.2333 15.55 11.8C15.3333 12.3667 15.05 12.8667 14.7 13.3L21 19.6L19.6 21ZM17.5 12C17.5 10.4667 16.9667 9.16667 15.9 8.1C14.8333 7.03333 13.5333 6.5 12 6.5C13.5333 6.5 14.8333 5.96667 15.9 4.9C16.9667 3.83333 17.5 2.53333 17.5 0.999999C17.5 2.53333 18.0333 3.83333 19.1 4.9C20.1667 5.96667 21.4667 6.5 23 6.5C21.4667 6.5 20.1667 7.03333 19.1 8.1C18.0333 9.16667 17.5 10.4667 17.5 12Z" fill="#5F6368"/>
+                  </g>
+                <defs>
+                <clipPath id="clip0_6641_386">
+                <rect width="24" height="24" fill="white"/>
+                </clipPath>
+                </defs>
+              </svg>
+            
+          </div>
+          <div class="devsite-search-shortcut-icon-container" aria-hidden="true">
+            <kbd class="devsite-search-shortcut-icon">/</kbd>
+          </div>
+      </div>
+    </div>
+  </form>
+  <button type="button"
+          search-close
+          class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+          
+          aria-label="关闭搜索框"></button>
+</devsite-search>
+
+        </div>
+
+        
+
+          
+
+          
+
+          <devsite-appearance-selector></devsite-appearance-selector>
+
+          
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+
+          
+            <a class="devsite-header-link devsite-top-button button gc-analytics-event "
+    href="https://developer.android.com/studio?hl=zh-cn"
+    data-category="Site-Wide Custom Events"
+    data-label="Site header link: Android Studio"
+    >
+  Android Studio
+</a>
+          
+
+        
+
+        
+          <devsite-user 
+                        
+                        
+                          enable-profiles
+                        
+                        
+                        id="devsite-user">
+            
+              
+              <span class="button devsite-top-button" aria-hidden="true" visually-hidden>登录</span>
+            
+          </devsite-user>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
+  
+</devsite-header>
+      <devsite-book-nav scrollbars hidden>
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-book-nav-filter"
+     hidden>
+  <span class="filter-list-icon material-icons" aria-hidden="true"></span>
+  <input type="text"
+         placeholder="过滤条件"
+         
+         aria-label="输入文本以进行过滤"
+         role="searchbox">
+  
+  <span class="filter-clear-button hidden"
+        data-title="清除过滤条件"
+        aria-label="清除过滤条件"
+        role="button"
+        tabindex="0"></span>
+</div>
+
+<nav class="devsite-book-nav devsite-nav nocontent"
+     aria-label="侧边菜单">
+  <div class="devsite-mobile-header">
+    <button type="button"
+            id="devsite-close-nav"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Close navigation"
+            aria-label="关闭导航栏">
+    </button>
+    <div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="androidDevelopers" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-dark-theme.png"
+            media="(prefers-color-scheme: dark)"
+            class="devsite-dark-theme">
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png" class="devsite-site-logo" alt="Android Developers">
+  </picture>
+  
+</a>
+
+
+</div>
+  </div>
+
+  <div class="devsite-book-nav-wrapper">
+    <div class="devsite-mobile-nav-top">
+      
+        <ul class="devsite-nav-list">
+          
+          
+    
+    
+<li class="devsite-nav-item">
+
+  
+  <a href="/studio"
+    
+       class="devsite-nav-title gc-analytics-event "
+    
+
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Android Studio"
+     track-type="navMenu"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Android Studio
+   </span>
+    
+  
+  </a>
+  
+
+</li>
+
+  
+          
+        </ul>
+      
+    </div>
+    
+  </div>
+</nav>
+        
+      </devsite-book-nav>
+      <section id="gc-wrapper">
+        <main role="main" id="main-content" class="devsite-main-content"
+            
+              
+              has-sidebar
+            >
+          <div class="devsite-sidebar">
+            <div class="devsite-sidebar-content">
+                
+                <devsite-toc class="devsite-nav"
+                            role="navigation"
+                            aria-label="本页内容"
+                            depth="1"
+                            scrollbars
+                  ></devsite-toc>
+                <devsite-recommendations-sidebar class="nocontent devsite-nav">
+                </devsite-recommendations-sidebar>
+            </div>
+          </div>
+          <devsite-content>
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="devsite-article"><style>
+      body {
+        transition: opacity ease-in 0.2s;
+      }
+
+      body[unresolved] {
+        opacity: 0;
+        display: block;
+        overflow: hidden;
+        position: relative;
+      }
+      </style>
+  
+  
+  
+  
+  
+
+  <div class="devsite-article-meta nocontent" role="navigation">
+    
+    
+    <ul class="devsite-breadcrumb-list"
+  >
+  
+</ul>
+    
+  </div>
+  
+    <h1 class="devsite-page-title" tabindex="-1">
+      Compose for Wear OS Codelab<div class="devsite-actions" hidden data-nosnippet><devsite-feature-tooltip
+      ack-key="AckCollectionsBookmarkTooltipDismiss"
+      analytics-category="Site-Wide Custom Events"
+      analytics-action-show="Callout Profile displayed"
+      analytics-action-close="Callout Profile dismissed"
+      analytics-label="Create Collection Callout"
+      class="devsite-page-bookmark-tooltip nocontent"
+      dismiss-button="true"
+      id="devsite-collections-dropdown"
+      
+      dismiss-button-text="关闭"
+
+      
+      close-button-text="知道了">
+
+    
+    
+      <devsite-bookmark></devsite-bookmark>
+    
+
+    <span slot="popout-heading">
+      
+      使用集合让一切井井有条
+    </span>
+    <span slot="popout-contents">
+      
+      根据您的偏好保存内容并对其进行分类。
+    </span>
+  </devsite-feature-tooltip></div>
+  
+      
+    </h1>
+  
+
+  <devsite-toc class="devsite-nav"
+    depth="1"
+    devsite-toc-embedded
+    >
+  </devsite-toc>
+  
+    
+  <div class="devsite-article-body clearfix
+  ">
+
+  
+    
+    
+    
+    <google-codelab-analytics ga4id="G-JTFZSJVVVZ" gaid="UA-49880327-14"></google-codelab-analytics>
+    <google-codelab category="android,wearos" codelab-ga4id="" codelab-gaid="" doc-id="1R3GOnvwvjFEWF2iHub7_RMRg493jcgRgP8DoS9OffuY" environment="web" feedback-link="" id="compose-for-wear-os" layout="paginated" no-tooltip="" title="Compose for Wear OS Codelab">
+      
+        <google-codelab-step duration="5" step="0" label="简介">
+          
+            <google-codelab-about authors="Chiara Chiappini and Kseniia Shumelchyk" duration="57" last-updated="2025-05-19T09:34:48Z" codelab-title="Compose for Wear OS Codelab">
+            </google-codelab-about>
+          
+          <h2 class="step-title" data-text="               1. 简介           " id="0" tabindex="-1">
+              1. 简介
+          </h2>
+          <p class="image-container"><img alt="2c9dd335c9d65f10.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/compose-for-wear-os/img/2c9dd335c9d65f10.png?hl=zh-cn" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/2c9dd335c9d65f10_36.png?hl=zh-cn 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/2c9dd335c9d65f10_48.png?hl=zh-cn 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/2c9dd335c9d65f10_72.png?hl=zh-cn 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/2c9dd335c9d65f10_96.png?hl=zh-cn 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/2c9dd335c9d65f10_480.png?hl=zh-cn 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/2c9dd335c9d65f10_720.png?hl=zh-cn 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/2c9dd335c9d65f10_856.png?hl=zh-cn 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/2c9dd335c9d65f10_960.png?hl=zh-cn 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/2c9dd335c9d65f10_1440.png?hl=zh-cn 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/2c9dd335c9d65f10_1920.png?hl=zh-cn 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/2c9dd335c9d65f10_2880.png?hl=zh-cn 2880w" style="width: 642.00px" /></p>
+<p>借助 Compose for Wear OS，您可以将您学到的有关使用 Jetpack Compose 构建应用的知识应用于穿戴式设备。</p>
+<p>由于内置了对 Material Design 的支持，Compose for Wear OS <a href="https://developer.android.com/jetpack/compose/why-adopt?hl=zh-cn#less-code" target="_blank">可以简化并加快界面开发流程</a>，并可帮助您使用更少的代码创建精美的应用。</p>
+<p>对于本 Codelab，我们希望您具备一些 Compose 方面的知识，但当然您不必是这方面的专家。</p>
+<p>您将创建一些专用于 Wear 的可组合项（简单的和复杂的都有），最后，您可以开始编写适用于 Wear OS 的应用。立即开始吧！</p>
+<h2 data-text="学习内容" id="what-you-will-learn" is-upgraded="" tabindex="-1">学习内容</h2>
+<ul>
+<li>与您之前的 Compose 使用体验有何相似/不同之处</li>
+<li>简单的可组合项及其在 Wear OS 上的运作方式</li>
+<li>专用于 Wear OS 的可组合项</li>
+<li>Wear OS 的 <code dir="ltr" translate="no">LazyColumn</code> (<code dir="ltr" translate="no">TransformingLazyColumn</code>)</li>
+<li>Wear OS 的 <code dir="ltr" translate="no">Scaffold</code> 版本</li>
+</ul>
+<h2 data-text="构建内容" id="what-you-will-build" is-upgraded="" tabindex="-1">构建内容</h2>
+<p>您将构建一个简单的应用，该应用会显示一个可滚动列表，在其中列出已针对 Wear OS 优化的可组合项。</p>
+<p>由于您将使用 <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary?hl=zh-cn#AppScaffold(androidx.compose.ui.Modifier,kotlin.Function0,kotlin.Function1)" target="_blank">AppScaffold</a> 和 <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary?hl=zh-cn#ScreenScaffold(androidx.compose.ui.Modifier,androidx.wear.compose.foundation.ScrollInfoProvider,androidx.compose.foundation.layout.PaddingValues,kotlin.Function0,kotlin.Function1,kotlin.Function2)" target="_blank">ScreenScaffold</a>，因此您还会在顶部以弧形文字样式显示时间，并沿着设备侧边显示滚动指示器。</p>
+<p>以下是完成此 Codelab 后，您构建的应用的样子。</p>
+<p class="image-container"><img alt="3162140d003d8e31.gif" src="https://developer.android.com/static/codelabs/compose-for-wear-os/img/3162140d003d8e31.gif?hl=zh-cn" style="width: 396.00px" /></p>
+<h2 data-text="前提条件" id="prerequisites" is-upgraded="" tabindex="-1">前提条件</h2>
+<ul>
+<li>对 <a href="https://developer.android.com/?hl=zh-cn" target="_blank">Android 开发</a>有基本的了解</li>
+<li>对 <a href="https://developer.android.com/kotlin?hl=zh-cn" target="_blank">Kotlin</a> 有基本的了解</li>
+<li>具备 <a href="https://developer.android.com/jetpack/compose?hl=zh-cn" target="_blank">Compose</a> 方面的基础知识</li>
+</ul>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="5" step="1" label="准备工作">
+          
+          <h2 class="step-title" data-text="               2. 准备设置           " id="1" tabindex="-1">
+              2. 准备设置
+          </h2>
+          <p>在此步骤中，您将设置环境并下载起始项目。</p>
+<h2 data-text="所需条件" id="what-you-will-need" is-upgraded="" tabindex="-1">所需条件</h2>
+<ul>
+<li>最新的稳定版 <a href="https://developer.android.com/studio?hl=zh-cn" target="_blank">Android Studio</a></li>
+<li>Wear OS 设备或模拟器（第一次使用？<a href="https://developer.android.com/training/wearables/apps/creating?hl=zh-cn#emulator" target="_blank">这里</a>介绍了设置方法。）</li>
+</ul>
+<h2 data-text="下载代码" id="download-code" is-upgraded="" tabindex="-1">下载代码</h2>
+<p>如果您已安装 git，则只需运行以下命令即可克隆<a href="https://github.com/android/codelab-compose-for-wear-os" target="_blank">此代码库</a>中的代码。如需检查是否已安装 git，请在终端或命令行中输入 <code dir="ltr" translate="no">git --version</code>，并验证其是否正确执行。</p>
+<div></div><devsite-code><pre translate="no" dir="ltr" is-upgraded>git clone https://github.com/android/codelab-compose-for-wear-os.git
+cd codelab-compose-for-wear-os
+</pre></devsite-code>
+<p>如果您未安装 git，可以点击下方按钮下载此 Codelab 的全部代码：</p>
+<p><a href="https://github.com/android/codelab-compose-for-wear-os/archive/main.zip" target="_blank"><button class="button button-primary button-with-icon"><span aria-hidden="true" class="material-icons" translate="no">file_download</span>下载 ZIP 文件</button></a></p>
+<aside class="special"><p>示例目录中包含此 Codelab 的 <strong>start</strong> 和 <strong>finished</strong> 代码。在 Android Studio 左侧的“Project”视图中，您将看到两个模块。</p>
+<ul>
+<li><img alt="d61ffd479bdbcb9f.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f.png?hl=zh-cn" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_36.png?hl=zh-cn 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_48.png?hl=zh-cn 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_72.png?hl=zh-cn 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_96.png?hl=zh-cn 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_480.png?hl=zh-cn 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_720.png?hl=zh-cn 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_856.png?hl=zh-cn 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_960.png?hl=zh-cn 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_1440.png?hl=zh-cn 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_1920.png?hl=zh-cn 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_2880.png?hl=zh-cn 2880w" style="width: 26.00px" /> <strong>start</strong> - 该项目的起始代码；您将更改这些代码来完成此 Codelab</li>
+<li><img alt="d61ffd479bdbcb9f.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f.png?hl=zh-cn" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_36.png?hl=zh-cn 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_48.png?hl=zh-cn 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_72.png?hl=zh-cn 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_96.png?hl=zh-cn 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_480.png?hl=zh-cn 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_720.png?hl=zh-cn 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_856.png?hl=zh-cn 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_960.png?hl=zh-cn 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_1440.png?hl=zh-cn 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_1920.png?hl=zh-cn 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_2880.png?hl=zh-cn 2880w" style="width: 26.00px" /> <strong>finished</strong> - 该 Codelab 完成后的代码；用于检查您的工作</li>
+</ul>
+</aside>
+<p>您可以通过更改工具栏中的运行配置，随时在 Android Studio 中运行其中任一模块。</p>
+<p class="image-container"><img alt="51cb2645eece1f20.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/compose-for-wear-os/img/51cb2645eece1f20.png?hl=zh-cn" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/51cb2645eece1f20_36.png?hl=zh-cn 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/51cb2645eece1f20_48.png?hl=zh-cn 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/51cb2645eece1f20_72.png?hl=zh-cn 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/51cb2645eece1f20_96.png?hl=zh-cn 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/51cb2645eece1f20_480.png?hl=zh-cn 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/51cb2645eece1f20_720.png?hl=zh-cn 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/51cb2645eece1f20_856.png?hl=zh-cn 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/51cb2645eece1f20_960.png?hl=zh-cn 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/51cb2645eece1f20_1440.png?hl=zh-cn 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/51cb2645eece1f20_1920.png?hl=zh-cn 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/51cb2645eece1f20_2880.png?hl=zh-cn 2880w" style="width: 475.18px" /></p>
+<h2 data-text="在 Android Studio 中打开项目" id="open-project-in-android-studio" is-upgraded="" tabindex="-1">在 Android Studio 中打开项目</h2>
+<ol type="1">
+<li>在“Welcome to Android Studio”窗口中，选择 <img alt="c01826594f360d94.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/compose-for-wear-os/img/c01826594f360d94.png?hl=zh-cn" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/c01826594f360d94_36.png?hl=zh-cn 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c01826594f360d94_48.png?hl=zh-cn 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c01826594f360d94_72.png?hl=zh-cn 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c01826594f360d94_96.png?hl=zh-cn 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c01826594f360d94_480.png?hl=zh-cn 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c01826594f360d94_720.png?hl=zh-cn 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c01826594f360d94_856.png?hl=zh-cn 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c01826594f360d94_960.png?hl=zh-cn 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c01826594f360d94_1440.png?hl=zh-cn 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c01826594f360d94_1920.png?hl=zh-cn 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c01826594f360d94_2880.png?hl=zh-cn 2880w" style="width: 21.00px" /> <strong>Open...</strong></li>
+<li>选择文件夹 <strong><code dir="ltr" translate="no">[Download Location]</code></strong>。</li>
+<li>Android Studio 导入项目后，请测试您能否在 Wear OS 模拟器或实体设备上运行 <code dir="ltr" translate="no">start</code> 和 <code dir="ltr" translate="no">finished</code> 模块。</li>
+<li><code dir="ltr" translate="no">start</code> 模块应如以下屏幕截图所示。您将在其中完成所有工作。</li>
+</ol>
+<p class="image-container"><img alt="271451f93a57db41.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/compose-for-wear-os/img/271451f93a57db41.png?hl=zh-cn" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/271451f93a57db41_36.png?hl=zh-cn 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/271451f93a57db41_48.png?hl=zh-cn 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/271451f93a57db41_72.png?hl=zh-cn 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/271451f93a57db41_96.png?hl=zh-cn 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/271451f93a57db41_480.png?hl=zh-cn 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/271451f93a57db41_720.png?hl=zh-cn 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/271451f93a57db41_856.png?hl=zh-cn 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/271451f93a57db41_960.png?hl=zh-cn 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/271451f93a57db41_1440.png?hl=zh-cn 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/271451f93a57db41_1920.png?hl=zh-cn 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/271451f93a57db41_2880.png?hl=zh-cn 2880w" style="width: 220.80px" /></p>
+<h2 data-text="探索起始代码" id="explore-the-start-code" is-upgraded="" tabindex="-1">探索起始代码</h2>
+<ul>
+<li><code dir="ltr" translate="no">build.gradle</code> 中包含基本的应用配置。它包含创建 Composable Wear OS 应用所需的依赖项。我们将讨论 Jetpack Compose 版本与 Wear OS 版本之间的相似之处和不同之处。</li>
+<li><code dir="ltr" translate="no">main &gt; AndroidManifest.xml</code> 包含创建 Wear OS 应用所需的元素。这与非 Compose 应用相同，并且与移动应用类似，因此我们不讨论这一点。</li>
+<li><code dir="ltr" translate="no">main &gt; theme/</code> 文件夹包含 Compose 针对主题使用的 <code dir="ltr" translate="no">Color</code>、<code dir="ltr" translate="no">Type</code> 和 <code dir="ltr" translate="no">Theme</code> 文件。</li>
+<li><code dir="ltr" translate="no">main &gt; MainActivity.kt</code> 包含使用 Compose 创建应用的样板文件。它还包含应用的顶级可组合项（如 <code dir="ltr" translate="no">Scaffold</code> 和 <code dir="ltr" translate="no">TransformingLazyColumn</code>）。</li>
+<li><code dir="ltr" translate="no">main &gt; ReusableComponents.kt</code> 包含适用于我们将创建的大多数 Wear 专用可组合项的函数。我们将在此文件中完成许多任务。</li>
+</ul>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="8" step="2" label="查看依赖项">
+          
+          <h2 class="step-title" data-text="               3. 查看依赖项           " id="2" tabindex="-1">
+              3. 查看依赖项
+          </h2>
+          <p>您所做的大多数与 Wear 相关的依赖项更改都将位于顶级<a href="https://developer.android.com/jetpack/compose/layering?hl=zh-cn" target="_blank">架构层</a>（下面红色突出显示的部分）。</p>
+<p class="image-container"><img alt="d92519e0b932f964.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/compose-for-wear-os/img/d92519e0b932f964.png?hl=zh-cn" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/d92519e0b932f964_36.png?hl=zh-cn 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d92519e0b932f964_48.png?hl=zh-cn 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d92519e0b932f964_72.png?hl=zh-cn 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d92519e0b932f964_96.png?hl=zh-cn 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d92519e0b932f964_480.png?hl=zh-cn 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d92519e0b932f964_720.png?hl=zh-cn 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d92519e0b932f964_856.png?hl=zh-cn 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d92519e0b932f964_960.png?hl=zh-cn 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d92519e0b932f964_1440.png?hl=zh-cn 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d92519e0b932f964_1920.png?hl=zh-cn 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d92519e0b932f964_2880.png?hl=zh-cn 2880w" style="width: 277.50px" /></p>
+<p>这意味着，当您以 Wear OS 为目标平台时，您已经结合 Jetpack Compose 使用过的许多依赖项不会发生变化。例如，界面、运行时、编译器和动画依赖项将保持不变。</p>
+<p>然而，您需要使用正确的 Wear OS <strong>Material</strong>、<strong>Foundation</strong> 和 <strong>Navigation</strong> 库，这些库不同于您之前使用过的库。</p>
+<p>我们在下方进行了对比，进一步阐明相关差异：</p>
+<table class="vertical-rules">
+<tbody><tr><td colspan="1" rowspan="1"><p><strong>Wear OS 依赖项</strong> (androidx.wear.*)</p>
+</td><td colspan="1" rowspan="1"><p><strong>比较</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>标准依赖项</strong> (androidx.*)</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary?hl=zh-cn" target="_blank">androidx.wear.compose:compose-material3</a></p>
+</td><td colspan="1" rowspan="1"><p><strong>代替</strong><em></em></p>
+</td><td colspan="1" rowspan="1"><p>androidx.compose.material:material <strong>₁</strong></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/navigation/package-summary?hl=zh-cn" target="_blank">androidx.wear.compose:compose-navigation</a></p>
+</td><td colspan="1" rowspan="1"><p><strong>代替</strong><em></em></p>
+</td><td colspan="1" rowspan="1"><p>androidx.navigation:navigation-compose</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/foundation/package-summary?hl=zh-cn" target="_blank">androidx.wear.compose:compose-foundation</a></p>
+</td><td colspan="1" rowspan="1"><p><strong>加上</strong><em></em></p>
+</td><td colspan="1" rowspan="1"><p>androidx.compose.foundation:foundation</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/ui/tooling/preview/package-summary?hl=zh-cn" target="_blank">androidx.wear.compose:compose-ui-tooling</a></p>
+</td><td colspan="1" rowspan="1"><p><strong>加上</strong><em></em></p>
+</td><td colspan="1" rowspan="1"><p>androidx.compose.ui:ui-tooling-preview</p>
+</td></tr>
+</tbody></table>
+<p><em>1. 开发者可以继续使用其他与 Material 相关的库，例如借助 Compose Material 库扩展的 Material 涟漪和 Material 图标。除了使用 compose-material3 版本之外，您还可以使用 </em><a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material/package-summary?hl=zh-cn" target="_blank"><em>androidx.wear.compose:compose-material</em></a><em>，但不应在同一应用中混用 Material 3 和 Material 2.5。我们建议您使用 material3，因为它支持 Material 3 Expressive 设计。</em></p>
+<aside class="warning"><p><strong>注意</strong>：尽管从技术层面来讲，可以在 Wear OS 上使用标准依赖项，但我们始终建议使用 Wear 专用版本，以提供最佳体验。</p>
+</aside>
+<p>打开 <code dir="ltr" translate="no">build.gradle</code>，在 <code dir="ltr" translate="no">start</code> 模块中搜索“<strong><code dir="ltr" translate="no">TODO: Review Dependencies</code></strong>”。（此步骤仅用于检查依赖项，您无需添加任何代码。）</p>
+<p>start/build.gradle:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="GDScript"><code translate="no" dir="ltr"><span class="devsite-syntax-n">dependencies</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">composeBom</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">platform</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">libs</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">androidx</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">compose</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">bom</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-o">//</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">General</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">compose</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">dependencies</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">implementation</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">composeBom</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">implementation</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">libs</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">androidx</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">activity</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">compose</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">implementation</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">libs</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">compose</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">ui</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">tooling</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">preview</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">implementation</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">libs</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">androidx</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">material</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">icons</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">extended</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-o">//</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Compose</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">for</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Wear</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">OS</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Dependencies</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">implementation</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">libs</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">wear</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">compose</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">material</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-o">//</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Foundation</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">is</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">additive</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">so</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">you</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">can</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">use</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">mobile</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">version</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ow">in</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">your</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Wear</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">OS</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">app</span><span class="devsite-syntax-o">.</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">implementation</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">libs</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">wear</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">compose</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">foundation</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-o">//</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Compose</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">preview</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">annotations</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">for</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Wear</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">OS</span><span class="devsite-syntax-o">.</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">implementation</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">libs</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">androidx</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">compose</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">ui</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">tooling</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">implementation</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">libs</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">horologist</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">compose</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">layout</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">coreLibraryDesugaring</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">libs</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">desugar</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">jdk</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">libs</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">debugImplementation</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">libs</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">compose</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">ui</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">tooling</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">debugImplementation</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">libs</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">androidx</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">ui</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">test</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">manifest</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">debugImplementation</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">composeBom</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>您应该认识许多常规 Compose 依赖项，因此我们不介绍这些依赖项。</p>
+<p>让我们转到 Wear OS 依赖项。</p>
+<p>如前所述，此项目仅包含 Wear OS 专用版本的 <strong><code dir="ltr" translate="no">material</code></strong> (<code dir="ltr" translate="no">androidx.wear.compose:compose-material3</code>)。也就是说，您将不会在项目中看到或使用 <code dir="ltr" translate="no">androidx.compose.material:material3</code>。</p>
+<p>需要注意的是，您可以将其他 Material 库与 Wear Material 结合使用。在本 Codelab 中，我们实际上将通过添加 <code dir="ltr" translate="no">androidx.compose.material:material-icons-extended</code> 来实现这一点。</p>
+<p>最后，我们添加了适用于 Compose 的 Wear <strong><code dir="ltr" translate="no">foundation</code></strong> 库 (<code dir="ltr" translate="no">androidx.wear.compose:compose-foundation</code>)。这是附加的，因此您可以将该库与您之前用过的标准 <strong><code dir="ltr" translate="no">foundation</code></strong> 搭配使用。实际上，您可能已经意识到，我们已将它添加到常规 Compose 依赖项中！</p>
+<p>现在，我们已经了解了依赖项，接下来，我们来看一下主应用。</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="8" step="3" label="查看 MainActivity">
+          
+          <h2 class="step-title" data-text="               4. 查看 MainActivity           " id="3" tabindex="-1">
+              4. 查看 MainActivity
+          </h2>
+          <p><strong>我们要在</strong></p>
+<p><strong><code dir="ltr" translate="no">start</code></strong> </p>
+<p><strong>模块完成所有任务，因此请确保打开的每个文件都位于这个模块中。</strong></p>
+<p>首先，打开 <code dir="ltr" translate="no">start</code> 模块中的 <code dir="ltr" translate="no">MainActivity</code>。</p>
+<p>这是一个非常简单的类，用于扩展 <code dir="ltr" translate="no">ComponentActivity</code> 并使用 <code dir="ltr" translate="no">setContent { WearApp() }</code> 来创建界面。</p>
+<p>根据您之前所掌握的 Compose 方面的知识，您应该已对此很熟悉。我们只需设置界面即可。</p>
+<p>向下滚动到 <code dir="ltr" translate="no">WearApp()</code> 可组合函数。在我们谈论代码本身之前，您应该会看到很多 TODO 分散在整个代码中。这些 TODO 分别表示此 Codelab 中的步骤。您可以暂时忽略它们。</p>
+<p>代码应如下所示：</p>
+<p><strong>函数 WearApp() 中的代码</strong>：</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Carbon"><code translate="no" dir="ltr"><span class="devsite-syntax-nx">WearAppTheme</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">     </span><span class="devsite-syntax-cm">/* *************************** Part 4: Wear OS Scaffold *************************** */</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-c1">// TODO (Start): Create a AppScaffold (Wear Version)</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-c1">// TODO: Swap to TransformingLazyColumnState</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">listState</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">rememberLazyListState</span><span class="devsite-syntax-p">()</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-cm">/* *************************** Part 4: Wear OS Scaffold *************************** */</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-c1">// TODO (Start): Create a ScreenScaffold (Wear Version)</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-cm">/* *************************** Part 3: ScalingLazyColumn *************************** */</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-c1">// TODO: Swap a TransformingLazyColumn (Wear's version of LazyColumn)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">LazyColumn</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Modifier</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">fillMaxSize</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">verticalArrangement</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Arrangement</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Center</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">state</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">listState</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-c1">// TODO: Remove item; for beginning only.</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">item</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">StartOnlyTextComposables</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-cm">/* ******************* Part 1: Simple composables ******************* */</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">item</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">ButtonExample</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">item</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">TextExample</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">item</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">CardExample</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-cm">/* ********************* Part 2: Wear unique composables ********************* */</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">item</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">ChipExample</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">item</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">ToggleChipExample</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-c1">// TODO (End): Create a ScreenScaffold (Wear Version)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-c1">// TODO (End): Create a AppScaffold (Wear Version)</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>我们先来设置主题 <code dir="ltr" translate="no">WearAppTheme { }</code>。这与您之前编写代码的方式完全相同，也就是说，您可以使用颜色、排版和形状设置 <a href="https://developer.android.com/develop/ui/compose/designsystems/material3?hl=zh-cn" target="_blank"><code dir="ltr" translate="no">MaterialTheme</code></a>。</p>
+<p>然而，对于 Wear OS，我们通常建议使用针对圆形设备优化的默认 <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/Shapes?hl=zh-cn" target="_blank">Material Wear 形状</a>，因此，如果您深入探索 <code dir="ltr" translate="no">theme/Theme.kt</code>，就会发现我们并未替换形状。</p>
+<p>如果您愿意，可以打开 <code dir="ltr" translate="no">theme/Theme.kt</code> 做进一步的探索。但就像前面提到的那样，它与手机上的内容完全相同。</p>
+<p>然后，我们创建一个 <a href="https://developer.android.com/jetpack/compose/lists?hl=zh-cn" target="_blank"><code dir="ltr" translate="no">LazyColumn</code></a>，用于为一系列项生成垂直滚动的列表（就像您之前做的那样）。</p>
+<p><strong>代码</strong>：</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Carbon"><code translate="no" dir="ltr"><span class="devsite-syntax-nx">item</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">StartOnlyTextComposables</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-cm">/* ******************* Part 1: Simple composables ******************* */</span>
+<span class="devsite-syntax-nx">item</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">ButtonExample</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-nx">item</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">TextExample</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-nx">item</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">CardExample</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-cm">/* ********************* Part 2: Wear unique composables ********************* */</span>
+<span class="devsite-syntax-nx">item</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">ChipExample</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-nx">item</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">ToggleChipExample</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>就这些项本身而言，只有 <code dir="ltr" translate="no">StartOnlyTextComposables()</code> 会生成界面。（我们将随着您在 Codelab 中的进展来填充其余内容。）</p>
+<p>这些函数实际上位于 <code dir="ltr" translate="no">ReusableComponents.kt</code> 文件中，我们将在下一部分中进行介绍。</p>
+<p>让我们先来了解一下 Compose for Wear OS 吧！</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="8" step="4" label="添加简单的可组合项">
+          
+          <h2 class="step-title" data-text="               5. 添加简单的可组合项           " id="4" tabindex="-1">
+              5. 添加简单的可组合项
+          </h2>
+          <p>我们将从您可能早已熟悉的三个可组合项（<code dir="ltr" translate="no">Button</code>、<code dir="ltr" translate="no">Text</code> 和 <code dir="ltr" translate="no">Card</code>）开始。</p>
+<p>首先，我们将移除 hello world 可组合项。</p>
+<p>搜索“<strong><code dir="ltr" translate="no">TODO: Remove item</code></strong>”并<strong>清除</strong>注释及其下方的一行：</p>
+<p><strong>第 1 步</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scilab"><code translate="no" dir="ltr"><span class="devsite-syntax-c1">// TODO: Remove item; for beginning only.</span>
+<span class="devsite-syntax-n">item</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">StartOnlyTextComposables</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>接下来，我们要添加第一个可组合项。</p>
+<h2 data-text="创建图标按钮可组合项" id="create-a-icon-button-composable" is-upgraded="" tabindex="-1">创建图标按钮可组合项</h2>
+<p>在 <code dir="ltr" translate="no">start</code> 模块中打开 <code dir="ltr" translate="no">ReusableComponents.kt</code> 并搜索“<strong><code dir="ltr" translate="no">TODO: Create a Icon Button Composable</code></strong>”，并将当前的可组合方法替换为以下代码。</p>
+<p><strong>第 2 步</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scilab"><code translate="no" dir="ltr"><span class="devsite-syntax-c1">// TODO: Create a Icon Button Composable</span>
+<span class="devsite-syntax-p">@</span><span class="devsite-syntax-n">Composable</span>
+<span class="devsite-syntax-n">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">IconButtonExample</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">FilledIconButton</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">onClick</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/*</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">...</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">*/</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">},</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">Icon</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">imageVector</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Icons</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">Rounded</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">Phone</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">contentDescription</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"triggers phone action"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p><code dir="ltr" translate="no">IconButtonExample()</code> 可组合函数（此代码所在位置）现在会生成一个居中按钮。</p>
+<p>我们来了解一下此代码。</p>
+<p>我们使用 <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary?hl=zh-cn#FilledIconButton(kotlin.Function0,androidx.compose.ui.Modifier,kotlin.Function0,kotlin.String,kotlin.Boolean,androidx.wear.compose.material3.IconButtonShapes,androidx.wear.compose.material3.IconButtonColors,androidx.compose.foundation.BorderStroke,androidx.compose.foundation.interaction.MutableInteractionSource,kotlin.Function1)" target="_blank"><code dir="ltr" translate="no">FilledIconButton</code></a>，这是一种仅包含图标的圆形按钮，具有彩色背景和对比鲜明的内容颜色。该组件提供一个用于接收图标或图片的槽位。</p>
+<p>然后，我们将点击事件设为空白 lamba。在本例中，这些可组合项仅用于演示，所以我们不需要它们。然而，在实际应用中，我们将通过与 ViewModel 等进行通信以执行业务逻辑。</p>
+<p>然后，我们在按钮内设置一个图标。此代码与您之前看到过的 <code dir="ltr" translate="no">Icon</code> 代码相同。此外，我们还要从 <code dir="ltr" translate="no">androidx.compose.material:material-icons-extended</code> 库中获取图标。</p>
+<p>最后，您无需担心在此阶段将按钮居中显示，因为在从 <code dir="ltr" translate="no">LazyColumn</code> 迁移到 <code dir="ltr" translate="no">TransformingLazyColumn.</code> 时，系统会自动修正按钮位置</p>
+<p>运行应用后，您应该会看到如下内容。<strong>如果按钮暂时未居中，请不要担心</strong>：</p>
+<p class="image-container"><img alt="9346dbd2b8bc6a56.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/compose-for-wear-os/img/9346dbd2b8bc6a56.png?hl=zh-cn" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/9346dbd2b8bc6a56_36.png?hl=zh-cn 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9346dbd2b8bc6a56_48.png?hl=zh-cn 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9346dbd2b8bc6a56_72.png?hl=zh-cn 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9346dbd2b8bc6a56_96.png?hl=zh-cn 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9346dbd2b8bc6a56_480.png?hl=zh-cn 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9346dbd2b8bc6a56_720.png?hl=zh-cn 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9346dbd2b8bc6a56_856.png?hl=zh-cn 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9346dbd2b8bc6a56_960.png?hl=zh-cn 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9346dbd2b8bc6a56_1440.png?hl=zh-cn 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9346dbd2b8bc6a56_1920.png?hl=zh-cn 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9346dbd2b8bc6a56_2880.png?hl=zh-cn 2880w" style="width: 199.79px" /></p>
+<p>这些代码您之前可能已经编写过（太棒了）。不同之处在于，您现在可以获取针对 Wear OS 优化的按钮。</p>
+<p>很简单，我们再来看看其他代码。</p>
+<h2 data-text="创建 Text 可组合项" id="create-a-text-composable" is-upgraded="" tabindex="-1">创建 Text 可组合项</h2>
+<p>在 <code dir="ltr" translate="no">ReusableComponents.kt</code> 中，搜索“<strong><code dir="ltr" translate="no">TODO: Create a Text Composable</code></strong>”并将当前的可组合方法替换为以下代码。</p>
+<p><strong>第 3 步</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scilab"><code translate="no" dir="ltr"><span class="devsite-syntax-c1">// TODO: Create a Text Composable</span>
+<span class="devsite-syntax-p">@</span><span class="devsite-syntax-n">Composable</span>
+<span class="devsite-syntax-n">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">TextExample</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-n">ListHeader</span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">Text</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">           </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span>
+<span class="devsite-syntax-w">               </span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">fillMaxWidth</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">           </span><span class="devsite-syntax-n">textAlign</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">TextAlign</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">Center</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">           </span><span class="devsite-syntax-n">text</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">stringResource</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">R</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nb">string</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">hello_compose_codelab</span><span class="devsite-syntax-p">),</span>
+<span class="devsite-syntax-w">       </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>我们创建 <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary?hl=zh-cn#Text(kotlin.String,androidx.compose.ui.Modifier,androidx.compose.ui.graphics.Color,androidx.compose.ui.unit.TextUnit,androidx.compose.ui.text.font.FontStyle,androidx.compose.ui.text.font.FontWeight,androidx.compose.ui.text.font.FontFamily,androidx.compose.ui.unit.TextUnit,androidx.compose.ui.text.style.TextDecoration,androidx.compose.ui.text.style.TextAlign,androidx.compose.ui.unit.TextUnit,androidx.compose.ui.text.style.TextOverflow,kotlin.Boolean,kotlin.Int,kotlin.Function1,androidx.compose.ui.text.TextStyle)" target="_blank"><code dir="ltr" translate="no">Text</code></a> 可组合项，设置其修饰符，对齐文本，设置颜色，最后通过字符串资源设置文本本身。 由于我们稍后要添加列表，因此我们将此文本封装到 <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary?hl=zh-cn#ListHeader(androidx.compose.ui.Modifier,androidx.compose.ui.graphics.Color,androidx.compose.ui.graphics.Color,androidx.compose.foundation.layout.PaddingValues,androidx.wear.compose.material3.SurfaceTransformation,kotlin.Function1)" target="_blank"><code dir="ltr" translate="no">ListHeader</code></a> 中，以便内容在首尾两端添加内边距。</p>
+<p>Compose 开发者应该会非常熟悉 Text 可组合项的外观，其代码实际上与您之前使用的代码完全相同。</p>
+<p>我们来看一下它是什么样的：</p>
+<p class="image-container"><img alt="dcad71112a91d706.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/compose-for-wear-os/img/dcad71112a91d706.png?hl=zh-cn" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/dcad71112a91d706_36.png?hl=zh-cn 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/dcad71112a91d706_48.png?hl=zh-cn 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/dcad71112a91d706_72.png?hl=zh-cn 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/dcad71112a91d706_96.png?hl=zh-cn 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/dcad71112a91d706_480.png?hl=zh-cn 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/dcad71112a91d706_720.png?hl=zh-cn 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/dcad71112a91d706_856.png?hl=zh-cn 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/dcad71112a91d706_960.png?hl=zh-cn 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/dcad71112a91d706_1440.png?hl=zh-cn 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/dcad71112a91d706_1920.png?hl=zh-cn 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/dcad71112a91d706_2880.png?hl=zh-cn 2880w" style="width: 211.20px" /></p>
+<p><code dir="ltr" translate="no">TextExample()</code> 可组合函数（我们放置代码的位置）现在会以主要 Material 颜色生成 Text 可组合函数。该字符串是从我们的 <code dir="ltr" translate="no">res/values/strings.xml</code> 文件中拉取的。</p>
+<p>目前的过程一切顺利。我们再来看看最后一个相似的可组合项 <code dir="ltr" translate="no">Card</code>。</p>
+<h2 data-text="创建 Card 可组合项" id="create-a-card-composable" is-upgraded="" tabindex="-1">创建 Card 可组合项</h2>
+<p>在 <code dir="ltr" translate="no">ReusableComponents.kt</code> 中，搜索“<strong><code dir="ltr" translate="no">TODO: Create a Card</code></strong>”并将当前的可组合方法替换为以下代码。</p>
+<p><strong>第 4 步</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scilab"><code translate="no" dir="ltr"><span class="devsite-syntax-c1">// TODO: Create a Card (specifically, an AppCard) Composable</span>
+<span class="devsite-syntax-p">@</span><span class="devsite-syntax-n">Composable</span>
+<span class="devsite-syntax-n">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">CardExample</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">iconModifier</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span>
+<span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">AppCard</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">appImage</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">Icon</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-n">imageVector</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Icons</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">AutoMirrored</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">Rounded</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">Message</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-n">contentDescription</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"triggers open message action"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">iconModifier</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">},</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">appName</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Text</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"Messages"</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">},</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">time</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Text</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"12m"</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">},</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">title</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Text</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"Kim Green"</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">},</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">onClick</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/*</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">...</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">*/</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">Text</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"On my way!"</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>Wear 略有不同，因为有两张主卡片：<a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary?hl=zh-cn#AppCard(kotlin.Function0,kotlin.Function1,kotlin.Function1,kotlin.Function1,androidx.compose.ui.Modifier,kotlin.Function1,androidx.compose.ui.graphics.painter.Painter,androidx.compose.ui.graphics.Color,androidx.compose.ui.graphics.Color,androidx.compose.ui.graphics.Color,androidx.compose.ui.graphics.Color,kotlin.Function1)" target="_blank"><code dir="ltr" translate="no">AppCard</code></a> 和 <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary?hl=zh-cn#TitleCard(kotlin.Function0,kotlin.Function1,androidx.compose.ui.Modifier,kotlin.Function1,androidx.compose.ui.graphics.painter.Painter,androidx.compose.ui.graphics.Color,androidx.compose.ui.graphics.Color,androidx.compose.ui.graphics.Color,kotlin.Function1)" target="_blank"><code dir="ltr" translate="no">TitleCard</code></a>。</p>
+<p>在本例中，我们想在卡片中添加 <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary?hl=zh-cn#Icon(androidx.compose.ui.graphics.vector.ImageVector,kotlin.String,androidx.compose.ui.Modifier,androidx.compose.ui.graphics.Color)" target="_blank"><code dir="ltr" translate="no">Icon</code></a>，因此我们将使用 <code dir="ltr" translate="no">AppCard</code>。（<code dir="ltr" translate="no">TitleCard</code> 包含的槽较少，请参阅<a href="https://developer.android.com/training/wearables/compose/cards?hl=zh-cn" target="_blank">卡片</a>指南以了解有关详情）。</p>
+<p>我们创建 <code dir="ltr" translate="no">AppCard</code> 可组合项，设置其修饰符，添加 <code dir="ltr" translate="no">Icon</code>，添加多个 <code dir="ltr" translate="no">Text</code> 可组合项参数（分别用于配置卡片上的不同空间），最后将主要内容文本设置在最后。</p>
+<p>我们来看一看效果如何，请不要担心添加额外的底部内边距，因为在从 <code dir="ltr" translate="no">LazyColumn</code> 迁移到 <code dir="ltr" translate="no">TransformingLazyColumn</code> 时，系统会修正此问题：</p>
+<p class="image-container"><img alt="faf2fe359baf0946.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/compose-for-wear-os/img/faf2fe359baf0946.png?hl=zh-cn" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/faf2fe359baf0946_36.png?hl=zh-cn 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/faf2fe359baf0946_48.png?hl=zh-cn 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/faf2fe359baf0946_72.png?hl=zh-cn 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/faf2fe359baf0946_96.png?hl=zh-cn 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/faf2fe359baf0946_480.png?hl=zh-cn 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/faf2fe359baf0946_720.png?hl=zh-cn 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/faf2fe359baf0946_856.png?hl=zh-cn 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/faf2fe359baf0946_960.png?hl=zh-cn 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/faf2fe359baf0946_1440.png?hl=zh-cn 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/faf2fe359baf0946_1920.png?hl=zh-cn 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/faf2fe359baf0946_2880.png?hl=zh-cn 2880w" style="width: 211.20px" /></p>
+<p>这时，您可能意识到，这些可组合项的 Compose 代码与您之前用过的代码几乎相同，这很不错吧？您可以重复利用您已获得的所有知识！</p>
+<p>好的，我们来看一些新的可组合项。</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="8" step="5" label="添加 Wear 专用可组合项">
+          
+          <h2 class="step-title" data-text="               6. 添加 Wear 专用可组合项           " id="5" tabindex="-1">
+              6. 添加 Wear 专用可组合项
+          </h2>
+          <p>在这一部分中，我们将探索 <code dir="ltr" translate="no">Chip</code> 和 <code dir="ltr" translate="no">ToggleChip</code> 可组合项。</p>
+<h2 data-text="创建 Chip 可组合项" id="create-a-chip-composable" is-upgraded="" tabindex="-1">创建 Chip 可组合项</h2>
+<p><a href="https://material.io/components/chips" target="_blank">Chip</a> 是一种一键式快捷操作，对屏幕空间有限的 Wear 设备尤为有用。</p>
+<p>您可以使用 <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary?hl=zh-cn#Button(kotlin.Function0,androidx.compose.ui.Modifier,kotlin.Function0,kotlin.String,kotlin.Function1,kotlin.Function1,kotlin.Boolean,androidx.compose.ui.graphics.Shape,androidx.wear.compose.material3.ButtonColors,androidx.compose.foundation.BorderStroke,androidx.compose.foundation.layout.PaddingValues,androidx.compose.foundation.interaction.MutableInteractionSource,kotlin.Function1)" target="_blank"><code dir="ltr" translate="no">Button</code></a> 实现 Chip。下面是 <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary?hl=zh-cn#Button(kotlin.Function0,androidx.compose.ui.Modifier,kotlin.Function0,kotlin.String,kotlin.Function1,kotlin.Function1,kotlin.Boolean,androidx.compose.ui.graphics.Shape,androidx.wear.compose.material3.ButtonColors,androidx.compose.foundation.BorderStroke,androidx.compose.foundation.layout.PaddingValues,androidx.compose.foundation.interaction.MutableInteractionSource,kotlin.Function1)" target="_blank"><code dir="ltr" translate="no">Button</code></a> 可组合函数的几种变体，您可通过它们了解您能创建什么：</p>
+<p class="image-container"><img alt="13c7dc5e08b5d2d4.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/compose-for-wear-os/img/13c7dc5e08b5d2d4.png?hl=zh-cn" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/13c7dc5e08b5d2d4_36.png?hl=zh-cn 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/13c7dc5e08b5d2d4_48.png?hl=zh-cn 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/13c7dc5e08b5d2d4_72.png?hl=zh-cn 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/13c7dc5e08b5d2d4_96.png?hl=zh-cn 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/13c7dc5e08b5d2d4_480.png?hl=zh-cn 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/13c7dc5e08b5d2d4_720.png?hl=zh-cn 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/13c7dc5e08b5d2d4_856.png?hl=zh-cn 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/13c7dc5e08b5d2d4_960.png?hl=zh-cn 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/13c7dc5e08b5d2d4_1440.png?hl=zh-cn 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/13c7dc5e08b5d2d4_1920.png?hl=zh-cn 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/13c7dc5e08b5d2d4_2880.png?hl=zh-cn 2880w" style="width: 198.72px" /> <img alt="9859b3f9880f75af.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/compose-for-wear-os/img/9859b3f9880f75af.png?hl=zh-cn" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/9859b3f9880f75af_36.png?hl=zh-cn 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9859b3f9880f75af_48.png?hl=zh-cn 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9859b3f9880f75af_72.png?hl=zh-cn 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9859b3f9880f75af_96.png?hl=zh-cn 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9859b3f9880f75af_480.png?hl=zh-cn 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9859b3f9880f75af_720.png?hl=zh-cn 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9859b3f9880f75af_856.png?hl=zh-cn 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9859b3f9880f75af_960.png?hl=zh-cn 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9859b3f9880f75af_1440.png?hl=zh-cn 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9859b3f9880f75af_1920.png?hl=zh-cn 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9859b3f9880f75af_2880.png?hl=zh-cn 2880w" style="width: 198.72px" /></p>
+<p>让我们开始编写代码吧。</p>
+<p>在 <code dir="ltr" translate="no">ReusableComponents.kt</code> 中，搜索“<strong><code dir="ltr" translate="no">TODO: Create a Chip</code></strong>”并将当前的可组合方法替换为以下代码。</p>
+<p><strong>第 5 步</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Carbon"><code translate="no" dir="ltr"><span class="devsite-syntax-c1">// TODO: Create a Chip Composable</span>
+<span class="devsite-syntax-err">@</span><span class="devsite-syntax-nx">Composable</span>
+<span class="devsite-syntax-nx">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">ChipExample</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">modifier</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Modifier</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">Button</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">modifier</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">onClick</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-cm">/* ... */</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">},</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">icon</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-nx">Icon</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-nx">imageVector</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Icons</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Rounded</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">SelfImprovement</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-nx">contentDescription</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"triggers meditation action"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">},</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">Text</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-nx">text</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"5 minute Meditation"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-nx">maxLines</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mi">1</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-nx">overflow</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">TextOverflow</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Ellipsis</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p><code dir="ltr" translate="no">Button</code> 可组合项所用的许多参数都与其他可组合项（修饰符和 <code dir="ltr" translate="no">onClick</code>）所用的参数相同，因此我们无需查看这些参数。</p>
+<p>此外，它还接受一个图标和一个内容槽位，用于呈现按钮上显示的可组合正文内容（我们为其创建一个 <code dir="ltr" translate="no">Text</code> 可组合项）。</p>
+<p><code dir="ltr" translate="no">Icon</code> 代码应该与您在其他可组合项中看到的代码完全相同，但对于此代码，我们将从 <code dir="ltr" translate="no">androidx.compose.material:material-icons-extended</code> 库中提取 <code dir="ltr" translate="no">Self Improvement</code> 图标。</p>
+<p>我们来看看效果如何（记得要向下滚动），不用担心添加额外的底部内边距，因为从 <code dir="ltr" translate="no">LazyColumn</code> 迁移到 <code dir="ltr" translate="no">TransformingLazyColumn</code> 时系统会自动修正此问题：</p>
+<p class="image-container"><img alt="22afab093efc7fc5.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/compose-for-wear-os/img/22afab093efc7fc5.png?hl=zh-cn" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/22afab093efc7fc5_36.png?hl=zh-cn 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/22afab093efc7fc5_48.png?hl=zh-cn 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/22afab093efc7fc5_72.png?hl=zh-cn 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/22afab093efc7fc5_96.png?hl=zh-cn 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/22afab093efc7fc5_480.png?hl=zh-cn 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/22afab093efc7fc5_720.png?hl=zh-cn 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/22afab093efc7fc5_856.png?hl=zh-cn 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/22afab093efc7fc5_960.png?hl=zh-cn 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/22afab093efc7fc5_1440.png?hl=zh-cn 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/22afab093efc7fc5_1920.png?hl=zh-cn 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/22afab093efc7fc5_2880.png?hl=zh-cn 2880w" style="width: 198.72px" /></p>
+<p>我们来看一下 <code dir="ltr" translate="no">Button</code> 的一个变体，即 <code dir="ltr" translate="no">SwitchButton</code> 可组合项。</p>
+<h2 data-text="创建 SwitchChip 可组合项" id="create-a-switchchip-composable" is-upgraded="" tabindex="-1">创建 SwitchChip 可组合项</h2>
+<p><code dir="ltr" translate="no">SwitchButton</code> 与 <code dir="ltr" translate="no">Button</code> 类似，但支持用户与开关进行交互。</p>
+<p class="image-container"><img alt="eb38c8acb3ac996.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/compose-for-wear-os/img/eb38c8acb3ac996.png?hl=zh-cn" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/eb38c8acb3ac996_36.png?hl=zh-cn 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/eb38c8acb3ac996_48.png?hl=zh-cn 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/eb38c8acb3ac996_72.png?hl=zh-cn 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/eb38c8acb3ac996_96.png?hl=zh-cn 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/eb38c8acb3ac996_480.png?hl=zh-cn 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/eb38c8acb3ac996_720.png?hl=zh-cn 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/eb38c8acb3ac996_856.png?hl=zh-cn 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/eb38c8acb3ac996_960.png?hl=zh-cn 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/eb38c8acb3ac996_1440.png?hl=zh-cn 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/eb38c8acb3ac996_1920.png?hl=zh-cn 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/eb38c8acb3ac996_2880.png?hl=zh-cn 2880w" style="width: 198.72px" /></p>
+<p>在 <code dir="ltr" translate="no">ReusableComponents.kt</code> 中，搜索“<strong><code dir="ltr" translate="no">TODO: Create a SwitchChip</code></strong>”并将当前的可组合方法替换为以下代码。</p>
+<p><strong>第 6 步</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="GDScript"><code translate="no" dir="ltr"><span class="devsite-syntax-o">//</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">TODO</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Create</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">a</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Switch</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Chip</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Composable</span>
+<span class="devsite-syntax-err">@</span><span class="devsite-syntax-n">Composable</span>
+<span class="devsite-syntax-n">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">SwitchChipExample</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-k">var</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">checked</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">by</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">remember</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">mutableStateOf</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-bp">true</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">SwitchButton</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">fillMaxWidth</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">label</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">Text</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-s2">"Sound"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-n">maxLines</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mi">1</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-n">overflow</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">TextOverflow</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">Ellipsis</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">semantics</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-n">this</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">contentDescription</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">checked</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"On"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">else</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"Off"</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-p">},</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">},</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">checked</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">checked</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">onCheckedChange</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">checked</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">it</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">},</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">enabled</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-bp">true</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>现在，<code dir="ltr" translate="no">SwitchChipExample()</code> 可组合函数（此代码所在位置）使用切换开关（而不是复选框或单选按钮）生成 <code dir="ltr" translate="no">SwitchChip</code>。</p>
+<p>首先，我们创建一个 <code dir="ltr" translate="no">MutableState</code>。由于其他功能主要用于提供界面演示，方便您了解 Wear 提供哪些功能，因此我们尚未在其他函数中执行此操作。</p>
+<p>在普通应用中，您可能希望传递选中状态以及处理点按的 lambda，因此可组合项可以是无状态的（<a href="https://developer.android.com/jetpack/compose/state?hl=zh-cn#stateful-vs-stateless" target="_blank">点击此处了解详情</a>）。</p>
+<p>在本例中，我们只是使用操作切换开关来简单展示 <code dir="ltr" translate="no">SwitchChip</code> 的实际效果（即使我们不对状态执行任何操作）。</p>
+<p>接下来，我们设置选中状态和切换开关控件，为我们提供所需的开关。</p>
+<p>然后，我们创建一个 lambda 来改变状态，最后使用 <code dir="ltr" translate="no">Text</code> 可组合项（以及一些基本参数）设置标签。</p>
+<p>我们来看一下它是什么样的：</p>
+<p class="image-container"><img alt="8ef93a35bdb7302a.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/compose-for-wear-os/img/8ef93a35bdb7302a.png?hl=zh-cn" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/8ef93a35bdb7302a_36.png?hl=zh-cn 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/8ef93a35bdb7302a_48.png?hl=zh-cn 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/8ef93a35bdb7302a_72.png?hl=zh-cn 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/8ef93a35bdb7302a_96.png?hl=zh-cn 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/8ef93a35bdb7302a_480.png?hl=zh-cn 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/8ef93a35bdb7302a_720.png?hl=zh-cn 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/8ef93a35bdb7302a_856.png?hl=zh-cn 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/8ef93a35bdb7302a_960.png?hl=zh-cn 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/8ef93a35bdb7302a_1440.png?hl=zh-cn 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/8ef93a35bdb7302a_1920.png?hl=zh-cn 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/8ef93a35bdb7302a_2880.png?hl=zh-cn 2880w" style="width: 211.20px" /></p>
+<p>现在，您已经看到了许多特定于 Wear OS 的可组合项，并且如前所述，大多数代码与您之前编写的代码几乎相同。</p>
+<p>我们再来看一些更高级的代码。</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="8" step="6" label="迁移到 TransformingScalingLazyColumn">
+          
+          <h2 class="step-title" data-text="               7. 迁移到 TransformingScalingLazyColumn           " id="6" tabindex="-1">
+              7. 迁移到 TransformingScalingLazyColumn
+          </h2>
+          <p>您可能在移动应用中使用了 <a href="https://developer.android.com/jetpack/compose/lists?hl=zh-cn#lazy" target="_blank"><code dir="ltr" translate="no">LazyColumn</code></a> 来生成垂直滚动列表。</p>
+<p>由于圆形设备的顶部和底部较小，因此显示内容的空间较小。因此，Wear OS 有自己的 <code dir="ltr" translate="no">LazyColumn</code> 版本，可以更好地支持这些圆形设备。</p>
+<p><a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/foundation/lazy/package-summary?hl=zh-cn#TransformingLazyColumn(androidx.compose.foundation.layout.PaddingValues,androidx.compose.ui.Modifier,androidx.wear.compose.foundation.lazy.TransformingLazyColumnState,androidx.compose.foundation.layout.Arrangement.Vertical,androidx.compose.ui.Alignment.Horizontal,androidx.compose.foundation.gestures.FlingBehavior,kotlin.Boolean,androidx.wear.compose.foundation.rotary.RotaryScrollableBehavior,kotlin.Function1)" target="_blank">转换 <code dir="ltr" translate="no">LazyColumn</code></a> 会扩展 <code dir="ltr" translate="no">LazyColumn</code>，以支持屏幕顶部和底部的缩放和透明度，使内容更易于用户阅读。</p>
+<p>下面是一个演示：</p>
+<p class="image-container"><img alt="c056381ba4a7475d.gif" src="https://developer.android.com/static/codelabs/compose-for-wear-os/img/c056381ba4a7475d.gif?hl=zh-cn" style="width: 360.00px" /></p>
+<p>注意，当红色对象靠近中心位置时，会放大到完整尺寸，然后随着移开而缩小（并且变得更透明）。</p>
+<p>以下是一个来自应用的具体示例：</p>
+<p class="image-container"><img alt="6dbb1e13f99e5e1f.gif" src="https://developer.android.com/static/codelabs/compose-for-wear-os/img/6dbb1e13f99e5e1f.gif?hl=zh-cn" style="width: 384.00px" /></p>
+<p>我们发现这确实有助于提高可读性。</p>
+<p>现在，您已了解了 <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/foundation/lazy/package-summary?hl=zh-cn#TransformingLazyColumn(androidx.compose.foundation.layout.PaddingValues,androidx.compose.ui.Modifier,androidx.wear.compose.foundation.lazy.TransformingLazyColumnState,androidx.compose.foundation.layout.Arrangement.Vertical,androidx.compose.ui.Alignment.Horizontal,androidx.compose.foundation.gestures.FlingBehavior,kotlin.Boolean,androidx.wear.compose.foundation.rotary.RotaryScrollableBehavior,kotlin.Function1)" target="_blank"><code dir="ltr" translate="no">TransformingLazyColumn</code></a> 的实际应用，接下来让我们开始转换 <code dir="ltr" translate="no">LazyColumn</code>。</p>
+<h2 data-text="转换为 TransformingLazyColumnState" id="convert-to-a-transforminglazycolumnstate" is-upgraded="" tabindex="-1">转换为 TransformingLazyColumnState</h2>
+<p>在 <code dir="ltr" translate="no">MainActivity.kt</code> 中，搜索“<strong><code dir="ltr" translate="no">TODO: Swap to TransformingLazyColumnState</code></strong>”，并将其下的注释和行替换为以下代码。请注意我们如何指定第一个和最后一个组件，以确保使用最佳内边距值，避免内容被裁剪。</p>
+<p><strong>第 7 步</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scilab"><code translate="no" dir="ltr"><span class="devsite-syntax-c1">// TODO: Swap to TransformingLazyColumnState</span>
+<span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">listState</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">rememberTransformingLazyColumnState</span><span class="devsite-syntax-p">()</span>
+<span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">transformationSpec</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">rememberTransformationSpec</span><span class="devsite-syntax-p">()</span>
+</code></pre></devsite-code>
+<p>转换前后的名称几乎完全相同。就像 <code dir="ltr" translate="no">LazyListState</code> 用于处理 <code dir="ltr" translate="no">LazyColumn</code> 的状态一样，<code dir="ltr" translate="no">TransformingLazyColumnState</code> 用于处理 <code dir="ltr" translate="no">TransformingLazyColumn</code> 的状态。</p>
+<p>我们还在此处指定了 <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/lazy/TransformationSpec?hl=zh-cn" target="_blank"><code dir="ltr" translate="no">transformationSpec</code></a>，以便在项滚过屏幕时为其添加转换效果。</p>
+<h2 data-text="转换为 TransformingLazyColumn" id="convert-to-a-transforminglazycolumn" is-upgraded="" tabindex="-1">转换为 TransformingLazyColumn</h2>
+<p>接下来，我们换入 <code dir="ltr" translate="no">TransformingLazyColumn</code>。</p>
+<p>在 <code dir="ltr" translate="no">MainActivity.kt</code> 中，搜索“<strong><code dir="ltr" translate="no">TODO: Swap a TransformingLazyColumn</code></strong>”。首先，将 <code dir="ltr" translate="no">LazyColumn</code> 替换为 <code dir="ltr" translate="no">TransformingLazyColumn</code>。</p>
+<p>然后，将 <code dir="ltr" translate="no">contentPadding, verticalArrangement</code> 和 <code dir="ltr" translate="no">modifier</code> 一起移除。<code dir="ltr" translate="no">TransformingLazyColumn</code> 已提供默认设置，可保证实现更好的默认视觉效果，因为大多数视口会填充列表项。在大多数情况下，使用默认形参就足够了，如果您在顶部有标题，我们建议您将其作为第一项放入 <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary?hl=zh-cn#ListHeader(androidx.compose.ui.Modifier,androidx.compose.ui.graphics.Color,androidx.compose.ui.graphics.Color,androidx.compose.foundation.layout.PaddingValues,kotlin.Function1)" target="_blank"><code dir="ltr" translate="no">ListHeader</code></a> 中。</p>
+<p><strong>第 8 步</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scilab"><code translate="no" dir="ltr"><span class="devsite-syntax-c1">// TODO: Swap a TransformingLazyColumn (Wear's version of LazyColumn)</span>
+<span class="devsite-syntax-n">TransformingLazyColumn</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">state</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">listState</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">contentPadding</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">contentPadding</span><span class="devsite-syntax-p">)</span>
+</code></pre></devsite-code>
+<h2 data-text="为项目添加滚动转换效果" id="add-a-scroll-transform-effect-to-items" is-upgraded="" tabindex="-1">为项目添加滚动转换效果</h2>
+<p>现在，我们使用以下 <code dir="ltr" translate="no">Modifier</code> 和 <code dir="ltr" translate="no">SurfaceTransformation</code> 为 <code dir="ltr" translate="no">TransformingLazyColumn</code> 元素添加 ShapeMorphing 效果。将同一代码应用于所有组件（</p>
+<p>除尚不支持此功能的 <code dir="ltr" translate="no">IconButtonExample</code> 之外）<code dir="ltr" translate="no">.</code></p>
+<p><strong>第 9 步</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only"><code translate="no" dir="ltr">TextExample(
+   modifier = Modifier.fillMaxWidth().transformedHeight(this, transformationSpec),
+   transformation = SurfaceTransformation(transformationSpec),
+)
+</code></pre></devsite-code>
+<p>大功告成！我们来看一下它是什么样的：</p>
+<p class="image-container"><img alt="4c97e27b6acb83ef.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/compose-for-wear-os/img/4c97e27b6acb83ef.png?hl=zh-cn" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/4c97e27b6acb83ef_36.png?hl=zh-cn 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/4c97e27b6acb83ef_48.png?hl=zh-cn 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/4c97e27b6acb83ef_72.png?hl=zh-cn 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/4c97e27b6acb83ef_96.png?hl=zh-cn 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/4c97e27b6acb83ef_480.png?hl=zh-cn 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/4c97e27b6acb83ef_720.png?hl=zh-cn 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/4c97e27b6acb83ef_856.png?hl=zh-cn 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/4c97e27b6acb83ef_960.png?hl=zh-cn 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/4c97e27b6acb83ef_1440.png?hl=zh-cn 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/4c97e27b6acb83ef_1920.png?hl=zh-cn 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/4c97e27b6acb83ef_2880.png?hl=zh-cn 2880w" style="width: 199.79px" /></p>
+<p>滚动屏幕时您可以看到，内容会缩放且屏幕顶部和底部的透明度会调整，只需执行极少工作即可完成迁移！</p>
+<p>在上下移动冥想可组合项时，您可以真正观察它。</p>
+<p>现在谈到最后一个主题，Wear OS 的 <code dir="ltr" translate="no">Scaffold</code>。</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="6" step="7" label="添加 Scaffold">
+          
+          <h2 class="step-title" data-text="               8. 添加 Scaffold           " id="7" tabindex="-1">
+              8. 添加 Scaffold
+          </h2>
+          <p><a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary?hl=zh-cn#AppScaffold(androidx.compose.ui.Modifier,kotlin.Function0,kotlin.Function1)" target="_blank">AppScaffold</a> 和 <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary?hl=zh-cn#ScreenScaffold(androidx.wear.compose.foundation.lazy.ScalingLazyListState,kotlin.Function1,androidx.compose.ui.Modifier,androidx.compose.foundation.layout.PaddingValues,kotlin.Function0,kotlin.Function1,androidx.compose.ui.unit.Dp,kotlin.Function2)" target="_blank">ScreenScaffold</a> 提供了一种布局结构来帮助您按照常见模式排列界面，就像在移动设备上一样，但与<a href="https://developer.android.com/jetpack/compose/layouts/material?hl=zh-cn#scaffold" target="_blank">应用栏、FAB、抽屉式导航栏或其他移动设备专用元素</a>不同的是，它支持包含顶层组件的三种 Wear 专用布局：时间、滚动/位置指示器和页面指示器。</p>
+<p>这些信息大致是这样显示的：</p>
+<table class="vertical-rules">
+<tbody><tr><td colspan="1" rowspan="1"><p class="image-container"><img sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/compose-for-wear-os/img/ca4baa1c6f01e9a7.png?hl=zh-cn" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/ca4baa1c6f01e9a7_36.png?hl=zh-cn 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/ca4baa1c6f01e9a7_48.png?hl=zh-cn 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/ca4baa1c6f01e9a7_72.png?hl=zh-cn 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/ca4baa1c6f01e9a7_96.png?hl=zh-cn 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/ca4baa1c6f01e9a7_480.png?hl=zh-cn 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/ca4baa1c6f01e9a7_720.png?hl=zh-cn 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/ca4baa1c6f01e9a7_856.png?hl=zh-cn 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/ca4baa1c6f01e9a7_960.png?hl=zh-cn 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/ca4baa1c6f01e9a7_1440.png?hl=zh-cn 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/ca4baa1c6f01e9a7_1920.png?hl=zh-cn 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/ca4baa1c6f01e9a7_2880.png?hl=zh-cn 2880w" /></p>
+</td><td colspan="1" rowspan="1"><p><a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary?hl=zh-cn#TimeText(androidx.compose.ui.Modifier,androidx.wear.compose.material.TimeSource,androidx.compose.ui.text.TextStyle,androidx.compose.foundation.layout.PaddingValues,kotlin.Function0,kotlin.Function1,kotlin.Function0,kotlin.Function1,kotlin.Function0,kotlin.Function1)" target="_blank"><code dir="ltr" translate="no">TimeText</code></a></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/compose-for-wear-os/img/b60ff4d19fc7615b.png?hl=zh-cn" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/b60ff4d19fc7615b_36.png?hl=zh-cn 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/b60ff4d19fc7615b_48.png?hl=zh-cn 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/b60ff4d19fc7615b_72.png?hl=zh-cn 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/b60ff4d19fc7615b_96.png?hl=zh-cn 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/b60ff4d19fc7615b_480.png?hl=zh-cn 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/b60ff4d19fc7615b_720.png?hl=zh-cn 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/b60ff4d19fc7615b_856.png?hl=zh-cn 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/b60ff4d19fc7615b_960.png?hl=zh-cn 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/b60ff4d19fc7615b_1440.png?hl=zh-cn 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/b60ff4d19fc7615b_1920.png?hl=zh-cn 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/b60ff4d19fc7615b_2880.png?hl=zh-cn 2880w" /></p>
+</td><td colspan="1" rowspan="1"><p><a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary?hl=zh-cn#ScrollIndicator(androidx.compose.foundation.lazy.LazyListState,androidx.compose.ui.Modifier,kotlin.Boolean,androidx.compose.animation.core.AnimationSpec)" target="_blank"><code dir="ltr" translate="no">ScrollIndicator</code></a></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/compose-for-wear-os/img/c8e67bda83f311ac.png?hl=zh-cn" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/c8e67bda83f311ac_36.png?hl=zh-cn 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c8e67bda83f311ac_48.png?hl=zh-cn 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c8e67bda83f311ac_72.png?hl=zh-cn 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c8e67bda83f311ac_96.png?hl=zh-cn 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c8e67bda83f311ac_480.png?hl=zh-cn 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c8e67bda83f311ac_720.png?hl=zh-cn 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c8e67bda83f311ac_856.png?hl=zh-cn 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c8e67bda83f311ac_960.png?hl=zh-cn 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c8e67bda83f311ac_1440.png?hl=zh-cn 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c8e67bda83f311ac_1920.png?hl=zh-cn 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c8e67bda83f311ac_2880.png?hl=zh-cn 2880w" /></p>
+</td><td colspan="1" rowspan="1"><p><a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary?hl=zh-cn#HorizontalPageIndicator(androidx.wear.compose.foundation.pager.PagerState,androidx.compose.ui.Modifier,androidx.compose.ui.graphics.Color,androidx.compose.ui.graphics.Color,androidx.compose.ui.graphics.Color)" target="_blank"><code dir="ltr" translate="no">HorizontalPageIndicator</code></a></p>
+</td></tr>
+</tbody></table>
+<p>我们将详细介绍前三个组件，不过，我们首先搭建 Scaffold。</p>
+<p>基架组件 <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary?hl=zh-cn#AppScaffold(androidx.compose.ui.Modifier,kotlin.Function0,kotlin.Function1)" target="_blank"><code dir="ltr" translate="no">AppScaffold</code></a> 和 <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary?hl=zh-cn#ScreenScaffold(androidx.wear.compose.foundation.lazy.ScalingLazyListState,kotlin.Function1,androidx.compose.ui.Modifier,androidx.compose.foundation.layout.PaddingValues,kotlin.Function0,kotlin.Function1,androidx.compose.ui.unit.Dp,kotlin.Function2)" target="_blank"><code dir="ltr" translate="no">ScreenScaffold</code></a> 会布局屏幕的结构，并协调 <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary?hl=zh-cn#ScrollIndicator(androidx.compose.foundation.ScrollState,androidx.compose.ui.Modifier,kotlin.Boolean,androidx.compose.animation.core.AnimationSpec)" target="_blank"><code dir="ltr" translate="no">ScrollIndicator</code></a> 和 <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary?hl=zh-cn#TimeText(androidx.compose.ui.Modifier,androidx.wear.compose.foundation.CurvedModifier,kotlin.Float,androidx.wear.compose.material3.TimeSource,androidx.compose.foundation.layout.PaddingValues,kotlin.Function2)" target="_blank"><code dir="ltr" translate="no">TimeText</code></a> 组件的转换。</p>
+<p><a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary?hl=zh-cn#AppScaffold(androidx.compose.ui.Modifier,kotlin.Function0,kotlin.Function1)" target="_blank"><code dir="ltr" translate="no">AppScaffold</code></a> 可让静态界面元素（例如 <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary?hl=zh-cn#TimeText(androidx.compose.ui.Modifier,androidx.wear.compose.foundation.CurvedModifier,kotlin.Float,androidx.wear.compose.material3.TimeSource,androidx.compose.foundation.layout.PaddingValues,kotlin.Function2)" target="_blank"><code dir="ltr" translate="no">TimeText</code></a>）在应用内转换期间（例如滑动关闭）保持可见。<a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary?hl=zh-cn#ScreenScaffold(androidx.wear.compose.foundation.lazy.ScalingLazyListState,kotlin.Function1,androidx.compose.ui.Modifier,androidx.compose.foundation.layout.PaddingValues,kotlin.Function0,kotlin.Function1,androidx.compose.ui.unit.Dp,kotlin.Function2)" target="_blank"><code dir="ltr" translate="no">ScreenScaffold</code></a> 默认会在屏幕中心位置显示 <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary?hl=zh-cn#ScrollIndicator(androidx.compose.foundation.ScrollState,androidx.compose.ui.Modifier,androidx.wear.compose.material3.ScrollIndicatorColors,kotlin.Boolean,androidx.compose.animation.core.AnimationSpec)" target="_blank"><code dir="ltr" translate="no">ScrollIndicator</code></a>，并协调显示/隐藏 <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary?hl=zh-cn#TimeText(androidx.compose.ui.Modifier,androidx.wear.compose.foundation.CurvedModifier,kotlin.Float,androidx.compose.ui.graphics.Color,androidx.wear.compose.material3.TimeSource,androidx.compose.foundation.layout.PaddingValues,kotlin.Function2)" target="_blank"><code dir="ltr" translate="no">TimeText</code></a> 和 <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary?hl=zh-cn#ScrollIndicator(androidx.compose.foundation.ScrollState,androidx.compose.ui.Modifier,androidx.wear.compose.material3.ScrollIndicatorColors,kotlin.Boolean,androidx.compose.animation.core.AnimationSpec)" target="_blank"><code dir="ltr" translate="no">ScrollIndicator</code></a></p>
+<h2 data-text="添加 Scaffold" id="add-a-scaffold" is-upgraded="" tabindex="-1">添加 Scaffold</h2>
+<p>现在，我们为 <code dir="ltr" translate="no">AppScaffold</code> 和 <code dir="ltr" translate="no">ScreenScaffold</code> 添加样板代码。</p>
+<p>找到“<strong><code dir="ltr" translate="no">TODO (Start): Create a AppScaffold (Wear Version)</code></strong>”并在其下添加以下代码。</p>
+<p><strong>第 9 步</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only"><code translate="no" dir="ltr">WearAppTheme {
+// TODO (Start): Create a AppScaffold (Wear Version)
+AppScaffold {
+</code></pre></devsite-code>
+<p>找到<strong><code dir="ltr" translate="no">"TODO (Start): Create a ScreenScaffold (Wear Version)"</code></strong>并在其下添加以下代码。</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scilab"><code translate="no" dir="ltr"><span class="devsite-syntax-c1">// TODO (Start): Create a ScreenScaffold (Wear Version)</span>
+<span class="devsite-syntax-n">ScreenScaffold</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-w"> </span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">scrollState</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">listState</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">contentPadding</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">rememberResponsiveColumnPadding</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">       </span><span class="devsite-syntax-n">first</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ColumnItemType</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">IconButton</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">       </span><span class="devsite-syntax-n">last</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ColumnItemType</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">Button</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">),</span>
+<span class="devsite-syntax-p">){</span><span class="devsite-syntax-n">contentPadding</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">-</span>&gt;
+</code></pre></devsite-code>
+<p>接下来，请务必将右括号添加到正确的位置。</p>
+<p>找到<strong><code dir="ltr" translate="no">"TODO (End): Create a ScreenScaffold (Wear Version)"</code></strong>并在该处添加右括号：</p>
+<p><strong>第 10 步</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scilab"><code translate="no" dir="ltr"><span class="devsite-syntax-c1">// TODO (End): Create a ScreenScaffold (Wear Version)</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>找到<strong><code dir="ltr" translate="no">"TODO (End): Create a AppScaffold (Wear Version)"</code></strong>并在该处添加右括号：</p>
+<p><strong>第 10 步</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scilab"><code translate="no" dir="ltr"><span class="devsite-syntax-c1">// TODO (End): Create a AppScaffold (Wear Version)</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>我们先运行该代码。您应该会看到与以下类似的内容：</p>
+<p class="image-container"><img alt="97e417901b8f8229.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/compose-for-wear-os/img/97e417901b8f8229.png?hl=zh-cn" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/97e417901b8f8229_36.png?hl=zh-cn 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/97e417901b8f8229_48.png?hl=zh-cn 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/97e417901b8f8229_72.png?hl=zh-cn 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/97e417901b8f8229_96.png?hl=zh-cn 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/97e417901b8f8229_480.png?hl=zh-cn 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/97e417901b8f8229_720.png?hl=zh-cn 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/97e417901b8f8229_856.png?hl=zh-cn 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/97e417901b8f8229_960.png?hl=zh-cn 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/97e417901b8f8229_1440.png?hl=zh-cn 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/97e417901b8f8229_1920.png?hl=zh-cn 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/97e417901b8f8229_2880.png?hl=zh-cn 2880w" style="width: 211.20px" /></p>
+<p>请注意，代码中添加了以下内容：</p>
+<ul>
+<li><a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary?hl=zh-cn#TimeText(androidx.compose.ui.Modifier,androidx.wear.compose.material.TimeSource,androidx.compose.ui.text.TextStyle,androidx.compose.foundation.layout.PaddingValues,kotlin.Function0,kotlin.Function1,kotlin.Function0,kotlin.Function1,kotlin.Function0,kotlin.Function1)" target="_blank"><code dir="ltr" translate="no">TimeText</code></a>：此项在后台使用曲线文本样式，让开发者可以轻松显示时间，而无需放置可组合函数或处理与时间相关的类。此外，<a href="https://developer.android.com/training/wearables/design/overlays?hl=zh-cn#time" target="_blank">Material 准则建议您在应用内任何界面的顶部显示时间</a>，并在滚动时让时间淡出。</li>
+<li><a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary?hl=zh-cn#ScrollIndicator(androidx.compose.foundation.lazy.LazyListState,androidx.compose.ui.Modifier,kotlin.Boolean,androidx.compose.animation.core.AnimationSpec)" target="_blank"><code dir="ltr" translate="no">ScrollIndicator</code></a>：此项是界面右侧的指示器，用于根据传入的状态对象的类型显示当前指示器的位置。在本例中，状态对象是 <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/foundation/lazy/TransformingLazyColumnState?hl=zh-cn" target="_blank"><code dir="ltr" translate="no">TransformingLazyColumnState</code></a>。</li>
+</ul>
+<p>现在，我们来预览一下效果如何：</p>
+<p class="image-container"><img alt="fd00c8fc4f7283ef.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/compose-for-wear-os/img/fd00c8fc4f7283ef.png?hl=zh-cn" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/fd00c8fc4f7283ef_36.png?hl=zh-cn 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/fd00c8fc4f7283ef_48.png?hl=zh-cn 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/fd00c8fc4f7283ef_72.png?hl=zh-cn 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/fd00c8fc4f7283ef_96.png?hl=zh-cn 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/fd00c8fc4f7283ef_480.png?hl=zh-cn 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/fd00c8fc4f7283ef_720.png?hl=zh-cn 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/fd00c8fc4f7283ef_856.png?hl=zh-cn 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/fd00c8fc4f7283ef_960.png?hl=zh-cn 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/fd00c8fc4f7283ef_1440.png?hl=zh-cn 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/fd00c8fc4f7283ef_1920.png?hl=zh-cn 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/fd00c8fc4f7283ef_2880.png?hl=zh-cn 2880w" style="width: 211.20px" /></p>
+<p>请尝试上下滚动。您应该只会在滚动时看到滚动指示器显示。</p>
+<h2 data-text="添加边缘填充按钮" id="add-a-edge-hugging-button" is-upgraded="" tabindex="-1">添加边缘填充按钮</h2>
+<p><a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary?hl=zh-cn#EdgeButton(kotlin.Function0,androidx.compose.ui.Modifier,androidx.wear.compose.material3.EdgeButtonSize,kotlin.Boolean,androidx.wear.compose.material3.ButtonColors,androidx.compose.foundation.BorderStroke,androidx.compose.foundation.interaction.MutableInteractionSource,kotlin.Function1)" target="_blank"><code dir="ltr" translate="no">EdgeButton</code></a> 是适用于 Wear OS 版本的 M3 Compose 素材中的一种新的表达式按钮。边缘填充容器是一种新形状，它采用圆形设计，并最大限度地利用圆形设备规格中的空间。</p>
+<p><code dir="ltr" translate="no">ScreenScaffold</code> 可提供一个用于 EdgeButton 的 slot，该 slot 占据滚动列表下方的可用空间。当用户滚动到列表末尾时，该按钮会放大并淡入；当用户向上滚动时，该按钮会缩小并淡出。现在，我们来将 <code dir="ltr" translate="no">EdgeButton</code> 添加到代码中：</p>
+<p><strong>第 11 步</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">ScreenScaffold(
+  scrollState = listState,
+  contentPadding = rememberResponsiveColumnPadding(
+    first = ColumnItemType.IconButton,
+    last = ColumnItemType.Button,
+  ),
+/* *************************** Part 11: EdgeButton *************************** <span class="devsite-syntax-gs">*/</span>
+<span class="devsite-syntax-gs">  // TODO: Add a EdgeButton</span>
+<span class="devsite-syntax-gs">   edgeButton = {</span>
+<span class="devsite-syntax-gs">     EdgeButton(</span>
+<span class="devsite-syntax-gs">      onClick = { /*</span> ... */ },
+      buttonSize = EdgeButtonSize.Medium) {
+        Text(stringResource(R.string.more))
+      }
+   }
+</code></pre></devsite-code>
+<p>您可为 <code dir="ltr" translate="no">EdgeButton</code> 指定 <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/EdgeButtonSize?hl=zh-cn" target="_blank">4 种不同的尺寸</a>：<code dir="ltr" translate="no">ExtraSmall</code>、<code dir="ltr" translate="no">Small</code>、<code dir="ltr" translate="no">Medium</code> 和 <code dir="ltr" translate="no">Large</code>。</p>
+<p>现在，我们来预览一下效果如何：</p>
+<p class="image-container"><img alt="3a973bbfe4941e67.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/compose-for-wear-os/img/3a973bbfe4941e67.png?hl=zh-cn" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/3a973bbfe4941e67_36.png?hl=zh-cn 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/3a973bbfe4941e67_48.png?hl=zh-cn 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/3a973bbfe4941e67_72.png?hl=zh-cn 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/3a973bbfe4941e67_96.png?hl=zh-cn 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/3a973bbfe4941e67_480.png?hl=zh-cn 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/3a973bbfe4941e67_720.png?hl=zh-cn 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/3a973bbfe4941e67_856.png?hl=zh-cn 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/3a973bbfe4941e67_960.png?hl=zh-cn 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/3a973bbfe4941e67_1440.png?hl=zh-cn 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/3a973bbfe4941e67_1920.png?hl=zh-cn 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/3a973bbfe4941e67_2880.png?hl=zh-cn 2880w" style="width: 211.20px" /></p>
+<p>太棒了，您已完成了大多数 Wear OS 可组合项的界面演示！</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="1" step="8" label="恭喜">
+          
+          <h2 class="step-title" data-text="               9. 恭喜           " id="8" tabindex="-1">
+              9. 恭喜
+          </h2>
+          <p>恭喜！您已学习了在 Wear OS 上使用 Compose 的基础知识！</p>
+<p>现在，您可以重新应用您掌握的所有 Compose 知识，打造精美的 Wear OS 应用！</p>
+<h2 data-text="后续操作" id="whats-next" is-upgraded="" tabindex="-1">后续操作</h2>
+<p>查看其他 Wear OS Codelab：</p>
+<ul>
+<li><a href="https://developer.android.com/codelabs/wear-tiles?hl=zh-cn" target="_blank">创建您的第一个 Wear OS 功能块</a></li>
+</ul>
+<h2 data-text="深入阅读" id="further-reading" is-upgraded="" tabindex="-1">深入阅读</h2>
+<ul>
+<li>GitHub 上的 <a href="https://github.com/android/wear-os-samples/tree/main/ComposeStarter" target="_blank">Compose 启动器示例</a></li>
+<li>如需更多指南，请参阅<a href="https://developer.android.com/wear?hl=zh-cn" target="_blank">借助 Wear OS 开发适用于手表的应用</a></li>
+<li><a href="https://developer.android.com/training/wearables/compose?hl=zh-cn" target="_blank">在 Wear OS 上使用 Jetpack Compose</a></li>
+</ul>
+<h2 data-text="反馈" id="feedback" is-upgraded="" tabindex="-1">反馈</h2>
+<p>我们希望倾听有关您使用 Compose for Wear OS 的体验以及您可以构建的内容方面的反馈！欢迎加入 <a href="https://surveys.jetbrains.com/s3/kotlin-slack-sign-up" target="_blank">Kotlin Slack</a> <strong>#compose-wear</strong> 渠道的讨论，并在<a href="https://issuetracker.google.com/issues/new?component=1077552&template=1598429&hl=zh-cn" target="_blank">问题跟踪器</a>中持续提供反馈。</p>
+<p>乐享编码！</p>
+
+
+        </google-codelab-step>
+      
+    </google-codelab>
+  
+  
+  
+
+  
+</div>
+
+  
+    
+    
+    
+  
+
+  <div class="devsite-floating-action-buttons"></div></article>
+
+
+<devsite-content-footer class="nocontent">
+  <p>如未另行说明，那么本页面中的内容已根据<a href="https://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 许可</a>获得了许可，并且代码示例已根据 <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 许可</a>获得了许可。有关详情，请参阅 <a href="https://developers.google.com/site-policies?hl=zh-cn">Google 开发者网站政策</a>。Java 是 Oracle 和/或其关联公司的注册商标。</p>
+  
+</devsite-content-footer>
+
+
+<devsite-notification
+>
+</devsite-notification>
+
+
+  
+<div class="devsite-content-data">
+  
+  
+    <template class="devsite-content-data-template">
+      [[["易于理解","easyToUnderstand","thumb-up"],["解决了我的问题","solvedMyProblem","thumb-up"],["其他","otherUp","thumb-up"]],[["没有我需要的信息","missingTheInformationINeed","thumb-down"],["太复杂/步骤太多","tooComplicatedTooManySteps","thumb-down"],["内容需要更新","outOfDate","thumb-down"],["翻译问题","translationIssue","thumb-down"],["示例/代码问题","samplesCodeIssue","thumb-down"],["其他","otherDown","thumb-down"]],[],[],[],null,[]]
+    </template>
+  
+</div>
+            
+          </devsite-content>
+        </main>
+        <devsite-footer-promos class="devsite-footer">
+          
+            
+
+<nav class="devsite-footer-promos nocontent" aria-label="促销活动">
+  <ul class="devsite-footer-promos-list">
+    
+    <li class="devsite-footer-promo">
+      <a href="//x.com/AndroidDev"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer X Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-x_dt.svg?hl=zh-cn"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="https://developer.android.com/_static/android/images/logo-x.svg?hl=zh-cn"
+                loading="lazy"
+                alt="X">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          X
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">在 X 上关注 @AndroidDev</div>
+    </li>
+    
+    <li class="devsite-footer-promo">
+      <a href="//www.youtube.com/user/androiddevelopers?hl=zh-cn"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer YouTube Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-youtube_dt.svg?hl=zh-cn"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="//www.gstatic.com/images/icons/material/product/2x/youtube_48dp.png"
+                loading="lazy"
+                alt="YouTube">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          YouTube
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">在 YouTube 上访问“Android Developers”频道</div>
+    </li>
+    
+    <li class="devsite-footer-promo">
+      <a href="//www.linkedin.com/showcase/androiddev"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer LinkedIn Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-linkedin_dt.svg?hl=zh-cn"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="https://developer.android.com/_static/android/images/logo-linkedin.svg?hl=zh-cn"
+                loading="lazy"
+                alt="LinkedIn">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          LinkedIn
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Connect with the Android Developers community on LinkedIn</div>
+    </li>
+    
+  </ul>
+</nav>
+
+          
+        </devsite-footer-promos>
+        <devsite-footer-linkboxes class="devsite-footer">
+          
+            
+<nav class="devsite-footer-linkboxes nocontent" aria-label="页脚链接">
+  
+  <ul class="devsite-footer-linkboxes-list">
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">关于 Android</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com/enterprise/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            适用于企业的 Android
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com/security-center/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            安全
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//source.android.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            源代码
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/news"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            新闻
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//android-developers.googleblog.com/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+          
+            博客
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/podcasts"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 7)"
+            >
+            
+              
+              
+            
+          
+            播客
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">发现</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/games"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            游戏
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/ml"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            机器学习
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/health-and-fitness"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            健康与健身
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/media"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            相机与媒体
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/privacy"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            隐私权政策
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/training/connectivity/5g"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+              
+              
+            
+          
+            5G
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Android 设备</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/large-screens"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            大屏幕
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/wear"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Wear OS
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/chrome-os"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            ChromeOS 设备
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/cars"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Android for Cars
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/tv"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+              
+              
+            
+          
+            Android TV
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">版本</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/15"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android 15
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/14"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Android 14
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/13"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Android 13
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/12"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Android 12
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/11"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            Android 11
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/10"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+          
+            Android 10
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/pie"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 7)"
+            >
+            
+              
+              
+            
+          
+            Pie
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">文档和下载</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/studio/intro"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android Studio 指南
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/guide"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            开发者指南
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/reference"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            API 参考
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/studio"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            下载 Studio
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/ndk"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+              
+              
+            
+          
+            Android NDK
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">支持</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//issuetracker.google.com/issues/new?component=190923&amp;template=841312"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            报告平台错误
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//issuetracker.google.com/issues/new?component=192697"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            报告文档错误
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//support.google.com/googleplay/android-developer"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Google Play support
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://g.co/userresearch/androiddeveloperfooter"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+              
+              
+            
+          
+            参加调查研究
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+  
+</nav>
+          
+        </devsite-footer-linkboxes>
+        <devsite-footer-utility class="devsite-footer">
+          
+            
+
+<div class="devsite-footer-utility nocontent">
+  
+  
+  <nav class="devsite-footer-sites" aria-label="其他 Google Developers 网站">
+    <a href="https://developers.google.com/?hl=zh-cn"
+       class="devsite-footer-sites-logo-link gc-analytics-event"
+       data-category="Site-Wide Custom Events"
+       data-label="Footer Google Developers Link">
+      <picture>
+        
+        <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-google-for-developers-dark-theme.svg"
+                media="(prefers-color-scheme: none)"
+                class="devsite-dark-theme">
+        
+        <img class="devsite-footer-sites-logo"
+             src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-google-for-developers.svg"
+             loading="lazy"
+             alt="Google Developers">
+      </picture>
+    </a>
+    <ul class="devsite-footer-sites-list">
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.android.com?hl=zh-cn"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Android Link"
+         
+         >
+          Android
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.chrome.com/home?hl=zh-cn"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Chrome Link"
+         
+         >
+          Chrome
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//firebase.google.com?hl=zh-cn"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Firebase Link"
+         
+         >
+          Firebase
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//cloud.google.com?hl=zh-cn"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Google Cloud Platform Link"
+         
+         >
+          Google Cloud Platform
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developers.google.com/products/?hl=zh-cn"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer All products Link"
+         
+         >
+          所有产品
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  
+
+  
+  <nav class="devsite-footer-utility-links" aria-label="实用程序链接">
+    
+    <ul class="devsite-footer-utility-list">
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//policies.google.com/privacy?hl=zh-cn"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Privacy link"
+         >
+          隐私权政策
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="https://developer.android.com/license?hl=zh-cn"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer License link"
+         >
+          许可
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="https://developer.android.com/distribute/marketing-tools/brand-guidelines?hl=zh-cn"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Brand guidelines link"
+         >
+          品牌指南
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 glue-cookie-notification-bar-control">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="#"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Manage cookies link"
+         
+           aria-hidden="true"
+         >
+          Manage cookies
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 devsite-footer-utility-button">
+        
+        <span class="devsite-footer-utility-description">通过电子邮件接收资讯和提示</span>
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="https://developer.android.com/updates?hl=zh-cn"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Subscribe link"
+         >
+          订阅
+        </a>
+        
+      </li>
+      
+    </ul>
+    
+    
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+  </nav>
+</div>
+          
+        </devsite-footer-utility>
+        <devsite-panel>
+          
+        </devsite-panel>
+        
+      </section></section>
+    <devsite-sitemask></devsite-sitemask>
+    <devsite-snackbar></devsite-snackbar>
+    <devsite-tooltip ></devsite-tooltip>
+    <devsite-heading-link></devsite-heading-link>
+    <devsite-analytics>
+      
+        <script type="application/json" analytics>[]</script>
+<script type="application/json" tag-management>{&#34;at&#34;: &#34;True&#34;, &#34;ga4&#34;: [{&#34;id&#34;: &#34;G-QFRN08RN6E&#34;, &#34;purpose&#34;: 0}], &#34;ga4p&#34;: [{&#34;id&#34;: &#34;G-QFRN08RN6E&#34;, &#34;purpose&#34;: 0}], &#34;gtm&#34;: [], &#34;parameters&#34;: {&#34;internalUser&#34;: &#34;False&#34;, &#34;language&#34;: {&#34;machineTranslated&#34;: &#34;False&#34;, &#34;requested&#34;: &#34;zh-cn&#34;, &#34;served&#34;: &#34;zh-cn&#34;}, &#34;pageType&#34;: &#34;codelab&#34;, &#34;projectName&#34;: null, &#34;signedIn&#34;: &#34;False&#34;, &#34;tenant&#34;: &#34;android&#34;, &#34;recommendations&#34;: {&#34;sourcePage&#34;: &#34;&#34;, &#34;sourceType&#34;: 0, &#34;sourceRank&#34;: 0, &#34;sourceIdenticalDescriptions&#34;: 0, &#34;sourceTitleWords&#34;: 0, &#34;sourceDescriptionWords&#34;: 0, &#34;experiment&#34;: &#34;&#34;}, &#34;experiment&#34;: {&#34;ids&#34;: &#34;&#34;}}}</script>
+      
+    </devsite-analytics>
+    
+      <devsite-badger></devsite-badger>
+    
+    
+    
+<android-fully-clickable
+    target="
+        .android-case-study .devsite-landing-row-item,
+        .android-editorial-and-updates-cards .devsite-card-content-wrapper,
+        .android-editorial-and-updates-cards .devsite-landing-row-item,
+        .android-grouped-resources .devsite-landing-row-item,
+        .android-grouped-resources-contained--primary .devsite-landing-row-item,
+        .android-grouped-resources-contained--secondary .devsite-landing-row-item,
+        .android-grouped-resources-contained--tertiary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--primary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--secondary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--tertiary .devsite-landing-row-item,
+        .android-guide-cards .devsite-landing-row-item,
+        .android-illustrated-resources-index .devsite-landing-row-item,
+        .android-illustrated-resources-primary .devsite-landing-row-item,
+        .android-illustrated-resources-secondary .devsite-landing-row-item,
+        .android-illustrated-resources-secondary-small .devsite-landing-row-item,
+        .android-illustrated-resources-tertiary .devsite-landing-row-item,
+        .android-illustrated-resources-tertiary-small .devsite-landing-row-item,
+        .android-promo .devsite-landing-row-item,
+        .android-quick-link,
+        .android-samples .devsite-card-wrapper,
+        .fully-clickable"
+    watch=".android-editorial-and-updates-cards, .android-samples, devsite-content"></android-fully-clickable>
+    
+<script nonce="wqyAbuzV+pm2xYF6boaxq6o6Lx+4JL">
+  
+  (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+    t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+    E.parentNode.insertBefore(t,E);})(window, document, 'script',
+    'https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/js/app_loader.js', '[3,"zh_cn",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android","https://android-dot-devsite-v2-prod.appspot.com",1,null,["/_pwa/android/manifest.json","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/favicon.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png","https://fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,600italic,700,700italic|Roboto+Mono:400,500,700&display=swap"],1,null,[1,6,8,12,14,17,21,25,50,52,63,70,75,76,80,87,91,92,93,97,98,100,101,102,103,104,105,107,108,109,110,112,113,116,117,118,120,122,124,125,126,127,129,130,131,132,133,134,135,136,138,140,141,147,148,149,151,152,156,157,158,159,161,163,164,168,169,170,179,180,182,183,186,191,193,196],"AIzaSyAP-jjEJBzmIyKR4F-3XITp8yM9T1gEEI8","AIzaSyB6xiKGDR5O3Ak2okS4rLkauxGUG7XP0hg","developer.android.com","AIzaSyAQk0fBONSGUqCNznf6Krs82Ap1-NV6J4o","AIzaSyCCxcqdrZ_7QMeLCRY20bh_SXdAYqy70KY",null,null,null,["MiscFeatureFlags__gdp_dashboard_reskin_enabled","DevPro__enable_code_assist","Concierge__enable_pushui","Search__enable_dynamic_content_confidential_banner","MiscFeatureFlags__developers_footer_image","DevPro__enable_firebase_workspaces_card","DevPro__enable_google_one_card","MiscFeatureFlags__enable_appearance_cookies","Profiles__enable_dashboard_curated_recommendations","Significatio__enable_by_tenant","Profiles__enable_page_saving","BookNav__enable_tenant_cache_key","Profiles__enable_profile_collections","MiscFeatureFlags__enable_view_transitions","Profiles__enable_completecodelab_endpoint","Profiles__enable_user_type","Search__enable_page_map","Cloud__enable_cloud_dlp_service","DevPro__enable_google_payments_buyflow","Profiles__enable_release_notes_notifications","Search__enable_ai_eligibility_checks","Cloud__enable_free_trial_server_call","Concierge__enable_actions_menu","Profiles__enable_stripe_subscription_management","MiscFeatureFlags__enable_variable_operator_index_yaml","Profiles__enable_purchase_prompts","DevPro__enable_nvidia_credits_card","Concierge__enable_remove_info_panel_tags","Profiles__enable_playlist_community_acl","Analytics__enable_clearcut_logging","DevPro__remove_eu_tax_intake_form","DevPro__enable_embed_profile_creation","Profiles__enable_public_developer_profiles","DevPro__enable_developer_subscriptions","Experiments__reqs_query_experiments","Search__enable_ai_search_summaries_for_all","MiscFeatureFlags__enable_dark_theme","DevPro__enable_vertex_credit_card","TpcFeatures__proxy_prod_host","Cloud__enable_llm_concierge_chat","CloudShell__cloud_code_overflow_menu","CloudShell__cloud_shell_button","Cloud__enable_cloud_shell_fte_user_flow","DevPro__enable_free_benefits","MiscFeatureFlags__enable_framebox_badge_methods","DevPro__enable_enterprise","MiscFeatureFlags__emergency_css","Profiles__enable_completequiz_endpoint","MiscFeatureFlags__enable_explicit_template_dependencies","Profiles__enable_developer_profiles_callout","DevPro__enable_devpro_offers","Cloud__enable_cloudx_experiment_ids","Cloud__fast_free_trial","TpcFeatures__enable_unmirrored_page_left_nav","Search__enable_suggestions_from_borg","MiscFeatureFlags__developers_footer_dark_image","Profiles__enable_developer_profile_benefits_ui_redesign","Profiles__require_profile_eligibility_for_signin","Profiles__enable_recognition_badges","Profiles__enable_join_program_group_endpoint","MiscFeatureFlags__enable_firebase_utm","Profiles__enable_complete_playlist_endpoint","Cloud__cache_serialized_dynamic_content","EngEduTelemetry__enable_engedu_telemetry","Cloud__enable_legacy_calculator_redirect","MiscFeatureFlags__enable_variable_operator","Profiles__enable_callout_notifications","MiscFeatureFlags__enable_project_variables","DevPro__enable_cloud_innovators_plus","Cloud__enable_cloud_shell","Profiles__enable_awarding_url","MiscFeatureFlags__enable_project_body_class"],null,null,"AIzaSyBLEMok-5suZ67qRPzx0qUtbnLmyT_kCVE","https://developerscontentserving-pa.googleapis.com","AIzaSyCM4QpTRSqP5qI4Dvjt4OAScIN8sOUlO-k","https://developerscontentsearch-pa.googleapis.com",2,4,null,"https://developerprofiles-pa.googleapis.com",[3,"android","Android Developers","developer.android.com",null,"android-dot-devsite-v2-prod.appspot.com",null,null,[null,1,null,null,null,null,null,null,null,null,null,[1],null,null,null,null,null,null,[1],[1,null,null,[1,20],"/recommendations"],null,null,null,[1,null,1],[1,1,null,1,1]],null,[18,null,null,null,null,null,"/images/lockup.png","/images/touchicon-180.png",null,null,null,null,null,null,null,null,null,null,null,null,null,2,null,null,null,"/images/lockup-dark-theme.png",[]],[],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[6,1,14,15,20,22,23,28,29,37,43],null,[[null,null,1],[1,1]],[[null,null,null,null,null,null,null,[["G-QFRN08RN6E"],null,null,[["G-QFRN08RN6E",1]]],null,null,null,null,1],null,[[2,2],[1,1]]],null,4,null,null,null,null,null,null,null,null,null,null,null,null,null,"android.devsite.google"],null,"pk_live_5170syrHvgGVmSx9sBrnWtA5luvk9BwnVcvIi7HizpwauFG96WedXsuXh790rtij9AmGllqPtMLfhe2RSwD6Pn38V00uBCydV4m",1,null,"https://developerscontentinsights-pa.googleapis.com","AIzaSyCg-ZUslalsEbXMfIo9ZP8qufZgo3LSBDU","AIzaSyDxT0vkxnY_KeINtA4LSePJO-4MAZPMRsE","https://developers.googleapis.com",null,null,"AIzaSyBQom12tzI-rybN7Sf-KfeL4nwm-Rf7PmI\n",null,"https://developerslogging.googleapis.com"]')
+  
+</script>
+
+    <devsite-a11y-announce></devsite-a11y-announce>
+  </body>
+</html>

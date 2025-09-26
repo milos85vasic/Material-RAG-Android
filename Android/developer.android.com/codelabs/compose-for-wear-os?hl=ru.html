@@ -1,0 +1,2249 @@
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html 
+      lang="en"
+      dir="ltr">
+  <head>
+    <meta name="google-signin-client-id" content="721724668570-nbkv1cfusk7kk4eni4pjvepaus73b13t.apps.googleusercontent.com">
+    <meta name="google-signin-scope"
+          content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award">
+    <meta property="og:site_name" content="Android Developers">
+    <meta property="og:type" content="website"><meta name="theme-color" content="#34a853"><meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <link rel="manifest" href="/_pwa/android/manifest.json"
+          crossorigin="use-credentials">
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="//apis.google.com" crossorigin>
+    <link rel="preconnect" href="//www.google-analytics.com" crossorigin><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,600italic,700,700italic|Roboto+Mono:400,500,700&display=swap">
+      <link rel="stylesheet"
+            href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block"><link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/css/app.css">
+      
+        <link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/css/dark-theme.css" disabled>
+      <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/favicon.svg">
+    <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/touchicon-180.png"><link rel="canonical" href="https://developer.android.com/codelabs/compose-for-wear-os"><link rel="search" type="application/opensearchdescription+xml"
+            title="Android Developers" href="https://developer.android.com/s/opensearch.xml">
+      <link rel="alternate" hreflang="en"
+          href="https://developer.android.com/codelabs/compose-for-wear-os" /><link rel="alternate" hreflang="x-default" href="https://developer.android.com/codelabs/compose-for-wear-os" /><link rel="alternate" hreflang="zh-Hans"
+          href="https://developer.android.com/codelabs/compose-for-wear-os?hl=zh-cn" /><link rel="alternate" hreflang="zh-Hant"
+          href="https://developer.android.com/codelabs/compose-for-wear-os?hl=zh-tw" /><link rel="alternate" hreflang="fr"
+          href="https://developer.android.com/codelabs/compose-for-wear-os?hl=fr" /><link rel="alternate" hreflang="id"
+          href="https://developer.android.com/codelabs/compose-for-wear-os?hl=id" /><link rel="alternate" hreflang="ja"
+          href="https://developer.android.com/codelabs/compose-for-wear-os?hl=ja" /><link rel="alternate" hreflang="ko"
+          href="https://developer.android.com/codelabs/compose-for-wear-os?hl=ko" /><link rel="alternate" hreflang="pt-BR"
+          href="https://developer.android.com/codelabs/compose-for-wear-os?hl=pt-br" /><link rel="alternate" hreflang="es-419"
+          href="https://developer.android.com/codelabs/compose-for-wear-os?hl=es-419" /><link rel="alternate" hreflang="vi"
+          href="https://developer.android.com/codelabs/compose-for-wear-os?hl=vi" /><title>Compose for Wear OS Codelab &nbsp;|&nbsp; Android Developers</title>
+
+<meta property="og:title" content="Compose for Wear OS Codelab &nbsp;|&nbsp; Android Developers"><meta name="description" content="In this codelab, you’ll learn how to translate your Compose knowledge to wearables with the new Compose for Wear OS and Material 3 Expressive components. By the end, you’ll have created both simple and advanced composables in an app for your wrist.">
+  <meta property="og:description" content="In this codelab, you’ll learn how to translate your Compose knowledge to wearables with the new Compose for Wear OS and Material 3 Expressive components. By the end, you’ll have created both simple and advanced composables in an app for your wrist."><meta property="og:url" content="https://developer.android.com/codelabs/compose-for-wear-os"><meta property="og:locale" content="en">
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+
+    
+      <link rel="stylesheet" href="/extras.css"></head>
+  <body class=""
+        template="codelab"
+        theme="android-theme"
+        type="codelab"
+        
+        
+        appearance
+        
+        layout="docs"
+        
+        
+        
+        
+        display-toc
+        pending>
+  
+    <devsite-progress type="indeterminate" id="app-progress"></devsite-progress>
+  
+  
+    <a href="#main-content" class="skip-link button">
+      
+      Skip to main content
+    </a>
+    <section class="devsite-wrapper">
+      <devsite-cookie-notification-bar></devsite-cookie-notification-bar><devsite-header role="banner">
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-header--inner" data-nosnippet>
+  <div class="devsite-top-logo-row-wrapper-wrapper">
+    <div class="devsite-top-logo-row-wrapper">
+      <div class="devsite-top-logo-row">
+        <button type="button" id="devsite-hamburger-menu"
+          class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+          data-category="Site-Wide Custom Events"
+          data-label="Navigation menu button"
+          visually-hidden
+          aria-label="Open menu">
+        </button>
+        
+<div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="androidDevelopers" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-dark-theme.png"
+            media="(prefers-color-scheme: dark)"
+            class="devsite-dark-theme">
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png" class="devsite-site-logo" alt="Android Developers">
+  </picture>
+  
+</a>
+
+
+
+</div>
+        <div class="devsite-top-logo-row-middle">
+          <div class="devsite-header-upper-tabs">
+            
+           </div>
+          
+<devsite-search
+    enable-signin
+    enable-search
+    enable-suggestions
+      enable-query-completion
+    
+    enable-search-summaries
+    
+    tenant-name="Android Developers"
+    
+    
+    
+    
+    
+    >
+  <form class="devsite-search-form" action="https://developer.android.com/s/results" method="GET">
+    <div class="devsite-search-container">
+      <button type="button"
+              search-open
+              class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+              
+              aria-label="Open search"></button>
+      <div class="devsite-searchbox">
+        <input
+          aria-activedescendant=""
+          aria-autocomplete="list"
+          
+          aria-label="Search"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          autocomplete="off"
+          class="devsite-search-field devsite-search-query"
+          name="q"
+          
+          placeholder="Search"
+          role="combobox"
+          type="text"
+          value=""
+          >
+          <div class="devsite-search-image material-icons" aria-hidden="true">
+            
+              <svg class="devsite-search-ai-image" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_6641_386)">
+                    <path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14167 15.375 4.875 14.125C3.625 12.8583 3 11.3167 3 9.5C3 7.68333 3.625 6.15 4.875 4.9C6.14167 3.63333 7.68333 3 9.5 3C10.0167 3 10.5167 3.05833 11 3.175C11.4833 3.275 11.9417 3.43333 12.375 3.65L10.825 5.2C10.6083 5.13333 10.3917 5.08333 10.175 5.05C9.95833 5.01667 9.73333 5 9.5 5C8.25 5 7.18333 5.44167 6.3 6.325C5.43333 7.19167 5 8.25 5 9.5C5 10.75 5.43333 11.8167 6.3 12.7C7.18333 13.5667 8.25 14 9.5 14C10.6667 14 11.6667 13.625 12.5 12.875C13.35 12.1083 13.8417 11.15 13.975 10H15.975C15.925 10.6333 15.7833 11.2333 15.55 11.8C15.3333 12.3667 15.05 12.8667 14.7 13.3L21 19.6L19.6 21ZM17.5 12C17.5 10.4667 16.9667 9.16667 15.9 8.1C14.8333 7.03333 13.5333 6.5 12 6.5C13.5333 6.5 14.8333 5.96667 15.9 4.9C16.9667 3.83333 17.5 2.53333 17.5 0.999999C17.5 2.53333 18.0333 3.83333 19.1 4.9C20.1667 5.96667 21.4667 6.5 23 6.5C21.4667 6.5 20.1667 7.03333 19.1 8.1C18.0333 9.16667 17.5 10.4667 17.5 12Z" fill="#5F6368"/>
+                  </g>
+                <defs>
+                <clipPath id="clip0_6641_386">
+                <rect width="24" height="24" fill="white"/>
+                </clipPath>
+                </defs>
+              </svg>
+            
+          </div>
+          <div class="devsite-search-shortcut-icon-container" aria-hidden="true">
+            <kbd class="devsite-search-shortcut-icon">/</kbd>
+          </div>
+      </div>
+    </div>
+  </form>
+  <button type="button"
+          search-close
+          class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+          
+          aria-label="Close search"></button>
+</devsite-search>
+
+        </div>
+
+        
+
+          
+
+          
+
+          <devsite-appearance-selector></devsite-appearance-selector>
+
+          
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+
+          
+            <a class="devsite-header-link devsite-top-button button gc-analytics-event "
+    href="https://developer.android.com/studio"
+    data-category="Site-Wide Custom Events"
+    data-label="Site header link: Android Studio"
+    >
+  Android Studio
+</a>
+          
+
+        
+
+        
+          <devsite-user 
+                        
+                        
+                          enable-profiles
+                        
+                        
+                        id="devsite-user">
+            
+              
+              <span class="button devsite-top-button" aria-hidden="true" visually-hidden>Sign in</span>
+            
+          </devsite-user>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
+  
+</devsite-header>
+      <devsite-book-nav scrollbars hidden>
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-book-nav-filter"
+     hidden>
+  <span class="filter-list-icon material-icons" aria-hidden="true"></span>
+  <input type="text"
+         placeholder="Filter"
+         
+         aria-label="Type to filter"
+         role="searchbox">
+  
+  <span class="filter-clear-button hidden"
+        data-title="Clear filter"
+        aria-label="Clear filter"
+        role="button"
+        tabindex="0"></span>
+</div>
+
+<nav class="devsite-book-nav devsite-nav nocontent"
+     aria-label="Side menu">
+  <div class="devsite-mobile-header">
+    <button type="button"
+            id="devsite-close-nav"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Close navigation"
+            aria-label="Close navigation">
+    </button>
+    <div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="androidDevelopers" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-dark-theme.png"
+            media="(prefers-color-scheme: dark)"
+            class="devsite-dark-theme">
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png" class="devsite-site-logo" alt="Android Developers">
+  </picture>
+  
+</a>
+
+
+</div>
+  </div>
+
+  <div class="devsite-book-nav-wrapper">
+    <div class="devsite-mobile-nav-top">
+      
+        <ul class="devsite-nav-list">
+          
+          
+    
+    
+<li class="devsite-nav-item">
+
+  
+  <a href="/studio"
+    
+       class="devsite-nav-title gc-analytics-event "
+    
+
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Android Studio"
+     track-type="navMenu"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Android Studio
+   </span>
+    
+  
+  </a>
+  
+
+</li>
+
+  
+          
+        </ul>
+      
+    </div>
+    
+  </div>
+</nav>
+        
+      </devsite-book-nav>
+      <section id="gc-wrapper">
+        <main role="main" id="main-content" class="devsite-main-content"
+            
+              
+              has-sidebar
+            >
+          <div class="devsite-sidebar">
+            <div class="devsite-sidebar-content">
+                
+                <devsite-toc class="devsite-nav"
+                            role="navigation"
+                            aria-label="On this page"
+                            depth="1"
+                            scrollbars
+                  ></devsite-toc>
+                <devsite-recommendations-sidebar class="nocontent devsite-nav">
+                </devsite-recommendations-sidebar>
+            </div>
+          </div>
+          <devsite-content>
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="devsite-article"><style>
+      body {
+        transition: opacity ease-in 0.2s;
+      }
+
+      body[unresolved] {
+        opacity: 0;
+        display: block;
+        overflow: hidden;
+        position: relative;
+      }
+      </style>
+  
+  
+  
+  
+  
+
+  <div class="devsite-article-meta nocontent" role="navigation">
+    
+    
+    <ul class="devsite-breadcrumb-list"
+  >
+  
+</ul>
+    
+  </div>
+  
+    <h1 class="devsite-page-title" tabindex="-1">
+      Compose for Wear OS Codelab<div class="devsite-actions" hidden data-nosnippet><devsite-feature-tooltip
+      ack-key="AckCollectionsBookmarkTooltipDismiss"
+      analytics-category="Site-Wide Custom Events"
+      analytics-action-show="Callout Profile displayed"
+      analytics-action-close="Callout Profile dismissed"
+      analytics-label="Create Collection Callout"
+      class="devsite-page-bookmark-tooltip nocontent"
+      dismiss-button="true"
+      id="devsite-collections-dropdown"
+      
+      dismiss-button-text="Dismiss"
+
+      
+      close-button-text="Got it">
+
+    
+    
+      <devsite-bookmark></devsite-bookmark>
+    
+
+    <span slot="popout-heading">
+      
+      Stay organized with collections
+    </span>
+    <span slot="popout-contents">
+      
+      Save and categorize content based on your preferences.
+    </span>
+  </devsite-feature-tooltip></div>
+  
+      
+    </h1>
+  
+
+  <devsite-toc class="devsite-nav"
+    depth="1"
+    devsite-toc-embedded
+    >
+  </devsite-toc>
+  
+    
+  <div class="devsite-article-body clearfix
+  ">
+
+  
+    
+    
+    <google-codelab-analytics gaid="UA-49880327-14" ga4id="G-JTFZSJVVVZ"></google-codelab-analytics>
+    <google-codelab codelab-gaid=""
+                    codelab-ga4id=""
+                    doc-id="1R3GOnvwvjFEWF2iHub7_RMRg493jcgRgP8DoS9OffuY"
+                    id="compose-for-wear-os"
+                    title="Compose for Wear OS Codelab"
+                    no-tooltip=""
+                    environment="web"
+                    category="android,wearos"
+                    feedback-link=""
+                    layout="paginated"
+                    >
+      
+        <google-codelab-step label="Introduction" duration="5" step="0">
+          
+            <google-codelab-about codelab-title="Compose for Wear OS Codelab"
+                                  authors="Chiara Chiappini and Kseniia Shumelchyk"
+                                  last-updated="2025-05-19T09:34:48Z"
+                                  duration="57">
+            </google-codelab-about>
+          
+          <h2 class="step-title" id="0" data-text="Introduction" tabindex="-1">
+              1. Introduction
+          </h2>
+          <p class="image-container"><img alt="2c9dd335c9d65f10.png" style="width: 642.00px" src="/static/codelabs/compose-for-wear-os/img/2c9dd335c9d65f10.png" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/2c9dd335c9d65f10_36.png 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/2c9dd335c9d65f10_48.png 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/2c9dd335c9d65f10_72.png 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/2c9dd335c9d65f10_96.png 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/2c9dd335c9d65f10_480.png 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/2c9dd335c9d65f10_720.png 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/2c9dd335c9d65f10_856.png 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/2c9dd335c9d65f10_960.png 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/2c9dd335c9d65f10_1440.png 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/2c9dd335c9d65f10_1920.png 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/2c9dd335c9d65f10_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Compose for Wear OS lets you translate the knowledge you&#39;ve learned building apps with Jetpack Compose to wearable devices.</p>
+<p>With built-in support for Material Design, Compose for Wear OS  <a href="https://developer.android.com/jetpack/compose/why-adopt#less-code" target="_blank">simplifies and accelerates UI development</a> and helps you create beautiful apps with less code.</p>
+<p>For this codelab, we expect you to have some knowledge of Compose, but you certainly don&#39;t need to be an expert.</p>
+<p>You will create several Wear specific composables (both simple and complex), and, by the end, you can start writing your own apps for Wear OS. Let&#39;s get started!</p>
+<h2 is-upgraded id="what-you-will-learn" data-text="What you will learn" tabindex="-1">What you will learn</h2>
+<ul>
+<li>Similarities/differences between your previous experience with Compose</li>
+<li>Simple composables and how they work on Wear OS</li>
+<li>Wear OS specific composables</li>
+<li>Wear OS&#39;s <code translate="no" dir="ltr">LazyColumn</code> (<code translate="no" dir="ltr">TransformingLazyColumn</code>)</li>
+<li>Wear OS&#39;s version of the <code translate="no" dir="ltr">Scaffold</code></li>
+</ul>
+<h2 is-upgraded id="what-you-will-build" data-text="What you will build" tabindex="-1">What you will build</h2>
+<p>You&#39;ll build a simple app that displays a scrollable list of composables optimized for Wear OS.</p>
+<p>Because you will be using  <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary#AppScaffold(androidx.compose.ui.Modifier,kotlin.Function0,kotlin.Function1)" target="_blank">AppScaffold</a> and  <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary#ScreenScaffold(androidx.compose.ui.Modifier,androidx.wear.compose.foundation.ScrollInfoProvider,androidx.compose.foundation.layout.PaddingValues,kotlin.Function0,kotlin.Function1,kotlin.Function2)" target="_blank">ScreenScaffold</a>,you&#39;ll also get a curved text time at the top and a scrolling indicator tied to the side of the device.</p>
+<p>Here&#39;s what it will look like when you are finished with the code lab:</p>
+<p class="image-container"><img alt="3162140d003d8e31.gif" style="width: 396.00px" src="/static/codelabs/compose-for-wear-os/img/3162140d003d8e31.gif"></p>
+<h2 is-upgraded id="prerequisites" data-text="Prerequisites" tabindex="-1">Prerequisites</h2>
+<ul>
+<li>Basic understanding of  <a href="https://developer.android.com/" target="_blank">Android development</a></li>
+<li>Basic understanding of  <a href="https://developer.android.com/kotlin" target="_blank">Kotlin</a></li>
+<li>Basic knowledge of  <a href="https://developer.android.com/jetpack/compose" target="_blank">Compose</a></li>
+</ul>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Getting Set Up" duration="5" step="1">
+          
+          <h2 class="step-title" id="1" data-text="Getting Set Up" tabindex="-1">
+              2. Getting Set Up
+          </h2>
+          <p>In this step, you will set up your environment and download the starter project.</p>
+<h2 is-upgraded id="what-you-will-need" data-text="What you will need" tabindex="-1">What you will need</h2>
+<ul>
+<li>Latest stable version of  <a href="https://developer.android.com/studio" target="_blank">Android Studio</a></li>
+<li>Wear OS device or emulator (New to this?  <a href="https://developer.android.com/training/wearables/apps/creating#emulator" target="_blank">Here&#39;s</a> how to set it up.)</li>
+</ul>
+<h2 is-upgraded id="download-code" data-text="Download code" tabindex="-1">Download code</h2>
+<p>If you have git installed, you can simply run the command below to clone the code from  <a href="https://github.com/android/codelab-compose-for-wear-os" target="_blank">this repo</a>. To check whether git is installed, type <code translate="no" dir="ltr">git --version</code> in the terminal or command line and verify that it executes correctly.</p>
+<div></div><devsite-code><pre translate="no" dir="ltr" is-upgraded>git clone https://github.com/android/codelab-compose-for-wear-os.git
+cd codelab-compose-for-wear-os
+</pre></devsite-code>
+<p>If you do not have git, you can click the following button to download all the code for this codelab:</p>
+<p><a href="https://github.com/android/codelab-compose-for-wear-os/archive/main.zip" target="_blank"><button class="button button-primary button-with-icon"><span class="material-icons" aria-hidden="true" translate="no">file_download</span>Download ZIP</button></a></p>
+<aside class="special"><p>The sample directory contains the <strong>start</strong> and <strong>finished</strong> code for this codelab. In the Project view on the left of Android Studio you will find two modules.</p>
+<ul>
+<li><img alt="d61ffd479bdbcb9f.png" style="width: 26.00px" src="/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f.png" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_36.png 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_48.png 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_72.png 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_96.png 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_480.png 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_720.png 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_856.png 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_960.png 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_1440.png 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_1920.png 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"> <strong>start</strong> – the starter code for this project; you will make changes to this to complete the codelab</li>
+<li><img alt="d61ffd479bdbcb9f.png" style="width: 26.00px" src="/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f.png" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_36.png 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_48.png 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_72.png 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_96.png 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_480.png 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_720.png 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_856.png 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_960.png 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_1440.png 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_1920.png 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d61ffd479bdbcb9f_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"> <strong>finished</strong> – the completed code for this codelab; used to check your work</li>
+</ul>
+</aside>
+<p>At any time you can run either module in Android Studio by changing the run configuration in the toolbar.</p>
+<p class="image-container"><img alt="51cb2645eece1f20.png" style="width: 475.18px" src="/static/codelabs/compose-for-wear-os/img/51cb2645eece1f20.png" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/51cb2645eece1f20_36.png 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/51cb2645eece1f20_48.png 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/51cb2645eece1f20_72.png 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/51cb2645eece1f20_96.png 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/51cb2645eece1f20_480.png 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/51cb2645eece1f20_720.png 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/51cb2645eece1f20_856.png 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/51cb2645eece1f20_960.png 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/51cb2645eece1f20_1440.png 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/51cb2645eece1f20_1920.png 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/51cb2645eece1f20_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<h2 is-upgraded id="open-project-in-android-studio" data-text="Open project in Android Studio" tabindex="-1">Open project in Android Studio</h2>
+<ol type="1">
+<li>On the Welcome to Android Studio window select  <img alt="c01826594f360d94.png" style="width: 21.00px" src="/static/codelabs/compose-for-wear-os/img/c01826594f360d94.png" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/c01826594f360d94_36.png 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c01826594f360d94_48.png 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c01826594f360d94_72.png 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c01826594f360d94_96.png 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c01826594f360d94_480.png 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c01826594f360d94_720.png 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c01826594f360d94_856.png 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c01826594f360d94_960.png 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c01826594f360d94_1440.png 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c01826594f360d94_1920.png 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c01826594f360d94_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"> <strong>Open...</strong></li>
+<li>Select the folder <strong><code translate="no" dir="ltr">[Download Location]</code></strong></li>
+<li>When Android Studio has imported the project, test that you can run the <code translate="no" dir="ltr">start</code> and <code translate="no" dir="ltr">finished</code> modules on a Wear OS emulator or physical device.</li>
+<li>The <code translate="no" dir="ltr">start</code> module should look like the screenshot below. It&#39;s where you will be doing all your work.</li>
+</ol>
+<p class="image-container"><img alt="271451f93a57db41.png" style="width: 220.80px" src="/static/codelabs/compose-for-wear-os/img/271451f93a57db41.png" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/271451f93a57db41_36.png 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/271451f93a57db41_48.png 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/271451f93a57db41_72.png 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/271451f93a57db41_96.png 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/271451f93a57db41_480.png 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/271451f93a57db41_720.png 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/271451f93a57db41_856.png 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/271451f93a57db41_960.png 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/271451f93a57db41_1440.png 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/271451f93a57db41_1920.png 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/271451f93a57db41_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<h2 is-upgraded id="explore-the-start-code" data-text="Explore the start code" tabindex="-1">Explore the start code</h2>
+<ul>
+<li><code translate="no" dir="ltr">build.gradle</code> contains a basic app configuration. It includes the dependencies necessary to create a Composable Wear OS App. We&#39;ll discuss what&#39;s similar and different between Jetpack Compose and the Wear OS version.</li>
+<li><code translate="no" dir="ltr">main &gt; AndroidManifest.xml</code> includes the elements necessary to create a Wear OS application. This is the same as a non-Compose app and similar to a mobile app, so we won&#39;t review this.</li>
+<li><code translate="no" dir="ltr">main &gt; theme/</code> folder contains the <code translate="no" dir="ltr">Color</code>, <code translate="no" dir="ltr">Type</code>, and <code translate="no" dir="ltr">Theme</code> files used by Compose for the theme.</li>
+<li><code translate="no" dir="ltr">main &gt; MainActivity.kt</code> contains boilerplate for creating an app with Compose. It also contains the top-level composables (like the <code translate="no" dir="ltr">Scaffold</code> and <code translate="no" dir="ltr">TransformingLazyColumn</code>) for our app.</li>
+<li><code translate="no" dir="ltr">main &gt; ReusableComponents.kt</code> contains functions for most of the Wear specific composables we&#39;ll create. We will do a lot of our work in this file.</li>
+</ul>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Review the dependencies" duration="8" step="2">
+          
+          <h2 class="step-title" id="2" data-text="Review the dependencies" tabindex="-1">
+              3. Review the dependencies
+          </h2>
+          <p>Most of the Wear related dependency changes you make will be at the top  <a href="https://developer.android.com/jetpack/compose/layering" target="_blank">architectural layers</a> (highlighted in red below).</p>
+<p class="image-container"><img alt="d92519e0b932f964.png" style="width: 277.50px" src="/static/codelabs/compose-for-wear-os/img/d92519e0b932f964.png" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/d92519e0b932f964_36.png 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d92519e0b932f964_48.png 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d92519e0b932f964_72.png 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d92519e0b932f964_96.png 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d92519e0b932f964_480.png 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d92519e0b932f964_720.png 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d92519e0b932f964_856.png 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d92519e0b932f964_960.png 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d92519e0b932f964_1440.png 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d92519e0b932f964_1920.png 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/d92519e0b932f964_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>That means many of the dependencies you already use with Jetpack Compose don&#39;t change when targeting Wear OS. For example, the UI, Runtime, Compiler, and Animation dependencies will remain the same.</p>
+<p>However, you will need to use the proper Wear OS <strong>Material</strong>, <strong>Foundation</strong>, and <strong>Navigation</strong> libraries which are different from the libraries you have used before.</p>
+<p>Below is a comparison to help clarify the differences:</p>
+<table class="vertical-rules">
+<tr><td colspan="1" rowspan="1"><p><strong>Wear OS Dependency</strong>(androidx.wear.*)</p>
+</td><td colspan="1" rowspan="1"><p><strong>Comparison</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>Standard Dependency</strong>(androidx.*)</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary" target="_blank">androidx.wear.compose:compose-material3</a></p>
+</td><td colspan="1" rowspan="1"><p><strong><em>instead of</em></strong></p>
+</td><td colspan="1" rowspan="1"><p>androidx.compose.material:material <strong>₁</strong></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/navigation/package-summary" target="_blank">androidx.wear.compose:compose-navigation</a></p>
+</td><td colspan="1" rowspan="1"><p><strong><em>instead of</em></strong></p>
+</td><td colspan="1" rowspan="1"><p>androidx.navigation:navigation-compose</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/foundation/package-summary" target="_blank">androidx.wear.compose:compose-foundation</a></p>
+</td><td colspan="1" rowspan="1"><p><strong><em>in addition to</em></strong></p>
+</td><td colspan="1" rowspan="1"><p>androidx.compose.foundation:foundation</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/ui/tooling/preview/package-summary" target="_blank">androidx.wear.compose:compose-ui-tooling</a></p>
+</td><td colspan="1" rowspan="1"><p><strong><em>in addition to</em></strong></p>
+</td><td colspan="1" rowspan="1"><p>androidx.compose.ui:ui-tooling-preview</p>
+</td></tr>
+</table>
+<p><em>1. Developers can continue to use other material related libraries like material ripple and material icons extended with the Wear Compose Material library. Alternatively to compose-material3 version, you can use  </em><a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material/package-summary" target="_blank"><em>androidx.wear.compose:compose-material</em></a> <em>but you shouldn&#39;t be mixing Material 3 and Material 2.5 in the same app. We advise you to use material3 as it supports Material 3 Expressive design.</em></p>
+<aside class="warning"><p><strong>Note:</strong> While it&#39;s technically possible to use the standard dependencies on Wear OS, we always recommend using the wear-specific versions for the best experience.</p>
+</aside>
+<p>Open the <code translate="no" dir="ltr">build.gradle</code>, search for &#34;<strong><code translate="no" dir="ltr">TODO: Review Dependencies</code></strong>&#34; in your <code translate="no" dir="ltr">start</code> module. (This step is just to review the dependencies, you will not be adding any code.)</p>
+<p>start/build.gradle:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="GDScript"><code translate="no" dir="ltr"><span class="devsite-syntax-n">dependencies</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">composeBom</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">platform</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">libs</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">androidx</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">compose</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">bom</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-o">//</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">General</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">compose</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">dependencies</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">implementation</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">composeBom</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">implementation</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">libs</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">androidx</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">activity</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">compose</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">implementation</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">libs</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">compose</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">ui</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">tooling</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">preview</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">implementation</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">libs</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">androidx</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">material</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">icons</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">extended</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-o">//</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Compose</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">for</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Wear</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">OS</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Dependencies</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">implementation</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">libs</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">wear</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">compose</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">material</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-o">//</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Foundation</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">is</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">additive</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">so</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">you</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">can</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">use</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">mobile</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">version</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ow">in</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">your</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Wear</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">OS</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">app</span><span class="devsite-syntax-o">.</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">implementation</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">libs</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">wear</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">compose</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">foundation</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-o">//</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Compose</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">preview</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">annotations</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">for</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Wear</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">OS</span><span class="devsite-syntax-o">.</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">implementation</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">libs</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">androidx</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">compose</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">ui</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">tooling</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">implementation</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">libs</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">horologist</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">compose</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">layout</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">coreLibraryDesugaring</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">libs</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">desugar</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">jdk</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">libs</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">debugImplementation</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">libs</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">compose</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">ui</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">tooling</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">debugImplementation</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">libs</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">androidx</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">ui</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">test</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">manifest</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">debugImplementation</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">composeBom</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>You should recognize many of the general Compose dependencies, so we won&#39;t cover those.</p>
+<p>Let&#39;s move to the Wear OS dependencies.</p>
+<p>Just as outlined earlier, only the Wear OS specific version of <strong><code translate="no" dir="ltr">material</code></strong> (<code translate="no" dir="ltr">androidx.wear.compose:compose-material3</code>)  is included. That is, you will not see or include <code translate="no" dir="ltr">androidx.compose.material:material3</code> in your project.</p>
+<p>It&#39;s important to call out that you can use other material libraries with Wear Material. We actually do that in this codelab by including <code translate="no" dir="ltr">androidx.compose.material:material-icons-extended</code>.</p>
+<p>Finally, we include the Wear <strong><code translate="no" dir="ltr">foundation</code></strong> library for Compose (<code translate="no" dir="ltr">androidx.wear.compose:compose-foundation</code>) . This is additive, so you can use it with the standard <strong><code translate="no" dir="ltr">foundation</code></strong> you&#39;ve used before. In fact, you probably already recognized we included it in the general compose dependencies!</p>
+<p>Ok, now that we understand the dependencies, let&#39;s have a look at the main app.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Review MainActivity" duration="8" step="3">
+          
+          <h2 class="step-title" id="3" data-text="Review MainActivity" tabindex="-1">
+              4. Review MainActivity
+          </h2>
+          <p><strong>We will do all our work in the</strong> </p>
+<p><strong><code translate="no" dir="ltr">start</code></strong> </p>
+<p><strong>module, so make sure every file you open is in there.</strong></p>
+<p>Let&#39;s start by opening <code translate="no" dir="ltr">MainActivity</code> in the <code translate="no" dir="ltr">start</code> module.</p>
+<p>This is a pretty simple class that extends <code translate="no" dir="ltr">ComponentActivity</code> and uses <code translate="no" dir="ltr">setContent { WearApp() }</code> to create the UI.</p>
+<p>From your previous knowledge of Compose, this should look familiar to you. We are just setting up the UI.</p>
+<p>Scroll down to the <code translate="no" dir="ltr">WearApp()</code> composable function.  Before we talk about the code itself, you should see a bunch of TODOs scattered throughout the code. These each represent steps in this codelab. You can ignore them for now.</p>
+<p>It should look something like this:</p>
+<p><strong>Code in fun WearApp():</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Carbon"><code translate="no" dir="ltr"><span class="devsite-syntax-nx">WearAppTheme</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">     </span><span class="devsite-syntax-cm">/* *************************** Part 4: Wear OS Scaffold *************************** */</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-c1">// TODO (Start): Create a AppScaffold (Wear Version)</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-c1">// TODO: Swap to TransformingLazyColumnState</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">listState</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">rememberLazyListState</span><span class="devsite-syntax-p">()</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-cm">/* *************************** Part 4: Wear OS Scaffold *************************** */</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-c1">// TODO (Start): Create a ScreenScaffold (Wear Version)</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-cm">/* *************************** Part 3: ScalingLazyColumn *************************** */</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-c1">// TODO: Swap a TransformingLazyColumn (Wear's version of LazyColumn)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">LazyColumn</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Modifier</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">fillMaxSize</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">verticalArrangement</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Arrangement</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Center</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">state</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">listState</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-c1">// TODO: Remove item; for beginning only.</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">item</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">StartOnlyTextComposables</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-cm">/* ******************* Part 1: Simple composables ******************* */</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">item</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">ButtonExample</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">item</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">TextExample</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">item</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">CardExample</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-cm">/* ********************* Part 2: Wear unique composables ********************* */</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">item</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">ChipExample</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">item</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">ToggleChipExample</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-c1">// TODO (End): Create a ScreenScaffold (Wear Version)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-c1">// TODO (End): Create a AppScaffold (Wear Version)</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>We start by setting the theme, <code translate="no" dir="ltr">WearAppTheme { }</code>. This is exactly the same way you&#39;ve written it before, that is, you set a  <a href="https://developer.android.com/develop/ui/compose/designsystems/material3" target="_blank"><code translate="no" dir="ltr">MaterialTheme</code></a> with colors, typography, and shapes.</p>
+<p>However, in the case of Wear OS, we generally recommend using the default  <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/Shapes" target="_blank">Material Wear shapes</a> which are optimized for round devices, so if you dive into our <code translate="no" dir="ltr">theme/Theme.kt</code>, you can see we don&#39;t override shapes.</p>
+<p>If you wish, you can open the <code translate="no" dir="ltr">theme/Theme.kt</code> to explore it further, but, again, it&#39;s the same as on the phone.</p>
+<p>We then create a  <a href="https://developer.android.com/jetpack/compose/lists" target="_blank"><code translate="no" dir="ltr">LazyColumn</code></a> which is used to produce a vertically scrolling list for a bunch of items (just like you did before).</p>
+<p><strong>Code:</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Carbon"><code translate="no" dir="ltr"><span class="devsite-syntax-nx">item</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">StartOnlyTextComposables</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-cm">/* ******************* Part 1: Simple composables ******************* */</span>
+<span class="devsite-syntax-nx">item</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">ButtonExample</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-nx">item</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">TextExample</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-nx">item</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">CardExample</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-cm">/* ********************* Part 2: Wear unique composables ********************* */</span>
+<span class="devsite-syntax-nx">item</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">ChipExample</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-nx">item</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">ToggleChipExample</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>For the items themselves, only <code translate="no" dir="ltr">StartOnlyTextComposables()</code> produces any UI. (We will populate the rest throughout the code lab.)</p>
+<p>These functions are actually in the <code translate="no" dir="ltr">ReusableComponents.kt</code> file, which we will visit in the next section.</p>
+<p>Let&#39;s get started with Compose for Wear OS!</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Add Simple Composables" duration="8" step="4">
+          
+          <h2 class="step-title" id="4" data-text="Add Simple Composables" tabindex="-1">
+              5. Add Simple Composables
+          </h2>
+          <p>We&#39;ll start with three composables (<code translate="no" dir="ltr">Button</code>, <code translate="no" dir="ltr">Text</code>, and <code translate="no" dir="ltr">Card</code>) that you are probably already familiar with.</p>
+<p>First, we are going to remove the hello world composable.</p>
+<p>Search for &#34;<strong><code translate="no" dir="ltr">TODO: Remove item</code></strong>&#34; and <strong>erase</strong> both the comment and the line below it:</p>
+<p><strong>Step 1</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scilab"><code translate="no" dir="ltr"><span class="devsite-syntax-c1">// TODO: Remove item; for beginning only.</span>
+<span class="devsite-syntax-n">item</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">StartOnlyTextComposables</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>Next, let&#39;s add our first composable.</p>
+<h2 is-upgraded id="create-a-icon-button-composable" data-text="Create a Icon Button composable" tabindex="-1">Create a Icon Button composable</h2>
+<p>Open <code translate="no" dir="ltr">ReusableComponents.kt</code> in the <code translate="no" dir="ltr">start</code> module and search for &#34;<strong><code translate="no" dir="ltr">TODO: Create a Icon Button Composable</code></strong>&#34; and replace the current composable method with this code.</p>
+<p><strong>Step 2</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scilab"><code translate="no" dir="ltr"><span class="devsite-syntax-c1">// TODO: Create a Icon Button Composable</span>
+<span class="devsite-syntax-p">@</span><span class="devsite-syntax-n">Composable</span>
+<span class="devsite-syntax-n">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">IconButtonExample</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">FilledIconButton</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">onClick</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/*</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">...</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">*/</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">},</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">Icon</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">imageVector</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Icons</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">Rounded</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">Phone</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">contentDescription</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"triggers phone action"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>The <code translate="no" dir="ltr">IconButtonExample()</code> composable function (where this code exists) will now generate a centered button.</p>
+<p>Let&#39;s walk through the code.</p>
+<p>We use a   <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary#FilledIconButton(kotlin.Function0,androidx.compose.ui.Modifier,kotlin.Function0,kotlin.String,kotlin.Boolean,androidx.wear.compose.material3.IconButtonShapes,androidx.wear.compose.material3.IconButtonColors,androidx.compose.foundation.BorderStroke,androidx.compose.foundation.interaction.MutableInteractionSource,kotlin.Function1)" target="_blank"><code translate="no" dir="ltr">FilledIconButton</code></a>  which is a circular, icon-only button with a colored background and a contrasting content color. It offers a single slot to take an icon or image.</p>
+<p>After that, we set the click event to an empty lambda. In our case, these composables are just for a demo, so we won&#39;t need that. However, in a real app, we&#39;d communicate with a, for example, ViewModel to perform business logic.</p>
+<p>Then we set an Icon inside our button. This code is the same as you have seen for an <code translate="no" dir="ltr">Icon</code> before. We are also getting our icon from the <code translate="no" dir="ltr">androidx.compose.material:material-icons-extended</code> library.</p>
+<p>Finally, you don&#39;t need to worry about centering the button at this stage since it will be fixed later automatically when migrating from <code translate="no" dir="ltr">LazyColumn</code> to <code translate="no" dir="ltr">TransformingLazyColumn.</code></p>
+<p>If you run the app, you should get something like this, <strong>don&#39;t worry if the button is not centered for now</strong>:</p>
+<p class="image-container"><img alt="9346dbd2b8bc6a56.png" style="width: 199.79px" src="/static/codelabs/compose-for-wear-os/img/9346dbd2b8bc6a56.png" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/9346dbd2b8bc6a56_36.png 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9346dbd2b8bc6a56_48.png 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9346dbd2b8bc6a56_72.png 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9346dbd2b8bc6a56_96.png 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9346dbd2b8bc6a56_480.png 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9346dbd2b8bc6a56_720.png 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9346dbd2b8bc6a56_856.png 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9346dbd2b8bc6a56_960.png 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9346dbd2b8bc6a56_1440.png 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9346dbd2b8bc6a56_1920.png 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9346dbd2b8bc6a56_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>This is code you have probably already written before (which is great). The difference is now you get a button optimized for Wear OS.</p>
+<p>Pretty straightforward, let&#39;s look at another one.</p>
+<h2 is-upgraded id="create-a-text-composable" data-text="Create a Text composable" tabindex="-1">Create a Text composable</h2>
+<p>In <code translate="no" dir="ltr">ReusableComponents.kt</code>, search for &#34;<strong><code translate="no" dir="ltr">TODO: Create a Text Composable</code></strong>&#34; and replace the current composable method with this code.</p>
+<p><strong>Step 3</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scilab"><code translate="no" dir="ltr"><span class="devsite-syntax-c1">// TODO: Create a Text Composable</span>
+<span class="devsite-syntax-p">@</span><span class="devsite-syntax-n">Composable</span>
+<span class="devsite-syntax-n">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">TextExample</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-n">ListHeader</span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">Text</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">           </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span>
+<span class="devsite-syntax-w">               </span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">fillMaxWidth</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">           </span><span class="devsite-syntax-n">textAlign</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">TextAlign</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">Center</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">           </span><span class="devsite-syntax-n">text</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">stringResource</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">R</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nb">string</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">hello_compose_codelab</span><span class="devsite-syntax-p">),</span>
+<span class="devsite-syntax-w">       </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>We create the  <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary#Text(kotlin.String,androidx.compose.ui.Modifier,androidx.compose.ui.graphics.Color,androidx.compose.ui.unit.TextUnit,androidx.compose.ui.text.font.FontStyle,androidx.compose.ui.text.font.FontWeight,androidx.compose.ui.text.font.FontFamily,androidx.compose.ui.unit.TextUnit,androidx.compose.ui.text.style.TextDecoration,androidx.compose.ui.text.style.TextAlign,androidx.compose.ui.unit.TextUnit,androidx.compose.ui.text.style.TextOverflow,kotlin.Boolean,kotlin.Int,kotlin.Function1,androidx.compose.ui.text.TextStyle)" target="_blank"><code translate="no" dir="ltr">Text</code></a> composable, set its modifier, align the text, set a color, and finally set the text itself from a String resource. Since we are going to add a List later, we are wrapping this text into a  <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary#ListHeader(androidx.compose.ui.Modifier,androidx.compose.ui.graphics.Color,androidx.compose.ui.graphics.Color,androidx.compose.foundation.layout.PaddingValues,androidx.wear.compose.material3.SurfaceTransformation,kotlin.Function1)" target="_blank"><code translate="no" dir="ltr">ListHeader</code></a> so that the content will be start and end padded.</p>
+<p>Text composables should look very familiar to Compose developers and the code is actually identical to the code you&#39;ve used before.</p>
+<p>Let&#39;s see what it looks like:</p>
+<p class="image-container"><img alt="dcad71112a91d706.png" style="width: 211.20px" src="/static/codelabs/compose-for-wear-os/img/dcad71112a91d706.png" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/dcad71112a91d706_36.png 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/dcad71112a91d706_48.png 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/dcad71112a91d706_72.png 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/dcad71112a91d706_96.png 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/dcad71112a91d706_480.png 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/dcad71112a91d706_720.png 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/dcad71112a91d706_856.png 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/dcad71112a91d706_960.png 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/dcad71112a91d706_1440.png 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/dcad71112a91d706_1920.png 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/dcad71112a91d706_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>The <code translate="no" dir="ltr">TextExample()</code> composable function (where we placed our code) now produces a Text composable in our main material color. The string is pulled from our <code translate="no" dir="ltr">res/values/strings.xml</code> file.</p>
+<p>So far, so good. Let&#39;s look at our last similar composable, <code translate="no" dir="ltr">Card</code>.</p>
+<h2 is-upgraded id="create-a-card-composable" data-text="Create a Card composable" tabindex="-1">Create a Card composable</h2>
+<p>In <code translate="no" dir="ltr">ReusableComponents.kt</code>, search for &#34;<strong><code translate="no" dir="ltr">TODO: Create a Card</code></strong>&#34; and replace the current composable method with this code.</p>
+<p><strong>Step 4</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scilab"><code translate="no" dir="ltr"><span class="devsite-syntax-c1">// TODO: Create a Card (specifically, an AppCard) Composable</span>
+<span class="devsite-syntax-p">@</span><span class="devsite-syntax-n">Composable</span>
+<span class="devsite-syntax-n">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">CardExample</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">iconModifier</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span>
+<span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">AppCard</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">appImage</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">Icon</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-n">imageVector</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Icons</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">AutoMirrored</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">Rounded</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">Message</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-n">contentDescription</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"triggers open message action"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">iconModifier</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">},</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">appName</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Text</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"Messages"</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">},</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">time</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Text</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"12m"</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">},</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">title</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Text</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"Kim Green"</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">},</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">onClick</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/*</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">...</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">*/</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">Text</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"On my way!"</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>Wear is a little different in that we have two major cards,  <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary#AppCard(kotlin.Function0,kotlin.Function1,kotlin.Function1,kotlin.Function1,androidx.compose.ui.Modifier,kotlin.Function1,androidx.compose.ui.graphics.painter.Painter,androidx.compose.ui.graphics.Color,androidx.compose.ui.graphics.Color,androidx.compose.ui.graphics.Color,androidx.compose.ui.graphics.Color,kotlin.Function1)" target="_blank"><code translate="no" dir="ltr">AppCard</code></a> and  <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary#TitleCard(kotlin.Function0,kotlin.Function1,androidx.compose.ui.Modifier,kotlin.Function1,androidx.compose.ui.graphics.painter.Painter,androidx.compose.ui.graphics.Color,androidx.compose.ui.graphics.Color,androidx.compose.ui.graphics.Color,kotlin.Function1)" target="_blank"><code translate="no" dir="ltr">TitleCard</code></a>.</p>
+<p>In our case, we want an  <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary#Icon(androidx.compose.ui.graphics.vector.ImageVector,kotlin.String,androidx.compose.ui.Modifier,androidx.compose.ui.graphics.Color)" target="_blank"><code translate="no" dir="ltr">Icon</code></a> in our card, so we are going to use <code translate="no" dir="ltr">AppCard</code>. (<code translate="no" dir="ltr">TitleCard</code> has less slots, see  <a href="https://developer.android.com/training/wearables/compose/cards" target="_blank">Cards</a> guide for more information.)</p>
+<p>We create the <code translate="no" dir="ltr">AppCard</code> composable, set its modifier, add an <code translate="no" dir="ltr">Icon</code>, add several <code translate="no" dir="ltr">Text</code> composable parameters (each for a different space on the card), and finally set the main content text at the end.</p>
+<p>Let&#39;s see what it looks like, don&#39;t worry about adding additional bottom padding as this will be fixed when migrating from <code translate="no" dir="ltr">LazyColumn</code> to <code translate="no" dir="ltr">TransformingLazyColumn</code> :</p>
+<p class="image-container"><img alt="faf2fe359baf0946.png" style="width: 211.20px" src="/static/codelabs/compose-for-wear-os/img/faf2fe359baf0946.png" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/faf2fe359baf0946_36.png 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/faf2fe359baf0946_48.png 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/faf2fe359baf0946_72.png 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/faf2fe359baf0946_96.png 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/faf2fe359baf0946_480.png 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/faf2fe359baf0946_720.png 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/faf2fe359baf0946_856.png 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/faf2fe359baf0946_960.png 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/faf2fe359baf0946_1440.png 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/faf2fe359baf0946_1920.png 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/faf2fe359baf0946_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>At this point, you probably recognize that for these composables the Compose code is virtually the same as you&#39;ve used before which is great, right? You get to reuse all that knowledge you&#39;ve already gained!</p>
+<p>Ok, let&#39;s look at some new composables.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Add Wear Unique Composables" duration="8" step="5">
+          
+          <h2 class="step-title" id="5" data-text="Add Wear Unique Composables" tabindex="-1">
+              6. Add Wear Unique Composables
+          </h2>
+          <p>For this section, we will explore the <code translate="no" dir="ltr">Chip</code> and <code translate="no" dir="ltr">ToggleChip</code> composables.</p>
+<h2 is-upgraded id="create-a-chip-composable" data-text="Create a Chip composable" tabindex="-1">Create a Chip composable</h2>
+<p><a href="https://material.io/components/chips" target="_blank">Chips</a> are meant to be a quick, one tap action, which makes especially good sense for a Wear device with limited screen real estate.</p>
+<p>You can implement a Chip by using a  <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary#Button(kotlin.Function0,androidx.compose.ui.Modifier,kotlin.Function0,kotlin.String,kotlin.Function1,kotlin.Function1,kotlin.Boolean,androidx.compose.ui.graphics.Shape,androidx.wear.compose.material3.ButtonColors,androidx.compose.foundation.BorderStroke,androidx.compose.foundation.layout.PaddingValues,androidx.compose.foundation.interaction.MutableInteractionSource,kotlin.Function1)" target="_blank"><code translate="no" dir="ltr">Button</code></a>. Here&#39;s a couple variations of the  <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary#Button(kotlin.Function0,androidx.compose.ui.Modifier,kotlin.Function0,kotlin.String,kotlin.Function1,kotlin.Function1,kotlin.Boolean,androidx.compose.ui.graphics.Shape,androidx.wear.compose.material3.ButtonColors,androidx.compose.foundation.BorderStroke,androidx.compose.foundation.layout.PaddingValues,androidx.compose.foundation.interaction.MutableInteractionSource,kotlin.Function1)" target="_blank"><code translate="no" dir="ltr">Button</code></a> composable function to give you an idea of what you can create:</p>
+<p class="image-container"><img alt="13c7dc5e08b5d2d4.png" style="width: 198.72px" src="/static/codelabs/compose-for-wear-os/img/13c7dc5e08b5d2d4.png" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/13c7dc5e08b5d2d4_36.png 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/13c7dc5e08b5d2d4_48.png 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/13c7dc5e08b5d2d4_72.png 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/13c7dc5e08b5d2d4_96.png 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/13c7dc5e08b5d2d4_480.png 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/13c7dc5e08b5d2d4_720.png 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/13c7dc5e08b5d2d4_856.png 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/13c7dc5e08b5d2d4_960.png 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/13c7dc5e08b5d2d4_1440.png 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/13c7dc5e08b5d2d4_1920.png 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/13c7dc5e08b5d2d4_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"> <img alt="9859b3f9880f75af.png" style="width: 198.72px" src="/static/codelabs/compose-for-wear-os/img/9859b3f9880f75af.png" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/9859b3f9880f75af_36.png 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9859b3f9880f75af_48.png 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9859b3f9880f75af_72.png 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9859b3f9880f75af_96.png 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9859b3f9880f75af_480.png 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9859b3f9880f75af_720.png 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9859b3f9880f75af_856.png 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9859b3f9880f75af_960.png 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9859b3f9880f75af_1440.png 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9859b3f9880f75af_1920.png 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/9859b3f9880f75af_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Let&#39;s write some code.</p>
+<p>In <code translate="no" dir="ltr">ReusableComponents.kt</code>, search for &#34;<strong><code translate="no" dir="ltr">TODO: Create a Chip</code></strong>&#34; and replace the current composable method with this code.</p>
+<p><strong>Step 5</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Carbon"><code translate="no" dir="ltr"><span class="devsite-syntax-c1">// TODO: Create a Chip Composable</span>
+<span class="devsite-syntax-err">@</span><span class="devsite-syntax-nx">Composable</span>
+<span class="devsite-syntax-nx">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">ChipExample</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">modifier</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Modifier</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">Button</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">modifier</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">onClick</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-cm">/* ... */</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">},</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">icon</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-nx">Icon</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-nx">imageVector</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Icons</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Rounded</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">SelfImprovement</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-nx">contentDescription</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"triggers meditation action"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">},</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">Text</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-nx">text</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"5 minute Meditation"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-nx">maxLines</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mi">1</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-nx">overflow</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">TextOverflow</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Ellipsis</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>The <code translate="no" dir="ltr">Button</code> composable uses many of the same parameters as you are used to with other composables (modifier and <code translate="no" dir="ltr">onClick</code>), so we don&#39;t need to review those.</p>
+<p>It also takes an icon and a content Slot for composable body content displayed on the Button (which we create a <code translate="no" dir="ltr">Text</code> composable for).</p>
+<p>The <code translate="no" dir="ltr">Icon</code> code should look exactly the same as the code you saw in other composables, but for this one, we are pulling the <code translate="no" dir="ltr">Self Improvement</code> icon from the <code translate="no" dir="ltr">androidx.compose.material:material-icons-extended</code> library.</p>
+<p>Let&#39;s see what it looks like (remember to scroll down), don&#39;t worry about adding additional bottom padding as this will be fixed when migrating from <code translate="no" dir="ltr">LazyColumn</code> to <code translate="no" dir="ltr">TransformingLazyColumn</code> :</p>
+<p class="image-container"><img alt="22afab093efc7fc5.png" style="width: 198.72px" src="/static/codelabs/compose-for-wear-os/img/22afab093efc7fc5.png" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/22afab093efc7fc5_36.png 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/22afab093efc7fc5_48.png 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/22afab093efc7fc5_72.png 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/22afab093efc7fc5_96.png 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/22afab093efc7fc5_480.png 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/22afab093efc7fc5_720.png 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/22afab093efc7fc5_856.png 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/22afab093efc7fc5_960.png 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/22afab093efc7fc5_1440.png 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/22afab093efc7fc5_1920.png 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/22afab093efc7fc5_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Ok, let&#39;s look at a variation on <code translate="no" dir="ltr">Button</code>, the <code translate="no" dir="ltr">SwitchButton</code> composable.</p>
+<h2 is-upgraded id="create-a-switchchip-composable" data-text="Create a SwitchChip composable" tabindex="-1">Create a SwitchChip composable</h2>
+<p><code translate="no" dir="ltr">SwitchButton</code> is just like a <code translate="no" dir="ltr">Button</code> but allows the user to interact with a switch.</p>
+<p class="image-container"><img alt="eb38c8acb3ac996.png" style="width: 198.72px" src="/static/codelabs/compose-for-wear-os/img/eb38c8acb3ac996.png" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/eb38c8acb3ac996_36.png 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/eb38c8acb3ac996_48.png 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/eb38c8acb3ac996_72.png 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/eb38c8acb3ac996_96.png 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/eb38c8acb3ac996_480.png 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/eb38c8acb3ac996_720.png 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/eb38c8acb3ac996_856.png 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/eb38c8acb3ac996_960.png 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/eb38c8acb3ac996_1440.png 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/eb38c8acb3ac996_1920.png 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/eb38c8acb3ac996_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>In <code translate="no" dir="ltr">ReusableComponents.kt</code>, search for &#34;<strong><code translate="no" dir="ltr">TODO: Create a SwitchChip</code></strong>&#34; and replace the current composable method with this code.</p>
+<p><strong>Step 6</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="GDScript"><code translate="no" dir="ltr"><span class="devsite-syntax-o">//</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">TODO</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Create</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">a</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Switch</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Chip</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Composable</span>
+<span class="devsite-syntax-err">@</span><span class="devsite-syntax-n">Composable</span>
+<span class="devsite-syntax-n">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">SwitchChipExample</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-k">var</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">checked</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">by</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">remember</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">mutableStateOf</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-bp">true</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">SwitchButton</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">fillMaxWidth</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">label</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">Text</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-s2">"Sound"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-n">maxLines</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mi">1</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-n">overflow</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">TextOverflow</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">Ellipsis</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">semantics</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-n">this</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">contentDescription</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">checked</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"On"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">else</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"Off"</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-p">},</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">},</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">checked</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">checked</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">onCheckedChange</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">checked</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">it</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">},</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">enabled</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-bp">true</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>Now the <code translate="no" dir="ltr">SwitchChipExample()</code> composable function (where this code exists) generates a <code translate="no" dir="ltr">SwitchChip</code> using a switch toggle (instead of a checkbox or radio button).</p>
+<p>First, we create a <code translate="no" dir="ltr">MutableState</code>. We haven&#39;t been doing this in the other functions, because we are mainly doing UI demos so you can see what Wear offers.</p>
+<p>In a normal app, you would probably want to pass in the checked state and the lambda for handling the tap, so the composable can be stateless ( <a href="https://developer.android.com/jetpack/compose/state#stateful-vs-stateless" target="_blank">more info here</a>).</p>
+<p>In our case, we are just keeping it simple to show off what the <code translate="no" dir="ltr">SwitchChip</code> looks like in action with a working toggle (even though we don&#39;t do anything with the state).</p>
+<p>Next, we set the checked state, and the toggle control to give us the switch we want.</p>
+<p>We then create a lambda for changing the state and finally set the label with a <code translate="no" dir="ltr">Text</code> composable (and some basic parameters).</p>
+<p>Let&#39;s see what it looks like:</p>
+<p class="image-container"><img alt="8ef93a35bdb7302a.png" style="width: 211.20px" src="/static/codelabs/compose-for-wear-os/img/8ef93a35bdb7302a.png" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/8ef93a35bdb7302a_36.png 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/8ef93a35bdb7302a_48.png 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/8ef93a35bdb7302a_72.png 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/8ef93a35bdb7302a_96.png 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/8ef93a35bdb7302a_480.png 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/8ef93a35bdb7302a_720.png 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/8ef93a35bdb7302a_856.png 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/8ef93a35bdb7302a_960.png 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/8ef93a35bdb7302a_1440.png 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/8ef93a35bdb7302a_1920.png 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/8ef93a35bdb7302a_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Ok, now you&#39;ve seen a lot of Wear OS specific composables and, as stated before, most of the code is almost the same as what you&#39;ve written before.</p>
+<p>Let&#39;s look at something a little more advanced.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Migrate to TransformingScalingLazyColumn" duration="8" step="6">
+          
+          <h2 class="step-title" id="6" data-text="Migrate to TransformingScalingLazyColumn" tabindex="-1">
+              7. Migrate to TransformingScalingLazyColumn
+          </h2>
+          <p>You probably have used  <a href="https://developer.android.com/jetpack/compose/lists#lazy" target="_blank"><code translate="no" dir="ltr">LazyColumn</code></a> in your mobile apps to produce a vertically scrolling list.</p>
+<p>Because a round device is smaller at the top and bottom, there is less space to show items. Therefore, Wear OS has its own version of <code translate="no" dir="ltr">LazyColumn</code> to better support those round devices.</p>
+<p><a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/foundation/lazy/package-summary#TransformingLazyColumn(androidx.compose.foundation.layout.PaddingValues,androidx.compose.ui.Modifier,androidx.wear.compose.foundation.lazy.TransformingLazyColumnState,androidx.compose.foundation.layout.Arrangement.Vertical,androidx.compose.ui.Alignment.Horizontal,androidx.compose.foundation.gestures.FlingBehavior,kotlin.Boolean,androidx.wear.compose.foundation.rotary.RotaryScrollableBehavior,kotlin.Function1)" target="_blank">Transforming<code translate="no" dir="ltr">LazyColumn</code></a> extends <code translate="no" dir="ltr">LazyColumn</code> to support both scaling and transparency at the top and bottom of the screen to make the content more readable to the user.</p>
+<p>Here&#39;s a demo:</p>
+<p class="image-container"><img alt="c056381ba4a7475d.gif" style="width: 360.00px" src="/static/codelabs/compose-for-wear-os/img/c056381ba4a7475d.gif"></p>
+<p>Notice how as the item gets near the center it scales up to its full size and then as it moves away it scales back down (along with getting more transparent).</p>
+<p>Here is a more concrete example from an app:</p>
+<p class="image-container"><img alt="6dbb1e13f99e5e1f.gif" style="width: 384.00px" src="/static/codelabs/compose-for-wear-os/img/6dbb1e13f99e5e1f.gif"></p>
+<p>We&#39;ve found this really helps with readability.</p>
+<p>Now that you&#39;ve seen  <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/foundation/lazy/package-summary#TransformingLazyColumn(androidx.compose.foundation.layout.PaddingValues,androidx.compose.ui.Modifier,androidx.wear.compose.foundation.lazy.TransformingLazyColumnState,androidx.compose.foundation.layout.Arrangement.Vertical,androidx.compose.ui.Alignment.Horizontal,androidx.compose.foundation.gestures.FlingBehavior,kotlin.Boolean,androidx.wear.compose.foundation.rotary.RotaryScrollableBehavior,kotlin.Function1)" target="_blank"><code translate="no" dir="ltr">TransformingLazyColumn</code></a> in action, let&#39;s get started converting our <code translate="no" dir="ltr">LazyColumn</code>.</p>
+<h2 is-upgraded id="convert-to-a-transforminglazycolumnstate" data-text="Convert to a TransformingLazyColumnState" tabindex="-1">Convert to a TransformingLazyColumnState</h2>
+<p>In <code translate="no" dir="ltr">MainActivity.kt</code>, search for &#34;<strong><code translate="no" dir="ltr">TODO: Swap to TransformingLazyColumnState</code></strong>&#34; and replace that comment and line below with this code, note how we specify which ones are the first and last component so that the best padding values are used to avoid any content clipping.</p>
+<p><strong>Step 7</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scilab"><code translate="no" dir="ltr"><span class="devsite-syntax-c1">// TODO: Swap to TransformingLazyColumnState</span>
+<span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">listState</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">rememberTransformingLazyColumnState</span><span class="devsite-syntax-p">()</span>
+<span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">transformationSpec</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">rememberTransformationSpec</span><span class="devsite-syntax-p">()</span>
+</code></pre></devsite-code>
+<p>The names are almost identical. Just like <code translate="no" dir="ltr">LazyListState</code> handles state for a <code translate="no" dir="ltr">LazyColumn</code>, <code translate="no" dir="ltr">TransformingLazyColumnState</code> handles it for a <code translate="no" dir="ltr">TransformingLazyColumn</code>.</p>
+<p>We also specify a  <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/lazy/TransformationSpec" target="_blank"><code translate="no" dir="ltr">transformationSpec</code></a> here so that we can add transformations for the items as they scroll across the screen.</p>
+<h2 is-upgraded id="convert-to-a-transforminglazycolumn" data-text="Convert to a TransformingLazyColumn" tabindex="-1">Convert to a TransformingLazyColumn</h2>
+<p>Next we swap in <code translate="no" dir="ltr">TransformingLazyColumn</code>.</p>
+<p>In <code translate="no" dir="ltr">MainActivity.kt</code>, search for &#34;<strong><code translate="no" dir="ltr">TODO: Swap a TransformingLazyColumn</code></strong>&#34;. First, replace <code translate="no" dir="ltr">LazyColumn</code> with <code translate="no" dir="ltr">TransformingLazyColumn</code>.</p>
+<p>Then remove <code translate="no" dir="ltr">contentPadding, verticalArrangement</code> and <code translate="no" dir="ltr">modifier</code> altogether - <code translate="no" dir="ltr">TransformingLazyColumn</code> already provides default settings that guarantee a better default visual effect as most of the viewport will be filled with list items. In most cases default parameters will be sufficient, if you have header on top we recommend putting it into  <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary#ListHeader(androidx.compose.ui.Modifier,androidx.compose.ui.graphics.Color,androidx.compose.ui.graphics.Color,androidx.compose.foundation.layout.PaddingValues,kotlin.Function1)" target="_blank"><code translate="no" dir="ltr">ListHeader</code></a> as a first item.</p>
+<p><strong>Step 8</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scilab"><code translate="no" dir="ltr"><span class="devsite-syntax-c1">// TODO: Swap a TransformingLazyColumn (Wear's version of LazyColumn)</span>
+<span class="devsite-syntax-n">TransformingLazyColumn</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">state</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">listState</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">contentPadding</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">contentPadding</span><span class="devsite-syntax-p">)</span>
+</code></pre></devsite-code>
+<h2 is-upgraded id="add-a-scroll-transform-effect-to-items" data-text="Add a scroll transform effect to items" tabindex="-1">Add a scroll transform effect to items</h2>
+<p>Now we add a ShapeMorphing effect to our <code translate="no" dir="ltr">TransformingLazyColumn</code> elements by using the following <code translate="no" dir="ltr">Modifier</code> and <code translate="no" dir="ltr">SurfaceTransformation</code>.  Apply the same code to all the components (</p>
+<p>except <code translate="no" dir="ltr">IconButtonExample</code> which doesn&#39;t support this feature yet)<code translate="no" dir="ltr">.</code></p>
+<p><strong>Step 9</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only"><code translate="no" dir="ltr">TextExample(
+   modifier = Modifier.fillMaxWidth().transformedHeight(this, transformationSpec),
+   transformation = SurfaceTransformation(transformationSpec),
+)
+</code></pre></devsite-code>
+<p>That&#39;s it! Let&#39;s see what it looks like:</p>
+<p class="image-container"><img alt="4c97e27b6acb83ef.png" style="width: 199.79px" src="/static/codelabs/compose-for-wear-os/img/4c97e27b6acb83ef.png" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/4c97e27b6acb83ef_36.png 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/4c97e27b6acb83ef_48.png 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/4c97e27b6acb83ef_72.png 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/4c97e27b6acb83ef_96.png 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/4c97e27b6acb83ef_480.png 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/4c97e27b6acb83ef_720.png 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/4c97e27b6acb83ef_856.png 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/4c97e27b6acb83ef_960.png 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/4c97e27b6acb83ef_1440.png 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/4c97e27b6acb83ef_1920.png 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/4c97e27b6acb83ef_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>You can see the content is scaled and the transparency is adjusted at the top and bottom of the screen as you scroll with very little work to migrate!</p>
+<p>You can really notice it with the meditation composables as you move it up and down.</p>
+<p>Now onto the last topic, Wear OS&#39;s <code translate="no" dir="ltr">Scaffold</code>.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Add a Scaffold" duration="6" step="7">
+          
+          <h2 class="step-title" id="7" data-text="Add a Scaffold" tabindex="-1">
+              8. Add a Scaffold
+          </h2>
+          <p><a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary#AppScaffold(androidx.compose.ui.Modifier,kotlin.Function0,kotlin.Function1)" target="_blank">AppScaffold</a> and  <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary#ScreenScaffold(androidx.wear.compose.foundation.lazy.ScalingLazyListState,kotlin.Function1,androidx.compose.ui.Modifier,androidx.compose.foundation.layout.PaddingValues,kotlin.Function0,kotlin.Function1,androidx.compose.ui.unit.Dp,kotlin.Function2)" target="_blank">ScreenScaffold</a> provide a layout structure to help you arrange screens in common patterns, just like mobile, but instead of an  <a href="https://developer.android.com/jetpack/compose/layouts/material#scaffold" target="_blank">App Bar, FAB, Drawer, or other mobile specific elements</a>, it supports three Wear specific layouts with top-level components: time, scroll/position indicator and the page indicator.</p>
+<p>Here&#39;s what they look like:</p>
+<table class="vertical-rules">
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img src="/static/codelabs/compose-for-wear-os/img/ca4baa1c6f01e9a7.png" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/ca4baa1c6f01e9a7_36.png 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/ca4baa1c6f01e9a7_48.png 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/ca4baa1c6f01e9a7_72.png 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/ca4baa1c6f01e9a7_96.png 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/ca4baa1c6f01e9a7_480.png 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/ca4baa1c6f01e9a7_720.png 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/ca4baa1c6f01e9a7_856.png 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/ca4baa1c6f01e9a7_960.png 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/ca4baa1c6f01e9a7_1440.png 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/ca4baa1c6f01e9a7_1920.png 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/ca4baa1c6f01e9a7_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+</td><td colspan="1" rowspan="1"><p><a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary#TimeText(androidx.compose.ui.Modifier,androidx.wear.compose.material.TimeSource,androidx.compose.ui.text.TextStyle,androidx.compose.foundation.layout.PaddingValues,kotlin.Function0,kotlin.Function1,kotlin.Function0,kotlin.Function1,kotlin.Function0,kotlin.Function1)" target="_blank"><code translate="no" dir="ltr">TimeText</code></a></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img src="/static/codelabs/compose-for-wear-os/img/b60ff4d19fc7615b.png" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/b60ff4d19fc7615b_36.png 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/b60ff4d19fc7615b_48.png 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/b60ff4d19fc7615b_72.png 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/b60ff4d19fc7615b_96.png 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/b60ff4d19fc7615b_480.png 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/b60ff4d19fc7615b_720.png 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/b60ff4d19fc7615b_856.png 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/b60ff4d19fc7615b_960.png 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/b60ff4d19fc7615b_1440.png 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/b60ff4d19fc7615b_1920.png 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/b60ff4d19fc7615b_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+</td><td colspan="1" rowspan="1"><p><a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary#ScrollIndicator(androidx.compose.foundation.lazy.LazyListState,androidx.compose.ui.Modifier,kotlin.Boolean,androidx.compose.animation.core.AnimationSpec)" target="_blank"><code translate="no" dir="ltr">ScrollIndicator</code></a></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img src="/static/codelabs/compose-for-wear-os/img/c8e67bda83f311ac.png" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/c8e67bda83f311ac_36.png 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c8e67bda83f311ac_48.png 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c8e67bda83f311ac_72.png 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c8e67bda83f311ac_96.png 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c8e67bda83f311ac_480.png 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c8e67bda83f311ac_720.png 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c8e67bda83f311ac_856.png 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c8e67bda83f311ac_960.png 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c8e67bda83f311ac_1440.png 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c8e67bda83f311ac_1920.png 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/c8e67bda83f311ac_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+</td><td colspan="1" rowspan="1"><p><a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary#HorizontalPageIndicator(androidx.wear.compose.foundation.pager.PagerState,androidx.compose.ui.Modifier,androidx.compose.ui.graphics.Color,androidx.compose.ui.graphics.Color,androidx.compose.ui.graphics.Color)" target="_blank"><code translate="no" dir="ltr">HorizontalPageIndicator</code></a></p>
+</td></tr>
+</table>
+<p>We&#39;ll look at the first three components in detail, but, first, let&#39;s put the scaffold in place.</p>
+<p>The scaffold components  <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary#AppScaffold(androidx.compose.ui.Modifier,kotlin.Function0,kotlin.Function1)" target="_blank"><code translate="no" dir="ltr">AppScaffold</code></a> and  <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary#ScreenScaffold(androidx.wear.compose.foundation.lazy.ScalingLazyListState,kotlin.Function1,androidx.compose.ui.Modifier,androidx.compose.foundation.layout.PaddingValues,kotlin.Function0,kotlin.Function1,androidx.compose.ui.unit.Dp,kotlin.Function2)" target="_blank"><code translate="no" dir="ltr">ScreenScaffold</code></a> lay out the structure of a screen and coordinate transitions of the  <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary#ScrollIndicator(androidx.compose.foundation.ScrollState,androidx.compose.ui.Modifier,kotlin.Boolean,androidx.compose.animation.core.AnimationSpec)" target="_blank"><code translate="no" dir="ltr">ScrollIndicator</code></a> and  <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary#TimeText(androidx.compose.ui.Modifier,androidx.wear.compose.foundation.CurvedModifier,kotlin.Float,androidx.wear.compose.material3.TimeSource,androidx.compose.foundation.layout.PaddingValues,kotlin.Function2)" target="_blank"><code translate="no" dir="ltr">TimeText</code></a> components.</p>
+<p><a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary#AppScaffold(androidx.compose.ui.Modifier,kotlin.Function0,kotlin.Function1)" target="_blank"><code translate="no" dir="ltr">AppScaffold</code></a> allows static screen elements such as  <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary#TimeText(androidx.compose.ui.Modifier,androidx.wear.compose.foundation.CurvedModifier,kotlin.Float,androidx.wear.compose.material3.TimeSource,androidx.compose.foundation.layout.PaddingValues,kotlin.Function2)" target="_blank"><code translate="no" dir="ltr">TimeText</code></a> to remain visible during in-app transitions such as swipe-to-dismiss.  <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary#ScreenScaffold(androidx.wear.compose.foundation.lazy.ScalingLazyListState,kotlin.Function1,androidx.compose.ui.Modifier,androidx.compose.foundation.layout.PaddingValues,kotlin.Function0,kotlin.Function1,androidx.compose.ui.unit.Dp,kotlin.Function2)" target="_blank"><code translate="no" dir="ltr">ScreenScaffold</code></a> displays the  <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary#ScrollIndicator(androidx.compose.foundation.ScrollState,androidx.compose.ui.Modifier,androidx.wear.compose.material3.ScrollIndicatorColors,kotlin.Boolean,androidx.compose.animation.core.AnimationSpec)" target="_blank"><code translate="no" dir="ltr">ScrollIndicator</code></a> at the center-end of the screen by default and coordinates showing/hiding  <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary#TimeText(androidx.compose.ui.Modifier,androidx.wear.compose.foundation.CurvedModifier,kotlin.Float,androidx.compose.ui.graphics.Color,androidx.wear.compose.material3.TimeSource,androidx.compose.foundation.layout.PaddingValues,kotlin.Function2)" target="_blank"><code translate="no" dir="ltr">TimeText</code></a> and  <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary#ScrollIndicator(androidx.compose.foundation.ScrollState,androidx.compose.ui.Modifier,androidx.wear.compose.material3.ScrollIndicatorColors,kotlin.Boolean,androidx.compose.animation.core.AnimationSpec)" target="_blank"><code translate="no" dir="ltr">ScrollIndicator</code></a></p>
+<h2 is-upgraded id="add-a-scaffold" data-text="Add a Scaffold" tabindex="-1">Add a Scaffold</h2>
+<p>Let&#39;s add the boilerplate for the <code translate="no" dir="ltr">AppScaffold</code> and <code translate="no" dir="ltr">ScreenScaffold</code>  now.</p>
+<p>Find &#34;<strong><code translate="no" dir="ltr">TODO (Start): Create a AppScaffold (Wear Version)</code></strong>&#34; and add the code below it.</p>
+<p><strong>Step 9</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only"><code translate="no" dir="ltr">WearAppTheme {
+// TODO (Start): Create a AppScaffold (Wear Version)
+AppScaffold {
+</code></pre></devsite-code>
+<p>Find <strong><code translate="no" dir="ltr">"TODO (Start): Create a ScreenScaffold (Wear Version)"</code></strong> and add the code below it.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scilab"><code translate="no" dir="ltr"><span class="devsite-syntax-c1">// TODO (Start): Create a ScreenScaffold (Wear Version)</span>
+<span class="devsite-syntax-n">ScreenScaffold</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-w"> </span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">scrollState</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">listState</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">contentPadding</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">rememberResponsiveColumnPadding</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">       </span><span class="devsite-syntax-n">first</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ColumnItemType</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">IconButton</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">       </span><span class="devsite-syntax-n">last</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ColumnItemType</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">Button</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">),</span>
+<span class="devsite-syntax-p">){</span><span class="devsite-syntax-n">contentPadding</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">-</span>&gt;
+</code></pre></devsite-code>
+<p>Next, make sure you add the closing bracket to the right location.</p>
+<p>Find <strong><code translate="no" dir="ltr">"TODO (End): Create a ScreenScaffold (Wear Version)"</code></strong> and add the closing bracket there:</p>
+<p><strong>Step 10</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scilab"><code translate="no" dir="ltr"><span class="devsite-syntax-c1">// TODO (End): Create a ScreenScaffold (Wear Version)</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>Find <strong><code translate="no" dir="ltr">"TODO (End): Create a AppScaffold (Wear Version)"</code></strong> and add the closing bracket there:</p>
+<p><strong>Step 10</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scilab"><code translate="no" dir="ltr"><span class="devsite-syntax-c1">// TODO (End): Create a AppScaffold (Wear Version)</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>Let&#39;s run it first. You should see something like this:</p>
+<p class="image-container"><img alt="97e417901b8f8229.png" style="width: 211.20px" src="/static/codelabs/compose-for-wear-os/img/97e417901b8f8229.png" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/97e417901b8f8229_36.png 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/97e417901b8f8229_48.png 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/97e417901b8f8229_72.png 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/97e417901b8f8229_96.png 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/97e417901b8f8229_480.png 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/97e417901b8f8229_720.png 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/97e417901b8f8229_856.png 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/97e417901b8f8229_960.png 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/97e417901b8f8229_1440.png 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/97e417901b8f8229_1920.png 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/97e417901b8f8229_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Notice that it adds:</p>
+<ul>
+<li>A  <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary#TimeText(androidx.compose.ui.Modifier,androidx.wear.compose.material.TimeSource,androidx.compose.ui.text.TextStyle,androidx.compose.foundation.layout.PaddingValues,kotlin.Function0,kotlin.Function1,kotlin.Function0,kotlin.Function1,kotlin.Function0,kotlin.Function1)" target="_blank"><code translate="no" dir="ltr">TimeText</code></a> which uses curved text under the hood and gives developers an easy way to show the time without placing the composable or having to do any work with time related classes. Additionally, the  <a href="https://developer.android.com/training/wearables/design/overlays#time" target="_blank">Material Guidelines recommend that you display the time</a> at the top of any screen within the app and it fades away while scrolling.</li>
+<li>A  <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary#ScrollIndicator(androidx.compose.foundation.lazy.LazyListState,androidx.compose.ui.Modifier,kotlin.Boolean,androidx.compose.animation.core.AnimationSpec)" target="_blank"><code translate="no" dir="ltr">ScrollIndicator</code></a> which is an indicator on the right side of the screen to show the current indicator location based on the type of state object you pass in. In our case, that will be the  <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/foundation/lazy/TransformingLazyColumnState" target="_blank"><code translate="no" dir="ltr">TransformingLazyColumnState</code></a>.</li>
+</ul>
+<p>Ok, let&#39;s see what this looks like now:</p>
+<p class="image-container"><img alt="fd00c8fc4f7283ef.png" style="width: 211.20px" src="/static/codelabs/compose-for-wear-os/img/fd00c8fc4f7283ef.png" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/fd00c8fc4f7283ef_36.png 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/fd00c8fc4f7283ef_48.png 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/fd00c8fc4f7283ef_72.png 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/fd00c8fc4f7283ef_96.png 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/fd00c8fc4f7283ef_480.png 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/fd00c8fc4f7283ef_720.png 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/fd00c8fc4f7283ef_856.png 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/fd00c8fc4f7283ef_960.png 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/fd00c8fc4f7283ef_1440.png 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/fd00c8fc4f7283ef_1920.png 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/fd00c8fc4f7283ef_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Try scrolling it up and down. You should only see the scrolling indicator show up when you are scrolling.</p>
+<h2 is-upgraded id="add-a-edge-hugging-button" data-text="Add a Edge Hugging button" tabindex="-1">Add a Edge Hugging button</h2>
+<p>The  <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/package-summary#EdgeButton(kotlin.Function0,androidx.compose.ui.Modifier,androidx.wear.compose.material3.EdgeButtonSize,kotlin.Boolean,androidx.wear.compose.material3.ButtonColors,androidx.compose.foundation.BorderStroke,androidx.compose.foundation.interaction.MutableInteractionSource,kotlin.Function1)" target="_blank"><code translate="no" dir="ltr">EdgeButton</code></a> is a new expressive button from the M3 Compose material for Wear OS release. The edge-hugging container is a new shape that embraces round and maximises the space within the circular form factor.</p>
+<p><code translate="no" dir="ltr">ScreenScaffold</code> provides a slot for an EdgeButton that takes the available space below a scrolling list. It will scale up and fade in when the user scrolls to the end of the list, and scale down and fade out as the user scrolls up. Let&#39;s add an <code translate="no" dir="ltr">EdgeButton</code> to our code:</p>
+<p><strong>Step 11</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">ScreenScaffold(
+  scrollState = listState,
+  contentPadding = rememberResponsiveColumnPadding(
+    first = ColumnItemType.IconButton,
+    last = ColumnItemType.Button,
+  ),
+/* *************************** Part 11: EdgeButton *************************** <span class="devsite-syntax-gs">*/</span>
+<span class="devsite-syntax-gs">  // TODO: Add a EdgeButton</span>
+<span class="devsite-syntax-gs">   edgeButton = {</span>
+<span class="devsite-syntax-gs">     EdgeButton(</span>
+<span class="devsite-syntax-gs">      onClick = { /*</span> ... */ },
+      buttonSize = EdgeButtonSize.Medium) {
+        Text(stringResource(R.string.more))
+      }
+   }
+</code></pre></devsite-code>
+<p>You can specify  <a href="https://developer.android.com/reference/kotlin/androidx/wear/compose/material3/EdgeButtonSize" target="_blank">4 different sizes</a> for an <code translate="no" dir="ltr">EdgeButton</code>: <code translate="no" dir="ltr">ExtraSmall</code>, <code translate="no" dir="ltr">Small</code>, <code translate="no" dir="ltr">Medium</code> and <code translate="no" dir="ltr">Large</code>.</p>
+<p>Let&#39;s see what this looks like now:</p>
+<p class="image-container"><img alt="3a973bbfe4941e67.png" style="width: 211.20px" src="/static/codelabs/compose-for-wear-os/img/3a973bbfe4941e67.png" srcset="https://developer.android.com/static/codelabs/compose-for-wear-os/img/3a973bbfe4941e67_36.png 36w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/3a973bbfe4941e67_48.png 48w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/3a973bbfe4941e67_72.png 72w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/3a973bbfe4941e67_96.png 96w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/3a973bbfe4941e67_480.png 480w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/3a973bbfe4941e67_720.png 720w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/3a973bbfe4941e67_856.png 856w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/3a973bbfe4941e67_960.png 960w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/3a973bbfe4941e67_1440.png 1440w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/3a973bbfe4941e67_1920.png 1920w,https://developer.android.com/static/codelabs/compose-for-wear-os/img/3a973bbfe4941e67_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Nice job, you have finished a UI demo of most of the Wear OS composables!</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Congratulations" duration="1" step="8">
+          
+          <h2 class="step-title" id="8" data-text="Congratulations" tabindex="-1">
+              9. Congratulations
+          </h2>
+          <p>Congratulations! You learned the basics of using Compose on Wear OS!</p>
+<p>Now you can reapply all your Compose knowledge to making beautiful Wear OS apps!</p>
+<h2 is-upgraded id="whats-next" data-text="What's next?" tabindex="-1">What's next?</h2>
+<p>Check out the other Wear OS codelabs:</p>
+<ul>
+<li><a href="https://developer.android.com/codelabs/wear-tiles" target="_blank">Create your first Wear OS Tile</a></li>
+</ul>
+<h2 is-upgraded id="further-reading" data-text="Further reading" tabindex="-1">Further reading</h2>
+<ul>
+<li><a href="https://github.com/android/wear-os-samples/tree/main/ComposeStarter" target="_blank">Compose Starter sample</a> on Github</li>
+<li><a href="https://developer.android.com/wear" target="_blank">Build apps for the wrist with Wear OS</a> for more guides</li>
+<li><a href="https://developer.android.com/training/wearables/compose" target="_blank">Use Jetpack Compose on Wear OS</a></li>
+</ul>
+<h2 is-upgraded id="feedback" data-text="Feedback" tabindex="-1">Feedback</h2>
+<p>We&#39;d love to hear from you about your experiences using Compose for Wear OS and what you are able to build! Join the discussion in the  <a href="https://surveys.jetbrains.com/s3/kotlin-slack-sign-up" target="_blank">Kotlin Slack</a> <strong>#compose-wear</strong> channel and keep providing feedback on the  <a href="https://issuetracker.google.com/issues/new?component=1077552&template=1598429" target="_blank">issue tracker</a>.</p>
+<p>Happy coding!</p>
+
+
+        </google-codelab-step>
+      
+    </google-codelab>
+  
+  
+
+  
+</div>
+
+  
+    
+    
+    
+  
+
+  <div class="devsite-floating-action-buttons"></div></article>
+
+
+<devsite-content-footer class="nocontent">
+  <p>Except as otherwise noted, the content of this page is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</a>, and code samples are licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see the <a href="https://developers.google.com/site-policies">Google Developers Site Policies</a>. Java is a registered trademark of Oracle and/or its affiliates.</p>
+  
+</devsite-content-footer>
+
+
+<devsite-notification
+>
+</devsite-notification>
+
+
+  
+<div class="devsite-content-data">
+  
+  
+    <template class="devsite-content-data-template">
+      [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[],null,[]]
+    </template>
+  
+</div>
+            
+          </devsite-content>
+        </main>
+        <devsite-footer-promos class="devsite-footer">
+          
+            
+
+<nav class="devsite-footer-promos nocontent" aria-label="Promotions">
+  <ul class="devsite-footer-promos-list">
+    
+    <li class="devsite-footer-promo">
+      <a href="//x.com/AndroidDev"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer X Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-x_dt.svg"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="/_static/android/images/logo-x.svg"
+                loading="lazy"
+                alt="X">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          X
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Follow @AndroidDev on X</div>
+    </li>
+    
+    <li class="devsite-footer-promo">
+      <a href="//www.youtube.com/user/androiddevelopers"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer YouTube Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-youtube_dt.svg"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="//www.gstatic.com/images/icons/material/product/2x/youtube_48dp.png"
+                loading="lazy"
+                alt="YouTube">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          YouTube
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Check out Android Developers on YouTube</div>
+    </li>
+    
+    <li class="devsite-footer-promo">
+      <a href="//www.linkedin.com/showcase/androiddev"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer LinkedIn Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-linkedin_dt.svg"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="/_static/android/images/logo-linkedin.svg"
+                loading="lazy"
+                alt="LinkedIn">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          LinkedIn
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Connect with the Android Developers community on LinkedIn</div>
+    </li>
+    
+  </ul>
+</nav>
+
+          
+        </devsite-footer-promos>
+        <devsite-footer-linkboxes class="devsite-footer">
+          
+            
+<nav class="devsite-footer-linkboxes nocontent" aria-label="Footer links">
+  
+  <ul class="devsite-footer-linkboxes-list">
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">More Android</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com/enterprise/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Android for Enterprise
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com/security-center/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Security
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//source.android.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Source
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/news"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            News
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//android-developers.googleblog.com/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+          
+            Blog
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/podcasts"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 7)"
+            >
+            
+              
+              
+            
+          
+            Podcasts
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Discover</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/games"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Gaming
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/ml"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Machine Learning
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/health-and-fitness"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Health & Fitness
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/media"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Camera & Media
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/privacy"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            Privacy
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/training/connectivity/5g"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+              
+              
+            
+          
+            5G
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Android Devices</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/large-screens"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Large screens
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/wear"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Wear OS
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/chrome-os"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            ChromeOS devices
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/cars"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Android for cars
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/tv"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+              
+              
+            
+          
+            Android TV
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Releases</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/15"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android 15
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/14"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Android 14
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/13"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Android 13
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/12"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Android 12
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/11"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            Android 11
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/10"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+          
+            Android 10
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/pie"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 7)"
+            >
+            
+              
+              
+            
+          
+            Pie
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Documentation and Downloads</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/studio/intro"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android Studio guide
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/guide"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Developers guides
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/reference"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            API reference
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/studio"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Download Studio
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/ndk"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+              
+              
+            
+          
+            Android NDK
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Support</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//issuetracker.google.com/issues/new?component=190923&amp;template=841312"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Report platform bug
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//issuetracker.google.com/issues/new?component=192697"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Report documentation bug
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//support.google.com/googleplay/android-developer"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Google Play support
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://g.co/userresearch/androiddeveloperfooter"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+              
+              
+            
+          
+            Join research studies
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+  
+</nav>
+          
+        </devsite-footer-linkboxes>
+        <devsite-footer-utility class="devsite-footer">
+          
+            
+
+<div class="devsite-footer-utility nocontent">
+  
+  
+  <nav class="devsite-footer-sites" aria-label="Other Google Developers websites">
+    <a href="https://developers.google.com/"
+       class="devsite-footer-sites-logo-link gc-analytics-event"
+       data-category="Site-Wide Custom Events"
+       data-label="Footer Google Developers Link">
+      <picture>
+        
+        <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-google-for-developers-dark-theme.svg"
+                media="(prefers-color-scheme: none)"
+                class="devsite-dark-theme">
+        
+        <img class="devsite-footer-sites-logo"
+             src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-google-for-developers.svg"
+             loading="lazy"
+             alt="Google Developers">
+      </picture>
+    </a>
+    <ul class="devsite-footer-sites-list">
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.android.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Android Link"
+         
+         >
+          Android
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.chrome.com/home"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Chrome Link"
+         
+         >
+          Chrome
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//firebase.google.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Firebase Link"
+         
+         >
+          Firebase
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//cloud.google.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Google Cloud Platform Link"
+         
+         >
+          Google Cloud Platform
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developers.google.com/products/"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer All products Link"
+         
+         >
+          All products
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  
+
+  
+  <nav class="devsite-footer-utility-links" aria-label="Utility links">
+    
+    <ul class="devsite-footer-utility-list">
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//policies.google.com/privacy"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Privacy link"
+         >
+          Privacy
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="/license"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer License link"
+         >
+          License
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="/distribute/marketing-tools/brand-guidelines"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Brand guidelines link"
+         >
+          Brand guidelines
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 glue-cookie-notification-bar-control">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="#"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Manage cookies link"
+         
+           aria-hidden="true"
+         >
+          Manage cookies
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 devsite-footer-utility-button">
+        
+        <span class="devsite-footer-utility-description">Get news and tips by email</span>
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="/updates"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Subscribe link"
+         >
+          Subscribe
+        </a>
+        
+      </li>
+      
+    </ul>
+    
+    
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+  </nav>
+</div>
+          
+        </devsite-footer-utility>
+        <devsite-panel>
+          
+        </devsite-panel>
+        
+      </section></section>
+    <devsite-sitemask></devsite-sitemask>
+    <devsite-snackbar></devsite-snackbar>
+    <devsite-tooltip ></devsite-tooltip>
+    <devsite-heading-link></devsite-heading-link>
+    <devsite-analytics>
+      
+        <script type="application/json" analytics>[]</script>
+<script type="application/json" tag-management>{&#34;at&#34;: &#34;True&#34;, &#34;ga4&#34;: [{&#34;id&#34;: &#34;G-QFRN08RN6E&#34;, &#34;purpose&#34;: 0}], &#34;ga4p&#34;: [{&#34;id&#34;: &#34;G-QFRN08RN6E&#34;, &#34;purpose&#34;: 0}], &#34;gtm&#34;: [], &#34;parameters&#34;: {&#34;internalUser&#34;: &#34;False&#34;, &#34;language&#34;: {&#34;machineTranslated&#34;: &#34;False&#34;, &#34;requested&#34;: &#34;en&#34;, &#34;served&#34;: &#34;en&#34;}, &#34;pageType&#34;: &#34;codelab&#34;, &#34;projectName&#34;: null, &#34;signedIn&#34;: &#34;False&#34;, &#34;tenant&#34;: &#34;android&#34;, &#34;recommendations&#34;: {&#34;sourcePage&#34;: &#34;&#34;, &#34;sourceType&#34;: 0, &#34;sourceRank&#34;: 0, &#34;sourceIdenticalDescriptions&#34;: 0, &#34;sourceTitleWords&#34;: 0, &#34;sourceDescriptionWords&#34;: 0, &#34;experiment&#34;: &#34;&#34;}, &#34;experiment&#34;: {&#34;ids&#34;: &#34;&#34;}}}</script>
+      
+    </devsite-analytics>
+    
+      <devsite-badger></devsite-badger>
+    
+    
+    
+<android-fully-clickable
+    target="
+        .android-case-study .devsite-landing-row-item,
+        .android-editorial-and-updates-cards .devsite-card-content-wrapper,
+        .android-editorial-and-updates-cards .devsite-landing-row-item,
+        .android-grouped-resources .devsite-landing-row-item,
+        .android-grouped-resources-contained--primary .devsite-landing-row-item,
+        .android-grouped-resources-contained--secondary .devsite-landing-row-item,
+        .android-grouped-resources-contained--tertiary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--primary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--secondary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--tertiary .devsite-landing-row-item,
+        .android-guide-cards .devsite-landing-row-item,
+        .android-illustrated-resources-index .devsite-landing-row-item,
+        .android-illustrated-resources-primary .devsite-landing-row-item,
+        .android-illustrated-resources-secondary .devsite-landing-row-item,
+        .android-illustrated-resources-secondary-small .devsite-landing-row-item,
+        .android-illustrated-resources-tertiary .devsite-landing-row-item,
+        .android-illustrated-resources-tertiary-small .devsite-landing-row-item,
+        .android-promo .devsite-landing-row-item,
+        .android-quick-link,
+        .android-samples .devsite-card-wrapper,
+        .fully-clickable"
+    watch=".android-editorial-and-updates-cards, .android-samples, devsite-content"></android-fully-clickable>
+    
+<script nonce="ZSQMNLmm4ZS80/AftCC3tHb0t6VT6Q">
+  
+  (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+    t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+    E.parentNode.insertBefore(t,E);})(window, document, 'script',
+    'https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/js/app_loader.js', '[3,"en",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android","https://android-dot-devsite-v2-prod.appspot.com",1,null,["/_pwa/android/manifest.json","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/favicon.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png","https://fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,600italic,700,700italic|Roboto+Mono:400,500,700&display=swap"],1,null,[1,6,8,12,14,17,21,25,50,52,63,70,75,76,80,87,91,92,93,97,98,100,101,102,103,104,105,107,108,109,110,112,113,117,118,120,122,124,125,126,127,129,130,131,132,133,134,135,136,138,140,141,147,148,149,151,152,156,157,158,159,161,163,164,168,169,170,179,180,182,183,186,191,193,196],"AIzaSyAP-jjEJBzmIyKR4F-3XITp8yM9T1gEEI8","AIzaSyB6xiKGDR5O3Ak2okS4rLkauxGUG7XP0hg","developer.android.com","AIzaSyAQk0fBONSGUqCNznf6Krs82Ap1-NV6J4o","AIzaSyCCxcqdrZ_7QMeLCRY20bh_SXdAYqy70KY",null,null,null,["MiscFeatureFlags__enable_explicit_template_dependencies","Concierge__enable_pushui","DevPro__enable_embed_profile_creation","Concierge__enable_actions_menu","DevPro__enable_code_assist","MiscFeatureFlags__developers_footer_dark_image","MiscFeatureFlags__enable_framebox_badge_methods","Search__enable_ai_search_summaries_for_all","CloudShell__cloud_code_overflow_menu","Search__enable_ai_eligibility_checks","Profiles__enable_join_program_group_endpoint","DevPro__enable_cloud_innovators_plus","Search__enable_suggestions_from_borg","MiscFeatureFlags__enable_appearance_cookies","Cloud__cache_serialized_dynamic_content","MiscFeatureFlags__enable_project_variables","CloudShell__cloud_shell_button","Cloud__enable_cloud_dlp_service","DevPro__enable_developer_subscriptions","Profiles__enable_awarding_url","DevPro__remove_eu_tax_intake_form","Cloud__fast_free_trial","Profiles__enable_complete_playlist_endpoint","Cloud__enable_llm_concierge_chat","EngEduTelemetry__enable_engedu_telemetry","MiscFeatureFlags__developers_footer_image","Cloud__enable_legacy_calculator_redirect","MiscFeatureFlags__enable_view_transitions","Profiles__enable_recognition_badges","Profiles__enable_developer_profiles_callout","Experiments__reqs_query_experiments","Profiles__enable_purchase_prompts","Profiles__enable_completequiz_endpoint","Profiles__enable_page_saving","DevPro__enable_enterprise","DevPro__enable_free_benefits","Search__enable_dynamic_content_confidential_banner","Cloud__enable_cloudx_experiment_ids","DevPro__enable_google_one_card","MiscFeatureFlags__enable_variable_operator_index_yaml","Cloud__enable_cloud_shell_fte_user_flow","Profiles__enable_playlist_community_acl","Cloud__enable_cloud_shell","Search__enable_page_map","TpcFeatures__proxy_prod_host","MiscFeatureFlags__emergency_css","MiscFeatureFlags__enable_project_body_class","Profiles__enable_public_developer_profiles","Profiles__enable_callout_notifications","Significatio__enable_by_tenant","Analytics__enable_clearcut_logging","MiscFeatureFlags__enable_variable_operator","DevPro__enable_firebase_workspaces_card","Profiles__enable_stripe_subscription_management","DevPro__enable_vertex_credit_card","DevPro__enable_devpro_offers","Concierge__enable_remove_info_panel_tags","DevPro__enable_nvidia_credits_card","MiscFeatureFlags__enable_firebase_utm","BookNav__enable_tenant_cache_key","Profiles__require_profile_eligibility_for_signin","Profiles__enable_user_type","TpcFeatures__enable_unmirrored_page_left_nav","Profiles__enable_dashboard_curated_recommendations","Cloud__enable_free_trial_server_call","Profiles__enable_profile_collections","Profiles__enable_completecodelab_endpoint","Profiles__enable_release_notes_notifications","DevPro__enable_google_payments_buyflow","MiscFeatureFlags__gdp_dashboard_reskin_enabled","Profiles__enable_developer_profile_benefits_ui_redesign","MiscFeatureFlags__enable_dark_theme"],null,null,"AIzaSyBLEMok-5suZ67qRPzx0qUtbnLmyT_kCVE","https://developerscontentserving-pa.googleapis.com","AIzaSyCM4QpTRSqP5qI4Dvjt4OAScIN8sOUlO-k","https://developerscontentsearch-pa.googleapis.com",2,4,null,"https://developerprofiles-pa.googleapis.com",[3,"android","Android Developers","developer.android.com",null,"android-dot-devsite-v2-prod.appspot.com",null,null,[null,1,null,null,null,null,null,null,null,null,null,[1],null,null,null,null,null,null,[1],[1,null,null,[1,20],"/recommendations"],null,null,null,[1,null,1],[1,1,null,1,1]],null,[18,null,null,null,null,null,"/images/lockup.png","/images/touchicon-180.png",null,null,null,null,null,null,null,null,null,null,null,null,null,2,null,null,null,"/images/lockup-dark-theme.png",[]],[],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[6,1,14,15,20,22,23,28,29,37,43],null,[[null,null,1],[1,1]],[[null,null,null,null,null,null,null,[["G-QFRN08RN6E"],null,null,[["G-QFRN08RN6E",1]]],null,null,null,null,1],null,[[2,2],[1,1]]],null,4,null,null,null,null,null,null,null,null,null,null,null,null,null,"android.devsite.google"],null,"pk_live_5170syrHvgGVmSx9sBrnWtA5luvk9BwnVcvIi7HizpwauFG96WedXsuXh790rtij9AmGllqPtMLfhe2RSwD6Pn38V00uBCydV4m",1,null,"https://developerscontentinsights-pa.googleapis.com","AIzaSyCg-ZUslalsEbXMfIo9ZP8qufZgo3LSBDU","AIzaSyDxT0vkxnY_KeINtA4LSePJO-4MAZPMRsE","https://developers.googleapis.com",null,null,"AIzaSyBQom12tzI-rybN7Sf-KfeL4nwm-Rf7PmI\n",null,"https://developerslogging.googleapis.com"]')
+  
+</script>
+
+    <devsite-a11y-announce></devsite-a11y-announce>
+  </body>
+</html>

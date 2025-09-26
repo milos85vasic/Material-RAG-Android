@@ -1,0 +1,24 @@
+<svg width="289" height="289" viewBox="0 0 289 289" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="289" height="289" rx="12" fill="#8DA3FF"/>
+<rect x="21.6748" y="68.6375" width="245.65" height="151.725" rx="12" fill="#EFE2FF"/>
+<rect x="180.625" y="75.8625" width="79.475" height="137.275" rx="6" fill="#8DA3FF"/>
+<rect x="184.237" y="79.475" width="28.9" height="4.335" rx="2.1675" fill="#42372A"/>
+<rect x="184.237" y="88.145" width="23.12" height="23.12" rx="2" fill="white"/>
+<rect x="208.803" y="88.145" width="23.12" height="23.12" rx="2" fill="white"/>
+<rect x="233.368" y="88.145" width="23.12" height="23.12" rx="2" fill="white"/>
+<rect x="184.237" y="112.71" width="23.12" height="23.12" rx="2" fill="white"/>
+<rect x="208.803" y="112.71" width="23.12" height="23.12" rx="2" fill="white"/>
+<rect x="233.368" y="112.71" width="23.12" height="23.12" rx="2" fill="white"/>
+<rect x="184.237" y="137.275" width="23.12" height="23.12" rx="2" fill="white"/>
+<rect x="208.803" y="137.275" width="23.12" height="23.12" rx="2" fill="white"/>
+<rect x="233.368" y="137.275" width="23.12" height="23.12" rx="2" fill="white"/>
+<rect x="184.237" y="161.84" width="23.12" height="23.12" rx="2" fill="white"/>
+<rect x="208.803" y="161.84" width="23.12" height="23.12" rx="2" fill="white"/>
+<rect x="233.368" y="161.84" width="23.12" height="23.12" rx="2" fill="white"/>
+<rect x="184.237" y="186.405" width="23.12" height="23.12" rx="2" fill="white"/>
+<rect x="208.803" y="186.405" width="23.12" height="23.12" rx="2" fill="white"/>
+<rect x="233.368" y="186.405" width="23.12" height="23.12" rx="2" fill="white"/>
+<rect x="28.8999" y="91.7575" width="144.5" height="104.763" rx="6" fill="white"/>
+<path d="M67.4209 154.003L39.003 186.706C37.878 188 38.7975 190.018 40.5126 190.018H161.84C163.547 190.018 164.469 188.018 163.362 186.72L124.568 141.239C123.766 140.298 122.312 140.303 121.516 141.249L93.8743 174.096C93.1228 174.989 91.7695 175.051 90.939 174.231L70.3357 153.892C69.514 153.081 68.1782 153.132 67.4209 154.003Z" fill="#E8CAFF"/>
+<ellipse cx="43.35" cy="106.207" rx="7.225" ry="7.225" fill="#F3E480"/>
+</svg>

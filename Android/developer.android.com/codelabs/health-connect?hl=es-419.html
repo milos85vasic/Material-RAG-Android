@@ -1,0 +1,2207 @@
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html 
+      lang="es-419-x-mtfrom-en"
+      dir="ltr">
+  <head>
+    <meta name="google-signin-client-id" content="721724668570-nbkv1cfusk7kk4eni4pjvepaus73b13t.apps.googleusercontent.com">
+    <meta name="google-signin-scope"
+          content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award">
+    <meta property="og:site_name" content="Android Developers">
+    <meta property="og:type" content="website"><meta name="theme-color" content="#34a853"><meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <link rel="manifest" href="/_pwa/android/manifest.json"
+          crossorigin="use-credentials">
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="//apis.google.com" crossorigin>
+    <link rel="preconnect" href="//www.google-analytics.com" crossorigin><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,600italic,700,700italic|Roboto+Mono:400,500,700&display=swap">
+      <link rel="stylesheet"
+            href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block"><link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/css/app.css">
+      
+        <link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/css/dark-theme.css" disabled>
+      <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/favicon.svg">
+    <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/touchicon-180.png"><link rel="canonical" href="https://developer.android.com/codelabs/health-connect?hl=es-419"><link rel="search" type="application/opensearchdescription+xml"
+            title="Android Developers" href="https://developer.android.com/s/opensearch.xml?hl=es-419">
+      <link rel="alternate" hreflang="en"
+          href="https://developer.android.com/codelabs/health-connect" /><link rel="alternate" hreflang="x-default" href="https://developer.android.com/codelabs/health-connect" /><link rel="alternate" hreflang="zh-Hans"
+          href="https://developer.android.com/codelabs/health-connect?hl=zh-cn" /><link rel="alternate" hreflang="zh-Hant"
+          href="https://developer.android.com/codelabs/health-connect?hl=zh-tw" /><link rel="alternate" hreflang="fr"
+          href="https://developer.android.com/codelabs/health-connect?hl=fr" /><link rel="alternate" hreflang="id"
+          href="https://developer.android.com/codelabs/health-connect?hl=id" /><link rel="alternate" hreflang="ja"
+          href="https://developer.android.com/codelabs/health-connect?hl=ja" /><link rel="alternate" hreflang="ko"
+          href="https://developer.android.com/codelabs/health-connect?hl=ko" /><link rel="alternate" hreflang="pt-BR"
+          href="https://developer.android.com/codelabs/health-connect?hl=pt-br" /><link rel="alternate" hreflang="es-419"
+          href="https://developer.android.com/codelabs/health-connect?hl=es-419" /><link rel="alternate" hreflang="vi"
+          href="https://developer.android.com/codelabs/health-connect?hl=vi" /><title>Tu primera app integrada de Health Connect &nbsp;|&nbsp; Android Developers</title>
+
+<meta property="og:title" content="Tu primera app integrada de Health Connect &nbsp;|&nbsp; Android Developers"><meta name="description" content="En este codelab, compilarás una app de salud y fitness que admite la lectura y escritura en Health Connect.">
+  <meta property="og:description" content="En este codelab, compilarás una app de salud y fitness que admite la lectura y escritura en Health Connect."><meta property="og:url" content="https://developer.android.com/codelabs/health-connect?hl=es-419"><meta property="og:locale" content="es_419"><link rel="alternate machine-translated-from" hreflang="en"
+        href="https://developer.android.com/codelabs/health-connect?hl=en">
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+
+    
+      <link rel="stylesheet" href="/extras.css"></head>
+  <body class=""
+        template="codelab"
+        theme="android-theme"
+        type="codelab"
+        
+        
+        appearance
+        
+        layout="docs"
+        
+        
+        
+        
+        display-toc
+        pending>
+  
+    <devsite-progress type="indeterminate" id="app-progress"></devsite-progress>
+  
+  
+    <a href="#main-content" class="skip-link button">
+      
+      Ir al contenido principal
+    </a>
+    <section class="devsite-wrapper">
+      <devsite-cookie-notification-bar></devsite-cookie-notification-bar><devsite-header role="banner">
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-header--inner" data-nosnippet>
+  <div class="devsite-top-logo-row-wrapper-wrapper">
+    <div class="devsite-top-logo-row-wrapper">
+      <div class="devsite-top-logo-row">
+        <button type="button" id="devsite-hamburger-menu"
+          class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+          data-category="Site-Wide Custom Events"
+          data-label="Navigation menu button"
+          visually-hidden
+          aria-label="Abrir menú">
+        </button>
+        
+<div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="androidDevelopers" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-dark-theme.png"
+            media="(prefers-color-scheme: dark)"
+            class="devsite-dark-theme">
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png" class="devsite-site-logo" alt="Android Developers">
+  </picture>
+  
+</a>
+
+
+
+</div>
+        <div class="devsite-top-logo-row-middle">
+          <div class="devsite-header-upper-tabs">
+            
+           </div>
+          
+<devsite-search
+    enable-signin
+    enable-search
+    enable-suggestions
+      enable-query-completion
+    
+    enable-search-summaries
+    
+    tenant-name="Android Developers"
+    
+    
+    
+    
+    
+    >
+  <form class="devsite-search-form" action="https://developer.android.com/s/results?hl=es-419" method="GET">
+    <div class="devsite-search-container">
+      <button type="button"
+              search-open
+              class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+              
+              aria-label="Abrir la búsqueda"></button>
+      <div class="devsite-searchbox">
+        <input
+          aria-activedescendant=""
+          aria-autocomplete="list"
+          
+          aria-label="Buscar"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          autocomplete="off"
+          class="devsite-search-field devsite-search-query"
+          name="q"
+          
+          placeholder="Buscar"
+          role="combobox"
+          type="text"
+          value=""
+          >
+          <div class="devsite-search-image material-icons" aria-hidden="true">
+            
+              <svg class="devsite-search-ai-image" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_6641_386)">
+                    <path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14167 15.375 4.875 14.125C3.625 12.8583 3 11.3167 3 9.5C3 7.68333 3.625 6.15 4.875 4.9C6.14167 3.63333 7.68333 3 9.5 3C10.0167 3 10.5167 3.05833 11 3.175C11.4833 3.275 11.9417 3.43333 12.375 3.65L10.825 5.2C10.6083 5.13333 10.3917 5.08333 10.175 5.05C9.95833 5.01667 9.73333 5 9.5 5C8.25 5 7.18333 5.44167 6.3 6.325C5.43333 7.19167 5 8.25 5 9.5C5 10.75 5.43333 11.8167 6.3 12.7C7.18333 13.5667 8.25 14 9.5 14C10.6667 14 11.6667 13.625 12.5 12.875C13.35 12.1083 13.8417 11.15 13.975 10H15.975C15.925 10.6333 15.7833 11.2333 15.55 11.8C15.3333 12.3667 15.05 12.8667 14.7 13.3L21 19.6L19.6 21ZM17.5 12C17.5 10.4667 16.9667 9.16667 15.9 8.1C14.8333 7.03333 13.5333 6.5 12 6.5C13.5333 6.5 14.8333 5.96667 15.9 4.9C16.9667 3.83333 17.5 2.53333 17.5 0.999999C17.5 2.53333 18.0333 3.83333 19.1 4.9C20.1667 5.96667 21.4667 6.5 23 6.5C21.4667 6.5 20.1667 7.03333 19.1 8.1C18.0333 9.16667 17.5 10.4667 17.5 12Z" fill="#5F6368"/>
+                  </g>
+                <defs>
+                <clipPath id="clip0_6641_386">
+                <rect width="24" height="24" fill="white"/>
+                </clipPath>
+                </defs>
+              </svg>
+            
+          </div>
+          <div class="devsite-search-shortcut-icon-container" aria-hidden="true">
+            <kbd class="devsite-search-shortcut-icon">/</kbd>
+          </div>
+      </div>
+    </div>
+  </form>
+  <button type="button"
+          search-close
+          class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+          
+          aria-label="Cerrar la búsqueda"></button>
+</devsite-search>
+
+        </div>
+
+        
+
+          
+
+          
+
+          <devsite-appearance-selector></devsite-appearance-selector>
+
+          
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+
+          
+            <a class="devsite-header-link devsite-top-button button gc-analytics-event "
+    href="https://developer.android.com/studio?hl=es-419"
+    data-category="Site-Wide Custom Events"
+    data-label="Site header link: Android Studio"
+    >
+  Android Studio
+</a>
+          
+
+        
+
+        
+          <devsite-user 
+                        
+                        
+                          enable-profiles
+                        
+                        
+                        id="devsite-user">
+            
+              
+              <span class="button devsite-top-button" aria-hidden="true" visually-hidden>Acceder</span>
+            
+          </devsite-user>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
+  
+</devsite-header>
+      <devsite-book-nav scrollbars hidden>
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-book-nav-filter"
+     hidden>
+  <span class="filter-list-icon material-icons" aria-hidden="true"></span>
+  <input type="text"
+         placeholder="Filtrar"
+         
+         aria-label="Escribe para filtrar"
+         role="searchbox">
+  
+  <span class="filter-clear-button hidden"
+        data-title="Borrar filtro"
+        aria-label="Borrar filtro"
+        role="button"
+        tabindex="0"></span>
+</div>
+
+<nav class="devsite-book-nav devsite-nav nocontent"
+     aria-label="Menú lateral">
+  <div class="devsite-mobile-header">
+    <button type="button"
+            id="devsite-close-nav"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Close navigation"
+            aria-label="Cerrar navegación">
+    </button>
+    <div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="androidDevelopers" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-dark-theme.png"
+            media="(prefers-color-scheme: dark)"
+            class="devsite-dark-theme">
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png" class="devsite-site-logo" alt="Android Developers">
+  </picture>
+  
+</a>
+
+
+</div>
+  </div>
+
+  <div class="devsite-book-nav-wrapper">
+    <div class="devsite-mobile-nav-top">
+      
+        <ul class="devsite-nav-list">
+          
+          
+    
+    
+<li class="devsite-nav-item">
+
+  
+  <a href="/studio"
+    
+       class="devsite-nav-title gc-analytics-event "
+    
+
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Android Studio"
+     track-type="navMenu"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Android Studio
+   </span>
+    
+  
+  </a>
+  
+
+</li>
+
+  
+          
+        </ul>
+      
+    </div>
+    
+  </div>
+</nav>
+        
+      </devsite-book-nav>
+      <section id="gc-wrapper">
+        <main role="main" id="main-content" class="devsite-main-content"
+            
+              
+              has-sidebar
+            >
+          <div class="devsite-sidebar">
+            <div class="devsite-sidebar-content">
+                
+                <devsite-toc class="devsite-nav"
+                            role="navigation"
+                            aria-label="En esta página"
+                            depth="1"
+                            scrollbars
+                  ></devsite-toc>
+                <devsite-recommendations-sidebar class="nocontent devsite-nav">
+                </devsite-recommendations-sidebar>
+            </div>
+          </div>
+          <devsite-content>
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="devsite-article"><style>
+      body {
+        transition: opacity ease-in 0.2s;
+      }
+
+      body[unresolved] {
+        opacity: 0;
+        display: block;
+        overflow: hidden;
+        position: relative;
+      }
+      </style>
+  
+  
+  
+  
+  
+
+  <div class="devsite-article-meta nocontent" role="navigation">
+    
+    
+    <ul class="devsite-breadcrumb-list"
+  >
+  
+</ul>
+    
+  </div>
+  
+    <h1 class="devsite-page-title" tabindex="-1">
+      Tu primera app integrada de Health Connect<div class="devsite-actions" hidden data-nosnippet><devsite-feature-tooltip
+      ack-key="AckCollectionsBookmarkTooltipDismiss"
+      analytics-category="Site-Wide Custom Events"
+      analytics-action-show="Callout Profile displayed"
+      analytics-action-close="Callout Profile dismissed"
+      analytics-label="Create Collection Callout"
+      class="devsite-page-bookmark-tooltip nocontent"
+      dismiss-button="true"
+      id="devsite-collections-dropdown"
+      
+      dismiss-button-text="Descartar"
+
+      
+      close-button-text="Entendido">
+
+    
+    
+      <devsite-bookmark></devsite-bookmark>
+    
+
+    <span slot="popout-heading">
+      
+      Organiza tus páginas con colecciones
+    </span>
+    <span slot="popout-contents">
+      
+      Guarda y categoriza el contenido según tus preferencias.
+    </span>
+  </devsite-feature-tooltip></div>
+  
+      
+    </h1>
+  
+
+  <devsite-toc class="devsite-nav"
+    depth="1"
+    devsite-toc-embedded
+    >
+  </devsite-toc>
+  
+    
+  <div class="devsite-article-body clearfix
+  ">
+
+  
+    
+    
+    
+    <google-codelab-analytics ga4id="G-JTFZSJVVVZ" gaid="UA-49880327-14"></google-codelab-analytics>
+    <google-codelab category="android" codelab-ga4id="" codelab-gaid="" doc-id="1A2sZoEgf9srlkY8l5goYXm_T55b56nidlGa83Cv9nx0" environment="web" feedback-link="" id="health-connect" layout="paginated" no-tooltip="" title="Tu primera app integrada de Health Connect">
+      
+        <google-codelab-step duration="10" step="0" label="Introducción">
+          
+            <google-codelab-about authors="Wei-Chen Chen" duration="90" last-updated="2025-02-27T10:28:41Z" codelab-title="Tu primera app integrada de Health Connect">
+            </google-codelab-about>
+          
+          <h2 class="step-title" data-text="               1. Introducción           " id="0" tabindex="-1">
+              1. Introducción
+          </h2>
+          <p class="image-container"><img alt="e4a4985ad1cdae8b.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/health-connect/img/e4a4985ad1cdae8b.png?hl=es-419" srcset="https://developer.android.com/static/codelabs/health-connect/img/e4a4985ad1cdae8b_36.png?hl=es-419 36w,https://developer.android.com/static/codelabs/health-connect/img/e4a4985ad1cdae8b_48.png?hl=es-419 48w,https://developer.android.com/static/codelabs/health-connect/img/e4a4985ad1cdae8b_72.png?hl=es-419 72w,https://developer.android.com/static/codelabs/health-connect/img/e4a4985ad1cdae8b_96.png?hl=es-419 96w,https://developer.android.com/static/codelabs/health-connect/img/e4a4985ad1cdae8b_480.png?hl=es-419 480w,https://developer.android.com/static/codelabs/health-connect/img/e4a4985ad1cdae8b_720.png?hl=es-419 720w,https://developer.android.com/static/codelabs/health-connect/img/e4a4985ad1cdae8b_856.png?hl=es-419 856w,https://developer.android.com/static/codelabs/health-connect/img/e4a4985ad1cdae8b_960.png?hl=es-419 960w,https://developer.android.com/static/codelabs/health-connect/img/e4a4985ad1cdae8b_1440.png?hl=es-419 1440w,https://developer.android.com/static/codelabs/health-connect/img/e4a4985ad1cdae8b_1920.png?hl=es-419 1920w,https://developer.android.com/static/codelabs/health-connect/img/e4a4985ad1cdae8b_2880.png?hl=es-419 2880w" style="width: 134.25px" /></p>
+<h2 data-text="¿Qué es Health Connect?" id="what-is-health-connect" is-upgraded="" tabindex="-1"><strong>¿Qué es Health Connect?</strong></h2>
+<p>Health Connect es una plataforma de datos de salud destinada a desarrolladores de apps para Android. Proporciona una única interfaz consolidada para acceder a los datos de salud y actividad física de los usuarios y un comportamiento funcional coherente en todos los dispositivos. Con Health Connect, los usuarios tienen un almacenamiento seguro de datos de salud y actividad física en el dispositivo, con control total y transparencia en el acceso.</p>
+<h3 data-text="¿Cómo funciona Health Connect?" id="how-does-health-connect-work" is-upgraded="" tabindex="-1"><strong>¿Cómo funciona Health Connect?</strong></h3>
+<p>Health Connect admite más de 50 categorías y tipos de datos de salud y actividad física comunes, incluidos actividad, sueño, nutrición, medidas corporales y datos vitales, como frecuencia cardíaca y presión arterial.</p>
+<p class="image-container"><img alt="Cómo funciona Health Connect" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/health-connect/img/5280de9ff5e2a038.png?hl=es-419" srcset="https://developer.android.com/static/codelabs/health-connect/img/5280de9ff5e2a038_36.png?hl=es-419 36w,https://developer.android.com/static/codelabs/health-connect/img/5280de9ff5e2a038_48.png?hl=es-419 48w,https://developer.android.com/static/codelabs/health-connect/img/5280de9ff5e2a038_72.png?hl=es-419 72w,https://developer.android.com/static/codelabs/health-connect/img/5280de9ff5e2a038_96.png?hl=es-419 96w,https://developer.android.com/static/codelabs/health-connect/img/5280de9ff5e2a038_480.png?hl=es-419 480w,https://developer.android.com/static/codelabs/health-connect/img/5280de9ff5e2a038_720.png?hl=es-419 720w,https://developer.android.com/static/codelabs/health-connect/img/5280de9ff5e2a038_856.png?hl=es-419 856w,https://developer.android.com/static/codelabs/health-connect/img/5280de9ff5e2a038_960.png?hl=es-419 960w,https://developer.android.com/static/codelabs/health-connect/img/5280de9ff5e2a038_1440.png?hl=es-419 1440w,https://developer.android.com/static/codelabs/health-connect/img/5280de9ff5e2a038_1920.png?hl=es-419 1920w,https://developer.android.com/static/codelabs/health-connect/img/5280de9ff5e2a038_2880.png?hl=es-419 2880w" style="width: 170.00px" /></p>
+<p>Con el permiso del usuario, los desarrolladores pueden leer y escribir datos en Health Connect de forma segura a través de esquemas estandarizados y comportamiento de la API. Los usuarios obtienen control total sobre su configuración de privacidad, con controles granulares para ver qué apps solicitan acceso a los datos en cualquier momento. Los datos de Health Connect se almacenan en el dispositivo y se encriptan. Los usuarios también obtienen la posibilidad de desactivar el acceso o borrar los datos que no deseen en sus dispositivos y de priorizar una fuente de datos sobre otra cuando usen varias apps.</p>
+<h3 data-text="Arquitectura de Health Connect" id="health-connect-architecture" is-upgraded="" tabindex="-1"><strong>Arquitectura de Health Connect</strong></h3>
+<p class="image-container"><img alt="arquitectura" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/health-connect/img/371855e1b42d5d1a.jpeg?hl=es-419" srcset="https://developer.android.com/static/codelabs/health-connect/img/371855e1b42d5d1a_36.jpeg?hl=es-419 36w,https://developer.android.com/static/codelabs/health-connect/img/371855e1b42d5d1a_48.jpeg?hl=es-419 48w,https://developer.android.com/static/codelabs/health-connect/img/371855e1b42d5d1a_72.jpeg?hl=es-419 72w,https://developer.android.com/static/codelabs/health-connect/img/371855e1b42d5d1a_96.jpeg?hl=es-419 96w,https://developer.android.com/static/codelabs/health-connect/img/371855e1b42d5d1a_480.jpeg?hl=es-419 480w,https://developer.android.com/static/codelabs/health-connect/img/371855e1b42d5d1a_720.jpeg?hl=es-419 720w,https://developer.android.com/static/codelabs/health-connect/img/371855e1b42d5d1a_856.jpeg?hl=es-419 856w,https://developer.android.com/static/codelabs/health-connect/img/371855e1b42d5d1a_960.jpeg?hl=es-419 960w,https://developer.android.com/static/codelabs/health-connect/img/371855e1b42d5d1a_1440.jpeg?hl=es-419 1440w,https://developer.android.com/static/codelabs/health-connect/img/371855e1b42d5d1a_1920.jpeg?hl=es-419 1920w,https://developer.android.com/static/codelabs/health-connect/img/371855e1b42d5d1a_2880.jpeg?hl=es-419 2880w" style="width: 555.50px" /></p>
+<p>A continuación, se explican los aspectos clave y los componentes de la arquitectura de Health Connect:</p>
+<ul>
+<li><strong>App cliente:</strong> Para integrarse con Health Connect, la app cliente vincula el SDK a su app de salud y fitness. Esto proporciona una plataforma de API para interactuar con la API de Health Connect.</li>
+<li><strong>Kit de desarrollo de software:</strong> El SDK permite que la app cliente se comunique con el APK de Health Connect.</li>
+<li><strong>APK de Health Connect:</strong> Este es el APK que implementa Health Connect. Contiene los componentes de administración de permisos y de administración de datos. El APK de Health Connect se pone a disposición directamente en el dispositivo del usuario, por lo que se centra en el dispositivo y no en la cuenta.</li>
+<li><strong>Administración de permisos</strong>: Health Connect incluye una interfaz de usuario a través de la cual las apps solicitan permiso al usuario para mostrar datos. También proporciona una lista de los permisos de los usuarios existentes. Esto les permite a los usuarios administrar el acceso que les concedieron o rechazaron a varias aplicaciones.</li>
+<li><strong>Administración de datos</strong>: Health Connect proporciona una interfaz de usuario con una descripción general de los datos registrados, ya sean el recuento de pasos, la velocidad del ciclismo, la frecuencia cardíaca y otros tipos de datos admitidos.</li>
+</ul>
+<h2 data-text="Qué compilarás" id="what-youll-build" is-upgraded="" tabindex="-1"><strong>Qué compilarás</strong></h2>
+<p>En este codelab, compilarás una app de salud y fitness simple integrada en Health Connect. Tu app hará lo siguiente:</p>
+<ul>
+<li>Obtendrá y verificará los permisos del usuario para acceder a los datos.</li>
+<li>Escribirá datos en Health Connect.</li>
+<li>Leerá datos agregados de Health Connect.</li>
+</ul>
+<h2 class="checklist" data-text="Qué aprenderás" id="what-youll-learn" is-upgraded="" tabindex="-1"><strong>Qué aprenderás</strong></h2>
+<ul class="checklist">
+<li>Cómo configurar tu entorno para admitir el desarrollo de la integración de Health Connect</li>
+<li>Cómo obtener permisos y ejecutar verificaciones de permisos</li>
+<li>Cómo aportar datos de salud y actividad física a la plataforma de Health Connect</li>
+<li>Cómo beneficiarse del almacenamiento de datos en el dispositivo</li>
+<li>Cómo validar tu app con las herramientas para desarrolladores que brinda Google</li>
+</ul>
+<h2 data-text="Requisitos" id="what-youll-need" is-upgraded="" tabindex="-1"><strong>Requisitos</strong></h2>
+<ul>
+<li>La versión estable más reciente de <a href="https://developer.android.com/studio?hl=es-419" target="_blank">Android Studio</a></li>
+<li>Dispositivo móvil Android con la versión 28 (Pie) o posterior del SDK de Android</li>
+</ul>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="10" step="1" label="Prepárate">
+          
+          <h2 class="step-title" data-text="               2. Prepárate           " id="1" tabindex="-1">
+              2. Prepárate
+          </h2>
+          <h2 data-text="Prepara la app de Health Connect" id="prepare-the-health-connect-app" is-upgraded="" tabindex="-1"><strong>Prepara la app de Health Connect</strong></h2>
+<p>La app de Health Connect es responsable de controlar todas las solicitudes que envía tu aplicación a través del SDK de Health Connect. Estas solicitudes incluyen almacenar datos y administrar su acceso de lectura y escritura.</p>
+<p>El acceso a Health Connect depende de la versión de Android instalada en el teléfono. En las siguientes secciones, se describe cómo controlar varias versiones recientes de Android.</p>
+<h2 data-text="Android 14" id="android-14" is-upgraded="" tabindex="-1"><strong>Android 14</strong></h2>
+<p>A partir de Android 14 (nivel de API 34), Health Connect forma parte del framework de Android. Como esta versión de Health Connect es un módulo del framework, no se requiere configuración.</p>
+<h2 data-text="Android 13 y versiones anteriores" id="android-13-and-lower" is-upgraded="" tabindex="-1"><strong>Android 13 y versiones anteriores</strong></h2>
+<p>En Android 13 (nivel de API 33) y versiones anteriores, Health Connect no forma parte del framework de Android. Por lo tanto, debes instalar la app de Health Connect desde Google Play Store. Escanea el código QR para instalar Health Connect.</p>
+<p class="image-container"><img alt="633ed0490a74595d.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/health-connect/img/633ed0490a74595d.png?hl=es-419" srcset="https://developer.android.com/static/codelabs/health-connect/img/633ed0490a74595d_36.png?hl=es-419 36w,https://developer.android.com/static/codelabs/health-connect/img/633ed0490a74595d_48.png?hl=es-419 48w,https://developer.android.com/static/codelabs/health-connect/img/633ed0490a74595d_72.png?hl=es-419 72w,https://developer.android.com/static/codelabs/health-connect/img/633ed0490a74595d_96.png?hl=es-419 96w,https://developer.android.com/static/codelabs/health-connect/img/633ed0490a74595d_480.png?hl=es-419 480w,https://developer.android.com/static/codelabs/health-connect/img/633ed0490a74595d_720.png?hl=es-419 720w,https://developer.android.com/static/codelabs/health-connect/img/633ed0490a74595d_856.png?hl=es-419 856w,https://developer.android.com/static/codelabs/health-connect/img/633ed0490a74595d_960.png?hl=es-419 960w,https://developer.android.com/static/codelabs/health-connect/img/633ed0490a74595d_1440.png?hl=es-419 1440w,https://developer.android.com/static/codelabs/health-connect/img/633ed0490a74595d_1920.png?hl=es-419 1920w,https://developer.android.com/static/codelabs/health-connect/img/633ed0490a74595d_2880.png?hl=es-419 2880w" style="width: 205.50px" /></p>
+<h2 data-text="Obtén el código de muestra" id="get-the-sample-code" is-upgraded="" tabindex="-1">Obtén el código de muestra</h2>
+<p>Comienza por clonar el código fuente de GitHub:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only"><code translate="no" dir="ltr">git clone https://github.com/android/android-health-connect-codelab.git
+</code></pre></devsite-code>
+<p>El directorio de ejemplo contiene los códigos <code dir="ltr" translate="no">start</code> y <code dir="ltr" translate="no">finished</code> para este codelab. En la vista <strong>Project</strong> de Android Studio, encontrarás dos módulos:</p>
+<ul>
+<li><code dir="ltr" translate="no">start</code>: Es el código de partida para este proyecto, en el que realizarás cambios para completar el codelab.</li>
+<li><code dir="ltr" translate="no">finished</code>: Es el código completo de este codelab, que se usa para verificar tu trabajo.</li>
+</ul>
+<aside class="special"><p><strong>Nota</strong>: En cualquier momento, puedes ejecutar cualquiera de los módulos en Android Studio si realizas cambios en la configuración de ejecución en la barra de herramientas.</p>
+</aside>
+<h2 data-text="Explora el código de inicio" id="explore-the-‘start-code" is-upgraded="" tabindex="-1"><strong>Explora el código de inicio</strong></h2>
+<p>La app de ejemplo del codelab tiene IUs básicas compiladas por Jetpack Compose con las siguientes pantallas:</p>
+<ul>
+<li><code dir="ltr" translate="no">WelcomeScreen</code>: Es la página de destino de la app que muestra diferentes mensajes, según la disponibilidad de Health Connect, ya sea que esté instalada o no, o no sea compatible.</li>
+<li><code dir="ltr" translate="no">PrivacyPolicyScreen</code>: Explica el uso de permisos de la app, que se muestra cuando el usuario hace clic en el vínculo de la <strong>política de privacidad</strong> en el diálogo de permisos de Health Connect.</li>
+<li><code dir="ltr" translate="no">InputReadingsScreen</code>: Demuestra cómo leer y escribir registros de peso simples.</li>
+<li><code dir="ltr" translate="no">ExerciseSessionScreen</code>: El lugar en el que los usuarios insertan y enumeran las sesiones de ejercicio. Cuando el usuario hace clic en el registro, se lo dirige a <code dir="ltr" translate="no">ExerciseSessionDetailScreen</code> para que muestre más datos asociados con la sesión.</li>
+<li><code dir="ltr" translate="no">DifferentialChangesScreen</code>: Demuestra cómo obtener un token de cambios y cambios nuevos de Health Connect.</li>
+</ul>
+<p><code dir="ltr" translate="no">HealthConnectManager</code> almacena todas las funciones que interactúan con Health Connect. En este codelab, te guiaremos paso a paso para que completes las funciones esenciales. Las cadenas <code dir="ltr" translate="no">&lt;!-- TODO:</code> dentro de la compilación <code dir="ltr" translate="no">start</code> tienen las secciones correspondientes de este codelab, en las que se proporcionan códigos de muestra para que los insertes en el proyecto.</p>
+<p>Comencemos por agregar Health Connect al proyecto.</p>
+<h2 data-text="Agrega el SDK cliente de Health Connect" id="add-health-connect-client-sdk" is-upgraded="" tabindex="-1"><strong>Agrega el SDK cliente de Health Connect</strong></h2>
+<p>Para comenzar a usar el SDK de Health Connect, debes agregar una dependencia al archivo <code dir="ltr" translate="no">build.gradle</code>. Para encontrar la versión más reciente de Health Connect, consulta la <a href="https://developer.android.com/jetpack/androidx/releases/health-connect?hl=es-419" target="_blank">versión de la biblioteca de Jetpack</a>.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Carbon"><code translate="no" dir="ltr"><span class="devsite-syntax-nx">dependencies</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-c1">// Add a dependency of Health Connect SDK</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">implementation</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"androidx.health.connect:connect-client:1.1.0-alpha11"</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<aside class="special"><p><strong>Nota</strong>: El proyecto <code dir="ltr" translate="no">start</code> del codelab agregó la dependencia. Este paso es solo para tus propias referencias de desarrollo de apps.</p>
+</aside>
+<h2 data-text="Declara la visibilidad de Health Connect" id="declare-health-connect-visibility" is-upgraded="" tabindex="-1"><strong>Declara la visibilidad de Health Connect</strong></h2>
+<p>Para interactuar con <code dir="ltr" translate="no">Health Connect</code> dentro de la app, declara el nombre del paquete de Health Connect en el archivo <code dir="ltr" translate="no">AndroidManifest.xml</code>:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Carbon"><code translate="no" dir="ltr">&lt;<span class="devsite-syntax-p">!</span><span class="devsite-syntax-o">--</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">TODO</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">declare</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Health</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Connect</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">visibility</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">--</span>&gt;
+&lt;<span class="devsite-syntax-nx">queries</span>&gt;
+<span class="devsite-syntax-w">   </span>&lt;<span class="devsite-syntax-kn">package</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-nx">name</span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-s">"com.google.android.apps.healthdata"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/</span>&gt;
+&lt;<span class="devsite-syntax-o">/</span><span class="devsite-syntax-nx">queries</span>&gt;
+</code></pre></devsite-code>
+<h2 data-text="Ejecuta el proyecto de inicio" id="run-the-start-project" is-upgraded="" tabindex="-1"><strong>Ejecuta el proyecto de inicio</strong></h2>
+<p>Una vez que esté todo listo, ejecuta el proyecto <code dir="ltr" translate="no">start</code>. En este punto, deberías ver la pantalla de bienvenida que indica que Health Connect está instalado en el dispositivo y un panel lateral del menú. Agregaremos las funciones para interactuar con Health Connect en secciones posteriores.</p>
+<p class="image-container"><img alt="8f063e5b305189.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/health-connect/img/8f063e5b305189.png?hl=es-419" srcset="https://developer.android.com/static/codelabs/health-connect/img/8f063e5b305189_36.png?hl=es-419 36w,https://developer.android.com/static/codelabs/health-connect/img/8f063e5b305189_48.png?hl=es-419 48w,https://developer.android.com/static/codelabs/health-connect/img/8f063e5b305189_72.png?hl=es-419 72w,https://developer.android.com/static/codelabs/health-connect/img/8f063e5b305189_96.png?hl=es-419 96w,https://developer.android.com/static/codelabs/health-connect/img/8f063e5b305189_480.png?hl=es-419 480w,https://developer.android.com/static/codelabs/health-connect/img/8f063e5b305189_720.png?hl=es-419 720w,https://developer.android.com/static/codelabs/health-connect/img/8f063e5b305189_856.png?hl=es-419 856w,https://developer.android.com/static/codelabs/health-connect/img/8f063e5b305189_960.png?hl=es-419 960w,https://developer.android.com/static/codelabs/health-connect/img/8f063e5b305189_1440.png?hl=es-419 1440w,https://developer.android.com/static/codelabs/health-connect/img/8f063e5b305189_1920.png?hl=es-419 1920w,https://developer.android.com/static/codelabs/health-connect/img/8f063e5b305189_2880.png?hl=es-419 2880w" style="width: 235.29px" />                 <img alt="fd39f325f5c19e5d.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/health-connect/img/fd39f325f5c19e5d.png?hl=es-419" srcset="https://developer.android.com/static/codelabs/health-connect/img/fd39f325f5c19e5d_36.png?hl=es-419 36w,https://developer.android.com/static/codelabs/health-connect/img/fd39f325f5c19e5d_48.png?hl=es-419 48w,https://developer.android.com/static/codelabs/health-connect/img/fd39f325f5c19e5d_72.png?hl=es-419 72w,https://developer.android.com/static/codelabs/health-connect/img/fd39f325f5c19e5d_96.png?hl=es-419 96w,https://developer.android.com/static/codelabs/health-connect/img/fd39f325f5c19e5d_480.png?hl=es-419 480w,https://developer.android.com/static/codelabs/health-connect/img/fd39f325f5c19e5d_720.png?hl=es-419 720w,https://developer.android.com/static/codelabs/health-connect/img/fd39f325f5c19e5d_856.png?hl=es-419 856w,https://developer.android.com/static/codelabs/health-connect/img/fd39f325f5c19e5d_960.png?hl=es-419 960w,https://developer.android.com/static/codelabs/health-connect/img/fd39f325f5c19e5d_1440.png?hl=es-419 1440w,https://developer.android.com/static/codelabs/health-connect/img/fd39f325f5c19e5d_1920.png?hl=es-419 1920w,https://developer.android.com/static/codelabs/health-connect/img/fd39f325f5c19e5d_2880.png?hl=es-419 2880w" style="width: 235.06px" /></p>
+<aside class="special"><p><strong>Nota</strong>: Para proteger tus datos, Health Connect requiere que bloquees el teléfono con un PIN, un patrón o una contraseña. Ve a Configuración en el teléfono para establecer un bloqueo de pantalla y acceder a Health Connect.</p>
+</aside>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="7" step="2" label="Control de permisos">
+          
+          <h2 class="step-title" data-text="               3. Control de permisos           " id="2" tabindex="-1">
+              3. Control de permisos
+          </h2>
+          <p>Health Connect recomienda a los desarrolladores restringir las solicitudes de permisos a los tipos de datos que se usan en la app. Las solicitudes de permisos generales reducen la confianza del usuario en la app. Si se deniega un permiso más de dos veces, tu app se bloquea. Como resultado, las solicitudes de permisos dejarán de aparecer.</p>
+<p>Para los fines de este codelab, solo necesitamos los siguientes permisos:</p>
+<ul>
+<li>Sesión de ejercicio</li>
+<li>Frecuencia cardíaca</li>
+<li>Pasos</li>
+<li>Total de calorías quemadas</li>
+<li>Peso</li>
+</ul>
+<h2 data-text="Cómo declarar permisos" id="declare-permissions" is-upgraded="" tabindex="-1"><strong>Cómo declarar permisos</strong></h2>
+<p>Se debe declarar cada tipo de datos que tu app lea o escriba con un permiso en <code dir="ltr" translate="no">AndroidManifest.xml</code>. A partir de la versión <a href="https://developer.android.com/jetpack/androidx/releases/health-connect?hl=es-419#1.0.0-alpha10" target="_blank"><code dir="ltr" translate="no">1.0.0-alpha10</code></a>, Health Connect usa el formato de declaración de permisos estándar de Android.</p>
+<p>Para declarar los permisos de los tipos de datos requeridos, usa los elementos <code dir="ltr" translate="no">&lt;uses-permission&gt;</code> y asígnales sus respectivos nombres con los permisos. Anídalos dentro de las etiquetas <code dir="ltr" translate="no">&lt;manifest&gt;</code>. Para obtener la lista completa de permisos y sus tipos de datos correspondientes, consulta la <a href="https://developer.android.com/guide/health-and-fitness/health-connect/data-and-data-types/data-types?hl=es-419#permissions" target="_blank">lista de tipos de datos</a>.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">&lt;!-- TODO: Required to specify which Health Connect permissions the app can request --&gt;
+  &lt;uses-permission android:name="android.permission.health.READ_HEART_RATE"/&gt;
+  &lt;uses-permission android:name="android.permission.health.WRITE_HEART_RATE"/&gt;
+  &lt;uses-permission android:name="android.permission.health.READ_STEPS"/&gt;
+  &lt;uses-permission android:name="android.permission.health.WRITE_STEPS"/&gt;
+  &lt;uses-permission android:name="android.permission.health.READ_EXERCISE"/&gt;
+  &lt;uses-permission android:name="android.permission.health.WRITE_EXERCISE"/&gt;
+  &lt;uses-permission android:name="android.permission.health.READ_TOTAL_CALORIES_BURNED"/&gt;
+  &lt;uses-permission android:name="android.permission.health.WRITE_TOTAL_CALORIES_BURNED"/&gt;
+  &lt;uses-permission android:name="android.permission.health.READ_WEIGHT"/&gt;
+  &lt;uses-permission android:name="android.permission.health.WRITE_WEIGHT"/&gt;
+</code></pre></devsite-code>
+<p>Declara un filtro de intents en <code dir="ltr" translate="no">AndroidManifest.xml</code> para controlar el intent que explica cómo tu app usa esos permisos. La app necesita controlar este intent y mostrar una política de privacidad en la que se describen cómo se usan y manejan los datos del usuario. Este intent se envía a la app una vez que el usuario presiona el vínculo de la <strong>política de privacidad</strong>, en el diálogo de permisos de Health Connect.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">&lt;!-- TODO: Add intent filter to handle permission rationale intent --&gt;
+&lt;!-- Permission handling for Android 13 and before --&gt;
+&lt;intent-filter&gt;
+  &lt;action android:name="androidx.health.ACTION_SHOW_PERMISSIONS_RATIONALE" /&gt;
+&lt;/intent-filter&gt;
+
+&lt;!-- Permission handling for Android 14 and later --&gt;
+&lt;intent-filter&gt;
+  &lt;action android:name="android.intent.action.VIEW_PERMISSION_USAGE"/&gt;
+  &lt;category android:name="android.intent.category.HEALTH_PERMISSIONS"/&gt;
+&lt;/intent-filter&gt;
+
+</code></pre></devsite-code>
+<p>Ahora vuelve a abrir la app para ver los permisos declarados. Haz clic en <strong>Settings</strong> en el panel lateral del menú para ir a la pantalla de configuración de Health Connect. Luego, haz clic en <strong>App permissions</strong>, donde deberías ver <strong>Health Connect Codelab</strong> en la lista. Haz clic en <strong>Health Connect Codelab</strong> para mostrar una lista de los tipos de datos para el acceso de lectura y escritura en esa app.</p>
+<p class="image-container"><img alt="fbed69d871f92178.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/health-connect/img/fbed69d871f92178.png?hl=es-419" srcset="https://developer.android.com/static/codelabs/health-connect/img/fbed69d871f92178_36.png?hl=es-419 36w,https://developer.android.com/static/codelabs/health-connect/img/fbed69d871f92178_48.png?hl=es-419 48w,https://developer.android.com/static/codelabs/health-connect/img/fbed69d871f92178_72.png?hl=es-419 72w,https://developer.android.com/static/codelabs/health-connect/img/fbed69d871f92178_96.png?hl=es-419 96w,https://developer.android.com/static/codelabs/health-connect/img/fbed69d871f92178_480.png?hl=es-419 480w,https://developer.android.com/static/codelabs/health-connect/img/fbed69d871f92178_720.png?hl=es-419 720w,https://developer.android.com/static/codelabs/health-connect/img/fbed69d871f92178_856.png?hl=es-419 856w,https://developer.android.com/static/codelabs/health-connect/img/fbed69d871f92178_960.png?hl=es-419 960w,https://developer.android.com/static/codelabs/health-connect/img/fbed69d871f92178_1440.png?hl=es-419 1440w,https://developer.android.com/static/codelabs/health-connect/img/fbed69d871f92178_1920.png?hl=es-419 1920w,https://developer.android.com/static/codelabs/health-connect/img/fbed69d871f92178_2880.png?hl=es-419 2880w" style="width: 265.00px" />         <img alt="1b9c7764c1dbdfac.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/health-connect/img/1b9c7764c1dbdfac.png?hl=es-419" srcset="https://developer.android.com/static/codelabs/health-connect/img/1b9c7764c1dbdfac_36.png?hl=es-419 36w,https://developer.android.com/static/codelabs/health-connect/img/1b9c7764c1dbdfac_48.png?hl=es-419 48w,https://developer.android.com/static/codelabs/health-connect/img/1b9c7764c1dbdfac_72.png?hl=es-419 72w,https://developer.android.com/static/codelabs/health-connect/img/1b9c7764c1dbdfac_96.png?hl=es-419 96w,https://developer.android.com/static/codelabs/health-connect/img/1b9c7764c1dbdfac_480.png?hl=es-419 480w,https://developer.android.com/static/codelabs/health-connect/img/1b9c7764c1dbdfac_720.png?hl=es-419 720w,https://developer.android.com/static/codelabs/health-connect/img/1b9c7764c1dbdfac_856.png?hl=es-419 856w,https://developer.android.com/static/codelabs/health-connect/img/1b9c7764c1dbdfac_960.png?hl=es-419 960w,https://developer.android.com/static/codelabs/health-connect/img/1b9c7764c1dbdfac_1440.png?hl=es-419 1440w,https://developer.android.com/static/codelabs/health-connect/img/1b9c7764c1dbdfac_1920.png?hl=es-419 1920w,https://developer.android.com/static/codelabs/health-connect/img/1b9c7764c1dbdfac_2880.png?hl=es-419 2880w" style="width: 255.20px" /></p>
+<h2 data-text="Solicita permisos" id="request-permissions" is-upgraded="" tabindex="-1"><strong>Solicita permisos</strong></h2>
+<p>Además de dirigir a los usuarios directamente a la configuración de Health Connect para administrar los permisos, también puedes solicitar permisos de tu app a través de las APIs de Health Connect. Ten en cuenta que los usuarios pueden cambiar los permisos en cualquier momento, por lo que debes asegurarte de que tu app verifique si hay permisos necesarios disponibles. En el proyecto de codelab, revisamos y enviamos solicitudes de permisos antes de leer o escribir datos.</p>
+<p><code dir="ltr" translate="no">HealthConnectClient</code> es un punto de entrada a la API de Health Connect. En <code dir="ltr" translate="no">HealthConnectManager.kt</code>, obtén una instancia de <code dir="ltr" translate="no">HealthConnectClient</code>.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only"><code translate="no" dir="ltr">private val healthConnectClient by lazy { HealthConnectClient.getOrCreate(context) }
+</code></pre></devsite-code>
+<p>Para iniciar el diálogo de solicitud de permisos dentro de tu aplicación, primero, compila un conjunto de permisos para los tipos de datos obligatorios. Solo debes solicitar permisos para los tipos de datos que usas.</p>
+<p>Por ejemplo, en la pantalla para <strong>registrar peso</strong>, solo debes otorgar permisos de lectura y escritura para el elemento Weight. Creamos un conjunto de permisos en <code dir="ltr" translate="no">InputReadingsViewModel.kt</code> como se muestra en el siguiente código.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only"><code translate="no" dir="ltr">  val permissions = setOf(
+    HealthPermission.getReadPermission(WeightRecord::class),
+    HealthPermission.getWritePermission(WeightRecord::class),
+  )
+</code></pre></devsite-code>
+<p>Luego, verifica si los permisos se otorgaron antes de iniciar la solicitud de permiso. En <code dir="ltr" translate="no">HealthConnectManager.kt</code>, usa <code dir="ltr" translate="no">getGrantedPermissions</code> para verificar si se otorgó el permiso de los tipos de datos necesarios. Para iniciar la solicitud de permiso, debes crear un <code dir="ltr" translate="no">ActivityResultContract</code> con <code dir="ltr" translate="no">PermissionController.createRequestPermissionResultContract()</code>, que debería iniciarse cuando no se otorguen los permisos necesarios.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only"><code translate="no" dir="ltr">  suspend fun hasAllPermissions(permissions: Set&lt;String&gt;): Boolean {
+    return healthConnectClient.permissionController.getGrantedPermissions().containsAll(permissions)
+  }
+
+  fun requestPermissionsActivityContract(): ActivityResultContract&lt;Set&lt;String&gt;, Set&lt;String&gt;&gt; {
+    return PermissionController.createRequestPermissionResultContract()
+  }
+</code></pre></devsite-code>
+<p>En la app de ejemplo del codelab, es posible que veas el botón <strong>Request permissions</strong> en la pantalla si no otorgaste los permisos a los tipos de datos necesarios. Haz clic en <strong>Request permissions</strong> para abrir el diálogo del permiso de Health Connect. Otorga los permisos necesarios y vuelve a la app del codelab.</p>
+<p class="image-container"><img alt="a0eb27cea376e56f.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/health-connect/img/a0eb27cea376e56f.png?hl=es-419" srcset="https://developer.android.com/static/codelabs/health-connect/img/a0eb27cea376e56f_36.png?hl=es-419 36w,https://developer.android.com/static/codelabs/health-connect/img/a0eb27cea376e56f_48.png?hl=es-419 48w,https://developer.android.com/static/codelabs/health-connect/img/a0eb27cea376e56f_72.png?hl=es-419 72w,https://developer.android.com/static/codelabs/health-connect/img/a0eb27cea376e56f_96.png?hl=es-419 96w,https://developer.android.com/static/codelabs/health-connect/img/a0eb27cea376e56f_480.png?hl=es-419 480w,https://developer.android.com/static/codelabs/health-connect/img/a0eb27cea376e56f_720.png?hl=es-419 720w,https://developer.android.com/static/codelabs/health-connect/img/a0eb27cea376e56f_856.png?hl=es-419 856w,https://developer.android.com/static/codelabs/health-connect/img/a0eb27cea376e56f_960.png?hl=es-419 960w,https://developer.android.com/static/codelabs/health-connect/img/a0eb27cea376e56f_1440.png?hl=es-419 1440w,https://developer.android.com/static/codelabs/health-connect/img/a0eb27cea376e56f_1920.png?hl=es-419 1920w,https://developer.android.com/static/codelabs/health-connect/img/a0eb27cea376e56f_2880.png?hl=es-419 2880w" style="width: 237.64px" />         <img alt="4752973f6b0b8d56.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/health-connect/img/4752973f6b0b8d56.png?hl=es-419" srcset="https://developer.android.com/static/codelabs/health-connect/img/4752973f6b0b8d56_36.png?hl=es-419 36w,https://developer.android.com/static/codelabs/health-connect/img/4752973f6b0b8d56_48.png?hl=es-419 48w,https://developer.android.com/static/codelabs/health-connect/img/4752973f6b0b8d56_72.png?hl=es-419 72w,https://developer.android.com/static/codelabs/health-connect/img/4752973f6b0b8d56_96.png?hl=es-419 96w,https://developer.android.com/static/codelabs/health-connect/img/4752973f6b0b8d56_480.png?hl=es-419 480w,https://developer.android.com/static/codelabs/health-connect/img/4752973f6b0b8d56_720.png?hl=es-419 720w,https://developer.android.com/static/codelabs/health-connect/img/4752973f6b0b8d56_856.png?hl=es-419 856w,https://developer.android.com/static/codelabs/health-connect/img/4752973f6b0b8d56_960.png?hl=es-419 960w,https://developer.android.com/static/codelabs/health-connect/img/4752973f6b0b8d56_1440.png?hl=es-419 1440w,https://developer.android.com/static/codelabs/health-connect/img/4752973f6b0b8d56_1920.png?hl=es-419 1920w,https://developer.android.com/static/codelabs/health-connect/img/4752973f6b0b8d56_2880.png?hl=es-419 2880w" style="width: 236.74px" /></p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="10" step="3" label="Escribe datos">
+          
+          <h2 class="step-title" data-text="               4. Escribe datos           " id="3" tabindex="-1">
+              4. Escribe datos
+          </h2>
+          <p>Comencemos a escribir registros en Health Connect. Para escribir un registro de peso, crea un objeto <code dir="ltr" translate="no">WeightRecord</code> con el valor de entrada de peso. Ten en cuenta que el SDK de Health Connect admite varias clases de <a href="https://developer.android.com/reference/androidx/health/connect/client/units/package-summary?hl=es-419" target="_blank">unidades</a>. Por ejemplo, usa <code dir="ltr" translate="no">Mass.kilograms(weightInput)</code> para establecer el peso de los usuarios en kilogramos.</p>
+<p>Todos los datos que se escriban en Health Connect deben especificar información de desfase de zona. Especificar la información de desfase de zona mientras se escriben datos permite contar con información de zona horaria cuando se leen datos en Health Connect.</p>
+<p>Después de crear el registro de peso, usa <code dir="ltr" translate="no">healthConnectClient.insertRecords</code> para escribir los datos en Health Connect.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL"><code translate="no" dir="ltr"><span class="devsite-syntax-cm">/**</span>
+<span class="devsite-syntax-cm">* TODO: Writes [WeightRecord] to Health Connect.</span>
+<span class="devsite-syntax-cm">*/</span>
+<span class="devsite-syntax-n">suspend</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">writeWeightInput</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nl">weightInput</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">Double</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">{</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nc">time</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ZonedDateTime</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">now</span><span class="devsite-syntax-p">().</span><span class="devsite-syntax-n">withNano</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-mi">0</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">weightRecord</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">WeightRecord</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">       </span><span class="devsite-syntax-n">metadata</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Metadata</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">manualEntry</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">       </span><span class="devsite-syntax-n">weight</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Mass</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">kilograms</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">weightInput</span><span class="devsite-syntax-p">),</span>
+<span class="devsite-syntax-w">       </span><span class="devsite-syntax-nc">time</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nc">time</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">toInstant</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">       </span><span class="devsite-syntax-n">zoneOffset</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nc">time</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">offset</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">records</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">listOf</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">weightRecord</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-k">try</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">{</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">healthConnectClient</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">insertRecords</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">records</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">Toast</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">makeText</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">context</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ss">"Successfully insert records"</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Toast</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">LENGTH_SHORT</span><span class="devsite-syntax-p">).</span><span class="devsite-syntax-n">show</span><span class="devsite-syntax-p">()</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-err">}</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">catch</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nl">e</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">Exception</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">{</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">Toast</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">makeText</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">context</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">e</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">message</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">toString</span><span class="devsite-syntax-p">(),</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Toast</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">LENGTH_SHORT</span><span class="devsite-syntax-p">).</span><span class="devsite-syntax-n">show</span><span class="devsite-syntax-p">()</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-err">}</span>
+<span class="devsite-syntax-err">}</span>
+</code></pre></devsite-code>
+<p>Ahora ejecutemos la app. Haz clic en <strong>Record weight</strong> y, luego, ingresa un nuevo registro de peso en kilogramos. Para verificar si se registró correctamente el peso en Health Connect, abre la app de Health Connect en Configuración y ve a <strong>Datos y acceso > Medidas corporales > Peso > Ver todas las entradas</strong>. Deberías ver el nuevo registro de peso escrito de Health Connect Codelab.</p>
+<h2 data-text="Cómo escribir sesiones de ejercicio" id="write-exercise-sessions" is-upgraded="" tabindex="-1"><strong>Cómo escribir sesiones de ejercicio</strong></h2>
+<p>Una sesión es un intervalo de tiempo durante el cual un usuario realiza una actividad. Una sesión de ejercicio en Health Connect puede incluir cualquier actividad, desde correr hasta jugar bádminton. Las sesiones permiten que los usuarios midan el rendimiento basado en el tiempo. Estos datos registran una variedad de muestras instantáneas que se miden durante un período, por ejemplo, las muestras de frecuencia cardíaca continua o de ubicaciones cuando se realiza una actividad.</p>
+<p>En el siguiente ejemplo, se muestra cómo escribir una sesión de ejercicio. Usa <code dir="ltr" translate="no">healthConnectClient.insertRecords</code> para insertar varios registros de datos asociados con una sesión. La solicitud de inserción de este ejemplo incluye <code dir="ltr" translate="no">ExerciseSessionRecord</code> con <code dir="ltr" translate="no">ExerciseType</code>, <code dir="ltr" translate="no">StepsRecord</code> con el recuento de pasos, <code dir="ltr" translate="no">TotalCaloriesBurnedRecord</code> con <code dir="ltr" translate="no">Energy</code> y una serie de muestras de <code dir="ltr" translate="no">HeartRateRecord</code>.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL"><code translate="no" dir="ltr"><span class="devsite-syntax-w">  </span><span class="devsite-syntax-cm">/**</span>
+<span class="devsite-syntax-cm">   * TODO: Writes an [ExerciseSessionRecord] to Health Connect.</span>
+<span class="devsite-syntax-cm">   */</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-n">suspend</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">writeExerciseSession</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-k">start</span><span class="devsite-syntax-err">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ZonedDateTime</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">end</span><span class="devsite-syntax-err">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ZonedDateTime</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">healthConnectClient</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">insertRecords</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">listOf</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">ExerciseSessionRecord</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-n">metadata</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Metadata</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">manualEntry</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-n">startTime</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">start</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">toInstant</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-n">startZoneOffset</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">start</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">offset</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-n">endTime</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">end</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">toInstant</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-n">endZoneOffset</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">end</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">offset</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-n">exerciseType</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ExerciseSessionRecord</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">EXERCISE_TYPE_RUNNING</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-n">title</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ss">"My Run #${Random.nextInt(0, 60)}"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">),</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">StepsRecord</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-n">metadata</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Metadata</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">manualEntry</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-n">startTime</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">start</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">toInstant</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-n">startZoneOffset</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">start</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">offset</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-n">endTime</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">end</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">toInstant</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-n">endZoneOffset</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">end</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">offset</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-nf">count</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-mi">1000</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">+</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mi">1000</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">*</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Random</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">nextInt</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-mi">3</span><span class="devsite-syntax-p">)).</span><span class="devsite-syntax-n">toLong</span><span class="devsite-syntax-p">()</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">),</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">TotalCaloriesBurnedRecord</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-n">metadata</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Metadata</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">manualEntry</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-n">startTime</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">start</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">toInstant</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-n">startZoneOffset</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">start</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">offset</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-n">endTime</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">end</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">toInstant</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-n">endZoneOffset</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">end</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">offset</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-n">energy</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Energy</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">calories</span><span class="devsite-syntax-p">((</span><span class="devsite-syntax-mi">140</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">+</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Random</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">nextInt</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-mi">20</span><span class="devsite-syntax-p">))</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">*</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mf">0.01</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">+</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">buildHeartRateSeries</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-k">start</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">end</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-err">}</span>
+
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-cm">/**</span>
+<span class="devsite-syntax-cm">   * TODO: Build [HeartRateRecord].</span>
+<span class="devsite-syntax-cm">   */</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-n">private</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">buildHeartRateSeries</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nl">sessionStartTime</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ZonedDateTime</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nl">sessionEndTime</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ZonedDateTime</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-err">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">HeartRateRecord</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">samples</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">mutableListOf&lt;HeartRateRecord</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">Sample</span>&gt;<span class="devsite-syntax-p">()</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nf">var</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nc">time</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">sessionStartTime</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-k">while</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nc">time</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">isBefore</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">sessionEndTime</span><span class="devsite-syntax-p">))</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">{</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">samples</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-k">add</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">HeartRateRecord</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">Sample</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-nc">time</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nc">time</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">toInstant</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-n">beatsPerMinute</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-mi">80</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">+</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Random</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">nextInt</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-mi">80</span><span class="devsite-syntax-p">)).</span><span class="devsite-syntax-n">toLong</span><span class="devsite-syntax-p">()</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-nc">time</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nc">time</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">plusSeconds</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-mi">30</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-err">}</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-k">return</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">HeartRateRecord</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">metadata</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Metadata</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">manualEntry</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">startTime</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">sessionStartTime</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">toInstant</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">startZoneOffset</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">sessionStartTime</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">offset</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">endTime</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">sessionEndTime</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">toInstant</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">endZoneOffset</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">sessionEndTime</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">offset</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">samples</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">samples</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-err">}</span>
+</code></pre></devsite-code>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="15" step="4" label="Lee datos">
+          
+          <h2 class="step-title" data-text="               5. Lee datos           " id="4" tabindex="-1">
+              5. Lee datos
+          </h2>
+          <p>Ahora escribiste registros de peso y sesiones ejercicio con la app de ejemplo del codelab o la app de Toolbox. Usemos la API de Health Connect para leer esos registros. Primero, crea una <code dir="ltr" translate="no">ReadRecordsRequest</code> y especifica el tipo de registro y el período durante el que se leerá. <code dir="ltr" translate="no">ReadRecordsRequest</code> también puede configurar un <code dir="ltr" translate="no">dataOriginFilter</code> para especificar la app de origen del registro desde el que quieres leer.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL"><code translate="no" dir="ltr"><span class="devsite-syntax-w">    </span><span class="devsite-syntax-cm">/**</span>
+<span class="devsite-syntax-cm">     * TODO: Reads in existing [WeightRecord]s.</span>
+<span class="devsite-syntax-cm">     */</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">suspend</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">readWeightInputs</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-k">start</span><span class="devsite-syntax-err">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Instant</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">end</span><span class="devsite-syntax-err">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Instant</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-err">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">List&lt;WeightRecord&gt;</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">request</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ReadRecordsRequest</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">recordType</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nl">WeightRecord</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-err">:</span><span class="devsite-syntax-k">class</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">timeRangeFilter</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">TimeRangeFilter</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-ow">between</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-k">start</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">end</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">response</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">healthConnectClient</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">readRecords</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">request</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-k">return</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">response</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">records</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-err">}</span>
+</code></pre></devsite-code>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL"><code translate="no" dir="ltr"><span class="devsite-syntax-w">  </span><span class="devsite-syntax-cm">/**</span>
+<span class="devsite-syntax-cm">   * TODO: Obtains a list of [ExerciseSessionRecord]s in a specified time frame.</span>
+<span class="devsite-syntax-cm">   */</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-n">suspend</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">readExerciseSessions</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-k">start</span><span class="devsite-syntax-err">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Instant</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">end</span><span class="devsite-syntax-err">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Instant</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-err">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">List&lt;ExerciseSessionRecord&gt;</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">request</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ReadRecordsRequest</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">recordType</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nl">ExerciseSessionRecord</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-err">:</span><span class="devsite-syntax-k">class</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">timeRangeFilter</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">TimeRangeFilter</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-ow">between</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-k">start</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">end</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">response</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">healthConnectClient</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">readRecords</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">request</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-k">return</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">response</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">records</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-err">}</span>
+</code></pre></devsite-code>
+<p>Ahora ejecutemos la app y verifiquemos si puedes ver una lista de registros de peso y sesiones de ejercicio.</p>
+<p class="image-container"><img alt="a08af54eef6bc832.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/health-connect/img/a08af54eef6bc832.png?hl=es-419" srcset="https://developer.android.com/static/codelabs/health-connect/img/a08af54eef6bc832_36.png?hl=es-419 36w,https://developer.android.com/static/codelabs/health-connect/img/a08af54eef6bc832_48.png?hl=es-419 48w,https://developer.android.com/static/codelabs/health-connect/img/a08af54eef6bc832_72.png?hl=es-419 72w,https://developer.android.com/static/codelabs/health-connect/img/a08af54eef6bc832_96.png?hl=es-419 96w,https://developer.android.com/static/codelabs/health-connect/img/a08af54eef6bc832_480.png?hl=es-419 480w,https://developer.android.com/static/codelabs/health-connect/img/a08af54eef6bc832_720.png?hl=es-419 720w,https://developer.android.com/static/codelabs/health-connect/img/a08af54eef6bc832_856.png?hl=es-419 856w,https://developer.android.com/static/codelabs/health-connect/img/a08af54eef6bc832_960.png?hl=es-419 960w,https://developer.android.com/static/codelabs/health-connect/img/a08af54eef6bc832_1440.png?hl=es-419 1440w,https://developer.android.com/static/codelabs/health-connect/img/a08af54eef6bc832_1920.png?hl=es-419 1920w,https://developer.android.com/static/codelabs/health-connect/img/a08af54eef6bc832_2880.png?hl=es-419 2880w" style="width: 267.38px" />         <img alt="3b0781389f1094a1.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/health-connect/img/3b0781389f1094a1.png?hl=es-419" srcset="https://developer.android.com/static/codelabs/health-connect/img/3b0781389f1094a1_36.png?hl=es-419 36w,https://developer.android.com/static/codelabs/health-connect/img/3b0781389f1094a1_48.png?hl=es-419 48w,https://developer.android.com/static/codelabs/health-connect/img/3b0781389f1094a1_72.png?hl=es-419 72w,https://developer.android.com/static/codelabs/health-connect/img/3b0781389f1094a1_96.png?hl=es-419 96w,https://developer.android.com/static/codelabs/health-connect/img/3b0781389f1094a1_480.png?hl=es-419 480w,https://developer.android.com/static/codelabs/health-connect/img/3b0781389f1094a1_720.png?hl=es-419 720w,https://developer.android.com/static/codelabs/health-connect/img/3b0781389f1094a1_856.png?hl=es-419 856w,https://developer.android.com/static/codelabs/health-connect/img/3b0781389f1094a1_960.png?hl=es-419 960w,https://developer.android.com/static/codelabs/health-connect/img/3b0781389f1094a1_1440.png?hl=es-419 1440w,https://developer.android.com/static/codelabs/health-connect/img/3b0781389f1094a1_1920.png?hl=es-419 1920w,https://developer.android.com/static/codelabs/health-connect/img/3b0781389f1094a1_2880.png?hl=es-419 2880w" style="width: 296.50px" /></p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="10" step="5" label="Lee los datos en segundo plano">
+          
+          <h2 class="step-title" data-text="               6. Lee los datos en segundo plano           " id="5" tabindex="-1">
+              6. Lee los datos en segundo plano
+          </h2>
+          <h2 data-text="Declara el permiso" id="declare-permission" is-upgraded="" tabindex="-1"><strong>Declara el permiso</strong></h2>
+<p>Para acceder a los datos de salud en segundo plano, declara el permiso <code dir="ltr" translate="no">READ_HEALTH_DATA_IN_BACKGROUND</code> en tu archivo <code dir="ltr" translate="no">AndroidManifest.xml</code>.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">&lt;!-- TODO: Required to specify which Health Connect permissions the app can request --&gt;
+...
+&lt;uses-permission android:name="android.permission.health.READ_HEALTH_DATA_IN_BACKGROUND" /&gt;
+</code></pre></devsite-code>
+<h2 data-text="Revisa la disponibilidad de las funciones" id="check-feature-availability" is-upgraded="" tabindex="-1"><strong>Revisa la disponibilidad de las funciones</strong></h2>
+<p>Dado que es posible que los usuarios no siempre tengan la versión más reciente de Health Connect, lo mejor es verificar primero la <a href="https://developer.android.com/health-and-fitness/guides/health-connect/develop/feature-availability?hl=es-419" target="_blank">disponibilidad de las funciones</a>. En <code dir="ltr" translate="no">HealthConnectManager.kt</code>, usamos el método <a href="https://developer.android.com/reference/androidx/health/connect/client/HealthConnectFeatures?hl=es-419#getFeatureStatus(kotlin.Int)" target="_blank"><code dir="ltr" translate="no">getFeatureStatus()</code></a> para hacerlo.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">fun isFeatureAvailable(feature: Int): Boolean{
+    return healthConnectClient
+      .features
+      .getFeatureStatus(feature) == HealthConnectFeatures.FEATURE_STATUS_AVAILABLE
+  }
+</code></pre></devsite-code>
+<p>La funcionalidad de lectura en segundo plano en <code dir="ltr" translate="no">ExerciseSessionViewModel.kt</code> se verifica con la constante <a href="https://developer.android.com/reference/androidx/health/connect/client/HealthConnectFeatures?hl=es-419#FEATURE_READ_HEALTH_DATA_IN_BACKGROUND()" target="_blank"><code dir="ltr" translate="no">FEATURE_READ_HEALTH_DATA_IN_BACKGROUND</code></a>:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">backgroundReadAvailable.value = healthConnectManager.isFeatureAvailable(
+    HealthConnectFeatures.FEATURE_READ_HEALTH_DATA_IN_BACKGROUND
+)
+</code></pre></devsite-code>
+<h2 data-text="Solicita permisos" id="request-permissions_1" is-upgraded="" tabindex="-1"><strong>Solicita permisos</strong></h2>
+<p>Después de verificar que la función de lectura en segundo plano esté disponible, puedes solicitar el permiso <a href="https://developer.android.com/reference/androidx/health/connect/client/permission/HealthPermission?hl=es-419#PERMISSION_READ_HEALTH_DATA_IN_BACKGROUND()" target="_blank">PERMISSION_READ_HEALTH_DATA_IN_BACKGROUND</a> haciendo clic en <strong>Solicitar lectura en segundo plano</strong> en la pantalla <strong>Sesiones de ejercicio</strong>.</p>
+<p>Los usuarios ven el siguiente mensaje:</p>
+<p class="image-container"><img alt="edfb507d0976427a.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/health-connect/img/edfb507d0976427a.png?hl=es-419" srcset="https://developer.android.com/static/codelabs/health-connect/img/edfb507d0976427a_36.png?hl=es-419 36w,https://developer.android.com/static/codelabs/health-connect/img/edfb507d0976427a_48.png?hl=es-419 48w,https://developer.android.com/static/codelabs/health-connect/img/edfb507d0976427a_72.png?hl=es-419 72w,https://developer.android.com/static/codelabs/health-connect/img/edfb507d0976427a_96.png?hl=es-419 96w,https://developer.android.com/static/codelabs/health-connect/img/edfb507d0976427a_480.png?hl=es-419 480w,https://developer.android.com/static/codelabs/health-connect/img/edfb507d0976427a_720.png?hl=es-419 720w,https://developer.android.com/static/codelabs/health-connect/img/edfb507d0976427a_856.png?hl=es-419 856w,https://developer.android.com/static/codelabs/health-connect/img/edfb507d0976427a_960.png?hl=es-419 960w,https://developer.android.com/static/codelabs/health-connect/img/edfb507d0976427a_1440.png?hl=es-419 1440w,https://developer.android.com/static/codelabs/health-connect/img/edfb507d0976427a_1920.png?hl=es-419 1920w,https://developer.android.com/static/codelabs/health-connect/img/edfb507d0976427a_2880.png?hl=es-419 2880w" style="width: 267.84px" /></p>
+<p>Los usuarios también pueden otorgar acceso a las lecturas en segundo plano navegando a <strong>Health Connect > Permisos de la app > Codelab de Health Connect > Acceso adicional > Acceso a los datos en segundo plano</strong> en la configuración del sistema:</p>
+<p class="image-container"><img alt="154a4ebf8069457a.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/health-connect/img/154a4ebf8069457a.png?hl=es-419" srcset="https://developer.android.com/static/codelabs/health-connect/img/154a4ebf8069457a_36.png?hl=es-419 36w,https://developer.android.com/static/codelabs/health-connect/img/154a4ebf8069457a_48.png?hl=es-419 48w,https://developer.android.com/static/codelabs/health-connect/img/154a4ebf8069457a_72.png?hl=es-419 72w,https://developer.android.com/static/codelabs/health-connect/img/154a4ebf8069457a_96.png?hl=es-419 96w,https://developer.android.com/static/codelabs/health-connect/img/154a4ebf8069457a_480.png?hl=es-419 480w,https://developer.android.com/static/codelabs/health-connect/img/154a4ebf8069457a_720.png?hl=es-419 720w,https://developer.android.com/static/codelabs/health-connect/img/154a4ebf8069457a_856.png?hl=es-419 856w,https://developer.android.com/static/codelabs/health-connect/img/154a4ebf8069457a_960.png?hl=es-419 960w,https://developer.android.com/static/codelabs/health-connect/img/154a4ebf8069457a_1440.png?hl=es-419 1440w,https://developer.android.com/static/codelabs/health-connect/img/154a4ebf8069457a_1920.png?hl=es-419 1920w,https://developer.android.com/static/codelabs/health-connect/img/154a4ebf8069457a_2880.png?hl=es-419 2880w" style="width: 267.84px" /></p>
+<h2 data-text="Lee los datos en segundo plano" id="read-data-in-background" is-upgraded="" tabindex="-1"><strong>Lee los datos en segundo plano</strong></h2>
+<p>Usa <a href="https://developer.android.com/develop/background-work/background-tasks/persistent/getting-started?hl=es-419" target="_blank"><code dir="ltr" translate="no">WorkManager</code></a> para programar tareas en segundo plano. Cuando presiones el botón <strong>Leer pasos en segundo plano</strong>, la app iniciará <code dir="ltr" translate="no">ReadStepWorker</code> después de un retraso de 10 segundos. Este Worker recuperará el recuento total de pasos de Health Connect de las últimas 24 horas. Luego, aparecerá una entrada de registro similar que detallará esta información en Logcat:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only"><code translate="no" dir="ltr">There are 4000 steps in Health Connect in the last 24 hours.
+</code></pre></devsite-code>
+<aside class="special"><p><strong>Nota</strong>: Es posible que debas cerrar la app inmediatamente después de presionar el botón para asegurarte de que <code dir="ltr" translate="no">ReadStepWorker</code> se ejecute en segundo plano.</p>
+</aside>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="10" step="6" label="Lee los datos históricos">
+          
+          <h2 class="step-title" data-text="               7. Lee los datos históricos           " id="6" tabindex="-1">
+              7. Lee los datos históricos
+          </h2>
+          <h2 data-text="Declara el permiso" id="declare-permission_1" is-upgraded="" tabindex="-1"><strong>Declara el permiso</strong></h2>
+<p>Para acceder a los datos de salud de otras aplicaciones con más de 30 días de antigüedad, declara el permiso <code dir="ltr" translate="no">READ_HEALTH_DATA_HISTORY</code> en el archivo <code dir="ltr" translate="no">AndroidManifest.xml</code>.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">&lt;!-- TODO: Required to specify which Health Connect permissions the app can request --&gt;
+...
+&lt;uses-permission android:name="android.permission.health.READ_HEALTH_DATA_HISTORY" /&gt;
+</code></pre></devsite-code>
+<h2 data-text="Revisa la disponibilidad de las funciones" id="check-feature-availability_1" is-upgraded="" tabindex="-1"><strong>Revisa la disponibilidad de las funciones</strong></h2>
+<p>Dado que es posible que los usuarios no siempre tengan la versión más reciente de Health Connect, lo mejor es verificar primero la <a href="https://developer.android.com/health-and-fitness/guides/health-connect/develop/feature-availability?hl=es-419" target="_blank">disponibilidad de las funciones</a>. En <code dir="ltr" translate="no">HealthConnectManager.kt</code>, usamos el método <a href="https://developer.android.com/reference/androidx/health/connect/client/HealthConnectFeatures?hl=es-419#getFeatureStatus(kotlin.Int)" target="_blank"><code dir="ltr" translate="no">getFeatureStatus()</code></a> para hacerlo.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">fun isFeatureAvailable(feature: Int): Boolean{
+    return healthConnectClient
+      .features
+      .getFeatureStatus(feature) == HealthConnectFeatures.FEATURE_STATUS_AVAILABLE
+  }
+</code></pre></devsite-code>
+<p>La función de lectura del historial en <code dir="ltr" translate="no">ExerciseSessionViewModel.kt</code> se verifica con la constante <a href="https://developer.android.com/reference/androidx/health/connect/client/HealthConnectFeatures?hl=es-419#FEATURE_READ_HEALTH_DATA_HISTORY()" target="_blank"><code dir="ltr" translate="no">FEATURE_READ_HEALTH_DATA_HISTORY</code></a>:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">historyReadAvailable.value = healthConnectManager.isFeatureAvailable(
+    HealthConnectFeatures.FEATURE_READ_HEALTH_DATA_HISTORY
+)
+</code></pre></devsite-code>
+<h2 data-text="Solicita permisos" id="request-permissions_2" is-upgraded="" tabindex="-1"><strong>Solicita permisos</strong></h2>
+<p>Después de verificar que la función de lectura del historial esté disponible, podrás solicitar el permiso <a href="https://developer.android.com/reference/androidx/health/connect/client/permission/HealthPermission?hl=es-419#PERMISSION_READ_HEALTH_DATA_HISTORY()" target="_blank">PERMISSION_READ_HEALTH_DATA_HISTORY</a> haciendo clic en <strong>Solicitar lectura del historial</strong> en la pantalla <strong>Sesiones de ejercicio</strong>.</p>
+<p>Los usuarios ven el siguiente mensaje:</p>
+<p class="image-container"><img alt="ff523ee39aeadd8e.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/health-connect/img/ff523ee39aeadd8e.png?hl=es-419" srcset="https://developer.android.com/static/codelabs/health-connect/img/ff523ee39aeadd8e_36.png?hl=es-419 36w,https://developer.android.com/static/codelabs/health-connect/img/ff523ee39aeadd8e_48.png?hl=es-419 48w,https://developer.android.com/static/codelabs/health-connect/img/ff523ee39aeadd8e_72.png?hl=es-419 72w,https://developer.android.com/static/codelabs/health-connect/img/ff523ee39aeadd8e_96.png?hl=es-419 96w,https://developer.android.com/static/codelabs/health-connect/img/ff523ee39aeadd8e_480.png?hl=es-419 480w,https://developer.android.com/static/codelabs/health-connect/img/ff523ee39aeadd8e_720.png?hl=es-419 720w,https://developer.android.com/static/codelabs/health-connect/img/ff523ee39aeadd8e_856.png?hl=es-419 856w,https://developer.android.com/static/codelabs/health-connect/img/ff523ee39aeadd8e_960.png?hl=es-419 960w,https://developer.android.com/static/codelabs/health-connect/img/ff523ee39aeadd8e_1440.png?hl=es-419 1440w,https://developer.android.com/static/codelabs/health-connect/img/ff523ee39aeadd8e_1920.png?hl=es-419 1920w,https://developer.android.com/static/codelabs/health-connect/img/ff523ee39aeadd8e_2880.png?hl=es-419 2880w" style="width: 267.84px" /></p>
+<p>Los usuarios también pueden otorgar acceso a las lecturas del historial si navegan a <strong>Health Connect > Permisos de la app > Codelab de Health Connect > Acceso adicional > Acceso a los datos anteriores</strong> en la configuración del sistema:</p>
+<p class="image-container"><img alt="1ec187a6c63245b6.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/health-connect/img/1ec187a6c63245b6.png?hl=es-419" srcset="https://developer.android.com/static/codelabs/health-connect/img/1ec187a6c63245b6_36.png?hl=es-419 36w,https://developer.android.com/static/codelabs/health-connect/img/1ec187a6c63245b6_48.png?hl=es-419 48w,https://developer.android.com/static/codelabs/health-connect/img/1ec187a6c63245b6_72.png?hl=es-419 72w,https://developer.android.com/static/codelabs/health-connect/img/1ec187a6c63245b6_96.png?hl=es-419 96w,https://developer.android.com/static/codelabs/health-connect/img/1ec187a6c63245b6_480.png?hl=es-419 480w,https://developer.android.com/static/codelabs/health-connect/img/1ec187a6c63245b6_720.png?hl=es-419 720w,https://developer.android.com/static/codelabs/health-connect/img/1ec187a6c63245b6_856.png?hl=es-419 856w,https://developer.android.com/static/codelabs/health-connect/img/1ec187a6c63245b6_960.png?hl=es-419 960w,https://developer.android.com/static/codelabs/health-connect/img/1ec187a6c63245b6_1440.png?hl=es-419 1440w,https://developer.android.com/static/codelabs/health-connect/img/1ec187a6c63245b6_1920.png?hl=es-419 1920w,https://developer.android.com/static/codelabs/health-connect/img/1ec187a6c63245b6_2880.png?hl=es-419 2880w" style="width: 267.84px" /></p>
+<h2 data-text="Lee los datos históricos" id="read-historical-data" is-upgraded="" tabindex="-1"><strong>Lee los datos históricos</strong></h2>
+<p>La pantalla <strong>Sesiones de ejercicio</strong> mostrará datos anteriores de otras apps cuando se haya otorgado acceso a la lectura del historial.</p>
+<aside class="special"><p><strong>Nota</strong>: Si no tienes datos históricos de otras apps almacenados en tu dispositivo, usa la <a href="https://developer.android.com/health-and-fitness/guides/health-connect/test/health-connect-toolbox?hl=es-419" target="_blank">Caja de herramientas de Health Connect</a> y navega a <strong>INSERT HEALTH RECORD > Activity > ExerciseSession</strong> para agregar manualmente una sesión de ejercicio de 40 días atrás.</p>
+</aside>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="8" step="7" label="Lee datos diferenciales">
+          
+          <h2 class="step-title" data-text="               8. Lee datos diferenciales           " id="7" tabindex="-1">
+              8. Lee datos diferenciales
+          </h2>
+          <p>La API de Differential Changes de Health Connect permite realizar un seguimiento de los cambios desde un momento específico para un conjunto de tipos de datos. Por ejemplo, quieres saber si los usuarios actualizaron o borraron algún registro existente fuera de la app para poder actualizar tu base de datos de forma acorde.</p>
+<p>La lectura de datos con Health Connect está restringida a las aplicaciones que se ejecutan en primer plano. Se implementó esta restricción para fortalecer aún más la privacidad del usuario. Notifica y garantiza a los usuarios que Health Connect no tiene acceso de lectura en segundo plano a sus datos, y que solo se puede leer y acceder a ellos en primer plano. Cuando la app está en primer plano, la API de Differential Changes permite a los desarrolladores recuperar los cambios realizados en Health Connect a través de la implementación de un token de cambios.</p>
+<p>En <code dir="ltr" translate="no">HealthConnectManager.kt</code> hay dos funciones: <code dir="ltr" translate="no">getChangesToken()</code> y <code dir="ltr" translate="no">getChanges()</code>. Agregaremos las APIs de Differential Changes a estas funciones para obtener los cambios en los datos.</p>
+<h2 data-text="Configuración del token inicial de cambios" id="initial-changes-token-setup" is-upgraded="" tabindex="-1"><strong>Configuración del token inicial de cambios</strong></h2>
+<p>Los cambios en los datos se recuperan de Health Connect solo cuando tu app los solicita con un token de cambios. El token de cambios representa el punto en el historial de confirmaciones desde el que se tomarán los datos diferenciales.</p>
+<p>Para obtener un token de cambios, envía una <code dir="ltr" translate="no">ChangesTokenRequest</code> con el conjunto de tipos de datos de cuyos cambios desees hacer un seguimiento. Conserva el token y úsalo cuando quieras recuperar cualquier actualización de Health Connect.</p>
+<aside class="special"><p><strong>Nota</strong>: <code dir="ltr" translate="no">DeletionChanges</code> solo devuelve <code dir="ltr" translate="no">id</code> del registro borrado, sin el tipo de registro que se usa en <a href="https://developer.android.com/reference/kotlin/androidx/health/connect/client/HealthConnectClient?hl=es-419#deleteRecords(kotlin.reflect.KClass,kotlin.collections.List,kotlin.collections.List)" target="_blank"><code dir="ltr" translate="no">deleteRecords</code></a>, debido a cuestiones de privacidad. Para controlar esto, puedes especificar solo 1 tipo de datos para cada llamada a <code dir="ltr" translate="no">getChanges</code> o puedes asegurarte de haber almacenado esta información por separado de antemano.</p>
+</aside>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Carbon"><code translate="no" dir="ltr"><span class="devsite-syntax-w">  </span><span class="devsite-syntax-cm">/**</span>
+<span class="devsite-syntax-cm">   * TODO: Obtains a Changes token for the specified record types.</span>
+<span class="devsite-syntax-cm">   */</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-nx">suspend</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">getChangesToken</span><span class="devsite-syntax-p">():</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">String</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-k">return</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">healthConnectClient</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">getChangesToken</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-nx">ChangesTokenRequest</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">setOf</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-nx">ExerciseSessionRecord</span><span class="devsite-syntax-o">::</span><span class="devsite-syntax-kd">class</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<h2 data-text="Actualización de datos con un token de cambios" id="data-update-with-changes-token" is-upgraded="" tabindex="-1"><strong>Actualización de datos con un token de cambios</strong></h2>
+<p>Cuando quieras obtener cambios de la última vez que tu app se sincronizó con Health Connect, usa el token de cambios que obtuviste anteriormente y envía una llamada <code dir="ltr" translate="no">getChanges</code> con el token. <code dir="ltr" translate="no">ChangesResponse</code> muestra una lista de los cambios observados desde Health Connect, como <a href="https://developer.android.com/reference/kotlin/androidx/health/connect/client/changes/UpsertionChange?hl=es-419" target="_blank"><code dir="ltr" translate="no">UpsertionChange</code></a> y <a href="https://developer.android.com/reference/kotlin/androidx/health/connect/client/changes/DeletionChange?hl=es-419" target="_blank"><code dir="ltr" translate="no">DeletionChange</code></a>.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="GDScript"><code translate="no" dir="ltr"><span class="devsite-syntax-w">  </span><span class="devsite-syntax-o">/**</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-o">*</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">TODO</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Retrieve</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">changes</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">from</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">a</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Changes</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">token</span><span class="devsite-syntax-o">.</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-o">*/</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-n">suspend</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">getChanges</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">token</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nb devsite-syntax-nb-Type">String</span><span class="devsite-syntax-p">):</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Flow&lt;ChangesMessage&gt;</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">flow</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-k">var</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">nextChangesToken</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">token</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">do</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">response</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">healthConnectClient</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">getChanges</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">nextChangesToken</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">response</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">changesTokenExpired</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">throw</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">IOException</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s2">"Changes token has expired"</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">emit</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">ChangesMessage</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">ChangeList</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">response</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">changes</span><span class="devsite-syntax-p">))</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">nextChangesToken</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">response</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">nextChangesToken</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">while</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">response</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">hasMore</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">emit</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">ChangesMessage</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">NoMoreChanges</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">nextChangesToken</span><span class="devsite-syntax-p">))</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<aside class="special"><p><strong>Nota</strong>: Los tokens de cambios solo son válidos por 30 días. Asegúrate de que tu app haga lo siguiente:</p>
+<ul>
+<li>Actualice periódicamente los datos para cualquier cambio en un plazo de 30 días o menos para evitar los tokens inactivos.</li>
+<li>Maneje casos en los que el token ya no es válido.</li>
+<li>Tenga un mecanismo de resguardo para obtener los datos necesarios.</li>
+</ul>
+</aside>
+<aside class="warning"><p><strong>Importante</strong>: Es posible que la primera respuesta que se muestra no siempre proporcione todos los cambios realizados en Health Connect. Tal vez sea necesario realizar llamadas a la API adicionales y recuperar otros cambios para abordar este problema.</p>
+</aside>
+<p>Ahora, ejecuta la app y ve a la pantalla <strong>Changes</strong>. Primero, habilita <strong>Track changes</strong> para obtener un token de cambios. Luego, inserta el peso o las sesiones de ejercicio desde Toolbox o desde la app del codelab. Regresa a la pantalla <strong>Changes</strong> y selecciona <strong>Get new changes</strong>. Ahora deberías ver los cambios.</p>
+<p class="image-container"><img alt="f3aded8ae5487e9c.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/health-connect/img/f3aded8ae5487e9c.png?hl=es-419" srcset="https://developer.android.com/static/codelabs/health-connect/img/f3aded8ae5487e9c_36.png?hl=es-419 36w,https://developer.android.com/static/codelabs/health-connect/img/f3aded8ae5487e9c_48.png?hl=es-419 48w,https://developer.android.com/static/codelabs/health-connect/img/f3aded8ae5487e9c_72.png?hl=es-419 72w,https://developer.android.com/static/codelabs/health-connect/img/f3aded8ae5487e9c_96.png?hl=es-419 96w,https://developer.android.com/static/codelabs/health-connect/img/f3aded8ae5487e9c_480.png?hl=es-419 480w,https://developer.android.com/static/codelabs/health-connect/img/f3aded8ae5487e9c_720.png?hl=es-419 720w,https://developer.android.com/static/codelabs/health-connect/img/f3aded8ae5487e9c_856.png?hl=es-419 856w,https://developer.android.com/static/codelabs/health-connect/img/f3aded8ae5487e9c_960.png?hl=es-419 960w,https://developer.android.com/static/codelabs/health-connect/img/f3aded8ae5487e9c_1440.png?hl=es-419 1440w,https://developer.android.com/static/codelabs/health-connect/img/f3aded8ae5487e9c_1920.png?hl=es-419 1920w,https://developer.android.com/static/codelabs/health-connect/img/f3aded8ae5487e9c_2880.png?hl=es-419 2880w" style="width: 286.50px" />         <img alt="437d69e3e000ce81.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/health-connect/img/437d69e3e000ce81.png?hl=es-419" srcset="https://developer.android.com/static/codelabs/health-connect/img/437d69e3e000ce81_36.png?hl=es-419 36w,https://developer.android.com/static/codelabs/health-connect/img/437d69e3e000ce81_48.png?hl=es-419 48w,https://developer.android.com/static/codelabs/health-connect/img/437d69e3e000ce81_72.png?hl=es-419 72w,https://developer.android.com/static/codelabs/health-connect/img/437d69e3e000ce81_96.png?hl=es-419 96w,https://developer.android.com/static/codelabs/health-connect/img/437d69e3e000ce81_480.png?hl=es-419 480w,https://developer.android.com/static/codelabs/health-connect/img/437d69e3e000ce81_720.png?hl=es-419 720w,https://developer.android.com/static/codelabs/health-connect/img/437d69e3e000ce81_856.png?hl=es-419 856w,https://developer.android.com/static/codelabs/health-connect/img/437d69e3e000ce81_960.png?hl=es-419 960w,https://developer.android.com/static/codelabs/health-connect/img/437d69e3e000ce81_1440.png?hl=es-419 1440w,https://developer.android.com/static/codelabs/health-connect/img/437d69e3e000ce81_1920.png?hl=es-419 1920w,https://developer.android.com/static/codelabs/health-connect/img/437d69e3e000ce81_2880.png?hl=es-419 2880w" style="width: 274.50px" /></p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="8" step="8" label="Datos agregados">
+          
+          <h2 class="step-title" data-text="               9. Datos agregados           " id="8" tabindex="-1">
+              9. Datos agregados
+          </h2>
+          <p>Health Connect también proporciona datos agregados a través de APIs agregadas. En los siguientes ejemplos, se muestra cómo obtener datos estadísticos y acumulativos de Health Connect.</p>
+<p>Usa <code dir="ltr" translate="no">healthConnectClient.aggregate</code> para enviar <code dir="ltr" translate="no">AggregateRequest</code>. En la solicitud agregada, especifica un conjunto de métricas agregadas y el período de tiempo que deseas obtener. Por ejemplo, <code dir="ltr" translate="no">ExerciseSessionRecord.EXERCISE_DURATION_TOTAL</code> y <code dir="ltr" translate="no">StepsRecord.COUNT_TOTAL</code> proporcionan datos acumulativos, mientras que <code dir="ltr" translate="no">WeightRecord.WEIGHT_AVG</code>, <code dir="ltr" translate="no">HeartRateRecord.BPM_MAX</code> y <code dir="ltr" translate="no">HeartRateRecord.BPM_MIN</code> proporcionan datos estadísticos.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL"><code translate="no" dir="ltr"><span class="devsite-syntax-w">    </span><span class="devsite-syntax-cm">/**</span>
+<span class="devsite-syntax-cm">     * TODO: Returns the weekly average of [WeightRecord]s.</span>
+<span class="devsite-syntax-cm">     */</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">suspend</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">computeWeeklyAverage</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-k">start</span><span class="devsite-syntax-err">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Instant</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">end</span><span class="devsite-syntax-err">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Instant</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-err">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Mass</span><span class="devsite-syntax-vm">?</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">request</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">AggregateRequest</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">metrics</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">setOf</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">WeightRecord</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">WEIGHT_AVG</span><span class="devsite-syntax-p">),</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">timeRangeFilter</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">TimeRangeFilter</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-ow">between</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-k">start</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">end</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">response</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">healthConnectClient</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-k">aggregate</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">request</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-k">return</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">response</span><span class="devsite-syntax-o">[</span><span class="devsite-syntax-n">WeightRecord.WEIGHT_AVG</span><span class="devsite-syntax-o">]</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-err">}</span>
+</code></pre></devsite-code>
+<p>En este ejemplo, se muestra cómo obtener datos agregados asociados para una sesión de ejercicio específica. Primero, lee un registro a través de <code dir="ltr" translate="no">healthConnectClient.readRecord</code> con un <code dir="ltr" translate="no">uid</code>. Luego, usa <code dir="ltr" translate="no">startTime</code> y <code dir="ltr" translate="no">endTime</code> de la sesión de ejercicio como el período de tiempo y <code dir="ltr" translate="no">dataOrigin</code> como filtros para leer las agregaciones asociadas.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL"><code translate="no" dir="ltr"><span class="devsite-syntax-w">  </span><span class="devsite-syntax-cm">/**</span>
+<span class="devsite-syntax-cm">   * TODO: Reads aggregated data and raw data for selected data types, for a given [ExerciseSessionRecord].</span>
+<span class="devsite-syntax-cm">   */</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-n">suspend</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">readAssociatedSessionData</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-nl">uid</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">String</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-err">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ExerciseSessionData</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">exerciseSession</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">healthConnectClient</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">readRecord</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nl">ExerciseSessionRecord</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-err">:</span><span class="devsite-syntax-k">class</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">uid</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-o">//</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">Use</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">start</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nc">time</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ow">and</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">end</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nc">time</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">from</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">session</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">for</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">reading</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">raw</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ow">and</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">aggregate</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">data</span><span class="devsite-syntax-p">.</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">timeRangeFilter</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">TimeRangeFilter</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-ow">between</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">startTime</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">exerciseSession</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">record</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">startTime</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">endTime</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">exerciseSession</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">record</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">endTime</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">aggregateDataTypes</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">setOf</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">ExerciseSessionRecord</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">EXERCISE_DURATION_TOTAL</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">StepsRecord</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">COUNT_TOTAL</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">TotalCaloriesBurnedRecord</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">ENERGY_TOTAL</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">HeartRateRecord</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">BPM_AVG</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">HeartRateRecord</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">BPM_MAX</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">HeartRateRecord</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">BPM_MIN</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-o">//</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">Limit</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">data</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">read</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">just</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">application</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">that</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">wrote</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">session</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">This</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">may</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ow">or</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">may</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ow">not</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-o">//</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">be</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">desirable</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">depending</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">on</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">use</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">case</span><span class="devsite-syntax-err">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ow">In</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ow">some</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">cases</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">it</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">may</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">be</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">useful</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">combine</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">with</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-o">//</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">data</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">written</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">by</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">other</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">apps</span><span class="devsite-syntax-p">.</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">dataOriginFilter</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">setOf</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">exerciseSession</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">record</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">metadata</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">dataOrigin</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">aggregateRequest</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">AggregateRequest</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">metrics</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">aggregateDataTypes</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">timeRangeFilter</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">timeRangeFilter</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">dataOriginFilter</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">dataOriginFilter</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">aggregateData</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">healthConnectClient</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-k">aggregate</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">aggregateRequest</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">heartRateData</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">readData&lt;HeartRateRecord&gt;</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">timeRangeFilter</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">dataOriginFilter</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-k">return</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ExerciseSessionData</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">uid</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">uid</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">totalActiveTime</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">aggregateData</span><span class="devsite-syntax-o">[</span><span class="devsite-syntax-n">ExerciseSessionRecord.EXERCISE_DURATION_TOTAL</span><span class="devsite-syntax-o">]</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">totalSteps</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">aggregateData</span><span class="devsite-syntax-o">[</span><span class="devsite-syntax-n">StepsRecord.COUNT_TOTAL</span><span class="devsite-syntax-o">]</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">totalEnergyBurned</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">aggregateData</span><span class="devsite-syntax-o">[</span><span class="devsite-syntax-n">TotalCaloriesBurnedRecord.ENERGY_TOTAL</span><span class="devsite-syntax-o">]</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">minHeartRate</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">aggregateData</span><span class="devsite-syntax-o">[</span><span class="devsite-syntax-n">HeartRateRecord.BPM_MIN</span><span class="devsite-syntax-o">]</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">maxHeartRate</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">aggregateData</span><span class="devsite-syntax-o">[</span><span class="devsite-syntax-n">HeartRateRecord.BPM_MAX</span><span class="devsite-syntax-o">]</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">avgHeartRate</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">aggregateData</span><span class="devsite-syntax-o">[</span><span class="devsite-syntax-n">HeartRateRecord.BPM_AVG</span><span class="devsite-syntax-o">]</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-n">heartRateSeries</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">heartRateData</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-err">}</span>
+</code></pre></devsite-code>
+<p>Ahora ejecuta la app y comprueba si puedes ver el peso promedio en la pantalla <strong>Record weight</strong>. También puedes ver los datos detallados de una sesión de ejercicio si abres la pantalla <strong>Exercise sessions</strong> y eliges uno de los registros de la sesión.</p>
+<p class="image-container"><img alt="af1fe646159d6a60.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/health-connect/img/af1fe646159d6a60.png?hl=es-419" srcset="https://developer.android.com/static/codelabs/health-connect/img/af1fe646159d6a60_36.png?hl=es-419 36w,https://developer.android.com/static/codelabs/health-connect/img/af1fe646159d6a60_48.png?hl=es-419 48w,https://developer.android.com/static/codelabs/health-connect/img/af1fe646159d6a60_72.png?hl=es-419 72w,https://developer.android.com/static/codelabs/health-connect/img/af1fe646159d6a60_96.png?hl=es-419 96w,https://developer.android.com/static/codelabs/health-connect/img/af1fe646159d6a60_480.png?hl=es-419 480w,https://developer.android.com/static/codelabs/health-connect/img/af1fe646159d6a60_720.png?hl=es-419 720w,https://developer.android.com/static/codelabs/health-connect/img/af1fe646159d6a60_856.png?hl=es-419 856w,https://developer.android.com/static/codelabs/health-connect/img/af1fe646159d6a60_960.png?hl=es-419 960w,https://developer.android.com/static/codelabs/health-connect/img/af1fe646159d6a60_1440.png?hl=es-419 1440w,https://developer.android.com/static/codelabs/health-connect/img/af1fe646159d6a60_1920.png?hl=es-419 1920w,https://developer.android.com/static/codelabs/health-connect/img/af1fe646159d6a60_2880.png?hl=es-419 2880w" style="width: 250.27px" /></p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="2" step="9" label="Felicitaciones">
+          
+          <h2 class="step-title" data-text="               10. Felicitaciones           " id="9" tabindex="-1">
+              10. Felicitaciones
+          </h2>
+          <p>Felicitaciones, compilaste correctamente tu primera app de salud y fitness integrada en Health Connect.</p>
+<p>La app puede declarar permisos y solicitar permisos de usuario en los tipos de datos que se usan en la app. También puede leer y escribir datos del almacenamiento de datos de Health Connect. También aprendiste a usar Health Connect Toolbox para respaldar el desarrollo de tu app a través de la creación de datos ficticios en el almacenamiento de datos de Health Connect.</p>
+<p>Ahora conoces los pasos clave necesarios para que tu app de salud y fitness forme parte del ecosistema de Health Connect.</p>
+<h2 data-text="Lecturas adicionales" id="further-reading" is-upgraded="" tabindex="-1"><strong>Lecturas adicionales</strong></h2>
+<ul>
+<li><a href="https://developer.android.com/guide/health-and-fitness/health-connect?hl=es-419" target="_blank">Sitio para desarrolladores de Health Connect</a></li>
+<li><a href="https://support.google.com/googleplay/android-developer/answer/12991134?hl=es-419" target="_blank">Requisito de la política de Health Connect</a></li>
+<li><a href="https://developer.android.com/guide/health-and-fitness/health-connect-guidelines/ux-guidelines/basic-guidance?hl=es-419" target="_blank">Lineamientos para desarrolladores sobre la UX de Health Connect</a></li>
+<li><a href="https://developer.android.com/health-and-fitness/guides/health-connect/test/health-connect-toolbox?hl=es-419" target="_blank">Caja de herramientas de Health Connect</a></li>
+<li><a href="https://developer.android.com/kotlin?hl=es-419" target="_blank">Kotlin</a></li>
+<li><a href="https://developer.android.com/jetpack?hl=es-419" target="_blank">Android Jetpack</a></li>
+<li><a href="https://developer.android.com/jetpack/compose?hl=es-419" target="_blank">Android Jetpack Compose</a></li>
+<li><a href="https://developer.android.com/topic/libraries/architecture/viewmodel?gclid=CjwKCAjwzY2bBhB6EiwAPpUpZnMf553e5aMStvOi0XQNjG88yCjem3cuLDjbxhL5FiVMAROYM3ACPxoC8HcQAvD_BwE&gclsrc=aw.ds&hl=es-419" target="_blank">Android Jetpack: ViewModel</a></li>
+</ul>
+
+
+        </google-codelab-step>
+      
+    </google-codelab>
+  
+  
+  
+
+  
+</div>
+
+  
+    
+    
+    
+  
+
+  <div class="devsite-floating-action-buttons"></div></article>
+
+
+<devsite-content-footer class="nocontent">
+  <p>Salvo que se indique lo contrario, el contenido de esta página está sujeto a la <a href="https://creativecommons.org/licenses/by/4.0/">licencia Atribución 4.0 de Creative Commons</a>, y los ejemplos de código están sujetos a la <a href="https://www.apache.org/licenses/LICENSE-2.0">licencia Apache 2.0</a>. Para obtener más información, consulta las <a href="https://developers.google.com/site-policies?hl=es-419">políticas del sitio de Google Developers</a>. Java es una marca registrada de Oracle o sus afiliados.</p>
+  
+</devsite-content-footer>
+
+
+<devsite-notification
+>
+</devsite-notification>
+
+
+  
+<div class="devsite-content-data">
+  
+  
+    <template class="devsite-content-data-template">
+      [[["Fácil de comprender","easyToUnderstand","thumb-up"],["Resolvió mi problema","solvedMyProblem","thumb-up"],["Otro","otherUp","thumb-up"]],[["Falta la información que necesito","missingTheInformationINeed","thumb-down"],["Muy complicado o demasiados pasos","tooComplicatedTooManySteps","thumb-down"],["Desactualizado","outOfDate","thumb-down"],["Problema de traducción","translationIssue","thumb-down"],["Problema con las muestras o los códigos","samplesCodeIssue","thumb-down"],["Otro","otherDown","thumb-down"]],[],[],[],null,[]]
+    </template>
+  
+</div>
+            
+          </devsite-content>
+        </main>
+        <devsite-footer-promos class="devsite-footer">
+          
+            
+
+<nav class="devsite-footer-promos nocontent" aria-label="Promociones">
+  <ul class="devsite-footer-promos-list">
+    
+    <li class="devsite-footer-promo">
+      <a href="//x.com/AndroidDev"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer X Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-x_dt.svg?hl=es-419"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="https://developer.android.com/_static/android/images/logo-x.svg?hl=es-419"
+                loading="lazy"
+                alt="X">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          X
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Sigue a @AndroidDev en X</div>
+    </li>
+    
+    <li class="devsite-footer-promo">
+      <a href="//www.youtube.com/user/androiddevelopers?hl=es-419"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer YouTube Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-youtube_dt.svg?hl=es-419"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="//www.gstatic.com/images/icons/material/product/2x/youtube_48dp.png"
+                loading="lazy"
+                alt="YouTube">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          YouTube
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Busca Android Developers en YouTube</div>
+    </li>
+    
+    <li class="devsite-footer-promo">
+      <a href="//www.linkedin.com/showcase/androiddev"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer LinkedIn Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-linkedin_dt.svg?hl=es-419"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="https://developer.android.com/_static/android/images/logo-linkedin.svg?hl=es-419"
+                loading="lazy"
+                alt="LinkedIn">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          LinkedIn
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Connect with the Android Developers community on LinkedIn</div>
+    </li>
+    
+  </ul>
+</nav>
+
+          
+        </devsite-footer-promos>
+        <devsite-footer-linkboxes class="devsite-footer">
+          
+            
+<nav class="devsite-footer-linkboxes nocontent" aria-label="Vínculos a pie de página">
+  
+  <ul class="devsite-footer-linkboxes-list">
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Más Android</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com/enterprise/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Android para empresas
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com/security-center/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Seguridad
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//source.android.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Código abierto
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/news"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            Noticias
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//android-developers.googleblog.com/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+          
+            Blog
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/podcasts"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 7)"
+            >
+            
+              
+              
+            
+          
+            Podcasts
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Descubre</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/games"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Videojuegos
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/ml"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Aprendizaje automático
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/health-and-fitness"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Salud y bienestar
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/media"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Cámara y contenido multimedia
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/privacy"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            Privacidad
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/training/connectivity/5g"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+              
+              
+            
+          
+            5G
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Dispositivos Android</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/large-screens"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Pantallas grandes
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/wear"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Wear OS
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/chrome-os"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Dispositivos ChromeOS
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/cars"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Android para vehículos
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/tv"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+              
+              
+            
+          
+            Android TV
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Versiones</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/15"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android 15
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/14"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Android 14
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/13"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Android 13
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/12"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Android 12
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/11"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            Android 11
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/10"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+          
+            Android 10
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/pie"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 7)"
+            >
+            
+              
+              
+            
+          
+            Pie
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Documentación y descargas</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/studio/intro"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Guía de Android Studio
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/guide"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Guías para desarrolladores
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/reference"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Referencia de API
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/studio"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Descargar Studio
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/ndk"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+              
+              
+            
+          
+            NDK de Android
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Asistencia</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//issuetracker.google.com/issues/new?component=190923&amp;template=841312"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Informar sobre un error en la plataforma
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//issuetracker.google.com/issues/new?component=192697"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Informar sobre un error en la documentación
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//support.google.com/googleplay/android-developer"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Google Play support
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://g.co/userresearch/androiddeveloperfooter"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+              
+              
+            
+          
+            Participar en los estudios de investigación
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+  
+</nav>
+          
+        </devsite-footer-linkboxes>
+        <devsite-footer-utility class="devsite-footer">
+          
+            
+
+<div class="devsite-footer-utility nocontent">
+  
+  
+  <nav class="devsite-footer-sites" aria-label="Otros sitios web de Google Developers">
+    <a href="https://developers.google.com/?hl=es-419"
+       class="devsite-footer-sites-logo-link gc-analytics-event"
+       data-category="Site-Wide Custom Events"
+       data-label="Footer Google Developers Link">
+      <picture>
+        
+        <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-google-for-developers-dark-theme.svg"
+                media="(prefers-color-scheme: none)"
+                class="devsite-dark-theme">
+        
+        <img class="devsite-footer-sites-logo"
+             src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-google-for-developers.svg"
+             loading="lazy"
+             alt="Google Developers">
+      </picture>
+    </a>
+    <ul class="devsite-footer-sites-list">
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.android.com?hl=es-419"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Android Link"
+         
+         >
+          Android
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.chrome.com/home?hl=es-419"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Chrome Link"
+         
+         >
+          Chrome
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//firebase.google.com?hl=es-419"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Firebase Link"
+         
+         >
+          Firebase
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//cloud.google.com?hl=es-419"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Google Cloud Platform Link"
+         
+         >
+          Google Cloud Platform
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developers.google.com/products/?hl=es-419"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer All products Link"
+         
+         >
+          Todos los productos
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  
+
+  
+  <nav class="devsite-footer-utility-links" aria-label="Vínculos de utilidad">
+    
+    <ul class="devsite-footer-utility-list">
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//policies.google.com/privacy?hl=es-419"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Privacy link"
+         >
+          Privacidad
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="https://developer.android.com/license?hl=es-419"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer License link"
+         >
+          Licencia
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="https://developer.android.com/distribute/marketing-tools/brand-guidelines?hl=es-419"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Brand guidelines link"
+         >
+          Lineamientos de marca
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 glue-cookie-notification-bar-control">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="#"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Manage cookies link"
+         
+           aria-hidden="true"
+         >
+          Manage cookies
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 devsite-footer-utility-button">
+        
+        <span class="devsite-footer-utility-description">Recibe noticias y sugerencias por correo electrónico</span>
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="https://developer.android.com/updates?hl=es-419"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Subscribe link"
+         >
+          Suscribirse
+        </a>
+        
+      </li>
+      
+    </ul>
+    
+    
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+  </nav>
+</div>
+          
+        </devsite-footer-utility>
+        <devsite-panel>
+          
+        </devsite-panel>
+        
+      </section></section>
+    <devsite-sitemask></devsite-sitemask>
+    <devsite-snackbar></devsite-snackbar>
+    <devsite-tooltip ></devsite-tooltip>
+    <devsite-heading-link></devsite-heading-link>
+    <devsite-analytics>
+      
+        <script type="application/json" analytics>[]</script>
+<script type="application/json" tag-management>{&#34;at&#34;: &#34;True&#34;, &#34;ga4&#34;: [{&#34;id&#34;: &#34;G-QFRN08RN6E&#34;, &#34;purpose&#34;: 0}], &#34;ga4p&#34;: [{&#34;id&#34;: &#34;G-QFRN08RN6E&#34;, &#34;purpose&#34;: 0}], &#34;gtm&#34;: [], &#34;parameters&#34;: {&#34;internalUser&#34;: &#34;False&#34;, &#34;language&#34;: {&#34;machineTranslated&#34;: &#34;False&#34;, &#34;requested&#34;: &#34;es-419&#34;, &#34;served&#34;: &#34;es-419&#34;}, &#34;pageType&#34;: &#34;codelab&#34;, &#34;projectName&#34;: null, &#34;signedIn&#34;: &#34;False&#34;, &#34;tenant&#34;: &#34;android&#34;, &#34;recommendations&#34;: {&#34;sourcePage&#34;: &#34;&#34;, &#34;sourceType&#34;: 0, &#34;sourceRank&#34;: 0, &#34;sourceIdenticalDescriptions&#34;: 0, &#34;sourceTitleWords&#34;: 0, &#34;sourceDescriptionWords&#34;: 0, &#34;experiment&#34;: &#34;&#34;}, &#34;experiment&#34;: {&#34;ids&#34;: &#34;&#34;}}}</script>
+      
+    </devsite-analytics>
+    
+      <devsite-badger></devsite-badger>
+    
+    
+    
+<android-fully-clickable
+    target="
+        .android-case-study .devsite-landing-row-item,
+        .android-editorial-and-updates-cards .devsite-card-content-wrapper,
+        .android-editorial-and-updates-cards .devsite-landing-row-item,
+        .android-grouped-resources .devsite-landing-row-item,
+        .android-grouped-resources-contained--primary .devsite-landing-row-item,
+        .android-grouped-resources-contained--secondary .devsite-landing-row-item,
+        .android-grouped-resources-contained--tertiary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--primary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--secondary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--tertiary .devsite-landing-row-item,
+        .android-guide-cards .devsite-landing-row-item,
+        .android-illustrated-resources-index .devsite-landing-row-item,
+        .android-illustrated-resources-primary .devsite-landing-row-item,
+        .android-illustrated-resources-secondary .devsite-landing-row-item,
+        .android-illustrated-resources-secondary-small .devsite-landing-row-item,
+        .android-illustrated-resources-tertiary .devsite-landing-row-item,
+        .android-illustrated-resources-tertiary-small .devsite-landing-row-item,
+        .android-promo .devsite-landing-row-item,
+        .android-quick-link,
+        .android-samples .devsite-card-wrapper,
+        .fully-clickable"
+    watch=".android-editorial-and-updates-cards, .android-samples, devsite-content"></android-fully-clickable>
+    
+<script nonce="ColABY9BYQwDmyYYuKG+KrDXTw41+D">
+  
+  (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+    t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+    E.parentNode.insertBefore(t,E);})(window, document, 'script',
+    'https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/js/app_loader.js', '[3,"es_419",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android","https://android-dot-devsite-v2-prod.appspot.com",1,null,["/_pwa/android/manifest.json","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/favicon.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png","https://fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,600italic,700,700italic|Roboto+Mono:400,500,700&display=swap"],1,null,[1,6,8,12,14,17,21,25,50,52,63,70,75,76,80,87,91,92,93,97,98,100,101,102,103,104,105,107,108,109,110,112,113,116,117,118,120,122,124,125,126,127,129,130,131,132,133,134,135,136,138,140,141,147,148,149,151,152,156,157,158,159,161,163,164,168,169,170,179,180,182,183,186,191,193,196],"AIzaSyAP-jjEJBzmIyKR4F-3XITp8yM9T1gEEI8","AIzaSyB6xiKGDR5O3Ak2okS4rLkauxGUG7XP0hg","developer.android.com","AIzaSyAQk0fBONSGUqCNznf6Krs82Ap1-NV6J4o","AIzaSyCCxcqdrZ_7QMeLCRY20bh_SXdAYqy70KY",null,null,null,["Cloud__enable_cloud_shell_fte_user_flow","MiscFeatureFlags__enable_appearance_cookies","DevPro__enable_vertex_credit_card","MiscFeatureFlags__enable_dark_theme","EngEduTelemetry__enable_engedu_telemetry","Profiles__enable_stripe_subscription_management","Profiles__enable_page_saving","DevPro__enable_code_assist","TpcFeatures__enable_unmirrored_page_left_nav","Cloud__enable_legacy_calculator_redirect","MiscFeatureFlags__enable_project_variables","DevPro__remove_eu_tax_intake_form","Profiles__enable_playlist_community_acl","MiscFeatureFlags__enable_variable_operator_index_yaml","Concierge__enable_pushui","Cloud__enable_cloud_dlp_service","Search__enable_page_map","MiscFeatureFlags__developers_footer_image","MiscFeatureFlags__developers_footer_dark_image","DevPro__enable_devpro_offers","Profiles__enable_purchase_prompts","Profiles__enable_join_program_group_endpoint","DevPro__enable_nvidia_credits_card","DevPro__enable_google_one_card","Cloud__fast_free_trial","Profiles__enable_developer_profiles_callout","MiscFeatureFlags__enable_view_transitions","MiscFeatureFlags__enable_project_body_class","MiscFeatureFlags__enable_firebase_utm","Profiles__require_profile_eligibility_for_signin","Cloud__enable_free_trial_server_call","Profiles__enable_completequiz_endpoint","DevPro__enable_free_benefits","Profiles__enable_recognition_badges","MiscFeatureFlags__gdp_dashboard_reskin_enabled","MiscFeatureFlags__enable_explicit_template_dependencies","Profiles__enable_completecodelab_endpoint","MiscFeatureFlags__emergency_css","Profiles__enable_callout_notifications","BookNav__enable_tenant_cache_key","Profiles__enable_developer_profile_benefits_ui_redesign","DevPro__enable_enterprise","Profiles__enable_awarding_url","Concierge__enable_remove_info_panel_tags","DevPro__enable_firebase_workspaces_card","DevPro__enable_embed_profile_creation","Significatio__enable_by_tenant","Search__enable_suggestions_from_borg","Search__enable_dynamic_content_confidential_banner","CloudShell__cloud_shell_button","TpcFeatures__proxy_prod_host","CloudShell__cloud_code_overflow_menu","Profiles__enable_profile_collections","Cloud__enable_cloudx_experiment_ids","Profiles__enable_user_type","Profiles__enable_release_notes_notifications","Search__enable_ai_search_summaries_for_all","Experiments__reqs_query_experiments","DevPro__enable_cloud_innovators_plus","Concierge__enable_actions_menu","Search__enable_ai_eligibility_checks","Analytics__enable_clearcut_logging","Profiles__enable_dashboard_curated_recommendations","Cloud__enable_llm_concierge_chat","DevPro__enable_google_payments_buyflow","Cloud__enable_cloud_shell","Profiles__enable_complete_playlist_endpoint","Cloud__cache_serialized_dynamic_content","MiscFeatureFlags__enable_variable_operator","DevPro__enable_developer_subscriptions","MiscFeatureFlags__enable_framebox_badge_methods","Profiles__enable_public_developer_profiles"],null,null,"AIzaSyBLEMok-5suZ67qRPzx0qUtbnLmyT_kCVE","https://developerscontentserving-pa.googleapis.com","AIzaSyCM4QpTRSqP5qI4Dvjt4OAScIN8sOUlO-k","https://developerscontentsearch-pa.googleapis.com",2,4,null,"https://developerprofiles-pa.googleapis.com",[3,"android","Android Developers","developer.android.com",null,"android-dot-devsite-v2-prod.appspot.com",null,null,[null,1,null,null,null,null,null,null,null,null,null,[1],null,null,null,null,null,null,[1],[1,null,null,[1,20],"/recommendations"],null,null,null,[1,null,1],[1,1,null,1,1]],null,[18,null,null,null,null,null,"/images/lockup.png","/images/touchicon-180.png",null,null,null,null,null,null,null,null,null,null,null,null,null,2,null,null,null,"/images/lockup-dark-theme.png",[]],[],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[6,1,14,15,20,22,23,28,29,37,43],null,[[null,null,1],[1,1]],[[null,null,null,null,null,null,null,[["G-QFRN08RN6E"],null,null,[["G-QFRN08RN6E",1]]],null,null,null,null,1],null,[[1,1],[2,2]]],null,4,null,null,null,null,null,null,null,null,null,null,null,null,null,"android.devsite.google"],null,"pk_live_5170syrHvgGVmSx9sBrnWtA5luvk9BwnVcvIi7HizpwauFG96WedXsuXh790rtij9AmGllqPtMLfhe2RSwD6Pn38V00uBCydV4m",1,null,"https://developerscontentinsights-pa.googleapis.com","AIzaSyCg-ZUslalsEbXMfIo9ZP8qufZgo3LSBDU","AIzaSyDxT0vkxnY_KeINtA4LSePJO-4MAZPMRsE","https://developers.googleapis.com",null,null,"AIzaSyBQom12tzI-rybN7Sf-KfeL4nwm-Rf7PmI\n",null,"https://developerslogging.googleapis.com"]')
+  
+</script>
+
+    <devsite-a11y-announce></devsite-a11y-announce>
+  </body>
+</html>

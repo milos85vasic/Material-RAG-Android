@@ -1,0 +1,2124 @@
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html 
+      lang="zh-TW-x-mtfrom-en"
+      dir="ltr">
+  <head>
+    <meta name="google-signin-client-id" content="721724668570-nbkv1cfusk7kk4eni4pjvepaus73b13t.apps.googleusercontent.com">
+    <meta name="google-signin-scope"
+          content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award">
+    <meta property="og:site_name" content="Android Developers">
+    <meta property="og:type" content="website"><meta name="theme-color" content="#34a853"><meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <link rel="manifest" href="/_pwa/android/manifest.json"
+          crossorigin="use-credentials">
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="//apis.google.com" crossorigin>
+    <link rel="preconnect" href="//www.google-analytics.com" crossorigin><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,600italic,700,700italic|Roboto+Mono:400,500,700&display=swap">
+      <link rel="stylesheet"
+            href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block"><link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/css/app.css">
+      
+        <link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/css/dark-theme.css" disabled>
+      <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/favicon.svg">
+    <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/touchicon-180.png"><link rel="canonical" href="https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app?hl=zh-tw"><link rel="search" type="application/opensearchdescription+xml"
+            title="Android Developers" href="https://developer.android.com/s/opensearch.xml?hl=zh-tw">
+      <link rel="alternate" hreflang="en"
+          href="https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app" /><link rel="alternate" hreflang="x-default" href="https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app" /><link rel="alternate" hreflang="zh-Hans"
+          href="https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app?hl=zh-cn" /><link rel="alternate" hreflang="zh-Hant"
+          href="https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app?hl=zh-tw" /><link rel="alternate" hreflang="fr"
+          href="https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app?hl=fr" /><link rel="alternate" hreflang="id"
+          href="https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app?hl=id" /><link rel="alternate" hreflang="ja"
+          href="https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app?hl=ja" /><link rel="alternate" hreflang="ko"
+          href="https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app?hl=ko" /><link rel="alternate" hreflang="pt-BR"
+          href="https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app?hl=pt-br" /><link rel="alternate" hreflang="es-419"
+          href="https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app?hl=es-419" /><link rel="alternate" hreflang="vi"
+          href="https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app?hl=vi" /><title>建立第一個 Android 應用程式 &nbsp;|&nbsp; Android Developers</title>
+
+<meta property="og:title" content="建立第一個 Android 應用程式 &nbsp;|&nbsp; Android Developers"><meta name="description" content="瞭解如何建立您的第一個 Android 應用程式。">
+  <meta property="og:description" content="瞭解如何建立您的第一個 Android 應用程式。"><meta property="og:url" content="https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app?hl=zh-tw"><meta property="og:locale" content="zh_tw"><link rel="alternate machine-translated-from" hreflang="en"
+        href="https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app?hl=en">
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+
+    
+      <link rel="stylesheet" href="/extras.css"></head>
+  <body class=""
+        template="codelab"
+        theme="android-theme"
+        type="codelab"
+        
+        
+        appearance
+        
+        layout="docs"
+        
+        
+        
+        
+        display-toc
+        pending>
+  
+    <devsite-progress type="indeterminate" id="app-progress"></devsite-progress>
+  
+  
+    <a href="#main-content" class="skip-link button">
+      
+      跳至主要內容
+    </a>
+    <section class="devsite-wrapper">
+      <devsite-cookie-notification-bar></devsite-cookie-notification-bar><devsite-header role="banner">
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-header--inner" data-nosnippet>
+  <div class="devsite-top-logo-row-wrapper-wrapper">
+    <div class="devsite-top-logo-row-wrapper">
+      <div class="devsite-top-logo-row">
+        <button type="button" id="devsite-hamburger-menu"
+          class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+          data-category="Site-Wide Custom Events"
+          data-label="Navigation menu button"
+          visually-hidden
+          aria-label="開啟選單">
+        </button>
+        
+<div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="androidDevelopers" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-dark-theme.png"
+            media="(prefers-color-scheme: dark)"
+            class="devsite-dark-theme">
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png" class="devsite-site-logo" alt="Android Developers">
+  </picture>
+  
+</a>
+
+
+
+</div>
+        <div class="devsite-top-logo-row-middle">
+          <div class="devsite-header-upper-tabs">
+            
+           </div>
+          
+<devsite-search
+    enable-signin
+    enable-search
+    enable-suggestions
+      enable-query-completion
+    
+    enable-search-summaries
+    
+    tenant-name="Android Developers"
+    
+    
+    
+    
+    
+    >
+  <form class="devsite-search-form" action="https://developer.android.com/s/results?hl=zh-tw" method="GET">
+    <div class="devsite-search-container">
+      <button type="button"
+              search-open
+              class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+              
+              aria-label="開啟搜尋"></button>
+      <div class="devsite-searchbox">
+        <input
+          aria-activedescendant=""
+          aria-autocomplete="list"
+          
+          aria-label="搜尋結果"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          autocomplete="off"
+          class="devsite-search-field devsite-search-query"
+          name="q"
+          
+          placeholder="搜尋結果"
+          role="combobox"
+          type="text"
+          value=""
+          >
+          <div class="devsite-search-image material-icons" aria-hidden="true">
+            
+              <svg class="devsite-search-ai-image" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_6641_386)">
+                    <path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14167 15.375 4.875 14.125C3.625 12.8583 3 11.3167 3 9.5C3 7.68333 3.625 6.15 4.875 4.9C6.14167 3.63333 7.68333 3 9.5 3C10.0167 3 10.5167 3.05833 11 3.175C11.4833 3.275 11.9417 3.43333 12.375 3.65L10.825 5.2C10.6083 5.13333 10.3917 5.08333 10.175 5.05C9.95833 5.01667 9.73333 5 9.5 5C8.25 5 7.18333 5.44167 6.3 6.325C5.43333 7.19167 5 8.25 5 9.5C5 10.75 5.43333 11.8167 6.3 12.7C7.18333 13.5667 8.25 14 9.5 14C10.6667 14 11.6667 13.625 12.5 12.875C13.35 12.1083 13.8417 11.15 13.975 10H15.975C15.925 10.6333 15.7833 11.2333 15.55 11.8C15.3333 12.3667 15.05 12.8667 14.7 13.3L21 19.6L19.6 21ZM17.5 12C17.5 10.4667 16.9667 9.16667 15.9 8.1C14.8333 7.03333 13.5333 6.5 12 6.5C13.5333 6.5 14.8333 5.96667 15.9 4.9C16.9667 3.83333 17.5 2.53333 17.5 0.999999C17.5 2.53333 18.0333 3.83333 19.1 4.9C20.1667 5.96667 21.4667 6.5 23 6.5C21.4667 6.5 20.1667 7.03333 19.1 8.1C18.0333 9.16667 17.5 10.4667 17.5 12Z" fill="#5F6368"/>
+                  </g>
+                <defs>
+                <clipPath id="clip0_6641_386">
+                <rect width="24" height="24" fill="white"/>
+                </clipPath>
+                </defs>
+              </svg>
+            
+          </div>
+          <div class="devsite-search-shortcut-icon-container" aria-hidden="true">
+            <kbd class="devsite-search-shortcut-icon">/</kbd>
+          </div>
+      </div>
+    </div>
+  </form>
+  <button type="button"
+          search-close
+          class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+          
+          aria-label="關閉搜尋"></button>
+</devsite-search>
+
+        </div>
+
+        
+
+          
+
+          
+
+          <devsite-appearance-selector></devsite-appearance-selector>
+
+          
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+
+          
+            <a class="devsite-header-link devsite-top-button button gc-analytics-event "
+    href="https://developer.android.com/studio?hl=zh-tw"
+    data-category="Site-Wide Custom Events"
+    data-label="Site header link: Android Studio"
+    >
+  Android Studio
+</a>
+          
+
+        
+
+        
+          <devsite-user 
+                        
+                        
+                          enable-profiles
+                        
+                        
+                        id="devsite-user">
+            
+              
+              <span class="button devsite-top-button" aria-hidden="true" visually-hidden>登入</span>
+            
+          </devsite-user>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
+  
+</devsite-header>
+      <devsite-book-nav scrollbars hidden>
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-book-nav-filter"
+     hidden>
+  <span class="filter-list-icon material-icons" aria-hidden="true"></span>
+  <input type="text"
+         placeholder="篩選器"
+         
+         aria-label="篩選類型"
+         role="searchbox">
+  
+  <span class="filter-clear-button hidden"
+        data-title="清除篩選器"
+        aria-label="清除篩選器"
+        role="button"
+        tabindex="0"></span>
+</div>
+
+<nav class="devsite-book-nav devsite-nav nocontent"
+     aria-label="側邊選單">
+  <div class="devsite-mobile-header">
+    <button type="button"
+            id="devsite-close-nav"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Close navigation"
+            aria-label="關閉導覽列">
+    </button>
+    <div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="androidDevelopers" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-dark-theme.png"
+            media="(prefers-color-scheme: dark)"
+            class="devsite-dark-theme">
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png" class="devsite-site-logo" alt="Android Developers">
+  </picture>
+  
+</a>
+
+
+</div>
+  </div>
+
+  <div class="devsite-book-nav-wrapper">
+    <div class="devsite-mobile-nav-top">
+      
+        <ul class="devsite-nav-list">
+          
+          
+    
+    
+<li class="devsite-nav-item">
+
+  
+  <a href="/studio"
+    
+       class="devsite-nav-title gc-analytics-event "
+    
+
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Android Studio"
+     track-type="navMenu"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Android Studio
+   </span>
+    
+  
+  </a>
+  
+
+</li>
+
+  
+          
+        </ul>
+      
+    </div>
+    
+  </div>
+</nav>
+        
+      </devsite-book-nav>
+      <section id="gc-wrapper">
+        <main role="main" id="main-content" class="devsite-main-content"
+            
+              
+              has-sidebar
+            >
+          <div class="devsite-sidebar">
+            <div class="devsite-sidebar-content">
+                
+                <devsite-toc class="devsite-nav"
+                            role="navigation"
+                            aria-label="這個頁面中的內容"
+                            depth="1"
+                            scrollbars
+                  ></devsite-toc>
+                <devsite-recommendations-sidebar class="nocontent devsite-nav">
+                </devsite-recommendations-sidebar>
+            </div>
+          </div>
+          <devsite-content>
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="devsite-article"><style>
+      body {
+        transition: opacity ease-in 0.2s;
+      }
+
+      body[unresolved] {
+        opacity: 0;
+        display: block;
+        overflow: hidden;
+        position: relative;
+      }
+      </style>
+  
+  
+  
+  
+  
+
+  <div class="devsite-article-meta nocontent" role="navigation">
+    
+    
+    <ul class="devsite-breadcrumb-list"
+  >
+  
+</ul>
+    
+  </div>
+  
+    <h1 class="devsite-page-title" tabindex="-1">
+      建立第一個 Android 應用程式<div class="devsite-actions" hidden data-nosnippet><devsite-feature-tooltip
+      ack-key="AckCollectionsBookmarkTooltipDismiss"
+      analytics-category="Site-Wide Custom Events"
+      analytics-action-show="Callout Profile displayed"
+      analytics-action-close="Callout Profile dismissed"
+      analytics-label="Create Collection Callout"
+      class="devsite-page-bookmark-tooltip nocontent"
+      dismiss-button="true"
+      id="devsite-collections-dropdown"
+      
+      dismiss-button-text="關閉"
+
+      
+      close-button-text="我知道了">
+
+    
+    
+      <devsite-bookmark></devsite-bookmark>
+    
+
+    <span slot="popout-heading">
+      
+      透過集合功能整理內容
+    </span>
+    <span slot="popout-contents">
+      
+      你可以依據偏好儲存及分類內容。
+    </span>
+  </devsite-feature-tooltip></div>
+  
+      
+    </h1>
+  
+
+  <devsite-toc class="devsite-nav"
+    depth="1"
+    devsite-toc-embedded
+    >
+  </devsite-toc>
+  
+    
+  <div class="devsite-article-body clearfix
+  ">
+
+  
+    
+    
+    
+    <google-codelab-analytics ga4id="G-JTFZSJVVVZ" gaid="UA-49880327-14"></google-codelab-analytics>
+    <google-codelab category="android,kotlin" codelab-ga4id="" codelab-gaid="UA-81734179-1" doc-id="1sLAhEuFFZ90J8SWZ6LxAkihZnkRSH3QxlA2i_HMpQW0" environment="web" feedback-link="https://github.com/google-developer-training/basic-android-kotlin-compose-birthday-card-app/issues/new?assignees=&amp;labels=&amp;template=Create&#43;your&#43;first&#43;Android&#43;app.md&amp;title=First&#43;Android&#43;app%3A&#43;Android&#43;Basics&#43;with&#43;Compose" id="/codelabs/basic-android-kotlin-compose-first-app" layout="paginated" no-tooltip="" title="建立第一個 Android 應用程式">
+      
+        <google-codelab-step duration="0" step="0" label="事前準備">
+          
+            <google-codelab-about authors="Google Developers Training team" last-updated="2025-05-01T21:00:36Z" codelab-title="建立第一個 Android 應用程式">
+            </google-codelab-about>
+          
+          <h2 class="step-title" data-text="               1. 事前準備" id="0" tabindex="-1">
+              1. 事前準備</h2>
+          <p>在電腦上安裝 <a href="https://developer.android.com/studio?hl=zh-tw" target="_blank">Android Studio</a> (如果尚未安裝)。確認電腦符合執行 Android Studio 的系統需求 (位於下載頁面的底部)。如需設定程序的詳細操作說明，請查看「<a href="https://developer.android.com/courses/pathways/android-basics-compose-unit-1-pathway-2?hl=zh-tw" target="_blank">下載並安裝 Android Studio</a>」程式碼實驗室。</p>
+<p>在這個程式碼實驗室中，您將使用 Android Studio 提供的專案範本建立第一個 Android 應用程式。您可以透過 Kotlin 和 Jetpack Compose 自訂應用程式。請注意，Android Studio 會更新，有時使用者介面也會變更，所以如果 Android Studio 和這個程式碼實驗室中的螢幕截圖稍有不同，也屬於正常情況。</p>
+<h2 data-text="必要條件" id="prerequisites" is-upgraded="" tabindex="-1">必要條件</h2>
+<ul>
+<li>具備 Kotlin 基本知識</li>
+</ul>
+<h2 data-text="軟硬體需求" id="what-youll-need" is-upgraded="" tabindex="-1">軟硬體需求</h2>
+<ul>
+<li>最新版 Android Studio</li>
+</ul>
+<h2 class="checklist" data-text="課程內容" id="what-youll-learn" is-upgraded="" tabindex="-1">課程內容</h2>
+<ul class="checklist">
+<li>如何使用 Android Studio 建立 Android 應用程式</li>
+<li>如何在 Android Studio 中使用預覽工具執行應用程式</li>
+<li>如何使用 Kotlin 更新文字</li>
+<li>如何使用 Jetpack Compose 更新使用者介面 (UI)</li>
+<li>如何在 Jetpack Compose 中使用預覽功能預覽應用程式</li>
+</ul>
+<h2 data-text="建構項目" id="what-youll-build" is-upgraded="" tabindex="-1">建構項目</h2>
+<ul>
+<li>這款應用程式可讓您自訂簡介！</li>
+</ul>
+<p>完成這個程式碼實驗室後，您所建構的應用程式外觀看起來會如下所示 (不過系統會用您的名稱自訂！)：</p>
+<p class="image-container"><img alt="13957184d295b16f.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/13957184d295b16f.png?hl=zh-tw" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/13957184d295b16f_36.png?hl=zh-tw 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/13957184d295b16f_48.png?hl=zh-tw 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/13957184d295b16f_72.png?hl=zh-tw 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/13957184d295b16f_96.png?hl=zh-tw 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/13957184d295b16f_480.png?hl=zh-tw 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/13957184d295b16f_720.png?hl=zh-tw 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/13957184d295b16f_856.png?hl=zh-tw 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/13957184d295b16f_960.png?hl=zh-tw 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/13957184d295b16f_1440.png?hl=zh-tw 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/13957184d295b16f_1920.png?hl=zh-tw 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/13957184d295b16f_2880.png?hl=zh-tw 2880w" style="width: 624.00px" /></p>
+<h2 data-text="軟硬體需求" id="what-youll-need_1" is-upgraded="" tabindex="-1">軟硬體需求</h2>
+<ul>
+<li>已安裝 <a href="https://developer.android.com/studio?hl=zh-tw" target="_blank">Android Studio</a> 的電腦。</li>
+</ul>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="0" step="1" label="使用範本建立專案">
+          
+          <h2 class="step-title" data-text="               2. 使用範本建立專案           " id="1" tabindex="-1">
+              2. 使用範本建立專案
+          </h2>
+          <p>在這個程式碼實驗室中，您將使用 Android Studio 提供的 <strong>Empty Activity</strong> 專案範本建立 Android 應用程式。</p>
+<p>如要在 Android Studio 中建立專案，請按以下步驟操作：</p>
+<ol type="1">
+<li>按兩下 Android Studio 圖示來啟動 Android Studio。</li>
+</ol>
+<p class="image-container"><img alt="4853d32c0c91ae24.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4853d32c0c91ae24.png?hl=zh-tw" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4853d32c0c91ae24_36.png?hl=zh-tw 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4853d32c0c91ae24_48.png?hl=zh-tw 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4853d32c0c91ae24_72.png?hl=zh-tw 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4853d32c0c91ae24_96.png?hl=zh-tw 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4853d32c0c91ae24_480.png?hl=zh-tw 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4853d32c0c91ae24_720.png?hl=zh-tw 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4853d32c0c91ae24_856.png?hl=zh-tw 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4853d32c0c91ae24_960.png?hl=zh-tw 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4853d32c0c91ae24_1440.png?hl=zh-tw 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4853d32c0c91ae24_1920.png?hl=zh-tw 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4853d32c0c91ae24_2880.png?hl=zh-tw 2880w" style="width: 250.00px" title="Android Studio 圖示" /></p>
+<ol start="2" type="1">
+<li>在「Welcome to Android Studio」<strong></strong>對話方塊中，點擊「New Project」<strong></strong>。</li>
+</ol>
+<p class="image-container"><img alt="687a108b17ba9b20.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/687a108b17ba9b20.png?hl=zh-tw" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/687a108b17ba9b20_36.png?hl=zh-tw 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/687a108b17ba9b20_48.png?hl=zh-tw 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/687a108b17ba9b20_72.png?hl=zh-tw 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/687a108b17ba9b20_96.png?hl=zh-tw 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/687a108b17ba9b20_480.png?hl=zh-tw 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/687a108b17ba9b20_720.png?hl=zh-tw 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/687a108b17ba9b20_856.png?hl=zh-tw 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/687a108b17ba9b20_960.png?hl=zh-tw 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/687a108b17ba9b20_1440.png?hl=zh-tw 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/687a108b17ba9b20_1920.png?hl=zh-tw 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/687a108b17ba9b20_2880.png?hl=zh-tw 2880w" style="width: 576.00px" /></p>
+<p>「New Project」<strong></strong>視窗隨即開啟，其中列出 Android Studio 提供的範本清單。</p>
+<p class="image-container"><img alt="2411487f7f8d88c0.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2411487f7f8d88c0.png?hl=zh-tw" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2411487f7f8d88c0_36.png?hl=zh-tw 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2411487f7f8d88c0_48.png?hl=zh-tw 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2411487f7f8d88c0_72.png?hl=zh-tw 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2411487f7f8d88c0_96.png?hl=zh-tw 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2411487f7f8d88c0_480.png?hl=zh-tw 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2411487f7f8d88c0_720.png?hl=zh-tw 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2411487f7f8d88c0_856.png?hl=zh-tw 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2411487f7f8d88c0_960.png?hl=zh-tw 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2411487f7f8d88c0_1440.png?hl=zh-tw 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2411487f7f8d88c0_1920.png?hl=zh-tw 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2411487f7f8d88c0_2880.png?hl=zh-tw 2880w" style="width: 624.00px" /></p>
+<p>在 Android Studio 中，專案範本是一個可為特定類型應用程式提供藍圖的 Android 專案。範本可用來建立專案的結構，以及 Android Studio 建立專案所需的檔案。系統會根據您選擇的範本提供對應的範例程式碼，以便您能更快上手。</p>
+<ol start="3" type="1">
+<li>確認已選取「Phone and Tablet」<strong></strong>分頁標籤。</li>
+<li>點擊「Empty Activity」<strong></strong>範本，選取該範本做為專案的範本。「Empty Activity」<strong></strong>範本用來建立簡易專案，您可以用它建構 Compose 應用程式。這個範本只有單一螢幕畫面，並顯示「<code dir="ltr" translate="no">"Hello</code> <code dir="ltr" translate="no">Android!"</code>」文字。</li>
+<li>按一下「Next」<strong></strong>。「New Project」<strong></strong>對話方塊隨即會開啟。您可以使用以下欄位來設定專案。</li>
+<li>請按以下方式設定專案：</li>
+</ol>
+<p>「Name」<strong></strong>欄位用於輸入專案名稱。在這個程式碼實驗室中，請輸入「Greeting Card」。</p>
+<p>保持「Package name」<strong></strong>欄位內容不變。這個欄位用於指定檔案在檔案結構中的整理方式。在此例中，套件名稱為 <code dir="ltr" translate="no">com.example.greetingcard</code>。</p>
+<p>保持「Save location」欄位內容不變。<strong></strong>其中包含的位置用於指定與專案相關的所有檔案儲存在什麼地方。請記下檔案在電腦上的儲存位置，以方便尋找。</p>
+<p>從「Minimum SDK」<strong></strong>欄位提供的選單中選取「API 24: Android 7.0 (Nougat)」<strong></strong>。「Minimum SDK」<a href="https://developer.android.com/guide/topics/manifest/uses-sdk-element?hl=zh-tw" target="_blank"></a>代表執行應用程式所需的 Android 最低版本要求。</p>
+<p class="image-container"><img alt="4b0786fccfc883fe.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4b0786fccfc883fe.png?hl=zh-tw" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4b0786fccfc883fe_36.png?hl=zh-tw 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4b0786fccfc883fe_48.png?hl=zh-tw 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4b0786fccfc883fe_72.png?hl=zh-tw 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4b0786fccfc883fe_96.png?hl=zh-tw 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4b0786fccfc883fe_480.png?hl=zh-tw 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4b0786fccfc883fe_720.png?hl=zh-tw 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4b0786fccfc883fe_856.png?hl=zh-tw 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4b0786fccfc883fe_960.png?hl=zh-tw 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4b0786fccfc883fe_1440.png?hl=zh-tw 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4b0786fccfc883fe_1920.png?hl=zh-tw 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4b0786fccfc883fe_2880.png?hl=zh-tw 2880w" style="width: 624.00px" /></p>
+<ol start="7" type="1">
+<li>按一下「Finish」<strong></strong>。這個過程可能需要一些時間，可以喝杯茶，耐心等待！在 Android Studio 設定期間，系統會顯示進度列和訊息，指出 Android Studio 是否仍在設定您的專案。畫面可能會如下所示：</li>
+</ol>
+<p class="image-container"><img 2="" alt="這張圖片顯示進度列旁出現旋轉的圓圈，並顯示文字" processes="" running..."."="" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/68405342ab13c821.png?hl=zh-tw" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/68405342ab13c821_36.png?hl=zh-tw 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/68405342ab13c821_48.png?hl=zh-tw 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/68405342ab13c821_72.png?hl=zh-tw 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/68405342ab13c821_96.png?hl=zh-tw 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/68405342ab13c821_480.png?hl=zh-tw 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/68405342ab13c821_720.png?hl=zh-tw 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/68405342ab13c821_856.png?hl=zh-tw 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/68405342ab13c821_960.png?hl=zh-tw 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/68405342ab13c821_1440.png?hl=zh-tw 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/68405342ab13c821_1920.png?hl=zh-tw 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/68405342ab13c821_2880.png?hl=zh-tw 2880w" style="width: 312.00px" title="Android Studio 進度列" /></p>
+<p>建立專案設定時，系統會顯示類似以下內容的通知訊息。</p>
+<p class="image-container"><img 44s="" 546="" alt="這張圖片顯示 Gradle 同步訊息，訊息文字為" finished="" gradle="" in="" ms"."="" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3558f61a535db5d1.png?hl=zh-tw" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3558f61a535db5d1_36.png?hl=zh-tw 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3558f61a535db5d1_48.png?hl=zh-tw 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3558f61a535db5d1_72.png?hl=zh-tw 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3558f61a535db5d1_96.png?hl=zh-tw 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3558f61a535db5d1_480.png?hl=zh-tw 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3558f61a535db5d1_720.png?hl=zh-tw 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3558f61a535db5d1_856.png?hl=zh-tw 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3558f61a535db5d1_960.png?hl=zh-tw 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3558f61a535db5d1_1440.png?hl=zh-tw 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3558f61a535db5d1_1920.png?hl=zh-tw 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3558f61a535db5d1_2880.png?hl=zh-tw 2880w" style="width: 492.00px" sync="" title="Gradle 同步訊息" /></p>
+<ol start="8" type="1">
+<li>您可能會看到「What's New」<strong></strong>窗格，其中包含 Android Studio 新功能的最新消息。現階段請關閉此窗格。</li>
+</ol>
+<p class="image-container"><img alt="c4b2b7748563ebb7.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c4b2b7748563ebb7.png?hl=zh-tw" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c4b2b7748563ebb7_36.png?hl=zh-tw 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c4b2b7748563ebb7_48.png?hl=zh-tw 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c4b2b7748563ebb7_72.png?hl=zh-tw 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c4b2b7748563ebb7_96.png?hl=zh-tw 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c4b2b7748563ebb7_480.png?hl=zh-tw 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c4b2b7748563ebb7_720.png?hl=zh-tw 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c4b2b7748563ebb7_856.png?hl=zh-tw 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c4b2b7748563ebb7_960.png?hl=zh-tw 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c4b2b7748563ebb7_1440.png?hl=zh-tw 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c4b2b7748563ebb7_1920.png?hl=zh-tw 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c4b2b7748563ebb7_2880.png?hl=zh-tw 2880w" style="width: 384.00px" /></p>
+<ol start="9" type="1">
+<li>點擊 Android Studio 右上方的「Split」<strong></strong>，即可同時查看程式碼和設計。您也可以點擊「Code」<strong></strong>只查看程式碼，或點擊「Design」<strong></strong>只查看設計。</li>
+</ol>
+<p class="image-container"><img alt="b17a701425679ff1.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/b17a701425679ff1.png?hl=zh-tw" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/b17a701425679ff1_36.png?hl=zh-tw 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/b17a701425679ff1_48.png?hl=zh-tw 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/b17a701425679ff1_72.png?hl=zh-tw 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/b17a701425679ff1_96.png?hl=zh-tw 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/b17a701425679ff1_480.png?hl=zh-tw 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/b17a701425679ff1_720.png?hl=zh-tw 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/b17a701425679ff1_856.png?hl=zh-tw 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/b17a701425679ff1_960.png?hl=zh-tw 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/b17a701425679ff1_1440.png?hl=zh-tw 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/b17a701425679ff1_1920.png?hl=zh-tw 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/b17a701425679ff1_2880.png?hl=zh-tw 2880w" style="width: 198.00px" /></p>
+<p>按「Split」<strong></strong>後，您應該會看到三個區域：</p>
+<p class="image-container"><img alt="c24906abb54b261a.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c24906abb54b261a.png?hl=zh-tw" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c24906abb54b261a_36.png?hl=zh-tw 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c24906abb54b261a_48.png?hl=zh-tw 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c24906abb54b261a_72.png?hl=zh-tw 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c24906abb54b261a_96.png?hl=zh-tw 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c24906abb54b261a_480.png?hl=zh-tw 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c24906abb54b261a_720.png?hl=zh-tw 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c24906abb54b261a_856.png?hl=zh-tw 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c24906abb54b261a_960.png?hl=zh-tw 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c24906abb54b261a_1440.png?hl=zh-tw 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c24906abb54b261a_1920.png?hl=zh-tw 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c24906abb54b261a_2880.png?hl=zh-tw 2880w" style="width: 624.00px" /></p>
+<ul>
+<li>「Project」<strong></strong>檢視畫面 (1) 用於顯示專案的檔案和資料夾</li>
+<li>「Code」<strong></strong>檢視畫面 (2) 是您修改程式碼的地方</li>
+<li><strong></strong>「Design」檢視畫面 (3) 可讓您預覽應用程式的外觀</li>
+</ul>
+<p>在「Design」<strong></strong>檢視畫面中，您會看到一個顯示以下文字的空白窗格：</p>
+<p class="image-container"><img "build="" a="" alt="圖片上顯示的文字為" and="" be="" before="" below."="" build="" can="" displayed"="" is="" line="" needed="" on="" one="" preview="" refresh"="" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/38c4a624cae42640.png?hl=zh-tw" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/38c4a624cae42640_36.png?hl=zh-tw 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/38c4a624cae42640_48.png?hl=zh-tw 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/38c4a624cae42640_72.png?hl=zh-tw 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/38c4a624cae42640_96.png?hl=zh-tw 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/38c4a624cae42640_480.png?hl=zh-tw 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/38c4a624cae42640_720.png?hl=zh-tw 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/38c4a624cae42640_856.png?hl=zh-tw 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/38c4a624cae42640_960.png?hl=zh-tw 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/38c4a624cae42640_1440.png?hl=zh-tw 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/38c4a624cae42640_1920.png?hl=zh-tw 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/38c4a624cae42640_2880.png?hl=zh-tw 2880w" style="width: 462.00px" successful="" the="" title="「Design」窗格" /></p>
+<ol start="10" type="1">
+<li>點擊「Build &amp; Refresh」<strong></strong>。建構作業可能需要一段時間才能完成。完成後，預覽畫面就會顯示帶有「Hello Android!」<strong></strong>的文字方塊。「Empty Compose」活動包含建立這個應用程式所需的所有程式碼。</li>
+</ol>
+<p class="image-container"><img alt="a86077be9d06a909.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/a86077be9d06a909.png?hl=zh-tw" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/a86077be9d06a909_36.png?hl=zh-tw 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/a86077be9d06a909_48.png?hl=zh-tw 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/a86077be9d06a909_72.png?hl=zh-tw 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/a86077be9d06a909_96.png?hl=zh-tw 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/a86077be9d06a909_480.png?hl=zh-tw 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/a86077be9d06a909_720.png?hl=zh-tw 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/a86077be9d06a909_856.png?hl=zh-tw 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/a86077be9d06a909_960.png?hl=zh-tw 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/a86077be9d06a909_1440.png?hl=zh-tw 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/a86077be9d06a909_1920.png?hl=zh-tw 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/a86077be9d06a909_2880.png?hl=zh-tw 2880w" style="width: 624.00px" /></p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="0" step="2" label="尋找專案檔案">
+          
+          <h2 class="step-title" data-text="               3. 尋找專案檔案           " id="2" tabindex="-1">
+              3. 尋找專案檔案
+          </h2>
+          <p>在本節中，我們將進一步熟悉檔案結構，繼續探索 Android Studio。</p>
+<ol type="1">
+<li>在 Android Studio 中查看「Project」<strong></strong>分頁標籤。「Project」<strong></strong>分頁標籤會顯示專案的檔案和資料夾。設定專案時，套件名稱為 <strong>com.example.greetingcard</strong>。您可以在「Project」<strong></strong>分頁標籤中查看該套件。套件基本上就是程式碼所在的資料夾。Android Studio 會將專案整理成一個由一系列套裝組成的目錄結構。</li>
+<li>如有需要，請在「Project」<strong></strong>分頁標籤的下拉式選單中選取「Android」<strong></strong>。</li>
+</ol>
+<p class="image-container"><img alt="52051aa2a3038b89.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/52051aa2a3038b89.png?hl=zh-tw" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/52051aa2a3038b89_36.png?hl=zh-tw 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/52051aa2a3038b89_48.png?hl=zh-tw 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/52051aa2a3038b89_72.png?hl=zh-tw 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/52051aa2a3038b89_96.png?hl=zh-tw 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/52051aa2a3038b89_480.png?hl=zh-tw 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/52051aa2a3038b89_720.png?hl=zh-tw 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/52051aa2a3038b89_856.png?hl=zh-tw 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/52051aa2a3038b89_960.png?hl=zh-tw 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/52051aa2a3038b89_1440.png?hl=zh-tw 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/52051aa2a3038b89_1920.png?hl=zh-tw 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/52051aa2a3038b89_2880.png?hl=zh-tw 2880w" style="width: 384.00px" /></p>
+<p>這就是您使用的檔案標準檢視和架構。它在為專案撰寫程式碼方面相當實用，因為您可以輕鬆存取將在應用程式中處理的檔案。不過，如果在檔案瀏覽器 (例如 Finder 或 Windows 檔案總管) 中查看檔案，檔案階層的結構會有所不同。</p>
+<ol start="3" type="1">
+<li>在下拉式選單中選取「Project Source Files」<strong></strong>。您現在可以像使用任何檔案瀏覽器一樣瀏覽檔案了。</li>
+</ol>
+<p class="image-container"><img alt="84dc993206449d28.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/84dc993206449d28.png?hl=zh-tw" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/84dc993206449d28_36.png?hl=zh-tw 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/84dc993206449d28_48.png?hl=zh-tw 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/84dc993206449d28_72.png?hl=zh-tw 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/84dc993206449d28_96.png?hl=zh-tw 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/84dc993206449d28_480.png?hl=zh-tw 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/84dc993206449d28_720.png?hl=zh-tw 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/84dc993206449d28_856.png?hl=zh-tw 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/84dc993206449d28_960.png?hl=zh-tw 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/84dc993206449d28_1440.png?hl=zh-tw 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/84dc993206449d28_1920.png?hl=zh-tw 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/84dc993206449d28_2880.png?hl=zh-tw 2880w" style="width: 384.00px" /></p>
+<ol start="4" type="1">
+<li>再次選取「Android」<strong>Android</strong>，以切換回前一個檢視畫面。您將在本課程中使用「Android」<strong>Android</strong>檢視畫面。如果檔案結構看起來很奇怪，請確認您目前是否仍在「Android」<strong>Android</strong>檢視畫面中。</li>
+</ol>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="0" step="3" label="更新文字">
+          
+          <h2 class="step-title" data-text="               4. 更新文字           " id="3" tabindex="-1">
+              4. 更新文字
+          </h2>
+          <p>認識 Android Studio 後，是時候開始製作賀卡了！</p>
+<p>查看 <code dir="ltr" translate="no">MainActivity.kt</code> 檔案的「Code」<strong></strong>檢視畫面。請注意，這段程式碼中含有一些自動產生的函式，具體而言就是 <code dir="ltr" translate="no">onCreate()</code> 和 <code dir="ltr" translate="no">setContent()</code> 函式。</p>
+<aside class="special"><p><strong>注意：</strong>請記住函式是程式中用於執行特定工作的部分。</p>
+</aside>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Kotlin"><code translate="no" dir="ltr"><span class="devsite-syntax-kd">class</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nc">MainActivity</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ComponentActivity</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-kd">override</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kd">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">onCreate</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">savedInstanceState</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Bundle?)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-k">super</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-na">onCreate</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">savedInstanceState</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">setContent</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">GreetingCardTheme</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-c1">// A surface container using the 'background' color from the theme</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-n">Surface</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-na">fillMaxSize</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-n">color</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">MaterialTheme</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-na">colorScheme</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-na">background</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-n">Greeting</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"Android"</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p><code dir="ltr" translate="no">onCreate()</code> 函式是這個 Android 應用程式的進入點，會呼叫其他函式來建立使用者介面。在 Kotlin 程式中，<code dir="ltr" translate="no">main()</code> 函式是執行作業的進入點/起點。在 Android 應用程式中，則是由 <code dir="ltr" translate="no">onCreate()</code> 函式擔任這個角色。</p>
+<p><code dir="ltr" translate="no">onCreate()</code> 函式中的 <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/platform/ComposeView?hl=zh-tw#setContent(kotlin.Function0)" target="_blank"><code dir="ltr" translate="no">setContent()</code></a> 函式用於透過可組合函式來定義版面配置。任何標有 <code dir="ltr" translate="no">@Composable</code> 註解的函式都可以透過 <code dir="ltr" translate="no">setContent()</code> 函式或其他可組合函式進行呼叫。該註解告知 Kotlin 編譯器 Jetpack Compose 使用這個函式來產生使用者介面。</p>
+<aside class="special"><p><strong>注意：</strong>編譯器會擷取您編寫的 Kotlin 程式碼、逐行檢查，然後再將其轉換成電腦能理解的內容。這個過程稱為程式碼編譯。</p>
+</aside>
+<p>接下來，請查看 <code dir="ltr" translate="no">Greeting()</code> 函式。<code dir="ltr" translate="no">Greeting()</code> 函式是可組合函式，請留意上方的 <code dir="ltr" translate="no">@Composable</code> 註解。可組合函式會接受部分輸入內容，並產生畫面上顯示的內容。</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Kotlin"><code translate="no" dir="ltr"><span class="devsite-syntax-nd">@Composable</span>
+<span class="devsite-syntax-kd">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">Greeting</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kt">String</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">Text</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">text</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"Hello </span><span class="devsite-syntax-si">$</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-s">!"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>雖然我們在前面已瞭解了函式 (如需複習，請參閱<a href="https://developer.android.com/codelabs/basic-android-kotlin-compose-functions?hl=zh-tw" target="_blank">「建立及使用 Kotlin 函式」這個程式碼實驗室</a>)，但可組合函式仍有些不同之處。</p>
+<p class="image-container"><img alt="178c1b8d480aefe2.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/178c1b8d480aefe2.png?hl=zh-tw" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/178c1b8d480aefe2_36.png?hl=zh-tw 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/178c1b8d480aefe2_48.png?hl=zh-tw 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/178c1b8d480aefe2_72.png?hl=zh-tw 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/178c1b8d480aefe2_96.png?hl=zh-tw 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/178c1b8d480aefe2_480.png?hl=zh-tw 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/178c1b8d480aefe2_720.png?hl=zh-tw 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/178c1b8d480aefe2_856.png?hl=zh-tw 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/178c1b8d480aefe2_960.png?hl=zh-tw 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/178c1b8d480aefe2_1440.png?hl=zh-tw 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/178c1b8d480aefe2_1920.png?hl=zh-tw 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/178c1b8d480aefe2_2880.png?hl=zh-tw 2880w" style="width: 624.00px" /></p>
+<ul>
+<li><ol type="1">
+<li>您必須在函式前面加上 <code dir="ltr" translate="no">@Composable</code> 註解。</li>
+</ol>
+</li>
+<li><ol start="2" type="1">
+<li><code dir="ltr" translate="no">@Composable</code> 函式名稱採用首字母大寫。</li>
+</ol>
+</li>
+<li><ol start="3" type="1">
+<li><code dir="ltr" translate="no">@Composable</code> 函式無法回傳任何內容。</li>
+</ol>
+</li>
+</ul>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Kotlin"><code translate="no" dir="ltr"><span class="devsite-syntax-nd">@Composable</span>
+<span class="devsite-syntax-kd">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">Greeting</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kt">String</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">Text</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">text</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"Hello </span><span class="devsite-syntax-si">$</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-s">!"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>目前，<code dir="ltr" translate="no">Greeting()</code> 函式可接收名稱，並向使用者顯示 <code dir="ltr" translate="no">Hello</code>。</p>
+<ol type="1">
+<li>更新 <code dir="ltr" translate="no">Greeting()</code> 函式來介紹自己，而不是顯示「Hello」：</li>
+</ol>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Kotlin"><code translate="no" dir="ltr"><span class="devsite-syntax-nd">@Composable</span>
+<span class="devsite-syntax-kd">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">Greeting</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kt">String</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">Text</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">text</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"Hi, my name is </span><span class="devsite-syntax-si">$</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-s">!"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<ol start="2" type="1">
+<li>Android 應當會自動更新預覽。</li>
+</ol>
+<p class="image-container"><img alt="34c74a1b980c177.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/34c74a1b980c177.png?hl=zh-tw" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/34c74a1b980c177_36.png?hl=zh-tw 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/34c74a1b980c177_48.png?hl=zh-tw 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/34c74a1b980c177_72.png?hl=zh-tw 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/34c74a1b980c177_96.png?hl=zh-tw 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/34c74a1b980c177_480.png?hl=zh-tw 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/34c74a1b980c177_720.png?hl=zh-tw 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/34c74a1b980c177_856.png?hl=zh-tw 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/34c74a1b980c177_960.png?hl=zh-tw 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/34c74a1b980c177_1440.png?hl=zh-tw 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/34c74a1b980c177_1920.png?hl=zh-tw 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/34c74a1b980c177_2880.png?hl=zh-tw 2880w" style="width: 624.00px" /></p>
+<p>好！您變更了文字，但系統卻向您介紹 Android，但這應該不是您的名字吧。接下來，必須進行個人化設定，才能向大家介紹您的姓名！</p>
+<p><code dir="ltr" translate="no">GreetingPreview()</code> 函式是一項很酷的功能，讓您不需建構整個應用程式，就可以查看可組合函式外觀。要啟用可組合函式的預覽，請新增 <code dir="ltr" translate="no">@Composable</code> 和 <code dir="ltr" translate="no">@Preview</code> 註解。<code dir="ltr" translate="no">@Preview</code> 註解會告知 Android Studio，這個可組合函式應當在此檔案的設計檢視畫面中顯示。</p>
+<p>如您所見，<code dir="ltr" translate="no">@Preview</code> 註解使用名為 <code dir="ltr" translate="no">showBackground</code> 的參數。如果將 <code dir="ltr" translate="no">showBackground</code> 設為「true」<strong></strong>，可組合函式預覽就會加上背景。</p>
+<p>由於 Android Studio 預設編輯器使用的是淺色主題，因此很難看出 <code dir="ltr" translate="no">showBackground</code> <code dir="ltr" translate="no">=</code> <code dir="ltr" translate="no">true</code> 和 <code dir="ltr" translate="no">showBackground</code> <code dir="ltr" translate="no">=</code> <code dir="ltr" translate="no">false</code> 兩者的差別。不過，在下面的範例中，就可以看到差別了。請注意，圖片中的白色背景已設定為 <code dir="ltr" translate="no">true</code>。</p>
+<table class="vertical-rules">
+<tbody><tr><td colspan="1" rowspan="1"><p><img sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/239d7fabe065588.png?hl=zh-tw" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/239d7fabe065588_36.png?hl=zh-tw 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/239d7fabe065588_48.png?hl=zh-tw 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/239d7fabe065588_72.png?hl=zh-tw 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/239d7fabe065588_96.png?hl=zh-tw 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/239d7fabe065588_480.png?hl=zh-tw 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/239d7fabe065588_720.png?hl=zh-tw 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/239d7fabe065588_856.png?hl=zh-tw 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/239d7fabe065588_960.png?hl=zh-tw 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/239d7fabe065588_1440.png?hl=zh-tw 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/239d7fabe065588_1920.png?hl=zh-tw 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/239d7fabe065588_2880.png?hl=zh-tw 2880w" />showBackground = true</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><img sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3ce153efce1dadd3.png?hl=zh-tw" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3ce153efce1dadd3_36.png?hl=zh-tw 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3ce153efce1dadd3_48.png?hl=zh-tw 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3ce153efce1dadd3_72.png?hl=zh-tw 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3ce153efce1dadd3_96.png?hl=zh-tw 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3ce153efce1dadd3_480.png?hl=zh-tw 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3ce153efce1dadd3_720.png?hl=zh-tw 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3ce153efce1dadd3_856.png?hl=zh-tw 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3ce153efce1dadd3_960.png?hl=zh-tw 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3ce153efce1dadd3_1440.png?hl=zh-tw 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3ce153efce1dadd3_1920.png?hl=zh-tw 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3ce153efce1dadd3_2880.png?hl=zh-tw 2880w" />showBackground = false</p>
+</td></tr>
+</tbody></table>
+<ol start="3" type="1">
+<li>使用您的名字更新 <code dir="ltr" translate="no">GreetingPreview()</code> 函式。接著重新建構並查看您的個人化賀卡！</li>
+</ol>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Kotlin"><code translate="no" dir="ltr"><span class="devsite-syntax-nd">@Preview</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">showBackground</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">true</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-nd">@Composable</span>
+<span class="devsite-syntax-kd">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">GreetingPreview</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">GreetingCardTheme</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">Greeting</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"Meghan"</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p class="image-container"><img alt="9703ef244f8ee16c.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/9703ef244f8ee16c.png?hl=zh-tw" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/9703ef244f8ee16c_36.png?hl=zh-tw 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/9703ef244f8ee16c_48.png?hl=zh-tw 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/9703ef244f8ee16c_72.png?hl=zh-tw 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/9703ef244f8ee16c_96.png?hl=zh-tw 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/9703ef244f8ee16c_480.png?hl=zh-tw 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/9703ef244f8ee16c_720.png?hl=zh-tw 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/9703ef244f8ee16c_856.png?hl=zh-tw 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/9703ef244f8ee16c_960.png?hl=zh-tw 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/9703ef244f8ee16c_1440.png?hl=zh-tw 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/9703ef244f8ee16c_1920.png?hl=zh-tw 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/9703ef244f8ee16c_2880.png?hl=zh-tw 2880w" style="width: 624.00px" /></p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="0" step="4" label="變更背景顏色">
+          
+          <h2 class="step-title" data-text="               5. 變更背景顏色           " id="4" tabindex="-1">
+              5. 變更背景顏色
+          </h2>
+          <p>您已完成自我介紹的文字，但這些文字有點無聊！這個章節將說明如何變更背景顏色。</p>
+<p>如要為自我介紹設定不同的背景顏色，請使用 <a href="https://developer.android.com/reference/kotlin/androidx/compose/material/package-summary?hl=zh-tw#Surface(androidx.compose.ui.Modifier,androidx.compose.ui.graphics.Shape,androidx.compose.ui.graphics.Color,androidx.compose.ui.graphics.Color,androidx.compose.foundation.BorderStroke,androidx.compose.ui.unit.Dp,kotlin.Function0)" target="_blank"><code dir="ltr" translate="no">Surface</code></a> 將文字包圍起來。<code dir="ltr" translate="no">Surface</code> 是一個容器，代表使用者介面的一部分，您可以在其中更改外觀 (例如背景顏色或邊框)。</p>
+<ol type="1">
+<li>如要使用 <code dir="ltr" translate="no">Surface</code> 包圍文字，請醒目顯示以下這行文字，按 <code dir="ltr" translate="no">Alt+Enter</code> (Windows) 或 <code dir="ltr" translate="no">Option+Enter</code> (Mac)，然後選取「Surround with widget」<strong></strong>。</li>
+</ol>
+<p class="image-container"><img alt="220f9c42667a9595.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/220f9c42667a9595.png?hl=zh-tw" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/220f9c42667a9595_36.png?hl=zh-tw 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/220f9c42667a9595_48.png?hl=zh-tw 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/220f9c42667a9595_72.png?hl=zh-tw 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/220f9c42667a9595_96.png?hl=zh-tw 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/220f9c42667a9595_480.png?hl=zh-tw 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/220f9c42667a9595_720.png?hl=zh-tw 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/220f9c42667a9595_856.png?hl=zh-tw 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/220f9c42667a9595_960.png?hl=zh-tw 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/220f9c42667a9595_1440.png?hl=zh-tw 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/220f9c42667a9595_1920.png?hl=zh-tw 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/220f9c42667a9595_2880.png?hl=zh-tw 2880w" style="width: 624.00px" /></p>
+<ol start="2" type="1">
+<li>選擇「Surround with Container」<strong></strong>。</li>
+</ol>
+<p class="image-container"><img alt="f5258fe61ffc94fb.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/f5258fe61ffc94fb.png?hl=zh-tw" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/f5258fe61ffc94fb_36.png?hl=zh-tw 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/f5258fe61ffc94fb_48.png?hl=zh-tw 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/f5258fe61ffc94fb_72.png?hl=zh-tw 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/f5258fe61ffc94fb_96.png?hl=zh-tw 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/f5258fe61ffc94fb_480.png?hl=zh-tw 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/f5258fe61ffc94fb_720.png?hl=zh-tw 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/f5258fe61ffc94fb_856.png?hl=zh-tw 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/f5258fe61ffc94fb_960.png?hl=zh-tw 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/f5258fe61ffc94fb_1440.png?hl=zh-tw 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/f5258fe61ffc94fb_1920.png?hl=zh-tw 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/f5258fe61ffc94fb_2880.png?hl=zh-tw 2880w" style="width: 624.00px" /></p>
+<p>預設容器為 <code dir="ltr" translate="no">Box</code>，但您可以將其變更為其他容器類型。您稍後會在課程中瞭解 <code dir="ltr" translate="no">Box</code> 版面配置。</p>
+<p class="image-container"><img alt="85e695291c03dcfc.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/85e695291c03dcfc.png?hl=zh-tw" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/85e695291c03dcfc_36.png?hl=zh-tw 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/85e695291c03dcfc_48.png?hl=zh-tw 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/85e695291c03dcfc_72.png?hl=zh-tw 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/85e695291c03dcfc_96.png?hl=zh-tw 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/85e695291c03dcfc_480.png?hl=zh-tw 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/85e695291c03dcfc_720.png?hl=zh-tw 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/85e695291c03dcfc_856.png?hl=zh-tw 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/85e695291c03dcfc_960.png?hl=zh-tw 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/85e695291c03dcfc_1440.png?hl=zh-tw 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/85e695291c03dcfc_1920.png?hl=zh-tw 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/85e695291c03dcfc_2880.png?hl=zh-tw 2880w" style="width: 624.00px" /></p>
+<ol start="3" type="1">
+<li>刪除「<code dir="ltr" translate="no">Box</code>」，改為輸入「<code dir="ltr" translate="no">Surface()</code>」。</li>
+</ol>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Kotlin"><code translate="no" dir="ltr"><span class="devsite-syntax-nd">@Composable</span>
+<span class="devsite-syntax-kd">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">Greeting</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kt">String</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">Surface</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">Text</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">text</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"Hi, my name is </span><span class="devsite-syntax-si">$</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-s">!"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<ol start="4" type="1">
+<li>為 <code dir="ltr" translate="no">Surface</code> 容器新增 <code dir="ltr" translate="no">color</code> 參數，並設定為 <code dir="ltr" translate="no">Color</code>。</li>
+</ol>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Kotlin"><code translate="no" dir="ltr"><span class="devsite-syntax-nd">@Composable</span>
+<span class="devsite-syntax-kd">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">Greeting</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kt">String</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">Surface</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">color</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Color</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">Text</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">text</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"Hi, my name is </span><span class="devsite-syntax-si">$</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-s">!"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<ol start="5" type="1">
+<li>輸入 <code dir="ltr" translate="no">Color</code> 後，您可能會發現它是紅色的，這意味著 Android Studio 無法解決此問題。要解決這個問題，請捲動至檔案頂端顯示「import」的地方，然後按下三點狀按鈕。</li>
+</ol>
+<p class="image-container"><img alt="80b6219d24f04365.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/80b6219d24f04365.png?hl=zh-tw" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/80b6219d24f04365_36.png?hl=zh-tw 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/80b6219d24f04365_48.png?hl=zh-tw 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/80b6219d24f04365_72.png?hl=zh-tw 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/80b6219d24f04365_96.png?hl=zh-tw 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/80b6219d24f04365_480.png?hl=zh-tw 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/80b6219d24f04365_720.png?hl=zh-tw 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/80b6219d24f04365_856.png?hl=zh-tw 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/80b6219d24f04365_960.png?hl=zh-tw 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/80b6219d24f04365_1440.png?hl=zh-tw 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/80b6219d24f04365_1920.png?hl=zh-tw 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/80b6219d24f04365_2880.png?hl=zh-tw 2880w" style="width: 222.00px" /></p>
+<ol start="6" type="1">
+<li>將以下陳述式新增至匯入清單底部。</li>
+</ol>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Kotlin"><code translate="no" dir="ltr"><span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.graphics.Color</span>
+</code></pre></devsite-code>
+<p>完整的匯入清單如下所示。</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Kotlin"><code translate="no" dir="ltr"><span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">android.os.Bundle</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.activity.ComponentActivity</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.activity.compose.setContent</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.foundation.layout.Box</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.foundation.layout.fillMaxSize</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.material3.MaterialTheme</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.material3.Surface</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.material3.Text</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.runtime.Composable</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.Modifier</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.tooling.preview.Preview</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">com.example.greetingcard.ui.theme.GreetingCardTheme</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.graphics.Color</span>
+</code></pre></devsite-code>
+<ol start="7" type="1">
+<li>在您的程式碼中，最佳做法是按匯入字母順序列出並移除未使用的匯入項目。方法是按頂端工具列中的「Help」<strong></strong>，然後輸入「optimize imports」<strong></strong>，再點擊「Optimize Imports」<strong></strong>。</li>
+</ol>
+<p class="image-container"><img alt="92241239038c774a.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/92241239038c774a.png?hl=zh-tw" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/92241239038c774a_36.png?hl=zh-tw 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/92241239038c774a_48.png?hl=zh-tw 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/92241239038c774a_72.png?hl=zh-tw 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/92241239038c774a_96.png?hl=zh-tw 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/92241239038c774a_480.png?hl=zh-tw 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/92241239038c774a_720.png?hl=zh-tw 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/92241239038c774a_856.png?hl=zh-tw 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/92241239038c774a_960.png?hl=zh-tw 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/92241239038c774a_1440.png?hl=zh-tw 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/92241239038c774a_1920.png?hl=zh-tw 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/92241239038c774a_2880.png?hl=zh-tw 2880w" style="width: 432.00px" /></p>
+<p>您可以直接從以下選單開啟「Optimize Imports」<strong></strong>：「Code」<strong></strong>>「Optimize Imports」<strong></strong>。若您不記得某個選單項目的位置，可以使用「說明」的搜尋選項找到它。</p>
+<p>完整的匯入清單現在如下所示：</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Kotlin"><code translate="no" dir="ltr"><span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">android.os.Bundle</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.activity.ComponentActivity</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.activity.compose.setContent</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.foundation.layout.fillMaxSize</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.material3.MaterialTheme</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.material3.Surface</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.material3.Text</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.runtime.Composable</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.Modifier</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.graphics.Color</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.tooling.preview.Preview</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">com.example.greetingcard.ui.theme.GreetingCardTheme</span>
+</code></pre></devsite-code>
+<ol start="8" type="1">
+<li>請注意，您在 Surface 括號中輸入的 Color 已從紅色改成以紅色底線標示。如要修正這個問題，請在後方加上英文句點。畫面上會顯示彈出式視窗，當中列出各種不同的顏色選項。</li>
+</ol>
+<p>這是 Android Studio 中一項很酷的功能，它的智慧程度非常高，可適時提供協助。在此例中，這項功能知道您想要指定顏色，因此建議了不同的顏色。</p>
+<p class="image-container"><img alt="3a709cb72da0f83d.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3a709cb72da0f83d.png?hl=zh-tw" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3a709cb72da0f83d_36.png?hl=zh-tw 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3a709cb72da0f83d_48.png?hl=zh-tw 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3a709cb72da0f83d_72.png?hl=zh-tw 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3a709cb72da0f83d_96.png?hl=zh-tw 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3a709cb72da0f83d_480.png?hl=zh-tw 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3a709cb72da0f83d_720.png?hl=zh-tw 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3a709cb72da0f83d_856.png?hl=zh-tw 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3a709cb72da0f83d_960.png?hl=zh-tw 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3a709cb72da0f83d_1440.png?hl=zh-tw 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3a709cb72da0f83d_1920.png?hl=zh-tw 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3a709cb72da0f83d_2880.png?hl=zh-tw 2880w" style="width: 624.00px" /></p>
+<ol start="9" type="1">
+<li>選擇介面的顏色。這個程式碼實驗室使用的是「洋紅色」<strong></strong>，但您可以選擇自己喜歡的顏色！</li>
+</ol>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Kotlin"><code translate="no" dir="ltr"><span class="devsite-syntax-nd">@Composable</span>
+<span class="devsite-syntax-kd">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">Greeting</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kt">String</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-n">Surface</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">color</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Color</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-na">Cyan</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">       </span><span class="devsite-syntax-n">Text</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">           </span><span class="devsite-syntax-n">text</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"Hi, my name is </span><span class="devsite-syntax-si">$</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-s">!"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">           </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span>
+<span class="devsite-syntax-w">       </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<ol start="10" type="1">
+<li>請注意預覽已更新。</li>
+</ol>
+<p class="image-container"><img alt="217a09ca55b503f8.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/217a09ca55b503f8.png?hl=zh-tw" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/217a09ca55b503f8_36.png?hl=zh-tw 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/217a09ca55b503f8_48.png?hl=zh-tw 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/217a09ca55b503f8_72.png?hl=zh-tw 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/217a09ca55b503f8_96.png?hl=zh-tw 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/217a09ca55b503f8_480.png?hl=zh-tw 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/217a09ca55b503f8_720.png?hl=zh-tw 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/217a09ca55b503f8_856.png?hl=zh-tw 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/217a09ca55b503f8_960.png?hl=zh-tw 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/217a09ca55b503f8_1440.png?hl=zh-tw 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/217a09ca55b503f8_1920.png?hl=zh-tw 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/217a09ca55b503f8_2880.png?hl=zh-tw 2880w" style="width: 624.00px" /></p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="0" step="5" label="新增邊框間距">
+          
+          <h2 class="step-title" data-text="               6. 加上邊框間距           " id="5" tabindex="-1">
+              6. 加上邊框間距
+          </h2>
+          <p>現在文字有了背景顏色，接下來則是要在文字周圍加上一些間距，也就是邊框間距。</p>
+<p><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/Modifier?hl=zh-tw" target="_blank"><code dir="ltr" translate="no">Modifier</code></a> 用來擴增或裝飾可組合函式。<code dir="ltr" translate="no">padding</code> 修飾符是您可以使用的修飾符之一，它會在元素周圍加入間距 (這裡指的是文字周圍的間距)。為此，需要使用 <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/Modifier?hl=zh-tw#(androidx.compose.ui.Modifier).padding(androidx.compose.ui.unit.Dp)" target="_blank"><code dir="ltr" translate="no">Modifier.padding()</code></a> 函式。</p>
+<p>每個可組合函式應當都有一個類型為 <code dir="ltr" translate="no">Modifier</code> 的選用參數。這應當是第一個選用參數。</p>
+<ol type="1">
+<li>為 <code dir="ltr" translate="no">modifier</code> 新增大小為 <code dir="ltr" translate="no">24.dp</code> 的邊框間距。</li>
+</ol>
+<aside class="special"><p><strong>注意：</strong>我們將在下個課程中進一步瞭解密度獨立像素 (<code dir="ltr" translate="no">dp</code>)，但如果您現在就想瞭解更多內容，請參閱《<a href="https://m3.material.io/foundations/layout/understanding-layout/spacing#abccd6ce-1092-4ad0-9351-de75aeae0edf" target="_blank">版面配置 – Material Design 3</a>》這篇文章。</p>
+</aside>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Kotlin"><code translate="no" dir="ltr"><span class="devsite-syntax-nd">@Composable</span>
+<span class="devsite-syntax-kd">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">Greeting</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kt">String</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">Surface</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">color</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Color</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-na">Cyan</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">Text</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">text</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"Hi, my name is </span><span class="devsite-syntax-si">$</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-s">!"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-na">padding</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-m">24.</span><span class="devsite-syntax-n">dp</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<ol start="2" type="1">
+<li>將這些匯入項目新增至匯入陳述式部分。</li>
+</ol>
+<p>請務必使用「Optimize Imports」<strong></strong>以字母順序排序新匯入的資料。</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Kotlin"><code translate="no" dir="ltr"><span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.unit.dp</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.foundation.layout.padding</span>
+</code></pre></devsite-code>
+<p class="image-container"><img alt="2c09be85535277e9.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2c09be85535277e9.png?hl=zh-tw" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2c09be85535277e9_36.png?hl=zh-tw 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2c09be85535277e9_48.png?hl=zh-tw 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2c09be85535277e9_72.png?hl=zh-tw 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2c09be85535277e9_96.png?hl=zh-tw 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2c09be85535277e9_480.png?hl=zh-tw 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2c09be85535277e9_720.png?hl=zh-tw 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2c09be85535277e9_856.png?hl=zh-tw 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2c09be85535277e9_960.png?hl=zh-tw 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2c09be85535277e9_1440.png?hl=zh-tw 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2c09be85535277e9_1920.png?hl=zh-tw 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2c09be85535277e9_2880.png?hl=zh-tw 2880w" style="width: 624.00px" /></p>
+<p>恭喜，您已經在 Compose 中建立了第一個 Android 應用程式！這不是件容易的事。不妨花些時間嘗試各種顏色和文字，打造個人專屬的應用程式！</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="0" step="6" label="查看解決方案程式碼">
+          
+          <h2 class="step-title" data-text="               7. 查看解決方案程式碼           " id="6" tabindex="-1">
+              7. 查看解決方案程式碼
+          </h2>
+          <h2 data-text="供查看的程式碼片段" id="code-snippet-for-review" is-upgraded="" tabindex="-1">供查看的程式碼片段</h2>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Kotlin"><code translate="no" dir="ltr"><span class="devsite-syntax-k">package</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">com.example.greetingcard</span>
+
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">android.os.Bundle</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.activity.ComponentActivity</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.activity.compose.setContent</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.foundation.layout.fillMaxSize</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.foundation.layout.padding</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.material3.MaterialTheme</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.material3.Surface</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.material3.Text</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.runtime.Composable</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.Modifier</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.graphics.Color</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.tooling.preview.Preview</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.unit.dp</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">com.example.greetingcard.ui.theme.GreetingCardTheme</span>
+
+<span class="devsite-syntax-kd">class</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nc">MainActivity</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ComponentActivity</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-kd">override</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kd">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">onCreate</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">savedInstanceState</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Bundle?)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-k">super</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-na">onCreate</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">savedInstanceState</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">setContent</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">GreetingCardTheme</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-c1">// A surface container using the 'background' color from the theme</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-n">Surface</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-na">fillMaxSize</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-n">color</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">MaterialTheme</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-na">colorScheme</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-na">background</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-n">Greeting</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"Android"</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-nd">@Composable</span>
+<span class="devsite-syntax-kd">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">Greeting</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kt">String</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">Surface</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">color</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Color</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-na">Cyan</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">Text</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">text</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"Hi, my name is </span><span class="devsite-syntax-si">$</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-s">!"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-na">padding</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-m">24.</span><span class="devsite-syntax-n">dp</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-nd">@Preview</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">showBackground</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">true</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-nd">@Composable</span>
+<span class="devsite-syntax-kd">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">GreetingPreview</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">GreetingCardTheme</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">Greeting</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"Meghan"</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="0" step="7" label="結語">
+          
+          <h2 class="step-title" data-text="               8. 結語" id="7" tabindex="-1">
+              8. 結語</h2>
+          <p>您已經瞭解 Android Studio，並使用 Compose 建立了第一個 Android 應用程式，太棒了！</p>
+<p>這個程式碼實驗室是「<a href="https://developer.android.com/courses/android-basics-compose/course?hl=zh-tw" target="_blank">Android 基本概念：使用 Compose</a>」課程的一部分。如要瞭解如何在模擬器或實體裝置中執行您的應用程式，請查看<a href="https://developer.android.com/courses/pathways/android-basics-compose-unit-1-pathway-2?hl=zh-tw" target="_blank">此課程</a>的後續程式碼實驗室。</p>
+<h2 data-text="摘要" id="summary" is-upgraded="" tabindex="-1">摘要</h2>
+<ul>
+<li>如要建立新專案：請開啟 Android Studio，依序點擊「New Project」>「Empty Activity」>「Next」<strong></strong>，輸入專案名稱，然後調整專案設定。</li>
+<li>您可以使用「Preview」<strong></strong>窗格，查看應用程式的外觀。</li>
+<li>可組合函式與一般函式類似，但仍有一些差異：函式名稱採用首字母大寫、必須在函式前面加上 <code dir="ltr" translate="no">@Composable</code> 註解，以及 <code dir="ltr" translate="no">@Composable</code> 函式無法回傳任何值。</li>
+<li><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/Modifier?hl=zh-tw" target="_blank"><code dir="ltr" translate="no">Modifier</code></a> 是用來擴增或裝飾可組合的內容。</li>
+</ul>
+<h2 data-text="瞭解詳情" id="learn-more" is-upgraded="" tabindex="-1">瞭解詳情</h2>
+<ul>
+<li><a href="https://developer.android.com/studio/intro?hl=zh-tw" target="_blank">認識 Android Studio</a></li>
+<li><a href="https://developer.android.com/studio/projects?hl=zh-tw" target="_blank">專案總覽</a></li>
+<li><a href="https://developer.android.com/studio/projects/create-project?hl=zh-tw" target="_blank">建立專案</a></li>
+<li><a href="https://developer.android.com/studio/projects/templates?hl=zh-tw" target="_blank">加入範本中的程式碼</a></li>
+<li><a href="https://developer.android.com/jetpack/compose?hl=zh-tw" target="_blank">Jetpack Compose</a></li>
+<li><a href="https://m3.material.io/foundations/layout/understanding-layout/spacing#64eb2223-f5e8-4d2a-9edc-9e3a7002220a" target="_blank">邊框間距 – Material Design 3</a></li>
+</ul>
+
+
+        </google-codelab-step>
+      
+    </google-codelab>
+  
+  
+  
+
+  
+</div>
+
+  
+    
+    
+    
+  
+
+  <div class="devsite-floating-action-buttons"></div></article>
+
+
+<devsite-content-footer class="nocontent">
+  <p>除非另有註明，否則本頁面中的內容是採用<a href="https://creativecommons.org/licenses/by/4.0/">創用 CC 姓名標示 4.0 授權</a>，程式碼範例則為<a href="https://www.apache.org/licenses/LICENSE-2.0">阿帕契 2.0 授權</a>。詳情請參閱《<a href="https://developers.google.com/site-policies?hl=zh-tw">Google Developers 網站政策</a>》。Java 是 Oracle 和/或其關聯企業的註冊商標。</p>
+  
+</devsite-content-footer>
+
+
+<devsite-notification
+>
+</devsite-notification>
+
+
+  
+<div class="devsite-content-data">
+  
+  
+    <template class="devsite-content-data-template">
+      [[["容易理解","easyToUnderstand","thumb-up"],["確實解決了我的問題","solvedMyProblem","thumb-up"],["其他","otherUp","thumb-up"]],[["缺少我需要的資訊","missingTheInformationINeed","thumb-down"],["過於複雜/步驟過多","tooComplicatedTooManySteps","thumb-down"],["過時","outOfDate","thumb-down"],["翻譯問題","translationIssue","thumb-down"],["示例/程式碼問題","samplesCodeIssue","thumb-down"],["其他","otherDown","thumb-down"]],[],[],[],null,[]]
+    </template>
+  
+</div>
+            
+          </devsite-content>
+        </main>
+        <devsite-footer-promos class="devsite-footer">
+          
+            
+
+<nav class="devsite-footer-promos nocontent" aria-label="促銷活動">
+  <ul class="devsite-footer-promos-list">
+    
+    <li class="devsite-footer-promo">
+      <a href="//x.com/AndroidDev"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer X Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-x_dt.svg?hl=zh-tw"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="https://developer.android.com/_static/android/images/logo-x.svg?hl=zh-tw"
+                loading="lazy"
+                alt="X">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          X
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">在 X 中追蹤 @AndroidDev</div>
+    </li>
+    
+    <li class="devsite-footer-promo">
+      <a href="//www.youtube.com/user/androiddevelopers?hl=zh-tw"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer YouTube Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-youtube_dt.svg?hl=zh-tw"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="//www.gstatic.com/images/icons/material/product/2x/youtube_48dp.png"
+                loading="lazy"
+                alt="YouTube">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          YouTube
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">造訪 Android 開發人員的 YouTube 頻道</div>
+    </li>
+    
+    <li class="devsite-footer-promo">
+      <a href="//www.linkedin.com/showcase/androiddev"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer LinkedIn Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-linkedin_dt.svg?hl=zh-tw"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="https://developer.android.com/_static/android/images/logo-linkedin.svg?hl=zh-tw"
+                loading="lazy"
+                alt="LinkedIn">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          LinkedIn
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Connect with the Android Developers community on LinkedIn</div>
+    </li>
+    
+  </ul>
+</nav>
+
+          
+        </devsite-footer-promos>
+        <devsite-footer-linkboxes class="devsite-footer">
+          
+            
+<nav class="devsite-footer-linkboxes nocontent" aria-label="頁尾連結">
+  
+  <ul class="devsite-footer-linkboxes-list">
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">深入瞭解 Android</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com/enterprise/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            企業專用 Android
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com/security-center/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            安全性
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//source.android.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            原始碼
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/news"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            新聞
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//android-developers.googleblog.com/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+          
+            網誌
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/podcasts"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 7)"
+            >
+            
+              
+              
+            
+          
+            Podcast
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">探索</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/games"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            遊戲
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/ml"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            機器學習
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/health-and-fitness"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            健康與健身
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/media"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            相機與媒體
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/privacy"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            隱私權
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/training/connectivity/5g"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+              
+              
+            
+          
+            5G
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Android 裝置</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/large-screens"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            大螢幕
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/wear"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Wear OS
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/chrome-os"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            ChromeOS 裝置
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/cars"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            車輛專用 Android
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/tv"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+              
+              
+            
+          
+            Android TV
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">版本</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/15"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android 15
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/14"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Android 14
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/13"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Android 13
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/12"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Android 12
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/11"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            Android 11
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/10"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+          
+            Android 10
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/pie"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 7)"
+            >
+            
+              
+              
+            
+          
+            Pie
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">說明文件和下載項目</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/studio/intro"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android Studio 指南
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/guide"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            開發人員指南
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/reference"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            API 參考資料
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/studio"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            下載 Studio
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/ndk"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+              
+              
+            
+          
+            Android NDK
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">支援服務</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//issuetracker.google.com/issues/new?component=190923&amp;template=841312"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            回報平台錯誤
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//issuetracker.google.com/issues/new?component=192697"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            回報說明文件錯誤
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//support.google.com/googleplay/android-developer"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Google Play support
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://g.co/userresearch/androiddeveloperfooter"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+              
+              
+            
+          
+            參加研究調查
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+  
+</nav>
+          
+        </devsite-footer-linkboxes>
+        <devsite-footer-utility class="devsite-footer">
+          
+            
+
+<div class="devsite-footer-utility nocontent">
+  
+  
+  <nav class="devsite-footer-sites" aria-label="其他 Google Developers 網站">
+    <a href="https://developers.google.com/?hl=zh-tw"
+       class="devsite-footer-sites-logo-link gc-analytics-event"
+       data-category="Site-Wide Custom Events"
+       data-label="Footer Google Developers Link">
+      <picture>
+        
+        <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-google-for-developers-dark-theme.svg"
+                media="(prefers-color-scheme: none)"
+                class="devsite-dark-theme">
+        
+        <img class="devsite-footer-sites-logo"
+             src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-google-for-developers.svg"
+             loading="lazy"
+             alt="Google Developers">
+      </picture>
+    </a>
+    <ul class="devsite-footer-sites-list">
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.android.com?hl=zh-tw"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Android Link"
+         
+         >
+          Android
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.chrome.com/home?hl=zh-tw"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Chrome Link"
+         
+         >
+          Chrome
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//firebase.google.com?hl=zh-tw"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Firebase Link"
+         
+         >
+          Firebase
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//cloud.google.com?hl=zh-tw"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Google Cloud Platform Link"
+         
+         >
+          Google Cloud Platform
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developers.google.com/products/?hl=zh-tw"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer All products Link"
+         
+         >
+          所有產品
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  
+
+  
+  <nav class="devsite-footer-utility-links" aria-label="公用程式連結">
+    
+    <ul class="devsite-footer-utility-list">
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//policies.google.com/privacy?hl=zh-tw"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Privacy link"
+         >
+          隱私權
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="https://developer.android.com/license?hl=zh-tw"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer License link"
+         >
+          授權
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="https://developer.android.com/distribute/marketing-tools/brand-guidelines?hl=zh-tw"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Brand guidelines link"
+         >
+          品牌宣傳指南
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 glue-cookie-notification-bar-control">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="#"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Manage cookies link"
+         
+           aria-hidden="true"
+         >
+          Manage cookies
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 devsite-footer-utility-button">
+        
+        <span class="devsite-footer-utility-description">透過電子郵件接收最新消息與相關訣竅</span>
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="https://developer.android.com/updates?hl=zh-tw"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Subscribe link"
+         >
+          訂閱
+        </a>
+        
+      </li>
+      
+    </ul>
+    
+    
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+  </nav>
+</div>
+          
+        </devsite-footer-utility>
+        <devsite-panel>
+          
+        </devsite-panel>
+        
+      </section></section>
+    <devsite-sitemask></devsite-sitemask>
+    <devsite-snackbar></devsite-snackbar>
+    <devsite-tooltip ></devsite-tooltip>
+    <devsite-heading-link></devsite-heading-link>
+    <devsite-analytics>
+      
+        <script type="application/json" analytics>[]</script>
+<script type="application/json" tag-management>{&#34;at&#34;: &#34;True&#34;, &#34;ga4&#34;: [{&#34;id&#34;: &#34;G-QFRN08RN6E&#34;, &#34;purpose&#34;: 0}], &#34;ga4p&#34;: [{&#34;id&#34;: &#34;G-QFRN08RN6E&#34;, &#34;purpose&#34;: 0}], &#34;gtm&#34;: [], &#34;parameters&#34;: {&#34;internalUser&#34;: &#34;False&#34;, &#34;language&#34;: {&#34;machineTranslated&#34;: &#34;False&#34;, &#34;requested&#34;: &#34;zh-tw&#34;, &#34;served&#34;: &#34;zh-tw&#34;}, &#34;pageType&#34;: &#34;codelab&#34;, &#34;projectName&#34;: null, &#34;signedIn&#34;: &#34;False&#34;, &#34;tenant&#34;: &#34;android&#34;, &#34;recommendations&#34;: {&#34;sourcePage&#34;: &#34;&#34;, &#34;sourceType&#34;: 0, &#34;sourceRank&#34;: 0, &#34;sourceIdenticalDescriptions&#34;: 0, &#34;sourceTitleWords&#34;: 0, &#34;sourceDescriptionWords&#34;: 0, &#34;experiment&#34;: &#34;&#34;}, &#34;experiment&#34;: {&#34;ids&#34;: &#34;&#34;}}}</script>
+      
+    </devsite-analytics>
+    
+      <devsite-badger></devsite-badger>
+    
+    
+    
+<android-fully-clickable
+    target="
+        .android-case-study .devsite-landing-row-item,
+        .android-editorial-and-updates-cards .devsite-card-content-wrapper,
+        .android-editorial-and-updates-cards .devsite-landing-row-item,
+        .android-grouped-resources .devsite-landing-row-item,
+        .android-grouped-resources-contained--primary .devsite-landing-row-item,
+        .android-grouped-resources-contained--secondary .devsite-landing-row-item,
+        .android-grouped-resources-contained--tertiary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--primary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--secondary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--tertiary .devsite-landing-row-item,
+        .android-guide-cards .devsite-landing-row-item,
+        .android-illustrated-resources-index .devsite-landing-row-item,
+        .android-illustrated-resources-primary .devsite-landing-row-item,
+        .android-illustrated-resources-secondary .devsite-landing-row-item,
+        .android-illustrated-resources-secondary-small .devsite-landing-row-item,
+        .android-illustrated-resources-tertiary .devsite-landing-row-item,
+        .android-illustrated-resources-tertiary-small .devsite-landing-row-item,
+        .android-promo .devsite-landing-row-item,
+        .android-quick-link,
+        .android-samples .devsite-card-wrapper,
+        .fully-clickable"
+    watch=".android-editorial-and-updates-cards, .android-samples, devsite-content"></android-fully-clickable>
+    
+<script nonce="FKwQTfvB3fo0cCTeeQI39/KjRaVsW4">
+  
+  (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+    t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+    E.parentNode.insertBefore(t,E);})(window, document, 'script',
+    'https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/js/app_loader.js', '[3,"zh_tw",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android","https://android-dot-devsite-v2-prod.appspot.com",1,null,["/_pwa/android/manifest.json","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/favicon.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png","https://fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,600italic,700,700italic|Roboto+Mono:400,500,700&display=swap"],1,null,[1,6,8,12,14,17,21,25,50,52,63,70,75,76,80,87,91,92,93,97,98,100,101,102,103,104,105,107,108,109,110,112,113,117,118,120,122,124,125,126,127,129,130,131,132,133,134,135,136,138,140,141,147,148,149,151,152,156,157,158,159,161,163,164,168,169,170,179,180,182,183,186,191,193,196],"AIzaSyAP-jjEJBzmIyKR4F-3XITp8yM9T1gEEI8","AIzaSyB6xiKGDR5O3Ak2okS4rLkauxGUG7XP0hg","developer.android.com","AIzaSyAQk0fBONSGUqCNznf6Krs82Ap1-NV6J4o","AIzaSyCCxcqdrZ_7QMeLCRY20bh_SXdAYqy70KY",null,null,null,["DevPro__enable_google_one_card","Profiles__enable_recognition_badges","Search__enable_page_map","Cloud__enable_cloud_dlp_service","Cloud__enable_llm_concierge_chat","Profiles__enable_join_program_group_endpoint","MiscFeatureFlags__enable_project_body_class","MiscFeatureFlags__gdp_dashboard_reskin_enabled","Cloud__enable_legacy_calculator_redirect","Profiles__enable_dashboard_curated_recommendations","DevPro__enable_google_payments_buyflow","Cloud__enable_cloudx_experiment_ids","Profiles__enable_public_developer_profiles","DevPro__enable_enterprise","MiscFeatureFlags__enable_variable_operator","TpcFeatures__enable_unmirrored_page_left_nav","MiscFeatureFlags__enable_framebox_badge_methods","Profiles__enable_playlist_community_acl","Profiles__enable_page_saving","Search__enable_ai_eligibility_checks","Cloud__cache_serialized_dynamic_content","Concierge__enable_pushui","DevPro__enable_code_assist","Profiles__enable_profile_collections","Profiles__enable_awarding_url","DevPro__enable_embed_profile_creation","Concierge__enable_remove_info_panel_tags","MiscFeatureFlags__enable_view_transitions","MiscFeatureFlags__developers_footer_image","Significatio__enable_by_tenant","MiscFeatureFlags__emergency_css","DevPro__enable_developer_subscriptions","Profiles__require_profile_eligibility_for_signin","Profiles__enable_user_type","DevPro__enable_vertex_credit_card","Profiles__enable_stripe_subscription_management","EngEduTelemetry__enable_engedu_telemetry","MiscFeatureFlags__enable_explicit_template_dependencies","Search__enable_ai_search_summaries_for_all","DevPro__enable_devpro_offers","MiscFeatureFlags__enable_dark_theme","Concierge__enable_actions_menu","Search__enable_dynamic_content_confidential_banner","Profiles__enable_developer_profile_benefits_ui_redesign","DevPro__enable_nvidia_credits_card","MiscFeatureFlags__enable_appearance_cookies","Cloud__enable_cloud_shell_fte_user_flow","Profiles__enable_completequiz_endpoint","BookNav__enable_tenant_cache_key","Search__enable_suggestions_from_borg","CloudShell__cloud_code_overflow_menu","Profiles__enable_developer_profiles_callout","DevPro__enable_free_benefits","Cloud__enable_cloud_shell","Profiles__enable_release_notes_notifications","Profiles__enable_callout_notifications","MiscFeatureFlags__enable_project_variables","CloudShell__cloud_shell_button","Analytics__enable_clearcut_logging","MiscFeatureFlags__enable_variable_operator_index_yaml","TpcFeatures__proxy_prod_host","MiscFeatureFlags__developers_footer_dark_image","Profiles__enable_completecodelab_endpoint","DevPro__enable_cloud_innovators_plus","MiscFeatureFlags__enable_firebase_utm","Profiles__enable_complete_playlist_endpoint","DevPro__enable_firebase_workspaces_card","DevPro__remove_eu_tax_intake_form","Profiles__enable_purchase_prompts","Cloud__enable_free_trial_server_call","Experiments__reqs_query_experiments","Cloud__fast_free_trial"],null,null,"AIzaSyBLEMok-5suZ67qRPzx0qUtbnLmyT_kCVE","https://developerscontentserving-pa.googleapis.com","AIzaSyCM4QpTRSqP5qI4Dvjt4OAScIN8sOUlO-k","https://developerscontentsearch-pa.googleapis.com",2,4,null,"https://developerprofiles-pa.googleapis.com",[3,"android","Android Developers","developer.android.com",null,"android-dot-devsite-v2-prod.appspot.com",null,null,[null,1,null,null,null,null,null,null,null,null,null,[1],null,null,null,null,null,null,[1],[1,null,null,[1,20],"/recommendations"],null,null,null,[1,null,1],[1,1,null,1,1]],null,[18,null,null,null,null,null,"/images/lockup.png","/images/touchicon-180.png",null,null,null,null,null,null,null,null,null,null,null,null,null,2,null,null,null,"/images/lockup-dark-theme.png",[]],[],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[6,1,14,15,20,22,23,28,29,37,43],null,[[null,null,1],[1,1]],[[null,null,null,null,null,null,null,[["G-QFRN08RN6E"],null,null,[["G-QFRN08RN6E",1]]],null,null,null,null,1],null,[[2,2],[1,1]]],null,4,null,null,null,null,null,null,null,null,null,null,null,null,null,"android.devsite.google"],null,"pk_live_5170syrHvgGVmSx9sBrnWtA5luvk9BwnVcvIi7HizpwauFG96WedXsuXh790rtij9AmGllqPtMLfhe2RSwD6Pn38V00uBCydV4m",1,null,"https://developerscontentinsights-pa.googleapis.com","AIzaSyCg-ZUslalsEbXMfIo9ZP8qufZgo3LSBDU","AIzaSyDxT0vkxnY_KeINtA4LSePJO-4MAZPMRsE","https://developers.googleapis.com",null,null,"AIzaSyBQom12tzI-rybN7Sf-KfeL4nwm-Rf7PmI\n",null,"https://developerslogging.googleapis.com"]')
+  
+</script>
+
+    <devsite-a11y-announce></devsite-a11y-announce>
+  </body>
+</html>

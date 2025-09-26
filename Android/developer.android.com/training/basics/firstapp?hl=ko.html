@@ -1,0 +1,2126 @@
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html 
+      lang="ko-x-mtfrom-en"
+      dir="ltr">
+  <head>
+    <meta name="google-signin-client-id" content="721724668570-nbkv1cfusk7kk4eni4pjvepaus73b13t.apps.googleusercontent.com">
+    <meta name="google-signin-scope"
+          content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award">
+    <meta property="og:site_name" content="Android Developers">
+    <meta property="og:type" content="website"><meta name="theme-color" content="#34a853"><meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <link rel="manifest" href="/_pwa/android/manifest.json"
+          crossorigin="use-credentials">
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="//apis.google.com" crossorigin>
+    <link rel="preconnect" href="//www.google-analytics.com" crossorigin><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,600italic,700,700italic|Roboto+Mono:400,500,700&display=swap">
+      <link rel="stylesheet"
+            href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block"><link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosanskr.css"><link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/css/app.css">
+      
+        <link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/css/dark-theme.css" disabled>
+      <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/favicon.svg">
+    <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/touchicon-180.png"><link rel="canonical" href="https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app?hl=ko"><link rel="search" type="application/opensearchdescription+xml"
+            title="Android Developers" href="https://developer.android.com/s/opensearch.xml?hl=ko">
+      <link rel="alternate" hreflang="en"
+          href="https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app" /><link rel="alternate" hreflang="x-default" href="https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app" /><link rel="alternate" hreflang="zh-Hans"
+          href="https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app?hl=zh-cn" /><link rel="alternate" hreflang="zh-Hant"
+          href="https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app?hl=zh-tw" /><link rel="alternate" hreflang="fr"
+          href="https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app?hl=fr" /><link rel="alternate" hreflang="id"
+          href="https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app?hl=id" /><link rel="alternate" hreflang="ja"
+          href="https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app?hl=ja" /><link rel="alternate" hreflang="ko"
+          href="https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app?hl=ko" /><link rel="alternate" hreflang="pt-BR"
+          href="https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app?hl=pt-br" /><link rel="alternate" hreflang="es-419"
+          href="https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app?hl=es-419" /><link rel="alternate" hreflang="vi"
+          href="https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app?hl=vi" /><title>첫 번째 Android 앱 만들기 &nbsp;|&nbsp; Android Developers</title>
+
+<meta property="og:title" content="첫 번째 Android 앱 만들기 &nbsp;|&nbsp; Android Developers"><meta name="description" content="첫 번째 Android 앱을 만드는 방법을 알아보세요.">
+  <meta property="og:description" content="첫 번째 Android 앱을 만드는 방법을 알아보세요."><meta property="og:url" content="https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app?hl=ko"><meta property="og:locale" content="ko"><link rel="alternate machine-translated-from" hreflang="en"
+        href="https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app?hl=en">
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+
+    
+      <link rel="stylesheet" href="/extras.css"></head>
+  <body class=""
+        template="codelab"
+        theme="android-theme"
+        type="codelab"
+        
+        
+        appearance
+        
+        layout="docs"
+        
+        
+        
+        
+        display-toc
+        pending>
+  
+    <devsite-progress type="indeterminate" id="app-progress"></devsite-progress>
+  
+  
+    <a href="#main-content" class="skip-link button">
+      
+      기본 콘텐츠로 건너뛰기
+    </a>
+    <section class="devsite-wrapper">
+      <devsite-cookie-notification-bar></devsite-cookie-notification-bar><devsite-header role="banner">
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-header--inner" data-nosnippet>
+  <div class="devsite-top-logo-row-wrapper-wrapper">
+    <div class="devsite-top-logo-row-wrapper">
+      <div class="devsite-top-logo-row">
+        <button type="button" id="devsite-hamburger-menu"
+          class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+          data-category="Site-Wide Custom Events"
+          data-label="Navigation menu button"
+          visually-hidden
+          aria-label="메뉴 열기">
+        </button>
+        
+<div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="androidDevelopers" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-dark-theme.png"
+            media="(prefers-color-scheme: dark)"
+            class="devsite-dark-theme">
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png" class="devsite-site-logo" alt="Android Developers">
+  </picture>
+  
+</a>
+
+
+
+</div>
+        <div class="devsite-top-logo-row-middle">
+          <div class="devsite-header-upper-tabs">
+            
+           </div>
+          
+<devsite-search
+    enable-signin
+    enable-search
+    enable-suggestions
+      enable-query-completion
+    
+    enable-search-summaries
+    
+    tenant-name="Android Developers"
+    
+    
+    
+    
+    
+    >
+  <form class="devsite-search-form" action="https://developer.android.com/s/results?hl=ko" method="GET">
+    <div class="devsite-search-container">
+      <button type="button"
+              search-open
+              class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+              
+              aria-label="검색 열기"></button>
+      <div class="devsite-searchbox">
+        <input
+          aria-activedescendant=""
+          aria-autocomplete="list"
+          
+          aria-label="검색"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          autocomplete="off"
+          class="devsite-search-field devsite-search-query"
+          name="q"
+          
+          placeholder="검색"
+          role="combobox"
+          type="text"
+          value=""
+          >
+          <div class="devsite-search-image material-icons" aria-hidden="true">
+            
+              <svg class="devsite-search-ai-image" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_6641_386)">
+                    <path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14167 15.375 4.875 14.125C3.625 12.8583 3 11.3167 3 9.5C3 7.68333 3.625 6.15 4.875 4.9C6.14167 3.63333 7.68333 3 9.5 3C10.0167 3 10.5167 3.05833 11 3.175C11.4833 3.275 11.9417 3.43333 12.375 3.65L10.825 5.2C10.6083 5.13333 10.3917 5.08333 10.175 5.05C9.95833 5.01667 9.73333 5 9.5 5C8.25 5 7.18333 5.44167 6.3 6.325C5.43333 7.19167 5 8.25 5 9.5C5 10.75 5.43333 11.8167 6.3 12.7C7.18333 13.5667 8.25 14 9.5 14C10.6667 14 11.6667 13.625 12.5 12.875C13.35 12.1083 13.8417 11.15 13.975 10H15.975C15.925 10.6333 15.7833 11.2333 15.55 11.8C15.3333 12.3667 15.05 12.8667 14.7 13.3L21 19.6L19.6 21ZM17.5 12C17.5 10.4667 16.9667 9.16667 15.9 8.1C14.8333 7.03333 13.5333 6.5 12 6.5C13.5333 6.5 14.8333 5.96667 15.9 4.9C16.9667 3.83333 17.5 2.53333 17.5 0.999999C17.5 2.53333 18.0333 3.83333 19.1 4.9C20.1667 5.96667 21.4667 6.5 23 6.5C21.4667 6.5 20.1667 7.03333 19.1 8.1C18.0333 9.16667 17.5 10.4667 17.5 12Z" fill="#5F6368"/>
+                  </g>
+                <defs>
+                <clipPath id="clip0_6641_386">
+                <rect width="24" height="24" fill="white"/>
+                </clipPath>
+                </defs>
+              </svg>
+            
+          </div>
+          <div class="devsite-search-shortcut-icon-container" aria-hidden="true">
+            <kbd class="devsite-search-shortcut-icon">/</kbd>
+          </div>
+      </div>
+    </div>
+  </form>
+  <button type="button"
+          search-close
+          class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+          
+          aria-label="검색 닫기"></button>
+</devsite-search>
+
+        </div>
+
+        
+
+          
+
+          
+
+          <devsite-appearance-selector></devsite-appearance-selector>
+
+          
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+
+          
+            <a class="devsite-header-link devsite-top-button button gc-analytics-event "
+    href="https://developer.android.com/studio?hl=ko"
+    data-category="Site-Wide Custom Events"
+    data-label="Site header link: Android 스튜디오"
+    >
+  Android 스튜디오
+</a>
+          
+
+        
+
+        
+          <devsite-user 
+                        
+                        
+                          enable-profiles
+                        
+                        
+                        id="devsite-user">
+            
+              
+              <span class="button devsite-top-button" aria-hidden="true" visually-hidden>로그인</span>
+            
+          </devsite-user>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
+  
+</devsite-header>
+      <devsite-book-nav scrollbars hidden>
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-book-nav-filter"
+     hidden>
+  <span class="filter-list-icon material-icons" aria-hidden="true"></span>
+  <input type="text"
+         placeholder="필터"
+         
+         aria-label="입력하여 필터링"
+         role="searchbox">
+  
+  <span class="filter-clear-button hidden"
+        data-title="필터 지우기"
+        aria-label="필터 지우기"
+        role="button"
+        tabindex="0"></span>
+</div>
+
+<nav class="devsite-book-nav devsite-nav nocontent"
+     aria-label="사이드 메뉴">
+  <div class="devsite-mobile-header">
+    <button type="button"
+            id="devsite-close-nav"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Close navigation"
+            aria-label="탐색 메뉴 닫기">
+    </button>
+    <div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="androidDevelopers" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-dark-theme.png"
+            media="(prefers-color-scheme: dark)"
+            class="devsite-dark-theme">
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png" class="devsite-site-logo" alt="Android Developers">
+  </picture>
+  
+</a>
+
+
+</div>
+  </div>
+
+  <div class="devsite-book-nav-wrapper">
+    <div class="devsite-mobile-nav-top">
+      
+        <ul class="devsite-nav-list">
+          
+          
+    
+    
+<li class="devsite-nav-item">
+
+  
+  <a href="/studio"
+    
+       class="devsite-nav-title gc-analytics-event "
+    
+
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Android 스튜디오"
+     track-type="navMenu"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Android 스튜디오
+   </span>
+    
+  
+  </a>
+  
+
+</li>
+
+  
+          
+        </ul>
+      
+    </div>
+    
+  </div>
+</nav>
+        
+      </devsite-book-nav>
+      <section id="gc-wrapper">
+        <main role="main" id="main-content" class="devsite-main-content"
+            
+              
+              has-sidebar
+            >
+          <div class="devsite-sidebar">
+            <div class="devsite-sidebar-content">
+                
+                <devsite-toc class="devsite-nav"
+                            role="navigation"
+                            aria-label="이 페이지의 내용"
+                            depth="1"
+                            scrollbars
+                  ></devsite-toc>
+                <devsite-recommendations-sidebar class="nocontent devsite-nav">
+                </devsite-recommendations-sidebar>
+            </div>
+          </div>
+          <devsite-content>
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="devsite-article"><style>
+      body {
+        transition: opacity ease-in 0.2s;
+      }
+
+      body[unresolved] {
+        opacity: 0;
+        display: block;
+        overflow: hidden;
+        position: relative;
+      }
+      </style>
+  
+  
+  
+  
+  
+
+  <div class="devsite-article-meta nocontent" role="navigation">
+    
+    
+    <ul class="devsite-breadcrumb-list"
+  >
+  
+</ul>
+    
+  </div>
+  
+    <h1 class="devsite-page-title" tabindex="-1">
+      첫 번째 Android 앱 만들기<div class="devsite-actions" hidden data-nosnippet><devsite-feature-tooltip
+      ack-key="AckCollectionsBookmarkTooltipDismiss"
+      analytics-category="Site-Wide Custom Events"
+      analytics-action-show="Callout Profile displayed"
+      analytics-action-close="Callout Profile dismissed"
+      analytics-label="Create Collection Callout"
+      class="devsite-page-bookmark-tooltip nocontent"
+      dismiss-button="true"
+      id="devsite-collections-dropdown"
+      
+      dismiss-button-text="닫기"
+
+      
+      close-button-text="확인">
+
+    
+    
+      <devsite-bookmark></devsite-bookmark>
+    
+
+    <span slot="popout-heading">
+      
+      컬렉션을 사용해 정리하기
+    </span>
+    <span slot="popout-contents">
+      
+      내 환경설정을 기준으로 콘텐츠를 저장하고 분류하세요.
+    </span>
+  </devsite-feature-tooltip></div>
+  
+      
+    </h1>
+  
+
+  <devsite-toc class="devsite-nav"
+    depth="1"
+    devsite-toc-embedded
+    >
+  </devsite-toc>
+  
+    
+  <div class="devsite-article-body clearfix
+  ">
+
+  
+    
+    
+    
+    <google-codelab-analytics ga4id="G-JTFZSJVVVZ" gaid="UA-49880327-14"></google-codelab-analytics>
+    <google-codelab category="android,kotlin" codelab-ga4id="" codelab-gaid="UA-81734179-1" doc-id="1sLAhEuFFZ90J8SWZ6LxAkihZnkRSH3QxlA2i_HMpQW0" environment="web" feedback-link="https://github.com/google-developer-training/basic-android-kotlin-compose-birthday-card-app/issues/new?assignees=&amp;labels=&amp;template=Create&#43;your&#43;first&#43;Android&#43;app.md&amp;title=First&#43;Android&#43;app%3A&#43;Android&#43;Basics&#43;with&#43;Compose" id="/codelabs/basic-android-kotlin-compose-first-app" layout="paginated" no-tooltip="" title="첫 번째 Android 앱 만들기">
+      
+        <google-codelab-step duration="0" step="0" label="시작하기 전에">
+          
+            <google-codelab-about authors="Google Developers Training team" last-updated="2025-05-01T21:00:36Z" codelab-title="첫 번째 Android 앱 만들기">
+            </google-codelab-about>
+          
+          <h2 class="step-title" data-text="               1. 시작하기 전에           " id="0" tabindex="-1">
+              1. 시작하기 전에
+          </h2>
+          <p>컴퓨터에 아직 <a href="https://developer.android.com/studio?hl=ko" target="_blank">Android 스튜디오</a>를 설치하지 않았다면 설치합니다. 컴퓨터가 Android 스튜디오 실행에 필요한 시스템 요구사항(다운로드 페이지 하단 참고)을 충족하는지 확인합니다. 설정 프로세스에 관한 자세한 안내가 필요한 경우 <a href="https://developer.android.com/courses/pathways/android-basics-compose-unit-1-pathway-2?hl=ko" target="_blank">Android 스튜디오 다운로드 및 설치</a> Codelab을 참고하세요.</p>
+<p>이 Codelab에서는 Android 스튜디오에서 제공하는 프로젝트 템플릿으로 첫 번째 Android 앱을 만듭니다. Kotlin과 Jetpack Compose를 사용하여 앱을 맞춤설정합니다. Android 스튜디오는 업데이트되고 때에 따라 UI도 변경되므로 Android 스튜디오가 이 Codelab의 스크린샷과 약간 다르게 표시될 수 있습니다.</p>
+<h2 data-text="기본 요건" id="prerequisites" is-upgraded="" tabindex="-1">기본 요건</h2>
+<ul>
+<li>기본적인 Kotlin 지식</li>
+</ul>
+<h2 data-text="필요한 항목" id="what-youll-need" is-upgraded="" tabindex="-1">필요한 항목</h2>
+<ul>
+<li>최신 버전의 Android 스튜디오</li>
+</ul>
+<h2 class="checklist" data-text="학습할 내용" id="what-youll-learn" is-upgraded="" tabindex="-1">학습할 내용</h2>
+<ul class="checklist">
+<li>Android 스튜디오로 Android 앱을 만드는 방법</li>
+<li>Android 스튜디오의 미리보기 도구로 앱을 실행하는 방법</li>
+<li>Kotlin으로 텍스트를 업데이트하는 방법</li>
+<li>Jetpack Compose로 사용자 인터페이스(UI)를 업데이트하는 방법</li>
+<li>Jetpack Compose의 미리보기로 앱 미리보기를 확인하는 방법</li>
+</ul>
+<h2 data-text="빌드할 항목" id="what-youll-build" is-upgraded="" tabindex="-1">빌드할 항목</h2>
+<ul>
+<li>소개를 맞춤설정할 수 있는 앱</li>
+</ul>
+<p>이 Codelab을 완료하면 앱은 다음과 같이 표시됩니다(이름만 맞춤설정됨).</p>
+<p class="image-container"><img alt="13957184d295b16f.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/13957184d295b16f.png?hl=ko" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/13957184d295b16f_36.png?hl=ko 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/13957184d295b16f_48.png?hl=ko 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/13957184d295b16f_72.png?hl=ko 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/13957184d295b16f_96.png?hl=ko 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/13957184d295b16f_480.png?hl=ko 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/13957184d295b16f_720.png?hl=ko 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/13957184d295b16f_856.png?hl=ko 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/13957184d295b16f_960.png?hl=ko 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/13957184d295b16f_1440.png?hl=ko 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/13957184d295b16f_1920.png?hl=ko 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/13957184d295b16f_2880.png?hl=ko 2880w" style="width: 624.00px" /></p>
+<h2 data-text="필요한 항목" id="what-youll-need_1" is-upgraded="" tabindex="-1">필요한 항목</h2>
+<ul>
+<li><a href="https://developer.android.com/studio?hl=ko" target="_blank">Android 스튜디오</a>가 설치된 컴퓨터</li>
+</ul>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="0" step="1" label="템플릿을 사용하여 프로젝트 만들기">
+          
+          <h2 class="step-title" data-text="               2. 템플릿을 사용하여 프로젝트 만들기           " id="1" tabindex="-1">
+              2. 템플릿을 사용하여 프로젝트 만들기
+          </h2>
+          <p>이 Codelab에서는 Android 스튜디오에서 제공하는 <strong>Empty Activity</strong> 프로젝트 템플릿을 사용하여 Android 앱을 만듭니다.</p>
+<p>Android 스튜디오에서 프로젝트를 만들려면 다음 안내를 따르세요.</p>
+<ol type="1">
+<li>Android 스튜디오 아이콘을 더블클릭하여 Android 스튜디오를 실행합니다.</li>
+</ol>
+<p class="image-container"><img alt="4853d32c0c91ae24.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4853d32c0c91ae24.png?hl=ko" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4853d32c0c91ae24_36.png?hl=ko 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4853d32c0c91ae24_48.png?hl=ko 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4853d32c0c91ae24_72.png?hl=ko 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4853d32c0c91ae24_96.png?hl=ko 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4853d32c0c91ae24_480.png?hl=ko 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4853d32c0c91ae24_720.png?hl=ko 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4853d32c0c91ae24_856.png?hl=ko 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4853d32c0c91ae24_960.png?hl=ko 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4853d32c0c91ae24_1440.png?hl=ko 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4853d32c0c91ae24_1920.png?hl=ko 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4853d32c0c91ae24_2880.png?hl=ko 2880w" style="width: 250.00px" title="Android 스튜디오 아이콘 " /></p>
+<ol start="2" type="1">
+<li><strong>Welcome to Android Studio</strong> 대화상자에서 <strong>New Project</strong>를 클릭합니다.</li>
+</ol>
+<p class="image-container"><img alt="687a108b17ba9b20.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/687a108b17ba9b20.png?hl=ko" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/687a108b17ba9b20_36.png?hl=ko 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/687a108b17ba9b20_48.png?hl=ko 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/687a108b17ba9b20_72.png?hl=ko 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/687a108b17ba9b20_96.png?hl=ko 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/687a108b17ba9b20_480.png?hl=ko 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/687a108b17ba9b20_720.png?hl=ko 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/687a108b17ba9b20_856.png?hl=ko 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/687a108b17ba9b20_960.png?hl=ko 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/687a108b17ba9b20_1440.png?hl=ko 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/687a108b17ba9b20_1920.png?hl=ko 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/687a108b17ba9b20_2880.png?hl=ko 2880w" style="width: 576.00px" /></p>
+<p>Android 스튜디오에서 제공하는 템플릿 목록이 표시된 <strong>New Project</strong> 창이 열립니다.</p>
+<p class="image-container"><img alt="2411487f7f8d88c0.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2411487f7f8d88c0.png?hl=ko" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2411487f7f8d88c0_36.png?hl=ko 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2411487f7f8d88c0_48.png?hl=ko 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2411487f7f8d88c0_72.png?hl=ko 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2411487f7f8d88c0_96.png?hl=ko 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2411487f7f8d88c0_480.png?hl=ko 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2411487f7f8d88c0_720.png?hl=ko 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2411487f7f8d88c0_856.png?hl=ko 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2411487f7f8d88c0_960.png?hl=ko 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2411487f7f8d88c0_1440.png?hl=ko 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2411487f7f8d88c0_1920.png?hl=ko 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2411487f7f8d88c0_2880.png?hl=ko 2880w" style="width: 624.00px" /></p>
+<p>Android 스튜디오에서 프로젝트 템플릿은 특정 유형의 앱을 위한 청사진을 제공하는 Android 프로젝트입니다. 템플릿은 프로젝트의 구조, 그리고 Android 스튜디오에서 프로젝트를 빌드하는 데 필요한 파일을 만듭니다. 선택한 템플릿에서 시작 코드가 제공되므로 더 빠르게 진행할 수 있습니다.</p>
+<ol start="3" type="1">
+<li><strong>Phone and Tablet</strong> 탭이 선택되어 있는지 확인합니다.</li>
+<li><strong>Empty Activity</strong> 템플릿을 클릭하여 프로젝트의 템플릿으로 선택합니다. <strong>Empty Activity</strong> 템플릿은 Compose 앱을 빌드하는 데 사용할 수 있는 간단한 프로젝트를 만드는 템플릿입니다. 단일 화면이 있고 <code dir="ltr" translate="no">"Hello</code> <code dir="ltr" translate="no">Android!"</code> 텍스트가 표시됩니다.</li>
+<li><strong>다음</strong>을 클릭합니다. <strong>New Project</strong> 대화상자가 열립니다. 프로젝트를 구성하는 몇 가지 필드가 있습니다.</li>
+<li>다음과 같이 프로젝트를 구성합니다.</li>
+</ol>
+<p><strong>Name</strong> 필드는 프로젝트의 이름을 입력하는 데 사용하며 이 Codelab에서는 'Greeting Card'를 입력합니다.</p>
+<p><strong>Package name</strong> 필드는 그대로 둡니다. 이는 파일 구조에서 파일이 구성되는 방식입니다. 여기서 패키지 이름은 <code dir="ltr" translate="no">com.example.greetingcard</code>가 됩니다.</p>
+<p><strong>Save location</strong> 필드도 그대로 둡니다. 프로젝트와 관련된 모든 파일이 저장되는 위치가 포함되어 있습니다. 컴퓨터의 저장 위치를 기록해 파일을 찾을 수 있도록 합니다.</p>
+<p><strong>Minimum SDK</strong> 필드의 메뉴에서 <strong>API 24: Android 7.0(Nougat)</strong>을 선택합니다.  <a href="https://developer.android.com/guide/topics/manifest/uses-sdk-element?hl=ko" target="_blank">Minimum SDK</a>는 앱을 실행할 수 있는 Android의 최소 버전을 나타냅니다.</p>
+<p class="image-container"><img alt="4b0786fccfc883fe.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4b0786fccfc883fe.png?hl=ko" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4b0786fccfc883fe_36.png?hl=ko 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4b0786fccfc883fe_48.png?hl=ko 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4b0786fccfc883fe_72.png?hl=ko 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4b0786fccfc883fe_96.png?hl=ko 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4b0786fccfc883fe_480.png?hl=ko 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4b0786fccfc883fe_720.png?hl=ko 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4b0786fccfc883fe_856.png?hl=ko 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4b0786fccfc883fe_960.png?hl=ko 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4b0786fccfc883fe_1440.png?hl=ko 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4b0786fccfc883fe_1920.png?hl=ko 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/4b0786fccfc883fe_2880.png?hl=ko 2880w" style="width: 624.00px" /></p>
+<ol start="7" type="1">
+<li><strong>마침</strong>을 클릭합니다. 다소 시간이 걸릴 수 있으니, 차를 한 잔 드시고 와도 좋습니다. Android 스튜디오가 설정되는 동안 진행률 표시줄과 메시지를 통해 Android 스튜디오에서 아직 프로젝트를 설정하고 있는지 알 수 있습니다. 다음과 같이 표시될 수 있습니다.</li>
+</ol>
+<p class="image-container"><img 2="" alt="이 이미지는 회전하는 진행률 표시줄과 텍스트를 보여줍니다. " processes="" running..."."="" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/68405342ab13c821.png?hl=ko" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/68405342ab13c821_36.png?hl=ko 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/68405342ab13c821_48.png?hl=ko 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/68405342ab13c821_72.png?hl=ko 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/68405342ab13c821_96.png?hl=ko 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/68405342ab13c821_480.png?hl=ko 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/68405342ab13c821_720.png?hl=ko 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/68405342ab13c821_856.png?hl=ko 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/68405342ab13c821_960.png?hl=ko 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/68405342ab13c821_1440.png?hl=ko 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/68405342ab13c821_1920.png?hl=ko 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/68405342ab13c821_2880.png?hl=ko 2880w" style="width: 312.00px" title="Android 스튜디오 진행률 표시줄" /></p>
+<p>프로젝트 설정이 만들어지면 이와 같은 메시지가 표시됩니다.</p>
+<p class="image-container"><img 44s="" 546="" alt="이 이미지는 Gradle 동기화 메시지를 보여줍니다. " finished="" gradle="" in="" ms"."="" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3558f61a535db5d1.png?hl=ko" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3558f61a535db5d1_36.png?hl=ko 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3558f61a535db5d1_48.png?hl=ko 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3558f61a535db5d1_72.png?hl=ko 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3558f61a535db5d1_96.png?hl=ko 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3558f61a535db5d1_480.png?hl=ko 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3558f61a535db5d1_720.png?hl=ko 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3558f61a535db5d1_856.png?hl=ko 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3558f61a535db5d1_960.png?hl=ko 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3558f61a535db5d1_1440.png?hl=ko 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3558f61a535db5d1_1920.png?hl=ko 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3558f61a535db5d1_2880.png?hl=ko 2880w" style="width: 492.00px" sync="" title="Gradle 동기화 메시지" /></p>
+<ol start="8" type="1">
+<li>Android 스튜디오의 새로운 기능에 관한 업데이트가 포함된 <strong>What's New</strong> 창이 표시될 수 있습니다. 지금은 닫습니다.</li>
+</ol>
+<p class="image-container"><img alt="c4b2b7748563ebb7.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c4b2b7748563ebb7.png?hl=ko" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c4b2b7748563ebb7_36.png?hl=ko 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c4b2b7748563ebb7_48.png?hl=ko 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c4b2b7748563ebb7_72.png?hl=ko 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c4b2b7748563ebb7_96.png?hl=ko 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c4b2b7748563ebb7_480.png?hl=ko 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c4b2b7748563ebb7_720.png?hl=ko 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c4b2b7748563ebb7_856.png?hl=ko 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c4b2b7748563ebb7_960.png?hl=ko 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c4b2b7748563ebb7_1440.png?hl=ko 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c4b2b7748563ebb7_1920.png?hl=ko 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c4b2b7748563ebb7_2880.png?hl=ko 2880w" style="width: 384.00px" /></p>
+<ol start="9" type="1">
+<li>Android 스튜디오 오른쪽 상단에서 <strong>Split</strong>을 클릭합니다. 그러면 코드와 디자인을 모두 확인할 수 있습니다. <strong>Code</strong>를 클릭하여 코드만 보거나 <strong>Design</strong>을 클릭하여 디자인만 볼 수도 있습니다.</li>
+</ol>
+<p class="image-container"><img alt="b17a701425679ff1.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/b17a701425679ff1.png?hl=ko" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/b17a701425679ff1_36.png?hl=ko 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/b17a701425679ff1_48.png?hl=ko 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/b17a701425679ff1_72.png?hl=ko 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/b17a701425679ff1_96.png?hl=ko 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/b17a701425679ff1_480.png?hl=ko 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/b17a701425679ff1_720.png?hl=ko 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/b17a701425679ff1_856.png?hl=ko 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/b17a701425679ff1_960.png?hl=ko 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/b17a701425679ff1_1440.png?hl=ko 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/b17a701425679ff1_1920.png?hl=ko 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/b17a701425679ff1_2880.png?hl=ko 2880w" style="width: 198.00px" /></p>
+<p><strong>Split</strong>을 누르면 다음 세 영역이 표시됩니다.</p>
+<p class="image-container"><img alt="c24906abb54b261a.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c24906abb54b261a.png?hl=ko" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c24906abb54b261a_36.png?hl=ko 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c24906abb54b261a_48.png?hl=ko 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c24906abb54b261a_72.png?hl=ko 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c24906abb54b261a_96.png?hl=ko 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c24906abb54b261a_480.png?hl=ko 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c24906abb54b261a_720.png?hl=ko 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c24906abb54b261a_856.png?hl=ko 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c24906abb54b261a_960.png?hl=ko 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c24906abb54b261a_1440.png?hl=ko 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c24906abb54b261a_1920.png?hl=ko 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/c24906abb54b261a_2880.png?hl=ko 2880w" style="width: 624.00px" /></p>
+<ul>
+<li><strong>Project</strong> 뷰(1)는 프로젝트의 파일과 폴더를 보여줍니다.</li>
+<li><strong>Code</strong> 뷰(2)에서는 코드를 수정합니다.</li>
+<li><strong>Design</strong> 뷰(3)에서는 앱이 어떻게 표시되는지 미리 봅니다.</li>
+</ul>
+<p><strong>Design</strong> 뷰에는 다음 텍스트가 있는 빈 창이 표시됩니다.</p>
+<p class="image-container"><img "build="" a="" alt="여기에 표시된 텍스트는 다음과 같습니다. " and="" be="" before="" below."="" build="" can="" displayed"="" is="" line="" needed="" on="" one="" preview="" refresh"="" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/38c4a624cae42640.png?hl=ko" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/38c4a624cae42640_36.png?hl=ko 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/38c4a624cae42640_48.png?hl=ko 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/38c4a624cae42640_72.png?hl=ko 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/38c4a624cae42640_96.png?hl=ko 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/38c4a624cae42640_480.png?hl=ko 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/38c4a624cae42640_720.png?hl=ko 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/38c4a624cae42640_856.png?hl=ko 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/38c4a624cae42640_960.png?hl=ko 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/38c4a624cae42640_1440.png?hl=ko 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/38c4a624cae42640_1920.png?hl=ko 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/38c4a624cae42640_2880.png?hl=ko 2880w" style="width: 462.00px" successful="" the="" title="Design 창" /></p>
+<ol start="10" type="1">
+<li><strong>Build &amp; Refresh</strong>를 클릭합니다. 빌드하는 데 다소 시간이 걸릴 수 있지만 완료되면 미리보기에 '<strong>Hello Android!</strong>'라는 텍스트 상자가 표시됩니다. 빈 Compose 활동에는 이 앱을 만드는 데 필요한 코드가 모두 포함되어 있습니다.</li>
+</ol>
+<p class="image-container"><img alt="a86077be9d06a909.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/a86077be9d06a909.png?hl=ko" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/a86077be9d06a909_36.png?hl=ko 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/a86077be9d06a909_48.png?hl=ko 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/a86077be9d06a909_72.png?hl=ko 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/a86077be9d06a909_96.png?hl=ko 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/a86077be9d06a909_480.png?hl=ko 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/a86077be9d06a909_720.png?hl=ko 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/a86077be9d06a909_856.png?hl=ko 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/a86077be9d06a909_960.png?hl=ko 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/a86077be9d06a909_1440.png?hl=ko 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/a86077be9d06a909_1920.png?hl=ko 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/a86077be9d06a909_2880.png?hl=ko 2880w" style="width: 624.00px" /></p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="0" step="2" label="프로젝트 파일 찾기">
+          
+          <h2 class="step-title" data-text="               3. 프로젝트 파일 찾기           " id="2" tabindex="-1">
+              3. 프로젝트 파일 찾기
+          </h2>
+          <p>이 섹션에서는 파일 구조를 자세히 알아보면서 Android 스튜디오를 계속 살펴봅니다.</p>
+<ol type="1">
+<li>Android 스튜디오에서 <strong>Project</strong> 탭을 확인합니다. <strong>Project</strong> 탭에 프로젝트의 파일 및 폴더가 표시됩니다. 프로젝트를 설정할 때 패키지 이름은 <strong>com.example.greetingcard</strong>였습니다. 이 패키지를 <strong>Project</strong> 탭에서 바로 확인할 수 있습니다. 패키지는 기본적으로 코드가 있는 폴더입니다. Android 스튜디오는 패키지 세트로 이루어진 디렉터리 구조로 프로젝트를 구성합니다.</li>
+<li>필요한 경우 <strong>Android</strong> 탭의 드롭다운 메뉴에서 <strong>Android</strong>를 선택합니다.</li>
+</ol>
+<p class="image-container"><img alt="52051aa2a3038b89.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/52051aa2a3038b89.png?hl=ko" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/52051aa2a3038b89_36.png?hl=ko 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/52051aa2a3038b89_48.png?hl=ko 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/52051aa2a3038b89_72.png?hl=ko 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/52051aa2a3038b89_96.png?hl=ko 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/52051aa2a3038b89_480.png?hl=ko 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/52051aa2a3038b89_720.png?hl=ko 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/52051aa2a3038b89_856.png?hl=ko 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/52051aa2a3038b89_960.png?hl=ko 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/52051aa2a3038b89_1440.png?hl=ko 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/52051aa2a3038b89_1920.png?hl=ko 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/52051aa2a3038b89_2880.png?hl=ko 2880w" style="width: 384.00px" /></p>
+<p>이는 사용하는 파일의 표준 뷰 및 구성입니다. 프로젝트의 코드를 작성할 때 유용합니다. 앱에서 작업할 파일에 쉽게 액세스할 수 있기 때문입니다. 하지만 Finder 나 Windows Explorer와 같은 파일 브라우저에서 파일을 확인하면 파일 계층 구조가 매우 다르게 구성됩니다.</p>
+<ol start="3" type="1">
+<li>드롭다운 메뉴에서 <strong>Project Source Files</strong>를 선택합니다. 이제 파일 브라우저와 동일한 방식으로 파일을 탐색할 수 있습니다.</li>
+</ol>
+<p class="image-container"><img alt="84dc993206449d28.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/84dc993206449d28.png?hl=ko" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/84dc993206449d28_36.png?hl=ko 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/84dc993206449d28_48.png?hl=ko 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/84dc993206449d28_72.png?hl=ko 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/84dc993206449d28_96.png?hl=ko 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/84dc993206449d28_480.png?hl=ko 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/84dc993206449d28_720.png?hl=ko 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/84dc993206449d28_856.png?hl=ko 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/84dc993206449d28_960.png?hl=ko 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/84dc993206449d28_1440.png?hl=ko 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/84dc993206449d28_1920.png?hl=ko 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/84dc993206449d28_2880.png?hl=ko 2880w" style="width: 384.00px" /></p>
+<ol start="4" type="1">
+<li>이전 뷰로 다시 전환하려면 <strong>Android</strong>를 다시 선택합니다. 이 과정에서는 <strong>Android</strong> 뷰를 사용합니다. 파일 구조가 이상해 보이는 경우 여전히 <strong>Android</strong> 뷰에 있는지 확인합니다.</li>
+</ol>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="0" step="3" label="텍스트 업데이트">
+          
+          <h2 class="step-title" data-text="               4. 텍스트 업데이트           " id="3" tabindex="-1">
+              4. 텍스트 업데이트
+          </h2>
+          <p>Android 스튜디오를 알아봤으므로 이제 인사말 카드를 만들어 보겠습니다.</p>
+<p><code dir="ltr" translate="no">MainActivity.kt</code> 파일의 <strong>Code</strong> 뷰를 확인합니다. 이 코드에는 특히 <code dir="ltr" translate="no">onCreate()</code> 및 <code dir="ltr" translate="no">setContent()</code> 함수 등 자동으로 생성된 함수가 있습니다.</p>
+<aside class="special"><p><strong>참고:</strong> 함수는 특정 작업을 실행하는 프로그램의 세그먼트입니다.</p>
+</aside>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Kotlin"><code translate="no" dir="ltr"><span class="devsite-syntax-kd">class</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nc">MainActivity</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ComponentActivity</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-kd">override</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kd">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">onCreate</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">savedInstanceState</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Bundle?)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-k">super</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-na">onCreate</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">savedInstanceState</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">setContent</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">GreetingCardTheme</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-c1">// A surface container using the 'background' color from the theme</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-n">Surface</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-na">fillMaxSize</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-n">color</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">MaterialTheme</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-na">colorScheme</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-na">background</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-n">Greeting</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"Android"</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p><code dir="ltr" translate="no">onCreate()</code> 함수는 이 Android 앱의 진입점이며 다른 함수를 호출하여 사용자 인터페이스를 빌드합니다. Kotlin 프로그램에서는 <code dir="ltr" translate="no">main()</code> 함수가 실행의 진입점/시작점입니다. Android 앱에서는 <code dir="ltr" translate="no">onCreate()</code> 함수가 이 역할을 합니다.</p>
+<p><code dir="ltr" translate="no">onCreate()</code> 함수 내 <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/platform/ComposeView?hl=ko#setContent(kotlin.Function0)" target="_blank"><code dir="ltr" translate="no">setContent()</code></a> 함수는 구성 가능한 함수를 통해 레이아웃을 정의하는 데 사용됩니다. <code dir="ltr" translate="no">@Composable</code> 주석으로 표시된 모든 함수는 <code dir="ltr" translate="no">setContent()</code> 함수 또는 다른 구성 가능한 함수에서 호출할 수 있습니다. 주석은 Jetpack Compose에서 이 함수가 UI를 생성하는 데 사용된다고 Kotlin 컴파일러에 알립니다.</p>
+<aside class="special"><p><strong>참고:</strong> 컴파일러는 개발자가 작성한 Kotlin 코드를 가져와 한 줄씩 확인하고 컴퓨터가 이해할 수 있는 형식으로 변환합니다. 이 프로세스를 코드 컴파일이라고 합니다.</p>
+</aside>
+<p>다음으로, <code dir="ltr" translate="no">Greeting()</code> 함수를 살펴보겠습니다. <code dir="ltr" translate="no">Greeting()</code> 함수는 구성 가능한 함수입니다. 위에는 <code dir="ltr" translate="no">@Composable</code> 주석이 있습니다. 이 구성 가능한 함수는 몇 가지 입력을 받아서 화면에 표시되는 내용을 생성합니다.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Kotlin"><code translate="no" dir="ltr"><span class="devsite-syntax-nd">@Composable</span>
+<span class="devsite-syntax-kd">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">Greeting</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kt">String</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">Text</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">text</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"Hello </span><span class="devsite-syntax-si">$</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-s">!"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>이전에 함수에 관해 알아봤지만(복습이 필요한 경우 <a href="https://developer.android.com/codelabs/basic-android-kotlin-compose-functions?hl=ko" target="_blank">Kotlin에서 함수 만들기 및 사용하기 codelab</a> 참고) 구성 가능한 함수에는 몇 가지 차이점이 있습니다.</p>
+<p class="image-container"><img alt="178c1b8d480aefe2.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/178c1b8d480aefe2.png?hl=ko" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/178c1b8d480aefe2_36.png?hl=ko 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/178c1b8d480aefe2_48.png?hl=ko 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/178c1b8d480aefe2_72.png?hl=ko 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/178c1b8d480aefe2_96.png?hl=ko 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/178c1b8d480aefe2_480.png?hl=ko 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/178c1b8d480aefe2_720.png?hl=ko 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/178c1b8d480aefe2_856.png?hl=ko 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/178c1b8d480aefe2_960.png?hl=ko 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/178c1b8d480aefe2_1440.png?hl=ko 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/178c1b8d480aefe2_1920.png?hl=ko 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/178c1b8d480aefe2_2880.png?hl=ko 2880w" style="width: 624.00px" /></p>
+<ul>
+<li><ol type="1">
+<li>함수 앞에 <code dir="ltr" translate="no">@Composable</code> 주석을 추가합니다.</li>
+</ol>
+</li>
+<li><ol start="2" type="1">
+<li><code dir="ltr" translate="no">@Composable</code> 함수 이름은 대문자로 표기됩니다.</li>
+</ol>
+</li>
+<li><ol start="3" type="1">
+<li><code dir="ltr" translate="no">@Composable</code> 함수는 아무것도 반환할 수 없습니다.</li>
+</ol>
+</li>
+</ul>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Kotlin"><code translate="no" dir="ltr"><span class="devsite-syntax-nd">@Composable</span>
+<span class="devsite-syntax-kd">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">Greeting</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kt">String</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">Text</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">text</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"Hello </span><span class="devsite-syntax-si">$</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-s">!"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>현재 <code dir="ltr" translate="no">Greeting()</code> 함수는 이름을 가져와 그 사용자에게 <code dir="ltr" translate="no">Hello</code>를 표시합니다.</p>
+<ol type="1">
+<li>'Hello'라고 하는 대신 자기 소개를 하도록 <code dir="ltr" translate="no">Greeting()</code> 함수를 업데이트합니다.</li>
+</ol>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Kotlin"><code translate="no" dir="ltr"><span class="devsite-syntax-nd">@Composable</span>
+<span class="devsite-syntax-kd">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">Greeting</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kt">String</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">Text</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">text</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"Hi, my name is </span><span class="devsite-syntax-si">$</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-s">!"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<ol start="2" type="1">
+<li>Android가 미리보기를 자동으로 업데이트할 것입니다.</li>
+</ol>
+<p class="image-container"><img alt="34c74a1b980c177.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/34c74a1b980c177.png?hl=ko" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/34c74a1b980c177_36.png?hl=ko 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/34c74a1b980c177_48.png?hl=ko 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/34c74a1b980c177_72.png?hl=ko 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/34c74a1b980c177_96.png?hl=ko 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/34c74a1b980c177_480.png?hl=ko 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/34c74a1b980c177_720.png?hl=ko 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/34c74a1b980c177_856.png?hl=ko 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/34c74a1b980c177_960.png?hl=ko 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/34c74a1b980c177_1440.png?hl=ko 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/34c74a1b980c177_1920.png?hl=ko 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/34c74a1b980c177_2880.png?hl=ko 2880w" style="width: 624.00px" /></p>
+<p>좋습니다. 텍스트를 변경했지만 이름이 아닌 Android로 소개됩니다. 이제 이름으로 소개하도록 맞춤설정합니다.</p>
+<p><code dir="ltr" translate="no">GreetingPreview()</code> 함수는 전체 앱을 빌드하지 않고도 컴포저블이 어떻게 표시되는지 확인할 수 있는 멋진 기능입니다. 컴포저블 미리보기를 사용 설정하려면 <code dir="ltr" translate="no">@Composable</code> 및 <code dir="ltr" translate="no">@Preview</code>로 주석 처리합니다. <code dir="ltr" translate="no">@Preview</code> 주석은 이 컴포저블을 이 파일의 디자인 뷰에 표시해야 한다고 Android 스튜디오에 알립니다.</p>
+<p><code dir="ltr" translate="no">@Preview</code> 주석이 <code dir="ltr" translate="no">showBackground</code>라는 매개변수를 사용하는 것을 확인할 수 있습니다. <code dir="ltr" translate="no">showBackground</code>가 <strong>true</strong>로 설정되면 컴포저블 미리보기에 배경이 추가됩니다.</p>
+<p>Android 스튜디오는 기본적으로 편집기에 밝은 테마를 사용하므로 <code dir="ltr" translate="no">showBackground</code> <code dir="ltr" translate="no">=</code> <code dir="ltr" translate="no">true</code>와 <code dir="ltr" translate="no">showBackground</code> <code dir="ltr" translate="no">=</code> <code dir="ltr" translate="no">false</code> 간의 차이를 확인하기 어려울 수 있습니다. 하지만 다음 예는 이러한 차이가 어떻게 표시되는지 보여줍니다. 이미지의 흰색 배경이 <code dir="ltr" translate="no">true</code>로 설정되어 있습니다.</p>
+<table class="vertical-rules">
+<tbody><tr><td colspan="1" rowspan="1"><p><img sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/239d7fabe065588.png?hl=ko" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/239d7fabe065588_36.png?hl=ko 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/239d7fabe065588_48.png?hl=ko 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/239d7fabe065588_72.png?hl=ko 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/239d7fabe065588_96.png?hl=ko 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/239d7fabe065588_480.png?hl=ko 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/239d7fabe065588_720.png?hl=ko 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/239d7fabe065588_856.png?hl=ko 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/239d7fabe065588_960.png?hl=ko 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/239d7fabe065588_1440.png?hl=ko 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/239d7fabe065588_1920.png?hl=ko 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/239d7fabe065588_2880.png?hl=ko 2880w" />showBackground = true</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><img sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3ce153efce1dadd3.png?hl=ko" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3ce153efce1dadd3_36.png?hl=ko 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3ce153efce1dadd3_48.png?hl=ko 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3ce153efce1dadd3_72.png?hl=ko 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3ce153efce1dadd3_96.png?hl=ko 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3ce153efce1dadd3_480.png?hl=ko 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3ce153efce1dadd3_720.png?hl=ko 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3ce153efce1dadd3_856.png?hl=ko 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3ce153efce1dadd3_960.png?hl=ko 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3ce153efce1dadd3_1440.png?hl=ko 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3ce153efce1dadd3_1920.png?hl=ko 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3ce153efce1dadd3_2880.png?hl=ko 2880w" />showBackground = false</p>
+</td></tr>
+</tbody></table>
+<ol start="3" type="1">
+<li>이름으로 <code dir="ltr" translate="no">GreetingPreview()</code> 함수를 업데이트합니다. 그런 다음 맞춤설정된 인사말 카드를 다시 빌드하여 확인합니다.</li>
+</ol>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Kotlin"><code translate="no" dir="ltr"><span class="devsite-syntax-nd">@Preview</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">showBackground</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">true</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-nd">@Composable</span>
+<span class="devsite-syntax-kd">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">GreetingPreview</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">GreetingCardTheme</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">Greeting</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"Meghan"</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p class="image-container"><img alt="9703ef244f8ee16c.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/9703ef244f8ee16c.png?hl=ko" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/9703ef244f8ee16c_36.png?hl=ko 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/9703ef244f8ee16c_48.png?hl=ko 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/9703ef244f8ee16c_72.png?hl=ko 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/9703ef244f8ee16c_96.png?hl=ko 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/9703ef244f8ee16c_480.png?hl=ko 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/9703ef244f8ee16c_720.png?hl=ko 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/9703ef244f8ee16c_856.png?hl=ko 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/9703ef244f8ee16c_960.png?hl=ko 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/9703ef244f8ee16c_1440.png?hl=ko 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/9703ef244f8ee16c_1920.png?hl=ko 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/9703ef244f8ee16c_2880.png?hl=ko 2880w" style="width: 624.00px" /></p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="0" step="4" label="배경 색상 변경">
+          
+          <h2 class="step-title" data-text="               5. 배경 색상 변경           " id="4" tabindex="-1">
+              5. 배경 색상 변경
+          </h2>
+          <p>이제 소개 텍스트가 표시되지만 약간 지루합니다. 이 섹션에서는 배경 색상을 변경하는 방법을 알아봅니다.</p>
+<p>소개의 배경 색상을 다르게 설정하려면 텍스트를 <a href="https://developer.android.com/reference/kotlin/androidx/compose/material/package-summary?hl=ko#Surface(androidx.compose.ui.Modifier,androidx.compose.ui.graphics.Shape,androidx.compose.ui.graphics.Color,androidx.compose.ui.graphics.Color,androidx.compose.foundation.BorderStroke,androidx.compose.ui.unit.Dp,kotlin.Function0)" target="_blank"><code dir="ltr" translate="no">Surface</code></a>로 둘러싸야 합니다. <code dir="ltr" translate="no">Surface</code>는 배경 색상이나 테두리와 같은 모양을 개발자가 변경할 수 있는 UI 섹션을 나타내는 컨테이너입니다.</p>
+<ol type="1">
+<li><code dir="ltr" translate="no">Surface</code>로 텍스트를 둘러싸려면 텍스트 줄을 강조표시하고 Windows의 경우 <code dir="ltr" translate="no">Alt+Enter</code>, Mac의 경우 <code dir="ltr" translate="no">Option+Enter</code>를 누른 후 <strong>Surround with widget</strong>을 선택합니다.</li>
+</ol>
+<p class="image-container"><img alt="220f9c42667a9595.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/220f9c42667a9595.png?hl=ko" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/220f9c42667a9595_36.png?hl=ko 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/220f9c42667a9595_48.png?hl=ko 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/220f9c42667a9595_72.png?hl=ko 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/220f9c42667a9595_96.png?hl=ko 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/220f9c42667a9595_480.png?hl=ko 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/220f9c42667a9595_720.png?hl=ko 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/220f9c42667a9595_856.png?hl=ko 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/220f9c42667a9595_960.png?hl=ko 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/220f9c42667a9595_1440.png?hl=ko 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/220f9c42667a9595_1920.png?hl=ko 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/220f9c42667a9595_2880.png?hl=ko 2880w" style="width: 624.00px" /></p>
+<ol start="2" type="1">
+<li><strong>Surround with Container</strong>를 선택합니다.</li>
+</ol>
+<p class="image-container"><img alt="f5258fe61ffc94fb.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/f5258fe61ffc94fb.png?hl=ko" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/f5258fe61ffc94fb_36.png?hl=ko 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/f5258fe61ffc94fb_48.png?hl=ko 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/f5258fe61ffc94fb_72.png?hl=ko 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/f5258fe61ffc94fb_96.png?hl=ko 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/f5258fe61ffc94fb_480.png?hl=ko 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/f5258fe61ffc94fb_720.png?hl=ko 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/f5258fe61ffc94fb_856.png?hl=ko 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/f5258fe61ffc94fb_960.png?hl=ko 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/f5258fe61ffc94fb_1440.png?hl=ko 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/f5258fe61ffc94fb_1920.png?hl=ko 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/f5258fe61ffc94fb_2880.png?hl=ko 2880w" style="width: 624.00px" /></p>
+<p>기본적으로 제공되는 컨테이너는 <code dir="ltr" translate="no">Box</code>이지만 다른 컨테이너 유형으로 변경할 수 있습니다. <code dir="ltr" translate="no">Box</code> 레이아웃은 이 과정의 후반부에 알아봅니다.</p>
+<p class="image-container"><img alt="85e695291c03dcfc.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/85e695291c03dcfc.png?hl=ko" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/85e695291c03dcfc_36.png?hl=ko 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/85e695291c03dcfc_48.png?hl=ko 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/85e695291c03dcfc_72.png?hl=ko 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/85e695291c03dcfc_96.png?hl=ko 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/85e695291c03dcfc_480.png?hl=ko 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/85e695291c03dcfc_720.png?hl=ko 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/85e695291c03dcfc_856.png?hl=ko 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/85e695291c03dcfc_960.png?hl=ko 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/85e695291c03dcfc_1440.png?hl=ko 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/85e695291c03dcfc_1920.png?hl=ko 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/85e695291c03dcfc_2880.png?hl=ko 2880w" style="width: 624.00px" /></p>
+<ol start="3" type="1">
+<li><code dir="ltr" translate="no">Box</code>를 삭제하고 대신 <code dir="ltr" translate="no">Surface()</code>를 입력합니다.</li>
+</ol>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Kotlin"><code translate="no" dir="ltr"><span class="devsite-syntax-nd">@Composable</span>
+<span class="devsite-syntax-kd">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">Greeting</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kt">String</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">Surface</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">Text</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">text</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"Hi, my name is </span><span class="devsite-syntax-si">$</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-s">!"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<ol start="4" type="1">
+<li><code dir="ltr" translate="no">Surface</code> 컨테이너에 <code dir="ltr" translate="no">color</code> 매개변수를 추가하고 <code dir="ltr" translate="no">Color</code>로 설정합니다.</li>
+</ol>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Kotlin"><code translate="no" dir="ltr"><span class="devsite-syntax-nd">@Composable</span>
+<span class="devsite-syntax-kd">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">Greeting</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kt">String</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">Surface</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">color</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Color</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">Text</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">text</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"Hi, my name is </span><span class="devsite-syntax-si">$</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-s">!"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<ol start="5" type="1">
+<li><code dir="ltr" translate="no">Color</code>를 입력하면 빨간색으로 표시되며 이는 Android 스튜디오에서 이 문제를 해결할 수 없음을 의미합니다. 이 문제를 해결하려면 import 문이 있는 파일의 맨 위로 스크롤하여 점 3개 버튼을 누르면 됩니다.</li>
+</ol>
+<p class="image-container"><img alt="80b6219d24f04365.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/80b6219d24f04365.png?hl=ko" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/80b6219d24f04365_36.png?hl=ko 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/80b6219d24f04365_48.png?hl=ko 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/80b6219d24f04365_72.png?hl=ko 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/80b6219d24f04365_96.png?hl=ko 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/80b6219d24f04365_480.png?hl=ko 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/80b6219d24f04365_720.png?hl=ko 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/80b6219d24f04365_856.png?hl=ko 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/80b6219d24f04365_960.png?hl=ko 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/80b6219d24f04365_1440.png?hl=ko 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/80b6219d24f04365_1920.png?hl=ko 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/80b6219d24f04365_2880.png?hl=ko 2880w" style="width: 222.00px" /></p>
+<ol start="6" type="1">
+<li>imports 문 목록 아래에 다음 문을 추가합니다.</li>
+</ol>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Kotlin"><code translate="no" dir="ltr"><span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.graphics.Color</span>
+</code></pre></devsite-code>
+<p>완성된 import 문 목록은 다음과 같습니다.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Kotlin"><code translate="no" dir="ltr"><span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">android.os.Bundle</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.activity.ComponentActivity</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.activity.compose.setContent</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.foundation.layout.Box</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.foundation.layout.fillMaxSize</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.material3.MaterialTheme</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.material3.Surface</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.material3.Text</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.runtime.Composable</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.Modifier</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.tooling.preview.Preview</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">com.example.greetingcard.ui.theme.GreetingCardTheme</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.graphics.Color</span>
+</code></pre></devsite-code>
+<ol start="7" type="1">
+<li>코드에서 import 문을 알파벳 순으로 계속 나열하고 사용하지 않는 import 문은 삭제하는 것이 좋습니다. 이렇게 하려면 상단 툴바에서 <strong>Help</strong>를 누르고 <strong>Optimize Imports</strong>를 입력한 다음 <strong>Optimize Imports</strong>를 클릭합니다.</li>
+</ol>
+<p class="image-container"><img alt="92241239038c774a.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/92241239038c774a.png?hl=ko" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/92241239038c774a_36.png?hl=ko 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/92241239038c774a_48.png?hl=ko 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/92241239038c774a_72.png?hl=ko 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/92241239038c774a_96.png?hl=ko 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/92241239038c774a_480.png?hl=ko 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/92241239038c774a_720.png?hl=ko 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/92241239038c774a_856.png?hl=ko 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/92241239038c774a_960.png?hl=ko 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/92241239038c774a_1440.png?hl=ko 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/92241239038c774a_1920.png?hl=ko 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/92241239038c774a_2880.png?hl=ko 2880w" style="width: 432.00px" /></p>
+<p>메뉴에서 <strong>Code</strong> > <strong>Optimize Imports</strong>를 선택하여 <strong>Optimize Imports</strong>를 바로 열 수도 있습니다. 'Help'의 검색 옵션을 사용하면 메뉴 항목의 위치가 기억나지 않을 때 위치를 찾을 수 있습니다.</p>
+<p>완성된 import 문 목록은 다음과 같습니다.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Kotlin"><code translate="no" dir="ltr"><span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">android.os.Bundle</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.activity.ComponentActivity</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.activity.compose.setContent</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.foundation.layout.fillMaxSize</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.material3.MaterialTheme</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.material3.Surface</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.material3.Text</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.runtime.Composable</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.Modifier</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.graphics.Color</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.tooling.preview.Preview</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">com.example.greetingcard.ui.theme.GreetingCardTheme</span>
+</code></pre></devsite-code>
+<ol start="8" type="1">
+<li>Surface 괄호 안에 입력한 Color가 빨간색에서 빨간색 밑줄로 바뀐 것을 볼 수 있습니다. 이 문제를 해결하려면 Color 뒤에 마침표를 추가합니다. 다양한 색상 옵션을 보여주는 팝업이 표시됩니다.</li>
+</ol>
+<p>이는 Android 스튜디오의 멋진 기능 중 하나로, 지능적이며 가능한 경우 도움을 줍니다. 여기서는 개발자가 색상을 지정하려고 할 때 이를 인식하여 다양한 색상을 제안합니다.</p>
+<p class="image-container"><img alt="3a709cb72da0f83d.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3a709cb72da0f83d.png?hl=ko" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3a709cb72da0f83d_36.png?hl=ko 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3a709cb72da0f83d_48.png?hl=ko 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3a709cb72da0f83d_72.png?hl=ko 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3a709cb72da0f83d_96.png?hl=ko 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3a709cb72da0f83d_480.png?hl=ko 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3a709cb72da0f83d_720.png?hl=ko 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3a709cb72da0f83d_856.png?hl=ko 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3a709cb72da0f83d_960.png?hl=ko 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3a709cb72da0f83d_1440.png?hl=ko 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3a709cb72da0f83d_1920.png?hl=ko 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/3a709cb72da0f83d_2880.png?hl=ko 2880w" style="width: 624.00px" /></p>
+<ol start="9" type="1">
+<li>노출 영역 색상을 선택합니다. 이 Codelab에서는 <strong>Cyan</strong>을 사용하지만 좋아하는 색상을 선택할 수 있습니다.</li>
+</ol>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Kotlin"><code translate="no" dir="ltr"><span class="devsite-syntax-nd">@Composable</span>
+<span class="devsite-syntax-kd">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">Greeting</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kt">String</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-n">Surface</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">color</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Color</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-na">Cyan</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">       </span><span class="devsite-syntax-n">Text</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">           </span><span class="devsite-syntax-n">text</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"Hi, my name is </span><span class="devsite-syntax-si">$</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-s">!"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">           </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span>
+<span class="devsite-syntax-w">       </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<ol start="10" type="1">
+<li>업데이트된 미리보기를 확인합니다.</li>
+</ol>
+<p class="image-container"><img alt="217a09ca55b503f8.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/217a09ca55b503f8.png?hl=ko" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/217a09ca55b503f8_36.png?hl=ko 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/217a09ca55b503f8_48.png?hl=ko 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/217a09ca55b503f8_72.png?hl=ko 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/217a09ca55b503f8_96.png?hl=ko 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/217a09ca55b503f8_480.png?hl=ko 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/217a09ca55b503f8_720.png?hl=ko 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/217a09ca55b503f8_856.png?hl=ko 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/217a09ca55b503f8_960.png?hl=ko 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/217a09ca55b503f8_1440.png?hl=ko 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/217a09ca55b503f8_1920.png?hl=ko 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/217a09ca55b503f8_2880.png?hl=ko 2880w" style="width: 624.00px" /></p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="0" step="5" label="패딩 추가">
+          
+          <h2 class="step-title" data-text="               6. 패딩 추가           " id="5" tabindex="-1">
+              6. 패딩 추가
+          </h2>
+          <p>텍스트에 배경 색상이 생겼습니다. 이제 텍스트 주위에 공백(패딩)을 추가합니다.</p>
+<p><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/Modifier?hl=ko" target="_blank"><code dir="ltr" translate="no">Modifier</code></a>는 컴포저블을 강화하거나 장식하는 데 사용됩니다. 사용할 수 있는 한 가지 수정자는 <code dir="ltr" translate="no">padding</code> 수정자이며 이는 요소 주위에 공백을 추가합니다. 여기서는 텍스트 주위에 공백을 추가합니다. <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/Modifier?hl=ko#(androidx.compose.ui.Modifier).padding(androidx.compose.ui.unit.Dp)" target="_blank"><code dir="ltr" translate="no">Modifier.padding()</code></a> 함수를 사용하여 실행합니다.</p>
+<p>모든 컴포저블에는 <code dir="ltr" translate="no">Modifier</code> 유형의 선택적 매개변수가 있어야 합니다. 이는 첫 번째 선택적 매개변수여야 합니다.</p>
+<ol type="1">
+<li><code dir="ltr" translate="no">modifier</code>에 <code dir="ltr" translate="no">24.dp</code> 크기로 패딩을 추가합니다.</li>
+</ol>
+<aside class="special"><p><strong>참고:</strong> 밀도 독립형 픽셀(<code dir="ltr" translate="no">dp</code>)은 다음 개발자 과정에서 자세히 알아보지만 지금 알아보고 싶다면 <a href="https://m3.material.io/foundations/layout/understanding-layout/spacing#abccd6ce-1092-4ad0-9351-de75aeae0edf" target="_blank">레이아웃: Material Design 3</a> 문서를 참고하세요.</p>
+</aside>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Kotlin"><code translate="no" dir="ltr"><span class="devsite-syntax-nd">@Composable</span>
+<span class="devsite-syntax-kd">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">Greeting</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kt">String</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">Surface</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">color</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Color</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-na">Cyan</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">Text</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">text</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"Hi, my name is </span><span class="devsite-syntax-si">$</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-s">!"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-na">padding</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-m">24.</span><span class="devsite-syntax-n">dp</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<ol start="2" type="1">
+<li>import 문 섹션에 아래의 import를 추가합니다.</li>
+</ol>
+<p><strong>Optimize Imports</strong>를 사용하여 새로 추가한 import 문을 알파벳순으로 정렬하세요.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Kotlin"><code translate="no" dir="ltr"><span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.unit.dp</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.foundation.layout.padding</span>
+</code></pre></devsite-code>
+<p class="image-container"><img alt="2c09be85535277e9.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2c09be85535277e9.png?hl=ko" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2c09be85535277e9_36.png?hl=ko 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2c09be85535277e9_48.png?hl=ko 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2c09be85535277e9_72.png?hl=ko 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2c09be85535277e9_96.png?hl=ko 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2c09be85535277e9_480.png?hl=ko 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2c09be85535277e9_720.png?hl=ko 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2c09be85535277e9_856.png?hl=ko 856w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2c09be85535277e9_960.png?hl=ko 960w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2c09be85535277e9_1440.png?hl=ko 1440w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2c09be85535277e9_1920.png?hl=ko 1920w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-app/img/2c09be85535277e9_2880.png?hl=ko 2880w" style="width: 624.00px" /></p>
+<p>축하합니다. Compose에서 첫 번째 Android 앱을 빌드했습니다. 쉽지 않은 작업인데 잘하셨습니다. 시간을 내어 다양한 색상과 텍스트를 적용해 보면서 잘 익히시기 바랍니다.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="0" step="6" label="솔루션 코드 검토">
+          
+          <h2 class="step-title" data-text="               7. 솔루션 코드 검토           " id="6" tabindex="-1">
+              7. 솔루션 코드 검토
+          </h2>
+          <h2 data-text="검토를 위한 코드 스니펫" id="code-snippet-for-review" is-upgraded="" tabindex="-1">검토를 위한 코드 스니펫</h2>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Kotlin"><code translate="no" dir="ltr"><span class="devsite-syntax-k">package</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">com.example.greetingcard</span>
+
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">android.os.Bundle</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.activity.ComponentActivity</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.activity.compose.setContent</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.foundation.layout.fillMaxSize</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.foundation.layout.padding</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.material3.MaterialTheme</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.material3.Surface</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.material3.Text</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.runtime.Composable</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.Modifier</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.graphics.Color</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.tooling.preview.Preview</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.unit.dp</span>
+<span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">com.example.greetingcard.ui.theme.GreetingCardTheme</span>
+
+<span class="devsite-syntax-kd">class</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nc">MainActivity</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ComponentActivity</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-kd">override</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kd">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">onCreate</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">savedInstanceState</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Bundle?)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-k">super</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-na">onCreate</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">savedInstanceState</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">setContent</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">GreetingCardTheme</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-c1">// A surface container using the 'background' color from the theme</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-n">Surface</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-na">fillMaxSize</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-n">color</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">MaterialTheme</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-na">colorScheme</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-na">background</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-n">Greeting</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"Android"</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-nd">@Composable</span>
+<span class="devsite-syntax-kd">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">Greeting</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kt">String</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">Surface</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">color</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Color</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-na">Cyan</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">Text</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">text</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"Hi, my name is </span><span class="devsite-syntax-si">$</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-s">!"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-na">padding</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-m">24.</span><span class="devsite-syntax-n">dp</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-nd">@Preview</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">showBackground</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">true</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-nd">@Composable</span>
+<span class="devsite-syntax-kd">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">GreetingPreview</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">GreetingCardTheme</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">Greeting</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"Meghan"</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="0" step="7" label="결론">
+          
+          <h2 class="step-title" data-text="               8. 결론           " id="7" tabindex="-1">
+              8. 결론
+          </h2>
+          <p>Android 스튜디오에 관해 알아보고 Compose를 사용하여 첫 Android 앱을 빌드했습니다. 수고하셨습니다.</p>
+<p>이 Codelab은 <a href="https://developer.android.com/courses/android-basics-compose/course?hl=ko" target="_blank">Compose 사용 시 알아야 하는 Android 기본사항 과정</a>의 일부입니다. 에뮬레이터나 실제 기기에서 앱을 실행하는 방법을 알아보려면 <a href="https://developer.android.com/courses/pathways/android-basics-compose-unit-1-pathway-2?hl=ko" target="_blank">이 개발자 과정</a>의 다음 Codelab을 확인하세요.</p>
+<h2 data-text="요약" id="summary" is-upgraded="" tabindex="-1">요약</h2>
+<ul>
+<li>새 프로젝트를 만들려면 Android 스튜디오를 열고 <strong>New Project > Empty Activity > Next</strong>를 클릭하여 프로젝트 이름을 입력한 다음 설정을 구성합니다.</li>
+<li>앱이 어떻게 표시되는지 확인하려면 <strong>Preview</strong> 창을 사용합니다.</li>
+<li>구성 가능한 함수는 일반 함수와 비슷하지만 몇 가지 차이점이 있습니다. 함수 이름은 대문자로 표기되며 함수 앞에 <code dir="ltr" translate="no">@Composable</code> 주석을 추가하고 <code dir="ltr" translate="no">@Composable</code> 함수는 아무것도 반환할 수 없습니다.</li>
+<li><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/Modifier?hl=ko" target="_blank"><code dir="ltr" translate="no">Modifier</code></a>는 컴포저블을 강화하거나 장식하는 데 사용됩니다.</li>
+</ul>
+<h2 data-text="자세히 알아보기" id="learn-more" is-upgraded="" tabindex="-1">자세히 알아보기</h2>
+<ul>
+<li><a href="https://developer.android.com/studio/intro?hl=ko" target="_blank">Android 스튜디오 소개</a></li>
+<li><a href="https://developer.android.com/studio/projects?hl=ko" target="_blank">프로젝트 개요</a></li>
+<li><a href="https://developer.android.com/studio/projects/create-project?hl=ko" target="_blank">프로젝트 만들기</a></li>
+<li><a href="https://developer.android.com/studio/projects/templates?hl=ko" target="_blank">템플릿에서 코드 추가</a></li>
+<li><a href="https://developer.android.com/jetpack/compose?hl=ko" target="_blank">Jetpack Compose</a></li>
+<li><a href="https://m3.material.io/foundations/layout/understanding-layout/spacing#64eb2223-f5e8-4d2a-9edc-9e3a7002220a" target="_blank">패딩 - Material Design 3</a></li>
+</ul>
+
+
+        </google-codelab-step>
+      
+    </google-codelab>
+  
+  
+  
+
+  
+</div>
+
+  
+    
+    
+    
+  
+
+  <div class="devsite-floating-action-buttons"></div></article>
+
+
+<devsite-content-footer class="nocontent">
+  <p>달리 명시되지 않는 한 이 페이지의 콘텐츠에는 <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 라이선스</a>에 따라 라이선스가 부여되며, 코드 샘플에는 <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 라이선스</a>에 따라 라이선스가 부여됩니다. 자세한 내용은 <a href="https://developers.google.com/site-policies?hl=ko">Google Developers 사이트 정책</a>을 참조하세요. 자바는 Oracle 및/또는 Oracle 계열사의 등록 상표입니다.</p>
+  
+</devsite-content-footer>
+
+
+<devsite-notification
+>
+</devsite-notification>
+
+
+  
+<div class="devsite-content-data">
+  
+  
+    <template class="devsite-content-data-template">
+      [[["이해하기 쉬움","easyToUnderstand","thumb-up"],["문제가 해결됨","solvedMyProblem","thumb-up"],["기타","otherUp","thumb-up"]],[["필요한 정보가 없음","missingTheInformationINeed","thumb-down"],["너무 복잡함/단계 수가 너무 많음","tooComplicatedTooManySteps","thumb-down"],["오래됨","outOfDate","thumb-down"],["번역 문제","translationIssue","thumb-down"],["샘플/코드 문제","samplesCodeIssue","thumb-down"],["기타","otherDown","thumb-down"]],[],[],[],null,[]]
+    </template>
+  
+</div>
+            
+          </devsite-content>
+        </main>
+        <devsite-footer-promos class="devsite-footer">
+          
+            
+
+<nav class="devsite-footer-promos nocontent" aria-label="프로모션">
+  <ul class="devsite-footer-promos-list">
+    
+    <li class="devsite-footer-promo">
+      <a href="//x.com/AndroidDev"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer X Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-x_dt.svg?hl=ko"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="https://developer.android.com/_static/android/images/logo-x.svg?hl=ko"
+                loading="lazy"
+                alt="X">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          X
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">X에서 @AndroidDev 팔로우</div>
+    </li>
+    
+    <li class="devsite-footer-promo">
+      <a href="//www.youtube.com/user/androiddevelopers?hl=ko"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer YouTube Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-youtube_dt.svg?hl=ko"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="//www.gstatic.com/images/icons/material/product/2x/youtube_48dp.png"
+                loading="lazy"
+                alt="YouTube">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          YouTube
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">YouTube에서 Android 개발자 확인</div>
+    </li>
+    
+    <li class="devsite-footer-promo">
+      <a href="//www.linkedin.com/showcase/androiddev"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer LinkedIn Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-linkedin_dt.svg?hl=ko"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="https://developer.android.com/_static/android/images/logo-linkedin.svg?hl=ko"
+                loading="lazy"
+                alt="LinkedIn">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          LinkedIn
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Connect with the Android Developers community on LinkedIn</div>
+    </li>
+    
+  </ul>
+</nav>
+
+          
+        </devsite-footer-promos>
+        <devsite-footer-linkboxes class="devsite-footer">
+          
+            
+<nav class="devsite-footer-linkboxes nocontent" aria-label="바닥글 링크">
+  
+  <ul class="devsite-footer-linkboxes-list">
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Android 자세히 알아보기</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com/enterprise/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            엔터프라이즈용 Android
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com/security-center/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            보안
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//source.android.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            소스
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/news"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            뉴스
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//android-developers.googleblog.com/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+          
+            블로그
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/podcasts"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 7)"
+            >
+            
+              
+              
+            
+          
+            팟캐스트
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">탐색</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/games"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            게임
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/ml"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            머신러닝
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/health-and-fitness"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            건강 및 피트니스
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/media"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            카메라 및 미디어
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/privacy"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            개인정보처리방침
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/training/connectivity/5g"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+              
+              
+            
+          
+            5G
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Android 기기</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/large-screens"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            큰 화면
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/wear"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Wear OS
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/chrome-os"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            ChromeOS 기기
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/cars"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            자동차용 Android
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/tv"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+              
+              
+            
+          
+            Android TV
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">출시</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/15"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android 15
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/14"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Android 14
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/13"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Android 13
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/12"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Android 12
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/11"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            Android 11
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/10"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+          
+            Android 10
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/pie"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 7)"
+            >
+            
+              
+              
+            
+          
+            Pie
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">문서 및 다운로드</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/studio/intro"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android 스튜디오 가이드
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/guide"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            개발자 가이드
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/reference"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            API 참조
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/studio"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            스튜디오 다운로드
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/ndk"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+              
+              
+            
+          
+            Android NDK
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">지원</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//issuetracker.google.com/issues/new?component=190923&amp;template=841312"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            플랫폼 버그 신고
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//issuetracker.google.com/issues/new?component=192697"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            문서 버그 신고
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//support.google.com/googleplay/android-developer"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Google Play support
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://g.co/userresearch/androiddeveloperfooter"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+              
+              
+            
+          
+            연구 조사 참여
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+  
+</nav>
+          
+        </devsite-footer-linkboxes>
+        <devsite-footer-utility class="devsite-footer">
+          
+            
+
+<div class="devsite-footer-utility nocontent">
+  
+  
+  <nav class="devsite-footer-sites" aria-label="기타 Google Developers 웹사이트">
+    <a href="https://developers.google.com/?hl=ko"
+       class="devsite-footer-sites-logo-link gc-analytics-event"
+       data-category="Site-Wide Custom Events"
+       data-label="Footer Google Developers Link">
+      <picture>
+        
+        <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-google-for-developers-dark-theme.svg"
+                media="(prefers-color-scheme: none)"
+                class="devsite-dark-theme">
+        
+        <img class="devsite-footer-sites-logo"
+             src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-google-for-developers.svg"
+             loading="lazy"
+             alt="Google Developers">
+      </picture>
+    </a>
+    <ul class="devsite-footer-sites-list">
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.android.com?hl=ko"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Android Link"
+         
+         >
+          Android
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.chrome.com/home?hl=ko"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Chrome Link"
+         
+         >
+          Chrome
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//firebase.google.com?hl=ko"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Firebase Link"
+         
+         >
+          Firebase
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//cloud.google.com?hl=ko"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Google Cloud Platform Link"
+         
+         >
+          Google Cloud Platform
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developers.google.com/products/?hl=ko"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer All products Link"
+         
+         >
+          모든 제품
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  
+
+  
+  <nav class="devsite-footer-utility-links" aria-label="유틸리티 링크">
+    
+    <ul class="devsite-footer-utility-list">
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//policies.google.com/privacy?hl=ko"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Privacy link"
+         >
+          개인정보처리방침
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="https://developer.android.com/license?hl=ko"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer License link"
+         >
+          라이선스
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="https://developer.android.com/distribute/marketing-tools/brand-guidelines?hl=ko"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Brand guidelines link"
+         >
+          브랜드 가이드라인
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 glue-cookie-notification-bar-control">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="#"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Manage cookies link"
+         
+           aria-hidden="true"
+         >
+          Manage cookies
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 devsite-footer-utility-button">
+        
+        <span class="devsite-footer-utility-description">이메일로 뉴스와 유용한 팁 받아보기</span>
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="https://developer.android.com/updates?hl=ko"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Subscribe link"
+         >
+          구독
+        </a>
+        
+      </li>
+      
+    </ul>
+    
+    
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+  </nav>
+</div>
+          
+        </devsite-footer-utility>
+        <devsite-panel>
+          
+        </devsite-panel>
+        
+      </section></section>
+    <devsite-sitemask></devsite-sitemask>
+    <devsite-snackbar></devsite-snackbar>
+    <devsite-tooltip ></devsite-tooltip>
+    <devsite-heading-link></devsite-heading-link>
+    <devsite-analytics>
+      
+        <script type="application/json" analytics>[]</script>
+<script type="application/json" tag-management>{&#34;at&#34;: &#34;True&#34;, &#34;ga4&#34;: [{&#34;id&#34;: &#34;G-QFRN08RN6E&#34;, &#34;purpose&#34;: 0}], &#34;ga4p&#34;: [{&#34;id&#34;: &#34;G-QFRN08RN6E&#34;, &#34;purpose&#34;: 0}], &#34;gtm&#34;: [], &#34;parameters&#34;: {&#34;internalUser&#34;: &#34;False&#34;, &#34;language&#34;: {&#34;machineTranslated&#34;: &#34;False&#34;, &#34;requested&#34;: &#34;ko&#34;, &#34;served&#34;: &#34;ko&#34;}, &#34;pageType&#34;: &#34;codelab&#34;, &#34;projectName&#34;: null, &#34;signedIn&#34;: &#34;False&#34;, &#34;tenant&#34;: &#34;android&#34;, &#34;recommendations&#34;: {&#34;sourcePage&#34;: &#34;&#34;, &#34;sourceType&#34;: 0, &#34;sourceRank&#34;: 0, &#34;sourceIdenticalDescriptions&#34;: 0, &#34;sourceTitleWords&#34;: 0, &#34;sourceDescriptionWords&#34;: 0, &#34;experiment&#34;: &#34;&#34;}, &#34;experiment&#34;: {&#34;ids&#34;: &#34;&#34;}}}</script>
+      
+    </devsite-analytics>
+    
+      <devsite-badger></devsite-badger>
+    
+    
+    
+<android-fully-clickable
+    target="
+        .android-case-study .devsite-landing-row-item,
+        .android-editorial-and-updates-cards .devsite-card-content-wrapper,
+        .android-editorial-and-updates-cards .devsite-landing-row-item,
+        .android-grouped-resources .devsite-landing-row-item,
+        .android-grouped-resources-contained--primary .devsite-landing-row-item,
+        .android-grouped-resources-contained--secondary .devsite-landing-row-item,
+        .android-grouped-resources-contained--tertiary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--primary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--secondary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--tertiary .devsite-landing-row-item,
+        .android-guide-cards .devsite-landing-row-item,
+        .android-illustrated-resources-index .devsite-landing-row-item,
+        .android-illustrated-resources-primary .devsite-landing-row-item,
+        .android-illustrated-resources-secondary .devsite-landing-row-item,
+        .android-illustrated-resources-secondary-small .devsite-landing-row-item,
+        .android-illustrated-resources-tertiary .devsite-landing-row-item,
+        .android-illustrated-resources-tertiary-small .devsite-landing-row-item,
+        .android-promo .devsite-landing-row-item,
+        .android-quick-link,
+        .android-samples .devsite-card-wrapper,
+        .fully-clickable"
+    watch=".android-editorial-and-updates-cards, .android-samples, devsite-content"></android-fully-clickable>
+    
+<script nonce="XADvAUIHYifyZwxyprn362JeArnNyI">
+  
+  (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+    t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+    E.parentNode.insertBefore(t,E);})(window, document, 'script',
+    'https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/js/app_loader.js', '[3,"ko",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android","https://android-dot-devsite-v2-prod.appspot.com",1,null,["/_pwa/android/manifest.json","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/favicon.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png","https://fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,600italic,700,700italic|Roboto+Mono:400,500,700&display=swap"],1,null,[1,6,8,12,14,17,21,25,50,52,63,70,75,76,80,87,91,92,93,97,98,100,101,102,103,104,105,107,108,109,110,112,113,116,117,118,120,122,124,125,126,127,129,130,131,132,133,134,135,136,138,140,141,147,148,149,151,152,156,157,158,159,161,163,164,168,169,170,179,180,182,183,186,191,193,196],"AIzaSyAP-jjEJBzmIyKR4F-3XITp8yM9T1gEEI8","AIzaSyB6xiKGDR5O3Ak2okS4rLkauxGUG7XP0hg","developer.android.com","AIzaSyAQk0fBONSGUqCNznf6Krs82Ap1-NV6J4o","AIzaSyCCxcqdrZ_7QMeLCRY20bh_SXdAYqy70KY",null,null,null,["MiscFeatureFlags__enable_view_transitions","CloudShell__cloud_code_overflow_menu","Profiles__enable_completequiz_endpoint","MiscFeatureFlags__enable_project_variables","Cloud__fast_free_trial","MiscFeatureFlags__enable_firebase_utm","Profiles__enable_complete_playlist_endpoint","Profiles__enable_public_developer_profiles","MiscFeatureFlags__enable_project_body_class","Analytics__enable_clearcut_logging","Search__enable_ai_search_summaries_for_all","BookNav__enable_tenant_cache_key","TpcFeatures__enable_unmirrored_page_left_nav","DevPro__enable_vertex_credit_card","MiscFeatureFlags__developers_footer_image","DevPro__enable_google_payments_buyflow","TpcFeatures__proxy_prod_host","Cloud__enable_cloud_shell","Concierge__enable_pushui","Cloud__enable_cloud_dlp_service","DevPro__enable_developer_subscriptions","DevPro__enable_devpro_offers","Search__enable_page_map","Cloud__enable_free_trial_server_call","MiscFeatureFlags__enable_dark_theme","Profiles__enable_join_program_group_endpoint","Search__enable_dynamic_content_confidential_banner","DevPro__enable_embed_profile_creation","MiscFeatureFlags__enable_variable_operator_index_yaml","MiscFeatureFlags__enable_framebox_badge_methods","EngEduTelemetry__enable_engedu_telemetry","MiscFeatureFlags__gdp_dashboard_reskin_enabled","Search__enable_ai_eligibility_checks","Profiles__enable_completecodelab_endpoint","Profiles__enable_user_type","MiscFeatureFlags__enable_variable_operator","Significatio__enable_by_tenant","DevPro__enable_free_benefits","Profiles__enable_purchase_prompts","Concierge__enable_actions_menu","Cloud__cache_serialized_dynamic_content","Profiles__enable_callout_notifications","Profiles__enable_stripe_subscription_management","Profiles__enable_playlist_community_acl","DevPro__enable_google_one_card","CloudShell__cloud_shell_button","DevPro__enable_code_assist","Search__enable_suggestions_from_borg","MiscFeatureFlags__enable_explicit_template_dependencies","Cloud__enable_legacy_calculator_redirect","Profiles__enable_awarding_url","DevPro__enable_enterprise","MiscFeatureFlags__developers_footer_dark_image","Profiles__enable_recognition_badges","Experiments__reqs_query_experiments","DevPro__remove_eu_tax_intake_form","Profiles__enable_developer_profiles_callout","Profiles__enable_dashboard_curated_recommendations","DevPro__enable_firebase_workspaces_card","Cloud__enable_cloudx_experiment_ids","Profiles__require_profile_eligibility_for_signin","MiscFeatureFlags__enable_appearance_cookies","Cloud__enable_llm_concierge_chat","Cloud__enable_cloud_shell_fte_user_flow","Profiles__enable_profile_collections","MiscFeatureFlags__emergency_css","DevPro__enable_cloud_innovators_plus","Concierge__enable_remove_info_panel_tags","DevPro__enable_nvidia_credits_card","Profiles__enable_page_saving","Profiles__enable_release_notes_notifications","Profiles__enable_developer_profile_benefits_ui_redesign"],null,null,"AIzaSyBLEMok-5suZ67qRPzx0qUtbnLmyT_kCVE","https://developerscontentserving-pa.googleapis.com","AIzaSyCM4QpTRSqP5qI4Dvjt4OAScIN8sOUlO-k","https://developerscontentsearch-pa.googleapis.com",2,4,null,"https://developerprofiles-pa.googleapis.com",[3,"android","Android Developers","developer.android.com",null,"android-dot-devsite-v2-prod.appspot.com",null,null,[null,1,null,null,null,null,null,null,null,null,null,[1],null,null,null,null,null,null,[1],[1,null,null,[1,20],"/recommendations"],null,null,null,[1,null,1],[1,1,null,1,1]],null,[18,null,null,null,null,null,"/images/lockup.png","/images/touchicon-180.png",null,null,null,null,null,null,null,null,null,null,null,null,null,2,null,null,null,"/images/lockup-dark-theme.png",[]],[],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[6,1,14,15,20,22,23,28,29,37,43],null,[[null,null,1],[1,1]],[[null,null,null,null,null,null,null,[["G-QFRN08RN6E"],null,null,[["G-QFRN08RN6E",1]]],null,null,null,null,1],null,[[1,1],[2,2]]],null,4,null,null,null,null,null,null,null,null,null,null,null,null,null,"android.devsite.google"],null,"pk_live_5170syrHvgGVmSx9sBrnWtA5luvk9BwnVcvIi7HizpwauFG96WedXsuXh790rtij9AmGllqPtMLfhe2RSwD6Pn38V00uBCydV4m",1,null,"https://developerscontentinsights-pa.googleapis.com","AIzaSyCg-ZUslalsEbXMfIo9ZP8qufZgo3LSBDU","AIzaSyDxT0vkxnY_KeINtA4LSePJO-4MAZPMRsE","https://developers.googleapis.com",null,null,"AIzaSyBQom12tzI-rybN7Sf-KfeL4nwm-Rf7PmI\n",null,"https://developerslogging.googleapis.com"]')
+  
+</script>
+
+    <devsite-a11y-announce></devsite-a11y-announce>
+  </body>
+</html>

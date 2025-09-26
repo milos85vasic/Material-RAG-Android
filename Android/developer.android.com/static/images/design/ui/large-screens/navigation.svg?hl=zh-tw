@@ -1,0 +1,53 @@
+<svg width="289" height="289" viewBox="0 0 289 289" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="289" height="289" rx="12" fill="#CEF4A2"/>
+<g clip-path="url(#clip0_2557_41550)">
+<rect x="21.6748" y="68.6375" width="245.65" height="151.725" rx="12" fill="white"/>
+<path d="M21.6748 80.6375C21.6748 74.0101 27.0474 68.6375 33.6748 68.6375H79.4748V220.363H33.6748C27.0474 220.363 21.6748 214.99 21.6748 208.363V80.6375Z" fill="#63CEAD"/>
+<ellipse cx="36.1247" cy="86.7" rx="3.6125" ry="3.6125" fill="#DDFA51"/>
+<ellipse cx="36.1247" cy="99.705" rx="3.6125" ry="3.6125" fill="#DDFA51"/>
+<ellipse cx="36.1247" cy="112.71" rx="3.6125" ry="3.6125" fill="#DDFA51"/>
+<ellipse cx="36.1247" cy="125.715" rx="3.6125" ry="3.6125" fill="#DDFA51"/>
+<ellipse cx="36.1247" cy="138.72" rx="3.6125" ry="3.6125" fill="#DDFA51"/>
+<rect x="41.9048" y="85.255" width="14.45" height="2.89" rx="1.445" fill="#DDFA51"/>
+<rect x="41.9048" y="124.27" width="10.115" height="2.89" rx="1.445" fill="#DDFA51"/>
+<rect x="41.9048" y="98.26" width="21.675" height="2.89" rx="1.445" fill="#DDFA51"/>
+<rect x="41.9048" y="137.275" width="14.45" height="2.89" rx="1.445" fill="#DDFA51"/>
+<rect x="41.9048" y="111.265" width="18.0625" height="2.89" rx="1.445" fill="#DDFA51"/>
+<rect x="94.6475" y="83.0875" width="47.685" height="36.125" rx="6" fill="#CEF4A2"/>
+<rect x="94.6475" y="126.438" width="47.685" height="36.125" rx="6" fill="#CEF4A2"/>
+<rect x="94.6475" y="169.788" width="47.685" height="36.125" rx="6" fill="#CEF4A2"/>
+<rect x="149.558" y="83.0875" width="47.685" height="36.125" rx="6" fill="#CEF4A2"/>
+<rect x="149.558" y="126.438" width="47.685" height="36.125" rx="6" fill="#CEF4A2"/>
+<rect x="149.558" y="169.788" width="47.685" height="36.125" rx="6" fill="#CEF4A2"/>
+<rect x="204.467" y="83.0875" width="47.685" height="36.125" rx="6" fill="#CEF4A2"/>
+<rect x="204.467" y="126.438" width="47.685" height="36.125" rx="6" fill="#CEF4A2"/>
+<rect x="204.467" y="169.788" width="47.685" height="36.125" rx="6" fill="#CEF4A2"/>
+<g clip-path="url(#clip1_2557_41550)">
+<rect x="115.6" y="111.987" width="144.5" height="101.15" rx="6" fill="#8AA1FF"/>
+<path d="M115.6 117.987C115.6 114.674 118.286 111.987 121.6 111.987H130.05V213.137H121.6C118.286 213.137 115.6 210.451 115.6 207.137V117.987Z" fill="#576500"/>
+<ellipse cx="123.186" cy="143.416" rx="1.80625" ry="1.80625" fill="#DDFA51"/>
+<ellipse cx="123.186" cy="150.641" rx="1.80625" ry="1.80625" fill="#DDFA51"/>
+<ellipse cx="123.186" cy="157.866" rx="1.80625" ry="1.80625" fill="#DDFA51"/>
+<ellipse cx="123.186" cy="165.091" rx="1.80625" ry="1.80625" fill="#DDFA51"/>
+<ellipse cx="123.186" cy="172.316" rx="1.80625" ry="1.80625" fill="#DDFA51"/>
+<path d="M124.269 119.212H122.102V122.102H119.212V124.27H122.102V127.16H124.269V124.27H127.159V122.102H124.269V119.212Z" fill="#FFEF91"/>
+<rect x="137.274" y="119.935" width="36.125" height="26.01" rx="6" fill="white"/>
+<rect x="177.012" y="119.935" width="36.125" height="26.01" rx="6" fill="white"/>
+<rect x="216.75" y="119.935" width="36.125" height="26.01" rx="6" fill="white"/>
+<rect x="177.012" y="149.557" width="36.125" height="26.01" rx="6" fill="white"/>
+<rect x="137.274" y="149.557" width="36.125" height="26.01" rx="6" fill="white"/>
+<rect x="177.012" y="179.18" width="36.125" height="26.01" rx="6" fill="white"/>
+<rect x="216.75" y="149.557" width="36.125" height="26.01" rx="6" fill="white"/>
+<rect x="137.274" y="179.18" width="36.125" height="26.01" rx="6" fill="white"/>
+<rect x="216.75" y="179.18" width="36.125" height="26.01" rx="6" fill="white"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_2557_41550">
+<rect x="21.6748" y="68.6375" width="245.65" height="151.725" rx="12" fill="white"/>
+</clipPath>
+<clipPath id="clip1_2557_41550">
+<rect x="115.6" y="111.987" width="144.5" height="101.15" rx="6" fill="white"/>
+</clipPath>
+</defs>
+</svg>

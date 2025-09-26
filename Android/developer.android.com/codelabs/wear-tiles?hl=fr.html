@@ -1,0 +1,2054 @@
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html 
+      lang="fr-x-mtfrom-en"
+      dir="ltr">
+  <head>
+    <meta name="google-signin-client-id" content="721724668570-nbkv1cfusk7kk4eni4pjvepaus73b13t.apps.googleusercontent.com">
+    <meta name="google-signin-scope"
+          content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award">
+    <meta property="og:site_name" content="Android Developers">
+    <meta property="og:type" content="website"><meta name="theme-color" content="#34a853"><meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <link rel="manifest" href="/_pwa/android/manifest.json"
+          crossorigin="use-credentials">
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="//apis.google.com" crossorigin>
+    <link rel="preconnect" href="//www.google-analytics.com" crossorigin><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,600italic,700,700italic|Roboto+Mono:400,500,700&display=swap">
+      <link rel="stylesheet"
+            href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block"><link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/css/app.css">
+      
+        <link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/css/dark-theme.css" disabled>
+      <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/favicon.svg">
+    <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/touchicon-180.png"><link rel="canonical" href="https://developer.android.com/codelabs/wear-tiles?hl=fr"><link rel="search" type="application/opensearchdescription+xml"
+            title="Android Developers" href="https://developer.android.com/s/opensearch.xml?hl=fr">
+      <link rel="alternate" hreflang="en"
+          href="https://developer.android.com/codelabs/wear-tiles" /><link rel="alternate" hreflang="x-default" href="https://developer.android.com/codelabs/wear-tiles" /><link rel="alternate" hreflang="zh-Hans"
+          href="https://developer.android.com/codelabs/wear-tiles?hl=zh-cn" /><link rel="alternate" hreflang="zh-Hant"
+          href="https://developer.android.com/codelabs/wear-tiles?hl=zh-tw" /><link rel="alternate" hreflang="fr"
+          href="https://developer.android.com/codelabs/wear-tiles?hl=fr" /><link rel="alternate" hreflang="id"
+          href="https://developer.android.com/codelabs/wear-tiles?hl=id" /><link rel="alternate" hreflang="ja"
+          href="https://developer.android.com/codelabs/wear-tiles?hl=ja" /><link rel="alternate" hreflang="ko"
+          href="https://developer.android.com/codelabs/wear-tiles?hl=ko" /><link rel="alternate" hreflang="pt-BR"
+          href="https://developer.android.com/codelabs/wear-tiles?hl=pt-br" /><link rel="alternate" hreflang="es-419"
+          href="https://developer.android.com/codelabs/wear-tiles?hl=es-419" /><link rel="alternate" hreflang="vi"
+          href="https://developer.android.com/codelabs/wear-tiles?hl=vi" /><title>Créer votre première carte dans Wear OS &nbsp;|&nbsp; Android Developers</title>
+
+<meta property="og:title" content="Créer votre première carte dans Wear OS &nbsp;|&nbsp; Android Developers"><meta name="description" content="Dans cet atelier de programmation, vous découvrirez comment créer votre propre carte pour Wear OS. Vous utiliserez une bibliothèque qui facilite la création d&#39;une UI conforme aux consignes de design Material 3 Expressive, et vous prévisualiserez vos cartes dans Android Studio à mesure que vous développez l&#39;application.">
+  <meta property="og:description" content="Dans cet atelier de programmation, vous découvrirez comment créer votre propre carte pour Wear OS. Vous utiliserez une bibliothèque qui facilite la création d&#39;une UI conforme aux consignes de design Material 3 Expressive, et vous prévisualiserez vos cartes dans Android Studio à mesure que vous développez l&#39;application."><meta property="og:url" content="https://developer.android.com/codelabs/wear-tiles?hl=fr"><meta property="og:locale" content="fr"><link rel="alternate machine-translated-from" hreflang="en"
+        href="https://developer.android.com/codelabs/wear-tiles?hl=en">
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+
+    
+      <link rel="stylesheet" href="/extras.css"></head>
+  <body class=""
+        template="codelab"
+        theme="android-theme"
+        type="codelab"
+        
+        
+        appearance
+        
+        layout="docs"
+        
+        
+        
+        
+        display-toc
+        pending>
+  
+    <devsite-progress type="indeterminate" id="app-progress"></devsite-progress>
+  
+  
+    <a href="#main-content" class="skip-link button">
+      
+      Passer au contenu principal
+    </a>
+    <section class="devsite-wrapper">
+      <devsite-cookie-notification-bar></devsite-cookie-notification-bar><devsite-header role="banner">
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-header--inner" data-nosnippet>
+  <div class="devsite-top-logo-row-wrapper-wrapper">
+    <div class="devsite-top-logo-row-wrapper">
+      <div class="devsite-top-logo-row">
+        <button type="button" id="devsite-hamburger-menu"
+          class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+          data-category="Site-Wide Custom Events"
+          data-label="Navigation menu button"
+          visually-hidden
+          aria-label="Ouvrir le menu">
+        </button>
+        
+<div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="androidDevelopers" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-dark-theme.png"
+            media="(prefers-color-scheme: dark)"
+            class="devsite-dark-theme">
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png" class="devsite-site-logo" alt="Android Developers">
+  </picture>
+  
+</a>
+
+
+
+</div>
+        <div class="devsite-top-logo-row-middle">
+          <div class="devsite-header-upper-tabs">
+            
+           </div>
+          
+<devsite-search
+    enable-signin
+    enable-search
+    enable-suggestions
+      enable-query-completion
+    
+    enable-search-summaries
+    
+    tenant-name="Android Developers"
+    
+    
+    
+    
+    
+    >
+  <form class="devsite-search-form" action="https://developer.android.com/s/results?hl=fr" method="GET">
+    <div class="devsite-search-container">
+      <button type="button"
+              search-open
+              class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+              
+              aria-label="Ouvrir la recherche"></button>
+      <div class="devsite-searchbox">
+        <input
+          aria-activedescendant=""
+          aria-autocomplete="list"
+          
+          aria-label="Recherche"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          autocomplete="off"
+          class="devsite-search-field devsite-search-query"
+          name="q"
+          
+          placeholder="Recherche"
+          role="combobox"
+          type="text"
+          value=""
+          >
+          <div class="devsite-search-image material-icons" aria-hidden="true">
+            
+              <svg class="devsite-search-ai-image" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_6641_386)">
+                    <path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14167 15.375 4.875 14.125C3.625 12.8583 3 11.3167 3 9.5C3 7.68333 3.625 6.15 4.875 4.9C6.14167 3.63333 7.68333 3 9.5 3C10.0167 3 10.5167 3.05833 11 3.175C11.4833 3.275 11.9417 3.43333 12.375 3.65L10.825 5.2C10.6083 5.13333 10.3917 5.08333 10.175 5.05C9.95833 5.01667 9.73333 5 9.5 5C8.25 5 7.18333 5.44167 6.3 6.325C5.43333 7.19167 5 8.25 5 9.5C5 10.75 5.43333 11.8167 6.3 12.7C7.18333 13.5667 8.25 14 9.5 14C10.6667 14 11.6667 13.625 12.5 12.875C13.35 12.1083 13.8417 11.15 13.975 10H15.975C15.925 10.6333 15.7833 11.2333 15.55 11.8C15.3333 12.3667 15.05 12.8667 14.7 13.3L21 19.6L19.6 21ZM17.5 12C17.5 10.4667 16.9667 9.16667 15.9 8.1C14.8333 7.03333 13.5333 6.5 12 6.5C13.5333 6.5 14.8333 5.96667 15.9 4.9C16.9667 3.83333 17.5 2.53333 17.5 0.999999C17.5 2.53333 18.0333 3.83333 19.1 4.9C20.1667 5.96667 21.4667 6.5 23 6.5C21.4667 6.5 20.1667 7.03333 19.1 8.1C18.0333 9.16667 17.5 10.4667 17.5 12Z" fill="#5F6368"/>
+                  </g>
+                <defs>
+                <clipPath id="clip0_6641_386">
+                <rect width="24" height="24" fill="white"/>
+                </clipPath>
+                </defs>
+              </svg>
+            
+          </div>
+          <div class="devsite-search-shortcut-icon-container" aria-hidden="true">
+            <kbd class="devsite-search-shortcut-icon">/</kbd>
+          </div>
+      </div>
+    </div>
+  </form>
+  <button type="button"
+          search-close
+          class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+          
+          aria-label="Fermer la recherche"></button>
+</devsite-search>
+
+        </div>
+
+        
+
+          
+
+          
+
+          <devsite-appearance-selector></devsite-appearance-selector>
+
+          
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+
+          
+            <a class="devsite-header-link devsite-top-button button gc-analytics-event "
+    href="https://developer.android.com/studio?hl=fr"
+    data-category="Site-Wide Custom Events"
+    data-label="Site header link: Android Studio"
+    >
+  Android Studio
+</a>
+          
+
+        
+
+        
+          <devsite-user 
+                        
+                        
+                          enable-profiles
+                        
+                        
+                        id="devsite-user">
+            
+              
+              <span class="button devsite-top-button" aria-hidden="true" visually-hidden>Connexion</span>
+            
+          </devsite-user>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
+  
+</devsite-header>
+      <devsite-book-nav scrollbars hidden>
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-book-nav-filter"
+     hidden>
+  <span class="filter-list-icon material-icons" aria-hidden="true"></span>
+  <input type="text"
+         placeholder="Filtrer"
+         
+         aria-label="Saisissez du texte pour filtrer les résultats"
+         role="searchbox">
+  
+  <span class="filter-clear-button hidden"
+        data-title="Supprimer le filtre"
+        aria-label="Supprimer le filtre"
+        role="button"
+        tabindex="0"></span>
+</div>
+
+<nav class="devsite-book-nav devsite-nav nocontent"
+     aria-label="Menu latéral">
+  <div class="devsite-mobile-header">
+    <button type="button"
+            id="devsite-close-nav"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Close navigation"
+            aria-label="Fermer la navigation">
+    </button>
+    <div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="androidDevelopers" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-dark-theme.png"
+            media="(prefers-color-scheme: dark)"
+            class="devsite-dark-theme">
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png" class="devsite-site-logo" alt="Android Developers">
+  </picture>
+  
+</a>
+
+
+</div>
+  </div>
+
+  <div class="devsite-book-nav-wrapper">
+    <div class="devsite-mobile-nav-top">
+      
+        <ul class="devsite-nav-list">
+          
+          
+    
+    
+<li class="devsite-nav-item">
+
+  
+  <a href="/studio"
+    
+       class="devsite-nav-title gc-analytics-event "
+    
+
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Android Studio"
+     track-type="navMenu"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Android Studio
+   </span>
+    
+  
+  </a>
+  
+
+</li>
+
+  
+          
+        </ul>
+      
+    </div>
+    
+  </div>
+</nav>
+        
+      </devsite-book-nav>
+      <section id="gc-wrapper">
+        <main role="main" id="main-content" class="devsite-main-content"
+            
+              
+              has-sidebar
+            >
+          <div class="devsite-sidebar">
+            <div class="devsite-sidebar-content">
+                
+                <devsite-toc class="devsite-nav"
+                            role="navigation"
+                            aria-label="Sur cette page"
+                            depth="1"
+                            scrollbars
+                  ></devsite-toc>
+                <devsite-recommendations-sidebar class="nocontent devsite-nav">
+                </devsite-recommendations-sidebar>
+            </div>
+          </div>
+          <devsite-content>
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="devsite-article"><style>
+      body {
+        transition: opacity ease-in 0.2s;
+      }
+
+      body[unresolved] {
+        opacity: 0;
+        display: block;
+        overflow: hidden;
+        position: relative;
+      }
+      </style>
+  
+  
+  
+  
+  
+
+  <div class="devsite-article-meta nocontent" role="navigation">
+    
+    
+    <ul class="devsite-breadcrumb-list"
+  >
+  
+</ul>
+    
+  </div>
+  
+    <h1 class="devsite-page-title" tabindex="-1">
+      Créer votre première carte dans Wear OS<div class="devsite-actions" hidden data-nosnippet><devsite-feature-tooltip
+      ack-key="AckCollectionsBookmarkTooltipDismiss"
+      analytics-category="Site-Wide Custom Events"
+      analytics-action-show="Callout Profile displayed"
+      analytics-action-close="Callout Profile dismissed"
+      analytics-label="Create Collection Callout"
+      class="devsite-page-bookmark-tooltip nocontent"
+      dismiss-button="true"
+      id="devsite-collections-dropdown"
+      
+      dismiss-button-text="Ignorer"
+
+      
+      close-button-text="OK">
+
+    
+    
+      <devsite-bookmark></devsite-bookmark>
+    
+
+    <span slot="popout-heading">
+      
+      Restez organisé à l'aide des collections
+    </span>
+    <span slot="popout-contents">
+      
+      Enregistrez et classez les contenus selon vos préférences.
+    </span>
+  </devsite-feature-tooltip></div>
+  
+      
+    </h1>
+  
+
+  <devsite-toc class="devsite-nav"
+    depth="1"
+    devsite-toc-embedded
+    >
+  </devsite-toc>
+  
+    
+  <div class="devsite-article-body clearfix
+  ">
+
+  
+    
+    
+    
+    <google-codelab-analytics ga4id="G-JTFZSJVVVZ" gaid="UA-49880327-14"></google-codelab-analytics>
+    <google-codelab category="android,wearos" codelab-ga4id="" codelab-gaid="" doc-id="1wKBFtKaS1VNBLU-5MFBcDgaiWpC38bUTpLe7RW36mks" environment="web" feedback-link="" id="wear-tiles" layout="paginated" no-tooltip="" title="Créer votre première carte dans Wear OS">
+      
+        <google-codelab-step duration="2" step="0" label="Introduction">
+          
+            <google-codelab-about authors="Michael Stillwell" duration="47" last-updated="2025-05-19T21:43:41Z" codelab-title="Créer votre première carte dans Wear OS">
+            </google-codelab-about>
+          
+          <h2 class="step-title" data-text="               1. Introduction           " id="0" tabindex="-1">
+              1. Introduction
+          </h2>
+          <p class="image-container"><img alt="Trois cartes : Fitness, Messages et Agenda." sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/wear-tiles/img/988cdc9e587b0f2c.png?hl=fr" srcset="https://developer.android.com/static/codelabs/wear-tiles/img/988cdc9e587b0f2c_36.png?hl=fr 36w,https://developer.android.com/static/codelabs/wear-tiles/img/988cdc9e587b0f2c_48.png?hl=fr 48w,https://developer.android.com/static/codelabs/wear-tiles/img/988cdc9e587b0f2c_72.png?hl=fr 72w,https://developer.android.com/static/codelabs/wear-tiles/img/988cdc9e587b0f2c_96.png?hl=fr 96w,https://developer.android.com/static/codelabs/wear-tiles/img/988cdc9e587b0f2c_480.png?hl=fr 480w,https://developer.android.com/static/codelabs/wear-tiles/img/988cdc9e587b0f2c_720.png?hl=fr 720w,https://developer.android.com/static/codelabs/wear-tiles/img/988cdc9e587b0f2c_856.png?hl=fr 856w,https://developer.android.com/static/codelabs/wear-tiles/img/988cdc9e587b0f2c_960.png?hl=fr 960w,https://developer.android.com/static/codelabs/wear-tiles/img/988cdc9e587b0f2c_1440.png?hl=fr 1440w,https://developer.android.com/static/codelabs/wear-tiles/img/988cdc9e587b0f2c_1920.png?hl=fr 1920w,https://developer.android.com/static/codelabs/wear-tiles/img/988cdc9e587b0f2c_2880.png?hl=fr 2880w" style="width: 606.45px" /></p>
+<p>Les <a href="https://developer.android.com/training/articles/wear-tiles?hl=fr" target="_blank">cartes Wear OS</a> permettent d'accéder facilement aux informations et aux actions dont les utilisateurs ont besoin pour effectuer une tâche. Il suffit de balayer l'écran à partir du cadran pour consulter les dernières prévisions ou lancer un minuteur.</p>
+<p>Une carte s'exécute dans l'interface utilisateur du système au lieu de s'exécuter dans son propre conteneur d'application. Nous utilisons un <strong>service</strong> pour décrire la mise en page et le contenu de cette carte. L'UI du système affiche ensuite la carte si nécessaire.</p>
+<h2 data-text="Objectifs de l'atelier" id="what-youll-do" is-upgraded="" tabindex="-1">Objectifs de l'atelier</h2>
+<p class="image-container"><img alt="656045bed9c45083.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/wear-tiles/img/656045bed9c45083.png?hl=fr" srcset="https://developer.android.com/static/codelabs/wear-tiles/img/656045bed9c45083_36.png?hl=fr 36w,https://developer.android.com/static/codelabs/wear-tiles/img/656045bed9c45083_48.png?hl=fr 48w,https://developer.android.com/static/codelabs/wear-tiles/img/656045bed9c45083_72.png?hl=fr 72w,https://developer.android.com/static/codelabs/wear-tiles/img/656045bed9c45083_96.png?hl=fr 96w,https://developer.android.com/static/codelabs/wear-tiles/img/656045bed9c45083_480.png?hl=fr 480w,https://developer.android.com/static/codelabs/wear-tiles/img/656045bed9c45083_720.png?hl=fr 720w,https://developer.android.com/static/codelabs/wear-tiles/img/656045bed9c45083_856.png?hl=fr 856w,https://developer.android.com/static/codelabs/wear-tiles/img/656045bed9c45083_960.png?hl=fr 960w,https://developer.android.com/static/codelabs/wear-tiles/img/656045bed9c45083_1440.png?hl=fr 1440w,https://developer.android.com/static/codelabs/wear-tiles/img/656045bed9c45083_1920.png?hl=fr 1920w,https://developer.android.com/static/codelabs/wear-tiles/img/656045bed9c45083_2880.png?hl=fr 2880w" style="width: 285.50px" /></p>
+<p>Vous créerez une carte qui affichera les conversations récentes pour une application de chat. À partir de cette surface, l'utilisateur peut effectuer trois tâches courantes :</p>
+<ul>
+<li>Ouvrir une conversation</li>
+<li>Écrire un nouveau message</li>
+</ul>
+<h2 class="checklist" data-text="Points abordés" id="what-youll-learn" is-upgraded="" tabindex="-1">Points abordés</h2>
+<p>Dans cet atelier de programmation, vous apprendrez à écrire votre propre carte Wear OS, ce qui comprend les tâches suivantes :</p>
+<ul>
+<li>Créer un élément <code dir="ltr" translate="no">TileService</code></li>
+<li>Tester une carte sur un appareil</li>
+<li>Prévisualiser l'interface utilisateur d'une carte dans Android Studio</li>
+<li>Développer l'interface utilisateur d'une carte</li>
+<li>Ajouter des images</li>
+<li>Gérer les interactions</li>
+</ul>
+<h2 data-text="Prérequis" id="prerequisites" is-upgraded="" tabindex="-1">Prérequis</h2>
+<ul>
+<li>Connaissances de base du langage <a href="https://developer.android.com/kotlin?hl=fr" target="_blank">Kotlin</a></li>
+</ul>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="5" step="1" label="Configuration">
+          
+          <h2 class="step-title" data-text="               2. Configuration           " id="1" tabindex="-1">
+              2. Configuration
+          </h2>
+          <p>Au cours de cette étape, vous configurerez votre environnement et téléchargerez le projet de démarrage.</p>
+<h2 data-text="Ce dont vous avez besoin" id="what-you-will-need" is-upgraded="" tabindex="-1">Ce dont vous avez besoin</h2>
+<ul>
+<li><a href="https://androidstudio.googleblog.com/2024/05/android-studio-koala-feature-drop.html" target="_blank">Mise à jour groupée d'Android Studio Koala | 02/01/2024 Canary 1</a> ou version ultérieure</li>
+<li>Appareil ou émulateur Wear OS</li>
+</ul>
+<p>Si vous ne savez pas comment utiliser Wear OS, nous vous recommandons de <a href="https://medium.com/androiddevelopers/get-familiar-with-wear-os-3-without-a-physical-device-e7962c97f02b" target="_blank">lire ce guide rapide</a> avant de commencer. Il contient des instructions pour configurer un émulateur Wear OS et décrit comment naviguer dans le système.</p>
+<h2 data-text="Télécharger le code" id="download-code" is-upgraded="" tabindex="-1">Télécharger le code</h2>
+<p>Si git est installé, vous pouvez simplement exécuter la commande ci-dessous pour cloner le code à partir de <a href="https://github.com/android/codelab-wear-tiles" target="_blank">ce dépôt</a>.</p>
+<div></div><devsite-code><pre translate="no" dir="ltr" is-upgraded>git clone https://github.com/android/codelab-wear-tiles.git
+cd codelab-wear-tiles
+</pre></devsite-code>
+<p>Si vous n'avez pas git, cliquez sur le bouton ci-dessous pour télécharger l'ensemble du code de cet atelier de programmation :</p>
+<p><a href="https://github.com/android/codelab-wear-tiles/archive/main.zip" target="_blank"><button class="button button-primary button-with-icon"><span aria-hidden="true" class="material-icons" translate="no">file_download</span></button>Télécharger le fichier ZIP</a></p>
+<aside class="special"><p>Le répertoire d'exemples contient les codes <strong>start</strong> et <strong>finished</strong> à utiliser dans cet atelier. Dans la vue Project (Projet) sur la partie gauche d'Android Studio, vous trouverez deux modules.</p>
+<ul>
+<li><img alt="d61ffd479bdbcb9f.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/wear-tiles/img/d61ffd479bdbcb9f.png?hl=fr" srcset="https://developer.android.com/static/codelabs/wear-tiles/img/d61ffd479bdbcb9f_36.png?hl=fr 36w,https://developer.android.com/static/codelabs/wear-tiles/img/d61ffd479bdbcb9f_48.png?hl=fr 48w,https://developer.android.com/static/codelabs/wear-tiles/img/d61ffd479bdbcb9f_72.png?hl=fr 72w,https://developer.android.com/static/codelabs/wear-tiles/img/d61ffd479bdbcb9f_96.png?hl=fr 96w,https://developer.android.com/static/codelabs/wear-tiles/img/d61ffd479bdbcb9f_480.png?hl=fr 480w,https://developer.android.com/static/codelabs/wear-tiles/img/d61ffd479bdbcb9f_720.png?hl=fr 720w,https://developer.android.com/static/codelabs/wear-tiles/img/d61ffd479bdbcb9f_856.png?hl=fr 856w,https://developer.android.com/static/codelabs/wear-tiles/img/d61ffd479bdbcb9f_960.png?hl=fr 960w,https://developer.android.com/static/codelabs/wear-tiles/img/d61ffd479bdbcb9f_1440.png?hl=fr 1440w,https://developer.android.com/static/codelabs/wear-tiles/img/d61ffd479bdbcb9f_1920.png?hl=fr 1920w,https://developer.android.com/static/codelabs/wear-tiles/img/d61ffd479bdbcb9f_2880.png?hl=fr 2880w" style="width: 26.00px" /> <strong>start</strong> : code de démarrage de ce projet, que vous allez modifier tout au long de l'atelier</li>
+<li><img alt="d61ffd479bdbcb9f.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/wear-tiles/img/d61ffd479bdbcb9f.png?hl=fr" srcset="https://developer.android.com/static/codelabs/wear-tiles/img/d61ffd479bdbcb9f_36.png?hl=fr 36w,https://developer.android.com/static/codelabs/wear-tiles/img/d61ffd479bdbcb9f_48.png?hl=fr 48w,https://developer.android.com/static/codelabs/wear-tiles/img/d61ffd479bdbcb9f_72.png?hl=fr 72w,https://developer.android.com/static/codelabs/wear-tiles/img/d61ffd479bdbcb9f_96.png?hl=fr 96w,https://developer.android.com/static/codelabs/wear-tiles/img/d61ffd479bdbcb9f_480.png?hl=fr 480w,https://developer.android.com/static/codelabs/wear-tiles/img/d61ffd479bdbcb9f_720.png?hl=fr 720w,https://developer.android.com/static/codelabs/wear-tiles/img/d61ffd479bdbcb9f_856.png?hl=fr 856w,https://developer.android.com/static/codelabs/wear-tiles/img/d61ffd479bdbcb9f_960.png?hl=fr 960w,https://developer.android.com/static/codelabs/wear-tiles/img/d61ffd479bdbcb9f_1440.png?hl=fr 1440w,https://developer.android.com/static/codelabs/wear-tiles/img/d61ffd479bdbcb9f_1920.png?hl=fr 1920w,https://developer.android.com/static/codelabs/wear-tiles/img/d61ffd479bdbcb9f_2880.png?hl=fr 2880w" style="width: 26.00px" /> <strong>finished</strong> : code final de cet atelier (pour vérifier ce que vous avez fait)</li>
+</ul>
+</aside>
+<h2 data-text="Ouvrir un projet dans Android Studio" id="open-project-in-android-studio" is-upgraded="" tabindex="-1">Ouvrir un projet dans Android Studio</h2>
+<p>Dans la fenêtre "Welcome to Android Studio" (Bienvenue dans Android Studio), sélectionnez <img alt="c01826594f360d94.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/wear-tiles/img/c01826594f360d94.png?hl=fr" srcset="https://developer.android.com/static/codelabs/wear-tiles/img/c01826594f360d94_36.png?hl=fr 36w,https://developer.android.com/static/codelabs/wear-tiles/img/c01826594f360d94_48.png?hl=fr 48w,https://developer.android.com/static/codelabs/wear-tiles/img/c01826594f360d94_72.png?hl=fr 72w,https://developer.android.com/static/codelabs/wear-tiles/img/c01826594f360d94_96.png?hl=fr 96w,https://developer.android.com/static/codelabs/wear-tiles/img/c01826594f360d94_480.png?hl=fr 480w,https://developer.android.com/static/codelabs/wear-tiles/img/c01826594f360d94_720.png?hl=fr 720w,https://developer.android.com/static/codelabs/wear-tiles/img/c01826594f360d94_856.png?hl=fr 856w,https://developer.android.com/static/codelabs/wear-tiles/img/c01826594f360d94_960.png?hl=fr 960w,https://developer.android.com/static/codelabs/wear-tiles/img/c01826594f360d94_1440.png?hl=fr 1440w,https://developer.android.com/static/codelabs/wear-tiles/img/c01826594f360d94_1920.png?hl=fr 1920w,https://developer.android.com/static/codelabs/wear-tiles/img/c01826594f360d94_2880.png?hl=fr 2880w" style="width: 21.00px" /> <strong>Open an Existing Project</strong> (Ouvrir un projet existant) ou<strong>File > Open</strong> (Fichier > Ouvrir), puis sélectionnez le dossier <strong>[Emplacement de téléchargement]</strong>.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="8" step="2" label="Créer une carte de base">
+          
+          <h2 class="step-title" data-text="               3. Créer une carte de base           " id="2" tabindex="-1">
+              3. Créer une carte de base
+          </h2>
+          <p>Le point d'entrée d'une carte est le service de cartes. Au cours de cette étape, vous allez enregistrer un service de cartes et définir une mise en page de carte.</p>
+<h2 data-text="HelloWorldTileService" id="helloworldtileservice" is-upgraded="" tabindex="-1">HelloWorldTileService</h2>
+<p>Une classe qui implémente <a href="https://developer.android.com/reference/androidx/wear/tiles/TileService?hl=fr" target="_blank"><code dir="ltr" translate="no">TileService</code></a> doit spécifier deux méthodes :</p>
+<ul>
+<li><code dir="ltr" translate="no">onTileResourcesRequest(requestParams: ResourcesRequest): ListenableFuture&lt;Resources&gt;</code></li>
+<li><code dir="ltr" translate="no">onTileRequest(requestParams: TileRequest): ListenableFuture&lt;Tile&gt;</code></li>
+</ul>
+<p>La première méthode renvoie un objet <code dir="ltr" translate="no">Resources</code> qui mappe les ID de chaîne aux ressources image que nous utiliserons dans notre carte.</p>
+<p>La seconde renvoie la description d'une carte, y compris sa mise en page. C'est là que nous définirons la mise en page d'une carte et la manière dont les données y sont liées.</p>
+<p>Ouvrez <code dir="ltr" translate="no">HelloWorldTileService.kt</code> à partir du module <code dir="ltr" translate="no">start</code>. Toutes les modifications que vous allez apporter seront incluses dans ce module. Si vous voulez voir le résultat de cet atelier de programmation, il existe également un module <code dir="ltr" translate="no">finished</code>.</p>
+<p><code dir="ltr" translate="no">HelloWorldTileService</code> complète <code dir="ltr" translate="no">SuspendingTileService</code>, un wrapper compatible avec la coroutine Kotlin issu de la <a href="https://google.github.io/horologist/tiles/" target="_blank">bibliothèque Horologist Tiles</a>. <strong>Horologist</strong> est un groupe de bibliothèques Google visant à fournir aux développeurs Wear OS des fonctionnalités complémentaires qui sont couramment plébiscitées, mais qui ne sont pas encore disponibles dans Jetpack.</p>
+<p><code dir="ltr" translate="no">SuspendingTileService</code> fournit deux fonctions de suspension, qui sont des équivalents de coroutine des fonctions de <code dir="ltr" translate="no">TileService</code> :</p>
+<ul>
+<li><code dir="ltr" translate="no">suspend resourcesRequest(requestParams: ResourcesRequest): Resources</code></li>
+<li><code dir="ltr" translate="no">suspend tileRequest(requestParams: TileRequest): Tile</code></li>
+</ul>
+<p>Pour en savoir plus sur les coroutines, consultez la documentation sur les <a href="https://developer.android.com/kotlin/coroutines?hl=fr" target="_blank">coroutines Kotlin sur Android</a>.</p>
+<p><code dir="ltr" translate="no">HelloWorldTileService</code> <strong>n'est pas encore terminé</strong>. Nous devons enregistrer le service dans notre fichier manifeste et fournir également une implémentation pour <code dir="ltr" translate="no">tileLayout</code>.</p>
+<h2 data-text="Enregistrer le service de cartes" id="register-the-tile-service" is-upgraded="" tabindex="-1">Enregistrer le service de cartes</h2>
+<p>Une fois le service de cartes enregistré dans le fichier manifeste, il apparaît dans la liste des cartes que l'utilisateur peut ajouter.</p>
+<p>Ajoutez <code dir="ltr" translate="no">&lt;service&gt;</code> dans l'élément <code dir="ltr" translate="no">&lt;application&gt;</code> :</p>
+<h3 data-text="start/src/main/AndroidManifest.xml" id="startsrcmainandroidmanifest.xml" is-upgraded="" tabindex="-1">start/src/main/AndroidManifest.xml</h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="GDScript"><code translate="no" dir="ltr">&lt;<span class="devsite-syntax-n">service</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"com.example.wear.tiles.hello.HelloWorldTileService"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">icon</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"@drawable/ic_waving_hand_24"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">label</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"@string/hello_tile_label"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">description</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"@string/hello_tile_description"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">exported</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"true"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">permission</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"com.google.android.wearable.permission.BIND_TILE_PROVIDER"</span>&gt;
+<span class="devsite-syntax-w">    </span>
+<span class="devsite-syntax-w">    </span>&lt;<span class="devsite-syntax-n">intent</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">filter</span>&gt;
+<span class="devsite-syntax-w">        </span>&lt;<span class="devsite-syntax-n">action</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"androidx.wear.tiles.action.BIND_TILE_PROVIDER"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/</span>&gt;
+<span class="devsite-syntax-w">    </span>&lt;<span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">intent</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">filter</span>&gt;
+
+<span class="devsite-syntax-w">    </span>&lt;<span class="devsite-syntax-o">!--</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">The</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">tile</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">preview</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">shown</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">when</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">configuring</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">tiles</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">on</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">your</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">phone</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">--</span>&gt;
+<span class="devsite-syntax-w">    </span>&lt;<span class="devsite-syntax-n">meta</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">data</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"androidx.wear.tiles.PREVIEW"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">resource</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"@drawable/tile_hello"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/</span>&gt;
+&lt;<span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">service</span>&gt;
+</code></pre></devsite-code>
+<p>L'icône et le libellé sont utilisés (comme des espaces réservés) lors du chargement initial de la carte ou en cas d'erreur lors du chargement. Les métadonnées à la fin définissent une image d'aperçu qui s'affiche dans le carrousel lorsque l'utilisateur ajoute une carte.</p>
+<h2 data-text="Définir la mise en page de la carte" id="define-a-layout-for-the-tile" is-upgraded="" tabindex="-1">Définir la mise en page de la carte</h2>
+<p><code dir="ltr" translate="no">HelloWorldTileService</code> possède une fonction appelée <code dir="ltr" translate="no">tileLayout</code> avec l'élément <code dir="ltr" translate="no">TODO()</code> comme corps. Nous allons maintenant remplacer cela par une implémentation dans laquelle nous définirons la mise en page de la carte :</p>
+<h3 data-text="start/src/main/java/com/example/wear/tiles/hello/HelloWorldTileService.kt" id="startsrcmainjavacomexampleweartileshellohelloworldtileservice.kt" is-upgraded="" tabindex="-1">start/src/main/java/com/example/wear/tiles/hello/HelloWorldTileService.kt</h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only"><code translate="no" dir="ltr">fun tileLayout(
+    context: Context,
+    deviceConfiguration: DeviceParametersBuilders.DeviceParameters,
+    message: String,
+) =
+    materialScope(
+        context = context,
+        deviceConfiguration = deviceConfiguration,
+        allowDynamicTheme = false,
+    ) {
+        primaryLayout(mainSlot = { text(message.layoutString) })
+    }
+</code></pre></devsite-code>
+<p>Et voilà notre première carte Wear OS créée. Installons cette carte et voyons ce à quoi elle ressemble.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="2" step="3" label="Tester votre carte sur un appareil">
+          
+          <h2 class="step-title" data-text="               4. Tester votre carte sur un appareil           " id="3" tabindex="-1">
+              4. Tester votre carte sur un appareil
+          </h2>
+          <p>Une fois le module de démarrage sélectionné dans le menu déroulant de la configuration d'exécution, vous pouvez installer l'application (module <code dir="ltr" translate="no">start</code>) sur votre appareil ou dans un émulateur, puis installer manuellement la carte, comme le ferait un utilisateur.</p>
+<p>Toutefois, Android Studio propose un raccourci pour cette opération : appuyez sur l'icône "Run service" (Exécuter le service) (▷) dans la marge, puis sélectionnez "Run HelloWorldTileService" (Exécuter HelloWoldTileService). La carte sera alors installée et lancée sur un appareil connecté.</p>
+<p class="image-container"><img alt="ded9f9355abd02f3.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/wear-tiles/img/ded9f9355abd02f3.png?hl=fr" srcset="https://developer.android.com/static/codelabs/wear-tiles/img/ded9f9355abd02f3_36.png?hl=fr 36w,https://developer.android.com/static/codelabs/wear-tiles/img/ded9f9355abd02f3_48.png?hl=fr 48w,https://developer.android.com/static/codelabs/wear-tiles/img/ded9f9355abd02f3_72.png?hl=fr 72w,https://developer.android.com/static/codelabs/wear-tiles/img/ded9f9355abd02f3_96.png?hl=fr 96w,https://developer.android.com/static/codelabs/wear-tiles/img/ded9f9355abd02f3_480.png?hl=fr 480w,https://developer.android.com/static/codelabs/wear-tiles/img/ded9f9355abd02f3_720.png?hl=fr 720w,https://developer.android.com/static/codelabs/wear-tiles/img/ded9f9355abd02f3_856.png?hl=fr 856w,https://developer.android.com/static/codelabs/wear-tiles/img/ded9f9355abd02f3_960.png?hl=fr 960w,https://developer.android.com/static/codelabs/wear-tiles/img/ded9f9355abd02f3_1440.png?hl=fr 1440w,https://developer.android.com/static/codelabs/wear-tiles/img/ded9f9355abd02f3_1920.png?hl=fr 1920w,https://developer.android.com/static/codelabs/wear-tiles/img/ded9f9355abd02f3_2880.png?hl=fr 2880w" style="width: 1740.00px" /></p>
+<p>Cliquez sur "Run HelloWorldTileService" (Exécuter HelloWorldTileService) pour créer et exécuter votre carte sur un appareil connecté. Une capture d'écran semblable à celle ci-dessous devrait s'afficher.</p>
+<p class="image-container"><img alt="693c130912097be6.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/wear-tiles/img/693c130912097be6.png?hl=fr" srcset="https://developer.android.com/static/codelabs/wear-tiles/img/693c130912097be6_36.png?hl=fr 36w,https://developer.android.com/static/codelabs/wear-tiles/img/693c130912097be6_48.png?hl=fr 48w,https://developer.android.com/static/codelabs/wear-tiles/img/693c130912097be6_72.png?hl=fr 72w,https://developer.android.com/static/codelabs/wear-tiles/img/693c130912097be6_96.png?hl=fr 96w,https://developer.android.com/static/codelabs/wear-tiles/img/693c130912097be6_480.png?hl=fr 480w,https://developer.android.com/static/codelabs/wear-tiles/img/693c130912097be6_720.png?hl=fr 720w,https://developer.android.com/static/codelabs/wear-tiles/img/693c130912097be6_856.png?hl=fr 856w,https://developer.android.com/static/codelabs/wear-tiles/img/693c130912097be6_960.png?hl=fr 960w,https://developer.android.com/static/codelabs/wear-tiles/img/693c130912097be6_1440.png?hl=fr 1440w,https://developer.android.com/static/codelabs/wear-tiles/img/693c130912097be6_1920.png?hl=fr 1920w,https://developer.android.com/static/codelabs/wear-tiles/img/693c130912097be6_2880.png?hl=fr 2880w" style="width: 200.00px" /></p>
+<p>L'icône représentant une main qui fait signe en haut de l'écran est fournie par le système. Pour la modifier, modifiez la propriété <code dir="ltr" translate="no">android:icon</code> de l'élément <code dir="ltr" translate="no">&lt;service&gt;</code> de la carte dans le fichier manifeste.</p>
+<p>Pour plus de commodité, ce processus crée également une "configuration d'exécution" nommée "HelloWorldTileService" pour une utilisation ultérieure.</p>
+<p class="image-container"><img alt="b3335148771abbeb.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/wear-tiles/img/b3335148771abbeb.png?hl=fr" srcset="https://developer.android.com/static/codelabs/wear-tiles/img/b3335148771abbeb_36.png?hl=fr 36w,https://developer.android.com/static/codelabs/wear-tiles/img/b3335148771abbeb_48.png?hl=fr 48w,https://developer.android.com/static/codelabs/wear-tiles/img/b3335148771abbeb_72.png?hl=fr 72w,https://developer.android.com/static/codelabs/wear-tiles/img/b3335148771abbeb_96.png?hl=fr 96w,https://developer.android.com/static/codelabs/wear-tiles/img/b3335148771abbeb_480.png?hl=fr 480w,https://developer.android.com/static/codelabs/wear-tiles/img/b3335148771abbeb_720.png?hl=fr 720w,https://developer.android.com/static/codelabs/wear-tiles/img/b3335148771abbeb_856.png?hl=fr 856w,https://developer.android.com/static/codelabs/wear-tiles/img/b3335148771abbeb_960.png?hl=fr 960w,https://developer.android.com/static/codelabs/wear-tiles/img/b3335148771abbeb_1440.png?hl=fr 1440w,https://developer.android.com/static/codelabs/wear-tiles/img/b3335148771abbeb_1920.png?hl=fr 1920w,https://developer.android.com/static/codelabs/wear-tiles/img/b3335148771abbeb_2880.png?hl=fr 2880w" style="width: 1456.00px" /></p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="2" step="4" label="Ajouter des fonctions d&amp;#39;aperçu">
+          
+          <h2 class="step-title" data-text="               5. Ajouter des fonctions d'aperçu           " id="4" tabindex="-1">
+              5. Ajouter des fonctions d'aperçu
+          </h2>
+          <p>Vous pouvez prévisualiser l'UI des cartes dans Android Studio. Cela permet de raccourcir la boucle de rétroaction lors du développement de l'interface utilisateur, ce qui augmente la vitesse de développement.</p>
+<p>Ajoutez un aperçu de carte pour le <code dir="ltr" translate="no">HelloWorldTileService</code> à la fin du fichier <code dir="ltr" translate="no">HelloWorldTileService.kt</code>.</p>
+<h3 data-text="start/src/main/java/com/example/wear/tiles/hello/HelloWorldTileService.kt" id="startsrcmainjavacomexampleweartileshellohelloworldtileservice.kt_1" is-upgraded="" tabindex="-1">start/src/main/java/com/example/wear/tiles/hello/HelloWorldTileService.kt</h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL"><code translate="no" dir="ltr"><span class="devsite-syntax-nv">@Preview</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">device</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">WearDevices</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">SMALL_ROUND</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ss">"Small Round"</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-nv">@Preview</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">device</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">WearDevices</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">LARGE_ROUND</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ss">"Large Round"</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-n">internal</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">helloLayoutPreview</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nl">context</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Context</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-err">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">TilePreviewData</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-k">return</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">TilePreviewData</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">TilePreviewHelper</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">singleTimelineEntryTileBuilder</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">helloLayout</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">context</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">it</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">deviceConfiguration</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ss">"Hello, preview tile!"</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">build</span><span class="devsite-syntax-p">()</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-err">}</span>
+<span class="devsite-syntax-err">}</span>
+</code></pre></devsite-code>
+<p>Utilisez la vue d'écran partagé pour afficher un aperçu de la carte :</p>
+<p class="image-container"><img alt="Vue d&amp;#39;écran partagé d&amp;#39;Android Studio avec aperçu du code à gauche et image de la carte à droite." sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/wear-tiles/img/2dfb05cdcc54eccc.png?hl=fr" srcset="https://developer.android.com/static/codelabs/wear-tiles/img/2dfb05cdcc54eccc_36.png?hl=fr 36w,https://developer.android.com/static/codelabs/wear-tiles/img/2dfb05cdcc54eccc_48.png?hl=fr 48w,https://developer.android.com/static/codelabs/wear-tiles/img/2dfb05cdcc54eccc_72.png?hl=fr 72w,https://developer.android.com/static/codelabs/wear-tiles/img/2dfb05cdcc54eccc_96.png?hl=fr 96w,https://developer.android.com/static/codelabs/wear-tiles/img/2dfb05cdcc54eccc_480.png?hl=fr 480w,https://developer.android.com/static/codelabs/wear-tiles/img/2dfb05cdcc54eccc_720.png?hl=fr 720w,https://developer.android.com/static/codelabs/wear-tiles/img/2dfb05cdcc54eccc_856.png?hl=fr 856w,https://developer.android.com/static/codelabs/wear-tiles/img/2dfb05cdcc54eccc_960.png?hl=fr 960w,https://developer.android.com/static/codelabs/wear-tiles/img/2dfb05cdcc54eccc_1440.png?hl=fr 1440w,https://developer.android.com/static/codelabs/wear-tiles/img/2dfb05cdcc54eccc_1920.png?hl=fr 1920w,https://developer.android.com/static/codelabs/wear-tiles/img/2dfb05cdcc54eccc_2880.png?hl=fr 2880w" style="width: 642.00px" /></p>
+<p>Notez que l'annotation <code dir="ltr" translate="no">@Composable</code> n'est <em>pas</em> utilisée. Bien que les cartes utilisent la même UI d'aperçu que les <a href="https://developer.android.com/develop/ui/compose/tooling/previews?hl=fr" target="_blank">fonctions composables</a>, elles n'utilisent pas <a href="https://developer.android.com/develop/ui/compose?hl=fr" target="_blank">Compose</a> et ne sont pas composables.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="3" step="5" label="Créer une carte de messages">
+          
+          <h2 class="step-title" data-text="               6. Créer une carte de messages           " id="5" tabindex="-1">
+              6. Créer une carte de messages
+          </h2>
+          <p class="image-container"><img alt="cf18db0f604b1999.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/wear-tiles/img/cf18db0f604b1999.png?hl=fr" srcset="https://developer.android.com/static/codelabs/wear-tiles/img/cf18db0f604b1999_36.png?hl=fr 36w,https://developer.android.com/static/codelabs/wear-tiles/img/cf18db0f604b1999_48.png?hl=fr 48w,https://developer.android.com/static/codelabs/wear-tiles/img/cf18db0f604b1999_72.png?hl=fr 72w,https://developer.android.com/static/codelabs/wear-tiles/img/cf18db0f604b1999_96.png?hl=fr 96w,https://developer.android.com/static/codelabs/wear-tiles/img/cf18db0f604b1999_480.png?hl=fr 480w,https://developer.android.com/static/codelabs/wear-tiles/img/cf18db0f604b1999_720.png?hl=fr 720w,https://developer.android.com/static/codelabs/wear-tiles/img/cf18db0f604b1999_856.png?hl=fr 856w,https://developer.android.com/static/codelabs/wear-tiles/img/cf18db0f604b1999_960.png?hl=fr 960w,https://developer.android.com/static/codelabs/wear-tiles/img/cf18db0f604b1999_1440.png?hl=fr 1440w,https://developer.android.com/static/codelabs/wear-tiles/img/cf18db0f604b1999_1920.png?hl=fr 1920w,https://developer.android.com/static/codelabs/wear-tiles/img/cf18db0f604b1999_2880.png?hl=fr 2880w" style="width: 227.50px" /></p>
+<p>La carte de messages que nous allons créer s'apparente davantage à une carte réelle. Contrairement à l'exemple HelloWorld, celui-ci présente les composants de Material 3 Expressive, affiche des images et gère les interactions pour ouvrir l'application.</p>
+<h2 data-text="MessagingTileService" id="messagingtileservice" is-upgraded="" tabindex="-1">MessagingTileService</h2>
+<p><code dir="ltr" translate="no">MessagingTileService</code> complète la classe <code dir="ltr" translate="no">SuspendingTileService</code> que nous avons vue précédemment.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="8" step="6" label="Ajouter des composants d&amp;#39;UI">
+          
+          <h2 class="step-title" data-text="               7. Ajouter des composants d'UI           " id="6" tabindex="-1">
+              7. Ajouter des composants d'UI
+          </h2>
+          <p>La bibliothèque ProtoLayout fournit des composants et des mises en page prédéfinis qui vous permettent de créer des cartes utilisant les derniers designs Material 3 Expressive pour Wear OS.</p>
+<p>Ajoutez la dépendance Tiles Material au fichier <code dir="ltr" translate="no">build.gradle</code> :</p>
+<h3 data-text="start/build.gradle" id="startbuild.gradle" is-upgraded="" tabindex="-1">start/build.gradle</h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Carbon"><code translate="no" dir="ltr"><span class="devsite-syntax-nx">implementation</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"androidx.wear.protolayout:protolayout-material3:$protoLayoutVersion"</span>
+</code></pre></devsite-code>
+<p>Ajoutez le code de mise en page à la fonction <code dir="ltr" translate="no">tileLayout()</code>, en tant que corps de la fonction <code dir="ltr" translate="no">materialScope()</code>. Cela crée une mise en page composée de deux lignes (avec deux boutons chacune) et d'un bouton situé au bord.</p>
+<p>Recherchez la ligne "<strong>TODO() // Add primaryLayout()</strong>" et remplacez-la par le code ci-dessous.</p>
+<h3 data-text="start/src/main/java/com/example/wear/tiles/messaging/tile/Layout.kt" id="startsrcmainjavacomexampleweartilesmessagingtilelayout.kt" is-upgraded="" tabindex="-1">start/src/main/java/com/example/wear/tiles/messaging/tile/Layout.kt</h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">primaryLayout(
+    mainSlot = {
+        // This layout code assumes "contacts" contains at least 4 elements, for sample code
+        // that can handle an arbitrary number of contacts, and also shows different numbers
+        // of contacts based on the physical screen size, see
+        // &lt;https://github.com/android/wear-os-samples/tree/main/WearTilesKotlin&gt;.
+        Column.Builder()
+            .apply {
+                setWidth(expand())
+                setHeight(expand())
+                addContent(
+                    buttonGroup {
+                        buttonGroupItem { contactButton(contacts[0]) }
+                        buttonGroupItem { contactButton(contacts[1]) }
+                    }
+                )
+                addContent(DEFAULT_SPACER_BETWEEN_BUTTON_GROUPS)
+                addContent(
+                    buttonGroup {
+                        buttonGroupItem { contactButton(contacts[2]) }
+                        buttonGroupItem { contactButton(contacts[3]) }
+                    }
+                )
+            }
+            .build()
+    },
+    bottomSlot = {
+        textEdgeButton(
+            onClick = clickable(), // TODO: Launch new conversation activity
+            labelContent = { text("New".layoutString) },
+        )
+    },
+)
+</code></pre></devsite-code>
+<p>La fonction <code dir="ltr" translate="no">contactButton()</code> dans le même fichier crée les boutons pour chaque contact. Si une image est associée au contact, elle s'affiche sur le bouton. Sinon, les initiales du contact sont utilisées.</p>
+<p>À ce stade, vous remarquerez peut-être que, bien que la mise en page générale soit correcte, les images sont absentes :</p>
+<p class="image-container"><img alt="809bdb9d1213c376.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/wear-tiles/img/809bdb9d1213c376.png?hl=fr" srcset="https://developer.android.com/static/codelabs/wear-tiles/img/809bdb9d1213c376_36.png?hl=fr 36w,https://developer.android.com/static/codelabs/wear-tiles/img/809bdb9d1213c376_48.png?hl=fr 48w,https://developer.android.com/static/codelabs/wear-tiles/img/809bdb9d1213c376_72.png?hl=fr 72w,https://developer.android.com/static/codelabs/wear-tiles/img/809bdb9d1213c376_96.png?hl=fr 96w,https://developer.android.com/static/codelabs/wear-tiles/img/809bdb9d1213c376_480.png?hl=fr 480w,https://developer.android.com/static/codelabs/wear-tiles/img/809bdb9d1213c376_720.png?hl=fr 720w,https://developer.android.com/static/codelabs/wear-tiles/img/809bdb9d1213c376_856.png?hl=fr 856w,https://developer.android.com/static/codelabs/wear-tiles/img/809bdb9d1213c376_960.png?hl=fr 960w,https://developer.android.com/static/codelabs/wear-tiles/img/809bdb9d1213c376_1440.png?hl=fr 1440w,https://developer.android.com/static/codelabs/wear-tiles/img/809bdb9d1213c376_1920.png?hl=fr 1920w,https://developer.android.com/static/codelabs/wear-tiles/img/809bdb9d1213c376_2880.png?hl=fr 2880w" style="width: 530.50px" /></p>
+<p>Vous verrez la même chose si vous déployez la carte sur un appareil :</p>
+<p class="image-container"><img alt="4671bb2eafdcc528.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/wear-tiles/img/4671bb2eafdcc528.png?hl=fr" srcset="https://developer.android.com/static/codelabs/wear-tiles/img/4671bb2eafdcc528_36.png?hl=fr 36w,https://developer.android.com/static/codelabs/wear-tiles/img/4671bb2eafdcc528_48.png?hl=fr 48w,https://developer.android.com/static/codelabs/wear-tiles/img/4671bb2eafdcc528_72.png?hl=fr 72w,https://developer.android.com/static/codelabs/wear-tiles/img/4671bb2eafdcc528_96.png?hl=fr 96w,https://developer.android.com/static/codelabs/wear-tiles/img/4671bb2eafdcc528_480.png?hl=fr 480w,https://developer.android.com/static/codelabs/wear-tiles/img/4671bb2eafdcc528_720.png?hl=fr 720w,https://developer.android.com/static/codelabs/wear-tiles/img/4671bb2eafdcc528_856.png?hl=fr 856w,https://developer.android.com/static/codelabs/wear-tiles/img/4671bb2eafdcc528_960.png?hl=fr 960w,https://developer.android.com/static/codelabs/wear-tiles/img/4671bb2eafdcc528_1440.png?hl=fr 1440w,https://developer.android.com/static/codelabs/wear-tiles/img/4671bb2eafdcc528_1920.png?hl=fr 1920w,https://developer.android.com/static/codelabs/wear-tiles/img/4671bb2eafdcc528_2880.png?hl=fr 2880w" style="width: 253.50px" /></p>
+<p>À l'étape suivante, nous allons résoudre le problème d'images manquantes.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="8" step="7" label="Ajouter des images">
+          
+          <h2 class="step-title" data-text="               8. Ajouter des images           " id="7" tabindex="-1">
+              8. Ajouter des images
+          </h2>
+          <p>De manière générale, les cartes se composent de deux éléments : une mise en page (qui fait référence à des ressources par des ID de chaîne) et les ressources elles-mêmes (qui peuvent être des images).</p>
+<p>Pour le moment, notre code fournit la mise en page, mais pas les ressources elles-mêmes. Pour corriger l'aperçu, nous devons fournir les "ressources" de l'image. Pour ce faire, recherchez <strong>TODO: Add onTileResourceRequest</strong> et ajoutez le code ci-dessous en tant qu'argument nommé supplémentaire à <code dir="ltr" translate="no">TilePreviewData()</code> :</p>
+<h3 data-text="start/src/main/java/com/example/wear/tiles/messaging/tile/Layout.kt" id="startsrcmainjavacomexampleweartilesmessagingtilelayout.kt_1" is-upgraded="" tabindex="-1">start/src/main/java/com/example/wear/tiles/messaging/tile/Layout.kt</h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scilab"><code translate="no" dir="ltr"><span class="devsite-syntax-c1">// Additional named argument to TilePreviewData</span>
+<span class="devsite-syntax-n">onTileResourceRequest</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">resourcesRequest</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">-</span>&gt;
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">Resources</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">Builder</span><span class="devsite-syntax-p">()</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">setVersion</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">resourcesRequest</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">version</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">apply</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">contacts</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">forEach</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">it</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">avatarSource</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">is</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">AvatarSource</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">Resource</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-n">addIdToImageMapping</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">                        </span><span class="devsite-syntax-n">it</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">imageResourceId</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">                        </span><span class="devsite-syntax-n">it</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">avatarSource</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">resourceId</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">build</span><span class="devsite-syntax-p">()</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>Les images devraient maintenant s'afficher dans l'aperçu :</p>
+<p class="image-container"><img alt="e77d746268f293f2.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/wear-tiles/img/e77d746268f293f2.png?hl=fr" srcset="https://developer.android.com/static/codelabs/wear-tiles/img/e77d746268f293f2_36.png?hl=fr 36w,https://developer.android.com/static/codelabs/wear-tiles/img/e77d746268f293f2_48.png?hl=fr 48w,https://developer.android.com/static/codelabs/wear-tiles/img/e77d746268f293f2_72.png?hl=fr 72w,https://developer.android.com/static/codelabs/wear-tiles/img/e77d746268f293f2_96.png?hl=fr 96w,https://developer.android.com/static/codelabs/wear-tiles/img/e77d746268f293f2_480.png?hl=fr 480w,https://developer.android.com/static/codelabs/wear-tiles/img/e77d746268f293f2_720.png?hl=fr 720w,https://developer.android.com/static/codelabs/wear-tiles/img/e77d746268f293f2_856.png?hl=fr 856w,https://developer.android.com/static/codelabs/wear-tiles/img/e77d746268f293f2_960.png?hl=fr 960w,https://developer.android.com/static/codelabs/wear-tiles/img/e77d746268f293f2_1440.png?hl=fr 1440w,https://developer.android.com/static/codelabs/wear-tiles/img/e77d746268f293f2_1920.png?hl=fr 1920w,https://developer.android.com/static/codelabs/wear-tiles/img/e77d746268f293f2_2880.png?hl=fr 2880w" style="width: 445.50px" /></p>
+<p>Toutefois, si la carte est déployée sur un appareil, les images seront absentes. Pour résoudre ce problème, remplacez la fonction <code dir="ltr" translate="no">resourcesRequest()</code> dans <code dir="ltr" translate="no">Service.kt</code> par le code suivant :</p>
+<h3 data-text="start/src/main/java/com/example/wear/tiles/messaging/tile/Service.kt" id="startsrcmainjavacomexampleweartilesmessagingtileservice.kt" is-upgraded="" tabindex="-1">start/src/main/java/com/example/wear/tiles/messaging/tile/Service.kt</h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only"><code translate="no" dir="ltr">override suspend fun resourcesRequest(
+    requestParams: ResourcesRequest
+): Resources {
+    // resourceIds is a list of the ids we need to provide images for. If we're passed an empty
+    // list, set resourceIds to all resources.
+    val resourceIds =
+        requestParams.resourceIds.ifEmpty {
+            contacts.map { it.imageResourceId() }
+        }
+
+    // resourceMap maps (tile) resource ids to (Android) resource ids.
+    val resourceMap =
+        contacts
+            .mapNotNull {
+                when (it.avatarSource) {
+                    is AvatarSource.Resource -&gt;
+                        it.imageResourceId() to
+                            it.avatarSource.resourceId
+                    else -&gt; null
+                }
+            }
+            .toMap()
+            .filterKeys {
+                it in resourceIds
+            } // filter to only the resources we need
+
+    // Add images in the resourceMap to the Resources object, and return the result.
+    return Resources.Builder()
+        .setVersion(requestParams.version)
+        .apply {
+            resourceMap.forEach { (id, imageResource) -&gt;
+                addIdToImageMapping(id, imageResource)
+            }
+        }
+        .build()
+}
+</code></pre></devsite-code>
+<p>Désormais, les images s'affichent également lorsque la carte est déployée sur un appareil :</p>
+<p class="image-container"><img alt="cf18db0f604b1999.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/wear-tiles/img/cf18db0f604b1999.png?hl=fr" srcset="https://developer.android.com/static/codelabs/wear-tiles/img/cf18db0f604b1999_36.png?hl=fr 36w,https://developer.android.com/static/codelabs/wear-tiles/img/cf18db0f604b1999_48.png?hl=fr 48w,https://developer.android.com/static/codelabs/wear-tiles/img/cf18db0f604b1999_72.png?hl=fr 72w,https://developer.android.com/static/codelabs/wear-tiles/img/cf18db0f604b1999_96.png?hl=fr 96w,https://developer.android.com/static/codelabs/wear-tiles/img/cf18db0f604b1999_480.png?hl=fr 480w,https://developer.android.com/static/codelabs/wear-tiles/img/cf18db0f604b1999_720.png?hl=fr 720w,https://developer.android.com/static/codelabs/wear-tiles/img/cf18db0f604b1999_856.png?hl=fr 856w,https://developer.android.com/static/codelabs/wear-tiles/img/cf18db0f604b1999_960.png?hl=fr 960w,https://developer.android.com/static/codelabs/wear-tiles/img/cf18db0f604b1999_1440.png?hl=fr 1440w,https://developer.android.com/static/codelabs/wear-tiles/img/cf18db0f604b1999_1920.png?hl=fr 1920w,https://developer.android.com/static/codelabs/wear-tiles/img/cf18db0f604b1999_2880.png?hl=fr 2880w" style="width: 264.50px" /></p>
+<p>À l'étape suivante, nous traiterons les clics sur chacun des éléments.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="8" step="8" label="Gérer les interactions">
+          
+          <h2 class="step-title" data-text="               9. Gérer les interactions           " id="8" tabindex="-1">
+              9. Gérer les interactions
+          </h2>
+          <p>Les raccourcis vers les parcours utilisateur les plus importants sont l'un des principaux atouts d'une carte. À ne pas confondre avec le lanceur d'applications, qui ouvre simplement l'application ! Dans le cas présent, nous avons l'espace nécessaire pour fournir des raccourcis contextuels sur un écran spécifique de votre application.</p>
+<p>Jusqu'à présent, nous avons utilisé une action fictive fournie par le <code dir="ltr" translate="no">clickable()</code> sans argument pour le chip et chacun des boutons. Cette approche convient pour les aperçus, qui ne sont pas interactifs, mais voyons comment ajouter des actions correspondant aux éléments.</p>
+<h2 data-text="LaunchAction" id="launchaction" is-upgraded="" tabindex="-1">LaunchAction</h2>
+<p>L'élément <code dir="ltr" translate="no">LaunchAction</code> peut être utilisé pour lancer une activité. Modifions <code dir="ltr" translate="no">Layout</code> de sorte que l'utilisateur puisse appuyer sur le bouton "New" (Nouveau) pour lancer le parcours utilisateur "New conversation" (Nouvelle conversation).</p>
+<p>Recherchez la ligne <strong>TODO: Launch new conversation activity</strong> et remplacez <code dir="ltr" translate="no">clickable()</code> par :</p>
+<h3 data-text="start/src/main/java/com/example/wear/tiles/messaging/tile/Layout.kt" id="startsrcmainjavacomexampleweartilesmessagingtilelayout.kt_2" is-upgraded="" tabindex="-1">start/src/main/java/com/example/wear/tiles/messaging/tile/Layout.kt</h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">clickable(
+    id = "new_button",
+    action =
+        launchAction(
+            ComponentName(
+                "com.example.wear.tiles",
+                "com.example.wear.tiles.messaging.MainActivity",
+            ),
+            mapOf(
+                MainActivity.EXTRA_JOURNEY to
+                    ActionBuilders.stringExtra(
+                        MainActivity.EXTRA_JOURNEY_NEW
+                    )
+            ),
+        ),
+)
+</code></pre></devsite-code>
+<p>Redéployez la carte. Désormais, au lieu de ne rien faire, le fait d'appuyer sur "New" (Nouveau) lance <code dir="ltr" translate="no">MainActivity</code> et démarre le parcours utilisateur "New conversation" (Nouvelle conversation) :</p>
+<p class="image-container"><img alt="a08c28b4a142fb8f.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/wear-tiles/img/a08c28b4a142fb8f.png?hl=fr" srcset="https://developer.android.com/static/codelabs/wear-tiles/img/a08c28b4a142fb8f_36.png?hl=fr 36w,https://developer.android.com/static/codelabs/wear-tiles/img/a08c28b4a142fb8f_48.png?hl=fr 48w,https://developer.android.com/static/codelabs/wear-tiles/img/a08c28b4a142fb8f_72.png?hl=fr 72w,https://developer.android.com/static/codelabs/wear-tiles/img/a08c28b4a142fb8f_96.png?hl=fr 96w,https://developer.android.com/static/codelabs/wear-tiles/img/a08c28b4a142fb8f_480.png?hl=fr 480w,https://developer.android.com/static/codelabs/wear-tiles/img/a08c28b4a142fb8f_720.png?hl=fr 720w,https://developer.android.com/static/codelabs/wear-tiles/img/a08c28b4a142fb8f_856.png?hl=fr 856w,https://developer.android.com/static/codelabs/wear-tiles/img/a08c28b4a142fb8f_960.png?hl=fr 960w,https://developer.android.com/static/codelabs/wear-tiles/img/a08c28b4a142fb8f_1440.png?hl=fr 1440w,https://developer.android.com/static/codelabs/wear-tiles/img/a08c28b4a142fb8f_1920.png?hl=fr 1920w,https://developer.android.com/static/codelabs/wear-tiles/img/a08c28b4a142fb8f_2880.png?hl=fr 2880w" style="width: 293.50px" /></p>
+<p>De même, modifiez <code dir="ltr" translate="no">Layout</code> de sorte que l'utilisateur puisse appuyer sur un bouton de contact pour lancer une conversation avec un utilisateur spécifique.</p>
+<p>Recherchez la ligne <strong>Launch open conversation activity</strong> (Lancer l'activité de conversation ouverte) et remplacez <code dir="ltr" translate="no">clickable()</code> par :</p>
+<h3 data-text="start/src/main/java/com/example/wear/tiles/messaging/tile/Layout.kt" id="startsrcmainjavacomexampleweartilesmessagingtilelayout.kt_3" is-upgraded="" tabindex="-1">start/src/main/java/com/example/wear/tiles/messaging/tile/Layout.kt</h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">clickable(
+    id = contact.id.toString(),
+    action =
+        launchAction(
+            ComponentName(
+                "com.example.wear.tiles",
+                "com.example.wear.tiles.messaging.MainActivity",
+            ),
+            mapOf(
+                MainActivity.EXTRA_JOURNEY to
+                    ActionBuilders.stringExtra(
+                        MainActivity
+                            .EXTRA_JOURNEY_CONVERSATION
+                    ),
+                MainActivity.EXTRA_CONVERSATION_CONTACT to
+                    ActionBuilders.stringExtra(
+                        contact.name
+                    ),
+            ),
+        ),
+)
+</code></pre></devsite-code>
+<p>Redéployez la carte. Désormais, au lieu de ne rien faire, le fait d'appuyer sur un contact lancera une conversation avec ce dernier :</p>
+<p class="image-container"><img alt="b684a1ced0b226f9.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/wear-tiles/img/b684a1ced0b226f9.png?hl=fr" srcset="https://developer.android.com/static/codelabs/wear-tiles/img/b684a1ced0b226f9_36.png?hl=fr 36w,https://developer.android.com/static/codelabs/wear-tiles/img/b684a1ced0b226f9_48.png?hl=fr 48w,https://developer.android.com/static/codelabs/wear-tiles/img/b684a1ced0b226f9_72.png?hl=fr 72w,https://developer.android.com/static/codelabs/wear-tiles/img/b684a1ced0b226f9_96.png?hl=fr 96w,https://developer.android.com/static/codelabs/wear-tiles/img/b684a1ced0b226f9_480.png?hl=fr 480w,https://developer.android.com/static/codelabs/wear-tiles/img/b684a1ced0b226f9_720.png?hl=fr 720w,https://developer.android.com/static/codelabs/wear-tiles/img/b684a1ced0b226f9_856.png?hl=fr 856w,https://developer.android.com/static/codelabs/wear-tiles/img/b684a1ced0b226f9_960.png?hl=fr 960w,https://developer.android.com/static/codelabs/wear-tiles/img/b684a1ced0b226f9_1440.png?hl=fr 1440w,https://developer.android.com/static/codelabs/wear-tiles/img/b684a1ced0b226f9_1920.png?hl=fr 1920w,https://developer.android.com/static/codelabs/wear-tiles/img/b684a1ced0b226f9_2880.png?hl=fr 2880w" style="width: 284.50px" /></p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step duration="1" step="9" label="Félicitations">
+          
+          <h2 class="step-title" data-text="               10. Félicitations           " id="9" tabindex="-1">
+              10. Félicitations
+          </h2>
+          <p>Félicitations ! Vous avez appris à créer une carte pour Wear OS.</p>
+<h2 data-text="Et maintenant ?" id="whats-next" is-upgraded="" tabindex="-1">Et maintenant ?</h2>
+<p>Pour en savoir plus, consultez les <a href="https://github.com/android/wear-os-samples/tree/main/WearTilesKotlin" target="_blank">implémentations de Golden Tiles sur GitHub</a>, le <a href="https://developer.android.com/training/articles/wear-tiles?hl=fr" target="_blank">guide des cartes Wear OS</a> et les <a href="https://developer.android.com/design/ui/wear/guides/surfaces/tiles?hl=fr" target="_blank">consignes de conception</a>.</p>
+
+
+        </google-codelab-step>
+      
+    </google-codelab>
+  
+  
+  
+
+  
+</div>
+
+  
+    
+    
+    
+  
+
+  <div class="devsite-floating-action-buttons"></div></article>
+
+
+<devsite-content-footer class="nocontent">
+  <p>Sauf indication contraire, le contenu de cette page est régi par une licence <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0</a>, et les échantillons de code sont régis par une licence <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0</a>. Pour en savoir plus, consultez les <a href="https://developers.google.com/site-policies?hl=fr">Règles du site Google Developers</a>. Java est une marque déposée d'Oracle et/ou de ses sociétés affiliées.</p>
+  
+</devsite-content-footer>
+
+
+<devsite-notification
+>
+</devsite-notification>
+
+
+  
+<div class="devsite-content-data">
+  
+  
+    <template class="devsite-content-data-template">
+      [[["Facile à comprendre","easyToUnderstand","thumb-up"],["J'ai pu résoudre mon problème","solvedMyProblem","thumb-up"],["Autre","otherUp","thumb-up"]],[["Il n'y a pas l'information dont j'ai besoin","missingTheInformationINeed","thumb-down"],["Trop compliqué/Trop d'étapes","tooComplicatedTooManySteps","thumb-down"],["Obsolète","outOfDate","thumb-down"],["Problème de traduction","translationIssue","thumb-down"],["Mauvais exemple/Erreur de code","samplesCodeIssue","thumb-down"],["Autre","otherDown","thumb-down"]],[],[],[],null,[]]
+    </template>
+  
+</div>
+            
+          </devsite-content>
+        </main>
+        <devsite-footer-promos class="devsite-footer">
+          
+            
+
+<nav class="devsite-footer-promos nocontent" aria-label="Promotions">
+  <ul class="devsite-footer-promos-list">
+    
+    <li class="devsite-footer-promo">
+      <a href="//x.com/AndroidDev"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer X Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-x_dt.svg?hl=fr"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="https://developer.android.com/_static/android/images/logo-x.svg?hl=fr"
+                loading="lazy"
+                alt="X">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          X
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Suivez @AndroidDev sur X</div>
+    </li>
+    
+    <li class="devsite-footer-promo">
+      <a href="//www.youtube.com/user/androiddevelopers?hl=fr"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer YouTube Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-youtube_dt.svg?hl=fr"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="//www.gstatic.com/images/icons/material/product/2x/youtube_48dp.png"
+                loading="lazy"
+                alt="YouTube">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          YouTube
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Retrouvez la chaîne Android Developers sur YouTube</div>
+    </li>
+    
+    <li class="devsite-footer-promo">
+      <a href="//www.linkedin.com/showcase/androiddev"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer LinkedIn Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-linkedin_dt.svg?hl=fr"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="https://developer.android.com/_static/android/images/logo-linkedin.svg?hl=fr"
+                loading="lazy"
+                alt="LinkedIn">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          LinkedIn
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Connect with the Android Developers community on LinkedIn</div>
+    </li>
+    
+  </ul>
+</nav>
+
+          
+        </devsite-footer-promos>
+        <devsite-footer-linkboxes class="devsite-footer">
+          
+            
+<nav class="devsite-footer-linkboxes nocontent" aria-label="Liens de pied de page">
+  
+  <ul class="devsite-footer-linkboxes-list">
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">En savoir plus sur Android</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com/enterprise/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Android pour les entreprises
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com/security-center/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Sécurité
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//source.android.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Projet Android Open Source
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/news"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            Actualités
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//android-developers.googleblog.com/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+          
+            Blog
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/podcasts"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 7)"
+            >
+            
+              
+              
+            
+          
+            Podcasts
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Découvrir</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/games"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Jeux vidéo
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/ml"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Machine learning
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/health-and-fitness"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Santé et remise en forme
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/media"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Appareil photo et contenus multimédias
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/privacy"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            Règles de confidentialité
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/training/connectivity/5g"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+              
+              
+            
+          
+            5G
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Appareils Android</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/large-screens"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Grands écrans
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/wear"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Wear OS
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/chrome-os"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Appareils ChromeOS
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/cars"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Android for Cars
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/tv"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+              
+              
+            
+          
+            Android TV
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Versions</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/15"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android 15
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/14"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Android 14
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/13"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Android 13
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/12"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Android 12
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/11"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            Android 11
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/10"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+          
+            Android 10
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/pie"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 7)"
+            >
+            
+              
+              
+            
+          
+            Pie
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Documentation et téléchargements</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/studio/intro"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Guide Android Studio
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/guide"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Guides pour les développeurs
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/reference"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Document de référence sur les API
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/studio"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Télécharger Studio
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/ndk"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+              
+              
+            
+          
+            Android NDK
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Support</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//issuetracker.google.com/issues/new?component=190923&amp;template=841312"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Signaler un bug de la plate-forme
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//issuetracker.google.com/issues/new?component=192697"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Signaler un bug relatif à la documentation
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//support.google.com/googleplay/android-developer"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Google Play support
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://g.co/userresearch/androiddeveloperfooter"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+              
+              
+            
+          
+            Participer aux études sur l'expérience utilisateur
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+  
+</nav>
+          
+        </devsite-footer-linkboxes>
+        <devsite-footer-utility class="devsite-footer">
+          
+            
+
+<div class="devsite-footer-utility nocontent">
+  
+  
+  <nav class="devsite-footer-sites" aria-label="Autres sites Web Google Developers">
+    <a href="https://developers.google.com/?hl=fr"
+       class="devsite-footer-sites-logo-link gc-analytics-event"
+       data-category="Site-Wide Custom Events"
+       data-label="Footer Google Developers Link">
+      <picture>
+        
+        <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-google-for-developers-dark-theme.svg"
+                media="(prefers-color-scheme: none)"
+                class="devsite-dark-theme">
+        
+        <img class="devsite-footer-sites-logo"
+             src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-google-for-developers.svg"
+             loading="lazy"
+             alt="Google Developers">
+      </picture>
+    </a>
+    <ul class="devsite-footer-sites-list">
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.android.com?hl=fr"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Android Link"
+         
+         >
+          Android
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.chrome.com/home?hl=fr"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Chrome Link"
+         
+         >
+          Chrome
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//firebase.google.com?hl=fr"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Firebase Link"
+         
+         >
+          Firebase
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//cloud.google.com?hl=fr"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Google Cloud Platform Link"
+         
+         >
+          Google Cloud Platform
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developers.google.com/products/?hl=fr"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer All products Link"
+         
+         >
+          Tous les produits
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  
+
+  
+  <nav class="devsite-footer-utility-links" aria-label="Liens vers des utilitaires">
+    
+    <ul class="devsite-footer-utility-list">
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//policies.google.com/privacy?hl=fr"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Privacy link"
+         >
+          Règles de confidentialité
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="https://developer.android.com/license?hl=fr"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer License link"
+         >
+          Licence
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="https://developer.android.com/distribute/marketing-tools/brand-guidelines?hl=fr"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Brand guidelines link"
+         >
+          Consignes relatives à la marque
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 glue-cookie-notification-bar-control">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="#"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Manage cookies link"
+         
+           aria-hidden="true"
+         >
+          Manage cookies
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 devsite-footer-utility-button">
+        
+        <span class="devsite-footer-utility-description">Recevoir des actualités et des conseils par e-mail</span>
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="https://developer.android.com/updates?hl=fr"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Subscribe link"
+         >
+          S’abonner
+        </a>
+        
+      </li>
+      
+    </ul>
+    
+    
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+  </nav>
+</div>
+          
+        </devsite-footer-utility>
+        <devsite-panel>
+          
+        </devsite-panel>
+        
+      </section></section>
+    <devsite-sitemask></devsite-sitemask>
+    <devsite-snackbar></devsite-snackbar>
+    <devsite-tooltip ></devsite-tooltip>
+    <devsite-heading-link></devsite-heading-link>
+    <devsite-analytics>
+      
+        <script type="application/json" analytics>[]</script>
+<script type="application/json" tag-management>{&#34;at&#34;: &#34;True&#34;, &#34;ga4&#34;: [{&#34;id&#34;: &#34;G-QFRN08RN6E&#34;, &#34;purpose&#34;: 0}], &#34;ga4p&#34;: [{&#34;id&#34;: &#34;G-QFRN08RN6E&#34;, &#34;purpose&#34;: 0}], &#34;gtm&#34;: [], &#34;parameters&#34;: {&#34;internalUser&#34;: &#34;False&#34;, &#34;language&#34;: {&#34;machineTranslated&#34;: &#34;False&#34;, &#34;requested&#34;: &#34;fr&#34;, &#34;served&#34;: &#34;fr&#34;}, &#34;pageType&#34;: &#34;codelab&#34;, &#34;projectName&#34;: null, &#34;signedIn&#34;: &#34;False&#34;, &#34;tenant&#34;: &#34;android&#34;, &#34;recommendations&#34;: {&#34;sourcePage&#34;: &#34;&#34;, &#34;sourceType&#34;: 0, &#34;sourceRank&#34;: 0, &#34;sourceIdenticalDescriptions&#34;: 0, &#34;sourceTitleWords&#34;: 0, &#34;sourceDescriptionWords&#34;: 0, &#34;experiment&#34;: &#34;&#34;}, &#34;experiment&#34;: {&#34;ids&#34;: &#34;&#34;}}}</script>
+      
+    </devsite-analytics>
+    
+      <devsite-badger></devsite-badger>
+    
+    
+    
+<android-fully-clickable
+    target="
+        .android-case-study .devsite-landing-row-item,
+        .android-editorial-and-updates-cards .devsite-card-content-wrapper,
+        .android-editorial-and-updates-cards .devsite-landing-row-item,
+        .android-grouped-resources .devsite-landing-row-item,
+        .android-grouped-resources-contained--primary .devsite-landing-row-item,
+        .android-grouped-resources-contained--secondary .devsite-landing-row-item,
+        .android-grouped-resources-contained--tertiary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--primary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--secondary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--tertiary .devsite-landing-row-item,
+        .android-guide-cards .devsite-landing-row-item,
+        .android-illustrated-resources-index .devsite-landing-row-item,
+        .android-illustrated-resources-primary .devsite-landing-row-item,
+        .android-illustrated-resources-secondary .devsite-landing-row-item,
+        .android-illustrated-resources-secondary-small .devsite-landing-row-item,
+        .android-illustrated-resources-tertiary .devsite-landing-row-item,
+        .android-illustrated-resources-tertiary-small .devsite-landing-row-item,
+        .android-promo .devsite-landing-row-item,
+        .android-quick-link,
+        .android-samples .devsite-card-wrapper,
+        .fully-clickable"
+    watch=".android-editorial-and-updates-cards, .android-samples, devsite-content"></android-fully-clickable>
+    
+<script nonce="fSd9g/DdQJ1JQ+AWrrBS7UBBY84m4m">
+  
+  (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+    t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+    E.parentNode.insertBefore(t,E);})(window, document, 'script',
+    'https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/js/app_loader.js', '[3,"fr",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android","https://android-dot-devsite-v2-prod.appspot.com",1,null,["/_pwa/android/manifest.json","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/favicon.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png","https://fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,600italic,700,700italic|Roboto+Mono:400,500,700&display=swap"],1,null,[1,6,8,12,14,17,21,25,50,52,63,70,75,76,80,87,91,92,93,97,98,100,101,102,103,104,105,107,108,109,110,112,113,116,117,118,120,122,124,125,126,127,129,130,131,132,133,134,135,136,138,140,141,147,148,149,151,152,156,157,158,159,161,163,164,168,169,170,179,180,182,183,186,191,193,196],"AIzaSyAP-jjEJBzmIyKR4F-3XITp8yM9T1gEEI8","AIzaSyB6xiKGDR5O3Ak2okS4rLkauxGUG7XP0hg","developer.android.com","AIzaSyAQk0fBONSGUqCNznf6Krs82Ap1-NV6J4o","AIzaSyCCxcqdrZ_7QMeLCRY20bh_SXdAYqy70KY",null,null,null,["Cloud__enable_cloud_dlp_service","Cloud__enable_cloudx_experiment_ids","MiscFeatureFlags__enable_firebase_utm","Cloud__fast_free_trial","Profiles__enable_release_notes_notifications","MiscFeatureFlags__developers_footer_image","Concierge__enable_actions_menu","Search__enable_page_map","DevPro__enable_devpro_offers","MiscFeatureFlags__enable_view_transitions","DevPro__enable_embed_profile_creation","DevPro__enable_enterprise","MiscFeatureFlags__enable_explicit_template_dependencies","MiscFeatureFlags__emergency_css","Search__enable_suggestions_from_borg","Cloud__enable_cloud_shell_fte_user_flow","CloudShell__cloud_code_overflow_menu","Cloud__enable_legacy_calculator_redirect","DevPro__enable_google_payments_buyflow","DevPro__enable_free_benefits","MiscFeatureFlags__developers_footer_dark_image","Profiles__enable_awarding_url","Profiles__enable_stripe_subscription_management","BookNav__enable_tenant_cache_key","DevPro__enable_vertex_credit_card","Profiles__enable_complete_playlist_endpoint","DevPro__enable_firebase_workspaces_card","Search__enable_ai_eligibility_checks","Profiles__enable_completequiz_endpoint","MiscFeatureFlags__enable_variable_operator_index_yaml","Profiles__enable_page_saving","DevPro__enable_code_assist","Profiles__enable_join_program_group_endpoint","Concierge__enable_pushui","Profiles__enable_dashboard_curated_recommendations","MiscFeatureFlags__gdp_dashboard_reskin_enabled","Profiles__enable_completecodelab_endpoint","Profiles__enable_profile_collections","DevPro__remove_eu_tax_intake_form","Profiles__enable_developer_profiles_callout","Profiles__enable_user_type","MiscFeatureFlags__enable_framebox_badge_methods","Profiles__enable_purchase_prompts","Profiles__enable_public_developer_profiles","Cloud__enable_llm_concierge_chat","MiscFeatureFlags__enable_appearance_cookies","MiscFeatureFlags__enable_project_body_class","DevPro__enable_developer_subscriptions","Analytics__enable_clearcut_logging","DevPro__enable_cloud_innovators_plus","TpcFeatures__enable_unmirrored_page_left_nav","CloudShell__cloud_shell_button","Profiles__enable_developer_profile_benefits_ui_redesign","TpcFeatures__proxy_prod_host","EngEduTelemetry__enable_engedu_telemetry","Cloud__cache_serialized_dynamic_content","Concierge__enable_remove_info_panel_tags","MiscFeatureFlags__enable_dark_theme","DevPro__enable_nvidia_credits_card","Experiments__reqs_query_experiments","Profiles__require_profile_eligibility_for_signin","MiscFeatureFlags__enable_variable_operator","Search__enable_dynamic_content_confidential_banner","Significatio__enable_by_tenant","Cloud__enable_cloud_shell","Profiles__enable_playlist_community_acl","Search__enable_ai_search_summaries_for_all","DevPro__enable_google_one_card","Profiles__enable_recognition_badges","MiscFeatureFlags__enable_project_variables","Profiles__enable_callout_notifications","Cloud__enable_free_trial_server_call"],null,null,"AIzaSyBLEMok-5suZ67qRPzx0qUtbnLmyT_kCVE","https://developerscontentserving-pa.googleapis.com","AIzaSyCM4QpTRSqP5qI4Dvjt4OAScIN8sOUlO-k","https://developerscontentsearch-pa.googleapis.com",2,4,null,"https://developerprofiles-pa.googleapis.com",[3,"android","Android Developers","developer.android.com",null,"android-dot-devsite-v2-prod.appspot.com",null,null,[null,1,null,null,null,null,null,null,null,null,null,[1],null,null,null,null,null,null,[1],[1,null,null,[1,20],"/recommendations"],null,null,null,[1,null,1],[1,1,null,1,1]],null,[18,null,null,null,null,null,"/images/lockup.png","/images/touchicon-180.png",null,null,null,null,null,null,null,null,null,null,null,null,null,2,null,null,null,"/images/lockup-dark-theme.png",[]],[],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[6,1,14,15,20,22,23,28,29,37,43],null,[[null,null,1],[1,1]],[[null,null,null,null,null,null,null,[["G-QFRN08RN6E"],null,null,[["G-QFRN08RN6E",1]]],null,null,null,null,1],null,[[1,1],[2,2]]],null,4,null,null,null,null,null,null,null,null,null,null,null,null,null,"android.devsite.google"],null,"pk_live_5170syrHvgGVmSx9sBrnWtA5luvk9BwnVcvIi7HizpwauFG96WedXsuXh790rtij9AmGllqPtMLfhe2RSwD6Pn38V00uBCydV4m",1,null,"https://developerscontentinsights-pa.googleapis.com","AIzaSyCg-ZUslalsEbXMfIo9ZP8qufZgo3LSBDU","AIzaSyDxT0vkxnY_KeINtA4LSePJO-4MAZPMRsE","https://developers.googleapis.com",null,null,"AIzaSyBQom12tzI-rybN7Sf-KfeL4nwm-Rf7PmI\n",null,"https://developerslogging.googleapis.com"]')
+  
+</script>
+
+    <devsite-a11y-announce></devsite-a11y-announce>
+  </body>
+</html>

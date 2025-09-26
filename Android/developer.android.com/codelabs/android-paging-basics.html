@@ -1,0 +1,2268 @@
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html 
+      lang="en"
+      dir="ltr">
+  <head>
+    <meta name="google-signin-client-id" content="721724668570-nbkv1cfusk7kk4eni4pjvepaus73b13t.apps.googleusercontent.com">
+    <meta name="google-signin-scope"
+          content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award">
+    <meta property="og:site_name" content="Android Developers">
+    <meta property="og:type" content="website"><meta name="theme-color" content="#34a853"><meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <link rel="manifest" href="/_pwa/android/manifest.json"
+          crossorigin="use-credentials">
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="//apis.google.com" crossorigin>
+    <link rel="preconnect" href="//www.google-analytics.com" crossorigin><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,600italic,700,700italic|Roboto+Mono:400,500,700&display=swap">
+      <link rel="stylesheet"
+            href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block"><link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/css/app.css">
+      
+        <link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/css/dark-theme.css" disabled>
+      <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/favicon.svg">
+    <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/touchicon-180.png"><link rel="canonical" href="https://developer.android.com/codelabs/android-paging-basics"><link rel="search" type="application/opensearchdescription+xml"
+            title="Android Developers" href="https://developer.android.com/s/opensearch.xml">
+      <link rel="alternate" hreflang="en"
+          href="https://developer.android.com/codelabs/android-paging-basics" /><link rel="alternate" hreflang="x-default" href="https://developer.android.com/codelabs/android-paging-basics" /><link rel="alternate" hreflang="zh-Hans"
+          href="https://developer.android.com/codelabs/android-paging-basics?hl=zh-cn" /><link rel="alternate" hreflang="zh-Hant"
+          href="https://developer.android.com/codelabs/android-paging-basics?hl=zh-tw" /><link rel="alternate" hreflang="fr"
+          href="https://developer.android.com/codelabs/android-paging-basics?hl=fr" /><link rel="alternate" hreflang="id"
+          href="https://developer.android.com/codelabs/android-paging-basics?hl=id" /><link rel="alternate" hreflang="ja"
+          href="https://developer.android.com/codelabs/android-paging-basics?hl=ja" /><link rel="alternate" hreflang="ko"
+          href="https://developer.android.com/codelabs/android-paging-basics?hl=ko" /><link rel="alternate" hreflang="pt-BR"
+          href="https://developer.android.com/codelabs/android-paging-basics?hl=pt-br" /><link rel="alternate" hreflang="es-419"
+          href="https://developer.android.com/codelabs/android-paging-basics?hl=es-419" /><link rel="alternate" hreflang="vi"
+          href="https://developer.android.com/codelabs/android-paging-basics?hl=vi" /><title>(Deprecated) Android Paging Basics &nbsp;|&nbsp; Android Developers</title>
+
+<meta property="og:title" content="(Deprecated) Android Paging Basics &nbsp;|&nbsp; Android Developers"><meta name="description" content="In this codelab, you integrate the Paging library into an app that shows a list. The Paging library helps you load and display pages of data from a larger dataset from local storage or over network.">
+  <meta property="og:description" content="In this codelab, you integrate the Paging library into an app that shows a list. The Paging library helps you load and display pages of data from a larger dataset from local storage or over network."><meta property="og:url" content="https://developer.android.com/codelabs/android-paging-basics"><meta property="og:locale" content="en">
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+
+    
+      <link rel="stylesheet" href="/extras.css"></head>
+  <body class=""
+        template="codelab"
+        theme="android-theme"
+        type="codelab"
+        
+        
+        appearance
+        
+        layout="docs"
+        
+        
+        
+        
+        display-toc
+        pending>
+  
+    <devsite-progress type="indeterminate" id="app-progress"></devsite-progress>
+  
+  
+    <a href="#main-content" class="skip-link button">
+      
+      Skip to main content
+    </a>
+    <section class="devsite-wrapper">
+      <devsite-cookie-notification-bar></devsite-cookie-notification-bar><devsite-header role="banner">
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-header--inner" data-nosnippet>
+  <div class="devsite-top-logo-row-wrapper-wrapper">
+    <div class="devsite-top-logo-row-wrapper">
+      <div class="devsite-top-logo-row">
+        <button type="button" id="devsite-hamburger-menu"
+          class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+          data-category="Site-Wide Custom Events"
+          data-label="Navigation menu button"
+          visually-hidden
+          aria-label="Open menu">
+        </button>
+        
+<div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="androidDevelopers" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-dark-theme.png"
+            media="(prefers-color-scheme: dark)"
+            class="devsite-dark-theme">
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png" class="devsite-site-logo" alt="Android Developers">
+  </picture>
+  
+</a>
+
+
+
+</div>
+        <div class="devsite-top-logo-row-middle">
+          <div class="devsite-header-upper-tabs">
+            
+           </div>
+          
+<devsite-search
+    enable-signin
+    enable-search
+    enable-suggestions
+      enable-query-completion
+    
+    enable-search-summaries
+    
+    tenant-name="Android Developers"
+    
+    
+    
+    
+    
+    >
+  <form class="devsite-search-form" action="https://developer.android.com/s/results" method="GET">
+    <div class="devsite-search-container">
+      <button type="button"
+              search-open
+              class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+              
+              aria-label="Open search"></button>
+      <div class="devsite-searchbox">
+        <input
+          aria-activedescendant=""
+          aria-autocomplete="list"
+          
+          aria-label="Search"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          autocomplete="off"
+          class="devsite-search-field devsite-search-query"
+          name="q"
+          
+          placeholder="Search"
+          role="combobox"
+          type="text"
+          value=""
+          >
+          <div class="devsite-search-image material-icons" aria-hidden="true">
+            
+              <svg class="devsite-search-ai-image" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_6641_386)">
+                    <path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14167 15.375 4.875 14.125C3.625 12.8583 3 11.3167 3 9.5C3 7.68333 3.625 6.15 4.875 4.9C6.14167 3.63333 7.68333 3 9.5 3C10.0167 3 10.5167 3.05833 11 3.175C11.4833 3.275 11.9417 3.43333 12.375 3.65L10.825 5.2C10.6083 5.13333 10.3917 5.08333 10.175 5.05C9.95833 5.01667 9.73333 5 9.5 5C8.25 5 7.18333 5.44167 6.3 6.325C5.43333 7.19167 5 8.25 5 9.5C5 10.75 5.43333 11.8167 6.3 12.7C7.18333 13.5667 8.25 14 9.5 14C10.6667 14 11.6667 13.625 12.5 12.875C13.35 12.1083 13.8417 11.15 13.975 10H15.975C15.925 10.6333 15.7833 11.2333 15.55 11.8C15.3333 12.3667 15.05 12.8667 14.7 13.3L21 19.6L19.6 21ZM17.5 12C17.5 10.4667 16.9667 9.16667 15.9 8.1C14.8333 7.03333 13.5333 6.5 12 6.5C13.5333 6.5 14.8333 5.96667 15.9 4.9C16.9667 3.83333 17.5 2.53333 17.5 0.999999C17.5 2.53333 18.0333 3.83333 19.1 4.9C20.1667 5.96667 21.4667 6.5 23 6.5C21.4667 6.5 20.1667 7.03333 19.1 8.1C18.0333 9.16667 17.5 10.4667 17.5 12Z" fill="#5F6368"/>
+                  </g>
+                <defs>
+                <clipPath id="clip0_6641_386">
+                <rect width="24" height="24" fill="white"/>
+                </clipPath>
+                </defs>
+              </svg>
+            
+          </div>
+          <div class="devsite-search-shortcut-icon-container" aria-hidden="true">
+            <kbd class="devsite-search-shortcut-icon">/</kbd>
+          </div>
+      </div>
+    </div>
+  </form>
+  <button type="button"
+          search-close
+          class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+          
+          aria-label="Close search"></button>
+</devsite-search>
+
+        </div>
+
+        
+
+          
+
+          
+
+          <devsite-appearance-selector></devsite-appearance-selector>
+
+          
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+
+          
+            <a class="devsite-header-link devsite-top-button button gc-analytics-event "
+    href="https://developer.android.com/studio"
+    data-category="Site-Wide Custom Events"
+    data-label="Site header link: Android Studio"
+    >
+  Android Studio
+</a>
+          
+
+        
+
+        
+          <devsite-user 
+                        
+                        
+                          enable-profiles
+                        
+                        
+                        id="devsite-user">
+            
+              
+              <span class="button devsite-top-button" aria-hidden="true" visually-hidden>Sign in</span>
+            
+          </devsite-user>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
+  
+</devsite-header>
+      <devsite-book-nav scrollbars hidden>
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-book-nav-filter"
+     hidden>
+  <span class="filter-list-icon material-icons" aria-hidden="true"></span>
+  <input type="text"
+         placeholder="Filter"
+         
+         aria-label="Type to filter"
+         role="searchbox">
+  
+  <span class="filter-clear-button hidden"
+        data-title="Clear filter"
+        aria-label="Clear filter"
+        role="button"
+        tabindex="0"></span>
+</div>
+
+<nav class="devsite-book-nav devsite-nav nocontent"
+     aria-label="Side menu">
+  <div class="devsite-mobile-header">
+    <button type="button"
+            id="devsite-close-nav"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Close navigation"
+            aria-label="Close navigation">
+    </button>
+    <div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="androidDevelopers" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-dark-theme.png"
+            media="(prefers-color-scheme: dark)"
+            class="devsite-dark-theme">
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png" class="devsite-site-logo" alt="Android Developers">
+  </picture>
+  
+</a>
+
+
+</div>
+  </div>
+
+  <div class="devsite-book-nav-wrapper">
+    <div class="devsite-mobile-nav-top">
+      
+        <ul class="devsite-nav-list">
+          
+          
+    
+    
+<li class="devsite-nav-item">
+
+  
+  <a href="/studio"
+    
+       class="devsite-nav-title gc-analytics-event "
+    
+
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Android Studio"
+     track-type="navMenu"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Android Studio
+   </span>
+    
+  
+  </a>
+  
+
+</li>
+
+  
+          
+        </ul>
+      
+    </div>
+    
+  </div>
+</nav>
+        
+      </devsite-book-nav>
+      <section id="gc-wrapper">
+        <main role="main" id="main-content" class="devsite-main-content"
+            
+              
+              has-sidebar
+            >
+          <div class="devsite-sidebar">
+            <div class="devsite-sidebar-content">
+                
+                <devsite-toc class="devsite-nav"
+                            role="navigation"
+                            aria-label="On this page"
+                            depth="1"
+                            scrollbars
+                  ></devsite-toc>
+                <devsite-recommendations-sidebar class="nocontent devsite-nav">
+                </devsite-recommendations-sidebar>
+            </div>
+          </div>
+          <devsite-content>
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="devsite-article"><style>
+      body {
+        transition: opacity ease-in 0.2s;
+      }
+
+      body[unresolved] {
+        opacity: 0;
+        display: block;
+        overflow: hidden;
+        position: relative;
+      }
+      </style>
+  
+  
+  
+  
+  
+
+  <div class="devsite-article-meta nocontent" role="navigation">
+    
+    
+    <ul class="devsite-breadcrumb-list"
+  >
+  
+</ul>
+    
+  </div>
+  
+    <h1 class="devsite-page-title" tabindex="-1">
+      (Deprecated) Android Paging Basics<div class="devsite-actions" hidden data-nosnippet><devsite-feature-tooltip
+      ack-key="AckCollectionsBookmarkTooltipDismiss"
+      analytics-category="Site-Wide Custom Events"
+      analytics-action-show="Callout Profile displayed"
+      analytics-action-close="Callout Profile dismissed"
+      analytics-label="Create Collection Callout"
+      class="devsite-page-bookmark-tooltip nocontent"
+      dismiss-button="true"
+      id="devsite-collections-dropdown"
+      
+      dismiss-button-text="Dismiss"
+
+      
+      close-button-text="Got it">
+
+    
+    
+      <devsite-bookmark></devsite-bookmark>
+    
+
+    <span slot="popout-heading">
+      
+      Stay organized with collections
+    </span>
+    <span slot="popout-contents">
+      
+      Save and categorize content based on your preferences.
+    </span>
+  </devsite-feature-tooltip></div>
+  
+      
+    </h1>
+  
+
+  <devsite-toc class="devsite-nav"
+    depth="1"
+    devsite-toc-embedded
+    >
+  </devsite-toc>
+  
+    
+  <div class="devsite-article-body clearfix
+  ">
+
+  
+    
+    
+    <google-codelab-analytics gaid="UA-49880327-14" ga4id="G-JTFZSJVVVZ"></google-codelab-analytics>
+    <google-codelab codelab-gaid=""
+                    codelab-ga4id=""
+                    doc-id="1RNuFmt–bW13xl_1vLvrktRjegbCE7NeaVOZKw4oD6w"
+                    id="android-paging-basics"
+                    title="(Deprecated) Android Paging Basics"
+                    no-tooltip=""
+                    environment="web"
+                    category=""
+                    feedback-link=""
+                    layout="paginated"
+                    >
+      
+        <google-codelab-step label="Introduction" duration="0" step="0">
+          
+            <google-codelab-about codelab-title="(Deprecated) Android Paging Basics"
+                                  
+                                  last-updated="2024-12-09T19:01:40Z"
+                                  duration="25">
+            </google-codelab-about>
+          
+          <h2 class="step-title" id="0" data-text="Introduction" tabindex="-1">
+              1. Introduction
+          </h2>
+          <aside class="warning"><p> This codelab is deprecated and it will be removed soon.</p>
+</aside>
+<h2 class="checklist" is-upgraded id="what-youll-learn" data-text="What you'll learn" tabindex="-1"><strong>What you'll learn</strong></h2>
+<ul class="checklist">
+<li>What the main components of the paging library are.</li>
+<li>How to add the paging library to your project.</li>
+</ul>
+<h2 is-upgraded id="what-youll-build" data-text="What you'll build" tabindex="-1"><strong>What you'll build</strong></h2>
+<p>In this codelab, you start with a sample app that already displays a list of articles. The list is static, it has 500 articles, and all of them are kept in the phone&#39;s memory:</p>
+<p class="image-container"><img alt="7d256d9c74e3b3f5.png" style="width: 221.50px" src="/static/codelabs/android-paging-basics/img/7d256d9c74e3b3f5.png" srcset="https://developer.android.com/static/codelabs/android-paging-basics/img/7d256d9c74e3b3f5_36.png 36w,https://developer.android.com/static/codelabs/android-paging-basics/img/7d256d9c74e3b3f5_48.png 48w,https://developer.android.com/static/codelabs/android-paging-basics/img/7d256d9c74e3b3f5_72.png 72w,https://developer.android.com/static/codelabs/android-paging-basics/img/7d256d9c74e3b3f5_96.png 96w,https://developer.android.com/static/codelabs/android-paging-basics/img/7d256d9c74e3b3f5_480.png 480w,https://developer.android.com/static/codelabs/android-paging-basics/img/7d256d9c74e3b3f5_720.png 720w,https://developer.android.com/static/codelabs/android-paging-basics/img/7d256d9c74e3b3f5_856.png 856w,https://developer.android.com/static/codelabs/android-paging-basics/img/7d256d9c74e3b3f5_960.png 960w,https://developer.android.com/static/codelabs/android-paging-basics/img/7d256d9c74e3b3f5_1440.png 1440w,https://developer.android.com/static/codelabs/android-paging-basics/img/7d256d9c74e3b3f5_1920.png 1920w,https://developer.android.com/static/codelabs/android-paging-basics/img/7d256d9c74e3b3f5_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>As you progress through the codelab, you will be:</p>
+<ul>
+<li>...introduced to pagination as a concept.</li>
+<li>...introduced to the core components of the Paging Library.</li>
+<li>...shown how to implement pagination with the Paging library.</li>
+</ul>
+<p>When you&#39;re done, you will have an app:</p>
+<ul>
+<li>...that successfully implements pagination.</li>
+<li>...that communicates effectively to the user when more data is being fetched.</li>
+</ul>
+<p>Here&#39;s a quick preview of the UI we&#39;ll end up with:</p>
+<p class="image-container"><img alt="6277154193f7580.gif" style="width: 180.00px" src="/static/codelabs/android-paging-basics/img/6277154193f7580.gif"></p>
+<h2 is-upgraded id="what-youll-need" data-text="What you'll need" tabindex="-1"><strong>What you'll need</strong></h2>
+<ul>
+<li><a href="https://developer.android.com/studio/index.html" target="_blank">The latest version of Android Studio</a>.</li>
+</ul>
+<h2 is-upgraded id="nice-to-have" data-text="Nice to have" tabindex="-1"><strong>Nice to have</strong></h2>
+<ul>
+<li>Familiarity with the following Architecture Components:  <a href="https://developer.android.com/reference/androidx/lifecycle/ViewModel" target="_blank">ViewModel</a>,  <a href="https://developer.android.com/topic/libraries/view-binding" target="_blank">View Binding</a>, and the architecture suggested in the  <a href="https://developer.android.com/topic/libraries/architecture/guide.html" target="_blank">Guide to App Architecture</a>. For an introduction to Architecture Components, check out the  <a href="https://codelabs.developers.google.com/codelabs/android-room-with-a-view/index.html?index=..%2F..%2Findex#0" target="_blank">Room with a View codelab</a>.</li>
+<li>Familiarity with  <a href="https://kotlinlang.org/docs/reference/coroutines-overview.html" target="_blank">coroutines</a> and Kotlin  <a href="https://kotlinlang.org/docs/reference/coroutines/flow.html" target="_blank">Flow</a>. For an introduction to Flow, check out the  <a href="https://developer.android.com/codelabs/advanced-kotlin-coroutines" target="_blank">Advanced Coroutines with Kotlin Flow and LiveData codelab</a>.</li>
+</ul>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Setup Your Environment" duration="3" step="1">
+          
+          <h2 class="step-title" id="1" data-text="Setup Your Environment" tabindex="-1">
+              2. Setup Your Environment
+          </h2>
+          <p>In this step, you will download the code for the entire codelab and then run a simple example app.</p>
+<p>To get you started as quickly as possible, we have prepared a starter project for you to build on.</p>
+<p>If you have git installed, you can simply run the command below. To check whether git is installed, type <code translate="no" dir="ltr">git --version</code> in the terminal or command line and verify that it executes correctly.</p>
+<div></div><devsite-code><pre translate="no" dir="ltr" is-upgraded> git clone https://github.com/googlecodelabs/android-paging
+</pre></devsite-code>
+<p>If you do not have git, you can click the following button to download all the code for this codelab:  <a href="https://github.com/googlecodelabs/android-paging/archive/main.zip" target="_blank"><button class="button button-primary button-with-icon"><span class="material-icons" aria-hidden="true" translate="no">file_download</span>Download source code</button></a></p>
+<p>The code is organized into two folders, <code translate="no" dir="ltr">basic</code> and <code translate="no" dir="ltr">advanced</code>. For this codelab, we&#39;re only concerned with the <code translate="no" dir="ltr">basic</code> folder.</p>
+<p>In the <code translate="no" dir="ltr">basic</code> folder, there are also two more folders: <code translate="no" dir="ltr">start</code> and <code translate="no" dir="ltr">end</code>. We&#39;ll start working on the code in the <code translate="no" dir="ltr">start</code> folder and at the end of the codelab, the code in the <code translate="no" dir="ltr">start</code> folder should be identical to that in the <code translate="no" dir="ltr">end</code> folder.</p>
+<ol type="1">
+<li>Open the project in the <code translate="no" dir="ltr">basic/start</code> directory in Android Studio.</li>
+<li>Run the <strong><code translate="no" dir="ltr">app</code></strong> run configuration on a device or emulator.</li>
+</ol>
+<p class="image-container"><img alt="89af884fa2d4e709.png" style="width: 624.00px" src="/static/codelabs/android-paging-basics/img/89af884fa2d4e709.png" srcset="https://developer.android.com/static/codelabs/android-paging-basics/img/89af884fa2d4e709_36.png 36w,https://developer.android.com/static/codelabs/android-paging-basics/img/89af884fa2d4e709_48.png 48w,https://developer.android.com/static/codelabs/android-paging-basics/img/89af884fa2d4e709_72.png 72w,https://developer.android.com/static/codelabs/android-paging-basics/img/89af884fa2d4e709_96.png 96w,https://developer.android.com/static/codelabs/android-paging-basics/img/89af884fa2d4e709_480.png 480w,https://developer.android.com/static/codelabs/android-paging-basics/img/89af884fa2d4e709_720.png 720w,https://developer.android.com/static/codelabs/android-paging-basics/img/89af884fa2d4e709_856.png 856w,https://developer.android.com/static/codelabs/android-paging-basics/img/89af884fa2d4e709_960.png 960w,https://developer.android.com/static/codelabs/android-paging-basics/img/89af884fa2d4e709_1440.png 1440w,https://developer.android.com/static/codelabs/android-paging-basics/img/89af884fa2d4e709_1920.png 1920w,https://developer.android.com/static/codelabs/android-paging-basics/img/89af884fa2d4e709_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>We should see a list of articles! Scroll to the end to verify that the list is static—in other words, more items are not fetched when we reach the end of the list. Scroll back to the top to verify that we still have all our items.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="An introduction to pagination" duration="3" step="2">
+          
+          <h2 class="step-title" id="2" data-text="An introduction to pagination" tabindex="-1">
+              3. An introduction to pagination
+          </h2>
+          <p>One of the most common ways of displaying information to users is with lists. However, sometimes these lists offer just a small window into all the content available to the user. As the user scrolls through the information that is available, there is often the expectation that more data is fetched to supplement the information that has already been seen. Each time data is fetched, it needs to be efficient and seamless so that incremental loads don&#39;t detract from the user experience. Incremental loads also offer a performance benefit, as the app does not need to hold large amounts of data in memory at once.</p>
+<p>This process of fetching information incrementally is called <em>pagination</em>, where each <em>page</em> corresponds to a chunk of data to be fetched. To request a page, the data source being paged through often requires a <em>query</em> which defines the information required. The rest of this codelab will introduce the Paging library, and demonstrate how it helps you quickly and efficiently implement pagination in your app.</p>
+<h2 is-upgraded id="core-components-of-the-paging-library" data-text="Core components of the Paging Library" tabindex="-1">Core components of the Paging Library</h2>
+<p>The core components of the Paging library are as follows:</p>
+<ul>
+<li><strong><code translate="no" dir="ltr">PagingSource</code></strong> - the base class for loading chunks of data for a specific page query. It is part of the data layer, and is typically exposed from a  <a href="https://developer.android.com/jetpack/guide/data-layer#architecture" target="_blank"><code translate="no" dir="ltr">DataSource</code></a> class and subsequently by the <code translate="no" dir="ltr">Repository</code> for use in the <code translate="no" dir="ltr">ViewModel</code>.</li>
+<li><strong><code translate="no" dir="ltr">PagingConfig</code></strong> - a class that defines the parameters that determine paging behavior. This includes page size, whether placeholders are enabled, and so on.</li>
+<li><strong><code translate="no" dir="ltr">Pager</code></strong> - a class responsible for producing the <code translate="no" dir="ltr">PagingData</code> stream. It depends on the <code translate="no" dir="ltr">PagingSource</code> to do this and should be created in the <code translate="no" dir="ltr">ViewModel</code>.</li>
+<li><strong><code translate="no" dir="ltr">PagingData</code></strong> - a container for paginated data. Each refresh of data will have a separate corresponding <code translate="no" dir="ltr">PagingData</code> emission backed by its own <code translate="no" dir="ltr">PagingSource</code>.</li>
+<li><strong><code translate="no" dir="ltr">PagingDataAdapter</code></strong> - a <code translate="no" dir="ltr">RecyclerView.Adapter</code> subclass that presents <code translate="no" dir="ltr">PagingData</code> in a <code translate="no" dir="ltr">RecyclerView</code>. The <code translate="no" dir="ltr">PagingDataAdapter</code> can be connected to a Kotlin <code translate="no" dir="ltr">Flow</code>, a <code translate="no" dir="ltr">LiveData</code>, an RxJava <code translate="no" dir="ltr">Flowable</code>, an RxJava <code translate="no" dir="ltr">Observable</code>, or even a static list using factory methods. The <code translate="no" dir="ltr">PagingDataAdapter</code> listens to internal <code translate="no" dir="ltr">PagingData</code> loading events and efficiently updates the UI as pages are loaded.</li>
+</ul>
+<p class="image-container"><img alt="566d0f6506f39480.jpeg" title="Relationship between the paging library components " style="width: 624.00px" src="/static/codelabs/android-paging-basics/img/566d0f6506f39480.jpeg" srcset="https://developer.android.com/static/codelabs/android-paging-basics/img/566d0f6506f39480_36.jpeg 36w,https://developer.android.com/static/codelabs/android-paging-basics/img/566d0f6506f39480_48.jpeg 48w,https://developer.android.com/static/codelabs/android-paging-basics/img/566d0f6506f39480_72.jpeg 72w,https://developer.android.com/static/codelabs/android-paging-basics/img/566d0f6506f39480_96.jpeg 96w,https://developer.android.com/static/codelabs/android-paging-basics/img/566d0f6506f39480_480.jpeg 480w,https://developer.android.com/static/codelabs/android-paging-basics/img/566d0f6506f39480_720.jpeg 720w,https://developer.android.com/static/codelabs/android-paging-basics/img/566d0f6506f39480_856.jpeg 856w,https://developer.android.com/static/codelabs/android-paging-basics/img/566d0f6506f39480_960.jpeg 960w,https://developer.android.com/static/codelabs/android-paging-basics/img/566d0f6506f39480_1440.jpeg 1440w,https://developer.android.com/static/codelabs/android-paging-basics/img/566d0f6506f39480_1920.jpeg 1920w,https://developer.android.com/static/codelabs/android-paging-basics/img/566d0f6506f39480_2880.jpeg 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>In the following sections, you will implement examples of each of the components described above.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Project overview" duration="0" step="3">
+          
+          <h2 class="step-title" id="3" data-text="Project overview" tabindex="-1">
+              4. Project overview
+          </h2>
+          <p>The app in its current form displays a static list of articles. Each article has a title, description and date it was created. A static list works fine for a small number of items, but it doesn&#39;t scale well as datasets get larger. We&#39;ll fix that by implementing pagination using the Paging library, but first let&#39;s go over the components that are already in the app.</p>
+<p>The app follows the architecture recommended in the  <a href="https://developer.android.com/topic/libraries/architecture/guide.html" target="_blank">guide to app architecture</a>. Here&#39;s what you will find in each package:</p>
+<p><strong>Data layer:</strong></p>
+<ul>
+<li><code translate="no" dir="ltr">ArticleRepository</code>: Responsible for providing the list of articles and keeping them in memory.</li>
+<li><code translate="no" dir="ltr">Article</code>: A class representing the <em>data model</em>, a representation of the information pulled from the data layer.</li>
+</ul>
+<p><strong>UI layer</strong>:</p>
+<ul>
+<li>The <code translate="no" dir="ltr">Activity</code>, <code translate="no" dir="ltr">RecyclerView.Adapter</code>, and <code translate="no" dir="ltr">RecyclerView.ViewHolder</code>: Classes responsible for displaying the list in the UI.</li>
+<li>The <code translate="no" dir="ltr">ViewModel</code>: The state holder responsible for creating the state the UI needs to display.</li>
+</ul>
+<p>The repository exposes all its articles in a <code translate="no" dir="ltr">Flow</code> with the <code translate="no" dir="ltr">articleStream</code> field. This is in turn read by the <code translate="no" dir="ltr">ArticleViewModel</code> in the UI layer which then prepares it for consumption by the UI in <code translate="no" dir="ltr">ArticleActivity</code> with the <code translate="no" dir="ltr">state</code> field, a  <a href="https://medium.com/androiddevelopers/things-to-know-about-flows-sharein-and-statein-operators-20e6ccb2bc74" target="_blank"><code translate="no" dir="ltr">StateFlow</code></a>.</p>
+<aside class="special"><p><strong>A Flow is an async sequence of values</strong></p>
+<p><code translate="no" dir="ltr">Flow</code> produces values one at a time (instead of all at once) that can generate values from <em>async</em> operations like network requests, database calls, or other async code. It supports coroutines throughout its API, so you can transform a flow using coroutines as well! For an introduction to the <code translate="no" dir="ltr">Flow</code> type, be sure to visit the  <a href="https://developer.android.com/kotlin/flow" target="_blank">documentation</a>. For a more hands-on experience, be sure to check out the advanced coroutines  <a href="https://developer.android.com/codelabs/advanced-kotlin-coroutines#0" target="_blank">codelab</a>.</p>
+</aside>
+<p>Exposing articles as a <code translate="no" dir="ltr">Flow</code> from the repository gives the repository the ability to update the articles presented as they change over time. For example, if an article&#39;s title changed, that change can easily be communicated to collectors of <code translate="no" dir="ltr">articleStream</code>. The use of a <code translate="no" dir="ltr">StateFlow</code> for the UI state in the <code translate="no" dir="ltr">ViewModel</code> ensures that even if we stop collecting the UI state—for example, when the <code translate="no" dir="ltr">Activity</code> is recreated during a configuration change—we can pick up right where we left off the moment we start collecting it again.</p>
+<p>As mentioned earlier, the current <code translate="no" dir="ltr">articleStream</code> in the repository only presents news for the current day. While this might be enough for some users, others might want to view older articles when they&#39;ve scrolled through all available articles for the current day. This expectation makes the displaying of articles a great candidate for pagination. Other reasons we should explore paging through the articles include the following:</p>
+<ul>
+<li>The <code translate="no" dir="ltr">ViewModel</code> keeps all items loaded in memory in the <code translate="no" dir="ltr">items</code> <code translate="no" dir="ltr">StateFlow</code>. This is a major concern when the dataset gets really large as it can impact performance.</li>
+<li>Updating one or more articles in the list when they&#39;ve changed becomes more expensive the bigger the list of articles gets.</li>
+</ul>
+<p>The Paging library helps solve all these problems while providing a consistent API for fetching data incrementally (pagination) in your apps.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Define the source of data" duration="5" step="4">
+          
+          <h2 class="step-title" id="4" data-text="Define the source of data" tabindex="-1">
+              5. Define the source of data
+          </h2>
+          <p>When implementing pagination, we want to be confident the following conditions are met:</p>
+<ul>
+<li>Properly handling requests for the data from the UI, ensuring that multiple requests aren&#39;t triggered at the same time for the same query.</li>
+<li>Keeping a manageable amount of retrieved data in memory.</li>
+<li>Triggering requests to fetch more data to supplement the data we&#39;ve already fetched.</li>
+</ul>
+<p>We can achieve all this with a <code translate="no" dir="ltr">PagingSource</code>. A <code translate="no" dir="ltr">PagingSource</code> defines the source of data by specifying how to retrieve data in incremental chunks. The <code translate="no" dir="ltr">PagingData</code> object then pulls data from the <code translate="no" dir="ltr">PagingSource</code> in response to loading hints that are generated as the user scrolls in a <code translate="no" dir="ltr">RecyclerView</code>.</p>
+<p>Our <code translate="no" dir="ltr">PagingSource</code> will load articles. In <code translate="no" dir="ltr">data/Article.kt</code> you will find the model defined as follows<code translate="no" dir="ltr">:</code></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scalate Server Page"><code translate="no" dir="ltr">data<span class="devsite-syntax-w"> </span>class<span class="devsite-syntax-w"> </span>Article(
+<span class="devsite-syntax-w">    </span>val<span class="devsite-syntax-w"> </span>id:<span class="devsite-syntax-w"> </span>Int,
+<span class="devsite-syntax-w">    </span>val<span class="devsite-syntax-w"> </span>title:<span class="devsite-syntax-w"> </span>String,
+<span class="devsite-syntax-w">    </span>val<span class="devsite-syntax-w"> </span>description:<span class="devsite-syntax-w"> </span>String,
+<span class="devsite-syntax-w">    </span>val<span class="devsite-syntax-w"> </span>created:<span class="devsite-syntax-w"> </span>LocalDateTime,
+)
+</code></pre></devsite-code>
+<p>To build the <code translate="no" dir="ltr">PagingSource</code> you will need to define the following:</p>
+<ul>
+<li><strong>The type of the paging key</strong> - The definition of the type of the page query we use to request more data. In our case, we fetch articles after or before a certain article ID since the IDs are guaranteed to be ordered and increasing.</li>
+<li><strong>The type of data loaded</strong> - Each page returns a <code translate="no" dir="ltr">List</code> of articles, so the type is <code translate="no" dir="ltr">Article</code>.</li>
+<li><strong>Where the data is retrieved from</strong> - Typically, this would be a database, network resource, or any other source of paginated data. In the case of this codelab however, we&#39;re using locally generated data.</li>
+</ul>
+<p>In the <code translate="no" dir="ltr">data</code> package, let&#39;s create a <code translate="no" dir="ltr">PagingSource</code> implementation in a new file called <code translate="no" dir="ltr">ArticlePagingSource.kt</code>:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-n">package</span> <span class="devsite-syntax-n">com</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">example</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">codelabs</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">paging</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">data</span>
+
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.paging.PagingSource</span>
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.paging.PagingState</span>
+
+<span class="devsite-syntax-k">class</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nc">ArticlePagingSource</span> <span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">PagingSource&lt;Int</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">Article</span>&gt;<span class="devsite-syntax-p">()</span> <span class="devsite-syntax-p">{</span> 
+    <span class="devsite-syntax-n">override</span> <span class="devsite-syntax-n">suspend</span> <span class="devsite-syntax-n">fun</span> <span class="devsite-syntax-n">load</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">params</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">LoadParams&lt;Int&gt;</span><span class="devsite-syntax-p">):</span> <span class="devsite-syntax-n">LoadResult&lt;Int</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">Article</span>&gt; <span class="devsite-syntax-p">{</span>
+        <span class="devsite-syntax-n">TODO</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s2">"Not yet implemented"</span><span class="devsite-syntax-p">)</span>
+    <span class="devsite-syntax-p">}</span>
+   <span class="devsite-syntax-n">override</span> <span class="devsite-syntax-n">fun</span> <span class="devsite-syntax-n">getRefreshKey</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">state</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">PagingState&lt;Int</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">Article</span>&gt;<span class="devsite-syntax-p">):</span> <span class="devsite-syntax-n">Int</span><span class="devsite-syntax-err">?</span> <span class="devsite-syntax-p">{</span> 
+        <span class="devsite-syntax-n">TODO</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s2">"Not yet implemented"</span><span class="devsite-syntax-p">)</span>
+    <span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p><code translate="no" dir="ltr">PagingSource</code> requires us to implement two functions: <code translate="no" dir="ltr">load()</code> and <code translate="no" dir="ltr">getRefreshKey()</code>.</p>
+<p>The <code translate="no" dir="ltr">load()</code> function will be called  by the Paging library to asynchronously fetch more data to be displayed as the user scrolls around. The <code translate="no" dir="ltr">LoadParams</code> object keeps information related to the load operation, including the following:</p>
+<ul>
+<li><strong>Key of the page to be loaded</strong> - If this is the first time that <code translate="no" dir="ltr">load()</code> is called, <code translate="no" dir="ltr">LoadParams.key</code> will be <code translate="no" dir="ltr">null</code>. In this case, you will have to define the initial page key. For our project, we use the article ID as the key. Let&#39;s also add a <code translate="no" dir="ltr">STARTING_KEY</code> constant of <code translate="no" dir="ltr">0</code> to the top of the <code translate="no" dir="ltr">ArticlePagingSource</code> file for the initial page key.</li>
+<li><strong>Load size</strong> - the requested number of items to load.</li>
+</ul>
+<p>The <code translate="no" dir="ltr">load()</code> function returns a <code translate="no" dir="ltr">LoadResult</code>. The <code translate="no" dir="ltr">LoadResult</code> can be one of the following types:</p>
+<ul>
+<li><code translate="no" dir="ltr">LoadResult.Page</code>, if the result was successful.</li>
+<li><code translate="no" dir="ltr">LoadResult.Error</code>, in case of error.</li>
+<li><code translate="no" dir="ltr">LoadResult.Invalid</code>, if the <code translate="no" dir="ltr">PagingSource</code> should be invalidated because it can no longer guarantee the integrity of its results.</li>
+</ul>
+<p>A <code translate="no" dir="ltr">LoadResult.Page</code> has three required arguments:</p>
+<ul>
+<li><code translate="no" dir="ltr">data</code>: A <code translate="no" dir="ltr">List</code> of the items fetched.</li>
+<li><code translate="no" dir="ltr">prevKey</code>: The key used by the <code translate="no" dir="ltr">load()</code> method if it needs to fetch items <em>behind</em> the current page.</li>
+<li><code translate="no" dir="ltr">nextKey</code>: The key used by the <code translate="no" dir="ltr">load()</code> method if it needs to fetch items <em>after</em> the current page.</li>
+</ul>
+<p>...and two optional ones:</p>
+<ul>
+<li><code translate="no" dir="ltr">itemsBefore</code>: The number of placeholders to show before the loaded data.</li>
+<li><code translate="no" dir="ltr">itemsAfter</code>: The number of placeholders to show after the loaded data.</li>
+</ul>
+<p>Our loading key is the <code translate="no" dir="ltr">Article.id</code> field. We can use it as a key because the <code translate="no" dir="ltr">Article</code> ID increases by one for each article; that is, article IDs are consecutive monotonically increasing integers.</p>
+<p>The  <code translate="no" dir="ltr">nextKey</code> or <code translate="no" dir="ltr">prevKey</code> is <code translate="no" dir="ltr">null</code> if there is no more data to be loaded in the corresponding direction. In our case, for <code translate="no" dir="ltr">prevKey</code>:</p>
+<ul>
+<li>If the <code translate="no" dir="ltr">startKey</code> is the same as <code translate="no" dir="ltr">STARTING_KEY</code> we return null since we can&#39;t load more items behind this key.</li>
+<li>Otherwise, we take the first item in the list and load <code translate="no" dir="ltr">LoadParams.loadSize</code> behind it making sure to never return a key less than <code translate="no" dir="ltr">STARTING_KEY</code>. We do this by defining the <code translate="no" dir="ltr">ensureValidKey()</code> method.</li>
+</ul>
+<p>Add the following function that checks if the paging key is valid:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL"><code translate="no" dir="ltr"><span class="devsite-syntax-k">class</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ArticlePagingSource</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">PagingSource&lt;Int</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Article</span>&gt;<span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">{</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-p">...</span><span class="devsite-syntax-w"> </span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-cm">/**</span>
+<span class="devsite-syntax-cm">     * Makes sure the paging key is never less than [STARTING_KEY]</span>
+<span class="devsite-syntax-cm">     */</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">private</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ensureValidKey</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-k">key</span><span class="devsite-syntax-err">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nc">Int</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">max</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">STARTING_KEY</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">key</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-err">}</span>
+</code></pre></devsite-code>
+<p>For <code translate="no" dir="ltr">nextKey</code>:</p>
+<ul>
+<li>Since we support loading infinite items, we pass in <code translate="no" dir="ltr">range.last + 1</code>.</li>
+</ul>
+<p>Also, because each article has a <code translate="no" dir="ltr">created</code> field, we&#39;ll also need to generate a value for it. Add the following to the top of the file:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only"><code translate="no" dir="ltr">private val firstArticleCreatedTime = LocalDateTime.now()
+
+class ArticlePagingSource : PagingSource&lt;Int, Article&gt;() {
+   ...
+}
+</code></pre></devsite-code>
+<p>With all of that code in place, we are now able to implement the <code translate="no" dir="ltr">load()</code> function:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">kotlin.math.max</span>
+<span class="devsite-syntax-o">...</span>
+
+<span class="devsite-syntax-n">private</span> <span class="devsite-syntax-n">val</span> <span class="devsite-syntax-n">firstArticleCreatedTime</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">LocalDateTime</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">now</span><span class="devsite-syntax-p">()</span>
+
+<span class="devsite-syntax-k">class</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nc">ArticlePagingSource</span> <span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">PagingSource&lt;Int</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">Article</span>&gt;<span class="devsite-syntax-p">()</span> <span class="devsite-syntax-p">{</span>
+   <span class="devsite-syntax-n">override</span> <span class="devsite-syntax-n">suspend</span> <span class="devsite-syntax-n">fun</span> <span class="devsite-syntax-n">load</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">params</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">LoadParams&lt;Int&gt;</span><span class="devsite-syntax-p">):</span> <span class="devsite-syntax-n">LoadResult&lt;Int</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">Article</span>&gt; <span class="devsite-syntax-p">{</span>
+        <span class="devsite-syntax-o">//</span> <span class="devsite-syntax-n">Start</span> <span class="devsite-syntax-n">paging</span> <span class="devsite-syntax-k">with</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">STARTING_KEY</span> <span class="devsite-syntax-k">if</span> <span class="devsite-syntax-n">this</span> <span class="devsite-syntax-ow">is</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">first</span> <span class="devsite-syntax-n">load</span>
+        <span class="devsite-syntax-n">val</span> <span class="devsite-syntax-n">start</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">params</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">key</span> <span class="devsite-syntax-err">?</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">STARTING_KEY</span>
+        <span class="devsite-syntax-o">//</span> <span class="devsite-syntax-n">Load</span> <span class="devsite-syntax-k">as</span> <span class="devsite-syntax-n">many</span> <span class="devsite-syntax-n">items</span> <span class="devsite-syntax-k">as</span> <span class="devsite-syntax-n">hinted</span> <span class="devsite-syntax-n">by</span> <span class="devsite-syntax-n">params</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">loadSize</span>
+        <span class="devsite-syntax-n">val</span> <span class="devsite-syntax-nb">range</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">start</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">until</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">start</span> <span class="devsite-syntax-o">+</span> <span class="devsite-syntax-n">params</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">loadSize</span><span class="devsite-syntax-p">)</span>
+
+        <span class="devsite-syntax-k">return</span> <span class="devsite-syntax-n">LoadResult</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">Page</span><span class="devsite-syntax-p">(</span>
+            <span class="devsite-syntax-n">data</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-nb">range</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">map</span> <span class="devsite-syntax-p">{</span> <span class="devsite-syntax-n">number</span> <span class="devsite-syntax-o">-</span>&gt;
+                <span class="devsite-syntax-n">Article</span><span class="devsite-syntax-p">(</span>
+                    <span class="devsite-syntax-o">//</span> <span class="devsite-syntax-n">Generate</span> <span class="devsite-syntax-n">consecutive</span> <span class="devsite-syntax-n">increasing</span> <span class="devsite-syntax-n">numbers</span> <span class="devsite-syntax-k">as</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">article</span> <span class="devsite-syntax-nb">id</span>
+                    <span class="devsite-syntax-nb">id</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">number</span><span class="devsite-syntax-p">,</span>
+                    <span class="devsite-syntax-n">title</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-s2">"Article $number"</span><span class="devsite-syntax-p">,</span>
+                    <span class="devsite-syntax-n">description</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-s2">"This describes article $number"</span><span class="devsite-syntax-p">,</span>
+                    <span class="devsite-syntax-n">created</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">firstArticleCreatedTime</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">minusDays</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">number</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">toLong</span><span class="devsite-syntax-p">())</span>
+                <span class="devsite-syntax-p">)</span>
+            <span class="devsite-syntax-p">},</span>
+           
+            <span class="devsite-syntax-o">//</span> <span class="devsite-syntax-n">Make</span> <span class="devsite-syntax-n">sure</span> <span class="devsite-syntax-n">we</span> <span class="devsite-syntax-n">don</span><span class="devsite-syntax-s1">'t try to load items behind the STARTING_KEY</span>
+            <span class="devsite-syntax-n">prevKey</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">when</span> <span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">start</span><span class="devsite-syntax-p">)</span> <span class="devsite-syntax-p">{</span>
+                <span class="devsite-syntax-n">STARTING_KEY</span> <span class="devsite-syntax-o">-</span>&gt; <span class="devsite-syntax-n">null</span>
+                <span class="devsite-syntax-k">else</span> <span class="devsite-syntax-o">-</span>&gt; <span class="devsite-syntax-n">ensureValidKey</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">key</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-nb">range</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">first</span> <span class="devsite-syntax-o">-</span> <span class="devsite-syntax-n">params</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">loadSize</span><span class="devsite-syntax-p">)</span>
+            <span class="devsite-syntax-p">},</span>
+            <span class="devsite-syntax-n">nextKey</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-nb">range</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">last</span> <span class="devsite-syntax-o">+</span> <span class="devsite-syntax-mi">1</span>
+        <span class="devsite-syntax-p">)</span>
+    <span class="devsite-syntax-p">}</span>
+
+    <span class="devsite-syntax-o">...</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>Next we need to implement <code translate="no" dir="ltr">getRefreshKey()</code>. This method is called when the Paging library needs to reload items for the UI because the data in its backing <code translate="no" dir="ltr">PagingSource</code> has changed. This situation where the underlying data for a <code translate="no" dir="ltr">PagingSource</code> has changed and needs to be updated in the UI is called <em>invalidation</em>. When invalidated, the Paging Library creates a new <code translate="no" dir="ltr">PagingSource</code> to reload the data, and informs the UI by emitting new <code translate="no" dir="ltr">PagingData</code>. We&#39;ll learn more about invalidation in a later section.</p>
+<p>When loading from a new <code translate="no" dir="ltr">PagingSource</code>,  <code translate="no" dir="ltr">getRefreshKey()</code> is called to provide the key the new <code translate="no" dir="ltr">PagingSource</code> should start loading with to make sure the user does not lose their current place in the list after the refresh.</p>
+<p>Invalidation in the paging library occurs for one of two reasons:</p>
+<ul>
+<li>You called <code translate="no" dir="ltr">refresh()</code> on the <code translate="no" dir="ltr">PagingAdapter</code>.</li>
+<li>You called <code translate="no" dir="ltr">invalidate()</code> on the <code translate="no" dir="ltr">PagingSource</code>.</li>
+</ul>
+<p>The key returned (in our case, an <code translate="no" dir="ltr">Int</code>) will be passed to the next call of the <code translate="no" dir="ltr">load()</code> method in the new <code translate="no" dir="ltr">PagingSource</code> via the <code translate="no" dir="ltr">LoadParams</code> argument. To prevent items from jumping around after invalidation, we need to make sure the key returned will load enough items to fill the screen. This increases the possibility that the new set of items includes items that were present in the invalidated data, which helps maintain the current scroll position. Let&#39;s look at the implementation in our app:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="GDScript"><code translate="no" dir="ltr"><span class="devsite-syntax-w">   </span><span class="devsite-syntax-o">//</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">The</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">refresh</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">key</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">is</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">used</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">for</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">initial</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nb">load</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">of</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">next</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">PagingSource</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">after</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">invalidation</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-n">override</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">getRefreshKey</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">state</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">PagingState&lt;Int</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Article</span>&gt;<span class="devsite-syntax-p">):</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Int</span><span class="devsite-syntax-err">?</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">//</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">In</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">our</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">case</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">we</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">grab</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">item</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">closest</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">anchor</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">position</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">//</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">then</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">return</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">its</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">id</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">state</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">config</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">pageSize</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mi">2</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">as</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">a</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">buffer</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">anchorPosition</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">state</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">anchorPosition</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">?</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">return</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nb devsite-syntax-nb-Type">null</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">article</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">state</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">closestItemToPosition</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">anchorPosition</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">?</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">return</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nb devsite-syntax-nb-Type">null</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-k">return</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ensureValidKey</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">key</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">article</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">id</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">state</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">config</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">pageSize</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mi">2</span><span class="devsite-syntax-p">))</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>In the snippet above, we make use of <code translate="no" dir="ltr">PagingState.anchorPosition</code>. If you&#39;ve wondered how the paging library knows to fetch more items, this is a clue! When the UI tries to read items from <code translate="no" dir="ltr">PagingData</code>, it tries to read at a certain index. If data was read, then that data is displayed in the UI. If there is no data, however, then the paging library knows it needs to fetch data to fulfill the failed read request. The last index that successfully fetched data when read is the <code translate="no" dir="ltr">anchorPosition</code>.</p>
+<p>When we&#39;re refreshing, we grab the key of the <code translate="no" dir="ltr">Article</code> closest to the <code translate="no" dir="ltr">anchorPosition</code> to use as the load key. That way, when we start loading again from a new <code translate="no" dir="ltr">PagingSource</code>, the set of fetched items includes items that were already loaded, which ensures a smooth and consistent user experience.</p>
+<p>With that done, you&#39;ve fully defined a <code translate="no" dir="ltr">PagingSource</code>. The next step is connecting it to the UI.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Produce PagingData for the UI" duration="5" step="5">
+          
+          <h2 class="step-title" id="5" data-text="Produce PagingData for the UI" tabindex="-1">
+              6. Produce PagingData for the UI
+          </h2>
+          <p>In our current implementation, we use a <code translate="no" dir="ltr">Flow&lt;List&lt;Article&gt;&gt;</code> in the <code translate="no" dir="ltr">ArticleRepository</code> to expose the loaded data to the <code translate="no" dir="ltr">ViewModel</code>. The <code translate="no" dir="ltr">ViewModel</code> in turn maintains an always available state of the data with the <code translate="no" dir="ltr">stateIn</code> operator for exposure to the UI.</p>
+<aside class="special"><p><strong>Note:</strong> For more information on the <code translate="no" dir="ltr">stateIn</code> operator, check out this  <a href="https://medium.com/androiddevelopers/things-to-know-about-flows-sharein-and-statein-operators-20e6ccb2bc74" target="_blank">blog post</a>.</p>
+</aside>
+<p>With the Paging Library, we will instead expose a <code translate="no" dir="ltr">Flow&lt;PagingData&lt;Article&gt;&gt;</code> from the <code translate="no" dir="ltr">ViewModel</code>. <code translate="no" dir="ltr">PagingData</code> is a type that wraps the data we&#39;ve loaded and helps the Paging library decide when to fetch more data, and also make sure we don&#39;t request the same page twice.</p>
+<p>To construct the <code translate="no" dir="ltr">PagingData</code>, we&#39;ll use one of several different builder methods from the <code translate="no" dir="ltr">Pager</code> class depending on which API we want to use to pass the <code translate="no" dir="ltr">PagingData</code> to other layers of our app:</p>
+<ul>
+<li>Kotlin <code translate="no" dir="ltr">Flow</code> - use <code translate="no" dir="ltr">Pager.flow</code>.</li>
+<li><code translate="no" dir="ltr">LiveData</code> - use <code translate="no" dir="ltr">Pager.liveData</code>.</li>
+<li>RxJava <code translate="no" dir="ltr">Flowable</code> - use <code translate="no" dir="ltr">Pager.flowable</code>.</li>
+<li>RxJava <code translate="no" dir="ltr">Observable</code> - use <code translate="no" dir="ltr">Pager.observable</code>.</li>
+</ul>
+<p>As we&#39;re already using <code translate="no" dir="ltr">Flow</code> in our app, we&#39;ll continue with this approach; but instead of using <code translate="no" dir="ltr">Flow&lt;List&lt;Article&gt;&gt;</code>, we&#39;ll use <code translate="no" dir="ltr">Flow&lt;PagingData&lt;Article&gt;&gt;</code>.</p>
+<p>No matter which <code translate="no" dir="ltr">PagingData</code> builder you use, you&#39;ll have to pass the following parameters:</p>
+<ul>
+<li><strong><code translate="no" dir="ltr">PagingConfig</code></strong>. This class sets options regarding how to load content from a <code translate="no" dir="ltr">PagingSource</code> such as how far ahead to load, the size request for the initial load, and others. The only required parameter you have to define is the page size—how many items should be loaded in each page. By default, Paging will keep all of the pages you load in memory. To ensure that you&#39;re not wasting memory as the user scrolls, set the <code translate="no" dir="ltr">maxSize</code> parameter in <code translate="no" dir="ltr">PagingConfig</code>. By default, Paging will return null items as a placeholder for content that is not yet loaded if Paging can count the unloaded items and if the <code translate="no" dir="ltr">enablePlaceholders</code> config flag is <code translate="no" dir="ltr">true</code>. That way, you will be able to display a placeholder view in your adapter. To simplify the work in this codelab, let&#39;s disable the placeholders by passing <code translate="no" dir="ltr">enablePlaceholders = false</code>.</li>
+<li>A <strong>function that defines how to create the </strong><code translate="no" dir="ltr">PagingSource</code>. In our case, we&#39;ll be creating an <code translate="no" dir="ltr">ArticlePagingSource</code>, so we need a function that tells the Paging library how to do that.</li>
+</ul>
+<aside class="special"><p><strong>Note:</strong> The <code translate="no" dir="ltr">PagingConfig.pageSize</code> should be enough for several screens&#39; worth of items. If the page is too small, your list might flicker as pages&#39; content doesn&#39;t cover the full screen. Larger page sizes are good for loading efficiency, but can increase latency when the list is updated. If you would like to load a different amount of items for your first page, use <code translate="no" dir="ltr">PagingConfig.initialLoadSize</code>.</p>
+<p>The default <code translate="no" dir="ltr">PagingConfig.maxSize</code> is unbounded, so pages are never dropped. If you do want to drop pages, make sure that you keep <code translate="no" dir="ltr">maxSize</code> to a high enough number that it doesn&#39;t result in too many network requests when the user changes the scroll direction. The minimum value is <code translate="no" dir="ltr">pageSize + prefetchDistance * 2</code>.</p>
+</aside>
+<p>Let&#39;s modify our <code translate="no" dir="ltr">ArticleRepository</code>!</p>
+<h2 is-upgraded id="update-articlerepository" data-text="Update ArticleRepository" tabindex="-1"><strong>Update</strong> <strong><code translate="no" dir="ltr">ArticleRepository</code></strong></h2>
+<ul>
+<li>Delete the <code translate="no" dir="ltr">articlesStream</code> field .</li>
+<li>Add a method called <code translate="no" dir="ltr">articlePagingSource()</code> that returns the <code translate="no" dir="ltr">ArticlePagingSource</code> we just created.</li>
+</ul>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Perl6"><code translate="no" dir="ltr"><span class="devsite-syntax-k">class</span> <span class="devsite-syntax-n">ArticleRepository</span> {
+
+    <span class="devsite-syntax-n">fun</span> <span class="devsite-syntax-n">articlePagingSource</span>() = <span class="devsite-syntax-n">ArticlePagingSource</span>()
+}
+</code></pre></devsite-code>
+<h2 is-upgraded id="cleanup-articlerepository" data-text="Cleanup ArticleRepository" tabindex="-1"><strong>Cleanup</strong> <strong><code translate="no" dir="ltr">ArticleRepository</code></strong></h2>
+<p>The Paging library does a lot of things for us:</p>
+<ul>
+<li>Handles in-memory cache.</li>
+<li>Requests data when the user is close to the end of the list.</li>
+</ul>
+<p>This means that everything else in the <code translate="no" dir="ltr">ArticleRepository</code> can be removed, except <code translate="no" dir="ltr">articlePagingSource()</code>. Your <code translate="no" dir="ltr">ArticleRepository</code> file should now look like this:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-n">package</span> <span class="devsite-syntax-n">com</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">example</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">codelabs</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">paging</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">data</span>
+
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.paging.PagingSource</span>
+
+<span class="devsite-syntax-k">class</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nc">ArticleRepository</span> <span class="devsite-syntax-p">{</span>
+    <span class="devsite-syntax-n">fun</span> <span class="devsite-syntax-n">articlePagingSource</span><span class="devsite-syntax-p">()</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">ArticlePagingSource</span><span class="devsite-syntax-p">()</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>You should now have compile errors in the <code translate="no" dir="ltr">ArticleViewModel</code>. Let&#39;s see what changes need to be made there!</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Request and cache PagingData in the ViewModel" duration="5" step="6">
+          
+          <h2 class="step-title" id="6" data-text="Request and cache PagingData in the ViewModel" tabindex="-1">
+              7. Request and cache PagingData in the ViewModel
+          </h2>
+          <p>Before addressing the compile errors, let&#39;s review the <code translate="no" dir="ltr">ViewModel</code>.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scalate Server Page"><code translate="no" dir="ltr">class<span class="devsite-syntax-w"> </span>ArticleViewModel(...)<span class="devsite-syntax-w"> </span>:<span class="devsite-syntax-w"> </span>ViewModel()<span class="devsite-syntax-w"> </span>{
+
+<span class="devsite-syntax-w">    </span>val<span class="devsite-syntax-w"> </span>items:<span class="devsite-syntax-w"> </span>StateFlow&lt;List&lt;Article&gt;&gt;<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>...
+}
+</code></pre></devsite-code>
+<p>To integrate the Paging library in the <code translate="no" dir="ltr">ViewModel</code>, we will be changing the return type of <code translate="no" dir="ltr">items</code> from <code translate="no" dir="ltr">StateFlow&lt;List&lt;Article&gt;&gt;</code> to <code translate="no" dir="ltr">Flow&lt;PagingData&lt;Article&gt;&gt;</code>. To do this,  first add a private constant called <code translate="no" dir="ltr">ITEMS_PER_PAGE</code> to the top of the file:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="GDScript"><code translate="no" dir="ltr"><span class="devsite-syntax-n">private</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">const</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ITEMS_PER_PAGE</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mi">50</span>
+
+<span class="devsite-syntax-k">class</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ArticleViewModel</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-o">...</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>Next, we update <code translate="no" dir="ltr">items</code> to be the result of the output of a <code translate="no" dir="ltr">Pager</code> instance. We do this by  passing to the <code translate="no" dir="ltr">Pager</code> two parameters:</p>
+<ul>
+<li>A <code translate="no" dir="ltr">PagingConfig</code> with a <code translate="no" dir="ltr">pageSize</code> of <code translate="no" dir="ltr">ITEMS_PER_PAGE</code> and placeholders disabled</li>
+<li>A <code translate="no" dir="ltr">PagingSourceFactory</code> that provides an instance of the <code translate="no" dir="ltr">ArticlePagingSource</code> we just created.</li>
+</ul>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scalate Server Page"><code translate="no" dir="ltr">class<span class="devsite-syntax-w"> </span>ArticleViewModel(...)<span class="devsite-syntax-w"> </span>:<span class="devsite-syntax-w"> </span>ViewModel()<span class="devsite-syntax-w"> </span>{
+
+<span class="devsite-syntax-w">   </span>val<span class="devsite-syntax-w"> </span>items:<span class="devsite-syntax-w"> </span>Flow&lt;PagingData&lt;Article&gt;&gt;<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>Pager(
+<span class="devsite-syntax-w">        </span>config<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>PagingConfig(pageSize<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>ITEMS_PER_PAGE,<span class="devsite-syntax-w"> </span>enablePlaceholders<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>false),
+<span class="devsite-syntax-w">        </span>pagingSourceFactory<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>{<span class="devsite-syntax-w"> </span>repository.articlePagingSource()<span class="devsite-syntax-w"> </span>}
+<span class="devsite-syntax-w">    </span>)
+<span class="devsite-syntax-w">        </span>.flow
+<span class="devsite-syntax-w">        </span>...
+}
+</code></pre></devsite-code>
+<aside class="special"><p><strong>Note:</strong> The <code translate="no" dir="ltr">pagingSourceFactory</code> lambda should always return a brand new <code translate="no" dir="ltr">PagingSource</code> when invoked as <code translate="no" dir="ltr">PagingSource</code> instances are not reusable.</p>
+</aside>
+<p>Next, to maintain paging state through configuration or navigation changes, we use the <code translate="no" dir="ltr">cachedIn()</code> method passing it the  <a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/package-summary#(androidx.lifecycle.ViewModel).viewModelScope:kotlinx.coroutines.CoroutineScope" target="_blank"><code translate="no" dir="ltr">androidx.lifecycle.viewModelScope</code></a>.</p>
+<aside class="special"><p><strong>Note:</strong> Do not use the <code translate="no" dir="ltr">stateIn()</code> or <code translate="no" dir="ltr">sharedIn()</code> operators with <code translate="no" dir="ltr">PagingData</code> Flows as <code translate="no" dir="ltr">PagingData</code> Flows are not cold. Read more about hot and cold Flows  <a href="https://developer.android.com/kotlin/flow/stateflow-and-sharedflow#sharein" target="_blank">here</a>.</p>
+<p>Also if you&#39;re doing any operations on the <code translate="no" dir="ltr">Flow</code>, like <code translate="no" dir="ltr">map</code> or <code translate="no" dir="ltr">filter</code>, make sure you call <code translate="no" dir="ltr">cachedIn</code> after you execute these operations to ensure you don&#39;t need to trigger them again. In other words, <code translate="no" dir="ltr">cachedIn</code> should be used as a terminal operator.</p>
+</aside>
+<p>After we complete the above changes, our <code translate="no" dir="ltr">ViewModel</code> should look like this:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-n">package</span> <span class="devsite-syntax-n">com</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">example</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">codelabs</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">paging</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">ui</span>
+
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.lifecycle.ViewModel</span>
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.lifecycle.viewModelScope</span>
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.paging.Pager</span>
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.paging.PagingConfig</span>
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.paging.PagingData</span>
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.paging.cachedIn</span>
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">com.example.android.codelabs.paging.data.Article</span>
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">com.example.android.codelabs.paging.data.ArticleRepository</span>
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">com.example.android.codelabs.paging.data.ITEMS_PER_PAGE</span>
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">kotlinx.coroutines.flow.Flow</span>
+
+<span class="devsite-syntax-n">private</span> <span class="devsite-syntax-n">const</span> <span class="devsite-syntax-n">val</span> <span class="devsite-syntax-n">ITEMS_PER_PAGE</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-mi">50</span>
+
+<span class="devsite-syntax-k">class</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nc">ArticleViewModel</span><span class="devsite-syntax-p">(</span>
+    <span class="devsite-syntax-n">private</span> <span class="devsite-syntax-n">val</span> <span class="devsite-syntax-n">repository</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">ArticleRepository</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-p">)</span> <span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">ViewModel</span><span class="devsite-syntax-p">()</span> <span class="devsite-syntax-p">{</span>
+
+    <span class="devsite-syntax-n">val</span> <span class="devsite-syntax-n">items</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">Flow&lt;PagingData&lt;Article&gt;</span>&gt; <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">Pager</span><span class="devsite-syntax-p">(</span>
+        <span class="devsite-syntax-n">config</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">PagingConfig</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">pageSize</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">ITEMS_PER_PAGE</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">enablePlaceholders</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">false</span><span class="devsite-syntax-p">),</span>
+        <span class="devsite-syntax-n">pagingSourceFactory</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-p">{</span> <span class="devsite-syntax-n">repository</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">articlePagingSource</span><span class="devsite-syntax-p">()</span> <span class="devsite-syntax-p">}</span>
+    <span class="devsite-syntax-p">)</span>
+        <span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">flow</span>
+        <span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">cachedIn</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">viewModelScope</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>Another thing to note about <code translate="no" dir="ltr">PagingData</code> is that it&#39;s a self-contained type that contains a mutable stream of updates to the data to be displayed in the <code translate="no" dir="ltr">RecyclerView</code>. Each emission of <code translate="no" dir="ltr">PagingData</code> is completely independent, and multiple <code translate="no" dir="ltr">PagingData</code> instancesmay be emitted for a single query if the backing <code translate="no" dir="ltr">PagingSource</code> is invalidated due to changes in the underlying dataset. As such, <code translate="no" dir="ltr">Flows</code> of <code translate="no" dir="ltr">PagingData</code> should be exposed independent of other <code translate="no" dir="ltr">Flows</code>.</p>
+<aside class="special"><p><strong>Note:</strong> Do not mix or combine the <code translate="no" dir="ltr">PagingData</code> <code translate="no" dir="ltr">Flow</code> with other <code translate="no" dir="ltr">Flows</code>, as each emission of <code translate="no" dir="ltr">PagingData</code> should be consumed independently. Also, operators like <code translate="no" dir="ltr">shareIn</code>  and <code translate="no" dir="ltr">stateIn</code> should not be used on <code translate="no" dir="ltr">PagingData</code> <code translate="no" dir="ltr">Flows</code>.</p>
+</aside>
+<p>That&#39;s it! We now have paging functionality in the <code translate="no" dir="ltr">ViewModel</code>!</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Make the Adapter work with PagingData" duration="1" step="7">
+          
+          <h2 class="step-title" id="7" data-text="Make the Adapter work with PagingData" tabindex="-1">
+              8. Make the Adapter work with PagingData
+          </h2>
+          <p>To bind <code translate="no" dir="ltr">PagingData</code> to a <code translate="no" dir="ltr">RecyclerView</code>, use a <code translate="no" dir="ltr">PagingDataAdapter</code>. The <code translate="no" dir="ltr">PagingDataAdapter</code> gets notified whenever the <code translate="no" dir="ltr">PagingData</code> content is loaded, and then it signals the <code translate="no" dir="ltr">RecyclerView</code> to update.</p>
+<h2 is-upgraded id="update-the-articleadapter-to-work-with-a-pagingdata-stream:" data-text="Update the ArticleAdapter to work with a PagingData stream:" tabindex="-1">Update the <code translate="no" dir="ltr">ArticleAdapter</code> to work with a <code translate="no" dir="ltr">PagingData</code> stream:</h2>
+<ul>
+<li>Right now, <code translate="no" dir="ltr">ArticleAdapter</code> implements <code translate="no" dir="ltr">ListAdapter</code>. Make it implement <code translate="no" dir="ltr">PagingDataAdapter</code> instead. The rest of the class body remains unchanged:</li>
+</ul>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.paging.PagingDataAdapter</span>
+<span class="devsite-syntax-o">...</span>
+
+<span class="devsite-syntax-k">class</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nc">ArticleAdapter</span> <span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">PagingDataAdapter&lt;Article</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">RepoViewHolder</span>&gt;<span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">ARTICLE_DIFF_CALLBACK</span><span class="devsite-syntax-p">)</span> <span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-o">//</span> <span class="devsite-syntax-n">body</span> <span class="devsite-syntax-ow">is</span> <span class="devsite-syntax-n">unchanged</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>We&#39;ve been making a lot of changes so far, but now we&#39;re just one step away from being able to run the app—we just need to connect the UI!</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Consume PagingData in the UI" duration="1" step="8">
+          
+          <h2 class="step-title" id="8" data-text="Consume PagingData in the UI" tabindex="-1">
+              9. Consume PagingData in the UI
+          </h2>
+          <p>In our current implementation, we have a method called  <code translate="no" dir="ltr">binding.setupScrollListener()</code> that calls on the <code translate="no" dir="ltr">ViewModel</code> to load more data if certain conditions are met. The Paging library does all this automatically, so we can delete this method and its usages.</p>
+<p>Next, since the <code translate="no" dir="ltr">ArticleAdapter</code> is no longer a <code translate="no" dir="ltr">ListAdapter</code> but a <code translate="no" dir="ltr">PagingDataAdapter</code>, we make two small changes:</p>
+<ul>
+<li>We switch the terminal operator on the <code translate="no" dir="ltr">Flow</code> from the <code translate="no" dir="ltr">ViewModel</code> to <code translate="no" dir="ltr">collectLatest</code> instead of <code translate="no" dir="ltr">collect</code>.</li>
+<li>We notify the <code translate="no" dir="ltr">ArticleAdapter</code> of changes with <code translate="no" dir="ltr">submitData()</code> instead of <code translate="no" dir="ltr">submitList()</code>.</li>
+</ul>
+<p>We use <code translate="no" dir="ltr">collectLatest</code> on the <code translate="no" dir="ltr">pagingData</code> <code translate="no" dir="ltr">Flow</code> so that collection on previous <code translate="no" dir="ltr">pagingData</code> emissions is canceled when a new <code translate="no" dir="ltr">pagingData</code> instance is emitted.</p>
+<p>With those changes made the <code translate="no" dir="ltr">Activity</code> should look like this:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">kotlinx.coroutines.flow.collectLatest</span>
+
+
+<span class="devsite-syntax-k">class</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nc">ArticleActivity</span> <span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">AppCompatActivity</span><span class="devsite-syntax-p">()</span> <span class="devsite-syntax-p">{</span>
+
+    <span class="devsite-syntax-n">override</span> <span class="devsite-syntax-n">fun</span> <span class="devsite-syntax-n">onCreate</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">savedInstanceState</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">Bundle</span><span class="devsite-syntax-err">?</span><span class="devsite-syntax-p">)</span> <span class="devsite-syntax-p">{</span>
+        <span class="devsite-syntax-nb">super</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">onCreate</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">savedInstanceState</span><span class="devsite-syntax-p">)</span>
+        <span class="devsite-syntax-n">val</span> <span class="devsite-syntax-n">binding</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">ActivityArticlesBinding</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">inflate</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">layoutInflater</span><span class="devsite-syntax-p">)</span>
+        <span class="devsite-syntax-n">val</span> <span class="devsite-syntax-n">view</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">binding</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">root</span>
+        <span class="devsite-syntax-n">setContentView</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">view</span><span class="devsite-syntax-p">)</span>
+
+        <span class="devsite-syntax-n">val</span> <span class="devsite-syntax-n">viewModel</span> <span class="devsite-syntax-n">by</span> <span class="devsite-syntax-n">viewModels&lt;ArticleViewModel&gt;</span><span class="devsite-syntax-p">(</span>
+            <span class="devsite-syntax-n">factoryProducer</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-p">{</span> <span class="devsite-syntax-n">Injection</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">provideViewModelFactory</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">owner</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">this</span><span class="devsite-syntax-p">)</span> <span class="devsite-syntax-p">}</span>
+        <span class="devsite-syntax-p">)</span>
+
+        <span class="devsite-syntax-n">val</span> <span class="devsite-syntax-n">items</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">viewModel</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">items</span>
+        <span class="devsite-syntax-n">val</span> <span class="devsite-syntax-n">articleAdapter</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">ArticleAdapter</span><span class="devsite-syntax-p">()</span>
+
+        <span class="devsite-syntax-n">binding</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">bindAdapter</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">articleAdapter</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">articleAdapter</span><span class="devsite-syntax-p">)</span>
+
+        <span class="devsite-syntax-n">lifecycleScope</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">launch</span> <span class="devsite-syntax-p">{</span>
+            <span class="devsite-syntax-n">repeatOnLifecycle</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">Lifecycle</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">State</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">STARTED</span><span class="devsite-syntax-p">)</span> <span class="devsite-syntax-p">{</span>
+                <span class="devsite-syntax-n">items</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">collectLatest</span> <span class="devsite-syntax-p">{</span>
+                    <span class="devsite-syntax-n">articleAdapter</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">submitData</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">it</span><span class="devsite-syntax-p">)</span>
+                <span class="devsite-syntax-p">}</span>
+            <span class="devsite-syntax-p">}</span>
+        <span class="devsite-syntax-p">}</span>
+    <span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-n">private</span> <span class="devsite-syntax-n">fun</span> <span class="devsite-syntax-n">ActivityArticlesBinding</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">bindAdapter</span><span class="devsite-syntax-p">(</span>
+    <span class="devsite-syntax-n">articleAdapter</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">ArticleAdapter</span>
+<span class="devsite-syntax-p">)</span> <span class="devsite-syntax-p">{</span>
+    <span class="devsite-syntax-nb">list</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">adapter</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">articleAdapter</span>
+    <span class="devsite-syntax-nb">list</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">layoutManager</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">LinearLayoutManager</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nb">list</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">context</span><span class="devsite-syntax-p">)</span>
+    <span class="devsite-syntax-n">val</span> <span class="devsite-syntax-n">decoration</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">DividerItemDecoration</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nb">list</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">context</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">DividerItemDecoration</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">VERTICAL</span><span class="devsite-syntax-p">)</span>
+    <span class="devsite-syntax-nb">list</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">addItemDecoration</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">decoration</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>The app should now compile and run. You&#39;ve successfully migrated the app to the Paging library!</p>
+<p class="image-container"><img alt="f97136863cfa19a0.gif" style="width: 186.95px" src="/static/codelabs/android-paging-basics/img/f97136863cfa19a0.gif"></p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Display load states in the UI" duration="1" step="9">
+          
+          <h2 class="step-title" id="9" data-text="Display load states in the UI" tabindex="-1">
+              10. Display load states in the UI
+          </h2>
+          <p>When the Paging library is fetching more items to display in the UI, it is best practice to indicate to the user that more data is on the way. Fortunately, the Paging library offers a convenient way to access its loading status with the <code translate="no" dir="ltr">CombinedLoadStates</code> type.</p>
+<p><code translate="no" dir="ltr">CombinedLoadStates</code> instances describe the loading status of all components in the Paging library that load data. In our case, we&#39;re interested in the <code translate="no" dir="ltr">LoadState</code> of just the <code translate="no" dir="ltr">ArticlePagingSource</code>, so we will be working primarily with the <code translate="no" dir="ltr">LoadStates</code> type in the <code translate="no" dir="ltr">CombinedLoadStates.source</code> field. You can access <code translate="no" dir="ltr">CombinedLoadStates</code> through the <code translate="no" dir="ltr">PagingDataAdapter</code> via <code translate="no" dir="ltr">PagingDataAdapter.loadStateFlow</code>.</p>
+<aside class="special"><p><strong>Note:</strong> There are 3 distinct classes that help describe loading states: <code translate="no" dir="ltr">CombinedLoadStates</code>, <code translate="no" dir="ltr">LoadStates</code> and <code translate="no" dir="ltr">LoadState</code>. <code translate="no" dir="ltr">CombinedLoadStates</code> houses <code translate="no" dir="ltr">LoadStates</code> instances, and <code translate="no" dir="ltr">LoadStates</code> provides <code translate="no" dir="ltr">LoadState</code> instances.</p>
+</aside>
+<p><code translate="no" dir="ltr">CombinedLoadStates.source</code> is a <code translate="no" dir="ltr">LoadStates</code> type, with fields for three different types of <code translate="no" dir="ltr">LoadState</code>:</p>
+<ul>
+<li><code translate="no" dir="ltr">LoadStates.append</code>: For the <code translate="no" dir="ltr">LoadState</code> of items being fetched after the user&#39;s current position.</li>
+<li><code translate="no" dir="ltr">LoadStates.prepend</code>: For the <code translate="no" dir="ltr">LoadState</code> of items being fetched before the user&#39;s current position.</li>
+<li><code translate="no" dir="ltr">LoadStates.refresh</code>: For the <code translate="no" dir="ltr">LoadState</code> of the initial load.</li>
+</ul>
+<p>Each <code translate="no" dir="ltr">LoadState</code> itself can be one of the following:</p>
+<ul>
+<li><code translate="no" dir="ltr">LoadState.Loading</code>: Items are being loaded.</li>
+<li><code translate="no" dir="ltr">LoadState.NotLoading</code>: Items are not being loaded.</li>
+<li><code translate="no" dir="ltr">LoadState.Error</code>: There was a loading error.</li>
+</ul>
+<p>In our case, we only care if the <code translate="no" dir="ltr">LoadState</code> is <code translate="no" dir="ltr">LoadState.Loading</code> as our <code translate="no" dir="ltr">ArticlePagingSource</code> does not include an error case.</p>
+<p>The first thing we do is add progress bars to the top and bottom of the UI to indicate the loading status for fetches in either direction.</p>
+<p>In <code translate="no" dir="ltr">activity_articles.xml</code>, add two <code translate="no" dir="ltr">LinearProgressIndicator</code> bars as follows:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="GDScript"><code translate="no" dir="ltr">&lt;<span class="devsite-syntax-n">androidx</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">constraintlayout</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">widget</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">ConstraintLayout</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">xmlns</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"http://schemas.android.com/apk/res/android"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">xmlns</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">app</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"http://schemas.android.com/apk/res-auto"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">xmlns</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">tools</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"http://schemas.android.com/tools"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">layout_width</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"match_parent"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">layout_height</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"match_parent"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">tools</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">context</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">".ui.ArticleActivity"</span>&gt;
+
+<span class="devsite-syntax-w">    </span>&lt;<span class="devsite-syntax-n">androidx</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">recyclerview</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">widget</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">RecyclerView</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">id</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"@+id/list"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">layout_width</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"0dp"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">layout_height</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"0dp"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">scrollbars</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"vertical"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">app</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">layout_constraintBottom_toBottomOf</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"parent"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">app</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">layout_constraintEnd_toEndOf</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"parent"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">app</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">layout_constraintStart_toStartOf</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"parent"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">app</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">layout_constraintTop_toTopOf</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"parent"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/</span>&gt;
+
+<span class="devsite-syntax-w">    </span>&lt;<span class="devsite-syntax-n">com</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">google</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">material</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">progressindicator</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">LinearProgressIndicator</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">id</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"@+id/prepend_progress"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">layout_width</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"0dp"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">layout_height</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"wrap_content"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">indeterminate</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"true"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">app</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">layout_constraintEnd_toEndOf</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"parent"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">app</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">layout_constraintStart_toStartOf</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"parent"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">app</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">layout_constraintTop_toTopOf</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"parent"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/</span>&gt;
+
+<span class="devsite-syntax-w">    </span>&lt;<span class="devsite-syntax-n">com</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">google</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">material</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">progressindicator</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">LinearProgressIndicator</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">id</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"@+id/append_progress"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">layout_width</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"0dp"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">layout_height</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"wrap_content"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">indeterminate</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"true"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">app</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">layout_constraintBottom_toBottomOf</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"parent"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">app</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">layout_constraintEnd_toEndOf</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"parent"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">app</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">layout_constraintStart_toStartOf</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"parent"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/</span>&gt;
+
+&lt;<span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">androidx</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">constraintlayout</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">widget</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">ConstraintLayout</span>&gt;
+</code></pre></devsite-code>
+<p>Next, we react to the <code translate="no" dir="ltr">CombinedLoadState</code> by collecting the <code translate="no" dir="ltr">LoadStatesFlow</code> from the <code translate="no" dir="ltr">PagingDataAdapter</code>. Collect the state in <code translate="no" dir="ltr">ArticleActivity.kt</code>:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="GDScript"><code translate="no" dir="ltr"><span class="devsite-syntax-n">override</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">onCreate</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">savedInstanceState</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Bundle</span><span class="devsite-syntax-err">?</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">super</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">onCreate</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">savedInstanceState</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">...</span>
+
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">lifecycleScope</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">launch</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">repeatOnLifecycle</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">Lifecycle</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">State</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">STARTED</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-n">articleAdapter</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">loadStateFlow</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">collect</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-n">binding</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">prependProgress</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">isVisible</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">it</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">source</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">prepend</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">is</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Loading</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-n">binding</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">appendProgress</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">isVisible</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">it</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">source</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">append</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">is</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Loading</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">lifecycleScope</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">launch</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">...</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>Finally, we add a little delay in the <code translate="no" dir="ltr">ArticlePagingSource</code> to simulate the load:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="GDScript"><code translate="no" dir="ltr"><span class="devsite-syntax-n">private</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">const</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">LOAD_DELAY_MILLIS</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mi">3</span><span class="devsite-syntax-n">_000L</span>
+
+<span class="devsite-syntax-k">class</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ArticlePagingSource</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">PagingSource&lt;Int</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Article</span>&gt;<span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">override</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">suspend</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nb">load</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">params</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">LoadParams&lt;Int&gt;</span><span class="devsite-syntax-p">):</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">LoadResult&lt;Int</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Article</span>&gt;<span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">start</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">params</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">key</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">?</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">STARTING_KEY</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nb">range</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">startKey</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">until</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">startKey</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">+</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">params</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">loadSize</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">start</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">!=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">STARTING_KEY</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">delay</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">LOAD_DELAY_MILLIS</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-k">return</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">...</span>
+
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>Give the app another run and scroll to the bottom of the list. You should see the bottom progress bar show up while the paging library fetches more items, and disappear when it&#39;s done!</p>
+<p class="image-container"><img alt="6277154193f7580.gif" style="width: 180.00px" src="/static/codelabs/android-paging-basics/img/6277154193f7580.gif"></p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Wrapping up" duration="1" step="10">
+          
+          <h2 class="step-title" id="10" data-text="Wrapping up" tabindex="-1">
+              11. Wrapping up
+          </h2>
+          <p>Let&#39;s do a quick recap of what we&#39;ve covered. We...:</p>
+<ul>
+<li>...explored an overview of pagination and why it is necessary.</li>
+<li>...added pagination to our app by creating a <code translate="no" dir="ltr">Pager</code>, defining a <code translate="no" dir="ltr">PagingSource</code>, and emitting <code translate="no" dir="ltr">PagingData</code>.</li>
+<li>...cached <code translate="no" dir="ltr">PagingData</code> in the <code translate="no" dir="ltr">ViewModel</code> using the <code translate="no" dir="ltr">cachedIn</code> operator.</li>
+<li>...consumed <code translate="no" dir="ltr">PagingData</code> in the UI using a <code translate="no" dir="ltr">PagingDataAdapter</code>.</li>
+<li>...reacted to <code translate="no" dir="ltr">CombinedLoadStates</code> using <code translate="no" dir="ltr">PagingDataAdapter.loadStateFlow</code>.</li>
+</ul>
+<p>That&#39;s it! To see more advanced paging concepts, check out the advanced Paging  <a href="https://developer.android.com/codelabs/android-paging#0" target="_blank">codelab</a>!</p>
+
+
+        </google-codelab-step>
+      
+    </google-codelab>
+  
+  
+
+  
+</div>
+
+  
+    
+    
+    
+  
+
+  <div class="devsite-floating-action-buttons"></div></article>
+
+
+<devsite-content-footer class="nocontent">
+  <p>Except as otherwise noted, the content of this page is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</a>, and code samples are licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see the <a href="https://developers.google.com/site-policies">Google Developers Site Policies</a>. Java is a registered trademark of Oracle and/or its affiliates.</p>
+  
+</devsite-content-footer>
+
+
+<devsite-notification
+>
+</devsite-notification>
+
+
+  
+<div class="devsite-content-data">
+  
+  
+    <template class="devsite-content-data-template">
+      [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[],null,[]]
+    </template>
+  
+</div>
+            
+          </devsite-content>
+        </main>
+        <devsite-footer-promos class="devsite-footer">
+          
+            
+
+<nav class="devsite-footer-promos nocontent" aria-label="Promotions">
+  <ul class="devsite-footer-promos-list">
+    
+    <li class="devsite-footer-promo">
+      <a href="//x.com/AndroidDev"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer X Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-x_dt.svg"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="/_static/android/images/logo-x.svg"
+                loading="lazy"
+                alt="X">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          X
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Follow @AndroidDev on X</div>
+    </li>
+    
+    <li class="devsite-footer-promo">
+      <a href="//www.youtube.com/user/androiddevelopers"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer YouTube Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-youtube_dt.svg"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="//www.gstatic.com/images/icons/material/product/2x/youtube_48dp.png"
+                loading="lazy"
+                alt="YouTube">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          YouTube
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Check out Android Developers on YouTube</div>
+    </li>
+    
+    <li class="devsite-footer-promo">
+      <a href="//www.linkedin.com/showcase/androiddev"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer LinkedIn Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-linkedin_dt.svg"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="/_static/android/images/logo-linkedin.svg"
+                loading="lazy"
+                alt="LinkedIn">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          LinkedIn
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Connect with the Android Developers community on LinkedIn</div>
+    </li>
+    
+  </ul>
+</nav>
+
+          
+        </devsite-footer-promos>
+        <devsite-footer-linkboxes class="devsite-footer">
+          
+            
+<nav class="devsite-footer-linkboxes nocontent" aria-label="Footer links">
+  
+  <ul class="devsite-footer-linkboxes-list">
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">More Android</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com/enterprise/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Android for Enterprise
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com/security-center/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Security
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//source.android.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Source
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/news"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            News
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//android-developers.googleblog.com/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+          
+            Blog
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/podcasts"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 7)"
+            >
+            
+              
+              
+            
+          
+            Podcasts
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Discover</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/games"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Gaming
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/ml"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Machine Learning
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/health-and-fitness"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Health & Fitness
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/media"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Camera & Media
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/privacy"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            Privacy
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/training/connectivity/5g"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+              
+              
+            
+          
+            5G
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Android Devices</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/large-screens"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Large screens
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/wear"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Wear OS
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/chrome-os"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            ChromeOS devices
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/cars"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Android for cars
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/tv"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+              
+              
+            
+          
+            Android TV
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Releases</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/15"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android 15
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/14"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Android 14
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/13"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Android 13
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/12"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Android 12
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/11"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            Android 11
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/10"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+          
+            Android 10
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/pie"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 7)"
+            >
+            
+              
+              
+            
+          
+            Pie
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Documentation and Downloads</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/studio/intro"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android Studio guide
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/guide"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Developers guides
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/reference"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            API reference
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/studio"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Download Studio
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/ndk"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+              
+              
+            
+          
+            Android NDK
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Support</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//issuetracker.google.com/issues/new?component=190923&amp;template=841312"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Report platform bug
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//issuetracker.google.com/issues/new?component=192697"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Report documentation bug
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//support.google.com/googleplay/android-developer"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Google Play support
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://g.co/userresearch/androiddeveloperfooter"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+              
+              
+            
+          
+            Join research studies
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+  
+</nav>
+          
+        </devsite-footer-linkboxes>
+        <devsite-footer-utility class="devsite-footer">
+          
+            
+
+<div class="devsite-footer-utility nocontent">
+  
+  
+  <nav class="devsite-footer-sites" aria-label="Other Google Developers websites">
+    <a href="https://developers.google.com/"
+       class="devsite-footer-sites-logo-link gc-analytics-event"
+       data-category="Site-Wide Custom Events"
+       data-label="Footer Google Developers Link">
+      <picture>
+        
+        <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-google-for-developers-dark-theme.svg"
+                media="(prefers-color-scheme: none)"
+                class="devsite-dark-theme">
+        
+        <img class="devsite-footer-sites-logo"
+             src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-google-for-developers.svg"
+             loading="lazy"
+             alt="Google Developers">
+      </picture>
+    </a>
+    <ul class="devsite-footer-sites-list">
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.android.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Android Link"
+         
+         >
+          Android
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.chrome.com/home"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Chrome Link"
+         
+         >
+          Chrome
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//firebase.google.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Firebase Link"
+         
+         >
+          Firebase
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//cloud.google.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Google Cloud Platform Link"
+         
+         >
+          Google Cloud Platform
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developers.google.com/products/"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer All products Link"
+         
+         >
+          All products
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  
+
+  
+  <nav class="devsite-footer-utility-links" aria-label="Utility links">
+    
+    <ul class="devsite-footer-utility-list">
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//policies.google.com/privacy"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Privacy link"
+         >
+          Privacy
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="/license"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer License link"
+         >
+          License
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="/distribute/marketing-tools/brand-guidelines"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Brand guidelines link"
+         >
+          Brand guidelines
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 glue-cookie-notification-bar-control">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="#"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Manage cookies link"
+         
+           aria-hidden="true"
+         >
+          Manage cookies
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 devsite-footer-utility-button">
+        
+        <span class="devsite-footer-utility-description">Get news and tips by email</span>
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="/updates"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Subscribe link"
+         >
+          Subscribe
+        </a>
+        
+      </li>
+      
+    </ul>
+    
+    
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+  </nav>
+</div>
+          
+        </devsite-footer-utility>
+        <devsite-panel>
+          
+        </devsite-panel>
+        
+      </section></section>
+    <devsite-sitemask></devsite-sitemask>
+    <devsite-snackbar></devsite-snackbar>
+    <devsite-tooltip ></devsite-tooltip>
+    <devsite-heading-link></devsite-heading-link>
+    <devsite-analytics>
+      
+        <script type="application/json" analytics>[]</script>
+<script type="application/json" tag-management>{&#34;at&#34;: &#34;True&#34;, &#34;ga4&#34;: [{&#34;id&#34;: &#34;G-QFRN08RN6E&#34;, &#34;purpose&#34;: 0}], &#34;ga4p&#34;: [{&#34;id&#34;: &#34;G-QFRN08RN6E&#34;, &#34;purpose&#34;: 0}], &#34;gtm&#34;: [], &#34;parameters&#34;: {&#34;internalUser&#34;: &#34;False&#34;, &#34;language&#34;: {&#34;machineTranslated&#34;: &#34;False&#34;, &#34;requested&#34;: &#34;en&#34;, &#34;served&#34;: &#34;en&#34;}, &#34;pageType&#34;: &#34;codelab&#34;, &#34;projectName&#34;: null, &#34;signedIn&#34;: &#34;False&#34;, &#34;tenant&#34;: &#34;android&#34;, &#34;recommendations&#34;: {&#34;sourcePage&#34;: &#34;&#34;, &#34;sourceType&#34;: 0, &#34;sourceRank&#34;: 0, &#34;sourceIdenticalDescriptions&#34;: 0, &#34;sourceTitleWords&#34;: 0, &#34;sourceDescriptionWords&#34;: 0, &#34;experiment&#34;: &#34;&#34;}, &#34;experiment&#34;: {&#34;ids&#34;: &#34;&#34;}}}</script>
+      
+    </devsite-analytics>
+    
+      <devsite-badger></devsite-badger>
+    
+    
+    
+<android-fully-clickable
+    target="
+        .android-case-study .devsite-landing-row-item,
+        .android-editorial-and-updates-cards .devsite-card-content-wrapper,
+        .android-editorial-and-updates-cards .devsite-landing-row-item,
+        .android-grouped-resources .devsite-landing-row-item,
+        .android-grouped-resources-contained--primary .devsite-landing-row-item,
+        .android-grouped-resources-contained--secondary .devsite-landing-row-item,
+        .android-grouped-resources-contained--tertiary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--primary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--secondary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--tertiary .devsite-landing-row-item,
+        .android-guide-cards .devsite-landing-row-item,
+        .android-illustrated-resources-index .devsite-landing-row-item,
+        .android-illustrated-resources-primary .devsite-landing-row-item,
+        .android-illustrated-resources-secondary .devsite-landing-row-item,
+        .android-illustrated-resources-secondary-small .devsite-landing-row-item,
+        .android-illustrated-resources-tertiary .devsite-landing-row-item,
+        .android-illustrated-resources-tertiary-small .devsite-landing-row-item,
+        .android-promo .devsite-landing-row-item,
+        .android-quick-link,
+        .android-samples .devsite-card-wrapper,
+        .fully-clickable"
+    watch=".android-editorial-and-updates-cards, .android-samples, devsite-content"></android-fully-clickable>
+    
+<script nonce="hF1yNbZPz/Npa6jFaSduXsih7N+DJm">
+  
+  (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+    t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+    E.parentNode.insertBefore(t,E);})(window, document, 'script',
+    'https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/js/app_loader.js', '[3,"en",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android","https://android-dot-devsite-v2-prod.appspot.com",1,null,["/_pwa/android/manifest.json","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/favicon.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png","https://fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,600italic,700,700italic|Roboto+Mono:400,500,700&display=swap"],1,null,[1,6,8,12,14,17,21,25,50,52,63,70,75,76,80,87,91,92,93,97,98,100,101,102,103,104,105,107,108,109,110,112,113,117,118,120,122,124,125,126,127,129,130,131,132,133,134,135,136,138,140,141,147,148,149,151,152,156,157,158,159,161,163,164,168,169,170,179,180,182,183,186,191,193,196],"AIzaSyAP-jjEJBzmIyKR4F-3XITp8yM9T1gEEI8","AIzaSyB6xiKGDR5O3Ak2okS4rLkauxGUG7XP0hg","developer.android.com","AIzaSyAQk0fBONSGUqCNznf6Krs82Ap1-NV6J4o","AIzaSyCCxcqdrZ_7QMeLCRY20bh_SXdAYqy70KY",null,null,null,["Cloud__cache_serialized_dynamic_content","TpcFeatures__proxy_prod_host","MiscFeatureFlags__enable_framebox_badge_methods","Profiles__enable_completequiz_endpoint","MiscFeatureFlags__enable_dark_theme","MiscFeatureFlags__enable_variable_operator_index_yaml","Profiles__enable_purchase_prompts","Profiles__enable_awarding_url","MiscFeatureFlags__enable_explicit_template_dependencies","MiscFeatureFlags__gdp_dashboard_reskin_enabled","DevPro__enable_embed_profile_creation","Profiles__enable_release_notes_notifications","Profiles__enable_developer_profiles_callout","MiscFeatureFlags__enable_project_body_class","Significatio__enable_by_tenant","MiscFeatureFlags__enable_view_transitions","Profiles__enable_recognition_badges","Search__enable_suggestions_from_borg","Profiles__enable_playlist_community_acl","Profiles__enable_callout_notifications","Profiles__enable_dashboard_curated_recommendations","Search__enable_ai_search_summaries_for_all","Cloud__enable_llm_concierge_chat","CloudShell__cloud_code_overflow_menu","Analytics__enable_clearcut_logging","Cloud__fast_free_trial","DevPro__remove_eu_tax_intake_form","Profiles__enable_developer_profile_benefits_ui_redesign","Concierge__enable_remove_info_panel_tags","Profiles__enable_page_saving","EngEduTelemetry__enable_engedu_telemetry","DevPro__enable_enterprise","Profiles__enable_join_program_group_endpoint","MiscFeatureFlags__emergency_css","Search__enable_ai_eligibility_checks","DevPro__enable_google_one_card","DevPro__enable_vertex_credit_card","MiscFeatureFlags__developers_footer_dark_image","Search__enable_dynamic_content_confidential_banner","DevPro__enable_code_assist","Profiles__enable_profile_collections","DevPro__enable_developer_subscriptions","Cloud__enable_cloudx_experiment_ids","CloudShell__cloud_shell_button","TpcFeatures__enable_unmirrored_page_left_nav","MiscFeatureFlags__enable_appearance_cookies","BookNav__enable_tenant_cache_key","Profiles__enable_user_type","DevPro__enable_firebase_workspaces_card","DevPro__enable_cloud_innovators_plus","Cloud__enable_cloud_shell","Cloud__enable_cloud_dlp_service","Profiles__enable_stripe_subscription_management","Search__enable_page_map","Profiles__require_profile_eligibility_for_signin","Concierge__enable_pushui","Profiles__enable_complete_playlist_endpoint","MiscFeatureFlags__enable_firebase_utm","MiscFeatureFlags__enable_project_variables","DevPro__enable_free_benefits","Profiles__enable_completecodelab_endpoint","Cloud__enable_cloud_shell_fte_user_flow","Concierge__enable_actions_menu","DevPro__enable_devpro_offers","Cloud__enable_legacy_calculator_redirect","Cloud__enable_free_trial_server_call","Experiments__reqs_query_experiments","Profiles__enable_public_developer_profiles","MiscFeatureFlags__developers_footer_image","DevPro__enable_nvidia_credits_card","MiscFeatureFlags__enable_variable_operator","DevPro__enable_google_payments_buyflow"],null,null,"AIzaSyBLEMok-5suZ67qRPzx0qUtbnLmyT_kCVE","https://developerscontentserving-pa.googleapis.com","AIzaSyCM4QpTRSqP5qI4Dvjt4OAScIN8sOUlO-k","https://developerscontentsearch-pa.googleapis.com",2,4,null,"https://developerprofiles-pa.googleapis.com",[3,"android","Android Developers","developer.android.com",null,"android-dot-devsite-v2-prod.appspot.com",null,null,[null,1,null,null,null,null,null,null,null,null,null,[1],null,null,null,null,null,null,[1],[1,null,null,[1,20],"/recommendations"],null,null,null,[1,null,1],[1,1,null,1,1]],null,[18,null,null,null,null,null,"/images/lockup.png","/images/touchicon-180.png",null,null,null,null,null,null,null,null,null,null,null,null,null,2,null,null,null,"/images/lockup-dark-theme.png",[]],[],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[6,1,14,15,20,22,23,28,29,37,43],null,[[null,null,1],[1,1]],[[null,null,null,null,null,null,null,[["G-QFRN08RN6E"],null,null,[["G-QFRN08RN6E",1]]],null,null,null,null,1],null,[[2,2],[1,1]]],null,4,null,null,null,null,null,null,null,null,null,null,null,null,null,"android.devsite.google"],null,"pk_live_5170syrHvgGVmSx9sBrnWtA5luvk9BwnVcvIi7HizpwauFG96WedXsuXh790rtij9AmGllqPtMLfhe2RSwD6Pn38V00uBCydV4m",1,null,"https://developerscontentinsights-pa.googleapis.com","AIzaSyCg-ZUslalsEbXMfIo9ZP8qufZgo3LSBDU","AIzaSyDxT0vkxnY_KeINtA4LSePJO-4MAZPMRsE","https://developers.googleapis.com",null,null,"AIzaSyBQom12tzI-rybN7Sf-KfeL4nwm-Rf7PmI\n",null,"https://developerslogging.googleapis.com"]')
+  
+</script>
+
+    <devsite-a11y-announce></devsite-a11y-announce>
+  </body>
+</html>

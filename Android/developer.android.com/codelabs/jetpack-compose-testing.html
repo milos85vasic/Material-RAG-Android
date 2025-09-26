@@ -1,0 +1,2277 @@
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html 
+      lang="en"
+      dir="ltr">
+  <head>
+    <meta name="google-signin-client-id" content="721724668570-nbkv1cfusk7kk4eni4pjvepaus73b13t.apps.googleusercontent.com">
+    <meta name="google-signin-scope"
+          content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award">
+    <meta property="og:site_name" content="Android Developers">
+    <meta property="og:type" content="website"><meta name="theme-color" content="#34a853"><meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <link rel="manifest" href="/_pwa/android/manifest.json"
+          crossorigin="use-credentials">
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="//apis.google.com" crossorigin>
+    <link rel="preconnect" href="//www.google-analytics.com" crossorigin><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,600italic,700,700italic|Roboto+Mono:400,500,700&display=swap">
+      <link rel="stylesheet"
+            href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block"><link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/css/app.css">
+      
+        <link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/css/dark-theme.css" disabled>
+      <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/favicon.svg">
+    <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/touchicon-180.png"><link rel="canonical" href="https://developer.android.com/codelabs/jetpack-compose-testing"><link rel="search" type="application/opensearchdescription+xml"
+            title="Android Developers" href="https://developer.android.com/s/opensearch.xml">
+      <link rel="alternate" hreflang="en"
+          href="https://developer.android.com/codelabs/jetpack-compose-testing" /><link rel="alternate" hreflang="x-default" href="https://developer.android.com/codelabs/jetpack-compose-testing" /><link rel="alternate" hreflang="zh-Hans"
+          href="https://developer.android.com/codelabs/jetpack-compose-testing?hl=zh-cn" /><link rel="alternate" hreflang="zh-Hant"
+          href="https://developer.android.com/codelabs/jetpack-compose-testing?hl=zh-tw" /><link rel="alternate" hreflang="fr"
+          href="https://developer.android.com/codelabs/jetpack-compose-testing?hl=fr" /><link rel="alternate" hreflang="id"
+          href="https://developer.android.com/codelabs/jetpack-compose-testing?hl=id" /><link rel="alternate" hreflang="ja"
+          href="https://developer.android.com/codelabs/jetpack-compose-testing?hl=ja" /><link rel="alternate" hreflang="ko"
+          href="https://developer.android.com/codelabs/jetpack-compose-testing?hl=ko" /><link rel="alternate" hreflang="pt-BR"
+          href="https://developer.android.com/codelabs/jetpack-compose-testing?hl=pt-br" /><link rel="alternate" hreflang="es-419"
+          href="https://developer.android.com/codelabs/jetpack-compose-testing?hl=es-419" /><link rel="alternate" hreflang="vi"
+          href="https://developer.android.com/codelabs/jetpack-compose-testing?hl=vi" /><title>Testing in Jetpack Compose &nbsp;|&nbsp; Android Developers</title>
+
+<meta property="og:title" content="Testing in Jetpack Compose &nbsp;|&nbsp; Android Developers"><meta name="description" content="In this codelab you’ll learn about testing UIs created with Jetpack Compose. You will write your first tests while learning about testing in isolation, debugging tests, semantics trees and synchronization.">
+  <meta property="og:description" content="In this codelab you’ll learn about testing UIs created with Jetpack Compose. You will write your first tests while learning about testing in isolation, debugging tests, semantics trees and synchronization."><meta property="og:url" content="https://developer.android.com/codelabs/jetpack-compose-testing"><meta property="og:locale" content="en">
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+
+    
+      <link rel="stylesheet" href="/extras.css"></head>
+  <body class=""
+        template="codelab"
+        theme="android-theme"
+        type="codelab"
+        
+        
+        appearance
+        
+        layout="docs"
+        
+        
+        
+        
+        display-toc
+        pending>
+  
+    <devsite-progress type="indeterminate" id="app-progress"></devsite-progress>
+  
+  
+    <a href="#main-content" class="skip-link button">
+      
+      Skip to main content
+    </a>
+    <section class="devsite-wrapper">
+      <devsite-cookie-notification-bar></devsite-cookie-notification-bar><devsite-header role="banner">
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-header--inner" data-nosnippet>
+  <div class="devsite-top-logo-row-wrapper-wrapper">
+    <div class="devsite-top-logo-row-wrapper">
+      <div class="devsite-top-logo-row">
+        <button type="button" id="devsite-hamburger-menu"
+          class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+          data-category="Site-Wide Custom Events"
+          data-label="Navigation menu button"
+          visually-hidden
+          aria-label="Open menu">
+        </button>
+        
+<div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="androidDevelopers" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-dark-theme.png"
+            media="(prefers-color-scheme: dark)"
+            class="devsite-dark-theme">
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png" class="devsite-site-logo" alt="Android Developers">
+  </picture>
+  
+</a>
+
+
+
+</div>
+        <div class="devsite-top-logo-row-middle">
+          <div class="devsite-header-upper-tabs">
+            
+           </div>
+          
+<devsite-search
+    enable-signin
+    enable-search
+    enable-suggestions
+      enable-query-completion
+    
+    enable-search-summaries
+    
+    tenant-name="Android Developers"
+    
+    
+    
+    
+    
+    >
+  <form class="devsite-search-form" action="https://developer.android.com/s/results" method="GET">
+    <div class="devsite-search-container">
+      <button type="button"
+              search-open
+              class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+              
+              aria-label="Open search"></button>
+      <div class="devsite-searchbox">
+        <input
+          aria-activedescendant=""
+          aria-autocomplete="list"
+          
+          aria-label="Search"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          autocomplete="off"
+          class="devsite-search-field devsite-search-query"
+          name="q"
+          
+          placeholder="Search"
+          role="combobox"
+          type="text"
+          value=""
+          >
+          <div class="devsite-search-image material-icons" aria-hidden="true">
+            
+              <svg class="devsite-search-ai-image" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_6641_386)">
+                    <path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14167 15.375 4.875 14.125C3.625 12.8583 3 11.3167 3 9.5C3 7.68333 3.625 6.15 4.875 4.9C6.14167 3.63333 7.68333 3 9.5 3C10.0167 3 10.5167 3.05833 11 3.175C11.4833 3.275 11.9417 3.43333 12.375 3.65L10.825 5.2C10.6083 5.13333 10.3917 5.08333 10.175 5.05C9.95833 5.01667 9.73333 5 9.5 5C8.25 5 7.18333 5.44167 6.3 6.325C5.43333 7.19167 5 8.25 5 9.5C5 10.75 5.43333 11.8167 6.3 12.7C7.18333 13.5667 8.25 14 9.5 14C10.6667 14 11.6667 13.625 12.5 12.875C13.35 12.1083 13.8417 11.15 13.975 10H15.975C15.925 10.6333 15.7833 11.2333 15.55 11.8C15.3333 12.3667 15.05 12.8667 14.7 13.3L21 19.6L19.6 21ZM17.5 12C17.5 10.4667 16.9667 9.16667 15.9 8.1C14.8333 7.03333 13.5333 6.5 12 6.5C13.5333 6.5 14.8333 5.96667 15.9 4.9C16.9667 3.83333 17.5 2.53333 17.5 0.999999C17.5 2.53333 18.0333 3.83333 19.1 4.9C20.1667 5.96667 21.4667 6.5 23 6.5C21.4667 6.5 20.1667 7.03333 19.1 8.1C18.0333 9.16667 17.5 10.4667 17.5 12Z" fill="#5F6368"/>
+                  </g>
+                <defs>
+                <clipPath id="clip0_6641_386">
+                <rect width="24" height="24" fill="white"/>
+                </clipPath>
+                </defs>
+              </svg>
+            
+          </div>
+          <div class="devsite-search-shortcut-icon-container" aria-hidden="true">
+            <kbd class="devsite-search-shortcut-icon">/</kbd>
+          </div>
+      </div>
+    </div>
+  </form>
+  <button type="button"
+          search-close
+          class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+          
+          aria-label="Close search"></button>
+</devsite-search>
+
+        </div>
+
+        
+
+          
+
+          
+
+          <devsite-appearance-selector></devsite-appearance-selector>
+
+          
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+
+          
+            <a class="devsite-header-link devsite-top-button button gc-analytics-event "
+    href="https://developer.android.com/studio"
+    data-category="Site-Wide Custom Events"
+    data-label="Site header link: Android Studio"
+    >
+  Android Studio
+</a>
+          
+
+        
+
+        
+          <devsite-user 
+                        
+                        
+                          enable-profiles
+                        
+                        
+                        id="devsite-user">
+            
+              
+              <span class="button devsite-top-button" aria-hidden="true" visually-hidden>Sign in</span>
+            
+          </devsite-user>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
+  
+</devsite-header>
+      <devsite-book-nav scrollbars hidden>
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-book-nav-filter"
+     hidden>
+  <span class="filter-list-icon material-icons" aria-hidden="true"></span>
+  <input type="text"
+         placeholder="Filter"
+         
+         aria-label="Type to filter"
+         role="searchbox">
+  
+  <span class="filter-clear-button hidden"
+        data-title="Clear filter"
+        aria-label="Clear filter"
+        role="button"
+        tabindex="0"></span>
+</div>
+
+<nav class="devsite-book-nav devsite-nav nocontent"
+     aria-label="Side menu">
+  <div class="devsite-mobile-header">
+    <button type="button"
+            id="devsite-close-nav"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Close navigation"
+            aria-label="Close navigation">
+    </button>
+    <div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="androidDevelopers" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-dark-theme.png"
+            media="(prefers-color-scheme: dark)"
+            class="devsite-dark-theme">
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png" class="devsite-site-logo" alt="Android Developers">
+  </picture>
+  
+</a>
+
+
+</div>
+  </div>
+
+  <div class="devsite-book-nav-wrapper">
+    <div class="devsite-mobile-nav-top">
+      
+        <ul class="devsite-nav-list">
+          
+          
+    
+    
+<li class="devsite-nav-item">
+
+  
+  <a href="/studio"
+    
+       class="devsite-nav-title gc-analytics-event "
+    
+
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Android Studio"
+     track-type="navMenu"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Android Studio
+   </span>
+    
+  
+  </a>
+  
+
+</li>
+
+  
+          
+        </ul>
+      
+    </div>
+    
+  </div>
+</nav>
+        
+      </devsite-book-nav>
+      <section id="gc-wrapper">
+        <main role="main" id="main-content" class="devsite-main-content"
+            
+              
+              has-sidebar
+            >
+          <div class="devsite-sidebar">
+            <div class="devsite-sidebar-content">
+                
+                <devsite-toc class="devsite-nav"
+                            role="navigation"
+                            aria-label="On this page"
+                            depth="1"
+                            scrollbars
+                  ></devsite-toc>
+                <devsite-recommendations-sidebar class="nocontent devsite-nav">
+                </devsite-recommendations-sidebar>
+            </div>
+          </div>
+          <devsite-content>
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="devsite-article"><style>
+      body {
+        transition: opacity ease-in 0.2s;
+      }
+
+      body[unresolved] {
+        opacity: 0;
+        display: block;
+        overflow: hidden;
+        position: relative;
+      }
+      </style>
+  
+  
+  
+  
+  
+
+  <div class="devsite-article-meta nocontent" role="navigation">
+    
+    
+    <ul class="devsite-breadcrumb-list"
+  >
+  
+</ul>
+    
+  </div>
+  
+    <h1 class="devsite-page-title" tabindex="-1">
+      Testing in Jetpack Compose<div class="devsite-actions" hidden data-nosnippet><devsite-feature-tooltip
+      ack-key="AckCollectionsBookmarkTooltipDismiss"
+      analytics-category="Site-Wide Custom Events"
+      analytics-action-show="Callout Profile displayed"
+      analytics-action-close="Callout Profile dismissed"
+      analytics-label="Create Collection Callout"
+      class="devsite-page-bookmark-tooltip nocontent"
+      dismiss-button="true"
+      id="devsite-collections-dropdown"
+      
+      dismiss-button-text="Dismiss"
+
+      
+      close-button-text="Got it">
+
+    
+    
+      <devsite-bookmark></devsite-bookmark>
+    
+
+    <span slot="popout-heading">
+      
+      Stay organized with collections
+    </span>
+    <span slot="popout-contents">
+      
+      Save and categorize content based on your preferences.
+    </span>
+  </devsite-feature-tooltip></div>
+  
+      
+    </h1>
+  
+
+  <devsite-toc class="devsite-nav"
+    depth="1"
+    devsite-toc-embedded
+    >
+  </devsite-toc>
+  
+    
+  <div class="devsite-article-body clearfix
+  ">
+
+  
+    
+    
+    <google-codelab-analytics gaid="UA-49880327-14" ga4id="G-JTFZSJVVVZ"></google-codelab-analytics>
+    <google-codelab codelab-gaid=""
+                    codelab-ga4id=""
+                    doc-id="1G3KnIt5ASqamHXjZF6gZERxFcGTzmgu-BMa30UUAqI4"
+                    id="jetpack-compose-testing"
+                    title="Testing in Jetpack Compose"
+                    no-tooltip=""
+                    environment="web"
+                    category=""
+                    feedback-link=""
+                    layout="paginated"
+                    >
+      
+        <google-codelab-step label="Introduction and setup" duration="3" step="0">
+          
+            <google-codelab-about codelab-title="Testing in Jetpack Compose"
+                                  
+                                  last-updated="2023-11-21T20:02:59Z"
+                                  duration="38">
+            </google-codelab-about>
+          
+          <h2 class="step-title" id="0" data-text="Introduction and setup" tabindex="-1">
+              1. Introduction and setup
+          </h2>
+          <p>In this codelab you&#39;ll learn about testing UIs created with  <a href="https://developer.android.com/jetpack/compose" target="_blank">Jetpack Compose</a>. You will write your first tests while learning about testing in isolation, debugging tests, semantics trees and synchronization.</p>
+<h2 is-upgraded id="what-youll-need" data-text="What you'll need" tabindex="-1">What you'll need</h2>
+<ul>
+<li><a href="https://developer.android.com/studio" target="_blank">Latest Android Studio</a></li>
+<li>Knowledge of Kotlin</li>
+<li>Basic understanding of Compose (such as the <code translate="no" dir="ltr">@Composable</code> annotation)</li>
+<li>Basic familiarity with  <a href="https://developer.android.com/jetpack/compose/layouts/basics#modifiers" target="_blank">modifiers</a></li>
+<li>Optional: Consider taking the  <a href="https://codelabs.developers.google.com/codelabs/jetpack-compose-basics/" target="_blank">Jetpack Compose basics codelab</a> before this codelab</li>
+</ul>
+<h3 is-upgraded id="check-out-the-code-for-this-codelab-rally" data-text="Check out the code for this codelab (Rally)" tabindex="-1">Check out the code for this codelab (Rally)</h3>
+<p>You&#39;re going to use the  <a href="https://material.io/design/material-studies/rally.html#about-rally" target="_blank">Rally Material study</a> as the base for this codelab. You&#39;ll find it in the android-compose-codelabs Github repository. To clone, run:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only"><code translate="no" dir="ltr">git clone https://github.com/android/codelab-android-compose.git
+</code></pre></devsite-code>
+<p>Once downloaded, open the <code translate="no" dir="ltr">TestingCodelab</code> project.</p>
+<p>Alternatively, you can download two zip files:</p>
+<ul>
+<li><a href="https://github.com/android/codelab-android-compose/archive/refs/heads/main.zip" target="_blank">Starting point</a></li>
+<li><a href="https://github.com/android/codelab-android-compose/archive/refs/heads/end.zip" target="_blank">Solution</a></li>
+</ul>
+<p>Open the TestingCodelab folder, which contains an app called Rally.</p>
+<aside class="special"><p>The compose-codelabs repo contains starter code for all codelabs in the pathway.</p>
+<p>For this codelab, use the <strong>TestingCodelab</strong> project.</p>
+<ul>
+<li><img alt="android_studio_folder.png" style="width: 20.00px" src="/static/codelabs/jetpack-compose-testing/img/bb745dc85ae69f6b.png" srcset="https://developer.android.com/static/codelabs/jetpack-compose-testing/img/bb745dc85ae69f6b_36.png 36w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/bb745dc85ae69f6b_48.png 48w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/bb745dc85ae69f6b_72.png 72w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/bb745dc85ae69f6b_96.png 96w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/bb745dc85ae69f6b_480.png 480w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/bb745dc85ae69f6b_720.png 720w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/bb745dc85ae69f6b_856.png 856w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/bb745dc85ae69f6b_960.png 960w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/bb745dc85ae69f6b_1440.png 1440w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/bb745dc85ae69f6b_1920.png 1920w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/bb745dc85ae69f6b_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"> <strong>TestingCodelab</strong> — Project that contains the start and finished code for this codelab</li>
+</ul>
+<p>The project is built in multiple git branches:</p>
+<ul>
+<li><strong>main</strong> – the starter code for this project, you will make changes to this to complete the codelab</li>
+<li><strong>end</strong> – contains the solution to this codelab</li>
+</ul>
+</aside>
+<h2 is-upgraded id="examine-the-project-structure" data-text="Examine the project structure" tabindex="-1">Examine the project structure</h2>
+<p>Compose tests are instrumented tests. This means they require a device (physical device or emulator) to run on.</p>
+<p>Rally already contains some Instrumented UI tests. You can find them in the androidTest source set:</p>
+<p class="image-container"><img alt="b14721ae60ee9022.png" style="width: 353.43px" src="/static/codelabs/jetpack-compose-testing/img/b14721ae60ee9022.png" srcset="https://developer.android.com/static/codelabs/jetpack-compose-testing/img/b14721ae60ee9022_36.png 36w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/b14721ae60ee9022_48.png 48w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/b14721ae60ee9022_72.png 72w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/b14721ae60ee9022_96.png 96w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/b14721ae60ee9022_480.png 480w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/b14721ae60ee9022_720.png 720w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/b14721ae60ee9022_856.png 856w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/b14721ae60ee9022_960.png 960w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/b14721ae60ee9022_1440.png 1440w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/b14721ae60ee9022_1920.png 1920w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/b14721ae60ee9022_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>This is the directory where you&#39;ll place the new tests. Feel free to take a look at the <code translate="no" dir="ltr">AnimatingCircleTests.kt</code> file to learn what a Compose test looks like.</p>
+<p>Rally is already configured, but all you need to enable Compose tests in a new project is the testing dependencies in the <code translate="no" dir="ltr">build.gradle</code> file of the relevant module, which are:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only"><code translate="no" dir="ltr">androidTestImplementation "androidx.compose.ui:ui-test-junit4:$version"
+
+debugImplementation "androidx.compose.ui:ui-test-manifest:$rootProject.composeVersion"
+</code></pre></devsite-code>
+<aside class="special"><p>Note: For more information about how to set up testing in your Compose app, check out the  <a href="https://developer.android.com/jetpack/compose/testing#setup" target="_blank">Testing documentation</a>.</p>
+</aside>
+<p>Feel free to run the app and familiarize yourself with it.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="What to test?" duration="2" step="1">
+          
+          <h2 class="step-title" id="1" data-text="What to test?" tabindex="-1">
+              2. What to test?
+          </h2>
+          <p>We&#39;re going to focus on Rally&#39;s tab bar, which contains a row of  <a href="https://material.io/components/tabs" target="_blank">tabs</a> (Overview, Accounts, and Bills). It looks like this in context:</p>
+<p class="image-container"><img alt="19c6a7eb9d732d37.gif" style="width: 600.00px" src="/static/codelabs/jetpack-compose-testing/img/19c6a7eb9d732d37.gif"></p>
+<p>In this codelab you&#39;ll test the UI of the bar.</p>
+<p>This could mean many things:</p>
+<ul>
+<li>Test that the tabs show the intended icon and text</li>
+<li>Test that the animation matches the spec</li>
+<li>Test that the triggered navigation events are correct</li>
+<li>Test the placement and distances of the UI elements in different states</li>
+<li>Take a screenshot of the bar and compare it with a previous screenshot</li>
+</ul>
+<p>There are no exact rules about how much or how to test a component. You could do all of the above! In this codelab you&#39;re going to test that the state logic is correct by verifying that:</p>
+<ul>
+<li><strong>A tab shows its label only when it is selected</strong>.</li>
+<li><strong>The active screen defines the tab that is selected</strong></li>
+</ul>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Create a simple UI test" duration="10" step="2">
+          
+          <h2 class="step-title" id="2" data-text="Create a simple UI test" tabindex="-1">
+              3. Create a simple UI test
+          </h2>
+          <h2 is-upgraded id="create-the-topappbartest-file" data-text="Create the TopAppBarTest file" tabindex="-1">Create the TopAppBarTest file</h2>
+<p>Create a new file in the same folder as <code translate="no" dir="ltr">AnimatingCircleTests.kt</code> (<code translate="no" dir="ltr">app/src/androidTest/com/example/compose/rally</code>) and call it <code translate="no" dir="ltr">TopAppBarTest.kt</code>.</p>
+<p>Compose comes with a <code translate="no" dir="ltr">ComposeTestRule</code> that you can obtain by calling <code translate="no" dir="ltr">createComposeRule()</code>. This rule lets you set the Compose content under test and interact with it.</p>
+<h2 is-upgraded id="add-the-composetestrule" data-text="Add the ComposeTestRule" tabindex="-1">Add the ComposeTestRule</h2>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-n">package</span> <span class="devsite-syntax-n">com</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">example</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">compose</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">rally</span>
+
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.test.junit4.createComposeRule</span>
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">org.junit.Rule</span>
+
+<span class="devsite-syntax-k">class</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nc">TopAppBarTest</span> <span class="devsite-syntax-p">{</span>
+
+    <span class="devsite-syntax-nd">@get</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">Rule</span>
+    <span class="devsite-syntax-n">val</span> <span class="devsite-syntax-n">composeTestRule</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">createComposeRule</span><span class="devsite-syntax-p">()</span>
+    
+    <span class="devsite-syntax-o">//</span> <span class="devsite-syntax-n">TODO</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">Add</span> <span class="devsite-syntax-n">tests</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<h2 is-upgraded id="testing-in-isolation" data-text="Testing in isolation" tabindex="-1">Testing in isolation</h2>
+<p>In a Compose test, we can start the app&#39;s main activity similarly to how you would do it in the Android View world using Espresso, for example. You can do this with <code translate="no" dir="ltr">createAndroidComposeRule</code>.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scilab"><code translate="no" dir="ltr"><span class="devsite-syntax-c1">// Don't copy this over</span>
+
+<span class="devsite-syntax-p">@</span><span class="devsite-syntax-k">get</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">Rule</span>
+<span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">composeTestRule</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">createAndroidComposeRule</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">RallyActivity</span><span class="devsite-syntax-p">::</span><span class="devsite-syntax-n">class</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">java</span><span class="devsite-syntax-p">)</span>
+</code></pre></devsite-code>
+<p>However, with Compose, we can simplify things considerably by testing a component in isolation. You can choose what Compose UI content to use in the test. This is done with the <code translate="no" dir="ltr">setContent</code> method of the <code translate="no" dir="ltr">ComposeTestRule</code>, and you can call it anywhere (but just once).</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scilab"><code translate="no" dir="ltr"><span class="devsite-syntax-c1">// Don't copy this over</span>
+
+<span class="devsite-syntax-n">class</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">TopAppBarTest</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">@</span><span class="devsite-syntax-k">get</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">Rule</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">composeTestRule</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">createComposeRule</span><span class="devsite-syntax-p">()</span>
+<span class="devsite-syntax-w">    </span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">@</span><span class="devsite-syntax-n">Test</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">myTest</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">composeTestRule</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">setContent</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">Text</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"You can set any Compose content!"</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>We want to test the TopAppBar, so let&#39;s focus on that. Call <code translate="no" dir="ltr">RallyTopAppBar</code> inside <code translate="no" dir="ltr">setContent</code> and let Android Studio complete the names of the parameters.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.test.junit4.createComposeRule</span>
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">com.example.compose.rally.ui.components.RallyTopAppBar</span>
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">org.junit.Rule</span>
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">org.junit.Test</span>
+
+<span class="devsite-syntax-k">class</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nc">TopAppBarTest</span> <span class="devsite-syntax-p">{</span>
+
+    <span class="devsite-syntax-nd">@get</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">Rule</span>
+    <span class="devsite-syntax-n">val</span> <span class="devsite-syntax-n">composeTestRule</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">createComposeRule</span><span class="devsite-syntax-p">()</span>
+    
+    <span class="devsite-syntax-nd">@Test</span>
+    <span class="devsite-syntax-n">fun</span> <span class="devsite-syntax-n">rallyTopAppBarTest</span><span class="devsite-syntax-p">()</span> <span class="devsite-syntax-p">{</span>
+        <span class="devsite-syntax-n">composeTestRule</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">setContent</span> <span class="devsite-syntax-p">{</span> 
+            <span class="devsite-syntax-n">RallyTopAppBar</span><span class="devsite-syntax-p">(</span>
+                <span class="devsite-syntax-n">allScreens</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-p">,</span>
+                <span class="devsite-syntax-n">onTabSelected</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-p">{</span> <span class="devsite-syntax-o">/*</span><span class="devsite-syntax-n">TODO</span><span class="devsite-syntax-o">*/</span> <span class="devsite-syntax-p">},</span>
+                <span class="devsite-syntax-n">currentScreen</span> <span class="devsite-syntax-o">=</span> 
+            <span class="devsite-syntax-p">)</span>
+        <span class="devsite-syntax-p">}</span>
+    <span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<h2 is-upgraded id="the-importance-of-a-testable-composable" data-text="The importance of a testable Composable" tabindex="-1">The importance of a testable Composable</h2>
+<p><code translate="no" dir="ltr">RallyTopAppBar</code> takes three parameters that are easy to provide so we can pass fake data that we control. For example:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL"><code translate="no" dir="ltr"><span class="devsite-syntax-w">    </span><span class="devsite-syntax-nv">@Test</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">rallyTopAppBarTest</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">allScreens</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">RallyScreen</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-k">values</span><span class="devsite-syntax-p">().</span><span class="devsite-syntax-n">toList</span><span class="devsite-syntax-p">()</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">composeTestRule</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">setContent</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">{</span><span class="devsite-syntax-w"> </span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">RallyTopAppBar</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-n">allScreens</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">allScreens</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-n">onTabSelected</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">}</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-n">currentScreen</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">RallyScreen</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">Accounts</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-err">}</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">Thread</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">sleep</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-mi">5000</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-err">}</span>
+</code></pre></devsite-code>
+<p>We also add a <code translate="no" dir="ltr">sleep()</code> so you can see what&#39;s going on. Right-click on the <code translate="no" dir="ltr">rallyTopAppBarTest</code> and click on &#34;Run rallyTopAppBarTest()...&#34;.</p>
+<p class="image-container"><img alt="baca545ddc8c3fa9.png" style="width: 358.71px" src="/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9.png" srcset="https://developer.android.com/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9_36.png 36w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9_48.png 48w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9_72.png 72w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9_96.png 96w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9_480.png 480w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9_720.png 720w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9_856.png 856w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9_960.png 960w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9_1440.png 1440w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9_1920.png 1920w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>The test shows the top app bar (for 5 seconds), but it doesn&#39;t look as we expected: it has a light theme!</p>
+<p>The reason is that the bar is built using Material Components, which expect to be within a  <a href="https://developer.android.com/reference/kotlin/androidx/compose/material/MaterialTheme" target="_blank">MaterialTheme</a>, else they fall back to &#34;baseline&#34; styles colors.</p>
+<p><a href="https://developer.android.com/reference/kotlin/androidx/compose/material/MaterialTheme" target="_blank"><code translate="no" dir="ltr">MaterialTheme</code></a> has good defaults so it doesn&#39;t crash. Since we&#39;re not going to test the theme or take screenshots, we can omit it and work with its default light theme. Feel free to wrap <code translate="no" dir="ltr">RallyTopAppBar</code> with <code translate="no" dir="ltr">RallyTheme</code> to fix it.</p>
+<h2 is-upgraded id="verify-that-the-tab-is-selected" data-text="Verify that the tab is selected" tabindex="-1">Verify that the tab is selected</h2>
+<p>Finding UI elements, checking their properties and performing actions is done through the test rule, following this pattern:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only"><code translate="no" dir="ltr">composeTestRule{.finder}{.assertion}{.action}
+</code></pre></devsite-code>
+<p>In this test you will look for the word &#34;Accounts&#34; to verify that the label for the selected tab is shown.</p>
+<p class="image-container"><img alt="baca545ddc8c3fa9.png" style="width: 359.00px" src="/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9.png" srcset="https://developer.android.com/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9_36.png 36w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9_48.png 48w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9_72.png 72w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9_96.png 96w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9_480.png 480w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9_720.png 720w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9_856.png 856w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9_960.png 960w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9_1440.png 1440w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9_1920.png 1920w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>A good way to understand what tools are available is using the  <a href="https://developer.android.com/jetpack/compose/testing-cheatsheet" target="_blank">Compose Testing Cheat Sheet</a> or the  <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/test/package-summary" target="_blank">test package reference documentation</a>. Look for finders and assertions that might help in our situation. For example: <code translate="no" dir="ltr">onNodeWithText</code>, <code translate="no" dir="ltr">onNodeWithContentDescription</code>, <code translate="no" dir="ltr">isSelected</code>, <code translate="no" dir="ltr">hasContentDescription</code>, <code translate="no" dir="ltr">assertIsSelected</code>...</p>
+<p>Each tab has a different content description:</p>
+<ul>
+<li>Overview</li>
+<li>Accounts</li>
+<li>Bills</li>
+</ul>
+<p>Knowing this, replace the <code translate="no" dir="ltr">Thread.sleep(5000)</code> with a statement that looks for a content description and asserts that it exists:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.test.assertIsSelected</span>
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.test.onNodeWithContentDescription</span>
+<span class="devsite-syntax-o">...</span>
+
+<span class="devsite-syntax-nd">@Test</span>
+<span class="devsite-syntax-n">fun</span> <span class="devsite-syntax-n">rallyTopAppBarTest_currentTabSelected</span><span class="devsite-syntax-p">()</span> <span class="devsite-syntax-p">{</span>
+    <span class="devsite-syntax-n">val</span> <span class="devsite-syntax-n">allScreens</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">RallyScreen</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">values</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">toList</span><span class="devsite-syntax-p">()</span>
+    <span class="devsite-syntax-n">composeTestRule</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">setContent</span> <span class="devsite-syntax-p">{</span>
+        <span class="devsite-syntax-n">RallyTopAppBar</span><span class="devsite-syntax-p">(</span>
+            <span class="devsite-syntax-n">allScreens</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">allScreens</span><span class="devsite-syntax-p">,</span>
+            <span class="devsite-syntax-n">onTabSelected</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-p">{</span> <span class="devsite-syntax-p">},</span>
+            <span class="devsite-syntax-n">currentScreen</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">RallyScreen</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">Accounts</span>
+        <span class="devsite-syntax-p">)</span>
+    <span class="devsite-syntax-p">}</span>
+
+    <span class="devsite-syntax-n">composeTestRule</span>
+        <span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">onNodeWithContentDescription</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">RallyScreen</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">Accounts</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-p">)</span>
+        <span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">assertIsSelected</span><span class="devsite-syntax-p">()</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>Now run the test again and you should see a green test:</p>
+<p class="image-container"><img alt="75bab3b37e795b65.png" style="width: 598.00px" src="/static/codelabs/jetpack-compose-testing/img/75bab3b37e795b65.png" srcset="https://developer.android.com/static/codelabs/jetpack-compose-testing/img/75bab3b37e795b65_36.png 36w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/75bab3b37e795b65_48.png 48w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/75bab3b37e795b65_72.png 72w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/75bab3b37e795b65_96.png 96w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/75bab3b37e795b65_480.png 480w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/75bab3b37e795b65_720.png 720w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/75bab3b37e795b65_856.png 856w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/75bab3b37e795b65_960.png 960w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/75bab3b37e795b65_1440.png 1440w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/75bab3b37e795b65_1920.png 1920w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/75bab3b37e795b65_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p><strong>Congratulations!</strong> You&#39;ve written your first Compose test. You&#39;ve learned how to test in isolation, and how to use finders and assertions.</p>
+<p>This was straightforward, but it required some previous knowledge about the component (the content descriptions and the <em>selected</em> property). You&#39;ll learn how to inspect what properties are available in the next step.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Debugging tests" duration="10" step="3">
+          
+          <h2 class="step-title" id="3" data-text="Debugging tests" tabindex="-1">
+              4. Debugging tests
+          </h2>
+          <p>In this step you&#39;ll verify that the label of the current tab is displayed, in upper case.</p>
+<p class="image-container"><img alt="baca545ddc8c3fa9.png" style="width: 359.00px" src="/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9.png" srcset="https://developer.android.com/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9_36.png 36w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9_48.png 48w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9_72.png 72w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9_96.png 96w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9_480.png 480w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9_720.png 720w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9_856.png 856w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9_960.png 960w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9_1440.png 1440w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9_1920.png 1920w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/baca545ddc8c3fa9_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>A possible solution would be to try to find the text and assert that it exists:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.test.onNodeWithText</span>
+<span class="devsite-syntax-o">...</span>
+
+<span class="devsite-syntax-nd">@Test</span>
+<span class="devsite-syntax-n">fun</span> <span class="devsite-syntax-n">rallyTopAppBarTest_currentLabelExists</span><span class="devsite-syntax-p">()</span> <span class="devsite-syntax-p">{</span>
+    <span class="devsite-syntax-n">val</span> <span class="devsite-syntax-n">allScreens</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">RallyScreen</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">values</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">toList</span><span class="devsite-syntax-p">()</span>
+    <span class="devsite-syntax-n">composeTestRule</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">setContent</span> <span class="devsite-syntax-p">{</span>
+        <span class="devsite-syntax-n">RallyTopAppBar</span><span class="devsite-syntax-p">(</span>
+            <span class="devsite-syntax-n">allScreens</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">allScreens</span><span class="devsite-syntax-p">,</span>
+            <span class="devsite-syntax-n">onTabSelected</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-p">{</span> <span class="devsite-syntax-p">},</span>
+            <span class="devsite-syntax-n">currentScreen</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">RallyScreen</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">Accounts</span>
+        <span class="devsite-syntax-p">)</span>
+    <span class="devsite-syntax-p">}</span>
+
+    <span class="devsite-syntax-n">composeTestRule</span>
+        <span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">onNodeWithText</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">RallyScreen</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">Accounts</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">uppercase</span><span class="devsite-syntax-p">())</span>
+        <span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">assertExists</span><span class="devsite-syntax-p">()</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>However, if you run the test, it fails 😱</p>
+<p class="image-container"><img alt="5755586203324389.png" style="width: 598.00px" src="/static/codelabs/jetpack-compose-testing/img/5755586203324389.png" srcset="https://developer.android.com/static/codelabs/jetpack-compose-testing/img/5755586203324389_36.png 36w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/5755586203324389_48.png 48w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/5755586203324389_72.png 72w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/5755586203324389_96.png 96w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/5755586203324389_480.png 480w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/5755586203324389_720.png 720w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/5755586203324389_856.png 856w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/5755586203324389_960.png 960w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/5755586203324389_1440.png 1440w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/5755586203324389_1920.png 1920w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/5755586203324389_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>In this step you&#39;ll learn how to debug this using the semantics tree.</p>
+<h3 is-upgraded id="semantics-tree" data-text="Semantics tree" tabindex="-1">Semantics tree</h3>
+<p>Compose tests use a structure called the  <a href="https://developer.android.com/jetpack/compose/testing#semantics" target="_blank"><strong>semantics tree</strong></a> to look for elements on the screen and read their properties. This is the structure that accessibility services use as well, as they&#39;re meant to be read by a service such as  <a href="https://support.google.com/accessibility/android/answer/6283677" target="_blank">TalkBack</a>.</p>
+<aside class="warning"><p>Warning: Layout Inspector support for Semantics properties is not available yet.</p>
+</aside>
+<p>You can print the Semantics tree using the <code translate="no" dir="ltr">printToLog</code> function on a node. Add a new line to the test:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.test.onRoot</span>
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.test.printToLog</span>
+<span class="devsite-syntax-o">...</span>
+
+<span class="devsite-syntax-n">fun</span> <span class="devsite-syntax-n">rallyTopAppBarTest_currentLabelExists</span><span class="devsite-syntax-p">()</span> <span class="devsite-syntax-p">{</span>
+    <span class="devsite-syntax-n">val</span> <span class="devsite-syntax-n">allScreens</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">RallyScreen</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">values</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">toList</span><span class="devsite-syntax-p">()</span>
+    <span class="devsite-syntax-n">composeTestRule</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">setContent</span> <span class="devsite-syntax-p">{</span>
+        <span class="devsite-syntax-n">RallyTopAppBar</span><span class="devsite-syntax-p">(</span>
+            <span class="devsite-syntax-n">allScreens</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">allScreens</span><span class="devsite-syntax-p">,</span>
+            <span class="devsite-syntax-n">onTabSelected</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-p">{</span> <span class="devsite-syntax-p">},</span>
+            <span class="devsite-syntax-n">currentScreen</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">RallyScreen</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">Accounts</span>
+        <span class="devsite-syntax-p">)</span>
+    <span class="devsite-syntax-p">}</span>
+
+    <span class="devsite-syntax-n">composeTestRule</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">onRoot</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">printToLog</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s2">"currentLabelExists"</span><span class="devsite-syntax-p">)</span>
+
+    <span class="devsite-syntax-n">composeTestRule</span>
+        <span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">onNodeWithText</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">RallyScreen</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">Accounts</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">uppercase</span><span class="devsite-syntax-p">())</span>
+        <span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">assertExists</span><span class="devsite-syntax-p">()</span> <span class="devsite-syntax-o">//</span> <span class="devsite-syntax-n">Still</span> <span class="devsite-syntax-n">fails</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>Now run the test and check out the Logcat in Android Studio (you can look for <code translate="no" dir="ltr">currentLabelExists</code>).</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL"><code translate="no" dir="ltr"><span class="devsite-syntax-p">...</span><span class="devsite-syntax-n">com</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">example</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">compose</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">rally</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">D</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-nl">currentLabelExists</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nl">printToLog</span><span class="devsite-syntax-p">:</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">Printing</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">with</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">useUnmergedTree</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'false'</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">Node</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">#1</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">at</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">l</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">0.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">t</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">63.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">r</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">1080.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">b</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">210.0</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-n">px</span>
+<span class="devsite-syntax-w">     </span><span class="devsite-syntax-o">|-</span><span class="devsite-syntax-n">Node</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">#2</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">at</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">l</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">0.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">t</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">63.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">r</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">1080.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">b</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">210.0</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-n">px</span>
+<span class="devsite-syntax-w">       </span><span class="devsite-syntax-o">[</span><span class="devsite-syntax-n">SelectableGroup</span><span class="devsite-syntax-o">]</span>
+<span class="devsite-syntax-w">       </span><span class="devsite-syntax-n">MergeDescendants</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'true'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|-</span><span class="devsite-syntax-n">Node</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">#3</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">at</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">l</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">42.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">t</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">105.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">r</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">105.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">b</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">168.0</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-n">px</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">Role</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'Tab'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Selected</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'false'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">StateDescription</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'Not selected'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ContentDescription</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'Overview'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Actions</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">[</span><span class="devsite-syntax-n">OnClick</span><span class="devsite-syntax-o">]</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">MergeDescendants</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'true'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ClearAndSetSemantics</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'true'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|-</span><span class="devsite-syntax-n">Node</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">#6</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">at</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">l</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">189.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">t</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">105.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">r</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">468.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">b</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">168.0</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-n">px</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">Role</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'Tab'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Selected</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'true'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">StateDescription</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'Selected'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ContentDescription</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'Accounts'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Actions</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">[</span><span class="devsite-syntax-n">OnClick</span><span class="devsite-syntax-o">]</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">MergeDescendants</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'true'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ClearAndSetSemantics</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'true'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|-</span><span class="devsite-syntax-n">Node</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">#11</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">at</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">l</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">552.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">t</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">105.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">r</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">615.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">b</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">168.0</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-n">px</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-k">Role</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'Tab'</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-n">Selected</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'false'</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-n">StateDescription</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'Not selected'</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-n">ContentDescription</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'Bills'</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-n">Actions</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">[</span><span class="devsite-syntax-n">OnClick</span><span class="devsite-syntax-o">]</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-n">MergeDescendants</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'true'</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-n">ClearAndSetSemantics</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'true'</span>
+</code></pre></devsite-code>
+<aside class="special"><p>Hopefully now you understand the convenience of isolation. The semantics tree of a full app would be very long!</p>
+</aside>
+<aside class="warning"><p>Warning: Composables don&#39;t have IDs and you can&#39;t use the Node numbers shown in the tree to match them. If matching a node with its semantics properties is impractical or impossible, you can use the  <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/platform/package-summary#(androidx.compose.ui.Modifier).testTag(kotlin.String)" target="_blank"><code translate="no" dir="ltr">testTag</code></a> modifier with the  <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/test/package-summary#hasTestTag(kotlin.String)" target="_blank"><code translate="no" dir="ltr">hasTestTag</code></a> matcher as a last resort.</p>
+</aside>
+<p>Taking a look at the Semantics tree, you can see there is a <code translate="no" dir="ltr">SelectableGroup</code> with 3 child elements, which are the tabs of the top app bar. Turns out, there is no <code translate="no" dir="ltr">text</code> property with a value of &#34;ACCOUNTS&#34; and this is why the test fails. However, there is a <strong>content description for each tab</strong>. You can check how this property is set in the <code translate="no" dir="ltr">RallyTab</code> composable inside <code translate="no" dir="ltr">RallyTopAppBar.kt</code>:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only"><code translate="no" dir="ltr">private fun RallyTab(text: String...)
+...
+    Modifier
+        .clearAndSetSemantics { contentDescription = text }
+</code></pre></devsite-code>
+<p>This modifier is clearing the properties from descendants and setting its own content description, so that&#39;s why you see &#34;Accounts&#34; and not &#34;ACCOUNTS&#34;.</p>
+<p>Replace the finder <code translate="no" dir="ltr">onNodeWithText</code> with <code translate="no" dir="ltr">onNodeWithContentDescription</code> and run the test again:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">fun rallyTopAppBarTest_currentLabelExists() {
+    val allScreens = RallyScreen.values().toList()
+    composeTestRule.setContent {
+        RallyTopAppBar(
+            allScreens = allScreens,
+            onTabSelected = { },
+            currentScreen = RallyScreen.Accounts
+        )
+    }
+
+    composeTestRule
+        .onNodeWithContentDescription(RallyScreen.Accounts.name)
+        .assertExists()
+}
+</code></pre></devsite-code>
+<p class="image-container"><img alt="b5a7ae9f8f0ed750.png" style="width: 599.00px" src="/static/codelabs/jetpack-compose-testing/img/b5a7ae9f8f0ed750.png" srcset="https://developer.android.com/static/codelabs/jetpack-compose-testing/img/b5a7ae9f8f0ed750_36.png 36w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/b5a7ae9f8f0ed750_48.png 48w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/b5a7ae9f8f0ed750_72.png 72w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/b5a7ae9f8f0ed750_96.png 96w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/b5a7ae9f8f0ed750_480.png 480w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/b5a7ae9f8f0ed750_720.png 720w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/b5a7ae9f8f0ed750_856.png 856w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/b5a7ae9f8f0ed750_960.png 960w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/b5a7ae9f8f0ed750_1440.png 1440w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/b5a7ae9f8f0ed750_1920.png 1920w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/b5a7ae9f8f0ed750_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Congratulations! You&#39;ve fixed the test and you learned about the <code translate="no" dir="ltr">ComposeTestRule</code>, testing in isolation, finders, assertions, and debugging with the Semantics tree.</p>
+<p><strong>Bad news though</strong>: this test is not very useful! If you look at the Semantics tree closely, the content descriptions of all three tabs are there whether or not their tab is selected. We must go deeper!</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Merged and unmerged Semantics trees" duration="6" step="4">
+          
+          <h2 class="step-title" id="4" data-text="Merged and unmerged Semantics trees" tabindex="-1">
+              5. Merged and unmerged Semantics trees
+          </h2>
+          <p>The Semantics tree always tries to be as compact as possible, showing only the information that is relevant.</p>
+<p>For example, in our <code translate="no" dir="ltr">TopAppBar</code>, there is no need for the icons and labels to be different nodes. Take a look at the &#34;Overview&#34; node:</p>
+<p class="image-container"><img alt="120e5327856286cd.png" style="width: 536.60px" src="/static/codelabs/jetpack-compose-testing/img/120e5327856286cd.png" srcset="https://developer.android.com/static/codelabs/jetpack-compose-testing/img/120e5327856286cd_36.png 36w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/120e5327856286cd_48.png 48w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/120e5327856286cd_72.png 72w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/120e5327856286cd_96.png 96w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/120e5327856286cd_480.png 480w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/120e5327856286cd_720.png 720w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/120e5327856286cd_856.png 856w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/120e5327856286cd_960.png 960w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/120e5327856286cd_1440.png 1440w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/120e5327856286cd_1920.png 1920w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/120e5327856286cd_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL"><code translate="no" dir="ltr"><span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|-</span><span class="devsite-syntax-n">Node</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">#3</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">at</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">l</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">42.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">t</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">105.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">r</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">105.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">b</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">168.0</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-n">px</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">Role</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'Tab'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Selected</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'false'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">StateDescription</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'Not selected'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ContentDescription</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'Overview'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Actions</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">[</span><span class="devsite-syntax-n">OnClick</span><span class="devsite-syntax-o">]</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">MergeDescendants</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'true'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ClearAndSetSemantics</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'true'</span>
+</code></pre></devsite-code>
+<p>This node has properties (such as <code translate="no" dir="ltr">Selected</code> and <code translate="no" dir="ltr">Role</code>) that are defined specifically for a  <a href="https://developer.android.com/reference/kotlin/androidx/compose/foundation/selection/package-summary#selectable(androidx.compose.ui.Modifier,kotlin.Boolean,kotlin.Boolean,androidx.compose.ui.semantics.Role,kotlin.Function0)" target="_blank"><code translate="no" dir="ltr">selectable</code></a> component and a content description for the whole tab. These are high-level properties, very useful for simple tests. Details about the icon or the text would be redundant so they&#39;re not shown.</p>
+<p>Compose exposes these Semantics properties automatically in some composables such as <code translate="no" dir="ltr">Text</code>. You can also customize and <strong>merge</strong> them to represent a single component made up of one or multiple descendants. For example: you can represent a <code translate="no" dir="ltr">Button</code> containing a  <code translate="no" dir="ltr">Text</code> composable. The property <code translate="no" dir="ltr">MergeDescendants = 'true'</code> is telling us that <strong>this node had descendants, but they have been merged into it</strong>. In tests we oftentimes need to access all nodes.</p>
+<p>In order to verify whether the <code translate="no" dir="ltr">Text</code> inside the tab is displayed or not, we can query the <strong>unmerged</strong> Semantics tree passing <code translate="no" dir="ltr">useUnmergedTree = true</code> to the <code translate="no" dir="ltr">onRoot</code> finder.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL"><code translate="no" dir="ltr"><span class="devsite-syntax-nv">@Test</span>
+<span class="devsite-syntax-n">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">rallyTopAppBarTest_currentLabelExists</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">allScreens</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">RallyScreen</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-k">values</span><span class="devsite-syntax-p">().</span><span class="devsite-syntax-n">toList</span><span class="devsite-syntax-p">()</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">composeTestRule</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">setContent</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">RallyTopAppBar</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">allScreens</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">allScreens</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">onTabSelected</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">}</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">currentScreen</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">RallyScreen</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">Accounts</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-err">}</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">composeTestRule</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">onRoot</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">useUnmergedTree</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">true</span><span class="devsite-syntax-p">).</span><span class="devsite-syntax-n">printToLog</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-ss">"currentLabelExists"</span><span class="devsite-syntax-p">)</span>
+
+
+<span class="devsite-syntax-err">}</span>
+</code></pre></devsite-code>
+<p>The output in Logcat is slightly longer now:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL"><code translate="no" dir="ltr"><span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">Printing</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">with</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">useUnmergedTree</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'true'</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">Node</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">#1</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">at</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">l</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">0.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">t</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">63.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">r</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">1080.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">b</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">210.0</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-n">px</span>
+<span class="devsite-syntax-w">     </span><span class="devsite-syntax-o">|-</span><span class="devsite-syntax-n">Node</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">#2</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">at</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">l</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">0.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">t</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">63.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">r</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">1080.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">b</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">210.0</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-n">px</span>
+<span class="devsite-syntax-w">       </span><span class="devsite-syntax-o">[</span><span class="devsite-syntax-n">SelectableGroup</span><span class="devsite-syntax-o">]</span>
+<span class="devsite-syntax-w">       </span><span class="devsite-syntax-n">MergeDescendants</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'true'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|-</span><span class="devsite-syntax-n">Node</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">#3</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">at</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">l</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">42.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">t</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">105.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">r</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">105.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">b</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">168.0</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-n">px</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">Role</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'Tab'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Selected</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'false'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">StateDescription</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'Not selected'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ContentDescription</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'Overview'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Actions</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">[</span><span class="devsite-syntax-n">OnClick</span><span class="devsite-syntax-o">]</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">MergeDescendants</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'true'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ClearAndSetSemantics</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'true'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|-</span><span class="devsite-syntax-n">Node</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">#6</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">at</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">l</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">189.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">t</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">105.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">r</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">468.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">b</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">168.0</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-n">px</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">Role</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'Tab'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Selected</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'true'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">StateDescription</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'Selected'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ContentDescription</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'Accounts'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Actions</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">[</span><span class="devsite-syntax-n">OnClick</span><span class="devsite-syntax-o">]</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">MergeDescendants</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'true'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ClearAndSetSemantics</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'true'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w">  </span><span class="devsite-syntax-o">|-</span><span class="devsite-syntax-n">Node</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">#9</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">at</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">l</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">284.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">t</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">105.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">r</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">468.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">b</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">154.0</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-n">px</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w">    </span><span class="devsite-syntax-nc">Text</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'ACCOUNTS'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">Actions</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">[</span><span class="devsite-syntax-n">GetTextLayoutResult</span><span class="devsite-syntax-o">]</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|-</span><span class="devsite-syntax-n">Node</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">#11</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">at</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">l</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">552.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">t</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">105.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">r</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">615.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">b</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">168.0</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-n">px</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-k">Role</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'Tab'</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-n">Selected</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'false'</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-n">StateDescription</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'Not selected'</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-n">ContentDescription</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'Bills'</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-n">Actions</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">[</span><span class="devsite-syntax-n">OnClick</span><span class="devsite-syntax-o">]</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-n">MergeDescendants</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'true'</span>
+<span class="devsite-syntax-w">          </span><span class="devsite-syntax-n">ClearAndSetSemantics</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'true'</span>
+</code></pre></devsite-code>
+<p>Node #3 still has no descendants:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL"><code translate="no" dir="ltr"><span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|-</span><span class="devsite-syntax-n">Node</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">#3</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">at</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">l</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">42.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">t</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">105.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">r</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">105.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">b</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">168.0</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-n">px</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">Role</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'Tab'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Selected</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'false'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">StateDescription</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'Not selected'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ContentDescription</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'Overview'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Actions</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">[</span><span class="devsite-syntax-n">OnClick</span><span class="devsite-syntax-o">]</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">MergeDescendants</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'true'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ClearAndSetSemantics</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'true'</span>
+</code></pre></devsite-code>
+<p>But node 6, the selected tab, has one and we can now see the ‘Text&#39; property:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL"><code translate="no" dir="ltr"><span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|-</span><span class="devsite-syntax-n">Node</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">#6</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">at</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">l</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">189.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">t</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">105.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">r</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">468.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">b</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">168.0</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-n">px</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">Role</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'Tab'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Selected</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'true'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">StateDescription</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'Selected'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ContentDescription</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'Accounts'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Actions</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">[</span><span class="devsite-syntax-n">OnClick</span><span class="devsite-syntax-o">]</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">MergeDescendants</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'true'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w">  </span><span class="devsite-syntax-o">|-</span><span class="devsite-syntax-n">Node</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">#9</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">at</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">l</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">284.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">t</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">105.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">r</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">468.0</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">b</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">154.0</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-n">px</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w">    </span><span class="devsite-syntax-nc">Text</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'ACCOUNTS'</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">Actions</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">[</span><span class="devsite-syntax-n">GetTextLayoutResult</span><span class="devsite-syntax-o">]</span>
+</code></pre></devsite-code>
+<p>In order to verify the correct behavior as we wanted, you&#39;ll write a matcher that finds one node with text &#34;ACCOUNTS&#34; whose parent is a node with content description &#34;Accounts&#34;.</p>
+<p>Check the  <a href="https://developer.android.com/jetpack/compose/testing-cheatsheet" target="_blank">Compose Testing Cheat Sheet</a> again and try to find a way to write that matcher. Note that you can use boolean operators such as <code translate="no" dir="ltr">and</code> and <code translate="no" dir="ltr">or</code> with matchers.</p>
+<p>All finders have a parameter called <code translate="no" dir="ltr">useUnmergedTree</code>. Set it to <code translate="no" dir="ltr">true</code> to use the unmerged tree.</p>
+<p>Try to write the test without looking at the solution!</p>
+<h4 is-upgraded id="solution" data-text="Solution" tabindex="-1"><em>Solution</em></h4>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.test.hasParent</span>
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.test.hasText</span>
+<span class="devsite-syntax-o">...</span>
+
+<span class="devsite-syntax-nd">@Test</span>
+<span class="devsite-syntax-n">fun</span> <span class="devsite-syntax-n">rallyTopAppBarTest_currentLabelExists</span><span class="devsite-syntax-p">()</span> <span class="devsite-syntax-p">{</span>
+    <span class="devsite-syntax-n">val</span> <span class="devsite-syntax-n">allScreens</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">RallyScreen</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">values</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">toList</span><span class="devsite-syntax-p">()</span>
+    <span class="devsite-syntax-n">composeTestRule</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">setContent</span> <span class="devsite-syntax-p">{</span>
+        <span class="devsite-syntax-n">RallyTopAppBar</span><span class="devsite-syntax-p">(</span>
+            <span class="devsite-syntax-n">allScreens</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">allScreens</span><span class="devsite-syntax-p">,</span>
+            <span class="devsite-syntax-n">onTabSelected</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-p">{</span> <span class="devsite-syntax-p">},</span>
+            <span class="devsite-syntax-n">currentScreen</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">RallyScreen</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">Accounts</span>
+        <span class="devsite-syntax-p">)</span>
+    <span class="devsite-syntax-p">}</span>
+
+    <span class="devsite-syntax-n">composeTestRule</span>
+        <span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">onNode</span><span class="devsite-syntax-p">(</span>
+            <span class="devsite-syntax-n">hasText</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">RallyScreen</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">Accounts</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">uppercase</span><span class="devsite-syntax-p">())</span> <span class="devsite-syntax-ow">and</span>
+            <span class="devsite-syntax-n">hasParent</span><span class="devsite-syntax-p">(</span>
+                <span class="devsite-syntax-n">hasContentDescription</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">RallyScreen</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">Accounts</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-p">)</span>
+            <span class="devsite-syntax-p">),</span>
+            <span class="devsite-syntax-n">useUnmergedTree</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">true</span>
+        <span class="devsite-syntax-p">)</span>
+        <span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">assertExists</span><span class="devsite-syntax-p">()</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<aside class="special"><p>Note: In this case, strictly, you don&#39;t have to add the parent to the matcher because it&#39;s a very isolated test. However, it&#39;s a good idea to avoid using broad finders alone (such as <code translate="no" dir="ltr">hasText</code>) which might fail in larger tests (when other instances of the text might be found).</p>
+</aside>
+<p>Go ahead and run it:</p>
+<p class="image-container"><img alt="94c57e2cfc12c10b.png" style="width: 599.00px" src="/static/codelabs/jetpack-compose-testing/img/94c57e2cfc12c10b.png" srcset="https://developer.android.com/static/codelabs/jetpack-compose-testing/img/94c57e2cfc12c10b_36.png 36w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/94c57e2cfc12c10b_48.png 48w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/94c57e2cfc12c10b_72.png 72w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/94c57e2cfc12c10b_96.png 96w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/94c57e2cfc12c10b_480.png 480w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/94c57e2cfc12c10b_720.png 720w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/94c57e2cfc12c10b_856.png 856w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/94c57e2cfc12c10b_960.png 960w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/94c57e2cfc12c10b_1440.png 1440w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/94c57e2cfc12c10b_1920.png 1920w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/94c57e2cfc12c10b_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Congratulations! In this step you&#39;ve learned about property merging and the merged and unmerged Semantics trees.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Synchronization" duration="5" step="5">
+          
+          <h2 class="step-title" id="5" data-text="Synchronization" tabindex="-1">
+              6. Synchronization
+          </h2>
+          <p>Any test that you write must be properly synchronized with the subject under test. For example, when you use a finder such as <code translate="no" dir="ltr">onNodeWithText</code>, the test waits until the app is <em>idle</em> before querying the semantics tree. Without synchronization, tests could look for elements before they&#39;re displayed or they could wait unnecessarily.</p>
+<p>We&#39;ll use the Overview screen for this step, which looks like this when you run the app:</p>
+<p class="image-container"><img alt="8c467af3570b8de6.gif" style="width: 400.00px" src="/static/codelabs/jetpack-compose-testing/img/8c467af3570b8de6.gif"></p>
+<p>Note the repeating flashing animation of the Alerts card, drawing attention to this element.</p>
+<p>Create another test class called <code translate="no" dir="ltr">OverviewScreenTest</code> and add the following content:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-n">package</span> <span class="devsite-syntax-n">com</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">example</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">compose</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">rally</span>
+
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.test.assertIsDisplayed</span>
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.test.junit4.createComposeRule</span>
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.test.onNodeWithText</span>
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">com.example.compose.rally.ui.overview.OverviewBody</span>
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">org.junit.Rule</span>
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">org.junit.Test</span>
+
+<span class="devsite-syntax-k">class</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nc">OverviewScreenTest</span> <span class="devsite-syntax-p">{</span>
+
+    <span class="devsite-syntax-nd">@get</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">Rule</span>
+    <span class="devsite-syntax-n">val</span> <span class="devsite-syntax-n">composeTestRule</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">createComposeRule</span><span class="devsite-syntax-p">()</span>
+
+    <span class="devsite-syntax-nd">@Test</span>
+    <span class="devsite-syntax-n">fun</span> <span class="devsite-syntax-n">overviewScreen_alertsDisplayed</span><span class="devsite-syntax-p">()</span> <span class="devsite-syntax-p">{</span>
+        <span class="devsite-syntax-n">composeTestRule</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">setContent</span> <span class="devsite-syntax-p">{</span>
+            <span class="devsite-syntax-n">OverviewBody</span><span class="devsite-syntax-p">()</span>
+        <span class="devsite-syntax-p">}</span>
+
+        <span class="devsite-syntax-n">composeTestRule</span>
+            <span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">onNodeWithText</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s2">"Alerts"</span><span class="devsite-syntax-p">)</span>
+            <span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">assertIsDisplayed</span><span class="devsite-syntax-p">()</span>
+    <span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>If you run this test, you&#39;ll notice it never finishes (it times out after 30 seconds).</p>
+<p class="image-container"><img alt="b2d71bd417326bd3.png" style="width: 599.00px" src="/static/codelabs/jetpack-compose-testing/img/b2d71bd417326bd3.png" srcset="https://developer.android.com/static/codelabs/jetpack-compose-testing/img/b2d71bd417326bd3_36.png 36w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/b2d71bd417326bd3_48.png 48w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/b2d71bd417326bd3_72.png 72w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/b2d71bd417326bd3_96.png 96w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/b2d71bd417326bd3_480.png 480w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/b2d71bd417326bd3_720.png 720w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/b2d71bd417326bd3_856.png 856w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/b2d71bd417326bd3_960.png 960w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/b2d71bd417326bd3_1440.png 1440w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/b2d71bd417326bd3_1920.png 1920w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/b2d71bd417326bd3_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>The error says:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL"><code translate="no" dir="ltr"><span class="devsite-syntax-n">androidx</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">compose</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">ui</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">test</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">junit4</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nl">ComposeNotIdleException</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Idling</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">resource</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">timed</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">out</span><span class="devsite-syntax-err">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">possibly</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">due</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">compose</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">being</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">busy</span><span class="devsite-syntax-p">.</span>
+<span class="devsite-syntax-n">IdlingResourceRegistry</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">has</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">following</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">idling</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">resources</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nl">registered</span><span class="devsite-syntax-p">:</span>
+<span class="devsite-syntax-o">-</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">[</span><span class="devsite-syntax-n">busy</span><span class="devsite-syntax-o">]</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">androidx</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">compose</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">ui</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">test</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">junit4</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">ComposeIdlingResource</span><span class="devsite-syntax-nv">@d075f91</span><span class="devsite-syntax-w"> </span>
+</code></pre></devsite-code>
+<p>This is basically telling you that Compose is permanently busy so there is no way to synchronize the app with the test.</p>
+<p>You might already have guessed that the problem is the infinite flashing animation. The app is never idle so the test can&#39;t continue.</p>
+<p>Let&#39;s look at the implementation of the infinite animation:</p>
+<h3 is-upgraded id="appsrcmainjavacomexamplecomposerallyuioverviewoverviewbody.kt" data-text="app/src/main/java/com/example/compose/rally/ui/overview/OverviewBody.kt" tabindex="-1">app/src/main/java/com/example/compose/rally/ui/overview/OverviewBody.kt</h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="GDScript"><code translate="no" dir="ltr"><span class="devsite-syntax-k">var</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">currentTargetElevation</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">by</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">remember</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w">  </span><span class="devsite-syntax-n">mutableStateOf</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-mf">1.</span><span class="devsite-syntax-n">dp</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-n">LaunchedEffect</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">Unit</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-o">//</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Start</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">animation</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">currentTargetElevation</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mf">8.</span><span class="devsite-syntax-n">dp</span>
+<span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">animatedElevation</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">animateDpAsState</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">targetValue</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">currentTargetElevation</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">animationSpec</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">tween</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">durationMillis</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mi">500</span><span class="devsite-syntax-p">),</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">finishedListener</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">currentTargetElevation</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">currentTargetElevation</span><span class="devsite-syntax-w"> &gt; </span><span class="devsite-syntax-mf">4.</span><span class="devsite-syntax-n">dp</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-mf">1.</span><span class="devsite-syntax-n">dp</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">}</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">else</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-mf">8.</span><span class="devsite-syntax-n">dp</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-n">Card</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">elevation</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">animatedElevation</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">value</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">...</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>This code is essentially waiting for an animation to finish (<code translate="no" dir="ltr">finishedListener</code>) and then runs it again.</p>
+<p>One approach to fix this test would be to disable animations in developer options. It&#39;s one of the widely accepted ways of dealing with it in the <code translate="no" dir="ltr">View</code> world.</p>
+<p>In Compose, the animation APIs were designed with testability in mind, so the problem can be fixed by using the correct API. Instead of restarting the  <a href="https://developer.android.com/jetpack/compose/animation#animate-as-state" target="_blank"><code translate="no" dir="ltr">animateDpAsState</code></a> animation, we can use  <a href="https://developer.android.com/jetpack/compose/animation#rememberinfinitetransition" target="_blank">infinite animations</a>.</p>
+<aside class="special"><p><strong>Infinite animations</strong> are a special case that Compose tests <em>understand</em> so they&#39;re not going to keep the test busy.</p>
+</aside>
+<p>Replace the code in <code translate="no" dir="ltr">OverviewScreen</code> with the proper API:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.animation.core.RepeatMode</span>
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.animation.core.VectorConverter</span>
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.animation.core.animateValue</span>
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.animation.core.infiniteRepeatable</span>
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.animation.core.rememberInfiniteTransition</span>
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.animation.core.tween</span>
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">androidx.compose.ui.unit.Dp</span>
+<span class="devsite-syntax-o">...</span>
+
+    <span class="devsite-syntax-n">val</span> <span class="devsite-syntax-n">infiniteElevationAnimation</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">rememberInfiniteTransition</span><span class="devsite-syntax-p">()</span>
+    <span class="devsite-syntax-n">val</span> <span class="devsite-syntax-n">animatedElevation</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">Dp</span> <span class="devsite-syntax-n">by</span> <span class="devsite-syntax-n">infiniteElevationAnimation</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">animateValue</span><span class="devsite-syntax-p">(</span>
+        <span class="devsite-syntax-n">initialValue</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-mf">1.</span><span class="devsite-syntax-n">dp</span><span class="devsite-syntax-p">,</span>
+        <span class="devsite-syntax-n">targetValue</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-mf">8.</span><span class="devsite-syntax-n">dp</span><span class="devsite-syntax-p">,</span>
+        <span class="devsite-syntax-n">typeConverter</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">Dp</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">VectorConverter</span><span class="devsite-syntax-p">,</span>
+        <span class="devsite-syntax-n">animationSpec</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">infiniteRepeatable</span><span class="devsite-syntax-p">(</span>
+            <span class="devsite-syntax-n">animation</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">tween</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-mi">500</span><span class="devsite-syntax-p">),</span>
+            <span class="devsite-syntax-n">repeatMode</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">RepeatMode</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">Reverse</span>
+        <span class="devsite-syntax-p">)</span>
+    <span class="devsite-syntax-p">)</span>
+    <span class="devsite-syntax-n">Card</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">elevation</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">animatedElevation</span><span class="devsite-syntax-p">)</span> <span class="devsite-syntax-p">{</span>
+</code></pre></devsite-code>
+<p>If you run the test, it will pass now:</p>
+<p class="image-container"><img alt="369e266eed40e4e4.png" style="width: 473.00px" src="/static/codelabs/jetpack-compose-testing/img/369e266eed40e4e4.png" srcset="https://developer.android.com/static/codelabs/jetpack-compose-testing/img/369e266eed40e4e4_36.png 36w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/369e266eed40e4e4_48.png 48w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/369e266eed40e4e4_72.png 72w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/369e266eed40e4e4_96.png 96w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/369e266eed40e4e4_480.png 480w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/369e266eed40e4e4_720.png 720w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/369e266eed40e4e4_856.png 856w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/369e266eed40e4e4_960.png 960w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/369e266eed40e4e4_1440.png 1440w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/369e266eed40e4e4_1920.png 1920w,https://developer.android.com/static/codelabs/jetpack-compose-testing/img/369e266eed40e4e4_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Congratulations! In this step you&#39;ve learned about synchronization and how animations can affect tests.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Optional exercise" duration="1" step="6">
+          
+          <h2 class="step-title" id="6" data-text="Optional exercise" tabindex="-1">
+              7. Optional exercise
+          </h2>
+          <p>In this step, you&#39;ll use an action (see the  <a href="https://developer.android.com/jetpack/compose/testing-cheatsheet" target="_blank">Testing Cheat Sheet</a>) to verify that clicking on the different tabs of the <code translate="no" dir="ltr">RallyTopAppBar</code> changes the selection.</p>
+<p>Hints:</p>
+<ul>
+<li>The scope of the test needs to include the state, which is owned by <code translate="no" dir="ltr">RallyApp</code>.</li>
+<li>Verify state, not behavior. Use assertions on the state of the UI instead of relying on which objects have been called and how.</li>
+</ul>
+<p>There&#39;s no provided solution for this exercise.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Next steps" duration="1" step="7">
+          
+          <h2 class="step-title" id="7" data-text="Next steps" tabindex="-1">
+              8. Next steps
+          </h2>
+          <p>Congratulations! You&#39;ve completed the <strong>Testing in Jetpack Compose.</strong> Now you have the basic building blocks to create a good testing strategy for your Compose UIs.</p>
+<p>If you want to learn more about Testing and Compose, check out these resources:</p>
+<ol type="1">
+<li>The  <a href="https://developer.android.com/jetpack/compose/testing#matchers" target="_blank">testing documentation</a> has more information about finders, assertions, actions and matchers, as well as synchronization mechanisms, time manipulation, etc.</li>
+<li>Bookmark the  <a href="https://developer.android.com/jetpack/compose/testing-cheatsheet" target="_blank">Testing Cheat Sheet</a>!</li>
+<li>The Rally sample comes with a simple screenshot test class. Explore the <code translate="no" dir="ltr">AnimatingCircleTests.kt</code> file to learn more about it.</li>
+<li>For general guidance about testing Android apps, you can follow these three codelabs:</li>
+</ol>
+<ul>
+<li><a href="https://developer.android.com/codelabs/advanced-android-kotlin-training-testing-basics/#0" target="_blank">Testing Basics</a></li>
+<li><a href="https://developer.android.com/codelabs/advanced-android-kotlin-training-testing-test-doubles" target="_blank">Dependency Injection and Test Doubles</a></li>
+<li><a href="https://developer.android.com/codelabs/advanced-android-kotlin-training-testing-survey" target="_blank">Survey of Testing Topics</a></li>
+</ul>
+<ol type="1" start="5">
+<li>The  <a href="https://github.com/android/compose-samples" target="_blank">Compose samples</a> repository on Github has multiple apps with UI tests.</li>
+<li>The  <a href="http://goo.gle/compose-pathway" target="_blank">Jetpack Compose Pathway</a> shows a list of resources to get you started with Compose.</li>
+</ol>
+<p>Happy testing!</p>
+
+
+        </google-codelab-step>
+      
+    </google-codelab>
+  
+  
+
+  
+</div>
+
+  
+    
+    
+    
+  
+
+  <div class="devsite-floating-action-buttons"></div></article>
+
+
+<devsite-content-footer class="nocontent">
+  <p>Except as otherwise noted, the content of this page is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</a>, and code samples are licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see the <a href="https://developers.google.com/site-policies">Google Developers Site Policies</a>. Java is a registered trademark of Oracle and/or its affiliates.</p>
+  
+</devsite-content-footer>
+
+
+<devsite-notification
+>
+</devsite-notification>
+
+
+  
+<div class="devsite-content-data">
+  
+  
+    <template class="devsite-content-data-template">
+      [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[],null,[]]
+    </template>
+  
+</div>
+            
+          </devsite-content>
+        </main>
+        <devsite-footer-promos class="devsite-footer">
+          
+            
+
+<nav class="devsite-footer-promos nocontent" aria-label="Promotions">
+  <ul class="devsite-footer-promos-list">
+    
+    <li class="devsite-footer-promo">
+      <a href="//x.com/AndroidDev"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer X Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-x_dt.svg"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="/_static/android/images/logo-x.svg"
+                loading="lazy"
+                alt="X">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          X
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Follow @AndroidDev on X</div>
+    </li>
+    
+    <li class="devsite-footer-promo">
+      <a href="//www.youtube.com/user/androiddevelopers"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer YouTube Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-youtube_dt.svg"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="//www.gstatic.com/images/icons/material/product/2x/youtube_48dp.png"
+                loading="lazy"
+                alt="YouTube">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          YouTube
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Check out Android Developers on YouTube</div>
+    </li>
+    
+    <li class="devsite-footer-promo">
+      <a href="//www.linkedin.com/showcase/androiddev"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer LinkedIn Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-linkedin_dt.svg"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="/_static/android/images/logo-linkedin.svg"
+                loading="lazy"
+                alt="LinkedIn">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          LinkedIn
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Connect with the Android Developers community on LinkedIn</div>
+    </li>
+    
+  </ul>
+</nav>
+
+          
+        </devsite-footer-promos>
+        <devsite-footer-linkboxes class="devsite-footer">
+          
+            
+<nav class="devsite-footer-linkboxes nocontent" aria-label="Footer links">
+  
+  <ul class="devsite-footer-linkboxes-list">
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">More Android</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com/enterprise/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Android for Enterprise
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com/security-center/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Security
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//source.android.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Source
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/news"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            News
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//android-developers.googleblog.com/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+          
+            Blog
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/podcasts"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 7)"
+            >
+            
+              
+              
+            
+          
+            Podcasts
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Discover</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/games"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Gaming
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/ml"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Machine Learning
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/health-and-fitness"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Health & Fitness
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/media"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Camera & Media
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/privacy"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            Privacy
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/training/connectivity/5g"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+              
+              
+            
+          
+            5G
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Android Devices</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/large-screens"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Large screens
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/wear"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Wear OS
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/chrome-os"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            ChromeOS devices
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/cars"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Android for cars
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/tv"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+              
+              
+            
+          
+            Android TV
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Releases</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/15"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android 15
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/14"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Android 14
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/13"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Android 13
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/12"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Android 12
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/11"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            Android 11
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/10"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+          
+            Android 10
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/pie"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 7)"
+            >
+            
+              
+              
+            
+          
+            Pie
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Documentation and Downloads</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/studio/intro"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android Studio guide
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/guide"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Developers guides
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/reference"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            API reference
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/studio"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Download Studio
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/ndk"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+              
+              
+            
+          
+            Android NDK
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Support</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//issuetracker.google.com/issues/new?component=190923&amp;template=841312"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Report platform bug
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//issuetracker.google.com/issues/new?component=192697"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Report documentation bug
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//support.google.com/googleplay/android-developer"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Google Play support
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://g.co/userresearch/androiddeveloperfooter"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+              
+              
+            
+          
+            Join research studies
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+  
+</nav>
+          
+        </devsite-footer-linkboxes>
+        <devsite-footer-utility class="devsite-footer">
+          
+            
+
+<div class="devsite-footer-utility nocontent">
+  
+  
+  <nav class="devsite-footer-sites" aria-label="Other Google Developers websites">
+    <a href="https://developers.google.com/"
+       class="devsite-footer-sites-logo-link gc-analytics-event"
+       data-category="Site-Wide Custom Events"
+       data-label="Footer Google Developers Link">
+      <picture>
+        
+        <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-google-for-developers-dark-theme.svg"
+                media="(prefers-color-scheme: none)"
+                class="devsite-dark-theme">
+        
+        <img class="devsite-footer-sites-logo"
+             src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-google-for-developers.svg"
+             loading="lazy"
+             alt="Google Developers">
+      </picture>
+    </a>
+    <ul class="devsite-footer-sites-list">
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.android.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Android Link"
+         
+         >
+          Android
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.chrome.com/home"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Chrome Link"
+         
+         >
+          Chrome
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//firebase.google.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Firebase Link"
+         
+         >
+          Firebase
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//cloud.google.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Google Cloud Platform Link"
+         
+         >
+          Google Cloud Platform
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developers.google.com/products/"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer All products Link"
+         
+         >
+          All products
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  
+
+  
+  <nav class="devsite-footer-utility-links" aria-label="Utility links">
+    
+    <ul class="devsite-footer-utility-list">
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//policies.google.com/privacy"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Privacy link"
+         >
+          Privacy
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="/license"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer License link"
+         >
+          License
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="/distribute/marketing-tools/brand-guidelines"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Brand guidelines link"
+         >
+          Brand guidelines
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 glue-cookie-notification-bar-control">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="#"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Manage cookies link"
+         
+           aria-hidden="true"
+         >
+          Manage cookies
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 devsite-footer-utility-button">
+        
+        <span class="devsite-footer-utility-description">Get news and tips by email</span>
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="/updates"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Subscribe link"
+         >
+          Subscribe
+        </a>
+        
+      </li>
+      
+    </ul>
+    
+    
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+  </nav>
+</div>
+          
+        </devsite-footer-utility>
+        <devsite-panel>
+          
+        </devsite-panel>
+        
+      </section></section>
+    <devsite-sitemask></devsite-sitemask>
+    <devsite-snackbar></devsite-snackbar>
+    <devsite-tooltip ></devsite-tooltip>
+    <devsite-heading-link></devsite-heading-link>
+    <devsite-analytics>
+      
+        <script type="application/json" analytics>[]</script>
+<script type="application/json" tag-management>{&#34;at&#34;: &#34;True&#34;, &#34;ga4&#34;: [{&#34;id&#34;: &#34;G-QFRN08RN6E&#34;, &#34;purpose&#34;: 0}], &#34;ga4p&#34;: [{&#34;id&#34;: &#34;G-QFRN08RN6E&#34;, &#34;purpose&#34;: 0}], &#34;gtm&#34;: [], &#34;parameters&#34;: {&#34;internalUser&#34;: &#34;False&#34;, &#34;language&#34;: {&#34;machineTranslated&#34;: &#34;False&#34;, &#34;requested&#34;: &#34;en&#34;, &#34;served&#34;: &#34;en&#34;}, &#34;pageType&#34;: &#34;codelab&#34;, &#34;projectName&#34;: null, &#34;signedIn&#34;: &#34;False&#34;, &#34;tenant&#34;: &#34;android&#34;, &#34;recommendations&#34;: {&#34;sourcePage&#34;: &#34;&#34;, &#34;sourceType&#34;: 0, &#34;sourceRank&#34;: 0, &#34;sourceIdenticalDescriptions&#34;: 0, &#34;sourceTitleWords&#34;: 0, &#34;sourceDescriptionWords&#34;: 0, &#34;experiment&#34;: &#34;&#34;}, &#34;experiment&#34;: {&#34;ids&#34;: &#34;&#34;}}}</script>
+      
+    </devsite-analytics>
+    
+      <devsite-badger></devsite-badger>
+    
+    
+    
+<android-fully-clickable
+    target="
+        .android-case-study .devsite-landing-row-item,
+        .android-editorial-and-updates-cards .devsite-card-content-wrapper,
+        .android-editorial-and-updates-cards .devsite-landing-row-item,
+        .android-grouped-resources .devsite-landing-row-item,
+        .android-grouped-resources-contained--primary .devsite-landing-row-item,
+        .android-grouped-resources-contained--secondary .devsite-landing-row-item,
+        .android-grouped-resources-contained--tertiary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--primary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--secondary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--tertiary .devsite-landing-row-item,
+        .android-guide-cards .devsite-landing-row-item,
+        .android-illustrated-resources-index .devsite-landing-row-item,
+        .android-illustrated-resources-primary .devsite-landing-row-item,
+        .android-illustrated-resources-secondary .devsite-landing-row-item,
+        .android-illustrated-resources-secondary-small .devsite-landing-row-item,
+        .android-illustrated-resources-tertiary .devsite-landing-row-item,
+        .android-illustrated-resources-tertiary-small .devsite-landing-row-item,
+        .android-promo .devsite-landing-row-item,
+        .android-quick-link,
+        .android-samples .devsite-card-wrapper,
+        .fully-clickable"
+    watch=".android-editorial-and-updates-cards, .android-samples, devsite-content"></android-fully-clickable>
+    
+<script nonce="K3jpkKPMP7UFI56O/V2dMv4c0T0yq4">
+  
+  (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+    t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+    E.parentNode.insertBefore(t,E);})(window, document, 'script',
+    'https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/js/app_loader.js', '[3,"en",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android","https://android-dot-devsite-v2-prod.appspot.com",1,null,["/_pwa/android/manifest.json","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/favicon.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png","https://fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,600italic,700,700italic|Roboto+Mono:400,500,700&display=swap"],1,null,[1,6,8,12,14,17,21,25,50,52,63,70,75,76,80,87,91,92,93,97,98,100,101,102,103,104,105,107,108,109,110,112,113,117,118,120,122,124,125,126,127,129,130,131,132,133,134,135,136,138,140,141,147,148,149,151,152,156,157,158,159,161,163,164,168,169,170,179,180,182,183,186,191,193,196],"AIzaSyAP-jjEJBzmIyKR4F-3XITp8yM9T1gEEI8","AIzaSyB6xiKGDR5O3Ak2okS4rLkauxGUG7XP0hg","developer.android.com","AIzaSyAQk0fBONSGUqCNznf6Krs82Ap1-NV6J4o","AIzaSyCCxcqdrZ_7QMeLCRY20bh_SXdAYqy70KY",null,null,null,["Profiles__enable_stripe_subscription_management","Search__enable_dynamic_content_confidential_banner","DevPro__enable_vertex_credit_card","Cloud__cache_serialized_dynamic_content","Profiles__enable_completecodelab_endpoint","Significatio__enable_by_tenant","Profiles__enable_recognition_badges","Profiles__enable_dashboard_curated_recommendations","Profiles__enable_developer_profiles_callout","Profiles__enable_public_developer_profiles","MiscFeatureFlags__enable_variable_operator_index_yaml","MiscFeatureFlags__enable_explicit_template_dependencies","MiscFeatureFlags__gdp_dashboard_reskin_enabled","MiscFeatureFlags__enable_dark_theme","MiscFeatureFlags__enable_project_variables","CloudShell__cloud_code_overflow_menu","DevPro__enable_cloud_innovators_plus","Experiments__reqs_query_experiments","DevPro__enable_google_one_card","Profiles__enable_callout_notifications","MiscFeatureFlags__enable_appearance_cookies","Profiles__enable_user_type","Search__enable_page_map","Search__enable_ai_search_summaries_for_all","Profiles__enable_page_saving","DevPro__enable_free_benefits","DevPro__enable_embed_profile_creation","MiscFeatureFlags__developers_footer_image","Cloud__enable_legacy_calculator_redirect","Cloud__fast_free_trial","Profiles__enable_playlist_community_acl","Profiles__enable_profile_collections","Concierge__enable_pushui","Profiles__enable_release_notes_notifications","DevPro__remove_eu_tax_intake_form","Profiles__require_profile_eligibility_for_signin","Cloud__enable_cloud_shell_fte_user_flow","Profiles__enable_complete_playlist_endpoint","MiscFeatureFlags__emergency_css","DevPro__enable_nvidia_credits_card","DevPro__enable_developer_subscriptions","CloudShell__cloud_shell_button","DevPro__enable_devpro_offers","TpcFeatures__enable_unmirrored_page_left_nav","Search__enable_suggestions_from_borg","DevPro__enable_enterprise","TpcFeatures__proxy_prod_host","Cloud__enable_cloud_dlp_service","MiscFeatureFlags__enable_firebase_utm","Concierge__enable_actions_menu","MiscFeatureFlags__enable_view_transitions","Profiles__enable_join_program_group_endpoint","DevPro__enable_firebase_workspaces_card","MiscFeatureFlags__enable_project_body_class","Analytics__enable_clearcut_logging","Cloud__enable_cloudx_experiment_ids","Search__enable_ai_eligibility_checks","MiscFeatureFlags__developers_footer_dark_image","Concierge__enable_remove_info_panel_tags","Profiles__enable_awarding_url","MiscFeatureFlags__enable_framebox_badge_methods","Profiles__enable_purchase_prompts","Cloud__enable_llm_concierge_chat","DevPro__enable_code_assist","Cloud__enable_free_trial_server_call","DevPro__enable_google_payments_buyflow","MiscFeatureFlags__enable_variable_operator","EngEduTelemetry__enable_engedu_telemetry","BookNav__enable_tenant_cache_key","Profiles__enable_completequiz_endpoint","Cloud__enable_cloud_shell","Profiles__enable_developer_profile_benefits_ui_redesign"],null,null,"AIzaSyBLEMok-5suZ67qRPzx0qUtbnLmyT_kCVE","https://developerscontentserving-pa.googleapis.com","AIzaSyCM4QpTRSqP5qI4Dvjt4OAScIN8sOUlO-k","https://developerscontentsearch-pa.googleapis.com",2,4,null,"https://developerprofiles-pa.googleapis.com",[3,"android","Android Developers","developer.android.com",null,"android-dot-devsite-v2-prod.appspot.com",null,null,[null,1,null,null,null,null,null,null,null,null,null,[1],null,null,null,null,null,null,[1],[1,null,null,[1,20],"/recommendations"],null,null,null,[1,null,1],[1,1,null,1,1]],null,[18,null,null,null,null,null,"/images/lockup.png","/images/touchicon-180.png",null,null,null,null,null,null,null,null,null,null,null,null,null,2,null,null,null,"/images/lockup-dark-theme.png",[]],[],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[6,1,14,15,20,22,23,28,29,37,43],null,[[null,null,1],[1,1]],[[null,null,null,null,null,null,null,[["G-QFRN08RN6E"],null,null,[["G-QFRN08RN6E",1]]],null,null,null,null,1],null,[[2,2],[1,1]]],null,4,null,null,null,null,null,null,null,null,null,null,null,null,null,"android.devsite.google"],null,"pk_live_5170syrHvgGVmSx9sBrnWtA5luvk9BwnVcvIi7HizpwauFG96WedXsuXh790rtij9AmGllqPtMLfhe2RSwD6Pn38V00uBCydV4m",1,null,"https://developerscontentinsights-pa.googleapis.com","AIzaSyCg-ZUslalsEbXMfIo9ZP8qufZgo3LSBDU","AIzaSyDxT0vkxnY_KeINtA4LSePJO-4MAZPMRsE","https://developers.googleapis.com",null,null,"AIzaSyBQom12tzI-rybN7Sf-KfeL4nwm-Rf7PmI\n",null,"https://developerslogging.googleapis.com"]')
+  
+</script>
+
+    <devsite-a11y-announce></devsite-a11y-announce>
+  </body>
+</html>

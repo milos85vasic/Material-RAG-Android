@@ -1,0 +1,1981 @@
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html 
+      lang="en"
+      dir="ltr">
+  <head>
+    <meta name="google-signin-client-id" content="721724668570-nbkv1cfusk7kk4eni4pjvepaus73b13t.apps.googleusercontent.com">
+    <meta name="google-signin-scope"
+          content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award">
+    <meta property="og:site_name" content="Android Developers">
+    <meta property="og:type" content="website"><meta name="theme-color" content="#34a853"><meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <link rel="manifest" href="/_pwa/android/manifest.json"
+          crossorigin="use-credentials">
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="//apis.google.com" crossorigin>
+    <link rel="preconnect" href="//www.google-analytics.com" crossorigin><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,600italic,700,700italic|Roboto+Mono:400,500,700&display=swap">
+      <link rel="stylesheet"
+            href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block"><link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/css/app.css">
+      
+        <link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/css/dark-theme.css" disabled>
+      <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/favicon.svg">
+    <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/touchicon-180.png"><link rel="canonical" href="https://developer.android.com/codelabs/starting-android-accessibility"><link rel="search" type="application/opensearchdescription+xml"
+            title="Android Developers" href="https://developer.android.com/s/opensearch.xml">
+      <link rel="alternate" hreflang="en"
+          href="https://developer.android.com/codelabs/starting-android-accessibility" /><link rel="alternate" hreflang="x-default" href="https://developer.android.com/codelabs/starting-android-accessibility" /><link rel="alternate" hreflang="zh-Hans"
+          href="https://developer.android.com/codelabs/starting-android-accessibility?hl=zh-cn" /><link rel="alternate" hreflang="fr"
+          href="https://developer.android.com/codelabs/starting-android-accessibility?hl=fr" /><link rel="alternate" hreflang="id"
+          href="https://developer.android.com/codelabs/starting-android-accessibility?hl=id" /><link rel="alternate" hreflang="ja"
+          href="https://developer.android.com/codelabs/starting-android-accessibility?hl=ja" /><link rel="alternate" hreflang="ko"
+          href="https://developer.android.com/codelabs/starting-android-accessibility?hl=ko" /><link rel="alternate" hreflang="pt-BR"
+          href="https://developer.android.com/codelabs/starting-android-accessibility?hl=pt-br" /><link rel="alternate" hreflang="es-419"
+          href="https://developer.android.com/codelabs/starting-android-accessibility?hl=es-419" /><title>Starting Android Accessibility &nbsp;|&nbsp; Android Developers</title>
+
+<meta property="og:title" content="Starting Android Accessibility &nbsp;|&nbsp; Android Developers"><meta name="description" content="In this codelab, you’ll learn the fundamentals of Android Accessibility. You’ll work through exercises to learn how to use the Android platform to build apps that can be used more easily by a wider set of people with different accessibility needs.">
+  <meta property="og:description" content="In this codelab, you’ll learn the fundamentals of Android Accessibility. You’ll work through exercises to learn how to use the Android platform to build apps that can be used more easily by a wider set of people with different accessibility needs."><meta property="og:url" content="https://developer.android.com/codelabs/starting-android-accessibility"><meta property="og:locale" content="en">
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+
+    
+      <link rel="stylesheet" href="/extras.css"></head>
+  <body class=""
+        template="codelab"
+        theme="android-theme"
+        type="codelab"
+        
+        
+        appearance
+        
+        layout="docs"
+        
+        
+        
+        
+        display-toc
+        pending>
+  
+    <devsite-progress type="indeterminate" id="app-progress"></devsite-progress>
+  
+  
+    <a href="#main-content" class="skip-link button">
+      
+      Skip to main content
+    </a>
+    <section class="devsite-wrapper">
+      <devsite-cookie-notification-bar></devsite-cookie-notification-bar><devsite-header role="banner">
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-header--inner" data-nosnippet>
+  <div class="devsite-top-logo-row-wrapper-wrapper">
+    <div class="devsite-top-logo-row-wrapper">
+      <div class="devsite-top-logo-row">
+        <button type="button" id="devsite-hamburger-menu"
+          class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+          data-category="Site-Wide Custom Events"
+          data-label="Navigation menu button"
+          visually-hidden
+          aria-label="Open menu">
+        </button>
+        
+<div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="androidDevelopers" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-dark-theme.png"
+            media="(prefers-color-scheme: dark)"
+            class="devsite-dark-theme">
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png" class="devsite-site-logo" alt="Android Developers">
+  </picture>
+  
+</a>
+
+
+
+</div>
+        <div class="devsite-top-logo-row-middle">
+          <div class="devsite-header-upper-tabs">
+            
+           </div>
+          
+<devsite-search
+    enable-signin
+    enable-search
+    enable-suggestions
+      enable-query-completion
+    
+    enable-search-summaries
+    
+    tenant-name="Android Developers"
+    
+    
+    
+    
+    
+    >
+  <form class="devsite-search-form" action="https://developer.android.com/s/results" method="GET">
+    <div class="devsite-search-container">
+      <button type="button"
+              search-open
+              class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+              
+              aria-label="Open search"></button>
+      <div class="devsite-searchbox">
+        <input
+          aria-activedescendant=""
+          aria-autocomplete="list"
+          
+          aria-label="Search"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          autocomplete="off"
+          class="devsite-search-field devsite-search-query"
+          name="q"
+          
+          placeholder="Search"
+          role="combobox"
+          type="text"
+          value=""
+          >
+          <div class="devsite-search-image material-icons" aria-hidden="true">
+            
+              <svg class="devsite-search-ai-image" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_6641_386)">
+                    <path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14167 15.375 4.875 14.125C3.625 12.8583 3 11.3167 3 9.5C3 7.68333 3.625 6.15 4.875 4.9C6.14167 3.63333 7.68333 3 9.5 3C10.0167 3 10.5167 3.05833 11 3.175C11.4833 3.275 11.9417 3.43333 12.375 3.65L10.825 5.2C10.6083 5.13333 10.3917 5.08333 10.175 5.05C9.95833 5.01667 9.73333 5 9.5 5C8.25 5 7.18333 5.44167 6.3 6.325C5.43333 7.19167 5 8.25 5 9.5C5 10.75 5.43333 11.8167 6.3 12.7C7.18333 13.5667 8.25 14 9.5 14C10.6667 14 11.6667 13.625 12.5 12.875C13.35 12.1083 13.8417 11.15 13.975 10H15.975C15.925 10.6333 15.7833 11.2333 15.55 11.8C15.3333 12.3667 15.05 12.8667 14.7 13.3L21 19.6L19.6 21ZM17.5 12C17.5 10.4667 16.9667 9.16667 15.9 8.1C14.8333 7.03333 13.5333 6.5 12 6.5C13.5333 6.5 14.8333 5.96667 15.9 4.9C16.9667 3.83333 17.5 2.53333 17.5 0.999999C17.5 2.53333 18.0333 3.83333 19.1 4.9C20.1667 5.96667 21.4667 6.5 23 6.5C21.4667 6.5 20.1667 7.03333 19.1 8.1C18.0333 9.16667 17.5 10.4667 17.5 12Z" fill="#5F6368"/>
+                  </g>
+                <defs>
+                <clipPath id="clip0_6641_386">
+                <rect width="24" height="24" fill="white"/>
+                </clipPath>
+                </defs>
+              </svg>
+            
+          </div>
+          <div class="devsite-search-shortcut-icon-container" aria-hidden="true">
+            <kbd class="devsite-search-shortcut-icon">/</kbd>
+          </div>
+      </div>
+    </div>
+  </form>
+  <button type="button"
+          search-close
+          class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+          
+          aria-label="Close search"></button>
+</devsite-search>
+
+        </div>
+
+        
+
+          
+
+          
+
+          <devsite-appearance-selector></devsite-appearance-selector>
+
+          
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+
+          
+            <a class="devsite-header-link devsite-top-button button gc-analytics-event "
+    href="https://developer.android.com/studio"
+    data-category="Site-Wide Custom Events"
+    data-label="Site header link: Android Studio"
+    >
+  Android Studio
+</a>
+          
+
+        
+
+        
+          <devsite-user 
+                        
+                        
+                          enable-profiles
+                        
+                        
+                        id="devsite-user">
+            
+              
+              <span class="button devsite-top-button" aria-hidden="true" visually-hidden>Sign in</span>
+            
+          </devsite-user>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
+  
+</devsite-header>
+      <devsite-book-nav scrollbars hidden>
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-book-nav-filter"
+     hidden>
+  <span class="filter-list-icon material-icons" aria-hidden="true"></span>
+  <input type="text"
+         placeholder="Filter"
+         
+         aria-label="Type to filter"
+         role="searchbox">
+  
+  <span class="filter-clear-button hidden"
+        data-title="Clear filter"
+        aria-label="Clear filter"
+        role="button"
+        tabindex="0"></span>
+</div>
+
+<nav class="devsite-book-nav devsite-nav nocontent"
+     aria-label="Side menu">
+  <div class="devsite-mobile-header">
+    <button type="button"
+            id="devsite-close-nav"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Close navigation"
+            aria-label="Close navigation">
+    </button>
+    <div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="androidDevelopers" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-dark-theme.png"
+            media="(prefers-color-scheme: dark)"
+            class="devsite-dark-theme">
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png" class="devsite-site-logo" alt="Android Developers">
+  </picture>
+  
+</a>
+
+
+</div>
+  </div>
+
+  <div class="devsite-book-nav-wrapper">
+    <div class="devsite-mobile-nav-top">
+      
+        <ul class="devsite-nav-list">
+          
+          
+    
+    
+<li class="devsite-nav-item">
+
+  
+  <a href="/studio"
+    
+       class="devsite-nav-title gc-analytics-event "
+    
+
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Android Studio"
+     track-type="navMenu"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Android Studio
+   </span>
+    
+  
+  </a>
+  
+
+</li>
+
+  
+          
+        </ul>
+      
+    </div>
+    
+  </div>
+</nav>
+        
+      </devsite-book-nav>
+      <section id="gc-wrapper">
+        <main role="main" id="main-content" class="devsite-main-content"
+            
+              
+              has-sidebar
+            >
+          <div class="devsite-sidebar">
+            <div class="devsite-sidebar-content">
+                
+                <devsite-toc class="devsite-nav"
+                            role="navigation"
+                            aria-label="On this page"
+                            depth="1"
+                            scrollbars
+                  ></devsite-toc>
+                <devsite-recommendations-sidebar class="nocontent devsite-nav">
+                </devsite-recommendations-sidebar>
+            </div>
+          </div>
+          <devsite-content>
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="devsite-article"><style>
+      body {
+        transition: opacity ease-in 0.2s;
+      }
+
+      body[unresolved] {
+        opacity: 0;
+        display: block;
+        overflow: hidden;
+        position: relative;
+      }
+      </style>
+  
+  
+  
+  
+  
+
+  <div class="devsite-article-meta nocontent" role="navigation">
+    
+    
+    <ul class="devsite-breadcrumb-list"
+  >
+  
+</ul>
+    
+  </div>
+  
+    <h1 class="devsite-page-title" tabindex="-1">
+      Starting Android Accessibility<div class="devsite-actions" hidden data-nosnippet><devsite-feature-tooltip
+      ack-key="AckCollectionsBookmarkTooltipDismiss"
+      analytics-category="Site-Wide Custom Events"
+      analytics-action-show="Callout Profile displayed"
+      analytics-action-close="Callout Profile dismissed"
+      analytics-label="Create Collection Callout"
+      class="devsite-page-bookmark-tooltip nocontent"
+      dismiss-button="true"
+      id="devsite-collections-dropdown"
+      
+      dismiss-button-text="Dismiss"
+
+      
+      close-button-text="Got it">
+
+    
+    
+      <devsite-bookmark></devsite-bookmark>
+    
+
+    <span slot="popout-heading">
+      
+      Stay organized with collections
+    </span>
+    <span slot="popout-contents">
+      
+      Save and categorize content based on your preferences.
+    </span>
+  </devsite-feature-tooltip></div>
+  
+      
+    </h1>
+  
+
+  <devsite-toc class="devsite-nav"
+    depth="1"
+    devsite-toc-embedded
+    >
+  </devsite-toc>
+  
+    
+  <div class="devsite-article-body clearfix
+  ">
+
+  
+    
+    
+    <google-codelab-analytics gaid="UA-49880327-14" ga4id="G-JTFZSJVVVZ"></google-codelab-analytics>
+    <google-codelab codelab-gaid="UA-52746336-1"
+                    codelab-ga4id=""
+                    doc-id=""
+                    id="starting-android-accessibility"
+                    title="Starting Android Accessibility"
+                    no-tooltip=""
+                    environment="web"
+                    category=""
+                    feedback-link="https://github.com/android/codelab-android-accessibility/issues"
+                    layout="paginated"
+                    >
+      
+        <google-codelab-step label="Introduction" duration="0" step="0">
+          
+            <google-codelab-about codelab-title="Starting Android Accessibility"
+                                  authors="Shailen Tuli"
+                                  last-updated="2024-05-25T00:42:14Z"
+                                  duration="16">
+            </google-codelab-about>
+          
+          <h2 class="step-title" id="0" data-text="Introduction" tabindex="-1">
+              1. Introduction
+          </h2>
+          <p class="image-container"><img alt="logo_accessibility_color_2x_web_96dp.png" style="width: 192.00px" src="/static/codelabs/starting-android-accessibility/img/bd6e392271bac146.png" srcset="https://developer.android.com/static/codelabs/starting-android-accessibility/img/bd6e392271bac146_36.png 36w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/bd6e392271bac146_48.png 48w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/bd6e392271bac146_72.png 72w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/bd6e392271bac146_96.png 96w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/bd6e392271bac146_480.png 480w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/bd6e392271bac146_720.png 720w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/bd6e392271bac146_856.png 856w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/bd6e392271bac146_960.png 960w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/bd6e392271bac146_1440.png 1440w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/bd6e392271bac146_1920.png 1920w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/bd6e392271bac146_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p><strong>Android apps should be usable by everyone, including people with accessibility needs</strong>. Common conditions that affect a person&#39;s use of an Android device include blindness or low vision, deafness or impaired hearing, restricted motor skills, cognitive disabilities, and color blindness. And this is just a partial list.</p>
+<p>In this codelab, you will learn about commonly occurring accessibility issues in apps. Specifically, you will focus on three such issues:</p>
+<ol type="1">
+<li>Missing labels</li>
+<li>Inadequate touch targets</li>
+<li>Poor contrast between foreground and background</li>
+</ol>
+<p>You will learn how these issues affect users, how you can check if these issues are present in your apps, and how you can go about fixing them.</p>
+<p>The codelab is structured in small, discrete steps. Each step focuses on a specific aspect of accessibility.</p>
+<h2 is-upgraded id="audience-and-prerequisites" data-text="Audience and Prerequisites" tabindex="-1"><strong>Audience and Prerequisites</strong></h2>
+<p>This codelab is intended for Android developers who want to understand how to make their apps accessible to users with accessibility needs. <strong>No previous knowledge of accessibility APIs or guidelines is assumed.</strong></p>
+<p>This codelab assumes the following:</p>
+<ol type="1">
+<li>Basic familiarity with writing Android apps.</li>
+<li>Access to an Android device running Lollipop (API level 21) or higher.</li>
+<li>Ability to install the  <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.auditor&hl=en" target="_blank">Accessibility Scanner</a> app from the Google Play Store.</li>
+</ol>
+<aside class="special"><p>Since this is an entry-level codelab, you will not learn how to use accessibility services in this codelab. Instead, you will focus on developing a conceptual understanding of common accessibility issues using <strong>Accessibility Scanner</strong>. See the links at the end of the codelab for other ways to learn about testing with accessibility services like <a href="https://support.google.com/accessibility/android/answer/6122836" target="_blank">Switch Access</a> and <a href="https://support.google.com/accessibility/android/answer/6283677" target="_blank">Talkback</a>.</p>
+</aside>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Getting Set Up" duration="2" step="1">
+          
+          <h2 class="step-title" id="1" data-text="Getting Set Up" tabindex="-1">
+              2. Getting Set Up
+          </h2>
+          <h2 is-upgraded id="what-youll-be-building" data-text="What you'll be building" tabindex="-1">What you'll be building</h2>
+<p>In this codelab, you&#39;ll be working with an existing app, <strong>Counter</strong>. This app allows users to track, increment, and decrement a numerical count. Even though the app is simple, you&#39;ll discover that it has numerous accessibility issues that make it hard for many users to properly interact with it.</p>
+<p>During the course of this codelab, you&#39;ll improve this app and make it more accessible. Your improvements will help blind and low vision users as well as users with mobility and dexterity issues. Fixing <strong>Counter</strong> will provide you with basic knowledge about accessibility that you can use to improve the accessibility of your own apps.</p>
+<h2 is-upgraded id="download-the-code" data-text="Download the Code" tabindex="-1">Download the Code</h2>
+<p>You can get the <a href="https://github.com/android/codelab-android-accessibility" target="_blank">source code for the starting version</a> of the app from GitHub. Clone the repo, and open <strong>Counter</strong> in Android Studio.</p>
+<aside class="special"><p>You&#39;ll work in the <strong>master</strong> branch throughout this codelab. If you get stuck (or just want to peek ahead), you can see the  <a href="https://github.com/android/codelab-android-accessibility/tree/accessible" target="_blank">finished version of the app</a> on the <strong>accessible</strong> branch.</p>
+</aside>
+<p>Each step in this codelab is structured so that you work on a feature that has been implemented in a less accessible manner. By the end of each step, you will have modified the code, and you will have made the screen or feature more accessible.</p>
+<h2 is-upgraded id="launching-the-demo-application" data-text="Launching the demo application" tabindex="-1"><strong>Launching the demo application</strong></h2>
+<ol type="1">
+<li>Launch Android Studio and open the <strong>Counter</strong> project. Make sure a device is connected to your computer.</li>
+<li>Press the green <strong>Play</strong> icon  <img alt="Screen Shot 2016-05-11 at 8.53.21 AM.png" style="width: 38.00px" src="/static/codelabs/starting-android-accessibility/img/1fecbe8cf96f1d28.png" srcset="https://developer.android.com/static/codelabs/starting-android-accessibility/img/1fecbe8cf96f1d28_36.png 36w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/1fecbe8cf96f1d28_48.png 48w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/1fecbe8cf96f1d28_72.png 72w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/1fecbe8cf96f1d28_96.png 96w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/1fecbe8cf96f1d28_480.png 480w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/1fecbe8cf96f1d28_720.png 720w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/1fecbe8cf96f1d28_856.png 856w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/1fecbe8cf96f1d28_960.png 960w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/1fecbe8cf96f1d28_1440.png 1440w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/1fecbe8cf96f1d28_1920.png 1920w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/1fecbe8cf96f1d28_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"> from the menu bar towards the top of the screen. This should launch the <strong>Counter</strong> app. The landing page for that app looks something like this:</li>
+</ol>
+<p class="image-container"><img alt="782e10ac891e76d4.png" style="width: 562.00px" src="/static/codelabs/starting-android-accessibility/img/782e10ac891e76d4.png" srcset="https://developer.android.com/static/codelabs/starting-android-accessibility/img/782e10ac891e76d4_36.png 36w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/782e10ac891e76d4_48.png 48w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/782e10ac891e76d4_72.png 72w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/782e10ac891e76d4_96.png 96w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/782e10ac891e76d4_480.png 480w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/782e10ac891e76d4_720.png 720w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/782e10ac891e76d4_856.png 856w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/782e10ac891e76d4_960.png 960w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/782e10ac891e76d4_1440.png 1440w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/782e10ac891e76d4_1920.png 1920w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/782e10ac891e76d4_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<ol type="1" start="3">
+<li>Play with the demo app a little bit, using the increment (<strong>&#34;+&#34;</strong>) and decrement (<strong>&#34;-&#34;</strong>) buttons to change the count.</li>
+</ol>
+<p>For many users, this is an easy app to use. But accessibility issues make it challenging for some users. You&#39;ll find out more about those challenges in this codelab.</p>
+<p>First, you&#39;ll set up  <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.auditor&hl=en" target="_blank">Accessibility Scanner</a>, the tool you&#39;ll be using in this codelab to identify accessibility issues.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Accessibility Scanner" duration="4" step="2">
+          
+          <h2 class="step-title" id="2" data-text="Accessibility Scanner" tabindex="-1">
+              3. Accessibility Scanner
+          </h2>
+          <p><strong>Accessibility Scanner</strong> is a tool created by Google that suggests accessibility improvements for Android apps—such as enlarging small touch targets, increasing contrast, and providing content descriptions—so that individuals with accessibility needs can use your app more easily.</p>
+<p class="image-container"><img alt="Accessibility Scanner on the Play Store" title="Scanner" style="width: 610.00px" src="/static/codelabs/starting-android-accessibility/img/80422bba6e519497.png" srcset="https://developer.android.com/static/codelabs/starting-android-accessibility/img/80422bba6e519497_36.png 36w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/80422bba6e519497_48.png 48w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/80422bba6e519497_72.png 72w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/80422bba6e519497_96.png 96w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/80422bba6e519497_480.png 480w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/80422bba6e519497_720.png 720w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/80422bba6e519497_856.png 856w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/80422bba6e519497_960.png 960w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/80422bba6e519497_1440.png 1440w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/80422bba6e519497_1920.png 1920w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/80422bba6e519497_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>You can download and configure <strong>Accessibility Scanner</strong> using the following steps:</p>
+<ol type="1">
+<li><a href="https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.auditor" target="_blank">Download Accessibility Scanner from the Google Play Store</a>.</li>
+<li>After you&#39;ve installed <strong>Accessibility Scanner</strong>, navigate to <strong>Settings &gt; Accessibility</strong> on your device. Locate and turn on Accessibility Scanner (Tap <strong>&#34;Allow&#34;</strong> or <strong>&#34;OK&#34;</strong>, then <strong>&#34;Begin Authorization&#34;</strong> to complete the setup workflow).</li>
+<li>Return to the <strong>Counter</strong> app. Your screen should now look like this:</li>
+</ol>
+<p class="image-container"><img alt="e79b056386dbc742.png" style="width: 610.00px" src="/static/codelabs/starting-android-accessibility/img/e79b056386dbc742.png" srcset="https://developer.android.com/static/codelabs/starting-android-accessibility/img/e79b056386dbc742_36.png 36w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/e79b056386dbc742_48.png 48w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/e79b056386dbc742_72.png 72w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/e79b056386dbc742_96.png 96w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/e79b056386dbc742_480.png 480w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/e79b056386dbc742_720.png 720w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/e79b056386dbc742_856.png 856w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/e79b056386dbc742_960.png 960w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/e79b056386dbc742_1440.png 1440w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/e79b056386dbc742_1920.png 1920w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/e79b056386dbc742_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>You&#39;ll notice that <strong>Accessibility Scanner</strong> creates a blue Floating Action Button (FAB), which is overlaid on top of any content you have on the screen.</p>
+<p class="image-container"><img alt="fb39571ce90d713.png" style="width: 41.78px" src="/static/codelabs/starting-android-accessibility/img/fb39571ce90d713.png" srcset="https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_36.png 36w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_48.png 48w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_72.png 72w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_96.png 96w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_480.png 480w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_720.png 720w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_856.png 856w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_960.png 960w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_1440.png 1440w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_1920.png 1920w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>You can tap the FAB to start an accessibility scan (you&#39;ll do that  in a moment). To move the FAB to another area of the screen, you can long-press on it and drag it.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Scanning the Counter App" duration="0" step="3">
+          
+          <h2 class="step-title" id="3" data-text="Scanning the Counter App" tabindex="-1">
+              4. Scanning the Counter App
+          </h2>
+          <p>In this section you&#39;ll perform an accessibility audit of the screen using <strong>Accessibility Scanner</strong>:</p>
+<ol type="1">
+<li>Tap  on  <img alt="fb39571ce90d713.png" style="width: 41.78px" src="/static/codelabs/starting-android-accessibility/img/fb39571ce90d713.png" srcset="https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_36.png 36w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_48.png 48w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_72.png 72w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_96.png 96w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_480.png 480w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_720.png 720w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_856.png 856w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_960.png 960w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_1440.png 1440w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_1920.png 1920w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"> to launch the scan. When you do this, <strong>Accessibility Scanner</strong> examines the UI of your screen, performs a quick audit for accessibility, and prepares suggestions for accessibility-related improvement.</li>
+<li>Examine the output from running a scan. It should look something like this:</li>
+</ol>
+<p class="image-container"><img alt="bdd8e1ce7558eb81.png" style="width: 562.00px" src="/static/codelabs/starting-android-accessibility/img/bdd8e1ce7558eb81.png" srcset="https://developer.android.com/static/codelabs/starting-android-accessibility/img/bdd8e1ce7558eb81_36.png 36w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/bdd8e1ce7558eb81_48.png 48w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/bdd8e1ce7558eb81_72.png 72w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/bdd8e1ce7558eb81_96.png 96w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/bdd8e1ce7558eb81_480.png 480w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/bdd8e1ce7558eb81_720.png 720w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/bdd8e1ce7558eb81_856.png 856w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/bdd8e1ce7558eb81_960.png 960w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/bdd8e1ce7558eb81_1440.png 1440w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/bdd8e1ce7558eb81_1920.png 1920w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/bdd8e1ce7558eb81_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p><strong>Accessibility Scanner</strong> highlights the views that may have accessibility issues, and offers suggestions for how you can fix those issues.</p>
+<h2 is-upgraded id="understanding-accessibility-scanners-suggestions" data-text="Understanding Accessibility Scanner's suggestions" tabindex="-1">Understanding Accessibility <strong>Scanner's suggestions</strong></h2>
+<p><strong>Accessibility Scanner</strong> has five suggestions for improving <strong>Counter</strong>&#39;s accessibility.</p>
+<h3 is-upgraded id="insufficient-contrast" data-text="Insufficient contrast" tabindex="-1">Insufficient contrast</h3>
+<p><strong>Accessibility Scanner</strong> recommends fixing the poor color contrast in the view that shows the current count.</p>
+<ol type="1">
+<li>Tap on the count field, outlined in orange in the middle of the screen, and see <strong>Scanner&#39;s</strong> suggestion:</li>
+</ol>
+<p class="image-container"><img alt="fa2bf7446019bf2c.png" style="width: 562.00px" src="/static/codelabs/starting-android-accessibility/img/fa2bf7446019bf2c.png" srcset="https://developer.android.com/static/codelabs/starting-android-accessibility/img/fa2bf7446019bf2c_36.png 36w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fa2bf7446019bf2c_48.png 48w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fa2bf7446019bf2c_72.png 72w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fa2bf7446019bf2c_96.png 96w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fa2bf7446019bf2c_480.png 480w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fa2bf7446019bf2c_720.png 720w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fa2bf7446019bf2c_856.png 856w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fa2bf7446019bf2c_960.png 960w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fa2bf7446019bf2c_1440.png 1440w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fa2bf7446019bf2c_1920.png 1920w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fa2bf7446019bf2c_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<ol type="1" start="2">
+<li>Expand the error and see details about how to apply <strong>Scanner&#39;s</strong> suggestion. You&#39;ll notice that <strong>Scanner</strong> shows you the foreground and background colors and the existing and suggested contrast ratios:</li>
+</ol>
+<p class="image-container"><img alt="b88532209a57e916.png" style="width: 562.00px" src="/static/codelabs/starting-android-accessibility/img/b88532209a57e916.png" srcset="https://developer.android.com/static/codelabs/starting-android-accessibility/img/b88532209a57e916_36.png 36w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/b88532209a57e916_48.png 48w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/b88532209a57e916_72.png 72w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/b88532209a57e916_96.png 96w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/b88532209a57e916_480.png 480w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/b88532209a57e916_720.png 720w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/b88532209a57e916_856.png 856w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/b88532209a57e916_960.png 960w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/b88532209a57e916_1440.png 1440w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/b88532209a57e916_1920.png 1920w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/b88532209a57e916_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p><strong>Why does color contrast matter for accessibility?</strong> Users with impaired vision have more difficulty reading information on a screen if there is not enough contrast between the foreground and background colors. <strong>Low contrast ratios can cause views to blur together for some users</strong>, while high contrast ratios make the views stand out more clearly. Different lighting situations can amplify the difficulties created by low contrast ratios.</p>
+<aside class="special"><p>A <em>temporary</em> or <em>situational</em> disability can often pose accessibility-related challenges for users who do not consider themselves to have an accessibility need and who do not usually rely on assistive technologies.</p>
+<p>In this example, even a person with good eyesight may find that due to the low color contrast, the count field  might be harder to read in bright outdoor light, thus making the app less accessible.</p>
+<p>Thinking about accessibility helps <strong>all</strong> users, not just users with accessibility needs.</p>
+</aside>
+<h3 is-upgraded id="missing-labels" data-text="Missing labels" tabindex="-1"><strong>Missing labels</strong></h3>
+<p><strong>Scanner</strong> flags the missing labels in the <strong>&#34;-&#34;</strong> and <strong>&#34;+&#34; </strong><code translate="no" dir="ltr">ImageButtons</code>, which makes it hard for screenreader users to know the purpose of these controls.</p>
+<ol type="1">
+<li>Tap on the errors associated with either the <strong>&#34;-&#34;</strong> and <strong>&#34;+&#34;</strong>  buttons, and read the suggestions related to the missing labels:</li>
+</ol>
+<p class="image-container"><img alt="4c8476ac798a3089.png" style="width: 562.00px" src="/static/codelabs/starting-android-accessibility/img/4c8476ac798a3089.png" srcset="https://developer.android.com/static/codelabs/starting-android-accessibility/img/4c8476ac798a3089_36.png 36w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/4c8476ac798a3089_48.png 48w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/4c8476ac798a3089_72.png 72w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/4c8476ac798a3089_96.png 96w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/4c8476ac798a3089_480.png 480w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/4c8476ac798a3089_720.png 720w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/4c8476ac798a3089_856.png 856w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/4c8476ac798a3089_960.png 960w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/4c8476ac798a3089_1440.png 1440w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/4c8476ac798a3089_1920.png 1920w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/4c8476ac798a3089_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p><strong>Why are missing labels problematic for accessibility?</strong> Users who are blind or visually impaired use screenreaders like <a href="https://support.google.com/accessibility/android/answer/6283677" target="_blank">Talkback</a> to interact with their devices. Talkback announces the screen content to the user who can then interact with the discovered content. When an element does not have associated text (an <code translate="no" dir="ltr">ImageButton</code>, for example), Talkback doesn&#39;t know how to properly convey that element&#39;s purpose to the user; in such a case, it may default to announcing &#34;Unlabelled button&#34;, which is unhelpful to the user.  When you provide a properly descriptive label, Talkback can announce it to the user.</p>
+<h3 is-upgraded id="insufficient-touch-targets" data-text="Insufficient Touch Targets" tabindex="-1"><strong>Insufficient Touch Targets</strong></h3>
+<p>In addition to the missing labels, <strong>Scanner</strong> suggests increasing the touchable area for the <strong>&#34;-&#34;</strong> and <strong>&#34;+&#34;</strong> buttons:</p>
+<p class="image-container"><img alt="4bde82d712530aaf.png" style="width: 610.00px" src="/static/codelabs/starting-android-accessibility/img/4bde82d712530aaf.png" srcset="https://developer.android.com/static/codelabs/starting-android-accessibility/img/4bde82d712530aaf_36.png 36w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/4bde82d712530aaf_48.png 48w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/4bde82d712530aaf_72.png 72w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/4bde82d712530aaf_96.png 96w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/4bde82d712530aaf_480.png 480w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/4bde82d712530aaf_720.png 720w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/4bde82d712530aaf_856.png 856w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/4bde82d712530aaf_960.png 960w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/4bde82d712530aaf_1440.png 1440w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/4bde82d712530aaf_1920.png 1920w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/4bde82d712530aaf_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p><strong>Why are small touch targets problematic for accessibility?</strong> Many people have difficulty focusing on small touch targets on the screen. This could simply be because their fingers are large, or because they have a medical condition that impairs their motor skills. Small touch targets also make it harder for screen reader users to navigate apps by moving a finger around the screen, such as when using the <a href="https://support.google.com/accessibility/android/answer/6006598" target="_blank">Explore by Touch</a> feature in TalkBack.</p>
+<aside class="special"><p>Inadequate touch target sizes make apps less accessible for all users in some circumstances, not just users with accessibility needs.</p>
+<p>In the case of the increment/decrement buttons, the touch area is small even for a user with excellent motor skills. If such a user were to rapidly tap either button for a few seconds, they might notice that some of their touches don&#39;t register. If they tried doing this while walking (with reduced touch precision), the experience could be even more challenging.</p>
+<p>Remember, thinking about accessibility helps all users, not just users with accessibility needs.</p>
+</aside>
+<h3 is-upgraded id="summary" data-text="Summary" tabindex="-1"><strong>Summary</strong></h3>
+<p>You&#39;ve explored only a tiny fraction of the functionality provided by <strong>Accessibility Scanner</strong>. But the suggestions that <strong>Accessibility Scanner</strong> provided—those related to color contrast, item labels, and touch targets—commonly appear in Android apps. Applying the suggestions can go a long way towards making your apps more accessible. And the fixes are often pretty straightforward.</p>
+<p>So, let&#39;s get coding!</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Ensuring Adequate Color Contrast" duration="3" step="4">
+          
+          <h2 class="step-title" id="4" data-text="Ensuring Adequate Color Contrast" tabindex="-1">
+              5. Ensuring Adequate Color Contrast
+          </h2>
+          <p>In <strong>Counter</strong>, the color contrast is straightforward to improve. The <code translate="no" dir="ltr">TextView</code> displaying the count uses a light grey background and a grey text color:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL"><code translate="no" dir="ltr">&lt;<span class="devsite-syntax-n">TextView</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-p">...</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">background</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@color/lightGrey"</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">textColor</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@color/grey"</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-p">...</span>
+<span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/</span>&gt;
+</code></pre></devsite-code>
+<p>You can remove the background, pick a lighter background, or pick a darker text color. In this codelab, you&#39;ll pick a darker text color. Here are some colors that have been defined for you in <strong>colors.xml</strong>:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only"><code translate="no" dir="ltr">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;resources&gt;
+   ...
+   &lt;color name="lightGrey"&gt;#EEEEEE&lt;/color&gt;
+   &lt;color name="grey"&gt;#999999&lt;/color&gt;
+   &lt;color name="darkGrey"&gt;#666666&lt;/color&gt;
+&lt;/resources&gt;
+</code></pre></devsite-code>
+<p>Open <strong>res/layout/activity_main.xml</strong> and change <code translate="no" dir="ltr">android:textColor="@color/grey"</code> to <code translate="no" dir="ltr">android:textColor="@color/darkGrey"</code> :</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL"><code translate="no" dir="ltr">&lt;<span class="devsite-syntax-n">TextView</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-p">...</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">background</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@color/lightGrey"</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">textColor</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@color/darkGrey"</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-p">...</span>
+<span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/</span>&gt;
+</code></pre></devsite-code>
+<p>Now run the app, and observe the changed contrast:</p>
+<table class="vertical-rules">
+<tr><td colspan="1" rowspan="1"><p>Before</p>
+</td><td colspan="1" rowspan="1"><p>After</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img src="/static/codelabs/starting-android-accessibility/img/e48af782c716ea54.png" srcset="https://developer.android.com/static/codelabs/starting-android-accessibility/img/e48af782c716ea54_36.png 36w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/e48af782c716ea54_48.png 48w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/e48af782c716ea54_72.png 72w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/e48af782c716ea54_96.png 96w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/e48af782c716ea54_480.png 480w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/e48af782c716ea54_720.png 720w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/e48af782c716ea54_856.png 856w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/e48af782c716ea54_960.png 960w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/e48af782c716ea54_1440.png 1440w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/e48af782c716ea54_1920.png 1920w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/e48af782c716ea54_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+</td><td colspan="1" rowspan="1"><p class="image-container"><img src="/static/codelabs/starting-android-accessibility/img/d0d90bf68ab4f5a6.png" srcset="https://developer.android.com/static/codelabs/starting-android-accessibility/img/d0d90bf68ab4f5a6_36.png 36w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/d0d90bf68ab4f5a6_48.png 48w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/d0d90bf68ab4f5a6_72.png 72w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/d0d90bf68ab4f5a6_96.png 96w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/d0d90bf68ab4f5a6_480.png 480w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/d0d90bf68ab4f5a6_720.png 720w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/d0d90bf68ab4f5a6_856.png 856w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/d0d90bf68ab4f5a6_960.png 960w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/d0d90bf68ab4f5a6_1440.png 1440w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/d0d90bf68ab4f5a6_1920.png 1920w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/d0d90bf68ab4f5a6_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+</td></tr>
+</table>
+<p>The contrast ratio is now 4.94:1, which is considerably better than 2.45: 1, which is what you had before:</p>
+<table class="vertical-rules">
+<tr><td colspan="1" rowspan="1"></td><td colspan="1" rowspan="1"><p><strong>Background</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>Text Color</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>Contrast ratio</strong></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Before</p>
+</td><td colspan="1" rowspan="1"><p>#EEEEEE</p>
+</td><td colspan="1" rowspan="1"><p>Light gray (#999999)</p>
+</td><td colspan="1" rowspan="1"><p><strong>2.45:1</strong></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>After</p>
+</td><td colspan="1" rowspan="1"><p>#EEEEEE</p>
+</td><td colspan="1" rowspan="1"><p>Dark gray (#666666)</p>
+</td><td colspan="1" rowspan="1"><p><strong>4.94:1</strong></p>
+</td></tr>
+</table>
+<p>So, what constitutes adequate contrast? The  <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank">Web Content Accessibility Guidelines</a> recommend a  <a href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html" target="_blank">minimum contrast ratio</a> of <strong>4.5:1</strong> for all text, with a contrast ratio of <strong>3.0:1</strong> considered acceptable for large or bold text. Try to meet or exceed these contrast ratios in your applications.</p>
+<aside class="special"><p><strong>Accessibility Scanner</strong> will help you spot color contrast issues once you have a working app. But it is better to consider contrast issues while designing the color palette of your app. You can use  <a href="http://webaim.org/resources/contrastchecker/" target="_blank">one of the many contrast checkers</a> available online to check your contrast ratios.</p>
+</aside>
+<p><img alt="fb39571ce90d713.png" style="width: 41.78px" src="/static/codelabs/starting-android-accessibility/img/fb39571ce90d713.png" srcset="https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_36.png 36w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_48.png 48w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_72.png 72w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_96.png 96w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_480.png 480w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_720.png 720w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_856.png 856w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_960.png 960w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_1440.png 1440w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_1920.png 1920w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"> Press the FAB to begin another scan using <strong>Accessibility Scanner,</strong> and you&#39;ll see that the app no longer makes any suggestions related to color contrast:</p>
+<p class="image-container"><img alt="5b375bcb2af0d91d.png" style="width: 610.00px" src="/static/codelabs/starting-android-accessibility/img/5b375bcb2af0d91d.png" srcset="https://developer.android.com/static/codelabs/starting-android-accessibility/img/5b375bcb2af0d91d_36.png 36w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/5b375bcb2af0d91d_48.png 48w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/5b375bcb2af0d91d_72.png 72w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/5b375bcb2af0d91d_96.png 96w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/5b375bcb2af0d91d_480.png 480w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/5b375bcb2af0d91d_720.png 720w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/5b375bcb2af0d91d_856.png 856w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/5b375bcb2af0d91d_960.png 960w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/5b375bcb2af0d91d_1440.png 1440w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/5b375bcb2af0d91d_1920.png 1920w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/5b375bcb2af0d91d_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p><strong>Accessibility Scanner</strong> still has 4 suggestions for improving <strong>Counter</strong>&#39;s accessibility, so let&#39;s keep working on the app.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Adding Missing Labels" duration="3" step="5">
+          
+          <h2 class="step-title" id="5" data-text="Adding Missing Labels" tabindex="-1">
+              6. Adding Missing Labels
+          </h2>
+          <p>Since the <strong>&#34;-&#34;</strong> and <strong>&#34;+&#34; </strong><code translate="no" dir="ltr">ImageButtons</code> are missing labels, a screenreader like Talkback cannot properly relay the views&#39; semantics to the user, and it simply announces &#34;Unlabelled, Button&#34; when a user focuses on either button:</p>
+<p class="image-container"><img alt="a2b9ac2003f260cf.png" style="width: 610.00px" src="/static/codelabs/starting-android-accessibility/img/a2b9ac2003f260cf.png" srcset="https://developer.android.com/static/codelabs/starting-android-accessibility/img/a2b9ac2003f260cf_36.png 36w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/a2b9ac2003f260cf_48.png 48w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/a2b9ac2003f260cf_72.png 72w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/a2b9ac2003f260cf_96.png 96w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/a2b9ac2003f260cf_480.png 480w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/a2b9ac2003f260cf_720.png 720w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/a2b9ac2003f260cf_856.png 856w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/a2b9ac2003f260cf_960.png 960w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/a2b9ac2003f260cf_1440.png 1440w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/a2b9ac2003f260cf_1920.png 1920w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/a2b9ac2003f260cf_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>To fix this, assign an <strong><code translate="no" dir="ltr">android:contentDescription</code></strong> for each button:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL"><code translate="no" dir="ltr">&lt;<span class="devsite-syntax-n">ImageButton</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">id</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@+id/subtract_button"</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-p">...</span>
+<span class="devsite-syntax-w">   </span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">contentDescription</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@string/decrement"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/</span>&gt;
+
+
+&lt;<span class="devsite-syntax-n">ImageButton</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">id</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@+id/add_button"</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-p">...</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">contentDescription</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@string/increment"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/</span>&gt;
+</code></pre></devsite-code>
+<p>Ensure that you use localized strings for content descriptions so that they can be properly translated. For this codelab, the strings have already been defined in <strong>res/values/strings.xml</strong>.</p>
+<p>A screenreader now announces the value of the <code translate="no" dir="ltr">contentDescription</code> that you provided (appropriately translated to the locale language) when the screenreader user focuses on the buttons.</p>
+<aside class="special"><p>Note: In this codelab, you won&#39;t be turning on and learning how to use TalkBack; instead, you&#39;ll continue to use <strong>Accessibility Scanner</strong> to audit the app&#39;s accessibility. To learn how to use Talkback to debug your apps&#39; accessibility, consider working through the  <a href="https://codelabs.developers.google.com/codelabs/basic-android-accessibility/" target="_blank">Basic Android Accessibility</a> codelab.</p>
+</aside>
+<p><img alt="fb39571ce90d713.png" style="width: 41.78px" src="/static/codelabs/starting-android-accessibility/img/fb39571ce90d713.png" srcset="https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_36.png 36w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_48.png 48w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_72.png 72w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_96.png 96w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_480.png 480w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_720.png 720w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_856.png 856w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_960.png 960w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_1440.png 1440w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_1920.png 1920w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px">  Run <strong>Accessibility Scanner</strong> again. You&#39;ll notice that there are no suggestions related to missing labels.</p>
+<p class="image-container"><img alt="ee84419e9b6b5866.png" style="width: 610.00px" src="/static/codelabs/starting-android-accessibility/img/ee84419e9b6b5866.png" srcset="https://developer.android.com/static/codelabs/starting-android-accessibility/img/ee84419e9b6b5866_36.png 36w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/ee84419e9b6b5866_48.png 48w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/ee84419e9b6b5866_72.png 72w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/ee84419e9b6b5866_96.png 96w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/ee84419e9b6b5866_480.png 480w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/ee84419e9b6b5866_720.png 720w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/ee84419e9b6b5866_856.png 856w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/ee84419e9b6b5866_960.png 960w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/ee84419e9b6b5866_1440.png 1440w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/ee84419e9b6b5866_1920.png 1920w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/ee84419e9b6b5866_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Making Touch Targets Larger" duration="3" step="6">
+          
+          <h2 class="step-title" id="6" data-text="Making Touch Targets Larger" tabindex="-1">
+              7. Making Touch Targets Larger
+          </h2>
+          <p><strong>Accessibility Scanner</strong> continues to suggest that the  <strong>&#34;-&#34;</strong> and <strong>&#34;+&#34;</strong>  should have a larger touch size. In this step, you&#39;ll follow that suggestion.</p>
+<p>The two buttons in <strong>Counter</strong> are small (24dp X 24dp). In general, you want the touchable area of focusable items to be at least 48dp X 48dp. Larger than that is even better. Note that by increasing the touchable area from 24dp X 24dp to 48dp X 48dp, you expand the touchable area by a factor of 4.</p>
+<p>You have several options for increasing the touchable area of the buttons. For example, you can do either of the following:</p>
+<ul>
+<li>Add padding around the icons.</li>
+<li>Add a <code translate="no" dir="ltr">minWidth</code> and/or a <code translate="no" dir="ltr">minHeight</code> (this will make the icons larger).</li>
+<li>Register a  <a href="https://developer.android.com/reference/android/view/TouchDelegate" target="_blank">TouchDelegate</a>.</li>
+</ul>
+<p>Before you change anything, let&#39;s get a better sense of how the buttons&#39; touchable area can be measured.</p>
+<h2 is-upgraded id="tooling-and-layout-bounds" data-text="Tooling and layout bounds" tabindex="-1"><strong>Tooling and layout bounds</strong></h2>
+<p>For this step, make sure you enable  <a href="https://developer.android.com/studio/debug/dev-options" target="_blank">Developer Options</a> on your device.</p>
+<p>Go to <strong>Settings &gt; System &gt; Developer Options</strong>. Under the <strong>Drawing</strong> category, enable <strong>&#34;Show layout bounds&#34;</strong>. Your screen should now show the clip bounds, margins, etc. of every visible view.</p>
+<p class="image-container"><img alt="Screenshot showing layout bounds on screen." title="Layout bounds" style="width: 551.72px" src="/static/codelabs/starting-android-accessibility/img/3538af1684a9d265.png" srcset="https://developer.android.com/static/codelabs/starting-android-accessibility/img/3538af1684a9d265_36.png 36w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/3538af1684a9d265_48.png 48w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/3538af1684a9d265_72.png 72w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/3538af1684a9d265_96.png 96w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/3538af1684a9d265_480.png 480w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/3538af1684a9d265_720.png 720w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/3538af1684a9d265_856.png 856w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/3538af1684a9d265_960.png 960w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/3538af1684a9d265_1440.png 1440w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/3538af1684a9d265_1920.png 1920w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/3538af1684a9d265_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Now observe the layout bounds of <strong>Counter</strong> screen, focusing on the two buttons**:**</p>
+<p class="image-container"><img alt="9dd9b146259ae346.png" style="width: 610.00px" src="/static/codelabs/starting-android-accessibility/img/9dd9b146259ae346.png" srcset="https://developer.android.com/static/codelabs/starting-android-accessibility/img/9dd9b146259ae346_36.png 36w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/9dd9b146259ae346_48.png 48w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/9dd9b146259ae346_72.png 72w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/9dd9b146259ae346_96.png 96w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/9dd9b146259ae346_480.png 480w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/9dd9b146259ae346_720.png 720w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/9dd9b146259ae346_856.png 856w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/9dd9b146259ae346_960.png 960w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/9dd9b146259ae346_1440.png 1440w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/9dd9b146259ae346_1920.png 1920w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/9dd9b146259ae346_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>The touchable area extends only to the layout bounds of the icons, and <strong>Accessibility Scanner</strong> has already informed you that the touchable area (24dp X 24dp) is too small. Let&#39;s increase the area for both buttons.</p>
+<p>Looking at <strong>res/layout/activity_main.xml</strong>, you see the following definitions for the two buttons:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">&lt;ImageButton
+   android:id="@+id/add_button"
+   android:layout_width="wrap_content"
+   android:layout_height="wrap_content"
+   <span class="devsite-syntax-k">...</span> /&gt;
+
+
+&lt;ImageButton
+   android:id="@+id/subtract_button"
+   android:layout_width="wrap_content"
+   android:layout_height="wrap_content"
+  <span class="devsite-syntax-k">...</span> /&gt;
+</code></pre></devsite-code>
+<p>Add some padding to each view:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL"><code translate="no" dir="ltr">&lt;<span class="devsite-syntax-n">ImageButton</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-p">...</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">padding</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@dimen/icon_padding"</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-p">...</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/</span>&gt;
+
+
+&lt;<span class="devsite-syntax-n">ImageButton</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-p">...</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">padding</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@dimen/icon_padding"</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-p">...</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/</span>&gt;
+</code></pre></devsite-code>
+<p>The value of  <code translate="no" dir="ltr">@dimen/icon_padding</code> is set to 12dp (see <strong>res/dimens.xml</strong>). When this padding is applied, the touchable area of the control becomes 48dp X 48dp (24dp + 12dp in each direction).</p>
+<p>Run the app again to confirm the new layout bounds:</p>
+<table class="vertical-rules">
+<tr><td colspan="1" rowspan="1"><p>Before</p>
+</td><td colspan="1" rowspan="1"><p>After</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img src="/static/codelabs/starting-android-accessibility/img/955fe903fe7eab70.png" srcset="https://developer.android.com/static/codelabs/starting-android-accessibility/img/955fe903fe7eab70_36.png 36w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/955fe903fe7eab70_48.png 48w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/955fe903fe7eab70_72.png 72w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/955fe903fe7eab70_96.png 96w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/955fe903fe7eab70_480.png 480w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/955fe903fe7eab70_720.png 720w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/955fe903fe7eab70_856.png 856w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/955fe903fe7eab70_960.png 960w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/955fe903fe7eab70_1440.png 1440w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/955fe903fe7eab70_1920.png 1920w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/955fe903fe7eab70_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+</td><td colspan="1" rowspan="1"><p class="image-container"><img src="/static/codelabs/starting-android-accessibility/img/d931e161aa1b6047.png" srcset="https://developer.android.com/static/codelabs/starting-android-accessibility/img/d931e161aa1b6047_36.png 36w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/d931e161aa1b6047_48.png 48w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/d931e161aa1b6047_72.png 72w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/d931e161aa1b6047_96.png 96w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/d931e161aa1b6047_480.png 480w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/d931e161aa1b6047_720.png 720w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/d931e161aa1b6047_856.png 856w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/d931e161aa1b6047_960.png 960w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/d931e161aa1b6047_1440.png 1440w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/d931e161aa1b6047_1920.png 1920w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/d931e161aa1b6047_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+</td></tr>
+</table>
+<p>Go back to <strong>Settings &gt; Developer Options &gt; Drawing</strong> category, find &#34;<strong>Show layout bounds</strong>&#34;, and turn it off.</p>
+<p><img alt="fb39571ce90d713.png" style="width: 41.78px" src="/static/codelabs/starting-android-accessibility/img/fb39571ce90d713.png" srcset="https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_36.png 36w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_48.png 48w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_72.png 72w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_96.png 96w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_480.png 480w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_720.png 720w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_856.png 856w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_960.png 960w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_1440.png 1440w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_1920.png 1920w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/fb39571ce90d713_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"> Run <strong>Accessibility Scanner</strong> again. This time, the scan should complete without suggestions:</p>
+<p class="image-container"><img alt="29debb90665c4fcc.png" style="width: 610.00px" src="/static/codelabs/starting-android-accessibility/img/29debb90665c4fcc.png" srcset="https://developer.android.com/static/codelabs/starting-android-accessibility/img/29debb90665c4fcc_36.png 36w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/29debb90665c4fcc_48.png 48w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/29debb90665c4fcc_72.png 72w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/29debb90665c4fcc_96.png 96w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/29debb90665c4fcc_480.png 480w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/29debb90665c4fcc_720.png 720w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/29debb90665c4fcc_856.png 856w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/29debb90665c4fcc_960.png 960w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/29debb90665c4fcc_1440.png 1440w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/29debb90665c4fcc_1920.png 1920w,https://developer.android.com/static/codelabs/starting-android-accessibility/img/29debb90665c4fcc_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Congratulations, by completing these few simple steps, you&#39;ve made your app more accessible!</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Limitations of Accessibility Scanner" duration="0" step="7">
+          
+          <h2 class="step-title" id="7" data-text="Limitations of Accessibility Scanner" tabindex="-1">
+              8. Limitations of Accessibility Scanner
+          </h2>
+          <p>While tools like <strong>Accessibility Scanner</strong> can help you make some significant improvements to your app&#39;s accessibility, these tools are no replacement for manual testing.</p>
+<p>Accessibility needs to be approached holistically—<strong>Accessibility Scanner</strong>, for example, will tell you if you&#39;re missing a label, but cannot tell whether that label makes sense. Generally, <strong>Accessibility Scanner</strong> cannot determine whether your user interface conveys semantic information simply and clearly. In addition, <strong>Accessibility Scanner</strong> cannot report on how well an app supports multiple modes of interaction (touch vs. voice), or if users can successfully complete your app&#39;s most common use cases. But <strong>Accessibility Scanner</strong> provides an introduction to accessibility, and it&#39;s an invaluable accessibility tool that you should consider using often.</p>
+<aside class="special"><p><strong>Accessibility Scanner gets you started with accessibility. But always remember to test with real users.</strong></p>
+</aside>
+<h2 is-upgraded id="turning-off-accessibility-scanner" data-text="Turning off Accessibility Scanner" tabindex="-1">Turning off Accessibility Scanner</h2>
+<p>Navigate to <strong>Settings &gt; Accessibility</strong> and set <strong>Accessibility Scanner</strong> to <strong>Off.</strong></p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Links and Resources" duration="1" step="8">
+          
+          <h2 class="step-title" id="8" data-text="Links and Resources" tabindex="-1">
+              9. Links and Resources
+          </h2>
+          <p>You&#39;ve touched on a lot of topics related to Android accessibility. Here are some links and resources you can explore:</p>
+<ul>
+<li>To continue learning about Android accessibility, visit  <a href="https://developer.android.com/guide/topics/ui/accessibility/index.html" target="_blank">developer.android.com</a>.</li>
+<li>To learn more about accessibility services, visit the <a href="https://support.google.com/accessibility/android" target="_blank">Android Accessibility Help Center</a>, where you can find documentation for <strong>TalkBack</strong>, <strong>Voice Access</strong>, <strong>Switch Access</strong>, and other Android accessibility features.</li>
+<li>Read about the  <a href="https://m3.material.io/foundations/accessible-design/overview" target="_blank">accessibility and Material Design.</a></li>
+</ul>
+
+
+        </google-codelab-step>
+      
+    </google-codelab>
+  
+  
+
+  
+</div>
+
+  
+    
+    
+    
+  
+
+  <div class="devsite-floating-action-buttons"></div></article>
+
+
+<devsite-content-footer class="nocontent">
+  <p>Except as otherwise noted, the content of this page is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</a>, and code samples are licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see the <a href="https://developers.google.com/site-policies">Google Developers Site Policies</a>. Java is a registered trademark of Oracle and/or its affiliates.</p>
+  
+</devsite-content-footer>
+
+
+<devsite-notification
+>
+</devsite-notification>
+
+
+  
+<div class="devsite-content-data">
+  
+  
+    <template class="devsite-content-data-template">
+      [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[],null,[]]
+    </template>
+  
+</div>
+            
+          </devsite-content>
+        </main>
+        <devsite-footer-promos class="devsite-footer">
+          
+            
+
+<nav class="devsite-footer-promos nocontent" aria-label="Promotions">
+  <ul class="devsite-footer-promos-list">
+    
+    <li class="devsite-footer-promo">
+      <a href="//x.com/AndroidDev"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer X Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-x_dt.svg"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="/_static/android/images/logo-x.svg"
+                loading="lazy"
+                alt="X">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          X
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Follow @AndroidDev on X</div>
+    </li>
+    
+    <li class="devsite-footer-promo">
+      <a href="//www.youtube.com/user/androiddevelopers"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer YouTube Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-youtube_dt.svg"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="//www.gstatic.com/images/icons/material/product/2x/youtube_48dp.png"
+                loading="lazy"
+                alt="YouTube">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          YouTube
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Check out Android Developers on YouTube</div>
+    </li>
+    
+    <li class="devsite-footer-promo">
+      <a href="//www.linkedin.com/showcase/androiddev"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer LinkedIn Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-linkedin_dt.svg"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="/_static/android/images/logo-linkedin.svg"
+                loading="lazy"
+                alt="LinkedIn">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          LinkedIn
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Connect with the Android Developers community on LinkedIn</div>
+    </li>
+    
+  </ul>
+</nav>
+
+          
+        </devsite-footer-promos>
+        <devsite-footer-linkboxes class="devsite-footer">
+          
+            
+<nav class="devsite-footer-linkboxes nocontent" aria-label="Footer links">
+  
+  <ul class="devsite-footer-linkboxes-list">
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">More Android</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com/enterprise/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Android for Enterprise
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com/security-center/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Security
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//source.android.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Source
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/news"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            News
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//android-developers.googleblog.com/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+          
+            Blog
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/podcasts"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 7)"
+            >
+            
+              
+              
+            
+          
+            Podcasts
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Discover</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/games"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Gaming
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/ml"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Machine Learning
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/health-and-fitness"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Health & Fitness
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/media"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Camera & Media
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/privacy"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            Privacy
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/training/connectivity/5g"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+              
+              
+            
+          
+            5G
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Android Devices</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/large-screens"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Large screens
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/wear"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Wear OS
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/chrome-os"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            ChromeOS devices
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/cars"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Android for cars
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/tv"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+              
+              
+            
+          
+            Android TV
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Releases</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/15"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android 15
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/14"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Android 14
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/13"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Android 13
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/12"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Android 12
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/11"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            Android 11
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/10"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+          
+            Android 10
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/pie"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 7)"
+            >
+            
+              
+              
+            
+          
+            Pie
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Documentation and Downloads</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/studio/intro"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android Studio guide
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/guide"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Developers guides
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/reference"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            API reference
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/studio"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Download Studio
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/ndk"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+              
+              
+            
+          
+            Android NDK
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Support</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//issuetracker.google.com/issues/new?component=190923&amp;template=841312"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Report platform bug
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//issuetracker.google.com/issues/new?component=192697"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Report documentation bug
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//support.google.com/googleplay/android-developer"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Google Play support
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://g.co/userresearch/androiddeveloperfooter"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+              
+              
+            
+          
+            Join research studies
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+  
+</nav>
+          
+        </devsite-footer-linkboxes>
+        <devsite-footer-utility class="devsite-footer">
+          
+            
+
+<div class="devsite-footer-utility nocontent">
+  
+  
+  <nav class="devsite-footer-sites" aria-label="Other Google Developers websites">
+    <a href="https://developers.google.com/"
+       class="devsite-footer-sites-logo-link gc-analytics-event"
+       data-category="Site-Wide Custom Events"
+       data-label="Footer Google Developers Link">
+      <picture>
+        
+        <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-google-for-developers-dark-theme.svg"
+                media="(prefers-color-scheme: none)"
+                class="devsite-dark-theme">
+        
+        <img class="devsite-footer-sites-logo"
+             src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-google-for-developers.svg"
+             loading="lazy"
+             alt="Google Developers">
+      </picture>
+    </a>
+    <ul class="devsite-footer-sites-list">
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.android.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Android Link"
+         
+         >
+          Android
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.chrome.com/home"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Chrome Link"
+         
+         >
+          Chrome
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//firebase.google.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Firebase Link"
+         
+         >
+          Firebase
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//cloud.google.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Google Cloud Platform Link"
+         
+         >
+          Google Cloud Platform
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developers.google.com/products/"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer All products Link"
+         
+         >
+          All products
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  
+
+  
+  <nav class="devsite-footer-utility-links" aria-label="Utility links">
+    
+    <ul class="devsite-footer-utility-list">
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//policies.google.com/privacy"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Privacy link"
+         >
+          Privacy
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="/license"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer License link"
+         >
+          License
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="/distribute/marketing-tools/brand-guidelines"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Brand guidelines link"
+         >
+          Brand guidelines
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 glue-cookie-notification-bar-control">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="#"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Manage cookies link"
+         
+           aria-hidden="true"
+         >
+          Manage cookies
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 devsite-footer-utility-button">
+        
+        <span class="devsite-footer-utility-description">Get news and tips by email</span>
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="/updates"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Subscribe link"
+         >
+          Subscribe
+        </a>
+        
+      </li>
+      
+    </ul>
+    
+    
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+  </nav>
+</div>
+          
+        </devsite-footer-utility>
+        <devsite-panel>
+          
+        </devsite-panel>
+        
+      </section></section>
+    <devsite-sitemask></devsite-sitemask>
+    <devsite-snackbar></devsite-snackbar>
+    <devsite-tooltip ></devsite-tooltip>
+    <devsite-heading-link></devsite-heading-link>
+    <devsite-analytics>
+      
+        <script type="application/json" analytics>[]</script>
+<script type="application/json" tag-management>{&#34;at&#34;: &#34;True&#34;, &#34;ga4&#34;: [{&#34;id&#34;: &#34;G-QFRN08RN6E&#34;, &#34;purpose&#34;: 0}], &#34;ga4p&#34;: [{&#34;id&#34;: &#34;G-QFRN08RN6E&#34;, &#34;purpose&#34;: 0}], &#34;gtm&#34;: [], &#34;parameters&#34;: {&#34;internalUser&#34;: &#34;False&#34;, &#34;language&#34;: {&#34;machineTranslated&#34;: &#34;False&#34;, &#34;requested&#34;: &#34;en&#34;, &#34;served&#34;: &#34;en&#34;}, &#34;pageType&#34;: &#34;codelab&#34;, &#34;projectName&#34;: null, &#34;signedIn&#34;: &#34;False&#34;, &#34;tenant&#34;: &#34;android&#34;, &#34;recommendations&#34;: {&#34;sourcePage&#34;: &#34;&#34;, &#34;sourceType&#34;: 0, &#34;sourceRank&#34;: 0, &#34;sourceIdenticalDescriptions&#34;: 0, &#34;sourceTitleWords&#34;: 0, &#34;sourceDescriptionWords&#34;: 0, &#34;experiment&#34;: &#34;&#34;}, &#34;experiment&#34;: {&#34;ids&#34;: &#34;&#34;}}}</script>
+      
+    </devsite-analytics>
+    
+      <devsite-badger></devsite-badger>
+    
+    
+    
+<android-fully-clickable
+    target="
+        .android-case-study .devsite-landing-row-item,
+        .android-editorial-and-updates-cards .devsite-card-content-wrapper,
+        .android-editorial-and-updates-cards .devsite-landing-row-item,
+        .android-grouped-resources .devsite-landing-row-item,
+        .android-grouped-resources-contained--primary .devsite-landing-row-item,
+        .android-grouped-resources-contained--secondary .devsite-landing-row-item,
+        .android-grouped-resources-contained--tertiary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--primary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--secondary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--tertiary .devsite-landing-row-item,
+        .android-guide-cards .devsite-landing-row-item,
+        .android-illustrated-resources-index .devsite-landing-row-item,
+        .android-illustrated-resources-primary .devsite-landing-row-item,
+        .android-illustrated-resources-secondary .devsite-landing-row-item,
+        .android-illustrated-resources-secondary-small .devsite-landing-row-item,
+        .android-illustrated-resources-tertiary .devsite-landing-row-item,
+        .android-illustrated-resources-tertiary-small .devsite-landing-row-item,
+        .android-promo .devsite-landing-row-item,
+        .android-quick-link,
+        .android-samples .devsite-card-wrapper,
+        .fully-clickable"
+    watch=".android-editorial-and-updates-cards, .android-samples, devsite-content"></android-fully-clickable>
+    
+<script nonce="XFxkTvqmGsyrwJnCU3A128xq7CIqkk">
+  
+  (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+    t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+    E.parentNode.insertBefore(t,E);})(window, document, 'script',
+    'https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/js/app_loader.js', '[3,"en",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android","https://android-dot-devsite-v2-prod.appspot.com",1,null,["/_pwa/android/manifest.json","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/favicon.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png","https://fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,600italic,700,700italic|Roboto+Mono:400,500,700&display=swap"],1,null,[1,6,8,12,14,17,21,25,50,52,63,70,75,76,80,87,91,92,93,97,98,100,101,102,103,104,105,107,108,109,110,112,113,117,118,120,122,124,125,126,127,129,130,131,132,133,134,135,136,138,140,141,147,148,149,151,152,156,157,158,159,161,163,164,168,169,170,179,180,182,183,186,191,193,196],"AIzaSyAP-jjEJBzmIyKR4F-3XITp8yM9T1gEEI8","AIzaSyB6xiKGDR5O3Ak2okS4rLkauxGUG7XP0hg","developer.android.com","AIzaSyAQk0fBONSGUqCNznf6Krs82Ap1-NV6J4o","AIzaSyCCxcqdrZ_7QMeLCRY20bh_SXdAYqy70KY",null,null,null,["Cloud__enable_legacy_calculator_redirect","MiscFeatureFlags__enable_explicit_template_dependencies","Profiles__enable_callout_notifications","Profiles__enable_completequiz_endpoint","Search__enable_page_map","DevPro__enable_code_assist","Cloud__enable_cloud_shell","Profiles__enable_stripe_subscription_management","Search__enable_ai_eligibility_checks","BookNav__enable_tenant_cache_key","MiscFeatureFlags__developers_footer_image","DevPro__enable_google_one_card","Cloud__cache_serialized_dynamic_content","Profiles__require_profile_eligibility_for_signin","MiscFeatureFlags__enable_project_body_class","MiscFeatureFlags__developers_footer_dark_image","Profiles__enable_profile_collections","DevPro__enable_firebase_workspaces_card","TpcFeatures__proxy_prod_host","Analytics__enable_clearcut_logging","Profiles__enable_developer_profiles_callout","CloudShell__cloud_shell_button","MiscFeatureFlags__enable_view_transitions","Cloud__enable_cloud_dlp_service","MiscFeatureFlags__enable_variable_operator","MiscFeatureFlags__enable_framebox_badge_methods","Concierge__enable_pushui","Experiments__reqs_query_experiments","Profiles__enable_public_developer_profiles","Profiles__enable_page_saving","MiscFeatureFlags__enable_dark_theme","Cloud__enable_llm_concierge_chat","MiscFeatureFlags__enable_firebase_utm","Profiles__enable_awarding_url","Search__enable_ai_search_summaries_for_all","DevPro__remove_eu_tax_intake_form","Search__enable_suggestions_from_borg","DevPro__enable_vertex_credit_card","DevPro__enable_developer_subscriptions","Search__enable_dynamic_content_confidential_banner","Profiles__enable_complete_playlist_endpoint","Profiles__enable_completecodelab_endpoint","DevPro__enable_cloud_innovators_plus","Concierge__enable_remove_info_panel_tags","DevPro__enable_enterprise","Profiles__enable_join_program_group_endpoint","EngEduTelemetry__enable_engedu_telemetry","CloudShell__cloud_code_overflow_menu","Profiles__enable_recognition_badges","DevPro__enable_devpro_offers","DevPro__enable_google_payments_buyflow","Significatio__enable_by_tenant","MiscFeatureFlags__emergency_css","Cloud__enable_cloud_shell_fte_user_flow","Cloud__enable_cloudx_experiment_ids","Concierge__enable_actions_menu","Profiles__enable_playlist_community_acl","Profiles__enable_release_notes_notifications","Profiles__enable_developer_profile_benefits_ui_redesign","MiscFeatureFlags__enable_appearance_cookies","MiscFeatureFlags__gdp_dashboard_reskin_enabled","DevPro__enable_free_benefits","DevPro__enable_embed_profile_creation","MiscFeatureFlags__enable_project_variables","Profiles__enable_purchase_prompts","Profiles__enable_dashboard_curated_recommendations","Cloud__fast_free_trial","TpcFeatures__enable_unmirrored_page_left_nav","DevPro__enable_nvidia_credits_card","Cloud__enable_free_trial_server_call","Profiles__enable_user_type","MiscFeatureFlags__enable_variable_operator_index_yaml"],null,null,"AIzaSyBLEMok-5suZ67qRPzx0qUtbnLmyT_kCVE","https://developerscontentserving-pa.googleapis.com","AIzaSyCM4QpTRSqP5qI4Dvjt4OAScIN8sOUlO-k","https://developerscontentsearch-pa.googleapis.com",2,4,null,"https://developerprofiles-pa.googleapis.com",[3,"android","Android Developers","developer.android.com",null,"android-dot-devsite-v2-prod.appspot.com",null,null,[null,1,null,null,null,null,null,null,null,null,null,[1],null,null,null,null,null,null,[1],[1,null,null,[1,20],"/recommendations"],null,null,null,[1,null,1],[1,1,null,1,1]],null,[18,null,null,null,null,null,"/images/lockup.png","/images/touchicon-180.png",null,null,null,null,null,null,null,null,null,null,null,null,null,2,null,null,null,"/images/lockup-dark-theme.png",[]],[],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[6,1,14,15,20,22,23,28,29,37,43],null,[[null,null,1],[1,1]],[[null,null,null,null,null,null,null,[["G-QFRN08RN6E"],null,null,[["G-QFRN08RN6E",1]]],null,null,null,null,1],null,[[1,1],[2,2]]],null,4,null,null,null,null,null,null,null,null,null,null,null,null,null,"android.devsite.google"],null,"pk_live_5170syrHvgGVmSx9sBrnWtA5luvk9BwnVcvIi7HizpwauFG96WedXsuXh790rtij9AmGllqPtMLfhe2RSwD6Pn38V00uBCydV4m",1,null,"https://developerscontentinsights-pa.googleapis.com","AIzaSyCg-ZUslalsEbXMfIo9ZP8qufZgo3LSBDU","AIzaSyDxT0vkxnY_KeINtA4LSePJO-4MAZPMRsE","https://developers.googleapis.com",null,null,"AIzaSyBQom12tzI-rybN7Sf-KfeL4nwm-Rf7PmI\n",null,"https://developerslogging.googleapis.com"]')
+  
+</script>
+
+    <devsite-a11y-announce></devsite-a11y-announce>
+  </body>
+</html>

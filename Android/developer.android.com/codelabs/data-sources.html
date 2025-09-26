@@ -1,0 +1,2268 @@
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html 
+      lang="en"
+      dir="ltr">
+  <head>
+    <meta name="google-signin-client-id" content="721724668570-nbkv1cfusk7kk4eni4pjvepaus73b13t.apps.googleusercontent.com">
+    <meta name="google-signin-scope"
+          content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award">
+    <meta property="og:site_name" content="Android Developers">
+    <meta property="og:type" content="website"><meta name="theme-color" content="#34a853"><meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <link rel="manifest" href="/_pwa/android/manifest.json"
+          crossorigin="use-credentials">
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="//apis.google.com" crossorigin>
+    <link rel="preconnect" href="//www.google-analytics.com" crossorigin><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,600italic,700,700italic|Roboto+Mono:400,500,700&display=swap">
+      <link rel="stylesheet"
+            href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block"><link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/css/app.css">
+      
+        <link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/css/dark-theme.css" disabled>
+      <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/favicon.svg">
+    <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/touchicon-180.png"><link rel="canonical" href="https://developer.android.com/codelabs/data-sources"><link rel="search" type="application/opensearchdescription+xml"
+            title="Android Developers" href="https://developer.android.com/s/opensearch.xml">
+      <link rel="alternate" hreflang="en"
+          href="https://developer.android.com/codelabs/data-sources" /><link rel="alternate" hreflang="x-default" href="https://developer.android.com/codelabs/data-sources" /><link rel="alternate" hreflang="zh-Hans"
+          href="https://developer.android.com/codelabs/data-sources?hl=zh-cn" /><link rel="alternate" hreflang="zh-Hant"
+          href="https://developer.android.com/codelabs/data-sources?hl=zh-tw" /><link rel="alternate" hreflang="fr"
+          href="https://developer.android.com/codelabs/data-sources?hl=fr" /><link rel="alternate" hreflang="id"
+          href="https://developer.android.com/codelabs/data-sources?hl=id" /><link rel="alternate" hreflang="ja"
+          href="https://developer.android.com/codelabs/data-sources?hl=ja" /><link rel="alternate" hreflang="ko"
+          href="https://developer.android.com/codelabs/data-sources?hl=ko" /><link rel="alternate" hreflang="pt-BR"
+          href="https://developer.android.com/codelabs/data-sources?hl=pt-br" /><link rel="alternate" hreflang="es-419"
+          href="https://developer.android.com/codelabs/data-sources?hl=es-419" /><link rel="alternate" hreflang="vi"
+          href="https://developer.android.com/codelabs/data-sources?hl=vi" /><title>(Deprecated) Exposing data to watch face complications on Wear OS &nbsp;|&nbsp; Android Developers</title>
+
+<meta property="og:title" content="(Deprecated) Exposing data to watch face complications on Wear OS &nbsp;|&nbsp; Android Developers"><meta name="description" content="In this codelab, you’ll learn how to expose your data to watch face complications while keeping best practices for the platform in mind.">
+  <meta property="og:description" content="In this codelab, you’ll learn how to expose your data to watch face complications while keeping best practices for the platform in mind."><meta property="og:url" content="https://developer.android.com/codelabs/data-sources"><meta property="og:locale" content="en">
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+
+    
+      <link rel="stylesheet" href="/extras.css"></head>
+  <body class=""
+        template="codelab"
+        theme="android-theme"
+        type="codelab"
+        
+        
+        appearance
+        
+        layout="docs"
+        
+        
+        
+        
+        display-toc
+        pending>
+  
+    <devsite-progress type="indeterminate" id="app-progress"></devsite-progress>
+  
+  
+    <a href="#main-content" class="skip-link button">
+      
+      Skip to main content
+    </a>
+    <section class="devsite-wrapper">
+      <devsite-cookie-notification-bar></devsite-cookie-notification-bar><devsite-header role="banner">
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-header--inner" data-nosnippet>
+  <div class="devsite-top-logo-row-wrapper-wrapper">
+    <div class="devsite-top-logo-row-wrapper">
+      <div class="devsite-top-logo-row">
+        <button type="button" id="devsite-hamburger-menu"
+          class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+          data-category="Site-Wide Custom Events"
+          data-label="Navigation menu button"
+          visually-hidden
+          aria-label="Open menu">
+        </button>
+        
+<div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="androidDevelopers" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-dark-theme.png"
+            media="(prefers-color-scheme: dark)"
+            class="devsite-dark-theme">
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png" class="devsite-site-logo" alt="Android Developers">
+  </picture>
+  
+</a>
+
+
+
+</div>
+        <div class="devsite-top-logo-row-middle">
+          <div class="devsite-header-upper-tabs">
+            
+           </div>
+          
+<devsite-search
+    enable-signin
+    enable-search
+    enable-suggestions
+      enable-query-completion
+    
+    enable-search-summaries
+    
+    tenant-name="Android Developers"
+    
+    
+    
+    
+    
+    >
+  <form class="devsite-search-form" action="https://developer.android.com/s/results" method="GET">
+    <div class="devsite-search-container">
+      <button type="button"
+              search-open
+              class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+              
+              aria-label="Open search"></button>
+      <div class="devsite-searchbox">
+        <input
+          aria-activedescendant=""
+          aria-autocomplete="list"
+          
+          aria-label="Search"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          autocomplete="off"
+          class="devsite-search-field devsite-search-query"
+          name="q"
+          
+          placeholder="Search"
+          role="combobox"
+          type="text"
+          value=""
+          >
+          <div class="devsite-search-image material-icons" aria-hidden="true">
+            
+              <svg class="devsite-search-ai-image" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_6641_386)">
+                    <path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14167 15.375 4.875 14.125C3.625 12.8583 3 11.3167 3 9.5C3 7.68333 3.625 6.15 4.875 4.9C6.14167 3.63333 7.68333 3 9.5 3C10.0167 3 10.5167 3.05833 11 3.175C11.4833 3.275 11.9417 3.43333 12.375 3.65L10.825 5.2C10.6083 5.13333 10.3917 5.08333 10.175 5.05C9.95833 5.01667 9.73333 5 9.5 5C8.25 5 7.18333 5.44167 6.3 6.325C5.43333 7.19167 5 8.25 5 9.5C5 10.75 5.43333 11.8167 6.3 12.7C7.18333 13.5667 8.25 14 9.5 14C10.6667 14 11.6667 13.625 12.5 12.875C13.35 12.1083 13.8417 11.15 13.975 10H15.975C15.925 10.6333 15.7833 11.2333 15.55 11.8C15.3333 12.3667 15.05 12.8667 14.7 13.3L21 19.6L19.6 21ZM17.5 12C17.5 10.4667 16.9667 9.16667 15.9 8.1C14.8333 7.03333 13.5333 6.5 12 6.5C13.5333 6.5 14.8333 5.96667 15.9 4.9C16.9667 3.83333 17.5 2.53333 17.5 0.999999C17.5 2.53333 18.0333 3.83333 19.1 4.9C20.1667 5.96667 21.4667 6.5 23 6.5C21.4667 6.5 20.1667 7.03333 19.1 8.1C18.0333 9.16667 17.5 10.4667 17.5 12Z" fill="#5F6368"/>
+                  </g>
+                <defs>
+                <clipPath id="clip0_6641_386">
+                <rect width="24" height="24" fill="white"/>
+                </clipPath>
+                </defs>
+              </svg>
+            
+          </div>
+          <div class="devsite-search-shortcut-icon-container" aria-hidden="true">
+            <kbd class="devsite-search-shortcut-icon">/</kbd>
+          </div>
+      </div>
+    </div>
+  </form>
+  <button type="button"
+          search-close
+          class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+          
+          aria-label="Close search"></button>
+</devsite-search>
+
+        </div>
+
+        
+
+          
+
+          
+
+          <devsite-appearance-selector></devsite-appearance-selector>
+
+          
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+
+          
+            <a class="devsite-header-link devsite-top-button button gc-analytics-event "
+    href="https://developer.android.com/studio"
+    data-category="Site-Wide Custom Events"
+    data-label="Site header link: Android Studio"
+    >
+  Android Studio
+</a>
+          
+
+        
+
+        
+          <devsite-user 
+                        
+                        
+                          enable-profiles
+                        
+                        
+                        id="devsite-user">
+            
+              
+              <span class="button devsite-top-button" aria-hidden="true" visually-hidden>Sign in</span>
+            
+          </devsite-user>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
+  
+</devsite-header>
+      <devsite-book-nav scrollbars hidden>
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-book-nav-filter"
+     hidden>
+  <span class="filter-list-icon material-icons" aria-hidden="true"></span>
+  <input type="text"
+         placeholder="Filter"
+         
+         aria-label="Type to filter"
+         role="searchbox">
+  
+  <span class="filter-clear-button hidden"
+        data-title="Clear filter"
+        aria-label="Clear filter"
+        role="button"
+        tabindex="0"></span>
+</div>
+
+<nav class="devsite-book-nav devsite-nav nocontent"
+     aria-label="Side menu">
+  <div class="devsite-mobile-header">
+    <button type="button"
+            id="devsite-close-nav"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Close navigation"
+            aria-label="Close navigation">
+    </button>
+    <div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="androidDevelopers" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-dark-theme.png"
+            media="(prefers-color-scheme: dark)"
+            class="devsite-dark-theme">
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png" class="devsite-site-logo" alt="Android Developers">
+  </picture>
+  
+</a>
+
+
+</div>
+  </div>
+
+  <div class="devsite-book-nav-wrapper">
+    <div class="devsite-mobile-nav-top">
+      
+        <ul class="devsite-nav-list">
+          
+          
+    
+    
+<li class="devsite-nav-item">
+
+  
+  <a href="/studio"
+    
+       class="devsite-nav-title gc-analytics-event "
+    
+
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Android Studio"
+     track-type="navMenu"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Android Studio
+   </span>
+    
+  
+  </a>
+  
+
+</li>
+
+  
+          
+        </ul>
+      
+    </div>
+    
+  </div>
+</nav>
+        
+      </devsite-book-nav>
+      <section id="gc-wrapper">
+        <main role="main" id="main-content" class="devsite-main-content"
+            
+              
+              has-sidebar
+            >
+          <div class="devsite-sidebar">
+            <div class="devsite-sidebar-content">
+                
+                <devsite-toc class="devsite-nav"
+                            role="navigation"
+                            aria-label="On this page"
+                            depth="1"
+                            scrollbars
+                  ></devsite-toc>
+                <devsite-recommendations-sidebar class="nocontent devsite-nav">
+                </devsite-recommendations-sidebar>
+            </div>
+          </div>
+          <devsite-content>
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="devsite-article"><style>
+      body {
+        transition: opacity ease-in 0.2s;
+      }
+
+      body[unresolved] {
+        opacity: 0;
+        display: block;
+        overflow: hidden;
+        position: relative;
+      }
+      </style>
+  
+  
+  
+  
+  
+
+  <div class="devsite-article-meta nocontent" role="navigation">
+    
+    
+    <ul class="devsite-breadcrumb-list"
+  >
+  
+</ul>
+    
+  </div>
+  
+    <h1 class="devsite-page-title" tabindex="-1">
+      (Deprecated) Exposing data to watch face complications on Wear OS<div class="devsite-actions" hidden data-nosnippet><devsite-feature-tooltip
+      ack-key="AckCollectionsBookmarkTooltipDismiss"
+      analytics-category="Site-Wide Custom Events"
+      analytics-action-show="Callout Profile displayed"
+      analytics-action-close="Callout Profile dismissed"
+      analytics-label="Create Collection Callout"
+      class="devsite-page-bookmark-tooltip nocontent"
+      dismiss-button="true"
+      id="devsite-collections-dropdown"
+      
+      dismiss-button-text="Dismiss"
+
+      
+      close-button-text="Got it">
+
+    
+    
+      <devsite-bookmark></devsite-bookmark>
+    
+
+    <span slot="popout-heading">
+      
+      Stay organized with collections
+    </span>
+    <span slot="popout-contents">
+      
+      Save and categorize content based on your preferences.
+    </span>
+  </devsite-feature-tooltip></div>
+  
+      
+    </h1>
+  
+
+  <devsite-toc class="devsite-nav"
+    depth="1"
+    devsite-toc-embedded
+    >
+  </devsite-toc>
+  
+    
+  <div class="devsite-article-body clearfix
+  ">
+
+  
+    
+    
+    <google-codelab-analytics gaid="UA-49880327-14" ga4id="G-JTFZSJVVVZ"></google-codelab-analytics>
+    <google-codelab codelab-gaid=""
+                    codelab-ga4id=""
+                    doc-id="1vru-dzlKfTXzxt2Oas_VluJzbeKyBMhcpMrGq0T4tio"
+                    id="data-sources"
+                    title="(Deprecated) Exposing data to watch face complications on Wear OS"
+                    no-tooltip=""
+                    environment="web"
+                    category=""
+                    feedback-link="https://github.com/android/codelab-complications-data-source/issues"
+                    layout="paginated"
+                    >
+      
+        <google-codelab-step label="Exposing your Data to Complications" duration="10" step="0">
+          
+            <google-codelab-about codelab-title="(Deprecated) Exposing data to watch face complications on Wear OS"
+                                  
+                                  last-updated="2024-11-14T14:21:02Z"
+                                  duration="45">
+            </google-codelab-about>
+          
+          <h2 class="step-title" id="0" data-text="Exposing your Data to Complications" tabindex="-1">
+              1. Exposing your Data to Complications
+          </h2>
+          <aside class="warning"><p> This codelab is deprecated and it will be removed soon.</p>
+</aside>
+<p>This codelab will teach you how to build a complication data source.</p>
+<h2 is-upgraded id="concepts-and-setup" data-text="Concepts and setup" tabindex="-1"><strong>Concepts and setup</strong></h2>
+<p>At the end of the codelab, you will understand how to provide your data to watch face complications on Wear OS.</p>
+<h3 is-upgraded id="concepts" data-text="Concepts" tabindex="-1"><strong>Concepts</strong></h3>
+<p>A complication is a feature of a watch face  <a href="https://en.wikipedia.org/wiki/Complication_(horology)" target="_blank">beyond hours and minutes</a>. As an example, the watch face on the image below contains four complications.</p>
+<p class="image-container"><img alt="39f4ebe8dc4800b0.png" style="width: 531.01px" src="/static/codelabs/data-sources/img/39f4ebe8dc4800b0.png" srcset="https://developer.android.com/static/codelabs/data-sources/img/39f4ebe8dc4800b0_36.png 36w,https://developer.android.com/static/codelabs/data-sources/img/39f4ebe8dc4800b0_48.png 48w,https://developer.android.com/static/codelabs/data-sources/img/39f4ebe8dc4800b0_72.png 72w,https://developer.android.com/static/codelabs/data-sources/img/39f4ebe8dc4800b0_96.png 96w,https://developer.android.com/static/codelabs/data-sources/img/39f4ebe8dc4800b0_480.png 480w,https://developer.android.com/static/codelabs/data-sources/img/39f4ebe8dc4800b0_720.png 720w,https://developer.android.com/static/codelabs/data-sources/img/39f4ebe8dc4800b0_856.png 856w,https://developer.android.com/static/codelabs/data-sources/img/39f4ebe8dc4800b0_960.png 960w,https://developer.android.com/static/codelabs/data-sources/img/39f4ebe8dc4800b0_1440.png 1440w,https://developer.android.com/static/codelabs/data-sources/img/39f4ebe8dc4800b0_1920.png 1920w,https://developer.android.com/static/codelabs/data-sources/img/39f4ebe8dc4800b0_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>The Complications API is meant for both watch faces and data source  apps:</p>
+<ul>
+<li><strong>Complication data sources</strong> supply data, e.g., battery-level, weather, step-count, etc.</li>
+<li><strong>Watch face developers</strong> can display that data in a complication on their watch face</li>
+<li><strong>The user</strong> selects which data sources  they want for their complications</li>
+</ul>
+<p class="image-container"><img alt="Screen Shot 2016-05-17 at 5.14.50 PM.png" style="width: 624.00px" src="/static/codelabs/data-sources/img/bce48b4fc90ea06e.png" srcset="https://developer.android.com/static/codelabs/data-sources/img/bce48b4fc90ea06e_36.png 36w,https://developer.android.com/static/codelabs/data-sources/img/bce48b4fc90ea06e_48.png 48w,https://developer.android.com/static/codelabs/data-sources/img/bce48b4fc90ea06e_72.png 72w,https://developer.android.com/static/codelabs/data-sources/img/bce48b4fc90ea06e_96.png 96w,https://developer.android.com/static/codelabs/data-sources/img/bce48b4fc90ea06e_480.png 480w,https://developer.android.com/static/codelabs/data-sources/img/bce48b4fc90ea06e_720.png 720w,https://developer.android.com/static/codelabs/data-sources/img/bce48b4fc90ea06e_856.png 856w,https://developer.android.com/static/codelabs/data-sources/img/bce48b4fc90ea06e_960.png 960w,https://developer.android.com/static/codelabs/data-sources/img/bce48b4fc90ea06e_1440.png 1440w,https://developer.android.com/static/codelabs/data-sources/img/bce48b4fc90ea06e_1920.png 1920w,https://developer.android.com/static/codelabs/data-sources/img/bce48b4fc90ea06e_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>In this code lab, we cover creating a complication data source. If you are also interested in adding complications to a watch face, check out  <a href="https://github.com/android/wear-os-samples#samples" target="_blank">our watch face sample</a>.</p>
+<p>Let&#39;s get started!</p>
+<h3 is-upgraded id="clone-the-starter-project-repo" data-text="Clone the starter project repo" tabindex="-1"><strong>Clone the starter project repo</strong></h3>
+<aside class="special"><p>This codelab uses the latest version of Android Studio, an integrated development environment (IDE) for developing Android apps. In addition, this codelab requires Wear OS SDK components to be downloaded. Please refer to  <a href="https://developer.android.com/studio/index.html" target="_blank">this guide</a> for installing Android Studio and the required SDK components.</p>
+</aside>
+<p>To help you get started quickly, we have  <a href="https://github.com/android/codelab-complications-data-source.git" target="_blank">prepared a project for you</a> to build on. It contains some basic code and application settings necessary for the code lab.</p>
+<p>If you have Git installed, run the command below. (You can check if Git is installed by typing <code translate="no" dir="ltr">git --version</code> in the terminal / command line and verify that it executes correctly.):</p>
+<div></div><devsite-code><pre translate="no" dir="ltr" is-upgraded> git clone https://github.com/android/codelab-complications-data-source.git
+</pre></devsite-code>
+<p>If you do not have Git, you can download the project as a zip file:</p>
+<p><a href="https://github.com/android/codelab-complications-data-source/archive/master.zip" target="_blank"><button class="button button-primary button-with-icon"><span class="material-icons" aria-hidden="true" translate="no">file_download</span>Download Zip</button></a></p>
+<h3 is-upgraded id="import-the-project" data-text="Import the project" tabindex="-1"><strong>Import the project</strong></h3>
+<p>Start Android Studio and select &#34;<em>Open an existing Android Studio project&#34;</em> from the Welcome screen. Open the project directory and double-click the <code translate="no" dir="ltr">build.gradle</code> file in the <strong>complications-data-source</strong> directory.</p>
+<p>In the upper-left corner of the project window, if you are in the <strong>Android</strong> view, you should see a set of folder icons similar to those in the screenshot below. (If you are in the <strong>Project</strong> view, expand the <strong>complications-data-source</strong> project to see the set of folder icons.)</p>
+<p class="image-container"><img alt="786caabc75caee70.png" style="width: 593.00px" src="/static/codelabs/data-sources/img/786caabc75caee70.png" srcset="https://developer.android.com/static/codelabs/data-sources/img/786caabc75caee70_36.png 36w,https://developer.android.com/static/codelabs/data-sources/img/786caabc75caee70_48.png 48w,https://developer.android.com/static/codelabs/data-sources/img/786caabc75caee70_72.png 72w,https://developer.android.com/static/codelabs/data-sources/img/786caabc75caee70_96.png 96w,https://developer.android.com/static/codelabs/data-sources/img/786caabc75caee70_480.png 480w,https://developer.android.com/static/codelabs/data-sources/img/786caabc75caee70_720.png 720w,https://developer.android.com/static/codelabs/data-sources/img/786caabc75caee70_856.png 856w,https://developer.android.com/static/codelabs/data-sources/img/786caabc75caee70_960.png 960w,https://developer.android.com/static/codelabs/data-sources/img/786caabc75caee70_1440.png 1440w,https://developer.android.com/static/codelabs/data-sources/img/786caabc75caee70_1920.png 1920w,https://developer.android.com/static/codelabs/data-sources/img/786caabc75caee70_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>There are two folder icons. They both represent a module. Please note that Android Studio might take several seconds to compile the project in the background for the first time. During this time you will see a spinner in the status bar at the bottom of Android Studio:</p>
+<p class="image-container"><img alt="27f04b5598a2f95e.png" style="width: 624.00px" src="/static/codelabs/data-sources/img/27f04b5598a2f95e.png" srcset="https://developer.android.com/static/codelabs/data-sources/img/27f04b5598a2f95e_36.png 36w,https://developer.android.com/static/codelabs/data-sources/img/27f04b5598a2f95e_48.png 48w,https://developer.android.com/static/codelabs/data-sources/img/27f04b5598a2f95e_72.png 72w,https://developer.android.com/static/codelabs/data-sources/img/27f04b5598a2f95e_96.png 96w,https://developer.android.com/static/codelabs/data-sources/img/27f04b5598a2f95e_480.png 480w,https://developer.android.com/static/codelabs/data-sources/img/27f04b5598a2f95e_720.png 720w,https://developer.android.com/static/codelabs/data-sources/img/27f04b5598a2f95e_856.png 856w,https://developer.android.com/static/codelabs/data-sources/img/27f04b5598a2f95e_960.png 960w,https://developer.android.com/static/codelabs/data-sources/img/27f04b5598a2f95e_1440.png 1440w,https://developer.android.com/static/codelabs/data-sources/img/27f04b5598a2f95e_1920.png 1920w,https://developer.android.com/static/codelabs/data-sources/img/27f04b5598a2f95e_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Wait until the processes have finished before making code changes, to allow Android Studio to pull in all the necessary components..</p>
+<h3 is-upgraded id="understand-the-starter-project" data-text="Understand the starter project" tabindex="-1"><strong>Understand</strong> <strong>the starter project</strong></h3>
+<p>You&#39;re set up and ready to start exposing your data to complications. We&#39;ll begin with the <code translate="no" dir="ltr">base</code> module. You will add code from each step to <code translate="no" dir="ltr">base</code>.</p>
+<p>You can use the <code translate="no" dir="ltr">complete</code> module in the codelab as a reference point to check your work (or as a reference if you encounter an issue).</p>
+<p>Overview of key components for data sources</p>
+<ul>
+<li><code translate="no" dir="ltr">ComplicationTapBroadcastReceiver</code> - The class used to update our complication data through a <code translate="no" dir="ltr">PendingIntent</code>.</li>
+<li><code translate="no" dir="ltr">CustomComplicationDataSourceService</code>  - The class used to expose our data to complications. The file is in the directory <code translate="no" dir="ltr">base/java/com/example/android/wearable/complicationsdatasource</code>. In Android Studio, this is located under <code translate="no" dir="ltr">base/java/com.example.android.wearable.complicationsdatasource</code>. Within the class, we will mainly work on four methods:</li>
+<li><code translate="no" dir="ltr">onComplicationActivated</code> - Called when a complication has been activated with your data.</li>
+<li><code translate="no" dir="ltr">getPreviewData</code> - Preview data for a complication used in the editor UI (usually just static content).</li>
+<li><code translate="no" dir="ltr">onComplicationRequest</code> - The majority of our work will be in this method. This method is called whenever an active complication needs updated data from your source.</li>
+<li><code translate="no" dir="ltr">onComplicationDeactivated</code> - Called when the complication has been deactivated.</li>
+</ul>
+<h3 is-upgraded id="emulator-setup" data-text="Emulator setup" tabindex="-1"><strong>Emulator setup</strong></h3>
+<p>If you need help setting up a Wear OS emulator, please refer to the  <a href="https://developer.android.com/training/wearables/apps/creating.html#emulator" target="_blank">&#34;Launch the emulator and run your Wear app&#34;</a> section of the &#34;Creating and Running a Wearable App&#34; page.</p>
+<h3 is-upgraded id="run-the-starter-project" data-text="Run the starter project" tabindex="-1"><strong>Run the starter project</strong></h3>
+<p>Let&#39;s run the app on a watch.</p>
+<ul>
+<li>Connect your Wear OS device or start an emulator.</li>
+<li>In the toolbar, select the &#34;base&#34; configuration from the drop-down selector and click the green triangle (Run) button next to it:</li>
+</ul>
+<p class="image-container"><img alt="a04699aa4cf2ca12.png" style="width: 624.00px" src="/static/codelabs/data-sources/img/a04699aa4cf2ca12.png" srcset="https://developer.android.com/static/codelabs/data-sources/img/a04699aa4cf2ca12_36.png 36w,https://developer.android.com/static/codelabs/data-sources/img/a04699aa4cf2ca12_48.png 48w,https://developer.android.com/static/codelabs/data-sources/img/a04699aa4cf2ca12_72.png 72w,https://developer.android.com/static/codelabs/data-sources/img/a04699aa4cf2ca12_96.png 96w,https://developer.android.com/static/codelabs/data-sources/img/a04699aa4cf2ca12_480.png 480w,https://developer.android.com/static/codelabs/data-sources/img/a04699aa4cf2ca12_720.png 720w,https://developer.android.com/static/codelabs/data-sources/img/a04699aa4cf2ca12_856.png 856w,https://developer.android.com/static/codelabs/data-sources/img/a04699aa4cf2ca12_960.png 960w,https://developer.android.com/static/codelabs/data-sources/img/a04699aa4cf2ca12_1440.png 1440w,https://developer.android.com/static/codelabs/data-sources/img/a04699aa4cf2ca12_1920.png 1920w,https://developer.android.com/static/codelabs/data-sources/img/a04699aa4cf2ca12_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<ul>
+<li>If you get an error like the one below (<em>Error Launching activity</em>), change the default launch <code translate="no" dir="ltr">Activity</code> (instructions below). <img alt="6ea74bcba8278349.png" style="width: 418.00px" src="/static/codelabs/data-sources/img/6ea74bcba8278349.png" srcset="https://developer.android.com/static/codelabs/data-sources/img/6ea74bcba8278349_36.png 36w,https://developer.android.com/static/codelabs/data-sources/img/6ea74bcba8278349_48.png 48w,https://developer.android.com/static/codelabs/data-sources/img/6ea74bcba8278349_72.png 72w,https://developer.android.com/static/codelabs/data-sources/img/6ea74bcba8278349_96.png 96w,https://developer.android.com/static/codelabs/data-sources/img/6ea74bcba8278349_480.png 480w,https://developer.android.com/static/codelabs/data-sources/img/6ea74bcba8278349_720.png 720w,https://developer.android.com/static/codelabs/data-sources/img/6ea74bcba8278349_856.png 856w,https://developer.android.com/static/codelabs/data-sources/img/6ea74bcba8278349_960.png 960w,https://developer.android.com/static/codelabs/data-sources/img/6ea74bcba8278349_1440.png 1440w,https://developer.android.com/static/codelabs/data-sources/img/6ea74bcba8278349_1920.png 1920w,https://developer.android.com/static/codelabs/data-sources/img/6ea74bcba8278349_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></li>
+</ul>
+<p>Conversely, if prompted for the <code translate="no" dir="ltr">Activity</code> to use when launching the app, choose &#34;<strong>Do not launch Activity</strong>&#34;.</p>
+<ul>
+<li>To change the default launch <code translate="no" dir="ltr">Activity</code> (if necessary, from the previous step), click the drop-down selector to the left of the green arrow and click &#34;<strong>edit configurations</strong>&#34;.</li>
+</ul>
+<p class="image-container"><img alt="1e3e1dc73655ccd8.png" style="width: 390.45px" src="/static/codelabs/data-sources/img/1e3e1dc73655ccd8.png" srcset="https://developer.android.com/static/codelabs/data-sources/img/1e3e1dc73655ccd8_36.png 36w,https://developer.android.com/static/codelabs/data-sources/img/1e3e1dc73655ccd8_48.png 48w,https://developer.android.com/static/codelabs/data-sources/img/1e3e1dc73655ccd8_72.png 72w,https://developer.android.com/static/codelabs/data-sources/img/1e3e1dc73655ccd8_96.png 96w,https://developer.android.com/static/codelabs/data-sources/img/1e3e1dc73655ccd8_480.png 480w,https://developer.android.com/static/codelabs/data-sources/img/1e3e1dc73655ccd8_720.png 720w,https://developer.android.com/static/codelabs/data-sources/img/1e3e1dc73655ccd8_856.png 856w,https://developer.android.com/static/codelabs/data-sources/img/1e3e1dc73655ccd8_960.png 960w,https://developer.android.com/static/codelabs/data-sources/img/1e3e1dc73655ccd8_1440.png 1440w,https://developer.android.com/static/codelabs/data-sources/img/1e3e1dc73655ccd8_1920.png 1920w,https://developer.android.com/static/codelabs/data-sources/img/1e3e1dc73655ccd8_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Select &#34;<strong>base</strong>&#34; and you will see a window similar to the one below. Select <strong>&#34;Nothing&#34;</strong> under the <strong>Launch Options</strong> section and click Run. <em>Later, if you want to try launching the other module, you will need to do this as well.</em></p>
+<p class="image-container"><img alt="5e98572969d8228.png" style="width: 624.00px" src="/static/codelabs/data-sources/img/5e98572969d8228.png" srcset="https://developer.android.com/static/codelabs/data-sources/img/5e98572969d8228_36.png 36w,https://developer.android.com/static/codelabs/data-sources/img/5e98572969d8228_48.png 48w,https://developer.android.com/static/codelabs/data-sources/img/5e98572969d8228_72.png 72w,https://developer.android.com/static/codelabs/data-sources/img/5e98572969d8228_96.png 96w,https://developer.android.com/static/codelabs/data-sources/img/5e98572969d8228_480.png 480w,https://developer.android.com/static/codelabs/data-sources/img/5e98572969d8228_720.png 720w,https://developer.android.com/static/codelabs/data-sources/img/5e98572969d8228_856.png 856w,https://developer.android.com/static/codelabs/data-sources/img/5e98572969d8228_960.png 960w,https://developer.android.com/static/codelabs/data-sources/img/5e98572969d8228_1440.png 1440w,https://developer.android.com/static/codelabs/data-sources/img/5e98572969d8228_1920.png 1920w,https://developer.android.com/static/codelabs/data-sources/img/5e98572969d8228_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<ul>
+<li>Select your Android device or emulator and click OK. This will install the service on the Wear OS device or emulator.</li>
+<li>After a couple of seconds, your service is built and ready to deploy. You will see a spinner in the status bar at the bottom of Android Studio.</li>
+<li>If it is not already at the &#34;<strong>Build</strong>&#34; tab at the bottom-left of Android Studio, select that tab and you can see the installation progress. At the end of the installation process, you should see the message &#34;<strong>Build: completed successfully&#34;.</strong></li>
+</ul>
+<p class="image-container"><img alt="5ea92276833c0446.png" style="width: 370.00px" src="/static/codelabs/data-sources/img/5ea92276833c0446.png" srcset="https://developer.android.com/static/codelabs/data-sources/img/5ea92276833c0446_36.png 36w,https://developer.android.com/static/codelabs/data-sources/img/5ea92276833c0446_48.png 48w,https://developer.android.com/static/codelabs/data-sources/img/5ea92276833c0446_72.png 72w,https://developer.android.com/static/codelabs/data-sources/img/5ea92276833c0446_96.png 96w,https://developer.android.com/static/codelabs/data-sources/img/5ea92276833c0446_480.png 480w,https://developer.android.com/static/codelabs/data-sources/img/5ea92276833c0446_720.png 720w,https://developer.android.com/static/codelabs/data-sources/img/5ea92276833c0446_856.png 856w,https://developer.android.com/static/codelabs/data-sources/img/5ea92276833c0446_960.png 960w,https://developer.android.com/static/codelabs/data-sources/img/5ea92276833c0446_1440.png 1440w,https://developer.android.com/static/codelabs/data-sources/img/5ea92276833c0446_1920.png 1920w,https://developer.android.com/static/codelabs/data-sources/img/5ea92276833c0446_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<ul>
+<li>Choose a watch face that lets you select a complication. In our case, we chose <strong>Elements Digital</strong> but that might not be available on your watch.</li>
+</ul>
+<p class="image-container"><img alt="a5cf2c605206efe2.png" style="width: 370.00px" src="/static/codelabs/data-sources/img/a5cf2c605206efe2.png" srcset="https://developer.android.com/static/codelabs/data-sources/img/a5cf2c605206efe2_36.png 36w,https://developer.android.com/static/codelabs/data-sources/img/a5cf2c605206efe2_48.png 48w,https://developer.android.com/static/codelabs/data-sources/img/a5cf2c605206efe2_72.png 72w,https://developer.android.com/static/codelabs/data-sources/img/a5cf2c605206efe2_96.png 96w,https://developer.android.com/static/codelabs/data-sources/img/a5cf2c605206efe2_480.png 480w,https://developer.android.com/static/codelabs/data-sources/img/a5cf2c605206efe2_720.png 720w,https://developer.android.com/static/codelabs/data-sources/img/a5cf2c605206efe2_856.png 856w,https://developer.android.com/static/codelabs/data-sources/img/a5cf2c605206efe2_960.png 960w,https://developer.android.com/static/codelabs/data-sources/img/a5cf2c605206efe2_1440.png 1440w,https://developer.android.com/static/codelabs/data-sources/img/a5cf2c605206efe2_1920.png 1920w,https://developer.android.com/static/codelabs/data-sources/img/a5cf2c605206efe2_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p><em>Please note, since this is the first time you are running this watch face, you will need to select it from &#34;Add more watch faces&#34;. After it has been selected once, it will show up as one of the options alongside this option.</em></p>
+<ul>
+<li>Now you should be centered on your chosen watch face in the Favorite menu (see image below). Click on the gear icon at the bottom.</li>
+</ul>
+<p class="image-container"><img alt="f17fb6b4cfe06182.png" style="width: 370.00px" src="/static/codelabs/data-sources/img/f17fb6b4cfe06182.png" srcset="https://developer.android.com/static/codelabs/data-sources/img/f17fb6b4cfe06182_36.png 36w,https://developer.android.com/static/codelabs/data-sources/img/f17fb6b4cfe06182_48.png 48w,https://developer.android.com/static/codelabs/data-sources/img/f17fb6b4cfe06182_72.png 72w,https://developer.android.com/static/codelabs/data-sources/img/f17fb6b4cfe06182_96.png 96w,https://developer.android.com/static/codelabs/data-sources/img/f17fb6b4cfe06182_480.png 480w,https://developer.android.com/static/codelabs/data-sources/img/f17fb6b4cfe06182_720.png 720w,https://developer.android.com/static/codelabs/data-sources/img/f17fb6b4cfe06182_856.png 856w,https://developer.android.com/static/codelabs/data-sources/img/f17fb6b4cfe06182_960.png 960w,https://developer.android.com/static/codelabs/data-sources/img/f17fb6b4cfe06182_1440.png 1440w,https://developer.android.com/static/codelabs/data-sources/img/f17fb6b4cfe06182_1920.png 1920w,https://developer.android.com/static/codelabs/data-sources/img/f17fb6b4cfe06182_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<ul>
+<li>For this watch face, you should select <strong>Data</strong>. For the custom watch face you are using, the UI may be different.</li>
+</ul>
+<p class="image-container"><img alt="aef4fca32751a15a.png" style="width: 370.00px" src="/static/codelabs/data-sources/img/aef4fca32751a15a.png" srcset="https://developer.android.com/static/codelabs/data-sources/img/aef4fca32751a15a_36.png 36w,https://developer.android.com/static/codelabs/data-sources/img/aef4fca32751a15a_48.png 48w,https://developer.android.com/static/codelabs/data-sources/img/aef4fca32751a15a_72.png 72w,https://developer.android.com/static/codelabs/data-sources/img/aef4fca32751a15a_96.png 96w,https://developer.android.com/static/codelabs/data-sources/img/aef4fca32751a15a_480.png 480w,https://developer.android.com/static/codelabs/data-sources/img/aef4fca32751a15a_720.png 720w,https://developer.android.com/static/codelabs/data-sources/img/aef4fca32751a15a_856.png 856w,https://developer.android.com/static/codelabs/data-sources/img/aef4fca32751a15a_960.png 960w,https://developer.android.com/static/codelabs/data-sources/img/aef4fca32751a15a_1440.png 1440w,https://developer.android.com/static/codelabs/data-sources/img/aef4fca32751a15a_1920.png 1920w,https://developer.android.com/static/codelabs/data-sources/img/aef4fca32751a15a_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<ul>
+<li>Select any <strong>position</strong>, that is, any <strong>&#34;+&#34;</strong> (complication).</li>
+</ul>
+<p class="image-container"><img alt="461f8a704fbc6496.png" style="width: 370.00px" src="/static/codelabs/data-sources/img/461f8a704fbc6496.png" srcset="https://developer.android.com/static/codelabs/data-sources/img/461f8a704fbc6496_36.png 36w,https://developer.android.com/static/codelabs/data-sources/img/461f8a704fbc6496_48.png 48w,https://developer.android.com/static/codelabs/data-sources/img/461f8a704fbc6496_72.png 72w,https://developer.android.com/static/codelabs/data-sources/img/461f8a704fbc6496_96.png 96w,https://developer.android.com/static/codelabs/data-sources/img/461f8a704fbc6496_480.png 480w,https://developer.android.com/static/codelabs/data-sources/img/461f8a704fbc6496_720.png 720w,https://developer.android.com/static/codelabs/data-sources/img/461f8a704fbc6496_856.png 856w,https://developer.android.com/static/codelabs/data-sources/img/461f8a704fbc6496_960.png 960w,https://developer.android.com/static/codelabs/data-sources/img/461f8a704fbc6496_1440.png 1440w,https://developer.android.com/static/codelabs/data-sources/img/461f8a704fbc6496_1920.png 1920w,https://developer.android.com/static/codelabs/data-sources/img/461f8a704fbc6496_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<ul>
+<li>Finally, scroll down and select the service <strong>Complications Data Source  Codelab</strong>. (After you select it, you may need to swipe left several times or palm the device to exit.)</li>
+</ul>
+<p class="image-container"><img alt="b4d0d14140ce0120.png" style="width: 370.00px" src="/static/codelabs/data-sources/img/b4d0d14140ce0120.png" srcset="https://developer.android.com/static/codelabs/data-sources/img/b4d0d14140ce0120_36.png 36w,https://developer.android.com/static/codelabs/data-sources/img/b4d0d14140ce0120_48.png 48w,https://developer.android.com/static/codelabs/data-sources/img/b4d0d14140ce0120_72.png 72w,https://developer.android.com/static/codelabs/data-sources/img/b4d0d14140ce0120_96.png 96w,https://developer.android.com/static/codelabs/data-sources/img/b4d0d14140ce0120_480.png 480w,https://developer.android.com/static/codelabs/data-sources/img/b4d0d14140ce0120_720.png 720w,https://developer.android.com/static/codelabs/data-sources/img/b4d0d14140ce0120_856.png 856w,https://developer.android.com/static/codelabs/data-sources/img/b4d0d14140ce0120_960.png 960w,https://developer.android.com/static/codelabs/data-sources/img/b4d0d14140ce0120_1440.png 1440w,https://developer.android.com/static/codelabs/data-sources/img/b4d0d14140ce0120_1920.png 1920w,https://developer.android.com/static/codelabs/data-sources/img/b4d0d14140ce0120_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<ul>
+<li>In your output, you should see both &#34;<code translate="no" dir="ltr">onComplicationActivated()</code>&#34; and &#34;<code translate="no" dir="ltr">onComplicationRequest</code> <code translate="no" dir="ltr">()</code>&#34; log messages (though nothing will show in the complication location).</li>
+<li>If you do not see the log messages, try deploying the watch face again by pressing the green triangle button in the toolbar.</li>
+<li>If you aren&#39;t familiar with how to see <code translate="no" dir="ltr">Log</code> data, click the tab at the bottom of Android Studio labeled &#34;<strong>6: Logcat</strong>&#34;. Set the dropdowns to your device/emulator and the package name, <code translate="no" dir="ltr">com.example.android.wearable.complicationsdatasource</code> (a screenshot is below).</li>
+</ul>
+<p class="image-container"><img alt="af9cf164f9c598fc.png" style="width: 624.00px" src="/static/codelabs/data-sources/img/af9cf164f9c598fc.png" srcset="https://developer.android.com/static/codelabs/data-sources/img/af9cf164f9c598fc_36.png 36w,https://developer.android.com/static/codelabs/data-sources/img/af9cf164f9c598fc_48.png 48w,https://developer.android.com/static/codelabs/data-sources/img/af9cf164f9c598fc_72.png 72w,https://developer.android.com/static/codelabs/data-sources/img/af9cf164f9c598fc_96.png 96w,https://developer.android.com/static/codelabs/data-sources/img/af9cf164f9c598fc_480.png 480w,https://developer.android.com/static/codelabs/data-sources/img/af9cf164f9c598fc_720.png 720w,https://developer.android.com/static/codelabs/data-sources/img/af9cf164f9c598fc_856.png 856w,https://developer.android.com/static/codelabs/data-sources/img/af9cf164f9c598fc_960.png 960w,https://developer.android.com/static/codelabs/data-sources/img/af9cf164f9c598fc_1440.png 1440w,https://developer.android.com/static/codelabs/data-sources/img/af9cf164f9c598fc_1920.png 1920w,https://developer.android.com/static/codelabs/data-sources/img/af9cf164f9c598fc_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>&#34;But wait! Nothing is being displayed in the data slot I selected!&#34; Don&#39;t worry, we aren&#39;t supplying any data yet. We will add this in the next step.</p>
+<p>On some watches, the Elements Watch Face has complications enabled, so you might see a populated complication on your watch. Also, don&#39;t worry if your emulator has a cloud with a strikethrough in place of the airplane icon. We will not need a connection to a phone or the internet for this code lab.</p>
+<p class="image-container"><img alt="52da39817e329e7a.png" style="width: 370.00px" src="/static/codelabs/data-sources/img/52da39817e329e7a.png" srcset="https://developer.android.com/static/codelabs/data-sources/img/52da39817e329e7a_36.png 36w,https://developer.android.com/static/codelabs/data-sources/img/52da39817e329e7a_48.png 48w,https://developer.android.com/static/codelabs/data-sources/img/52da39817e329e7a_72.png 72w,https://developer.android.com/static/codelabs/data-sources/img/52da39817e329e7a_96.png 96w,https://developer.android.com/static/codelabs/data-sources/img/52da39817e329e7a_480.png 480w,https://developer.android.com/static/codelabs/data-sources/img/52da39817e329e7a_720.png 720w,https://developer.android.com/static/codelabs/data-sources/img/52da39817e329e7a_856.png 856w,https://developer.android.com/static/codelabs/data-sources/img/52da39817e329e7a_960.png 960w,https://developer.android.com/static/codelabs/data-sources/img/52da39817e329e7a_1440.png 1440w,https://developer.android.com/static/codelabs/data-sources/img/52da39817e329e7a_1920.png 1920w,https://developer.android.com/static/codelabs/data-sources/img/52da39817e329e7a_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<h3 is-upgraded id="summary" data-text="Summary" tabindex="-1"><strong>Summary</strong></h3>
+<p>In this step you&#39;ve learned about:</p>
+<ul>
+<li>Wear OS and the concepts behind exposing data to complications</li>
+<li>The basics of our starting point (<strong>base</strong> module)</li>
+<li>Deploy and run a watch face</li>
+</ul>
+<h3 is-upgraded id="next-up" data-text="Next up" tabindex="-1"><strong>Next up</strong></h3>
+<p>Let&#39;s start exposing some data.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Exposing Short Text Data" duration="10" step="1">
+          
+          <h2 class="step-title" id="1" data-text="Exposing Short Text Data" tabindex="-1">
+              2. Exposing Short Text Data
+          </h2>
+          <h3 is-upgraded id="code-step-2" data-text="Code step 2" tabindex="-1"><strong>Code step 2</strong></h3>
+<p>In this step, we will start exposing data. Complications accept several  <a href="https://developer.android.com/training/wearables/watch-faces/adding-complications.html#using_complication_types" target="_blank">types of data</a>. In this step, we will return the Short Text data type.</p>
+<p>If at any point you are confused by the concepts discussed here, please refer to the <code translate="no" dir="ltr">complete</code> module and see how these steps may be implemented.</p>
+<h3 is-upgraded id="specifying-the-data-types-your-data-source-supports" data-text="Specifying the data types your data source supports" tabindex="-1"><strong>Specifying the data types your data source supports</strong></h3>
+<p>Open the <code translate="no" dir="ltr">AndroidManifest.xml</code> file and look at the service <code translate="no" dir="ltr">CustomComplicationDataSourceService</code> . Notice the intent-filter:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">&lt;action android:name=
+    "android.support.wearable.complications.ACTION_COMPLICATION_UPDATE_REQUEST"/&gt;
+</code></pre></devsite-code>
+<p>This tells the system that your service extends either  <code translate="no" dir="ltr">ComplicationDataSourceService</code> or <code translate="no" dir="ltr">SuspendingComplicationDataSourceService</code> (variation that supports Kotlin Coroutines) and can send data for complications.</p>
+<p>Next is the <code translate="no" dir="ltr">meta-data</code> element specifying the data type(s) we support. In this case, we support <strong>SMALL_IMAGE</strong>, but for this step, change that to <strong>SHORT_TEXT</strong>. Change your first <code translate="no" dir="ltr">meta-data</code> element to the following:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">&lt;meta-data
+    android:name="android.support.wearable.complications.SUPPORTED_TYPES"
+    android:value="SHORT_TEXT"/&gt;
+</code></pre></devsite-code>
+<h3 is-upgraded id="exposing-your-data" data-text="Exposing your data" tabindex="-1"><strong>Exposing your data</strong></h3>
+<p>As stated earlier, <code translate="no" dir="ltr">onComplicationActivated()</code> is called when your data source  is activated. This is a good place/time to perform any basic setup that needs to be done once per activation. We aren&#39;t doing that in this code lab, since our sample is relatively simple.</p>
+<p>The  <code translate="no" dir="ltr">onComplicationRequest()</code>call is where the active complication requests updated data.</p>
+<p>The method <code translate="no" dir="ltr">onComplicationRequest()</code> is triggered for various reasons:</p>
+<ul>
+<li>An active watch face complication is changed to use this source</li>
+<li>A complication using this source becomes active</li>
+<li>You triggered an update from <strong>your own class</strong> via either <code translate="no" dir="ltr">ComplicationDataSourceUpdateRequester.requestUpdate()</code> or  <code translate="no" dir="ltr">ComplicationDataSourceUpdateRequester.requestUpdateAll()</code> .</li>
+<li>The period of time you specified in the manifest has elapsed</li>
+</ul>
+<p>Open <code translate="no" dir="ltr">CustomComplicationDataSourceService</code> <code translate="no" dir="ltr">.kt</code> and move the cursor down to the <code translate="no" dir="ltr">onComplicationRequest()</code> method. Delete the line, &#34;<code translate="no" dir="ltr">return null</code>&#34; and then copy and paste the code below under the initial <code translate="no" dir="ltr">Log.d()</code> call:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scalate Server Page"><code translate="no" dir="ltr">//<span class="devsite-syntax-w"> </span>Retrieves<span class="devsite-syntax-w"> </span>your<span class="devsite-syntax-w"> </span>data,<span class="devsite-syntax-w"> </span>in<span class="devsite-syntax-w"> </span>this<span class="devsite-syntax-w"> </span>case,<span class="devsite-syntax-w"> </span>we<span class="devsite-syntax-w"> </span>grab<span class="devsite-syntax-w"> </span>an<span class="devsite-syntax-w"> </span>incrementing<span class="devsite-syntax-w"> </span>number<span class="devsite-syntax-w"> </span>from<span class="devsite-syntax-w"> </span>Datastore.
+val<span class="devsite-syntax-w"> </span>number:<span class="devsite-syntax-w"> </span>Int<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>applicationContext.dataStore.data
+<span class="devsite-syntax-w">    </span>.map<span class="devsite-syntax-w"> </span>{<span class="devsite-syntax-w"> </span>preferences<span class="devsite-syntax-w"> </span>-&gt;
+<span class="devsite-syntax-w">        </span>preferences[TAP_COUNTER_PREF_KEY]<span class="devsite-syntax-w"> </span>?:<span class="devsite-syntax-w"> </span>0
+<span class="devsite-syntax-w">    </span>}
+<span class="devsite-syntax-w">    </span>.first()
+
+val<span class="devsite-syntax-w"> </span>numberText<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>String.format(Locale.getDefault(),<span class="devsite-syntax-w"> </span>"%d!",<span class="devsite-syntax-w"> </span>number)
+
+</code></pre></devsite-code>
+<p>In this case, we are retrieving a stored <code translate="no" dir="ltr">int</code> from the <code translate="no" dir="ltr">DataStore</code> that represents our data. This could easily be a call to your database.</p>
+<p>Interacting with a <code translate="no" dir="ltr">DataStore</code> requires a coroutine to handle collecting the <code translate="no" dir="ltr">Flow</code> it produces. You might notice that <code translate="no" dir="ltr">onComplicationRequest()</code> is a <code translate="no" dir="ltr">suspend</code> function, so we can collect our data via <code translate="no" dir="ltr">Flow</code> without specifically launching a coroutine.</p>
+<aside class="warning"><p><strong>Note:</strong> The <code translate="no" dir="ltr">suspend</code> version of <code translate="no" dir="ltr">onComplicationRequest()</code>is supported in the <code translate="no" dir="ltr">SuspendingComplicationDataSourceService</code> class. If you don&#39;t need <code translate="no" dir="ltr">suspend</code> support, you can use the <code translate="no" dir="ltr">ComplicationDataSourceService</code> class.</p>
+</aside>
+<p>After retrieving the integer value, we convert it to a simple string in preparation for converting it to a <code translate="no" dir="ltr">ComplicationData</code> object, that is, a data type the complication understands.</p>
+<p>Next, copy and paste the code below the code you just added..</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Genshi"><code translate="no" dir="ltr">return<span class="devsite-syntax-w"> </span>when<span class="devsite-syntax-w"> </span>(request.complicationType)<span class="devsite-syntax-w"> </span>{
+
+<span class="devsite-syntax-w">    </span>ComplicationType.SHORT_TEXT<span class="devsite-syntax-w"> </span>-&gt;<span class="devsite-syntax-w"> </span>ShortTextComplicationData.Builder(
+<span class="devsite-syntax-w">        </span>text<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>PlainComplicationText.Builder(text<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>numberText).build(),
+<span class="devsite-syntax-w">        </span>contentDescription<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>PlainComplicationText
+<span class="devsite-syntax-w">            </span>.Builder(text<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>"Short<span class="devsite-syntax-w"> </span>Text<span class="devsite-syntax-w"> </span>version<span class="devsite-syntax-w"> </span>of<span class="devsite-syntax-w"> </span>Number.").build()
+<span class="devsite-syntax-w">    </span>)
+<span class="devsite-syntax-w">        </span>.build()
+
+<span class="devsite-syntax-w">    </span>else<span class="devsite-syntax-w"> </span>-&gt;<span class="devsite-syntax-w"> </span>{
+<span class="devsite-syntax-w">        </span>if<span class="devsite-syntax-w"> </span>(Log.isLoggable(TAG,<span class="devsite-syntax-w"> </span>Log.WARN))<span class="devsite-syntax-w"> </span>{
+<span class="devsite-syntax-w">            </span>Log.w(TAG,<span class="devsite-syntax-w"> </span>"Unexpected<span class="devsite-syntax-w"> </span>complication<span class="devsite-syntax-w"> </span>type<span class="devsite-syntax-w"> </span><span class="devsite-syntax-cp">${</span><span class="devsite-syntax-n">request</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">complicationType</span><span class="devsite-syntax-cp">}</span>")
+<span class="devsite-syntax-w">        </span>}
+<span class="devsite-syntax-w">        </span>null
+<span class="devsite-syntax-w">    </span>}
+}
+
+</code></pre></devsite-code>
+<p>In this code, we return a <code translate="no" dir="ltr">ComplicationData</code> object based on the complication type, that is, we will return a <code translate="no" dir="ltr">ShortTextComplicationData</code> (a subclass of <code translate="no" dir="ltr">ComplicationData</code>) for the data type <code translate="no" dir="ltr">SHORT_TEXT</code>.</p>
+<p>A given data type may include different fields. For example, <code translate="no" dir="ltr">SHORT_TEXT</code> may be just a single piece of text, or a title and text, or a monochromatic image and text (all which should include a content description for accessibility).</p>
+<p>For our case, we are only setting the required field and no optional fields. To learn more about these types and fields, review our  <a href="https://developer.android.com/training/wearables/watch-faces/complications.html#types_and_fields" target="_blank">documentation</a>.</p>
+<p>You may ask why we are using a when statement to create the data. Later, we will support various forms of the data based on the type the system is requesting. By using a when statement  now, we can easily add new data types (<code translate="no" dir="ltr">LONG_TEXT</code>, <code translate="no" dir="ltr">RANGED_VALUE</code>, etc.) later.</p>
+<p>Finally, we return null if we don&#39;t support the data type.</p>
+<p>Your final method should look like this:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scalate Server Page"><code translate="no" dir="ltr">override<span class="devsite-syntax-w"> </span>suspend<span class="devsite-syntax-w"> </span>fun<span class="devsite-syntax-w"> </span>onComplicationRequest(request:<span class="devsite-syntax-w"> </span>ComplicationRequest):<span class="devsite-syntax-w"> </span>ComplicationData?<span class="devsite-syntax-w"> </span>{
+<span class="devsite-syntax-w">    </span>Log.d(TAG,<span class="devsite-syntax-w"> </span>"onComplicationRequest()<span class="devsite-syntax-w"> </span>id:<span class="devsite-syntax-w"> </span>${request.complicationInstanceId}")
+
+<span class="devsite-syntax-w">    </span>//<span class="devsite-syntax-w"> </span>Retrieves<span class="devsite-syntax-w"> </span>your<span class="devsite-syntax-w"> </span>data,<span class="devsite-syntax-w"> </span>in<span class="devsite-syntax-w"> </span>this<span class="devsite-syntax-w"> </span>case,<span class="devsite-syntax-w"> </span>we<span class="devsite-syntax-w"> </span>grab<span class="devsite-syntax-w"> </span>an<span class="devsite-syntax-w"> </span>incrementing<span class="devsite-syntax-w"> </span>number<span class="devsite-syntax-w"> </span>from<span class="devsite-syntax-w"> </span>Datastore.
+<span class="devsite-syntax-w">    </span>val<span class="devsite-syntax-w"> </span>number:<span class="devsite-syntax-w"> </span>Int<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>applicationContext.dataStore.data
+<span class="devsite-syntax-w">        </span>.map<span class="devsite-syntax-w"> </span>{<span class="devsite-syntax-w"> </span>preferences<span class="devsite-syntax-w"> </span>-&gt;
+<span class="devsite-syntax-w">            </span>preferences[TAP_COUNTER_PREF_KEY]<span class="devsite-syntax-w"> </span>?:<span class="devsite-syntax-w"> </span>0
+<span class="devsite-syntax-w">        </span>}
+<span class="devsite-syntax-w">        </span>.first()
+
+<span class="devsite-syntax-w">    </span>val<span class="devsite-syntax-w"> </span>numberText<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>String.format(Locale.getDefault(),<span class="devsite-syntax-w"> </span>"%d!",<span class="devsite-syntax-w"> </span>number)
+
+<span class="devsite-syntax-w">    </span>return<span class="devsite-syntax-w"> </span>when<span class="devsite-syntax-w"> </span>(request.complicationType)<span class="devsite-syntax-w"> </span>{
+
+<span class="devsite-syntax-w">        </span>ComplicationType.SHORT_TEXT<span class="devsite-syntax-w"> </span>-&gt;<span class="devsite-syntax-w"> </span>ShortTextComplicationData.Builder(
+<span class="devsite-syntax-w">            </span>text<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>PlainComplicationText.Builder(text<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>numberText).build(),
+<span class="devsite-syntax-w">            </span>contentDescription<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>PlainComplicationText
+<span class="devsite-syntax-w">                </span>.Builder(text<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>"Short<span class="devsite-syntax-w"> </span>Text<span class="devsite-syntax-w"> </span>version<span class="devsite-syntax-w"> </span>of<span class="devsite-syntax-w"> </span>Number.").build()
+<span class="devsite-syntax-w">        </span>)
+<span class="devsite-syntax-w">            </span>.build()
+
+<span class="devsite-syntax-w">        </span>else<span class="devsite-syntax-w"> </span>-&gt;<span class="devsite-syntax-w"> </span>{
+<span class="devsite-syntax-w">            </span>if<span class="devsite-syntax-w"> </span>(Log.isLoggable(TAG,<span class="devsite-syntax-w"> </span>Log.WARN))<span class="devsite-syntax-w"> </span>{
+<span class="devsite-syntax-w">                </span>Log.w(TAG,<span class="devsite-syntax-w"> </span>"Unexpected<span class="devsite-syntax-w"> </span>complication<span class="devsite-syntax-w"> </span>type<span class="devsite-syntax-w"> </span>${request.complicationType}")
+<span class="devsite-syntax-w">            </span>}
+<span class="devsite-syntax-w">            </span>null
+<span class="devsite-syntax-w">        </span>}
+<span class="devsite-syntax-w">    </span>}
+}
+</code></pre></devsite-code>
+<h3 is-upgraded id="run-the-app-again" data-text="Run the app again" tabindex="-1">Run the app again</h3>
+<p>In the first step, you learned to install your complication data service on your device or emulator. Now it&#39;s time to do that again! Install your app and <strong>reselect the complication</strong>, i.e., swipe the watch face, select the gear, navigate to the same complication, and select the Complications Data Source Codelab. You should see something like this:</p>
+<p class="image-container"><img alt="caae484f1f2508fd.png" style="width: 370.00px" src="/static/codelabs/data-sources/img/caae484f1f2508fd.png" srcset="https://developer.android.com/static/codelabs/data-sources/img/caae484f1f2508fd_36.png 36w,https://developer.android.com/static/codelabs/data-sources/img/caae484f1f2508fd_48.png 48w,https://developer.android.com/static/codelabs/data-sources/img/caae484f1f2508fd_72.png 72w,https://developer.android.com/static/codelabs/data-sources/img/caae484f1f2508fd_96.png 96w,https://developer.android.com/static/codelabs/data-sources/img/caae484f1f2508fd_480.png 480w,https://developer.android.com/static/codelabs/data-sources/img/caae484f1f2508fd_720.png 720w,https://developer.android.com/static/codelabs/data-sources/img/caae484f1f2508fd_856.png 856w,https://developer.android.com/static/codelabs/data-sources/img/caae484f1f2508fd_960.png 960w,https://developer.android.com/static/codelabs/data-sources/img/caae484f1f2508fd_1440.png 1440w,https://developer.android.com/static/codelabs/data-sources/img/caae484f1f2508fd_1920.png 1920w,https://developer.android.com/static/codelabs/data-sources/img/caae484f1f2508fd_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<h3 is-upgraded id="summary_1" data-text="Summary" tabindex="-1"><strong>Summary</strong></h3>
+<p>In this step you&#39;ve learned:</p>
+<ul>
+<li>How to specify the data types your source  can support</li>
+<li>How often your data should be requested when an active complication is using it</li>
+<li>Where to expose your data to Wear OS</li>
+</ul>
+<h3 is-upgraded id="next-up_1" data-text="Next up" tabindex="-1"><strong>Next up</strong></h3>
+<p>Let&#39;s try supporting a different data type.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Triggering Complication Data Updates" duration="10" step="2">
+          
+          <h2 class="step-title" id="2" data-text="Triggering Complication Data Updates" tabindex="-1">
+              3. Triggering Complication Data Updates
+          </h2>
+          <h3 is-upgraded id="code-step-3" data-text="Code step 3" tabindex="-1"><strong>Code step</strong> <strong>3</strong></h3>
+<p>In this step, we will trigger updates in the data when the user taps our complication.</p>
+<p>If at any point you are confused by the concepts discussed here, please refer to the <code translate="no" dir="ltr">complete</code> module and see how these steps may be implemented.</p>
+<h3 is-upgraded id="specifying-how-often-the-complication-should-refresh-your-data" data-text="Specifying how often the complication should refresh your data" tabindex="-1"><strong>Specifying how often the complication should refresh your data</strong></h3>
+<p>Open the <code translate="no" dir="ltr">AndroidManifest.xml</code> file and look again at the service <code translate="no" dir="ltr">CustomComplicationDataSourceService</code> .</p>
+<p>Notice an <strong>UPDATE_PERIOD_SECONDS</strong> field in the <code translate="no" dir="ltr">meta-data</code> element. This specifies how often you want the system to check for updates to the data when your data source is active.</p>
+<p>Right now, it is set to 600 seconds (10 minutes). Because we want to update our complication in response to a user action, we want to update more frequently. While we could decrease this period, the system may not trigger updates for periods shorter than a couple of minutes.</p>
+<p>A better approach is a &#34;push style&#34; where we tell the system to update precisely when the data has changed.</p>
+<p>Change the update frequency from 600 to 0, which indicates that we will directly ping the system when data has changed instead of relying on periodic updates. Note that the meta-data is a requirement.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">&lt;meta-data
+    android:name="android.support.wearable.complications.UPDATE_PERIOD_SECONDS"
+    android:value="0"/&gt;
+</code></pre></devsite-code>
+<h3 is-upgraded id="informing-the-system-that-new-complication-data-is-available" data-text="Informing the system that new complication data is available" tabindex="-1"><strong>Informing the system that new complication data is available</strong></h3>
+<p>Open <code translate="no" dir="ltr">ComplicationTapBroadcastReceiver.kt</code>. This <code translate="no" dir="ltr">BroadcastReceiver</code> class will update our complication data when it&#39;s triggered. (Remember we are just saving the data to a  <code translate="no" dir="ltr">DataStore</code>.)</p>
+<p>The class also offers a helper method that constructs a <code translate="no" dir="ltr">PendingIntent</code> (triggers it as a <code translate="no" dir="ltr">BroadcastReceiver</code>).</p>
+<p>Right now the <code translate="no" dir="ltr">onReceive()</code> method, extracts the data source and complication id from the intent and updates the integer in <code translate="no" dir="ltr">DataStore</code>. We need to tell our complication that the data has been updated.</p>
+<p>Move to the bottom of the <code translate="no" dir="ltr">onReceive()</code> method. Above the finally block, you should see a comment &#34;Request an update for the...&#34; Copy and paste the code below that comment.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scilab"><code translate="no" dir="ltr"><span class="devsite-syntax-c1">// Request an update for the complication that has just been tapped, that is,</span>
+<span class="devsite-syntax-c1">// the system call onComplicationUpdate on the specified complication data</span>
+<span class="devsite-syntax-c1">// source.</span>
+<span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">complicationDataSourceUpdateRequester</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">ComplicationDataSourceUpdateRequester</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">create</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">context</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">context</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">complicationDataSourceComponent</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">dataSource</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-n">complicationDataSourceUpdateRequester</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">requestUpdate</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">complicationId</span><span class="devsite-syntax-p">)</span>
+
+
+</code></pre></devsite-code>
+<p>This instructs Wear OS that our complication&#39;s data has been updated. We need three pieces of data for this to work:</p>
+<ul>
+<li><strong>context</strong> - <code translate="no" dir="ltr">Context</code> is available as an argument for this method: <code translate="no" dir="ltr">onReceive()</code>.</li>
+<li><strong>complicationDataSourceComponent</strong> - The <code translate="no" dir="ltr">DataSource</code> of your complication is passed in as an <code translate="no" dir="ltr">Extra</code> from the <code translate="no" dir="ltr">PendingIntent</code> that triggers this <code translate="no" dir="ltr">BroadcastReceiver</code>.</li>
+<li><strong>complicationId</strong> - The unique integer assigned by a watch face for the complication location. The <code translate="no" dir="ltr">int</code> is passed in as an <code translate="no" dir="ltr">Extra</code> from the <code translate="no" dir="ltr">PendingIntent</code> that triggers this <code translate="no" dir="ltr">BroadcastReceiver</code>.</li>
+</ul>
+<p>We are done with this step and your final method should look like this:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL"><code translate="no" dir="ltr"><span class="devsite-syntax-n">override</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">onReceive</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nl">context</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Context</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nl">intent</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Intent</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">{</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-o">//</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Retrieve</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">complication</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">values</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">from</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Intent</span><span class="devsite-syntax-err">'</span><span class="devsite-syntax-n">s</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">extras</span><span class="devsite-syntax-p">.</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">extras</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">intent</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">extras</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-vm">?</span><span class="devsite-syntax-err">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">return</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">dataSource</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">extras</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">getParcelable&lt;ComponentName&gt;</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">EXTRA_DATA_SOURCE_COMPONENT</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-vm">?</span><span class="devsite-syntax-err">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">return</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">complicationId</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">extras</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">getInt</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">EXTRA_COMPLICATION_ID</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-o">//</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Required</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">when</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">using</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">async</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">code</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ow">in</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">onReceive</span><span class="devsite-syntax-p">().</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">result</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">goAsync</span><span class="devsite-syntax-p">()</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-o">//</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Launches</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">coroutine</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">update</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">DataStore</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">counter</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">value</span><span class="devsite-syntax-p">.</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-k">scope</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">launch</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-k">try</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">{</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">context</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">dataStore</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">edit</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">preferences</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">-</span>&gt;
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">currentValue</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">preferences</span><span class="devsite-syntax-o">[</span><span class="devsite-syntax-n">TAP_COUNTER_PREF_KEY</span><span class="devsite-syntax-o">]</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-vm">?</span><span class="devsite-syntax-err">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mi">0</span>
+
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-o">//</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">Update</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">data</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">for</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">complication</span><span class="devsite-syntax-p">.</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">newValue</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">currentValue</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">+</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mi">1</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">%</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">MAX_NUMBER</span>
+
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-n">preferences</span><span class="devsite-syntax-o">[</span><span class="devsite-syntax-n">TAP_COUNTER_PREF_KEY</span><span class="devsite-syntax-o">]</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">newValue</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-err">}</span>
+
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-o">//</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Request</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">an</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">update</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">for</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">complication</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">that</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">has</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">just</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">been</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">tapped</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">that</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">is</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-o">//</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">system</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">call</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">onComplicationUpdate</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">on</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">specified</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">complication</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">data</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-o">//</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">source</span><span class="devsite-syntax-p">.</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">complicationDataSourceUpdateRequester</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-n">ComplicationDataSourceUpdateRequester</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-k">create</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-n">context</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">context</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-n">complicationDataSourceComponent</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">dataSource</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">complicationDataSourceUpdateRequester</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">requestUpdate</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">complicationId</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-err">}</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">finally</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">{</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-o">//</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Always</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">call</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">finish</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">even</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">cancelled</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-k">result</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">finish</span><span class="devsite-syntax-p">()</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-err">}</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-err">}</span>
+<span class="devsite-syntax-err">}</span>
+
+</code></pre></devsite-code>
+<h3 is-upgraded id="adding-a-tap-action-to-our-complication" data-text="Adding a tap action to our complication" tabindex="-1"><strong>Adding a tap action to our complication</strong></h3>
+<p>Our <code translate="no" dir="ltr">BroadcastReceiver</code> not only updates the data but also informs the system that new data is available (see the previous step). We need to add a tap action to our complication to trigger the <code translate="no" dir="ltr">BroadcastReceiver</code>.</p>
+<p>Open <code translate="no" dir="ltr">CustomComplicationDataSourceService.kt</code> and move down to the <code translate="no" dir="ltr">onComplicationRequest()</code> method.</p>
+<p>Below the first <code translate="no" dir="ltr">Log.d()</code> statement and above where the integer is retrieved from the DataStore, copy/paste the code below:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scilab"><code translate="no" dir="ltr"><span class="devsite-syntax-c1">// Create Tap Action so that the user can trigger an update by tapping the complication.</span>
+<span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">thisDataSource</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ComponentName</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">this</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">javaClass</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-c1">// We pass the complication id, so we can only update the specific complication tapped.</span>
+<span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">complicationPendingIntent</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">ComplicationTapBroadcastReceiver</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">getToggleIntent</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">this</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">thisDataSource</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">request</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">complicationInstanceId</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">)</span>
+</code></pre></devsite-code>
+<p>Recall from the previous step that we needed both these pieces of data for our <code translate="no" dir="ltr">BroadcastReceiver</code> to work (the data source and the complication id).We pass both here as extras with the  <code translate="no" dir="ltr">PendingIntent</code>.</p>
+<p>Next we need to assign the <code translate="no" dir="ltr">PendingIntent</code> to the tap event for our complication.</p>
+<p>Find the when statement for the ST and add this line above the .build() call.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only"><code translate="no" dir="ltr">    .setTapAction(complicationPendingIntent)
+</code></pre></devsite-code>
+<p>The block of code should now look like this.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">ComplicationType.SHORT_TEXT -&gt; ShortTextComplicationData.Builder(
+    text = PlainComplicationText.Builder(text = numberText).build(),
+    contentDescription = PlainComplicationText
+        .Builder(text = "Short Text version of Number.").build()
+)
+    .setTapAction(complicationPendingIntent)
+    .build()
+</code></pre></devsite-code>
+<p>This only adds one line, the <code translate="no" dir="ltr">.setTapAction()</code> method which assigns our new <code translate="no" dir="ltr">PendingIntent</code> to the tap action for the complication.</p>
+<p>We are done with this step. Your final method should look like this:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scalate Server Page"><code translate="no" dir="ltr">override<span class="devsite-syntax-w"> </span>suspend<span class="devsite-syntax-w"> </span>fun<span class="devsite-syntax-w"> </span>onComplicationRequest(request:<span class="devsite-syntax-w"> </span>ComplicationRequest):<span class="devsite-syntax-w"> </span>ComplicationData?<span class="devsite-syntax-w"> </span>{
+<span class="devsite-syntax-w">    </span>Log.d(TAG,<span class="devsite-syntax-w"> </span>"onComplicationRequest()<span class="devsite-syntax-w"> </span>id:<span class="devsite-syntax-w"> </span>${request.complicationInstanceId}")
+
+<span class="devsite-syntax-w">    </span>//<span class="devsite-syntax-w"> </span>Create<span class="devsite-syntax-w"> </span>Tap<span class="devsite-syntax-w"> </span>Action<span class="devsite-syntax-w"> </span>so<span class="devsite-syntax-w"> </span>that<span class="devsite-syntax-w"> </span>the<span class="devsite-syntax-w"> </span>user<span class="devsite-syntax-w"> </span>can<span class="devsite-syntax-w"> </span>trigger<span class="devsite-syntax-w"> </span>an<span class="devsite-syntax-w"> </span>update<span class="devsite-syntax-w"> </span>by<span class="devsite-syntax-w"> </span>tapping<span class="devsite-syntax-w"> </span>the<span class="devsite-syntax-w"> </span>complication.
+<span class="devsite-syntax-w">    </span>val<span class="devsite-syntax-w"> </span>thisDataSource<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>ComponentName(this,<span class="devsite-syntax-w"> </span>javaClass)
+<span class="devsite-syntax-w">    </span>//<span class="devsite-syntax-w"> </span>We<span class="devsite-syntax-w"> </span>pass<span class="devsite-syntax-w"> </span>the<span class="devsite-syntax-w"> </span>complication<span class="devsite-syntax-w"> </span>id,<span class="devsite-syntax-w"> </span>so<span class="devsite-syntax-w"> </span>we<span class="devsite-syntax-w"> </span>can<span class="devsite-syntax-w"> </span>only<span class="devsite-syntax-w"> </span>update<span class="devsite-syntax-w"> </span>the<span class="devsite-syntax-w"> </span>specific<span class="devsite-syntax-w"> </span>complication<span class="devsite-syntax-w"> </span>tapped.
+<span class="devsite-syntax-w">    </span>val<span class="devsite-syntax-w"> </span>complicationPendingIntent<span class="devsite-syntax-w"> </span>=
+<span class="devsite-syntax-w">        </span>ComplicationTapBroadcastReceiver.getToggleIntent(
+<span class="devsite-syntax-w">            </span>this,
+<span class="devsite-syntax-w">            </span>thisDataSource,
+<span class="devsite-syntax-w">            </span>request.complicationInstanceId
+<span class="devsite-syntax-w">        </span>)
+
+<span class="devsite-syntax-w">    </span>//<span class="devsite-syntax-w"> </span>Retrieves<span class="devsite-syntax-w"> </span>your<span class="devsite-syntax-w"> </span>data,<span class="devsite-syntax-w"> </span>in<span class="devsite-syntax-w"> </span>this<span class="devsite-syntax-w"> </span>case,<span class="devsite-syntax-w"> </span>we<span class="devsite-syntax-w"> </span>grab<span class="devsite-syntax-w"> </span>an<span class="devsite-syntax-w"> </span>incrementing<span class="devsite-syntax-w"> </span>number<span class="devsite-syntax-w"> </span>from<span class="devsite-syntax-w"> </span>Datastore.
+<span class="devsite-syntax-w">    </span>val<span class="devsite-syntax-w"> </span>number:<span class="devsite-syntax-w"> </span>Int<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>applicationContext.dataStore.data
+<span class="devsite-syntax-w">        </span>.map<span class="devsite-syntax-w"> </span>{<span class="devsite-syntax-w"> </span>preferences<span class="devsite-syntax-w"> </span>-&gt;
+<span class="devsite-syntax-w">            </span>preferences[TAP_COUNTER_PREF_KEY]<span class="devsite-syntax-w"> </span>?:<span class="devsite-syntax-w"> </span>0
+<span class="devsite-syntax-w">        </span>}
+<span class="devsite-syntax-w">        </span>.first()
+
+<span class="devsite-syntax-w">    </span>val<span class="devsite-syntax-w"> </span>numberText<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>String.format(Locale.getDefault(),<span class="devsite-syntax-w"> </span>"%d!",<span class="devsite-syntax-w"> </span>number)
+
+<span class="devsite-syntax-w">    </span>return<span class="devsite-syntax-w"> </span>when<span class="devsite-syntax-w"> </span>(request.complicationType)<span class="devsite-syntax-w"> </span>{
+
+<span class="devsite-syntax-w">        </span>ComplicationType.SHORT_TEXT<span class="devsite-syntax-w"> </span>-&gt;<span class="devsite-syntax-w"> </span>ShortTextComplicationData.Builder(
+<span class="devsite-syntax-w">            </span>text<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>PlainComplicationText.Builder(text<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>numberText).build(),
+<span class="devsite-syntax-w">            </span>contentDescription<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>PlainComplicationText
+<span class="devsite-syntax-w">                </span>.Builder(text<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>"Short<span class="devsite-syntax-w"> </span>Text<span class="devsite-syntax-w"> </span>version<span class="devsite-syntax-w"> </span>of<span class="devsite-syntax-w"> </span>Number.").build()
+<span class="devsite-syntax-w">        </span>)
+<span class="devsite-syntax-w">            </span>.setTapAction(complicationPendingIntent)
+<span class="devsite-syntax-w">            </span>.build()
+
+<span class="devsite-syntax-w">        </span>else<span class="devsite-syntax-w"> </span>-&gt;<span class="devsite-syntax-w"> </span>{
+<span class="devsite-syntax-w">            </span>if<span class="devsite-syntax-w"> </span>(Log.isLoggable(TAG,<span class="devsite-syntax-w"> </span>Log.WARN))<span class="devsite-syntax-w"> </span>{
+<span class="devsite-syntax-w">                </span>Log.w(TAG,<span class="devsite-syntax-w"> </span>"Unexpected<span class="devsite-syntax-w"> </span>complication<span class="devsite-syntax-w"> </span>type<span class="devsite-syntax-w"> </span>${request.complicationType}")
+<span class="devsite-syntax-w">            </span>}
+<span class="devsite-syntax-w">            </span>null
+<span class="devsite-syntax-w">        </span>}
+<span class="devsite-syntax-w">    </span>}
+}
+
+</code></pre></devsite-code>
+<h3 is-upgraded id="run-the-app-again_1" data-text="Run the app again" tabindex="-1">Run the app again</h3>
+<p>Install your app and <strong>reselect the complication</strong>, i.e., swipe the watch face, select the gear, navigate to the same complication, and select the <strong>Complications Data Source  Codelab</strong> source . You should see the same thing as you saw before. However, now you can tap the complication and the data will be updated.</p>
+<p class="image-container"><img alt="a9d767e37161e609.png" style="width: 370.00px" src="/static/codelabs/data-sources/img/a9d767e37161e609.png" srcset="https://developer.android.com/static/codelabs/data-sources/img/a9d767e37161e609_36.png 36w,https://developer.android.com/static/codelabs/data-sources/img/a9d767e37161e609_48.png 48w,https://developer.android.com/static/codelabs/data-sources/img/a9d767e37161e609_72.png 72w,https://developer.android.com/static/codelabs/data-sources/img/a9d767e37161e609_96.png 96w,https://developer.android.com/static/codelabs/data-sources/img/a9d767e37161e609_480.png 480w,https://developer.android.com/static/codelabs/data-sources/img/a9d767e37161e609_720.png 720w,https://developer.android.com/static/codelabs/data-sources/img/a9d767e37161e609_856.png 856w,https://developer.android.com/static/codelabs/data-sources/img/a9d767e37161e609_960.png 960w,https://developer.android.com/static/codelabs/data-sources/img/a9d767e37161e609_1440.png 1440w,https://developer.android.com/static/codelabs/data-sources/img/a9d767e37161e609_1920.png 1920w,https://developer.android.com/static/codelabs/data-sources/img/a9d767e37161e609_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<h3 is-upgraded id="summary_2" data-text="Summary" tabindex="-1"><strong>Summary</strong></h3>
+<p>In this step you&#39;ve learned:</p>
+<ul>
+<li>How to inform the system that your complication data has been updated</li>
+<li>How to tie a <code translate="no" dir="ltr">PendingIntent</code> to a tap action on your complication</li>
+</ul>
+<h3 is-upgraded id="next-up_2" data-text="Next up" tabindex="-1"><strong>Next up</strong></h3>
+<p>Let&#39;s try supporting a different data type.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Exposing Long Text Data" duration="5" step="3">
+          
+          <h2 class="step-title" id="3" data-text="Exposing Long Text Data" tabindex="-1">
+              4. Exposing Long Text Data
+          </h2>
+          <h3 is-upgraded id="code-step-4" data-text="Code step 4" tabindex="-1"><strong>Code step</strong> <strong>4</strong></h3>
+<p>As we expose our data to complications, it might be nice to support more types of data, and to see what different data types look like in complications.</p>
+<h3 is-upgraded id="specifying-a-different-supported-data-type" data-text="Specifying a different supported data type" tabindex="-1">Specifying a different supported data type</h3>
+<p>Open the <code translate="no" dir="ltr">AndroidManifest.xml</code> file again and look at the declaration of the service <code translate="no" dir="ltr">CustomComplicationDataSourceService</code> .</p>
+<p>Change the <code translate="no" dir="ltr">meta-data</code> element <strong><code translate="no" dir="ltr">SUPPORTED_TYPES</code></strong> from <strong>SHORT_TEXT</strong> to <strong>LONG_TEXT</strong>. Your change should look like this:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">&lt;meta-data
+    android:name="android.support.wearable.complications.SUPPORTED_TYPES"
+    android:value="LONG_TEXT"/&gt;
+</code></pre></devsite-code>
+<h3 is-upgraded id="adding-support-for-long-text" data-text="Adding support for LONG TEXT" tabindex="-1"><strong>Adding support for LONG TEXT</strong></h3>
+<p>Open <code translate="no" dir="ltr">CustomComplicationDataSourceService.kt</code>, move down to the <code translate="no" dir="ltr">when</code> statement in the <code translate="no" dir="ltr">onComplicationRequest()</code> method, and add the following code below the end of the <code translate="no" dir="ltr">TYPE_SHORT_TEXT</code> case and above the default case.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">ComplicationType.LONG_TEXT -&gt; LongTextComplicationData.Builder(
+    text = PlainComplicationText.Builder(text = "Number: $numberText").build(),
+    contentDescription = PlainComplicationText
+        .Builder(text = "Long Text version of Number.").build()
+)
+    .setTapAction(complicationPendingIntent)
+    .build()
+</code></pre></devsite-code>
+<p>The <code translate="no" dir="ltr">when</code> statement should look something like this:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Genshi"><code translate="no" dir="ltr">return<span class="devsite-syntax-w"> </span>when<span class="devsite-syntax-w"> </span>(request.complicationType)<span class="devsite-syntax-w"> </span>{
+
+<span class="devsite-syntax-w">    </span>ComplicationType.SHORT_TEXT<span class="devsite-syntax-w"> </span>-&gt;<span class="devsite-syntax-w"> </span>ShortTextComplicationData.Builder(
+<span class="devsite-syntax-w">        </span>text<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>PlainComplicationText.Builder(text<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>numberText).build(),
+<span class="devsite-syntax-w">        </span>contentDescription<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>PlainComplicationText
+<span class="devsite-syntax-w">            </span>.Builder(text<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>"Short<span class="devsite-syntax-w"> </span>Text<span class="devsite-syntax-w"> </span>version<span class="devsite-syntax-w"> </span>of<span class="devsite-syntax-w"> </span>Number.").build()
+<span class="devsite-syntax-w">    </span>)
+<span class="devsite-syntax-w">        </span>.setTapAction(complicationPendingIntent)
+<span class="devsite-syntax-w">        </span>.build()
+
+<span class="devsite-syntax-w">    </span>ComplicationType.LONG_TEXT<span class="devsite-syntax-w"> </span>-&gt;<span class="devsite-syntax-w"> </span>LongTextComplicationData.Builder(
+<span class="devsite-syntax-w">        </span>text<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>PlainComplicationText.Builder(text<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>"Number:<span class="devsite-syntax-w"> </span><span class="devsite-syntax-nv">$numberText</span>").build(),
+<span class="devsite-syntax-w">        </span>contentDescription<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>PlainComplicationText
+<span class="devsite-syntax-w">            </span>.Builder(text<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>"Long<span class="devsite-syntax-w"> </span>Text<span class="devsite-syntax-w"> </span>version<span class="devsite-syntax-w"> </span>of<span class="devsite-syntax-w"> </span>Number.").build()
+<span class="devsite-syntax-w">    </span>)
+<span class="devsite-syntax-w">        </span>.setTapAction(complicationPendingIntent)
+<span class="devsite-syntax-w">        </span>.build()
+
+<span class="devsite-syntax-w">    </span>else<span class="devsite-syntax-w"> </span>-&gt;<span class="devsite-syntax-w"> </span>{
+<span class="devsite-syntax-w">        </span>if<span class="devsite-syntax-w"> </span>(Log.isLoggable(TAG,<span class="devsite-syntax-w"> </span>Log.WARN))<span class="devsite-syntax-w"> </span>{
+<span class="devsite-syntax-w">            </span>Log.w(TAG,<span class="devsite-syntax-w"> </span>"Unexpected<span class="devsite-syntax-w"> </span>complication<span class="devsite-syntax-w"> </span>type<span class="devsite-syntax-w"> </span><span class="devsite-syntax-cp">${</span><span class="devsite-syntax-n">request</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">complicationType</span><span class="devsite-syntax-cp">}</span>")
+<span class="devsite-syntax-w">        </span>}
+<span class="devsite-syntax-w">        </span>null
+<span class="devsite-syntax-w">    </span>}
+}
+</code></pre></devsite-code>
+<p>You may have noticed that we are simply repackaging the same data in a new format. Let&#39;s see how it looks.</p>
+<h3 is-upgraded id="how-to-check-your-progress-and-debug" data-text="How to check your progress and debug" tabindex="-1">How to check your progress and debug</h3>
+<p>Install your service, but this time choose the <strong>bottom slot</strong> complication before choosing your complication service source :</p>
+<p class="image-container"><img alt="518b646d3c3f3305.png" style="width: 370.00px" src="/static/codelabs/data-sources/img/518b646d3c3f3305.png" srcset="https://developer.android.com/static/codelabs/data-sources/img/518b646d3c3f3305_36.png 36w,https://developer.android.com/static/codelabs/data-sources/img/518b646d3c3f3305_48.png 48w,https://developer.android.com/static/codelabs/data-sources/img/518b646d3c3f3305_72.png 72w,https://developer.android.com/static/codelabs/data-sources/img/518b646d3c3f3305_96.png 96w,https://developer.android.com/static/codelabs/data-sources/img/518b646d3c3f3305_480.png 480w,https://developer.android.com/static/codelabs/data-sources/img/518b646d3c3f3305_720.png 720w,https://developer.android.com/static/codelabs/data-sources/img/518b646d3c3f3305_856.png 856w,https://developer.android.com/static/codelabs/data-sources/img/518b646d3c3f3305_960.png 960w,https://developer.android.com/static/codelabs/data-sources/img/518b646d3c3f3305_1440.png 1440w,https://developer.android.com/static/codelabs/data-sources/img/518b646d3c3f3305_1920.png 1920w,https://developer.android.com/static/codelabs/data-sources/img/518b646d3c3f3305_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>You should see something like the image below. Note that each complication is stored under a separate key, so you might see different values if you have set the complication in multiple locations:</p>
+<p class="image-container"><img alt="17ec0506f1412676.png" style="width: 370.00px" src="/static/codelabs/data-sources/img/17ec0506f1412676.png" srcset="https://developer.android.com/static/codelabs/data-sources/img/17ec0506f1412676_36.png 36w,https://developer.android.com/static/codelabs/data-sources/img/17ec0506f1412676_48.png 48w,https://developer.android.com/static/codelabs/data-sources/img/17ec0506f1412676_72.png 72w,https://developer.android.com/static/codelabs/data-sources/img/17ec0506f1412676_96.png 96w,https://developer.android.com/static/codelabs/data-sources/img/17ec0506f1412676_480.png 480w,https://developer.android.com/static/codelabs/data-sources/img/17ec0506f1412676_720.png 720w,https://developer.android.com/static/codelabs/data-sources/img/17ec0506f1412676_856.png 856w,https://developer.android.com/static/codelabs/data-sources/img/17ec0506f1412676_960.png 960w,https://developer.android.com/static/codelabs/data-sources/img/17ec0506f1412676_1440.png 1440w,https://developer.android.com/static/codelabs/data-sources/img/17ec0506f1412676_1920.png 1920w,https://developer.android.com/static/codelabs/data-sources/img/17ec0506f1412676_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<h3 is-upgraded id="summary_3" data-text="Summary" tabindex="-1"><strong>Summary</strong></h3>
+<p>In this step you&#39;ve learned about:</p>
+<ul>
+<li>Changing and supporting different complication data types</li>
+</ul>
+<h3 is-upgraded id="next-up_3" data-text="Next up" tabindex="-1"><strong>Next up</strong></h3>
+<p>We want to support one extra data type before putting it all together.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Exposing Ranged Text Data" duration="5" step="4">
+          
+          <h2 class="step-title" id="4" data-text="Exposing Ranged Text Data" tabindex="-1">
+              5. Exposing Ranged Text Data
+          </h2>
+          <h3 is-upgraded id="code-step-5" data-text="Code step 5" tabindex="-1"><strong>Code step</strong> <strong>5</strong></h3>
+<p>While we expose our data to complications, let&#39;s continue exploring how to support more types of data.</p>
+<h3 is-upgraded id="specifying-a-different-supported-data-type_1" data-text="Specifying a different supported data type" tabindex="-1">Specifying a different supported data type</h3>
+<p>Open the <code translate="no" dir="ltr">AndroidManifest.xml</code> file again and take a look at the service <code translate="no" dir="ltr">CustomComplicationDataSourceService</code> .</p>
+<p>Change the <code translate="no" dir="ltr">meta-data</code> element <strong><code translate="no" dir="ltr">SUPPORTED_TYPES</code></strong> to <strong>RANGED_VALUE</strong>. Your change should should look like this:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">&lt;meta-data
+    android:name="android.support.wearable.complications.SUPPORTED_TYPES"
+    android:value="RANGED_VALUE"/&gt;
+</code></pre></devsite-code>
+<h3 is-upgraded id="adding-support-for-ranged-values" data-text="Adding support for RANGED VALUES" tabindex="-1"><strong>Adding support for RANGED VALUES</strong></h3>
+<p>Ranged values can not only show text but also display a visual showing how far your value is between the minimum and maximum value. This type of complications is good for showing how much battery is left on the device or how many steps you have left to meet your goal.</p>
+<p class="image-container"><img alt="1fe1943a5ad29076.png" style="width: 262.00px" src="/static/codelabs/data-sources/img/1fe1943a5ad29076.png" srcset="https://developer.android.com/static/codelabs/data-sources/img/1fe1943a5ad29076_36.png 36w,https://developer.android.com/static/codelabs/data-sources/img/1fe1943a5ad29076_48.png 48w,https://developer.android.com/static/codelabs/data-sources/img/1fe1943a5ad29076_72.png 72w,https://developer.android.com/static/codelabs/data-sources/img/1fe1943a5ad29076_96.png 96w,https://developer.android.com/static/codelabs/data-sources/img/1fe1943a5ad29076_480.png 480w,https://developer.android.com/static/codelabs/data-sources/img/1fe1943a5ad29076_720.png 720w,https://developer.android.com/static/codelabs/data-sources/img/1fe1943a5ad29076_856.png 856w,https://developer.android.com/static/codelabs/data-sources/img/1fe1943a5ad29076_960.png 960w,https://developer.android.com/static/codelabs/data-sources/img/1fe1943a5ad29076_1440.png 1440w,https://developer.android.com/static/codelabs/data-sources/img/1fe1943a5ad29076_1920.png 1920w,https://developer.android.com/static/codelabs/data-sources/img/1fe1943a5ad29076_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Open <code translate="no" dir="ltr">CustomComplicationDataSourceService .kt</code>, move your cursor down to the <code translate="no" dir="ltr">when</code> statement in the <code translate="no" dir="ltr">onComplicationRequest()</code> method, and add this code under the <code translate="no" dir="ltr">TYPE_LONG_TEXT</code> case and above the default case:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">ComplicationType.RANGED_VALUE -&gt; RangedValueComplicationData.Builder(
+    value = number.toFloat(),
+    min = 0f,
+    max = ComplicationTapBroadcastReceiver.MAX_NUMBER.toFloat(),
+    contentDescription = PlainComplicationText
+        .Builder(text = "Ranged Value version of Number.").build()
+)
+    .setText(PlainComplicationText.Builder(text = numberText).build())
+    .setTapAction(complicationPendingIntent)
+    .build()
+</code></pre></devsite-code>
+<p>Your when statement should look like this:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Genshi"><code translate="no" dir="ltr">return<span class="devsite-syntax-w"> </span>when<span class="devsite-syntax-w"> </span>(request.complicationType)<span class="devsite-syntax-w"> </span>{
+
+<span class="devsite-syntax-w">    </span>ComplicationType.SHORT_TEXT<span class="devsite-syntax-w"> </span>-&gt;<span class="devsite-syntax-w"> </span>ShortTextComplicationData.Builder(
+<span class="devsite-syntax-w">        </span>text<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>PlainComplicationText.Builder(text<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>numberText).build(),
+<span class="devsite-syntax-w">        </span>contentDescription<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>PlainComplicationText
+<span class="devsite-syntax-w">            </span>.Builder(text<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>"Short<span class="devsite-syntax-w"> </span>Text<span class="devsite-syntax-w"> </span>version<span class="devsite-syntax-w"> </span>of<span class="devsite-syntax-w"> </span>Number.").build()
+<span class="devsite-syntax-w">    </span>)
+<span class="devsite-syntax-w">        </span>.setTapAction(complicationPendingIntent)
+<span class="devsite-syntax-w">        </span>.build()
+
+<span class="devsite-syntax-w">    </span>ComplicationType.LONG_TEXT<span class="devsite-syntax-w"> </span>-&gt;<span class="devsite-syntax-w"> </span>LongTextComplicationData.Builder(
+<span class="devsite-syntax-w">        </span>text<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>PlainComplicationText.Builder(text<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>"Number:<span class="devsite-syntax-w"> </span><span class="devsite-syntax-nv">$numberText</span>").build(),
+<span class="devsite-syntax-w">        </span>contentDescription<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>PlainComplicationText
+<span class="devsite-syntax-w">            </span>.Builder(text<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>"Long<span class="devsite-syntax-w"> </span>Text<span class="devsite-syntax-w"> </span>version<span class="devsite-syntax-w"> </span>of<span class="devsite-syntax-w"> </span>Number.").build()
+<span class="devsite-syntax-w">    </span>)
+<span class="devsite-syntax-w">        </span>.setTapAction(complicationPendingIntent)
+<span class="devsite-syntax-w">        </span>.build()
+
+<span class="devsite-syntax-w">    </span>ComplicationType.RANGED_VALUE<span class="devsite-syntax-w"> </span>-&gt;<span class="devsite-syntax-w"> </span>RangedValueComplicationData.Builder(
+<span class="devsite-syntax-w">        </span>value<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>number.toFloat(),
+<span class="devsite-syntax-w">        </span>min<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>0f,
+<span class="devsite-syntax-w">        </span>max<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>ComplicationTapBroadcastReceiver.MAX_NUMBER.toFloat(),
+<span class="devsite-syntax-w">        </span>contentDescription<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>PlainComplicationText
+<span class="devsite-syntax-w">            </span>.Builder(text<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>"Ranged<span class="devsite-syntax-w"> </span>Value<span class="devsite-syntax-w"> </span>version<span class="devsite-syntax-w"> </span>of<span class="devsite-syntax-w"> </span>Number.").build()
+<span class="devsite-syntax-w">    </span>)
+<span class="devsite-syntax-w">        </span>.setText(PlainComplicationText.Builder(text<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>numberText).build())
+<span class="devsite-syntax-w">        </span>.setTapAction(complicationPendingIntent)
+<span class="devsite-syntax-w">        </span>.build()
+
+<span class="devsite-syntax-w">    </span>else<span class="devsite-syntax-w"> </span>-&gt;<span class="devsite-syntax-w"> </span>{
+<span class="devsite-syntax-w">        </span>if<span class="devsite-syntax-w"> </span>(Log.isLoggable(TAG,<span class="devsite-syntax-w"> </span>Log.WARN))<span class="devsite-syntax-w"> </span>{
+<span class="devsite-syntax-w">            </span>Log.w(TAG,<span class="devsite-syntax-w"> </span>"Unexpected<span class="devsite-syntax-w"> </span>complication<span class="devsite-syntax-w"> </span>type<span class="devsite-syntax-w"> </span><span class="devsite-syntax-cp">${</span><span class="devsite-syntax-n">request</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">complicationType</span><span class="devsite-syntax-cp">}</span>")
+<span class="devsite-syntax-w">        </span>}
+<span class="devsite-syntax-w">        </span>null
+<span class="devsite-syntax-w">    </span>}
+}
+</code></pre></devsite-code>
+<p>Again, we are just repackaging the same data in a new format. Let&#39;s see how it looks.</p>
+<h3 is-upgraded id="how-to-check-your-progress-and-debug_1" data-text="How to check your progress and debug" tabindex="-1">How to check your progress and debug</h3>
+<p>Install your service, and choose another location.</p>
+<p class="image-container"><img alt="461f8a704fbc6496.png" style="width: 370.00px" src="/static/codelabs/data-sources/img/461f8a704fbc6496.png" srcset="https://developer.android.com/static/codelabs/data-sources/img/461f8a704fbc6496_36.png 36w,https://developer.android.com/static/codelabs/data-sources/img/461f8a704fbc6496_48.png 48w,https://developer.android.com/static/codelabs/data-sources/img/461f8a704fbc6496_72.png 72w,https://developer.android.com/static/codelabs/data-sources/img/461f8a704fbc6496_96.png 96w,https://developer.android.com/static/codelabs/data-sources/img/461f8a704fbc6496_480.png 480w,https://developer.android.com/static/codelabs/data-sources/img/461f8a704fbc6496_720.png 720w,https://developer.android.com/static/codelabs/data-sources/img/461f8a704fbc6496_856.png 856w,https://developer.android.com/static/codelabs/data-sources/img/461f8a704fbc6496_960.png 960w,https://developer.android.com/static/codelabs/data-sources/img/461f8a704fbc6496_1440.png 1440w,https://developer.android.com/static/codelabs/data-sources/img/461f8a704fbc6496_1920.png 1920w,https://developer.android.com/static/codelabs/data-sources/img/461f8a704fbc6496_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>You should now see something like this:</p>
+<p class="image-container"><img alt="ffa6ea8f2ed3eb2a.png" style="width: 370.00px" src="/static/codelabs/data-sources/img/ffa6ea8f2ed3eb2a.png" srcset="https://developer.android.com/static/codelabs/data-sources/img/ffa6ea8f2ed3eb2a_36.png 36w,https://developer.android.com/static/codelabs/data-sources/img/ffa6ea8f2ed3eb2a_48.png 48w,https://developer.android.com/static/codelabs/data-sources/img/ffa6ea8f2ed3eb2a_72.png 72w,https://developer.android.com/static/codelabs/data-sources/img/ffa6ea8f2ed3eb2a_96.png 96w,https://developer.android.com/static/codelabs/data-sources/img/ffa6ea8f2ed3eb2a_480.png 480w,https://developer.android.com/static/codelabs/data-sources/img/ffa6ea8f2ed3eb2a_720.png 720w,https://developer.android.com/static/codelabs/data-sources/img/ffa6ea8f2ed3eb2a_856.png 856w,https://developer.android.com/static/codelabs/data-sources/img/ffa6ea8f2ed3eb2a_960.png 960w,https://developer.android.com/static/codelabs/data-sources/img/ffa6ea8f2ed3eb2a_1440.png 1440w,https://developer.android.com/static/codelabs/data-sources/img/ffa6ea8f2ed3eb2a_1920.png 1920w,https://developer.android.com/static/codelabs/data-sources/img/ffa6ea8f2ed3eb2a_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>You can see a radial circle around the number that highlights the equivalent of 3/20.</p>
+<h3 is-upgraded id="summary_4" data-text="Summary" tabindex="-1"><strong>Summary</strong></h3>
+<p>In this step you&#39;ve learned about:</p>
+<ul>
+<li>Changing and supporting different complication data types</li>
+</ul>
+<h3 is-upgraded id="next-up_4" data-text="Next up" tabindex="-1"><strong>Next up</strong></h3>
+<p>We wrap up the code lab by enabling all the data type variations.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Exposing All Three Data Types" duration="5" step="5">
+          
+          <h2 class="step-title" id="5" data-text="Exposing All Three Data Types" tabindex="-1">
+              6. Exposing All Three Data Types
+          </h2>
+          <h3 is-upgraded id="code-step-6" data-text="Code step 6" tabindex="-1"><strong>Code step</strong> <strong>6</strong></h3>
+<p>Now our complication data source  supports three variations of our data (<strong>RANGED_VALUE, SHORT_TEXT,</strong> and <strong>LONG_TEXT</strong>).</p>
+<p>In this last step, we will inform the system we support all three variations.</p>
+<h3 is-upgraded id="specifying-multiple-supported-data-types" data-text="Specifying multiple supported data types" tabindex="-1">Specifying multiple supported data types</h3>
+<p>Open the <code translate="no" dir="ltr">AndroidManifest.xml</code> file again and look at the service <code translate="no" dir="ltr">CustomComplicationDataSourceService</code> .</p>
+<p>Change the <code translate="no" dir="ltr">meta-data</code> element <strong><code translate="no" dir="ltr">SUPPORTED_TYPES</code></strong> to <strong><code translate="no" dir="ltr">RANGED_VALUE,SHORT_TEXT,LONG_TEXT</code></strong>. Your change should now look like this:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">&lt;meta-data
+    android:name="android.support.wearable.complications.SUPPORTED_TYPES"
+    android:value="RANGED_VALUE,SHORT_TEXT,LONG_TEXT"/&gt;
+</code></pre></devsite-code>
+<h3 is-upgraded id="check-your-progress" data-text="Check your progress" tabindex="-1">Check your progress</h3>
+<p>Install your service.</p>
+<p class="image-container"><img alt="b3a7c0c8063c2f60.png" style="width: 370.00px" src="/static/codelabs/data-sources/img/b3a7c0c8063c2f60.png" srcset="https://developer.android.com/static/codelabs/data-sources/img/b3a7c0c8063c2f60_36.png 36w,https://developer.android.com/static/codelabs/data-sources/img/b3a7c0c8063c2f60_48.png 48w,https://developer.android.com/static/codelabs/data-sources/img/b3a7c0c8063c2f60_72.png 72w,https://developer.android.com/static/codelabs/data-sources/img/b3a7c0c8063c2f60_96.png 96w,https://developer.android.com/static/codelabs/data-sources/img/b3a7c0c8063c2f60_480.png 480w,https://developer.android.com/static/codelabs/data-sources/img/b3a7c0c8063c2f60_720.png 720w,https://developer.android.com/static/codelabs/data-sources/img/b3a7c0c8063c2f60_856.png 856w,https://developer.android.com/static/codelabs/data-sources/img/b3a7c0c8063c2f60_960.png 960w,https://developer.android.com/static/codelabs/data-sources/img/b3a7c0c8063c2f60_1440.png 1440w,https://developer.android.com/static/codelabs/data-sources/img/b3a7c0c8063c2f60_1920.png 1920w,https://developer.android.com/static/codelabs/data-sources/img/b3a7c0c8063c2f60_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>In this case, the watch face prefers the ranged data type over the short and long types, but if the complication only supported the short text type, the data would still show up because the watch face supports all three data types. Keep in mind the watch face itself specifies the data types that a complication supports, and the order of preference of those types.</p>
+<h3 is-upgraded id="summary_5" data-text="Summary" tabindex="-1"><strong>Summary</strong></h3>
+<p>In this step you&#39;ve learned about:</p>
+<ul>
+<li>Supporting multiple complication data types</li>
+</ul>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="You&#39;re done! What&#39;s next?" duration="0" step="6">
+          
+          <h2 class="step-title" id="6" data-text="You're done! What's next?" tabindex="-1">
+              7. You're done! What's next?
+          </h2>
+          <p>There are many more  <a href="https://developer.android.com/wear/preview/features/complications.html#using_complication_types" target="_blank">data types</a> you can support in complications (including small images, large images, and icons). Try to extend this code lab by implementing some of those types on your own.</p>
+<p>For more details on developing complications for watch faces and creating complication data source s, visit  <a href="https://developer.android.com/wear/preview/features/complications.html" target="_blank">Watch Face Complications</a></p>
+<p>For more details about developing Wear OS watch faces, visit  <a href="https://developer.android.com/training/wearables/watch-faces/index.html" target="_blank">https://developer.android.com/training/wearables/watch-faces/index.html</a></p>
+
+
+        </google-codelab-step>
+      
+    </google-codelab>
+  
+  
+
+  
+</div>
+
+  
+    
+    
+    
+  
+
+  <div class="devsite-floating-action-buttons"></div></article>
+
+
+<devsite-content-footer class="nocontent">
+  <p>Except as otherwise noted, the content of this page is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</a>, and code samples are licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see the <a href="https://developers.google.com/site-policies">Google Developers Site Policies</a>. Java is a registered trademark of Oracle and/or its affiliates.</p>
+  
+</devsite-content-footer>
+
+
+<devsite-notification
+>
+</devsite-notification>
+
+
+  
+<div class="devsite-content-data">
+  
+  
+    <template class="devsite-content-data-template">
+      [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[],null,[]]
+    </template>
+  
+</div>
+            
+          </devsite-content>
+        </main>
+        <devsite-footer-promos class="devsite-footer">
+          
+            
+
+<nav class="devsite-footer-promos nocontent" aria-label="Promotions">
+  <ul class="devsite-footer-promos-list">
+    
+    <li class="devsite-footer-promo">
+      <a href="//x.com/AndroidDev"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer X Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-x_dt.svg"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="/_static/android/images/logo-x.svg"
+                loading="lazy"
+                alt="X">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          X
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Follow @AndroidDev on X</div>
+    </li>
+    
+    <li class="devsite-footer-promo">
+      <a href="//www.youtube.com/user/androiddevelopers"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer YouTube Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-youtube_dt.svg"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="//www.gstatic.com/images/icons/material/product/2x/youtube_48dp.png"
+                loading="lazy"
+                alt="YouTube">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          YouTube
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Check out Android Developers on YouTube</div>
+    </li>
+    
+    <li class="devsite-footer-promo">
+      <a href="//www.linkedin.com/showcase/androiddev"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer LinkedIn Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-linkedin_dt.svg"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="/_static/android/images/logo-linkedin.svg"
+                loading="lazy"
+                alt="LinkedIn">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          LinkedIn
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Connect with the Android Developers community on LinkedIn</div>
+    </li>
+    
+  </ul>
+</nav>
+
+          
+        </devsite-footer-promos>
+        <devsite-footer-linkboxes class="devsite-footer">
+          
+            
+<nav class="devsite-footer-linkboxes nocontent" aria-label="Footer links">
+  
+  <ul class="devsite-footer-linkboxes-list">
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">More Android</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com/enterprise/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Android for Enterprise
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com/security-center/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Security
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//source.android.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Source
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/news"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            News
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//android-developers.googleblog.com/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+          
+            Blog
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/podcasts"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 7)"
+            >
+            
+              
+              
+            
+          
+            Podcasts
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Discover</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/games"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Gaming
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/ml"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Machine Learning
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/health-and-fitness"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Health & Fitness
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/media"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Camera & Media
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/privacy"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            Privacy
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/training/connectivity/5g"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+              
+              
+            
+          
+            5G
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Android Devices</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/large-screens"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Large screens
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/wear"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Wear OS
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/chrome-os"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            ChromeOS devices
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/cars"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Android for cars
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/tv"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+              
+              
+            
+          
+            Android TV
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Releases</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/15"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android 15
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/14"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Android 14
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/13"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Android 13
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/12"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Android 12
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/11"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            Android 11
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/10"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+          
+            Android 10
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/pie"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 7)"
+            >
+            
+              
+              
+            
+          
+            Pie
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Documentation and Downloads</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/studio/intro"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android Studio guide
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/guide"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Developers guides
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/reference"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            API reference
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/studio"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Download Studio
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/ndk"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+              
+              
+            
+          
+            Android NDK
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Support</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//issuetracker.google.com/issues/new?component=190923&amp;template=841312"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Report platform bug
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//issuetracker.google.com/issues/new?component=192697"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Report documentation bug
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//support.google.com/googleplay/android-developer"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Google Play support
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://g.co/userresearch/androiddeveloperfooter"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+              
+              
+            
+          
+            Join research studies
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+  
+</nav>
+          
+        </devsite-footer-linkboxes>
+        <devsite-footer-utility class="devsite-footer">
+          
+            
+
+<div class="devsite-footer-utility nocontent">
+  
+  
+  <nav class="devsite-footer-sites" aria-label="Other Google Developers websites">
+    <a href="https://developers.google.com/"
+       class="devsite-footer-sites-logo-link gc-analytics-event"
+       data-category="Site-Wide Custom Events"
+       data-label="Footer Google Developers Link">
+      <picture>
+        
+        <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-google-for-developers-dark-theme.svg"
+                media="(prefers-color-scheme: none)"
+                class="devsite-dark-theme">
+        
+        <img class="devsite-footer-sites-logo"
+             src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-google-for-developers.svg"
+             loading="lazy"
+             alt="Google Developers">
+      </picture>
+    </a>
+    <ul class="devsite-footer-sites-list">
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.android.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Android Link"
+         
+         >
+          Android
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.chrome.com/home"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Chrome Link"
+         
+         >
+          Chrome
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//firebase.google.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Firebase Link"
+         
+         >
+          Firebase
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//cloud.google.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Google Cloud Platform Link"
+         
+         >
+          Google Cloud Platform
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developers.google.com/products/"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer All products Link"
+         
+         >
+          All products
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  
+
+  
+  <nav class="devsite-footer-utility-links" aria-label="Utility links">
+    
+    <ul class="devsite-footer-utility-list">
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//policies.google.com/privacy"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Privacy link"
+         >
+          Privacy
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="/license"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer License link"
+         >
+          License
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="/distribute/marketing-tools/brand-guidelines"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Brand guidelines link"
+         >
+          Brand guidelines
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 glue-cookie-notification-bar-control">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="#"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Manage cookies link"
+         
+           aria-hidden="true"
+         >
+          Manage cookies
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 devsite-footer-utility-button">
+        
+        <span class="devsite-footer-utility-description">Get news and tips by email</span>
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="/updates"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Subscribe link"
+         >
+          Subscribe
+        </a>
+        
+      </li>
+      
+    </ul>
+    
+    
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+  </nav>
+</div>
+          
+        </devsite-footer-utility>
+        <devsite-panel>
+          
+        </devsite-panel>
+        
+      </section></section>
+    <devsite-sitemask></devsite-sitemask>
+    <devsite-snackbar></devsite-snackbar>
+    <devsite-tooltip ></devsite-tooltip>
+    <devsite-heading-link></devsite-heading-link>
+    <devsite-analytics>
+      
+        <script type="application/json" analytics>[]</script>
+<script type="application/json" tag-management>{&#34;at&#34;: &#34;True&#34;, &#34;ga4&#34;: [{&#34;id&#34;: &#34;G-QFRN08RN6E&#34;, &#34;purpose&#34;: 0}], &#34;ga4p&#34;: [{&#34;id&#34;: &#34;G-QFRN08RN6E&#34;, &#34;purpose&#34;: 0}], &#34;gtm&#34;: [], &#34;parameters&#34;: {&#34;internalUser&#34;: &#34;False&#34;, &#34;language&#34;: {&#34;machineTranslated&#34;: &#34;False&#34;, &#34;requested&#34;: &#34;en&#34;, &#34;served&#34;: &#34;en&#34;}, &#34;pageType&#34;: &#34;codelab&#34;, &#34;projectName&#34;: null, &#34;signedIn&#34;: &#34;False&#34;, &#34;tenant&#34;: &#34;android&#34;, &#34;recommendations&#34;: {&#34;sourcePage&#34;: &#34;&#34;, &#34;sourceType&#34;: 0, &#34;sourceRank&#34;: 0, &#34;sourceIdenticalDescriptions&#34;: 0, &#34;sourceTitleWords&#34;: 0, &#34;sourceDescriptionWords&#34;: 0, &#34;experiment&#34;: &#34;&#34;}, &#34;experiment&#34;: {&#34;ids&#34;: &#34;&#34;}}}</script>
+      
+    </devsite-analytics>
+    
+      <devsite-badger></devsite-badger>
+    
+    
+    
+<android-fully-clickable
+    target="
+        .android-case-study .devsite-landing-row-item,
+        .android-editorial-and-updates-cards .devsite-card-content-wrapper,
+        .android-editorial-and-updates-cards .devsite-landing-row-item,
+        .android-grouped-resources .devsite-landing-row-item,
+        .android-grouped-resources-contained--primary .devsite-landing-row-item,
+        .android-grouped-resources-contained--secondary .devsite-landing-row-item,
+        .android-grouped-resources-contained--tertiary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--primary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--secondary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--tertiary .devsite-landing-row-item,
+        .android-guide-cards .devsite-landing-row-item,
+        .android-illustrated-resources-index .devsite-landing-row-item,
+        .android-illustrated-resources-primary .devsite-landing-row-item,
+        .android-illustrated-resources-secondary .devsite-landing-row-item,
+        .android-illustrated-resources-secondary-small .devsite-landing-row-item,
+        .android-illustrated-resources-tertiary .devsite-landing-row-item,
+        .android-illustrated-resources-tertiary-small .devsite-landing-row-item,
+        .android-promo .devsite-landing-row-item,
+        .android-quick-link,
+        .android-samples .devsite-card-wrapper,
+        .fully-clickable"
+    watch=".android-editorial-and-updates-cards, .android-samples, devsite-content"></android-fully-clickable>
+    
+<script nonce="Bm8yDhFSR6FJlY6ML/J4a6I9vYUScQ">
+  
+  (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+    t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+    E.parentNode.insertBefore(t,E);})(window, document, 'script',
+    'https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/js/app_loader.js', '[3,"en",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android","https://android-dot-devsite-v2-prod.appspot.com",1,null,["/_pwa/android/manifest.json","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/favicon.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png","https://fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,600italic,700,700italic|Roboto+Mono:400,500,700&display=swap"],1,null,[1,6,8,12,14,17,21,25,50,52,63,70,75,76,80,87,91,92,93,97,98,100,101,102,103,104,105,107,108,109,110,112,113,117,118,120,122,124,125,126,127,129,130,131,132,133,134,135,136,138,140,141,147,148,149,151,152,156,157,158,159,161,163,164,168,169,170,179,180,182,183,186,191,193,196],"AIzaSyAP-jjEJBzmIyKR4F-3XITp8yM9T1gEEI8","AIzaSyB6xiKGDR5O3Ak2okS4rLkauxGUG7XP0hg","developer.android.com","AIzaSyAQk0fBONSGUqCNznf6Krs82Ap1-NV6J4o","AIzaSyCCxcqdrZ_7QMeLCRY20bh_SXdAYqy70KY",null,null,null,["MiscFeatureFlags__enable_firebase_utm","Search__enable_ai_search_summaries_for_all","DevPro__enable_code_assist","MiscFeatureFlags__enable_variable_operator","MiscFeatureFlags__enable_dark_theme","Concierge__enable_remove_info_panel_tags","Profiles__enable_user_type","Cloud__enable_cloud_dlp_service","MiscFeatureFlags__enable_appearance_cookies","DevPro__enable_nvidia_credits_card","EngEduTelemetry__enable_engedu_telemetry","Experiments__reqs_query_experiments","Cloud__cache_serialized_dynamic_content","TpcFeatures__proxy_prod_host","MiscFeatureFlags__enable_variable_operator_index_yaml","MiscFeatureFlags__enable_framebox_badge_methods","MiscFeatureFlags__enable_project_body_class","Profiles__enable_page_saving","Concierge__enable_pushui","Profiles__enable_playlist_community_acl","Profiles__enable_completecodelab_endpoint","Cloud__fast_free_trial","DevPro__enable_embed_profile_creation","DevPro__enable_devpro_offers","Profiles__enable_recognition_badges","Profiles__enable_awarding_url","Analytics__enable_clearcut_logging","DevPro__enable_google_payments_buyflow","Cloud__enable_cloud_shell_fte_user_flow","DevPro__enable_cloud_innovators_plus","MiscFeatureFlags__emergency_css","Profiles__enable_dashboard_curated_recommendations","Profiles__enable_join_program_group_endpoint","Profiles__enable_public_developer_profiles","Profiles__enable_release_notes_notifications","MiscFeatureFlags__developers_footer_image","Cloud__enable_cloudx_experiment_ids","TpcFeatures__enable_unmirrored_page_left_nav","CloudShell__cloud_shell_button","Profiles__enable_profile_collections","Search__enable_page_map","Cloud__enable_llm_concierge_chat","Search__enable_ai_eligibility_checks","Significatio__enable_by_tenant","Cloud__enable_free_trial_server_call","MiscFeatureFlags__enable_view_transitions","Search__enable_suggestions_from_borg","DevPro__enable_free_benefits","CloudShell__cloud_code_overflow_menu","Concierge__enable_actions_menu","DevPro__enable_enterprise","Profiles__enable_callout_notifications","DevPro__remove_eu_tax_intake_form","Profiles__enable_completequiz_endpoint","MiscFeatureFlags__developers_footer_dark_image","DevPro__enable_google_one_card","Profiles__enable_developer_profile_benefits_ui_redesign","Cloud__enable_legacy_calculator_redirect","Profiles__enable_developer_profiles_callout","Profiles__enable_complete_playlist_endpoint","DevPro__enable_developer_subscriptions","MiscFeatureFlags__gdp_dashboard_reskin_enabled","BookNav__enable_tenant_cache_key","MiscFeatureFlags__enable_project_variables","Profiles__enable_stripe_subscription_management","DevPro__enable_firebase_workspaces_card","DevPro__enable_vertex_credit_card","Search__enable_dynamic_content_confidential_banner","MiscFeatureFlags__enable_explicit_template_dependencies","Cloud__enable_cloud_shell","Profiles__enable_purchase_prompts","Profiles__require_profile_eligibility_for_signin"],null,null,"AIzaSyBLEMok-5suZ67qRPzx0qUtbnLmyT_kCVE","https://developerscontentserving-pa.googleapis.com","AIzaSyCM4QpTRSqP5qI4Dvjt4OAScIN8sOUlO-k","https://developerscontentsearch-pa.googleapis.com",2,4,null,"https://developerprofiles-pa.googleapis.com",[3,"android","Android Developers","developer.android.com",null,"android-dot-devsite-v2-prod.appspot.com",null,null,[null,1,null,null,null,null,null,null,null,null,null,[1],null,null,null,null,null,null,[1],[1,null,null,[1,20],"/recommendations"],null,null,null,[1,null,1],[1,1,null,1,1]],null,[18,null,null,null,null,null,"/images/lockup.png","/images/touchicon-180.png",null,null,null,null,null,null,null,null,null,null,null,null,null,2,null,null,null,"/images/lockup-dark-theme.png",[]],[],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[6,1,14,15,20,22,23,28,29,37,43],null,[[null,null,1],[1,1]],[[null,null,null,null,null,null,null,[["G-QFRN08RN6E"],null,null,[["G-QFRN08RN6E",1]]],null,null,null,null,1],null,[[2,2],[1,1]]],null,4,null,null,null,null,null,null,null,null,null,null,null,null,null,"android.devsite.google"],null,"pk_live_5170syrHvgGVmSx9sBrnWtA5luvk9BwnVcvIi7HizpwauFG96WedXsuXh790rtij9AmGllqPtMLfhe2RSwD6Pn38V00uBCydV4m",1,null,"https://developerscontentinsights-pa.googleapis.com","AIzaSyCg-ZUslalsEbXMfIo9ZP8qufZgo3LSBDU","AIzaSyDxT0vkxnY_KeINtA4LSePJO-4MAZPMRsE","https://developers.googleapis.com",null,null,"AIzaSyBQom12tzI-rybN7Sf-KfeL4nwm-Rf7PmI\n",null,"https://developerslogging.googleapis.com"]')
+  
+</script>
+
+    <devsite-a11y-announce></devsite-a11y-announce>
+  </body>
+</html>

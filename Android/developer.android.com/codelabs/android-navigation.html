@@ -1,0 +1,2508 @@
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html 
+      lang="en"
+      dir="ltr">
+  <head>
+    <meta name="google-signin-client-id" content="721724668570-nbkv1cfusk7kk4eni4pjvepaus73b13t.apps.googleusercontent.com">
+    <meta name="google-signin-scope"
+          content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award">
+    <meta property="og:site_name" content="Android Developers">
+    <meta property="og:type" content="website"><meta name="theme-color" content="#34a853"><meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <link rel="manifest" href="/_pwa/android/manifest.json"
+          crossorigin="use-credentials">
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="//apis.google.com" crossorigin>
+    <link rel="preconnect" href="//www.google-analytics.com" crossorigin><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,600italic,700,700italic|Roboto+Mono:400,500,700&display=swap">
+      <link rel="stylesheet"
+            href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block"><link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/css/app.css">
+      
+        <link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/css/dark-theme.css" disabled>
+      <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/favicon.svg">
+    <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/touchicon-180.png"><link rel="canonical" href="https://developer.android.com/codelabs/android-navigation"><link rel="search" type="application/opensearchdescription+xml"
+            title="Android Developers" href="https://developer.android.com/s/opensearch.xml">
+      <link rel="alternate" hreflang="en"
+          href="https://developer.android.com/codelabs/android-navigation" /><link rel="alternate" hreflang="x-default" href="https://developer.android.com/codelabs/android-navigation" /><link rel="alternate" hreflang="zh-Hans"
+          href="https://developer.android.com/codelabs/android-navigation?hl=zh-cn" /><link rel="alternate" hreflang="fr"
+          href="https://developer.android.com/codelabs/android-navigation?hl=fr" /><link rel="alternate" hreflang="id"
+          href="https://developer.android.com/codelabs/android-navigation?hl=id" /><link rel="alternate" hreflang="ja"
+          href="https://developer.android.com/codelabs/android-navigation?hl=ja" /><link rel="alternate" hreflang="ko"
+          href="https://developer.android.com/codelabs/android-navigation?hl=ko" /><link rel="alternate" hreflang="es-419"
+          href="https://developer.android.com/codelabs/android-navigation?hl=es-419" /><title>(Deprecated) Learn Jetpack Navigation &nbsp;|&nbsp; Android Developers</title>
+
+<meta property="og:title" content="(Deprecated) Learn Jetpack Navigation &nbsp;|&nbsp; Android Developers"><meta name="description" content="Learn how to implement common navigation requirements for Android apps. Navigation Components handle fragment transactions, up/back stack, navigation UI patterns like navigation drawers, deep links and more. You’ll also explore the type safe args plugin and the Navigation Editor in Android Studio.">
+  <meta property="og:description" content="Learn how to implement common navigation requirements for Android apps. Navigation Components handle fragment transactions, up/back stack, navigation UI patterns like navigation drawers, deep links and more. You’ll also explore the type safe args plugin and the Navigation Editor in Android Studio."><meta property="og:url" content="https://developer.android.com/codelabs/android-navigation"><meta property="og:locale" content="en">
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+
+    
+      <link rel="stylesheet" href="/extras.css"></head>
+  <body class=""
+        template="codelab"
+        theme="android-theme"
+        type="codelab"
+        
+        
+        appearance
+        
+        layout="docs"
+        
+        
+        
+        
+        display-toc
+        pending>
+  
+    <devsite-progress type="indeterminate" id="app-progress"></devsite-progress>
+  
+  
+    <a href="#main-content" class="skip-link button">
+      
+      Skip to main content
+    </a>
+    <section class="devsite-wrapper">
+      <devsite-cookie-notification-bar></devsite-cookie-notification-bar><devsite-header role="banner">
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-header--inner" data-nosnippet>
+  <div class="devsite-top-logo-row-wrapper-wrapper">
+    <div class="devsite-top-logo-row-wrapper">
+      <div class="devsite-top-logo-row">
+        <button type="button" id="devsite-hamburger-menu"
+          class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+          data-category="Site-Wide Custom Events"
+          data-label="Navigation menu button"
+          visually-hidden
+          aria-label="Open menu">
+        </button>
+        
+<div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="androidDevelopers" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-dark-theme.png"
+            media="(prefers-color-scheme: dark)"
+            class="devsite-dark-theme">
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png" class="devsite-site-logo" alt="Android Developers">
+  </picture>
+  
+</a>
+
+
+
+</div>
+        <div class="devsite-top-logo-row-middle">
+          <div class="devsite-header-upper-tabs">
+            
+           </div>
+          
+<devsite-search
+    enable-signin
+    enable-search
+    enable-suggestions
+      enable-query-completion
+    
+    enable-search-summaries
+    
+    tenant-name="Android Developers"
+    
+    
+    
+    
+    
+    >
+  <form class="devsite-search-form" action="https://developer.android.com/s/results" method="GET">
+    <div class="devsite-search-container">
+      <button type="button"
+              search-open
+              class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+              
+              aria-label="Open search"></button>
+      <div class="devsite-searchbox">
+        <input
+          aria-activedescendant=""
+          aria-autocomplete="list"
+          
+          aria-label="Search"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          autocomplete="off"
+          class="devsite-search-field devsite-search-query"
+          name="q"
+          
+          placeholder="Search"
+          role="combobox"
+          type="text"
+          value=""
+          >
+          <div class="devsite-search-image material-icons" aria-hidden="true">
+            
+              <svg class="devsite-search-ai-image" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_6641_386)">
+                    <path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14167 15.375 4.875 14.125C3.625 12.8583 3 11.3167 3 9.5C3 7.68333 3.625 6.15 4.875 4.9C6.14167 3.63333 7.68333 3 9.5 3C10.0167 3 10.5167 3.05833 11 3.175C11.4833 3.275 11.9417 3.43333 12.375 3.65L10.825 5.2C10.6083 5.13333 10.3917 5.08333 10.175 5.05C9.95833 5.01667 9.73333 5 9.5 5C8.25 5 7.18333 5.44167 6.3 6.325C5.43333 7.19167 5 8.25 5 9.5C5 10.75 5.43333 11.8167 6.3 12.7C7.18333 13.5667 8.25 14 9.5 14C10.6667 14 11.6667 13.625 12.5 12.875C13.35 12.1083 13.8417 11.15 13.975 10H15.975C15.925 10.6333 15.7833 11.2333 15.55 11.8C15.3333 12.3667 15.05 12.8667 14.7 13.3L21 19.6L19.6 21ZM17.5 12C17.5 10.4667 16.9667 9.16667 15.9 8.1C14.8333 7.03333 13.5333 6.5 12 6.5C13.5333 6.5 14.8333 5.96667 15.9 4.9C16.9667 3.83333 17.5 2.53333 17.5 0.999999C17.5 2.53333 18.0333 3.83333 19.1 4.9C20.1667 5.96667 21.4667 6.5 23 6.5C21.4667 6.5 20.1667 7.03333 19.1 8.1C18.0333 9.16667 17.5 10.4667 17.5 12Z" fill="#5F6368"/>
+                  </g>
+                <defs>
+                <clipPath id="clip0_6641_386">
+                <rect width="24" height="24" fill="white"/>
+                </clipPath>
+                </defs>
+              </svg>
+            
+          </div>
+          <div class="devsite-search-shortcut-icon-container" aria-hidden="true">
+            <kbd class="devsite-search-shortcut-icon">/</kbd>
+          </div>
+      </div>
+    </div>
+  </form>
+  <button type="button"
+          search-close
+          class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+          
+          aria-label="Close search"></button>
+</devsite-search>
+
+        </div>
+
+        
+
+          
+
+          
+
+          <devsite-appearance-selector></devsite-appearance-selector>
+
+          
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+
+          
+            <a class="devsite-header-link devsite-top-button button gc-analytics-event "
+    href="https://developer.android.com/studio"
+    data-category="Site-Wide Custom Events"
+    data-label="Site header link: Android Studio"
+    >
+  Android Studio
+</a>
+          
+
+        
+
+        
+          <devsite-user 
+                        
+                        
+                          enable-profiles
+                        
+                        
+                        id="devsite-user">
+            
+              
+              <span class="button devsite-top-button" aria-hidden="true" visually-hidden>Sign in</span>
+            
+          </devsite-user>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
+  
+</devsite-header>
+      <devsite-book-nav scrollbars hidden>
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-book-nav-filter"
+     hidden>
+  <span class="filter-list-icon material-icons" aria-hidden="true"></span>
+  <input type="text"
+         placeholder="Filter"
+         
+         aria-label="Type to filter"
+         role="searchbox">
+  
+  <span class="filter-clear-button hidden"
+        data-title="Clear filter"
+        aria-label="Clear filter"
+        role="button"
+        tabindex="0"></span>
+</div>
+
+<nav class="devsite-book-nav devsite-nav nocontent"
+     aria-label="Side menu">
+  <div class="devsite-mobile-header">
+    <button type="button"
+            id="devsite-close-nav"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Close navigation"
+            aria-label="Close navigation">
+    </button>
+    <div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="androidDevelopers" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-dark-theme.png"
+            media="(prefers-color-scheme: dark)"
+            class="devsite-dark-theme">
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png" class="devsite-site-logo" alt="Android Developers">
+  </picture>
+  
+</a>
+
+
+</div>
+  </div>
+
+  <div class="devsite-book-nav-wrapper">
+    <div class="devsite-mobile-nav-top">
+      
+        <ul class="devsite-nav-list">
+          
+          
+    
+    
+<li class="devsite-nav-item">
+
+  
+  <a href="/studio"
+    
+       class="devsite-nav-title gc-analytics-event "
+    
+
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Android Studio"
+     track-type="navMenu"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Android Studio
+   </span>
+    
+  
+  </a>
+  
+
+</li>
+
+  
+          
+        </ul>
+      
+    </div>
+    
+  </div>
+</nav>
+        
+      </devsite-book-nav>
+      <section id="gc-wrapper">
+        <main role="main" id="main-content" class="devsite-main-content"
+            
+              
+              has-sidebar
+            >
+          <div class="devsite-sidebar">
+            <div class="devsite-sidebar-content">
+                
+                <devsite-toc class="devsite-nav"
+                            role="navigation"
+                            aria-label="On this page"
+                            depth="1"
+                            scrollbars
+                  ></devsite-toc>
+                <devsite-recommendations-sidebar class="nocontent devsite-nav">
+                </devsite-recommendations-sidebar>
+            </div>
+          </div>
+          <devsite-content>
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="devsite-article"><style>
+      body {
+        transition: opacity ease-in 0.2s;
+      }
+
+      body[unresolved] {
+        opacity: 0;
+        display: block;
+        overflow: hidden;
+        position: relative;
+      }
+      </style>
+  
+  
+  
+  
+  
+
+  <div class="devsite-article-meta nocontent" role="navigation">
+    
+    
+    <ul class="devsite-breadcrumb-list"
+  >
+  
+</ul>
+    
+  </div>
+  
+    <h1 class="devsite-page-title" tabindex="-1">
+      (Deprecated) Learn Jetpack Navigation<div class="devsite-actions" hidden data-nosnippet><devsite-feature-tooltip
+      ack-key="AckCollectionsBookmarkTooltipDismiss"
+      analytics-category="Site-Wide Custom Events"
+      analytics-action-show="Callout Profile displayed"
+      analytics-action-close="Callout Profile dismissed"
+      analytics-label="Create Collection Callout"
+      class="devsite-page-bookmark-tooltip nocontent"
+      dismiss-button="true"
+      id="devsite-collections-dropdown"
+      
+      dismiss-button-text="Dismiss"
+
+      
+      close-button-text="Got it">
+
+    
+    
+      <devsite-bookmark></devsite-bookmark>
+    
+
+    <span slot="popout-heading">
+      
+      Stay organized with collections
+    </span>
+    <span slot="popout-contents">
+      
+      Save and categorize content based on your preferences.
+    </span>
+  </devsite-feature-tooltip></div>
+  
+      
+    </h1>
+  
+
+  <devsite-toc class="devsite-nav"
+    depth="1"
+    devsite-toc-embedded
+    >
+  </devsite-toc>
+  
+    
+  <div class="devsite-article-body clearfix
+  ">
+
+  
+    
+    
+    <google-codelab-analytics gaid="UA-49880327-14" ga4id="G-JTFZSJVVVZ"></google-codelab-analytics>
+    <google-codelab codelab-gaid=""
+                    codelab-ga4id=""
+                    doc-id="17Lqz2st5hVHzATu7xjtunPsAll8yM9WVXQmV27Gsej0"
+                    id="android-navigation"
+                    title="(Deprecated) Learn Jetpack Navigation"
+                    no-tooltip=""
+                    environment="web"
+                    category=""
+                    feedback-link=""
+                    layout="paginated"
+                    >
+      
+        <google-codelab-step label="Before you begin" duration="2" step="0">
+          
+            <google-codelab-about codelab-title="(Deprecated) Learn Jetpack Navigation"
+                                  
+                                  last-updated="2024-12-10T14:29:37Z"
+                                  duration="85">
+            </google-codelab-about>
+          
+          <h2 class="step-title" id="0" data-text="Before you begin" tabindex="-1">
+              1. Before you begin
+          </h2>
+          <aside class="warning"><p> This codelab is deprecated and will be removed soon.</p>
+</aside>
+<p>The  <a href="http://d.android.com/arch/navigation" target="_blank">Navigation Architecture Component</a> simplifies implementing navigation, while also helping you visualize your app&#39;s navigation flow. The library provides a number of benefits, including:</p>
+<ul>
+<li>Automatic handling of fragment transactions</li>
+<li>Correctly handling <strong>up</strong> and <strong>back</strong> by default</li>
+<li>Default behaviors for animations and transitions</li>
+<li>Deep linking as a first class operation</li>
+<li>Implementing navigation UI patterns (like navigation drawers and bottom nav**)** with little additional work</li>
+<li>Type safety when passing information while navigating</li>
+<li>Android Studio tooling for visualizing and editing the navigation flow of an app</li>
+</ul>
+<h3 is-upgraded id="what-youll-do" data-text="What you'll do" tabindex="-1">What you'll do</h3>
+<p>In this codelab, you will work with the sample app seen below:</p>
+<p class="image-container"><img alt="6884c79d552f943.gif" style="width: 381.50px" src="/static/codelabs/android-navigation/img/6884c79d552f943.gif"></p>
+<p>All the activities and fragments have already been created for you. You will use the Navigation Component to connect them and in doing so, implement the following:</p>
+<ul>
+<li>Visual navigation graph</li>
+<li>Navigation by destination and action</li>
+<li>Transition animations</li>
+<li>Menu navigation, bottom navigation, and menu drawer navigation</li>
+<li>Type safe argument passing</li>
+<li>Deep links</li>
+</ul>
+<h3 is-upgraded id="prerequisites" data-text="Prerequisites" tabindex="-1">Prerequisites</h3>
+<ul>
+<li>Basic Kotlin knowledge (this codelab is in Kotlin)</li>
+<li>The latest stable version of  <a href="https://developer.android.com/studio/index.html" target="_blank">Android Studio</a>, and knowledge of how to use it</li>
+<li>Emulator or device running API 19+</li>
+</ul>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Getting Started" duration="5" step="1">
+          
+          <h2 class="step-title" id="1" data-text="Getting Started" tabindex="-1">
+              2. Getting Started
+          </h2>
+          <h2 is-upgraded id="get-the-code" data-text="Get the Code" tabindex="-1"><strong>Get the Code</strong></h2>
+<p>Clone the navigation codelab from GitHub:</p>
+<div></div><devsite-code><pre translate="no" dir="ltr" is-upgraded>$ git clone https://github.com/android/codelab-android-navigation
+</pre></devsite-code>
+<p>Alternatively you can download the repository as a Zip file:</p>
+<p><a href="https://github.com/android/codelab-android-navigation/archive/master.zip" target="_blank"><button class="button button-primary button-with-icon"><span class="material-icons" aria-hidden="true" translate="no">file_download</span>Download Zip</button></a></p>
+<h2 is-upgraded id="get-the-latest-stable-version-of-android-studio" data-text="Get the latest stable version of Android Studio" tabindex="-1"><strong>Get the latest stable version of Android Studio</strong></h2>
+<p>Make sure you are using the latest version of Android Studio. This is required for the Android Studio navigation tooling.</p>
+<p>If you need to download a recent version of Android Studio, you can do so  <a href="https://developer.android.com/studio/" target="_blank">here</a>.</p>
+<h2 is-upgraded id="overview-of-navigation" data-text="Overview of Navigation" tabindex="-1">Overview of Navigation</h2>
+<p>The Navigation Component consists of three key parts, working together in harmony. They are:</p>
+<ol type="1">
+<li><strong>Navigation Graph</strong> (New XML resource) - This is a resource that contains all navigation-related information in one centralized location. This includes all the places in your app, known as <em>destinations</em>, and possible paths a user could take through your app.</li>
+<li><strong>NavHostFragment</strong> (Layout XML view) - This is a special widget you add to your layout. It displays different destinations from your Navigation Graph.</li>
+<li><strong>NavController</strong> (Kotlin/Java object) - This is an object that keeps track of the current position within the navigation graph. It orchestrates swapping destination content in the <code translate="no" dir="ltr">NavHostFragment</code> as you move through a navigation graph.</li>
+</ol>
+<p>When you navigate, you&#39;ll use the NavController object, telling it where you want to go or what path you want to take in your Navigation Graph. The <code translate="no" dir="ltr">NavController</code> will then show the appropriate destination in the NavHostFragment.</p>
+<p>That&#39;s the basic idea. Let&#39;s see what this looks like in practice, starting with the new Navigation Graph resource.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Introducing the Navigation Graph" duration="7" step="2">
+          
+          <h2 class="step-title" id="2" data-text="Introducing the Navigation Graph" tabindex="-1">
+              3. Introducing the Navigation Graph
+          </h2>
+          <h2 is-upgraded id="destinations" data-text="Destinations" tabindex="-1">Destinations</h2>
+<p>The Navigation Component introduces the concept of a <em>destination</em>. A destination is any place you can navigate to in your app, usually a fragment or an activity.  These are supported out of the box, but you can also  <a href="http://d.android.com/arch/navigation/navigation-add-new" target="_blank">make your own custom destination types</a> if needed.</p>
+<h2 is-upgraded id="navigation-graph" data-text="Navigation Graph" tabindex="-1">Navigation Graph</h2>
+<p>A <em>navigation graph</em> is a new resource type that defines all the possible paths a user can take through an app. It shows visually all the destinations that can be reached from a given destination. Android Studio displays the graph in its Navigation Editor. Here&#39;s part of the starting navigation graph you&#39;ll create for your app:</p>
+<p class="image-container"><img alt="Home, Step One and Step Two" title="Screenshot of navigation graph with 3 destinations" style="width: 624.00px" src="/static/codelabs/android-navigation/img/4c1306ed12743a23.png" srcset="https://developer.android.com/static/codelabs/android-navigation/img/4c1306ed12743a23_36.png 36w,https://developer.android.com/static/codelabs/android-navigation/img/4c1306ed12743a23_48.png 48w,https://developer.android.com/static/codelabs/android-navigation/img/4c1306ed12743a23_72.png 72w,https://developer.android.com/static/codelabs/android-navigation/img/4c1306ed12743a23_96.png 96w,https://developer.android.com/static/codelabs/android-navigation/img/4c1306ed12743a23_480.png 480w,https://developer.android.com/static/codelabs/android-navigation/img/4c1306ed12743a23_720.png 720w,https://developer.android.com/static/codelabs/android-navigation/img/4c1306ed12743a23_856.png 856w,https://developer.android.com/static/codelabs/android-navigation/img/4c1306ed12743a23_960.png 960w,https://developer.android.com/static/codelabs/android-navigation/img/4c1306ed12743a23_1440.png 1440w,https://developer.android.com/static/codelabs/android-navigation/img/4c1306ed12743a23_1920.png 1920w,https://developer.android.com/static/codelabs/android-navigation/img/4c1306ed12743a23_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<h2 is-upgraded id="exploring-the-navigation-editor" data-text="Exploring the Navigation Editor" tabindex="-1">Exploring the Navigation Editor</h2>
+<ol type="1">
+<li>Open <code translate="no" dir="ltr">res/navigation/mobile_navigation.xml</code></li>
+<li>Click <strong>Design</strong> to go into Design mode:</li>
+</ol>
+<p class="image-container"><img alt="f01c48a365da45fc.png" title="Two tabs in Android Studio: Design and Text" style="width: 188.00px" src="/static/codelabs/android-navigation/img/f01c48a365da45fc.png" srcset="https://developer.android.com/static/codelabs/android-navigation/img/f01c48a365da45fc_36.png 36w,https://developer.android.com/static/codelabs/android-navigation/img/f01c48a365da45fc_48.png 48w,https://developer.android.com/static/codelabs/android-navigation/img/f01c48a365da45fc_72.png 72w,https://developer.android.com/static/codelabs/android-navigation/img/f01c48a365da45fc_96.png 96w,https://developer.android.com/static/codelabs/android-navigation/img/f01c48a365da45fc_480.png 480w,https://developer.android.com/static/codelabs/android-navigation/img/f01c48a365da45fc_720.png 720w,https://developer.android.com/static/codelabs/android-navigation/img/f01c48a365da45fc_856.png 856w,https://developer.android.com/static/codelabs/android-navigation/img/f01c48a365da45fc_960.png 960w,https://developer.android.com/static/codelabs/android-navigation/img/f01c48a365da45fc_1440.png 1440w,https://developer.android.com/static/codelabs/android-navigation/img/f01c48a365da45fc_1920.png 1920w,https://developer.android.com/static/codelabs/android-navigation/img/f01c48a365da45fc_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Here&#39;s what you should see:</p>
+<p class="image-container"><img alt="92fe16a524095729.png" title="Screenshot of 4 destinations" style="width: 624.00px" src="/static/codelabs/android-navigation/img/92fe16a524095729.png" srcset="https://developer.android.com/static/codelabs/android-navigation/img/92fe16a524095729_36.png 36w,https://developer.android.com/static/codelabs/android-navigation/img/92fe16a524095729_48.png 48w,https://developer.android.com/static/codelabs/android-navigation/img/92fe16a524095729_72.png 72w,https://developer.android.com/static/codelabs/android-navigation/img/92fe16a524095729_96.png 96w,https://developer.android.com/static/codelabs/android-navigation/img/92fe16a524095729_480.png 480w,https://developer.android.com/static/codelabs/android-navigation/img/92fe16a524095729_720.png 720w,https://developer.android.com/static/codelabs/android-navigation/img/92fe16a524095729_856.png 856w,https://developer.android.com/static/codelabs/android-navigation/img/92fe16a524095729_960.png 960w,https://developer.android.com/static/codelabs/android-navigation/img/92fe16a524095729_1440.png 1440w,https://developer.android.com/static/codelabs/android-navigation/img/92fe16a524095729_1920.png 1920w,https://developer.android.com/static/codelabs/android-navigation/img/92fe16a524095729_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>The navigation graph shows the available destinations. The arrows between the destinations are called <em>actions</em>. You&#39;ll learn more about actions later.</p>
+<ol type="1" start="3">
+<li>Click on a destination to see its attributes.</li>
+</ol>
+<p class="image-container"><img alt="4d58e392ee13a9ba.png" title="Destination attributes" style="width: 570.00px" src="/static/codelabs/android-navigation/img/4d58e392ee13a9ba.png" srcset="https://developer.android.com/static/codelabs/android-navigation/img/4d58e392ee13a9ba_36.png 36w,https://developer.android.com/static/codelabs/android-navigation/img/4d58e392ee13a9ba_48.png 48w,https://developer.android.com/static/codelabs/android-navigation/img/4d58e392ee13a9ba_72.png 72w,https://developer.android.com/static/codelabs/android-navigation/img/4d58e392ee13a9ba_96.png 96w,https://developer.android.com/static/codelabs/android-navigation/img/4d58e392ee13a9ba_480.png 480w,https://developer.android.com/static/codelabs/android-navigation/img/4d58e392ee13a9ba_720.png 720w,https://developer.android.com/static/codelabs/android-navigation/img/4d58e392ee13a9ba_856.png 856w,https://developer.android.com/static/codelabs/android-navigation/img/4d58e392ee13a9ba_960.png 960w,https://developer.android.com/static/codelabs/android-navigation/img/4d58e392ee13a9ba_1440.png 1440w,https://developer.android.com/static/codelabs/android-navigation/img/4d58e392ee13a9ba_1920.png 1920w,https://developer.android.com/static/codelabs/android-navigation/img/4d58e392ee13a9ba_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<ol type="1" start="4">
+<li>Click on any action, represented by an arrow, to see its attributes.</li>
+</ol>
+<p class="image-container"><img alt="903fa5df3721baf9.png" title="Screenshot of a selected arrow showing action attributes" style="width: 586.00px" src="/static/codelabs/android-navigation/img/903fa5df3721baf9.png" srcset="https://developer.android.com/static/codelabs/android-navigation/img/903fa5df3721baf9_36.png 36w,https://developer.android.com/static/codelabs/android-navigation/img/903fa5df3721baf9_48.png 48w,https://developer.android.com/static/codelabs/android-navigation/img/903fa5df3721baf9_72.png 72w,https://developer.android.com/static/codelabs/android-navigation/img/903fa5df3721baf9_96.png 96w,https://developer.android.com/static/codelabs/android-navigation/img/903fa5df3721baf9_480.png 480w,https://developer.android.com/static/codelabs/android-navigation/img/903fa5df3721baf9_720.png 720w,https://developer.android.com/static/codelabs/android-navigation/img/903fa5df3721baf9_856.png 856w,https://developer.android.com/static/codelabs/android-navigation/img/903fa5df3721baf9_960.png 960w,https://developer.android.com/static/codelabs/android-navigation/img/903fa5df3721baf9_1440.png 1440w,https://developer.android.com/static/codelabs/android-navigation/img/903fa5df3721baf9_1920.png 1920w,https://developer.android.com/static/codelabs/android-navigation/img/903fa5df3721baf9_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<h2 is-upgraded id="anatomy-of-a-navigation-xml-file" data-text="Anatomy of a navigation XML file" tabindex="-1">Anatomy of a navigation XML file</h2>
+<p>All of the changes you make in the graphical Navigation Editor change the underlying XML file, similar to the way the Layout Editor modifies the layout XML.</p>
+<p>Click the <strong>Text</strong> tab:</p>
+<p class="image-container"><img alt="d5f69532f6f303f6.png" title="Text tab selected" style="width: 234.00px" src="/static/codelabs/android-navigation/img/d5f69532f6f303f6.png" srcset="https://developer.android.com/static/codelabs/android-navigation/img/d5f69532f6f303f6_36.png 36w,https://developer.android.com/static/codelabs/android-navigation/img/d5f69532f6f303f6_48.png 48w,https://developer.android.com/static/codelabs/android-navigation/img/d5f69532f6f303f6_72.png 72w,https://developer.android.com/static/codelabs/android-navigation/img/d5f69532f6f303f6_96.png 96w,https://developer.android.com/static/codelabs/android-navigation/img/d5f69532f6f303f6_480.png 480w,https://developer.android.com/static/codelabs/android-navigation/img/d5f69532f6f303f6_720.png 720w,https://developer.android.com/static/codelabs/android-navigation/img/d5f69532f6f303f6_856.png 856w,https://developer.android.com/static/codelabs/android-navigation/img/d5f69532f6f303f6_960.png 960w,https://developer.android.com/static/codelabs/android-navigation/img/d5f69532f6f303f6_1440.png 1440w,https://developer.android.com/static/codelabs/android-navigation/img/d5f69532f6f303f6_1920.png 1920w,https://developer.android.com/static/codelabs/android-navigation/img/d5f69532f6f303f6_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>You&#39;ll see some XML like this:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="GDScript"><code translate="no" dir="ltr">&lt;<span class="devsite-syntax-n">navigation</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">xmlns</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"http://schemas.android.com/apk/res/android"</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">xmlns</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">app</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"http://schemas.android.com/apk/res-auto"</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">xmlns</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">tools</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"http://schemas.android.com/tools"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">app</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">startDestination</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"@+id/home_dest"</span>&gt;
+
+<span class="devsite-syntax-w">    </span>&lt;<span class="devsite-syntax-o">!--</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">...</span><span class="devsite-syntax-n">tags</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">for</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">fragments</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ow">and</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">activities</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">here</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">--</span>&gt;
+
+&lt;<span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">navigation</span>&gt;
+</code></pre></devsite-code>
+<p>Notice:</p>
+<ul>
+<li><code translate="no" dir="ltr">&lt;navigation&gt;</code> is the root node of every navigation graph.</li>
+<li><code translate="no" dir="ltr">&lt;navigation&gt;</code> contains one or more destinations, represented by <code translate="no" dir="ltr">&lt;activity&gt;</code> or <code translate="no" dir="ltr">&lt;fragment&gt;</code> elements.</li>
+<li><code translate="no" dir="ltr">app:startDestination</code> is an attribute that specifies the destination that is launched by default when the user first opens the app.</li>
+</ul>
+<p>Let&#39;s take a look at a fragment destination:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="GDScript"><code translate="no" dir="ltr">&lt;<span class="devsite-syntax-n">fragment</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">id</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"@+id/flow_step_one_dest"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"com.example.android.codelabs.navigation.FlowStepFragment"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">tools</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">layout</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"@layout/flow_step_one_fragment"</span>&gt;
+<span class="devsite-syntax-w">    </span>&lt;<span class="devsite-syntax-n">argument</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">.../</span>&gt;
+
+<span class="devsite-syntax-w">    </span>&lt;<span class="devsite-syntax-n">action</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">id</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"@+id/next_action"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">app</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">destination</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"@+id/flow_step_two_dest"</span>&gt;
+<span class="devsite-syntax-w">    </span>&lt;<span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">action</span>&gt;
+&lt;<span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">fragment</span>&gt;
+</code></pre></devsite-code>
+<p>Notice:</p>
+<ul>
+<li><code translate="no" dir="ltr">android:id</code> defines an ID for the fragment that you can use to reference the destination elsewhere in this XML and your code.</li>
+<li><code translate="no" dir="ltr">android:name</code> declares the fully qualified class name of the fragment to instantiate when you navigate to that destination.</li>
+<li><code translate="no" dir="ltr">tools:layout</code> specifies what layout should be shown in the graphical editor.</li>
+</ul>
+<p>Some <code translate="no" dir="ltr">&lt;fragment&gt;</code> tags also contain <code translate="no" dir="ltr">&lt;action&gt;</code>, <code translate="no" dir="ltr">&lt;argument&gt;,</code> and <code translate="no" dir="ltr">&lt;deepLink&gt;</code>, all of which we&#39;ll cover later.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Add a Destination to the Navigation Graph" duration="5" step="3">
+          
+          <h2 class="step-title" id="3" data-text="Add a Destination to the Navigation Graph" tabindex="-1">
+              4. Add a Destination to the Navigation Graph
+          </h2>
+          <p>The sample app starts with a few destinations in the graph. In this step, you&#39;ll add a brand new destination. You must add a destination to the navigation graph before you can navigate to it.</p>
+<aside class="special"><p><strong>Note:</strong> The code for each step in this codelab is included, commented out between TODO statements in the code you downloaded.</p>
+<p>You should compare the code you write to the included commented-out code.</p>
+</aside>
+<ol type="1">
+<li>Open <code translate="no" dir="ltr">res/navigation/mobile_navigation.xml</code>, and click the <strong>Design</strong> tab.</li>
+<li>Click the <strong>New Destination</strong> icon, and select  &#34;settings_fragment&#34;</li>
+</ol>
+<p class="image-container"><img alt="44a8212036929458.png" title="New destination screen showing multiple fragments" style="width: 306.00px" src="/static/codelabs/android-navigation/img/44a8212036929458.png" srcset="https://developer.android.com/static/codelabs/android-navigation/img/44a8212036929458_36.png 36w,https://developer.android.com/static/codelabs/android-navigation/img/44a8212036929458_48.png 48w,https://developer.android.com/static/codelabs/android-navigation/img/44a8212036929458_72.png 72w,https://developer.android.com/static/codelabs/android-navigation/img/44a8212036929458_96.png 96w,https://developer.android.com/static/codelabs/android-navigation/img/44a8212036929458_480.png 480w,https://developer.android.com/static/codelabs/android-navigation/img/44a8212036929458_720.png 720w,https://developer.android.com/static/codelabs/android-navigation/img/44a8212036929458_856.png 856w,https://developer.android.com/static/codelabs/android-navigation/img/44a8212036929458_960.png 960w,https://developer.android.com/static/codelabs/android-navigation/img/44a8212036929458_1440.png 1440w,https://developer.android.com/static/codelabs/android-navigation/img/44a8212036929458_1920.png 1920w,https://developer.android.com/static/codelabs/android-navigation/img/44a8212036929458_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>The result is a new destination, which renders a preview of the fragment&#39;s layout in the design view.</p>
+<p class="image-container"><img alt="e82a44431b77c6c1.png" title="Settings fragment added to graph" style="width: 418.02px" src="/static/codelabs/android-navigation/img/e82a44431b77c6c1.png" srcset="https://developer.android.com/static/codelabs/android-navigation/img/e82a44431b77c6c1_36.png 36w,https://developer.android.com/static/codelabs/android-navigation/img/e82a44431b77c6c1_48.png 48w,https://developer.android.com/static/codelabs/android-navigation/img/e82a44431b77c6c1_72.png 72w,https://developer.android.com/static/codelabs/android-navigation/img/e82a44431b77c6c1_96.png 96w,https://developer.android.com/static/codelabs/android-navigation/img/e82a44431b77c6c1_480.png 480w,https://developer.android.com/static/codelabs/android-navigation/img/e82a44431b77c6c1_720.png 720w,https://developer.android.com/static/codelabs/android-navigation/img/e82a44431b77c6c1_856.png 856w,https://developer.android.com/static/codelabs/android-navigation/img/e82a44431b77c6c1_960.png 960w,https://developer.android.com/static/codelabs/android-navigation/img/e82a44431b77c6c1_1440.png 1440w,https://developer.android.com/static/codelabs/android-navigation/img/e82a44431b77c6c1_1920.png 1920w,https://developer.android.com/static/codelabs/android-navigation/img/e82a44431b77c6c1_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Note that you can also edit the XML file directly to add destinations:</p>
+<h3 is-upgraded id="mobile_navigation.xml" data-text="mobile_navigation.xml" tabindex="-1">mobile_navigation.xml</h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="GDScript"><code translate="no" dir="ltr">&lt;<span class="devsite-syntax-n">fragment</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">id</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"@+id/settings_dest"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"com.example.android.codelabs.navigation.SettingsFragment"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">label</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"@string/settings"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">tools</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">layout</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"@layout/settings_fragment"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/</span>&gt;
+</code></pre></devsite-code>
+<aside class="special"><p>To follow our naming convention, change the id to <code translate="no" dir="ltr">settings_dest</code> from the default <code translate="no" dir="ltr">settingsFragment</code>.</p>
+</aside>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Using the Navigation Graph to Navigate" duration="15" step="4">
+          
+          <h2 class="step-title" id="4" data-text="Using the Navigation Graph to Navigate" tabindex="-1">
+              5. Using the Navigation Graph to Navigate
+          </h2>
+          <p>Right now you have this awesome navigation graph, but you&#39;re not actually using it to navigate.</p>
+<h2 is-upgraded id="activities-and-navigation" data-text="Activities and Navigation" tabindex="-1">Activities and Navigation</h2>
+<p>The Navigation component follows the guidance outlined in the  <a href="http://d.android.com/topic/libraries/architecture/navigation/navigation-principles" target="_blank">Principles of Navigation</a>. The Principles of Navigation recommend you use activities as entry points for your app. Activities will also contain global navigation, such as the bottom nav,</p>
+<p>In comparison, fragments will be the actual destination-specific layouts.</p>
+<p>To get this all to work, you need to modify your activity layouts to contain a special widget called a  <a href="http://d.android.com/reference/androidx/navigation/fragment/NavHostFragment" target="_blank"><strong><code translate="no" dir="ltr">NavHostFragment</code></strong></a>. A <code translate="no" dir="ltr">NavHostFragment</code> swaps different fragment destinations in and out as you navigate through the navigation graph.</p>
+<p class="image-container"><img alt="b85ea429c5ebad71.png" title="Device showing an activity containing a NavHostFragment" style="width: 624.00px" src="/static/codelabs/android-navigation/img/b85ea429c5ebad71.png" srcset="https://developer.android.com/static/codelabs/android-navigation/img/b85ea429c5ebad71_36.png 36w,https://developer.android.com/static/codelabs/android-navigation/img/b85ea429c5ebad71_48.png 48w,https://developer.android.com/static/codelabs/android-navigation/img/b85ea429c5ebad71_72.png 72w,https://developer.android.com/static/codelabs/android-navigation/img/b85ea429c5ebad71_96.png 96w,https://developer.android.com/static/codelabs/android-navigation/img/b85ea429c5ebad71_480.png 480w,https://developer.android.com/static/codelabs/android-navigation/img/b85ea429c5ebad71_720.png 720w,https://developer.android.com/static/codelabs/android-navigation/img/b85ea429c5ebad71_856.png 856w,https://developer.android.com/static/codelabs/android-navigation/img/b85ea429c5ebad71_960.png 960w,https://developer.android.com/static/codelabs/android-navigation/img/b85ea429c5ebad71_1440.png 1440w,https://developer.android.com/static/codelabs/android-navigation/img/b85ea429c5ebad71_1920.png 1920w,https://developer.android.com/static/codelabs/android-navigation/img/b85ea429c5ebad71_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>A simple layout supporting navigation similar to the picture above looks like this. An example of this code can be found in <code translate="no" dir="ltr">res/layout-470dp/navigation_activity.xml</code>:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL"><code translate="no" dir="ltr">&lt;<span class="devsite-syntax-n">LinearLayout</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">...</span><span class="devsite-syntax-o">/</span>&gt;
+<span class="devsite-syntax-w">    </span>&lt;<span class="devsite-syntax-n">androidx</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">appcompat</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">widget</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">Toolbar</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">...</span><span class="devsite-syntax-o">/</span>&gt;
+<span class="devsite-syntax-w">    </span>&lt;<span class="devsite-syntax-n">fragment</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">layout_width</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"match_parent"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">layout_height</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"0dp"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">layout_weight</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"1"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">id</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@+id/my_nav_host_fragment"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"androidx.navigation.fragment.NavHostFragment"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nl">app</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">navGraph</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@navigation/mobile_navigation"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nl">app</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">defaultNavHost</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"true"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">/</span>&gt;
+<span class="devsite-syntax-w">    </span>&lt;<span class="devsite-syntax-n">com</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">google</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">material</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">bottomnavigation</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">BottomNavigationView</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">...</span><span class="devsite-syntax-o">/</span>&gt;
+&lt;<span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">LinearLayout</span>&gt;
+</code></pre></devsite-code>
+<p>Notice:</p>
+<ul>
+<li>This is a layout for an activity. It contains the global navigation, including a bottom nav and a toolbar</li>
+<li><code translate="no" dir="ltr">android:name="androidx.navigation.fragment.NavHostFragment"</code> and  <code translate="no" dir="ltr">app:defaultNavHost="true"</code> connect the system back button to the <code translate="no" dir="ltr">NavHostFragment</code></li>
+<li><code translate="no" dir="ltr">app:navGraph="@navigation/mobile_navigation"</code> associates the <code translate="no" dir="ltr">NavHostFragment</code> with a navigation graph. This navigation graph specifies all the destinations the user can navigate to, in this <code translate="no" dir="ltr">NavHostFragment</code>.</li>
+</ul>
+<h2 is-upgraded id="navcontroller" data-text="NavController" tabindex="-1">NavController</h2>
+<p>Finally, when a user does something like clicking a button, you need to trigger a navigate command. A special class called the  <a href="http://d.android.com/reference/androidx/navigation/NavController" target="_blank"><strong><code translate="no" dir="ltr">NavController</code></strong></a> is what triggers the fragment swaps in the <code translate="no" dir="ltr">NavHostFragment</code>.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scilab"><code translate="no" dir="ltr"><span class="devsite-syntax-c1">// Command to navigate to flow_step_one_dest</span>
+<span class="devsite-syntax-n">findNavController</span><span class="devsite-syntax-p">().</span><span class="devsite-syntax-n">navigate</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">R</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">id</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">flow_step_one_dest</span><span class="devsite-syntax-p">)</span>
+</code></pre></devsite-code>
+<p>Note that you pass in either a destination or action ID to navigate. These are the IDs defined in the navigation graph XML. This is an example of passing in a destination ID.</p>
+<p><code translate="no" dir="ltr">NavController</code> is powerful because when you call methods like <code translate="no" dir="ltr">navigate()</code> or <code translate="no" dir="ltr">popBackStack(),</code> it translates these commands into the appropriate framework operations based on the type of destination you are navigating to or from. For example, when you call <code translate="no" dir="ltr">navigate()</code> with an activity destination, the <code translate="no" dir="ltr">NavController</code> calls <code translate="no" dir="ltr">startActivity()</code> on your behalf.</p>
+<p>There are a few ways to get a <code translate="no" dir="ltr">NavController</code> object associated with your <code translate="no" dir="ltr">NavHostFragment</code>. In Kotlin, it&#39;s recommended you use one of the following extension functions, depending on whether you&#39;re calling the navigation command from within a fragment, activity or view:</p>
+<ul>
+<li><a href="https://developer.android.com/reference/kotlin/androidx/navigation/fragment/package-summary#(androidx.fragment.app.Fragment).findNavController()" target="_blank"><code translate="no" dir="ltr">Fragment.findNavController()</code></a></li>
+<li><a href="https://developer.android.com/reference/kotlin/androidx/navigation/package-summary#%28android.view.View%29.findNavController%28%29" target="_blank"><code translate="no" dir="ltr">View.findNavController()</code></a></li>
+<li><a href="https://developer.android.com/reference/kotlin/androidx/navigation/package-summary#(android.app.Activity).findNavController(kotlin.Int)" target="_blank"><code translate="no" dir="ltr">Activity.findNavController(viewId: Int)</code></a></li>
+</ul>
+<aside class="warning"><p>Your <code translate="no" dir="ltr">NavController</code> is associated with a <code translate="no" dir="ltr">NavHostFragment</code>. Thus whichever method you use, you must be sure that the fragment, view, or view ID is either a <code translate="no" dir="ltr">NavHostFragment</code> itself, or has a <code translate="no" dir="ltr">NavHostFragment</code> as a parent. Otherwise you will get an <code translate="no" dir="ltr">IllegalStateException</code>.</p>
+</aside>
+<h2 is-upgraded id="navigate-to-a-destination-with-navcontroller" data-text="Navigate to a Destination with NavController" tabindex="-1">Navigate to a Destination with NavController</h2>
+<p>It&#39;s your turn to navigate using  <a href="http://d.android.com/reference/androidx/navigation/NavController" target="_blank"><code translate="no" dir="ltr">NavController</code></a>. You&#39;ll hook up the <strong>Navigate To Destination</strong> button to navigate to the <code translate="no" dir="ltr">flow_step_one_dest</code> destination (which is a destination that is a <code translate="no" dir="ltr">FlowStepFragment</code>):</p>
+<ol type="1">
+<li>Open <code translate="no" dir="ltr">HomeFragment.kt</code></li>
+<li>Hook up the <code translate="no" dir="ltr">navigate_destination_button</code> in <code translate="no" dir="ltr">onViewCreated()</code></li>
+</ol>
+<h3 is-upgraded id="homefragment.kt" data-text="HomeFragment.kt" tabindex="-1">HomeFragment.kt</h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">val button = view.findViewById&lt;Button&gt;(R.id.navigate_destination_button)
+button?.setOnClickListener {
+    findNavController().navigate(R.id.flow_step_one_dest, null)
+}
+</code></pre></devsite-code>
+<ol type="1" start="3">
+<li>Run the app and click the <strong>Navigate To Destination</strong> button. Note that the button navigates to the <code translate="no" dir="ltr">flow_step_one_dest</code> destination.</li>
+</ol>
+<aside class="special"><p>You can also use the convenience method  <a href="https://developer.android.com/reference/kotlin/androidx/navigation/Navigation#createNavigateOnClickListener%28kotlin.Int%2C+android.os.Bundle%29" target="_blank"><code translate="no" dir="ltr">Navigation.createNavigateOnClickListener(@IdRes destId: int, bundle: Bundle)</code></a>. This method will build an <code translate="no" dir="ltr">OnClickListener</code> to navigate to the given destination with a bundle of arguments to be passed to the destination.</p>
+</aside>
+<p>The click listener code would look like this:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">val button = view.findViewById&lt;Button&gt;(R.id.navigate_destination_button)
+button?.setOnClickListener(
+        Navigation.createNavigateOnClickListener(R.id.flow_step_one_dest, null)
+)
+</code></pre></devsite-code>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Changing the Navigation Transition" duration="3" step="5">
+          
+          <h2 class="step-title" id="5" data-text="Changing the Navigation Transition" tabindex="-1">
+              6. Changing the Navigation Transition
+          </h2>
+          <p>Each <code translate="no" dir="ltr">navigate()</code> call has a not very exciting default transition associated with it, as seen below:</p>
+<p class="image-container"><img alt="From Home user clicks on Navigation to destination and navigates to step one." title="Animation of the app " style="width: 298.00px" src="/static/codelabs/android-navigation/img/a5983264fb02573f.gif"></p>
+<p>The default transition, as well as other attributes associated with the call, can be overridden by including a set of <code translate="no" dir="ltr">NavOptions</code>.  <code translate="no" dir="ltr">NavOptions</code> uses a <code translate="no" dir="ltr">Builder</code> pattern which allows you to override and set only the options you need. There&#39;s also a ktx DSL for NavOptions, which is what you&#39;ll be using.</p>
+<p>For animated transitions, you can define XML animation resources in the <code translate="no" dir="ltr">anim</code> resource folder and then use those animations for transitions. Some examples are included in the app code:</p>
+<p class="image-container"><img alt="409164bbcdea93ed.png" style="width: 247.00px" src="/static/codelabs/android-navigation/img/409164bbcdea93ed.png" srcset="https://developer.android.com/static/codelabs/android-navigation/img/409164bbcdea93ed_36.png 36w,https://developer.android.com/static/codelabs/android-navigation/img/409164bbcdea93ed_48.png 48w,https://developer.android.com/static/codelabs/android-navigation/img/409164bbcdea93ed_72.png 72w,https://developer.android.com/static/codelabs/android-navigation/img/409164bbcdea93ed_96.png 96w,https://developer.android.com/static/codelabs/android-navigation/img/409164bbcdea93ed_480.png 480w,https://developer.android.com/static/codelabs/android-navigation/img/409164bbcdea93ed_720.png 720w,https://developer.android.com/static/codelabs/android-navigation/img/409164bbcdea93ed_856.png 856w,https://developer.android.com/static/codelabs/android-navigation/img/409164bbcdea93ed_960.png 960w,https://developer.android.com/static/codelabs/android-navigation/img/409164bbcdea93ed_1440.png 1440w,https://developer.android.com/static/codelabs/android-navigation/img/409164bbcdea93ed_1920.png 1920w,https://developer.android.com/static/codelabs/android-navigation/img/409164bbcdea93ed_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<h2 is-upgraded id="add-a-custom-transition" data-text="Add a Custom Transition" tabindex="-1">Add a Custom Transition</h2>
+<p>Update the code so that pressing the <strong>Navigate To Destination</strong> button shows a custom transition animation.</p>
+<ol type="1">
+<li>Open <code translate="no" dir="ltr">HomeFragment.kt</code></li>
+<li>Define a <code translate="no" dir="ltr">NavOptions</code> and pass it into the <code translate="no" dir="ltr">navigate()</code> call to <code translate="no" dir="ltr">navigate_destination_button</code></li>
+</ol>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">val options = navOptions {
+    anim {
+        enter = R.anim.slide_in_right
+        exit = R.anim.slide_out_left
+        popEnter = R.anim.slide_in_left
+        popExit = R.anim.slide_out_right
+    }
+}
+view.findViewById&lt;Button&gt;(R.id.navigate_destination_button)?.setOnClickListener {
+    findNavController().navigate(R.id.flow_step_one_dest, null, options)
+}
+</code></pre></devsite-code>
+<ol type="1" start="3">
+<li>Remove the code added in step 5, if it&#39;s still there</li>
+<li>Verify that tapping the <strong>Navigate To Destination</strong> button causes the fragment to slide onto the screen and that pressing back causes it to slide off the screen</li>
+</ol>
+<p class="image-container"><img alt="dcb9d8241c6647eb.gif" style="width: 298.00px" src="/static/codelabs/android-navigation/img/dcb9d8241c6647eb.gif"></p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Navigate using actions" duration="10" step="6">
+          
+          <h2 class="step-title" id="6" data-text="Navigate using actions" tabindex="-1">
+              7. Navigate using actions
+          </h2>
+          <h2 is-upgraded id="actions" data-text="Actions" tabindex="-1">Actions</h2>
+<p>The navigation system also allows you to navigate via <em>actions</em>. As previously mentioned, the lines shown in the navigation graph are visual representations of actions.</p>
+<h2 is-upgraded id="heading" data-text="" tabindex="-1"><img alt="bc86b406d6a75be0.png" style="width: 624.00px" src="/static/codelabs/android-navigation/img/bc86b406d6a75be0.png" srcset="https://developer.android.com/static/codelabs/android-navigation/img/bc86b406d6a75be0_36.png 36w,https://developer.android.com/static/codelabs/android-navigation/img/bc86b406d6a75be0_48.png 48w,https://developer.android.com/static/codelabs/android-navigation/img/bc86b406d6a75be0_72.png 72w,https://developer.android.com/static/codelabs/android-navigation/img/bc86b406d6a75be0_96.png 96w,https://developer.android.com/static/codelabs/android-navigation/img/bc86b406d6a75be0_480.png 480w,https://developer.android.com/static/codelabs/android-navigation/img/bc86b406d6a75be0_720.png 720w,https://developer.android.com/static/codelabs/android-navigation/img/bc86b406d6a75be0_856.png 856w,https://developer.android.com/static/codelabs/android-navigation/img/bc86b406d6a75be0_960.png 960w,https://developer.android.com/static/codelabs/android-navigation/img/bc86b406d6a75be0_1440.png 1440w,https://developer.android.com/static/codelabs/android-navigation/img/bc86b406d6a75be0_1920.png 1920w,https://developer.android.com/static/codelabs/android-navigation/img/bc86b406d6a75be0_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></h2>
+<p>Navigation by actions has the following benefits over navigation by destination:</p>
+<ul>
+<li>You can visualize the navigation paths through your app</li>
+<li>Actions can contain additional associated attributes you can set, such as a transition animation, arguments values, and backstack behavior</li>
+<li>You can use the plugin safe args to navigate, which you&#39;ll see shortly</li>
+</ul>
+<p>Here&#39;s the visual and XML for the action that connects <code translate="no" dir="ltr">flow_step_one_dest</code> and <code translate="no" dir="ltr">flow_step_two_dest</code>:</p>
+<p class="image-container"><img alt="2ab28ff13c759c17.png" style="width: 509.00px" src="/static/codelabs/android-navigation/img/2ab28ff13c759c17.png" srcset="https://developer.android.com/static/codelabs/android-navigation/img/2ab28ff13c759c17_36.png 36w,https://developer.android.com/static/codelabs/android-navigation/img/2ab28ff13c759c17_48.png 48w,https://developer.android.com/static/codelabs/android-navigation/img/2ab28ff13c759c17_72.png 72w,https://developer.android.com/static/codelabs/android-navigation/img/2ab28ff13c759c17_96.png 96w,https://developer.android.com/static/codelabs/android-navigation/img/2ab28ff13c759c17_480.png 480w,https://developer.android.com/static/codelabs/android-navigation/img/2ab28ff13c759c17_720.png 720w,https://developer.android.com/static/codelabs/android-navigation/img/2ab28ff13c759c17_856.png 856w,https://developer.android.com/static/codelabs/android-navigation/img/2ab28ff13c759c17_960.png 960w,https://developer.android.com/static/codelabs/android-navigation/img/2ab28ff13c759c17_1440.png 1440w,https://developer.android.com/static/codelabs/android-navigation/img/2ab28ff13c759c17_1920.png 1920w,https://developer.android.com/static/codelabs/android-navigation/img/2ab28ff13c759c17_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Carbon"><code translate="no" dir="ltr">&lt;<span class="devsite-syntax-nx">fragment</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-nx">id</span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-s">"@+id/flow_step_one_dest"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-nx">name</span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-s">"com.example.android.codelabs.navigation.FlowStepFragment"</span>&gt;
+
+<span class="devsite-syntax-w">    </span>&lt;<span class="devsite-syntax-nx">argument</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-o">.../</span>&gt;
+
+<span class="devsite-syntax-w">    </span>&lt;<span class="devsite-syntax-nx">action</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-nx">id</span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-s">"@+id/next_action"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">app</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-nx">destination</span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-s">"@+id/flow_step_two_dest"</span>&gt;
+<span class="devsite-syntax-w">    </span>&lt;<span class="devsite-syntax-o">/</span><span class="devsite-syntax-nx">action</span>&gt;
+&lt;<span class="devsite-syntax-o">/</span><span class="devsite-syntax-nx">fragment</span>&gt;
+
+&lt;<span class="devsite-syntax-nx">fragment</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-nx">id</span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-s">"@+id/flow_step_two_dest"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-nx">name</span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-s">"com.example.android.codelabs.navigation.FlowStepFragment"</span>&gt;
+<span class="devsite-syntax-w">    </span>&lt;<span class="devsite-syntax-p">!</span><span class="devsite-syntax-o">--</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">...</span><span class="devsite-syntax-nx">removed</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">for</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">simplicity</span><span class="devsite-syntax-o">--</span>&gt;
+&lt;<span class="devsite-syntax-o">/</span><span class="devsite-syntax-nx">fragment</span>&gt;
+</code></pre></devsite-code>
+<p>Notice:</p>
+<ul>
+<li>The actions are nested within the destination - this is the destination you will navigate from</li>
+<li>The action includes a destination argument referring to flow_step_two_dest; this is the ID of where you will navigate to</li>
+<li>The ID for the action is &#34;next_action&#34;</li>
+</ul>
+<p>Here is another example, of the action connecting <code translate="no" dir="ltr">flow_step_two_dest</code> to <code translate="no" dir="ltr">home_dest</code>:</p>
+<p class="image-container"><img alt="6d4a5b6f629c3910.png" style="width: 624.00px" src="/static/codelabs/android-navigation/img/6d4a5b6f629c3910.png" srcset="https://developer.android.com/static/codelabs/android-navigation/img/6d4a5b6f629c3910_36.png 36w,https://developer.android.com/static/codelabs/android-navigation/img/6d4a5b6f629c3910_48.png 48w,https://developer.android.com/static/codelabs/android-navigation/img/6d4a5b6f629c3910_72.png 72w,https://developer.android.com/static/codelabs/android-navigation/img/6d4a5b6f629c3910_96.png 96w,https://developer.android.com/static/codelabs/android-navigation/img/6d4a5b6f629c3910_480.png 480w,https://developer.android.com/static/codelabs/android-navigation/img/6d4a5b6f629c3910_720.png 720w,https://developer.android.com/static/codelabs/android-navigation/img/6d4a5b6f629c3910_856.png 856w,https://developer.android.com/static/codelabs/android-navigation/img/6d4a5b6f629c3910_960.png 960w,https://developer.android.com/static/codelabs/android-navigation/img/6d4a5b6f629c3910_1440.png 1440w,https://developer.android.com/static/codelabs/android-navigation/img/6d4a5b6f629c3910_1920.png 1920w,https://developer.android.com/static/codelabs/android-navigation/img/6d4a5b6f629c3910_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL"><code translate="no" dir="ltr">&lt;<span class="devsite-syntax-n">fragment</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">id</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@+id/home_dest"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"com.example.android.codelabs.navigation.HomeFragment"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">...</span><span class="devsite-syntax-o">/</span>&gt;
+
+&lt;<span class="devsite-syntax-n">fragment</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">id</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@+id/flow_step_two_dest"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"com.example.android.codelabs.navigation.FlowStepFragment"</span>&gt;
+
+<span class="devsite-syntax-w">    </span>&lt;<span class="devsite-syntax-n">argument</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">...</span><span class="devsite-syntax-o">/</span>&gt;
+
+<span class="devsite-syntax-w">    </span>&lt;<span class="devsite-syntax-k">action</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">id</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@+id/next_action"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nl">app</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">popUpTo</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@id/home_dest"</span>&gt;
+<span class="devsite-syntax-w">    </span>&lt;<span class="devsite-syntax-o">/</span><span class="devsite-syntax-k">action</span>&gt;
+&lt;<span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">fragment</span>&gt;
+</code></pre></devsite-code>
+<p>Notice:</p>
+<ul>
+<li>The same ID next_action is used for the action connecting <code translate="no" dir="ltr">flow_step_two_dest</code> to <code translate="no" dir="ltr">home_dest</code>. You can navigate using the next_action id from either <code translate="no" dir="ltr">flow_step_one_dest</code> or <code translate="no" dir="ltr">flow_step_two_dest</code>. This is an example of how actions can provide a level of abstraction and can navigate you somewhere different depending on context.</li>
+<li>The <code translate="no" dir="ltr">popUpTo</code> attribute is used - this action will pop fragments off of the back-stack until you reach <code translate="no" dir="ltr">home_dest</code></li>
+</ul>
+<h2 is-upgraded id="navigate-with-an-action" data-text="Navigate with an Action" tabindex="-1">Navigate with an Action</h2>
+<p>Time to hook up the <strong>Navigate with Action</strong> button so that it lives up to its name!</p>
+<ol type="1">
+<li>Open the <code translate="no" dir="ltr">mobile_navigation.xml</code> file in <strong>Design</strong> mode</li>
+<li>Drag an arrow from <code translate="no" dir="ltr">home_dest</code> to <code translate="no" dir="ltr">flow_step_one_dest</code>:</li>
+</ol>
+<p class="image-container"><img alt="353eea1044f6d048.png" style="width: 624.00px" src="/static/codelabs/android-navigation/img/353eea1044f6d048.png" srcset="https://developer.android.com/static/codelabs/android-navigation/img/353eea1044f6d048_36.png 36w,https://developer.android.com/static/codelabs/android-navigation/img/353eea1044f6d048_48.png 48w,https://developer.android.com/static/codelabs/android-navigation/img/353eea1044f6d048_72.png 72w,https://developer.android.com/static/codelabs/android-navigation/img/353eea1044f6d048_96.png 96w,https://developer.android.com/static/codelabs/android-navigation/img/353eea1044f6d048_480.png 480w,https://developer.android.com/static/codelabs/android-navigation/img/353eea1044f6d048_720.png 720w,https://developer.android.com/static/codelabs/android-navigation/img/353eea1044f6d048_856.png 856w,https://developer.android.com/static/codelabs/android-navigation/img/353eea1044f6d048_960.png 960w,https://developer.android.com/static/codelabs/android-navigation/img/353eea1044f6d048_1440.png 1440w,https://developer.android.com/static/codelabs/android-navigation/img/353eea1044f6d048_1920.png 1920w,https://developer.android.com/static/codelabs/android-navigation/img/353eea1044f6d048_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<ol type="1" start="3">
+<li>With the action arrow selected (blue) change the properties of the action so that:</li>
+</ol>
+<ul>
+<li>ID = next_action</li>
+<li>Transition for Enter = slide_in_right</li>
+<li>Transition for Exit = slide_out_left</li>
+<li>Transitions for Pop Enter = slide_in_left</li>
+<li>Transitions for Pop Exit = slide_out_right</li>
+</ul>
+<p class="image-container"><img alt="9670657fcc5a8de0.png" style="width: 624.00px" src="/static/codelabs/android-navigation/img/9670657fcc5a8de0.png" srcset="https://developer.android.com/static/codelabs/android-navigation/img/9670657fcc5a8de0_36.png 36w,https://developer.android.com/static/codelabs/android-navigation/img/9670657fcc5a8de0_48.png 48w,https://developer.android.com/static/codelabs/android-navigation/img/9670657fcc5a8de0_72.png 72w,https://developer.android.com/static/codelabs/android-navigation/img/9670657fcc5a8de0_96.png 96w,https://developer.android.com/static/codelabs/android-navigation/img/9670657fcc5a8de0_480.png 480w,https://developer.android.com/static/codelabs/android-navigation/img/9670657fcc5a8de0_720.png 720w,https://developer.android.com/static/codelabs/android-navigation/img/9670657fcc5a8de0_856.png 856w,https://developer.android.com/static/codelabs/android-navigation/img/9670657fcc5a8de0_960.png 960w,https://developer.android.com/static/codelabs/android-navigation/img/9670657fcc5a8de0_1440.png 1440w,https://developer.android.com/static/codelabs/android-navigation/img/9670657fcc5a8de0_1920.png 1920w,https://developer.android.com/static/codelabs/android-navigation/img/9670657fcc5a8de0_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<ol type="1" start="4">
+<li>Click the <strong>Text</strong> tab</li>
+</ol>
+<p>Note the newly added <code translate="no" dir="ltr">next_action</code> action under the <code translate="no" dir="ltr">home_dest</code> destination:</p>
+<h3 is-upgraded id="mobile_navigation.xml_1" data-text="mobile_navigation.xml" tabindex="-1">mobile_navigation.xml</h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL"><code translate="no" dir="ltr">&lt;<span class="devsite-syntax-n">fragment</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">id</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@+id/home_dest"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">...</span>&gt;
+<span class="devsite-syntax-w">        </span>
+<span class="devsite-syntax-w">        </span>&lt;<span class="devsite-syntax-k">action</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">id</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@+id/next_action"</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-nl">app</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">destination</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@+id/flow_step_one"</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-nl">app</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">enterAnim</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@anim/slide_in_right"</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-nl">app</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">exitAnim</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@anim/slide_out_left"</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-nl">app</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">popEnterAnim</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@anim/slide_in_left"</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-nl">app</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">popExitAnim</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@anim/slide_out_right"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/</span>&gt;
+</code></pre></devsite-code>
+<ol type="1" start="5">
+<li>Open <code translate="no" dir="ltr">HomeFragment.kt</code></li>
+<li>Add a click listener to the <code translate="no" dir="ltr">navigate_action_button</code></li>
+</ol>
+<h3 is-upgraded id="homefragment.kt_1" data-text="HomeFragment.kt" tabindex="-1">HomeFragment.kt</h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr"> view.findViewById&lt;Button&gt;(R.id.navigate_action_button)?.setOnClickListener(
+        Navigation.createNavigateOnClickListener(R.id.next_action, null)
+)
+</code></pre></devsite-code>
+<aside class="special"><p>Actions allow you to attach <code translate="no" dir="ltr">NavOptions</code> in the navigation XML file, rather than specifying them programmatically.</p>
+</aside>
+<ol type="1" start="7">
+<li>Verify that tapping the <strong>Navigate To Action</strong> now navigates to the next screen.</li>
+</ol>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Using safe args for navigation" duration="4" step="7">
+          
+          <h2 class="step-title" id="7" data-text="Using safe args for navigation" tabindex="-1">
+              8. Using safe args for navigation
+          </h2>
+          <h2 is-upgraded id="safe-args" data-text="Safe Args" tabindex="-1">Safe Args</h2>
+<p>The navigation component has a Gradle plugin, called  <a href="https://developer.android.com/topic/libraries/architecture/navigation/navigation-pass-data#Safe-args" target="_blank"><strong>safe args</strong></a>, that generates simple object and builder classes for type-safe access to arguments specified for destinations and actions.</p>
+<p>Safe args allows you to get rid of code like this when passing values between destinations:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only"><code translate="no" dir="ltr">val username = arguments?.getString("usernameKey")
+</code></pre></devsite-code>
+<p>And, instead, replace it with code that has generated setters and getters.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only"><code translate="no" dir="ltr">val username = args.username
+</code></pre></devsite-code>
+<aside class="special"><p>Because of its type safety, navigation using safe args generated classes is the preferred way to navigate by action and to pass arguments during navigation.</p>
+</aside>
+<h2 is-upgraded id="pass-a-value-using-safe-args" data-text="Pass a value using safe args" tabindex="-1">Pass a value using safe args</h2>
+<ol type="1">
+<li>Open the project <code translate="no" dir="ltr">build.gradle</code> file and notice the safe args plugin:</li>
+</ol>
+<h3 is-upgraded id="build.gradle" data-text="build.gradle" tabindex="-1">build.gradle</h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only"><code translate="no" dir="ltr">dependencies {
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
+    //...
+    }
+
+</code></pre></devsite-code>
+<ol type="1" start="2">
+<li>Open the <code translate="no" dir="ltr">app/build.gradle</code> file and notice the applied plugin:</li>
+</ol>
+<h3 is-upgraded id="appbuild.gradle" data-text="app/build.gradle" tabindex="-1">app/build.gradle</h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only"><code translate="no" dir="ltr">apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
+android { 
+   //...
+}
+</code></pre></devsite-code>
+<ol type="1" start="3">
+<li>Open <code translate="no" dir="ltr">mobile_navigation.xml,</code> and notice how arguments are defined in the <code translate="no" dir="ltr">flow_step_one_dest</code> destination.</li>
+</ol>
+<h3 is-upgraded id="mobile_navigation.xml_2" data-text="mobile_navigation.xml" tabindex="-1">mobile_navigation.xml</h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="GDScript"><code translate="no" dir="ltr">&lt;<span class="devsite-syntax-n">fragment</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">id</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"@+id/flow_step_one_dest"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"com.example.android.codelabs.navigation.FlowStepFragment"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">tools</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">layout</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"@layout/flow_step_one_fragment"</span>&gt;
+<span class="devsite-syntax-w">    </span>&lt;<span class="devsite-syntax-n">argument</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"flowStepNumber"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">app</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">argType</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"integer"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">defaultValue</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"1"</span><span class="devsite-syntax-o">/</span>&gt;
+
+<span class="devsite-syntax-w">    </span>&lt;<span class="devsite-syntax-n">action</span><span class="devsite-syntax-o">...</span>&gt;
+<span class="devsite-syntax-w">    </span>&lt;<span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">action</span>&gt;
+&lt;<span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">fragment</span>&gt;
+</code></pre></devsite-code>
+<p>Using the <code translate="no" dir="ltr">&lt;argument&gt;</code> tag, safeargs generates a class called <code translate="no" dir="ltr">FlowStepFragmentArgs</code>.</p>
+<p class="image-container"><img alt="d0e308373c2656d9.png" style="width: 320.00px" src="/static/codelabs/android-navigation/img/d0e308373c2656d9.png" srcset="https://developer.android.com/static/codelabs/android-navigation/img/d0e308373c2656d9_36.png 36w,https://developer.android.com/static/codelabs/android-navigation/img/d0e308373c2656d9_48.png 48w,https://developer.android.com/static/codelabs/android-navigation/img/d0e308373c2656d9_72.png 72w,https://developer.android.com/static/codelabs/android-navigation/img/d0e308373c2656d9_96.png 96w,https://developer.android.com/static/codelabs/android-navigation/img/d0e308373c2656d9_480.png 480w,https://developer.android.com/static/codelabs/android-navigation/img/d0e308373c2656d9_720.png 720w,https://developer.android.com/static/codelabs/android-navigation/img/d0e308373c2656d9_856.png 856w,https://developer.android.com/static/codelabs/android-navigation/img/d0e308373c2656d9_960.png 960w,https://developer.android.com/static/codelabs/android-navigation/img/d0e308373c2656d9_1440.png 1440w,https://developer.android.com/static/codelabs/android-navigation/img/d0e308373c2656d9_1920.png 1920w,https://developer.android.com/static/codelabs/android-navigation/img/d0e308373c2656d9_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Since the XML includes an argument called <code translate="no" dir="ltr">flowStepNumber</code>, specified by <code translate="no" dir="ltr">android:name="flowStepNumber"</code>, the generated class <code translate="no" dir="ltr">FlowStepFragmentArgs</code> will include a variable <code translate="no" dir="ltr">flowStepNumber</code> with getters and setters.</p>
+<p class="image-container"><img alt="36d12ab963cb6ca6.png" style="width: 392.00px" src="/static/codelabs/android-navigation/img/36d12ab963cb6ca6.png" srcset="https://developer.android.com/static/codelabs/android-navigation/img/36d12ab963cb6ca6_36.png 36w,https://developer.android.com/static/codelabs/android-navigation/img/36d12ab963cb6ca6_48.png 48w,https://developer.android.com/static/codelabs/android-navigation/img/36d12ab963cb6ca6_72.png 72w,https://developer.android.com/static/codelabs/android-navigation/img/36d12ab963cb6ca6_96.png 96w,https://developer.android.com/static/codelabs/android-navigation/img/36d12ab963cb6ca6_480.png 480w,https://developer.android.com/static/codelabs/android-navigation/img/36d12ab963cb6ca6_720.png 720w,https://developer.android.com/static/codelabs/android-navigation/img/36d12ab963cb6ca6_856.png 856w,https://developer.android.com/static/codelabs/android-navigation/img/36d12ab963cb6ca6_960.png 960w,https://developer.android.com/static/codelabs/android-navigation/img/36d12ab963cb6ca6_1440.png 1440w,https://developer.android.com/static/codelabs/android-navigation/img/36d12ab963cb6ca6_1920.png 1920w,https://developer.android.com/static/codelabs/android-navigation/img/36d12ab963cb6ca6_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<ol type="1" start="4">
+<li>Open <code translate="no" dir="ltr">FlowStepFragment.kt</code></li>
+<li>Comment out the line of code shown below:</li>
+</ol>
+<h3 is-upgraded id="flowstepfragment.kt" data-text="FlowStepFragment.kt" tabindex="-1">FlowStepFragment.kt</h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scilab"><code translate="no" dir="ltr"><span class="devsite-syntax-c1">// Comment out this line</span>
+<span class="devsite-syntax-c1">// val flowStepNumber = arguments?.getInt("flowStepNumber")</span>
+</code></pre></devsite-code>
+<p>This old-style code is not type-safe. It&#39;s better to use safe args.</p>
+<ol type="1" start="6">
+<li>Update <code translate="no" dir="ltr">FlowStepFragment</code> to use the code generated class <code translate="no" dir="ltr">FlowStepFragmentArgs</code>. This will get the <code translate="no" dir="ltr">FlowStepFragment</code> arguments in a type-safe manner:</li>
+</ol>
+<h3 is-upgraded id="flowstepfragment.kt_1" data-text="FlowStepFragment.kt" tabindex="-1">FlowStepFragment.kt</h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scalate Server Page"><code translate="no" dir="ltr">val<span class="devsite-syntax-w"> </span>safeArgs:<span class="devsite-syntax-w"> </span>FlowStepFragmentArgs<span class="devsite-syntax-w"> </span>by<span class="devsite-syntax-w"> </span>navArgs()
+val<span class="devsite-syntax-w"> </span>flowStepNumber<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>safeArgs.flowStepNumber
+</code></pre></devsite-code>
+<h2 is-upgraded id="safe-args-direction-classes" data-text="Safe Args Direction classes" tabindex="-1">Safe Args Direction classes</h2>
+<p>You can also use safe args to navigate in a type safe way, with or without adding arguments. You do this using the generated Directions classes.</p>
+<p class="image-container"><img alt="d0e308373c2656d9.png" style="width: 320.00px" src="/static/codelabs/android-navigation/img/d0e308373c2656d9.png" srcset="https://developer.android.com/static/codelabs/android-navigation/img/d0e308373c2656d9_36.png 36w,https://developer.android.com/static/codelabs/android-navigation/img/d0e308373c2656d9_48.png 48w,https://developer.android.com/static/codelabs/android-navigation/img/d0e308373c2656d9_72.png 72w,https://developer.android.com/static/codelabs/android-navigation/img/d0e308373c2656d9_96.png 96w,https://developer.android.com/static/codelabs/android-navigation/img/d0e308373c2656d9_480.png 480w,https://developer.android.com/static/codelabs/android-navigation/img/d0e308373c2656d9_720.png 720w,https://developer.android.com/static/codelabs/android-navigation/img/d0e308373c2656d9_856.png 856w,https://developer.android.com/static/codelabs/android-navigation/img/d0e308373c2656d9_960.png 960w,https://developer.android.com/static/codelabs/android-navigation/img/d0e308373c2656d9_1440.png 1440w,https://developer.android.com/static/codelabs/android-navigation/img/d0e308373c2656d9_1920.png 1920w,https://developer.android.com/static/codelabs/android-navigation/img/d0e308373c2656d9_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Directions classes are generated for every distinct destination with actions. The Directions class includes methods for every action a destination has.</p>
+<p>For example, the <code translate="no" dir="ltr">navigate_action_button</code> click listener in HomeFragment.kt could be changed to:</p>
+<h3 is-upgraded id="homefragment.kt_2" data-text="HomeFragment.kt" tabindex="-1">HomeFragment.kt</h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scilab"><code translate="no" dir="ltr"><span class="devsite-syntax-c1">// Note the usage of curly braces since we are defining the click listener lambda</span>
+<span class="devsite-syntax-n">view</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">findViewById&lt;Button&gt;</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">R</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">id</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">navigate_action_button</span><span class="devsite-syntax-p">)</span>?<span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">setOnClickListener</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">flowStepNumberArg</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mi">1</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">action</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">HomeFragmentDirections</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">nextAction</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">flowStepNumberArg</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">findNavController</span><span class="devsite-syntax-p">().</span><span class="devsite-syntax-n">navigate</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">action</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<aside class="special"><p>Note that in your navigation graph XML you can provide a <code translate="no" dir="ltr">defaultValue</code> for each argument. If you do <em>not</em> then you <strong>must</strong> pass the argument into the action, as shown:</p>
+</aside>
+<p><code translate="no" dir="ltr">HomeFragmentDirections.nextAction(flowStepNumberArg)</code></p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Navigating using menus, drawers and bottom navigation" duration="12" step="8">
+          
+          <h2 class="step-title" id="8" data-text="Navigating using menus, drawers and bottom navigation" tabindex="-1">
+              9. Navigating using menus, drawers and bottom navigation
+          </h2>
+          <h2 is-upgraded id="navigationui-and-navigation-ui-ktx" data-text="NavigationUI and navigation-ui-ktx" tabindex="-1">NavigationUI and navigation-ui-ktx</h2>
+<p>The Navigation Components include a  <a href="http://d.android.com/reference/androidx/navigation/ui/NavigationUI" target="_blank"><strong><code translate="no" dir="ltr">NavigationUI</code></strong></a> class and the  <a href="https://developer.android.com/reference/kotlin/androidx/navigation/ui/package-summary#extension-functions-summary" target="_blank"><strong><code translate="no" dir="ltr">navigation-ui-ktx</code></strong></a> kotlin extensions. <code translate="no" dir="ltr">NavigationUI</code> has static methods that associate menu items with navigation destinations, and <code translate="no" dir="ltr">navigation-ui-ktx</code> is a set of extension functions that do the same. If <code translate="no" dir="ltr">NavigationUI</code> finds a menu item with the same ID as a destination on the current graph, it configures the menu item to navigate to that destination.</p>
+<h2 is-upgraded id="using-navigationui-with-an-options-menu" data-text="Using NavigationUI with an Options menu" tabindex="-1">Using NavigationUI with an Options menu</h2>
+<p>One of the easiest ways to use NavigationUI is to have it simplify option menu setup. In particular, NavigationUI simplifies handling the <code translate="no" dir="ltr">onOptionsItemSelected</code> callback.</p>
+<ol type="1">
+<li>Open MainActivity.kt</li>
+</ol>
+<p>Notice how you already have the code for inflating the menu <code translate="no" dir="ltr">overflow_menu</code> in <code translate="no" dir="ltr">onCreateOptionsMenu</code></p>
+<ol type="1" start="2">
+<li>Open <code translate="no" dir="ltr">res/menu/overflow_menu.xml</code></li>
+<li>Update your overflow menu to include the <strong><code translate="no" dir="ltr">settings_dest</code></strong></li>
+</ol>
+<h3 is-upgraded id="overflow_menu.xml" data-text="overflow_menu.xml" tabindex="-1">overflow_menu.xml</h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL"><code translate="no" dir="ltr">&lt;<span class="devsite-syntax-n">item</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">id</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@+id/settings_dest"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">icon</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@drawable/ic_settings"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">menuCategory</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"secondary"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">title</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@string/settings"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/</span>&gt;
+</code></pre></devsite-code>
+<ol type="1" start="4">
+<li>Open <code translate="no" dir="ltr">MainActivity.kt</code></li>
+<li>Have NavigationUI handle <code translate="no" dir="ltr">onOptionsItemSelected</code> with the  <a href="https://developer.android.com/reference/kotlin/androidx/navigation/ui/NavigationUI#onNavDestinationSelected%28android.view.MenuItem%2C+NavController%29" target="_blank"><code translate="no" dir="ltr">onNavDestinationSelected</code></a> helper method. If the menu item is not meant to navigate, handle with <code translate="no" dir="ltr">super.onOptionsItemSelected</code></li>
+</ol>
+<h3 is-upgraded id="mainactivity.kt" data-text="MainActivity.kt" tabindex="-1">MainActivity.kt</h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    return item.onNavDestinationSelected(findNavController(R.id.my_nav_host_fragment))
+            || super.onOptionsItemSelected(item)
+}
+</code></pre></devsite-code>
+<ol type="1" start="6">
+<li>Run your app. You should have a functional ActionBar menu that navigates to the SettingsFragment.</li>
+</ol>
+<p class="image-container"><img alt="30a096187fb852fe.png" style="width: 306.09px" src="/static/codelabs/android-navigation/img/30a096187fb852fe.png" srcset="https://developer.android.com/static/codelabs/android-navigation/img/30a096187fb852fe_36.png 36w,https://developer.android.com/static/codelabs/android-navigation/img/30a096187fb852fe_48.png 48w,https://developer.android.com/static/codelabs/android-navigation/img/30a096187fb852fe_72.png 72w,https://developer.android.com/static/codelabs/android-navigation/img/30a096187fb852fe_96.png 96w,https://developer.android.com/static/codelabs/android-navigation/img/30a096187fb852fe_480.png 480w,https://developer.android.com/static/codelabs/android-navigation/img/30a096187fb852fe_720.png 720w,https://developer.android.com/static/codelabs/android-navigation/img/30a096187fb852fe_856.png 856w,https://developer.android.com/static/codelabs/android-navigation/img/30a096187fb852fe_960.png 960w,https://developer.android.com/static/codelabs/android-navigation/img/30a096187fb852fe_1440.png 1440w,https://developer.android.com/static/codelabs/android-navigation/img/30a096187fb852fe_1920.png 1920w,https://developer.android.com/static/codelabs/android-navigation/img/30a096187fb852fe_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<h2 is-upgraded id="using-navigationui-to-configure-bottom-navigation" data-text="Using NavigationUI to configure Bottom Navigation" tabindex="-1">Using NavigationUI to configure Bottom Navigation</h2>
+<p>The code already contains the XML layout code for implementing bottom navigation, which is why you see the bottom navigation bar. But it doesn&#39;t navigate anywhere.</p>
+<ol type="1">
+<li>Open <code translate="no" dir="ltr">res/layout/navigation_activity/navigation_activity.xml (h470dp)</code> and click the <strong>Text</strong> tab</li>
+</ol>
+<p>Notice how the XML layout code for bottom navigation is there and refers to <code translate="no" dir="ltr">bottom_nav_menu.xml</code></p>
+<h3 is-upgraded id="navigation_activity.xml-h470dp" data-text="navigation_activity.xml (h470dp)" tabindex="-1">navigation_activity.xml (h470dp)</h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL"><code translate="no" dir="ltr">&lt;<span class="devsite-syntax-n">com</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">google</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">material</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">bottomnavigation</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">BottomNavigationView</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">id</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@+id/bottom_nav_view"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">layout_width</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"match_parent"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">layout_height</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"wrap_content"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nl">app</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">menu</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@menu/bottom_nav_menu"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/</span>&gt;
+</code></pre></devsite-code>
+<ol type="1" start="2">
+<li>Open <code translate="no" dir="ltr">res/menu/bottom_nav_menu.xml</code></li>
+</ol>
+<p>Notice how there are two items for the bottom navigation and that <strong>their ids match</strong> the destinations of navigation graph destinations:</p>
+<h3 is-upgraded id="bottom_nav_menu.xml" data-text="bottom_nav_menu.xml" tabindex="-1">bottom_nav_menu.xml</h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL"><code translate="no" dir="ltr">&lt;<span class="devsite-syntax-n">menu</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nl">xmlns</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"http://schemas.android.com/apk/res/android"</span>&gt;
+<span class="devsite-syntax-w">    </span>&lt;<span class="devsite-syntax-n">item</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">id</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@id/home_dest"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">icon</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@drawable/ic_home"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">title</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@string/home"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/</span>&gt;
+<span class="devsite-syntax-w">    </span>&lt;<span class="devsite-syntax-n">item</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">id</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@id/deeplink_dest"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">icon</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@drawable/ic_android"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">title</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@string/deeplink"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/</span>&gt;
+&lt;<span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">menu</span>&gt;
+</code></pre></devsite-code>
+<p>Let&#39;s make the bottom navigation actually do something using NavigationUI.</p>
+<ol type="1" start="3">
+<li>Open <code translate="no" dir="ltr">MainActivity.kt</code></li>
+<li>Implement the <code translate="no" dir="ltr">setupBottomNavMenu</code> method using  <a href="https://developer.android.com/reference/kotlin/androidx/navigation/ui/NavigationUI#setupwithnavcontroller_2" target="_blank"><code translate="no" dir="ltr">setupWithNavController(bottomNavigationView: BottomNavigationView, navController: NavController)</code></a></li>
+</ol>
+<h3 is-upgraded id="mainactivity.kt_1" data-text="MainActivity.kt" tabindex="-1">MainActivity.kt</h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">private fun setupBottomNavMenu(navController: NavController) {
+    val bottomNav = findViewById&lt;BottomNavigationView&gt;(R.id.bottom_nav_view)
+    bottomNav?.setupWithNavController(navController)
+}
+</code></pre></devsite-code>
+<p>Now your bottom navigation works!</p>
+<h2 is-upgraded id="using-navigationui-to-configure-a-navigation-drawer" data-text="Using NavigationUI to configure a Navigation Drawer" tabindex="-1">Using NavigationUI to configure a Navigation Drawer</h2>
+<p>Finally, let&#39;s use <code translate="no" dir="ltr">NavigationUI</code> to configure the side navigation and navigation drawer, including handling the ActionBar and  <a href="https://developer.android.com/topic/libraries/architecture/navigation/navigation-principles#the_up_button_never_exits_your_app" target="_blank">proper up navigation</a>. You&#39;ll see this if you&#39;ve got a large enough screen or if the screen is too short for bottom navigation.</p>
+<p>First observe how the proper layout XML code is already in the app.</p>
+<ol type="1">
+<li>Open both <code translate="no" dir="ltr">navigation_activity.xml</code> and <code translate="no" dir="ltr">navigation_activity.xml (w960dp)</code></li>
+</ol>
+<p>Notice how both layouts contain a  <a href="https://material.io/develop/android/components/navigation-view/" target="_blank">NavigationView</a> connected to nav_drawer_menu.  In the tablet version (w960dp) the NavigationView is always on screen. On smaller devices the NavigationView is  <a href="https://developer.android.com/training/implementing-navigation/nav-drawer" target="_blank">nested within a DrawerLayout</a>.</p>
+<p>Now to start implementing the <code translate="no" dir="ltr">NavigationView</code> navigation.</p>
+<ol type="1" start="2">
+<li>Open <code translate="no" dir="ltr">MainActivity.kt</code></li>
+<li>Implement the <code translate="no" dir="ltr">setupNavigationMenu</code> method using  <a href="https://developer.android.com/reference/kotlin/androidx/navigation/ui/NavigationUI#setupwithnavcontroller" target="_blank"><code translate="no" dir="ltr">setupWithNavController(navigationView: NavigationView, navController: NavController)</code></a>. Notice how this version of the method takes a <code translate="no" dir="ltr">NavigationView</code> and not a <code translate="no" dir="ltr">BottomNavigationView</code>.</li>
+</ol>
+<h3 is-upgraded id="mainactivity.kt_2" data-text="MainActivity.kt" tabindex="-1">MainActivity.kt</h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">private fun setupNavigationMenu(navController: NavController) {
+    val sideNavView = findViewById&lt;NavigationView&gt;(R.id.nav_view)
+    sideNavView?.setupWithNavController(navController)
+}
+</code></pre></devsite-code>
+<p>Now the navigation view menu will show on the screen, but it will not affect the ActionBar.</p>
+<p>Setting up the <code translate="no" dir="ltr">ActionBar</code> requires creating an instance of  <a href="https://developer.android.com/reference/androidx/navigation/ui/AppBarConfiguration" target="_blank"><code translate="no" dir="ltr">AppBarConfiguration</code></a>. The purpose of <code translate="no" dir="ltr">AppBarConfiguration</code> is to specify the configuration options you want for your toolbars, collapsing toolbars, and action bars. Configuration options include whether the bar must handle a drawer layout and which destinations are considered <strong>top-level destinations</strong>.</p>
+<p>Top-level destinations are the root-level destinations of your app. These destinations do not display an &#34;up&#34; button in the app bar, and they display the drawer icon if the destination uses a drawer layout.</p>
+<p class="image-container"><img alt="6cd3eaaf843ff226.png" style="width: 326.00px" src="/static/codelabs/android-navigation/img/6cd3eaaf843ff226.png" srcset="https://developer.android.com/static/codelabs/android-navigation/img/6cd3eaaf843ff226_36.png 36w,https://developer.android.com/static/codelabs/android-navigation/img/6cd3eaaf843ff226_48.png 48w,https://developer.android.com/static/codelabs/android-navigation/img/6cd3eaaf843ff226_72.png 72w,https://developer.android.com/static/codelabs/android-navigation/img/6cd3eaaf843ff226_96.png 96w,https://developer.android.com/static/codelabs/android-navigation/img/6cd3eaaf843ff226_480.png 480w,https://developer.android.com/static/codelabs/android-navigation/img/6cd3eaaf843ff226_720.png 720w,https://developer.android.com/static/codelabs/android-navigation/img/6cd3eaaf843ff226_856.png 856w,https://developer.android.com/static/codelabs/android-navigation/img/6cd3eaaf843ff226_960.png 960w,https://developer.android.com/static/codelabs/android-navigation/img/6cd3eaaf843ff226_1440.png 1440w,https://developer.android.com/static/codelabs/android-navigation/img/6cd3eaaf843ff226_1920.png 1920w,https://developer.android.com/static/codelabs/android-navigation/img/6cd3eaaf843ff226_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<ol type="1" start="4">
+<li>Create an <code translate="no" dir="ltr">AppBarConfiguration</code> by passing in a set of top-level destination IDs and the drawer layout.</li>
+</ol>
+<h3 is-upgraded id="mainactivity.kt_3" data-text="MainActivity.kt" tabindex="-1">MainActivity.kt</h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scalate Server Page"><code translate="no" dir="ltr">val<span class="devsite-syntax-w"> </span>drawerLayout<span class="devsite-syntax-w"> </span>:<span class="devsite-syntax-w"> </span>DrawerLayout?<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>findViewById(R.id.drawer_layout)
+appBarConfiguration<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>AppBarConfiguration(
+<span class="devsite-syntax-w">        </span>setOf(R.id.home_dest,<span class="devsite-syntax-w"> </span>R.id.deeplink_dest),
+<span class="devsite-syntax-w">        </span>drawerLayout)
+</code></pre></devsite-code>
+<aside class="special"><p><strong>How to determine top-level destinations</strong></p>
+<p>Destinations reachable via global navigation UI, such as bottom nav or side nav, all appear to users as on the same top level of the hierarchy. Therefore, they are top level destinations. <code translate="no" dir="ltr">home_dest</code> and <code translate="no" dir="ltr">deeplink_dest</code> are in the bottom nav and we want the drawer icon to show on both of these destinations, so they are top-level destinations.</p>
+<p>Note that the start destination is always considered a top-level destination. If you don&#39;t specify a list of top-level destinations, then the only top-level destination is your start destination. You can learn more about  <a href="https://developer.android.com/topic/libraries/architecture/navigation/navigation-ui#appbarconfiguration" target="_blank"><code translate="no" dir="ltr">AppBarConfiguration</code></a> in the documentation.</p>
+</aside>
+<p>Now that you have an AppBarConfiguration, you can call  <a href="https://developer.android.com/reference/kotlin/androidx/navigation/ui/NavigationUI#setupactionbarwithnavcontroller_1" target="_blank"><code translate="no" dir="ltr">NavigationUI.setupActionBarWithNavController</code></a>. This will do the following:</p>
+<ul>
+<li>Show a title in the ActionBar based off of the destination&#39;s label</li>
+<li>Display the Up button whenever you&#39;re <strong>not</strong> on a top-level destination</li>
+<li>Display a drawer icon (hamburger icon) when you&#39;re on a top-level destination</li>
+</ul>
+<ol type="1" start="5">
+<li>Implement <code translate="no" dir="ltr">setupActionBarWithNavController</code></li>
+</ol>
+<h3 is-upgraded id="mainactivity.kt_4" data-text="MainActivity.kt" tabindex="-1">MainActivity.kt</h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only"><code translate="no" dir="ltr">private fun setupActionBar(navController: NavController,
+                           appBarConfig : AppBarConfiguration) {
+    setupActionBarWithNavController(navController, appBarConfig)
+}
+</code></pre></devsite-code>
+<p>You should also have NavigationUI handle what happens when the Up button is pressed.</p>
+<ol type="1" start="6">
+<li>Override <code translate="no" dir="ltr">onSupportNavigationUp</code> and call  <a href="https://developer.android.com/reference/kotlin/androidx/navigation/ui/package-summary.html#navigateup_1" target="_blank"><code translate="no" dir="ltr">NavigationUI.navigateUp</code></a>, using the same <code translate="no" dir="ltr">AppBarConfiguration</code>.</li>
+</ol>
+<h3 is-upgraded id="mainactivity.kt_5" data-text="MainActivity.kt" tabindex="-1">MainActivity.kt</h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">override fun onSupportNavigateUp(): Boolean {
+    return findNavController(R.id.my_nav_host_fragment).navigateUp(appBarConfiguration)
+}
+</code></pre></devsite-code>
+<aside class="special"><p>Note, there are a few different <code translate="no" dir="ltr">navigateUp</code> methods. Make sure you are using the following import from  <a href="https://developer.android.com/reference/kotlin/androidx/navigation/ui/package-summary.html#navigateup_1" target="_blank">Navigation UI</a>, which accepts the <code translate="no" dir="ltr">AppBarConfiguration</code> parameter:</p>
+<p><code translate="no" dir="ltr">import androidx.navigation.ui.navigateUp</code></p>
+</aside>
+<ol type="1" start="7">
+<li>Run your code. If you open the app in split screen, you should have a working navigation drawer. The up icon and the drawer icon should display at the appropriate times and work correctly.</li>
+</ol>
+<aside class="warning"><p>The layout <strong>navigation_activity.xml (h470dp)</strong> will be used on phones in portrait mode. This layout does <strong>not</strong> include the navigation drawer and instead includes the bottom navigation, which is why you should open the app in split screen to see the navigation drawer. The reason there is not a layout with both a navigation drawer and bottom navigation is because Material Design guidelines  <a href="https://material.io/design/components/navigation-drawer.html#usage" target="_blank">cautions against this</a>.</p>
+</aside>
+<p class="image-container"><img alt="d5474187c1c710cc.gif" style="width: 274.50px" src="/static/codelabs/android-navigation/img/d5474187c1c710cc.gif"></p>
+<p>Adding new destinations to a <code translate="no" dir="ltr">NavigationView</code> is easy. Once you have the navigation drawer working with up and back navigation, you just need to add the new menu item.</p>
+<ol type="1" start="8">
+<li>Open <code translate="no" dir="ltr">menu/nav_drawer_menu.xml</code></li>
+<li>Add a new menu item for <code translate="no" dir="ltr">settings_dest</code></li>
+</ol>
+<h3 is-upgraded id="nav_drawer_menu.xml" data-text="nav_drawer_menu.xml" tabindex="-1">nav_drawer_menu.xml</h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL"><code translate="no" dir="ltr">&lt;<span class="devsite-syntax-n">item</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">id</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@+id/settings_dest"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">icon</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@drawable/ic_settings"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">title</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@string/settings"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/</span>&gt;
+</code></pre></devsite-code>
+<p>Now your navigation drawers shows the Settings screen as a destination. Good work!</p>
+<p class="image-container"><img alt="b9c243170688706.png" style="width: 312.36px" src="/static/codelabs/android-navigation/img/b9c243170688706.png" srcset="https://developer.android.com/static/codelabs/android-navigation/img/b9c243170688706_36.png 36w,https://developer.android.com/static/codelabs/android-navigation/img/b9c243170688706_48.png 48w,https://developer.android.com/static/codelabs/android-navigation/img/b9c243170688706_72.png 72w,https://developer.android.com/static/codelabs/android-navigation/img/b9c243170688706_96.png 96w,https://developer.android.com/static/codelabs/android-navigation/img/b9c243170688706_480.png 480w,https://developer.android.com/static/codelabs/android-navigation/img/b9c243170688706_720.png 720w,https://developer.android.com/static/codelabs/android-navigation/img/b9c243170688706_856.png 856w,https://developer.android.com/static/codelabs/android-navigation/img/b9c243170688706_960.png 960w,https://developer.android.com/static/codelabs/android-navigation/img/b9c243170688706_1440.png 1440w,https://developer.android.com/static/codelabs/android-navigation/img/b9c243170688706_1920.png 1920w,https://developer.android.com/static/codelabs/android-navigation/img/b9c243170688706_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Deep Linking to a destination" duration="7" step="9">
+          
+          <h2 class="step-title" id="9" data-text="Deep Linking to a destination" tabindex="-1">
+              10. Deep Linking to a destination
+          </h2>
+          <h2 is-upgraded id="deep-links-and-navigation" data-text="Deep Links and Navigation" tabindex="-1">Deep Links and Navigation</h2>
+<p>Navigation components also include deep link support.  <a href="https://developer.android.com/training/app-links/deep-linking" target="_blank">Deep links</a> are a way to jump into the middle of your app&#39;s navigation, whether that&#39;s from an actual URL link or a pending intent from a notification.</p>
+<p>One benefit of using the navigation library to handle deep links is that it ensures users start on the right destination with the appropriate back stack from other entry points such as app widgets, notifications, or web links (covered in the next step).</p>
+<p>Navigation provides a <code translate="no" dir="ltr">NavDeepLinkBuilder</code> class to construct a <code translate="no" dir="ltr">PendingIntent</code> that will take the user to a specific destination.</p>
+<h2 is-upgraded id="add-a-deep-link" data-text="Add a Deep Link" tabindex="-1">Add a Deep Link</h2>
+<p>We&#39;ll use the <code translate="no" dir="ltr">NavDeepLinkBuilder</code> to hook up an app widget to a destination.</p>
+<ol type="1">
+<li>Open <code translate="no" dir="ltr">DeepLinkAppWidgetProvider.kt</code></li>
+<li>Add a <code translate="no" dir="ltr">PendingIntent</code> constructed with <code translate="no" dir="ltr">NavDeepLinkBuilder</code>:</li>
+</ol>
+<h3 is-upgraded id="deeplinkappwidgetprovider" data-text="DeepLinkAppWidgetProvider" tabindex="-1">DeepLinkAppWidgetProvider</h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">val args = Bundle()
+args.putString("myarg", "From Widget");
+val pendingIntent = NavDeepLinkBuilder(context)
+        .setGraph(R.navigation.mobile_navigation)
+        .setDestination(R.id.deeplink_dest)
+        .setArguments(args)
+        .createPendingIntent()
+
+remoteViews.setOnClickPendingIntent(R.id.deep_link_button, pendingIntent)
+</code></pre></devsite-code>
+<p>Notice:</p>
+<ul>
+<li><code translate="no" dir="ltr">setGraph</code> includes the navigation graph.</li>
+<li><code translate="no" dir="ltr">setDestination</code> specifies where the link goes to.</li>
+<li><code translate="no" dir="ltr">setArguments</code> includes any arguments you want to pass into your deep link.</li>
+</ul>
+<aside class="special"><p>By default <code translate="no" dir="ltr">NavDeepLinkBuilder</code> will start your launcher Activity. You can override this behavior by passing in an activity as the context or set an explicit activity class via <code translate="no" dir="ltr">setComponentName()</code>.</p>
+</aside>
+<ol type="1" start="3">
+<li>Add the Deep Link widget to your home screen. Tap and hold on the home screen to see option to add widget.</li>
+</ol>
+<table class="vertical-rules">
+<tr><td colspan="1" rowspan="1"><p><img src="/static/codelabs/android-navigation/img/e5210a2b4bb413dd.png" srcset="https://developer.android.com/static/codelabs/android-navigation/img/e5210a2b4bb413dd_36.png 36w,https://developer.android.com/static/codelabs/android-navigation/img/e5210a2b4bb413dd_48.png 48w,https://developer.android.com/static/codelabs/android-navigation/img/e5210a2b4bb413dd_72.png 72w,https://developer.android.com/static/codelabs/android-navigation/img/e5210a2b4bb413dd_96.png 96w,https://developer.android.com/static/codelabs/android-navigation/img/e5210a2b4bb413dd_480.png 480w,https://developer.android.com/static/codelabs/android-navigation/img/e5210a2b4bb413dd_720.png 720w,https://developer.android.com/static/codelabs/android-navigation/img/e5210a2b4bb413dd_856.png 856w,https://developer.android.com/static/codelabs/android-navigation/img/e5210a2b4bb413dd_960.png 960w,https://developer.android.com/static/codelabs/android-navigation/img/e5210a2b4bb413dd_1440.png 1440w,https://developer.android.com/static/codelabs/android-navigation/img/e5210a2b4bb413dd_1920.png 1920w,https://developer.android.com/static/codelabs/android-navigation/img/e5210a2b4bb413dd_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px">Tap and hold</p>
+</td><td colspan="1" rowspan="1"><p><img src="/static/codelabs/android-navigation/img/a58f7cea88e35f57.png" srcset="https://developer.android.com/static/codelabs/android-navigation/img/a58f7cea88e35f57_36.png 36w,https://developer.android.com/static/codelabs/android-navigation/img/a58f7cea88e35f57_48.png 48w,https://developer.android.com/static/codelabs/android-navigation/img/a58f7cea88e35f57_72.png 72w,https://developer.android.com/static/codelabs/android-navigation/img/a58f7cea88e35f57_96.png 96w,https://developer.android.com/static/codelabs/android-navigation/img/a58f7cea88e35f57_480.png 480w,https://developer.android.com/static/codelabs/android-navigation/img/a58f7cea88e35f57_720.png 720w,https://developer.android.com/static/codelabs/android-navigation/img/a58f7cea88e35f57_856.png 856w,https://developer.android.com/static/codelabs/android-navigation/img/a58f7cea88e35f57_960.png 960w,https://developer.android.com/static/codelabs/android-navigation/img/a58f7cea88e35f57_1440.png 1440w,https://developer.android.com/static/codelabs/android-navigation/img/a58f7cea88e35f57_1920.png 1920w,https://developer.android.com/static/codelabs/android-navigation/img/a58f7cea88e35f57_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px">Scroll down to find widget</p>
+</td></tr>
+</table>
+<p>When you&#39;re finished, you&#39;ll have a deep link widget.</p>
+<p class="image-container"><img alt="395d37cfa7f5421f.png" style="width: 298.00px" src="/static/codelabs/android-navigation/img/395d37cfa7f5421f.png" srcset="https://developer.android.com/static/codelabs/android-navigation/img/395d37cfa7f5421f_36.png 36w,https://developer.android.com/static/codelabs/android-navigation/img/395d37cfa7f5421f_48.png 48w,https://developer.android.com/static/codelabs/android-navigation/img/395d37cfa7f5421f_72.png 72w,https://developer.android.com/static/codelabs/android-navigation/img/395d37cfa7f5421f_96.png 96w,https://developer.android.com/static/codelabs/android-navigation/img/395d37cfa7f5421f_480.png 480w,https://developer.android.com/static/codelabs/android-navigation/img/395d37cfa7f5421f_720.png 720w,https://developer.android.com/static/codelabs/android-navigation/img/395d37cfa7f5421f_856.png 856w,https://developer.android.com/static/codelabs/android-navigation/img/395d37cfa7f5421f_960.png 960w,https://developer.android.com/static/codelabs/android-navigation/img/395d37cfa7f5421f_1440.png 1440w,https://developer.android.com/static/codelabs/android-navigation/img/395d37cfa7f5421f_1920.png 1920w,https://developer.android.com/static/codelabs/android-navigation/img/395d37cfa7f5421f_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<ol type="1" start="4">
+<li>Tap the widget, and verify that the Android destination opens with the correct argument. It should say &#34;From Widget&#34; at the top since that is the argument you passed in DeepLinkAppWidgetProvider.</li>
+</ol>
+<p class="image-container"><img alt="17266d930c15160f.png" style="width: 421.00px" src="/static/codelabs/android-navigation/img/17266d930c15160f.png" srcset="https://developer.android.com/static/codelabs/android-navigation/img/17266d930c15160f_36.png 36w,https://developer.android.com/static/codelabs/android-navigation/img/17266d930c15160f_48.png 48w,https://developer.android.com/static/codelabs/android-navigation/img/17266d930c15160f_72.png 72w,https://developer.android.com/static/codelabs/android-navigation/img/17266d930c15160f_96.png 96w,https://developer.android.com/static/codelabs/android-navigation/img/17266d930c15160f_480.png 480w,https://developer.android.com/static/codelabs/android-navigation/img/17266d930c15160f_720.png 720w,https://developer.android.com/static/codelabs/android-navigation/img/17266d930c15160f_856.png 856w,https://developer.android.com/static/codelabs/android-navigation/img/17266d930c15160f_960.png 960w,https://developer.android.com/static/codelabs/android-navigation/img/17266d930c15160f_1440.png 1440w,https://developer.android.com/static/codelabs/android-navigation/img/17266d930c15160f_1920.png 1920w,https://developer.android.com/static/codelabs/android-navigation/img/17266d930c15160f_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<ol type="1" start="5">
+<li>Verify that hitting the back button takes you to the <code translate="no" dir="ltr">home_dest</code> destination.</li>
+</ol>
+<aside class="special"><p>As a convenience, you can also call <code translate="no" dir="ltr">NavController</code>&#39;s <code translate="no" dir="ltr">createDeepLink()</code> method to use the <code translate="no" dir="ltr">Context</code> and current navigation graph from the <code translate="no" dir="ltr">NavController</code>.</p>
+</aside>
+<h2 is-upgraded id="deeplink-backstack" data-text="DeepLink Backstack" tabindex="-1">DeepLink Backstack</h2>
+<p>The backstack for a deep link is determined using the navigation graph you pass in.  If the explicit Activity you&#39;ve chosen has a  <a href="https://developer.android.com/training/appbar/up-action.html#declare-parent" target="_blank">parent activity</a>, those parent Activities are also included.</p>
+<p>The backstack is generated using the destinations specified with <code translate="no" dir="ltr">app:startDestination</code>. In this app we only have one activity and one level of navigation, so the backstack will take you to the <code translate="no" dir="ltr">home_dest</code> destination.</p>
+<p>More complicated navigation can include nested navigation graphs. The <code translate="no" dir="ltr">app:startDestination</code> at each level of the nested graphs determines the backstack. For more information on deep links and nested graphs, check out the  <a href="http://d.android.com/topic/libraries/architecture/navigation/navigation-principles" target="_blank">Principles of Navigation</a>.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Associating a web link with a destination" duration="7" step="10">
+          
+          <h2 class="step-title" id="10" data-text="Associating a web link with a destination" tabindex="-1">
+              11. Associating a web link with a destination
+          </h2>
+          <h2 is-upgraded id="the-deeplink-element" data-text="The &lt;deepLink&gt; element" tabindex="-1">The &lt;deepLink&gt; element</h2>
+<p>One of the most common uses of a deep link is to allow a web link to open an activity in your app. Traditionally you would use an  <a href="https://developer.android.com/training/app-links/deep-linking#adding-filters" target="_blank">intent-filter and associate a URL with the activity</a> you want to open.</p>
+<p>The navigation library makes this extremely simple and allows you to map URLs directly to destinations in your navigation graph.</p>
+<p><code translate="no" dir="ltr">&lt;deepLink&gt;</code> is an element you can add to a destination in your graph. Each <code translate="no" dir="ltr">&lt;deepLink&gt;</code> element has a single required attribute: <code translate="no" dir="ltr">app:uri</code>.</p>
+<p>In addition to a direct URI match, the following features are supported:</p>
+<ul>
+<li>URIs without a scheme are assumed to be http and https. For example, <code translate="no" dir="ltr">www.example.com</code> will match <code translate="no" dir="ltr">http://www.example.com</code> and <code translate="no" dir="ltr">https://www.example.com</code>.</li>
+<li>You can use placeholders in the form of <code translate="no" dir="ltr">{placeholder_name}</code> to match one or more characters. The String value of the placeholder is available in the arguments Bundle which has a key of the same name. For example, <code translate="no" dir="ltr">http://www.example.com/users/{id}</code> will match <code translate="no" dir="ltr">http://www.example.com/users/4</code>.</li>
+<li>You can use the <code translate="no" dir="ltr">.*</code> wildcard to match zero or more characters.</li>
+<li>NavController will automatically handle  <a href="https://developer.android.com/reference/android/content/Intent.html#ACTION_VIEW" target="_blank">ACTION_VIEW</a> intents and look for matching deep links.</li>
+</ul>
+<h2 is-upgraded id="add-a-uribased-deep-link-using-deeplink" data-text="Add a URIbased Deep Link using &lt;deepLink&gt;" tabindex="-1">Add a URIbased Deep Link using &lt;deepLink&gt;</h2>
+<p>In this step, you&#39;ll add a deep link to  <a href="http://www.example.com" target="_blank">www.example.com</a>.</p>
+<ol type="1">
+<li>Open <code translate="no" dir="ltr">mobile_navigation.xml</code></li>
+<li>Add a <code translate="no" dir="ltr">&lt;deepLink&gt;</code> element to the <code translate="no" dir="ltr">deeplink_dest</code> destination.</li>
+</ol>
+<h3 is-upgraded id="mobile_navigation.xml_3" data-text="mobile_navigation.xml" tabindex="-1">mobile_navigation.xml</h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="GDScript"><code translate="no" dir="ltr">&lt;<span class="devsite-syntax-n">fragment</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">id</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"@+id/deeplink_dest"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"com.example.android.codelabs.navigation.DeepLinkFragment"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">label</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"@string/deeplink"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">tools</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">layout</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"@layout/deeplink_fragment"</span>&gt;
+
+<span class="devsite-syntax-w">    </span>&lt;<span class="devsite-syntax-n">argument</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"myarg"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">defaultValue</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"Android!"</span><span class="devsite-syntax-o">/</span>&gt;
+
+<span class="devsite-syntax-w">    </span>&lt;<span class="devsite-syntax-n">deepLink</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">app</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">uri</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"www.example.com/{myarg}"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/</span>&gt;
+&lt;<span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">fragment</span>&gt;
+</code></pre></devsite-code>
+<ol type="1" start="3">
+<li>Open <code translate="no" dir="ltr">AndroidManifest.xml</code></li>
+<li>Add the <code translate="no" dir="ltr">nav-graph</code> tag. This will ensure the appropriate intent filter is generated</li>
+</ol>
+<h3 is-upgraded id="androidmanifest.xml" data-text="AndroidManifest.xml" tabindex="-1">AndroidManifest.xml</h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL"><code translate="no" dir="ltr">&lt;<span class="devsite-syntax-n">activity</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">".MainActivity"</span>&gt;
+<span class="devsite-syntax-w">    </span>&lt;<span class="devsite-syntax-n">intent</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-k">filter</span>&gt;
+<span class="devsite-syntax-w">        </span>&lt;<span class="devsite-syntax-k">action</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"android.intent.action.MAIN"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/</span>&gt;
+<span class="devsite-syntax-w">        </span>&lt;<span class="devsite-syntax-n">category</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"android.intent.category.DEFAULT"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/</span>&gt;
+<span class="devsite-syntax-w">        </span>&lt;<span class="devsite-syntax-n">category</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"android.intent.category.LAUNCHER"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/</span>&gt;
+<span class="devsite-syntax-w">    </span>&lt;<span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">intent</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-k">filter</span>&gt;
+
+<span class="devsite-syntax-w">    </span>&lt;<span class="devsite-syntax-n">nav</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">graph</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nl">android</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-k">value</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-ss">"@navigation/mobile_navigation"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/</span>&gt;
+&lt;<span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">activity</span>&gt;
+</code></pre></devsite-code>
+<aside class="special"><p>If you&#39;re curious to see what was generated, you can find the result in your output APK.</p>
+<p>In the <strong>Project</strong> view, navigate to <strong>app -&gt; build -&gt; outputs -&gt; apk -&gt;debug -&gt; app-debug.apk</strong></p>
+<p class="image-container"><img alt="55763efaf7bc5f2c.png" style="width: 257.00px" src="/static/codelabs/android-navigation/img/55763efaf7bc5f2c.png" srcset="https://developer.android.com/static/codelabs/android-navigation/img/55763efaf7bc5f2c_36.png 36w,https://developer.android.com/static/codelabs/android-navigation/img/55763efaf7bc5f2c_48.png 48w,https://developer.android.com/static/codelabs/android-navigation/img/55763efaf7bc5f2c_72.png 72w,https://developer.android.com/static/codelabs/android-navigation/img/55763efaf7bc5f2c_96.png 96w,https://developer.android.com/static/codelabs/android-navigation/img/55763efaf7bc5f2c_480.png 480w,https://developer.android.com/static/codelabs/android-navigation/img/55763efaf7bc5f2c_720.png 720w,https://developer.android.com/static/codelabs/android-navigation/img/55763efaf7bc5f2c_856.png 856w,https://developer.android.com/static/codelabs/android-navigation/img/55763efaf7bc5f2c_960.png 960w,https://developer.android.com/static/codelabs/android-navigation/img/55763efaf7bc5f2c_1440.png 1440w,https://developer.android.com/static/codelabs/android-navigation/img/55763efaf7bc5f2c_1920.png 1920w,https://developer.android.com/static/codelabs/android-navigation/img/55763efaf7bc5f2c_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Double click <strong>app-debug.apk</strong> to open in  <a href="https://developer.android.com/studio/build/apk-analyzer" target="_blank">APK Analyzer</a>. Here you&#39;ll be able to take a look at the generated AndroidManifest.</p>
+</aside>
+<ol type="1" start="5">
+<li>Launch your app using a deep link. There are two ways to do this:</li>
+</ol>
+<ul>
+<li>Use <code translate="no" dir="ltr">adb</code>:</li>
+</ul>
+<div></div><devsite-code><pre translate="no" dir="ltr" is-upgraded>adb shell am start -a android.intent.action.VIEW -d &#34;http://www.example.com/urlTest&#34; 
+</pre></devsite-code>
+<ul>
+<li>Navigate via the Google app**.** You should be able to put www.example.com/urlTest in the search bar and the disambiguation window will appear. Select **Navigation codelab**</li>
+</ul>
+<table class="vertical-rules">
+<tr><td colspan="1" rowspan="1"><p><img src="/static/codelabs/android-navigation/img/bc47b5cf28580c84.png" srcset="https://developer.android.com/static/codelabs/android-navigation/img/bc47b5cf28580c84_36.png 36w,https://developer.android.com/static/codelabs/android-navigation/img/bc47b5cf28580c84_48.png 48w,https://developer.android.com/static/codelabs/android-navigation/img/bc47b5cf28580c84_72.png 72w,https://developer.android.com/static/codelabs/android-navigation/img/bc47b5cf28580c84_96.png 96w,https://developer.android.com/static/codelabs/android-navigation/img/bc47b5cf28580c84_480.png 480w,https://developer.android.com/static/codelabs/android-navigation/img/bc47b5cf28580c84_720.png 720w,https://developer.android.com/static/codelabs/android-navigation/img/bc47b5cf28580c84_856.png 856w,https://developer.android.com/static/codelabs/android-navigation/img/bc47b5cf28580c84_960.png 960w,https://developer.android.com/static/codelabs/android-navigation/img/bc47b5cf28580c84_1440.png 1440w,https://developer.android.com/static/codelabs/android-navigation/img/bc47b5cf28580c84_1920.png 1920w,https://developer.android.com/static/codelabs/android-navigation/img/bc47b5cf28580c84_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px">Opened using the search bar(not in Chrome)</p>
+</td><td colspan="1" rowspan="1"><p><img src="/static/codelabs/android-navigation/img/496c4ae7df975258.png" srcset="https://developer.android.com/static/codelabs/android-navigation/img/496c4ae7df975258_36.png 36w,https://developer.android.com/static/codelabs/android-navigation/img/496c4ae7df975258_48.png 48w,https://developer.android.com/static/codelabs/android-navigation/img/496c4ae7df975258_72.png 72w,https://developer.android.com/static/codelabs/android-navigation/img/496c4ae7df975258_96.png 96w,https://developer.android.com/static/codelabs/android-navigation/img/496c4ae7df975258_480.png 480w,https://developer.android.com/static/codelabs/android-navigation/img/496c4ae7df975258_720.png 720w,https://developer.android.com/static/codelabs/android-navigation/img/496c4ae7df975258_856.png 856w,https://developer.android.com/static/codelabs/android-navigation/img/496c4ae7df975258_960.png 960w,https://developer.android.com/static/codelabs/android-navigation/img/496c4ae7df975258_1440.png 1440w,https://developer.android.com/static/codelabs/android-navigation/img/496c4ae7df975258_1920.png 1920w,https://developer.android.com/static/codelabs/android-navigation/img/496c4ae7df975258_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px">Disambiguation dialog</p>
+</td></tr>
+</table>
+<p>Either way, you should see the message &#34;urlTest&#34; on screen. This was passed through to the fragment, from the URL.</p>
+<p class="image-container"><img alt="4d22e0ddbda4d8cf.png" style="width: 449.00px" src="/static/codelabs/android-navigation/img/4d22e0ddbda4d8cf.png" srcset="https://developer.android.com/static/codelabs/android-navigation/img/4d22e0ddbda4d8cf_36.png 36w,https://developer.android.com/static/codelabs/android-navigation/img/4d22e0ddbda4d8cf_48.png 48w,https://developer.android.com/static/codelabs/android-navigation/img/4d22e0ddbda4d8cf_72.png 72w,https://developer.android.com/static/codelabs/android-navigation/img/4d22e0ddbda4d8cf_96.png 96w,https://developer.android.com/static/codelabs/android-navigation/img/4d22e0ddbda4d8cf_480.png 480w,https://developer.android.com/static/codelabs/android-navigation/img/4d22e0ddbda4d8cf_720.png 720w,https://developer.android.com/static/codelabs/android-navigation/img/4d22e0ddbda4d8cf_856.png 856w,https://developer.android.com/static/codelabs/android-navigation/img/4d22e0ddbda4d8cf_960.png 960w,https://developer.android.com/static/codelabs/android-navigation/img/4d22e0ddbda4d8cf_1440.png 1440w,https://developer.android.com/static/codelabs/android-navigation/img/4d22e0ddbda4d8cf_1920.png 1920w,https://developer.android.com/static/codelabs/android-navigation/img/4d22e0ddbda4d8cf_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="[Optional] Try navigating on your own" duration="7" step="11">
+          
+          <h2 class="step-title" id="11" data-text="[Optional] Try navigating on your own" tabindex="-1">
+              12. [Optional] Try navigating on your own
+          </h2>
+          <p>There&#39;s one more part of the codelab app for you to experiment with, and that&#39;s the shopping cart button.</p>
+<p class="image-container"><img alt="dabd03fdaaee4d91.png" style="width: 400.00px" src="/static/codelabs/android-navigation/img/dabd03fdaaee4d91.png" srcset="https://developer.android.com/static/codelabs/android-navigation/img/dabd03fdaaee4d91_36.png 36w,https://developer.android.com/static/codelabs/android-navigation/img/dabd03fdaaee4d91_48.png 48w,https://developer.android.com/static/codelabs/android-navigation/img/dabd03fdaaee4d91_72.png 72w,https://developer.android.com/static/codelabs/android-navigation/img/dabd03fdaaee4d91_96.png 96w,https://developer.android.com/static/codelabs/android-navigation/img/dabd03fdaaee4d91_480.png 480w,https://developer.android.com/static/codelabs/android-navigation/img/dabd03fdaaee4d91_720.png 720w,https://developer.android.com/static/codelabs/android-navigation/img/dabd03fdaaee4d91_856.png 856w,https://developer.android.com/static/codelabs/android-navigation/img/dabd03fdaaee4d91_960.png 960w,https://developer.android.com/static/codelabs/android-navigation/img/dabd03fdaaee4d91_1440.png 1440w,https://developer.android.com/static/codelabs/android-navigation/img/dabd03fdaaee4d91_1920.png 1920w,https://developer.android.com/static/codelabs/android-navigation/img/dabd03fdaaee4d91_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>This is a recap of the skills you&#39;ve learned during this codelab. This step does not include comments, so try it on your own:</p>
+<ol type="1">
+<li>Create a new fragment class</li>
+<li>Add the fragment as a destination to your navigation graph</li>
+<li>Have the shopping cart icon open up your new fragment class, using NavigationUI to handle the menu.</li>
+</ol>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Congratulations!" duration="1" step="12">
+          
+          <h2 class="step-title" id="12" data-text="Congratulations!" tabindex="-1">
+              13. Congratulations!
+          </h2>
+          <p>You&#39;re familiar with the basic concepts behind the Navigation component! In this codelab you learned about:</p>
+<ul>
+<li>Navigation graph structure</li>
+<li>NavHostFragment and NavController</li>
+<li>How to navigate to specific destinations</li>
+<li>How to navigate by action</li>
+<li>How to pass arguments between destinations, including using the new safeargs plugin</li>
+<li>Navigating using menus, bottom navs, and navigation drawers</li>
+<li>Navigating via deep link</li>
+</ul>
+<p>You can continue to explore with this app or start using navigation in  <a href="https://developer.android.com/topic/libraries/architecture/adding-components#navigation" target="_blank">your own app</a>.</p>
+<p>There&#39;s a lot more to try, including:</p>
+<ul>
+<li>Popping destinations off the backstack (or any backstack manipulations)</li>
+<li>Nested navigation graphs</li>
+<li>Conditional navigation</li>
+<li>Adding support for new destinations</li>
+</ul>
+<p>For more about the Navigation Component check out  <a href="http://d.android.com/arch/navigation" target="_blank">the documentation</a> or the  <a href="https://developer.android.com/codelabs/jetpack-compose-navigation" target="_blank">Jetpack Compose Navigation Codelab</a>. If you&#39;re interested in learning about other  <a href="http://d.android.com/arch" target="_blank">Architecture Components</a>, try the following codelabs:</p>
+<ul>
+<li><a href="https://codelabs.developers.google.com/codelabs/android-room-with-a-view/#0" target="_blank">Room with a View Codelab</a> (LiveData, ViewModel and Room)</li>
+<li><a href="https://codelabs.developers.google.com/codelabs/android-workmanager" target="_blank">Android WorkManager Codelab</a></li>
+<li><a href="https://codelabs.developers.google.com/codelabs/android-paging/index.html?index=..%2F..%2Findex#0" target="_blank">Android Paging Codelab</a></li>
+<li><a href="https://codelabs.developers.google.com/codelabs/android-lifecycles/#0" target="_blank">Android Lifecycle-aware components Codelab</a> (LiveData and ViewModel)</li>
+</ul>
+
+
+        </google-codelab-step>
+      
+    </google-codelab>
+  
+  
+
+  
+</div>
+
+  
+    
+    
+    
+  
+
+  <div class="devsite-floating-action-buttons"></div></article>
+
+
+<devsite-content-footer class="nocontent">
+  <p>Except as otherwise noted, the content of this page is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</a>, and code samples are licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see the <a href="https://developers.google.com/site-policies">Google Developers Site Policies</a>. Java is a registered trademark of Oracle and/or its affiliates.</p>
+  
+</devsite-content-footer>
+
+
+<devsite-notification
+>
+</devsite-notification>
+
+
+  
+<div class="devsite-content-data">
+  
+  
+    <template class="devsite-content-data-template">
+      [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[],null,[]]
+    </template>
+  
+</div>
+            
+          </devsite-content>
+        </main>
+        <devsite-footer-promos class="devsite-footer">
+          
+            
+
+<nav class="devsite-footer-promos nocontent" aria-label="Promotions">
+  <ul class="devsite-footer-promos-list">
+    
+    <li class="devsite-footer-promo">
+      <a href="//x.com/AndroidDev"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer X Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-x_dt.svg"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="/_static/android/images/logo-x.svg"
+                loading="lazy"
+                alt="X">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          X
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Follow @AndroidDev on X</div>
+    </li>
+    
+    <li class="devsite-footer-promo">
+      <a href="//www.youtube.com/user/androiddevelopers"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer YouTube Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-youtube_dt.svg"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="//www.gstatic.com/images/icons/material/product/2x/youtube_48dp.png"
+                loading="lazy"
+                alt="YouTube">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          YouTube
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Check out Android Developers on YouTube</div>
+    </li>
+    
+    <li class="devsite-footer-promo">
+      <a href="//www.linkedin.com/showcase/androiddev"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer LinkedIn Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-linkedin_dt.svg"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="/_static/android/images/logo-linkedin.svg"
+                loading="lazy"
+                alt="LinkedIn">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          LinkedIn
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Connect with the Android Developers community on LinkedIn</div>
+    </li>
+    
+  </ul>
+</nav>
+
+          
+        </devsite-footer-promos>
+        <devsite-footer-linkboxes class="devsite-footer">
+          
+            
+<nav class="devsite-footer-linkboxes nocontent" aria-label="Footer links">
+  
+  <ul class="devsite-footer-linkboxes-list">
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">More Android</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com/enterprise/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Android for Enterprise
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com/security-center/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Security
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//source.android.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Source
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/news"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            News
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//android-developers.googleblog.com/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+          
+            Blog
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/podcasts"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 7)"
+            >
+            
+              
+              
+            
+          
+            Podcasts
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Discover</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/games"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Gaming
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/ml"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Machine Learning
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/health-and-fitness"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Health & Fitness
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/media"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Camera & Media
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/privacy"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            Privacy
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/training/connectivity/5g"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+              
+              
+            
+          
+            5G
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Android Devices</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/large-screens"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Large screens
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/wear"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Wear OS
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/chrome-os"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            ChromeOS devices
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/cars"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Android for cars
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/tv"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+              
+              
+            
+          
+            Android TV
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Releases</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/15"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android 15
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/14"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Android 14
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/13"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Android 13
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/12"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Android 12
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/11"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            Android 11
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/10"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+          
+            Android 10
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/pie"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 7)"
+            >
+            
+              
+              
+            
+          
+            Pie
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Documentation and Downloads</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/studio/intro"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android Studio guide
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/guide"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Developers guides
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/reference"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            API reference
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/studio"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Download Studio
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/ndk"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+              
+              
+            
+          
+            Android NDK
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Support</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//issuetracker.google.com/issues/new?component=190923&amp;template=841312"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Report platform bug
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//issuetracker.google.com/issues/new?component=192697"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Report documentation bug
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//support.google.com/googleplay/android-developer"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Google Play support
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://g.co/userresearch/androiddeveloperfooter"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+              
+              
+            
+          
+            Join research studies
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+  
+</nav>
+          
+        </devsite-footer-linkboxes>
+        <devsite-footer-utility class="devsite-footer">
+          
+            
+
+<div class="devsite-footer-utility nocontent">
+  
+  
+  <nav class="devsite-footer-sites" aria-label="Other Google Developers websites">
+    <a href="https://developers.google.com/"
+       class="devsite-footer-sites-logo-link gc-analytics-event"
+       data-category="Site-Wide Custom Events"
+       data-label="Footer Google Developers Link">
+      <picture>
+        
+        <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-google-for-developers-dark-theme.svg"
+                media="(prefers-color-scheme: none)"
+                class="devsite-dark-theme">
+        
+        <img class="devsite-footer-sites-logo"
+             src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-google-for-developers.svg"
+             loading="lazy"
+             alt="Google Developers">
+      </picture>
+    </a>
+    <ul class="devsite-footer-sites-list">
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.android.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Android Link"
+         
+         >
+          Android
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.chrome.com/home"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Chrome Link"
+         
+         >
+          Chrome
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//firebase.google.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Firebase Link"
+         
+         >
+          Firebase
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//cloud.google.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Google Cloud Platform Link"
+         
+         >
+          Google Cloud Platform
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developers.google.com/products/"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer All products Link"
+         
+         >
+          All products
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  
+
+  
+  <nav class="devsite-footer-utility-links" aria-label="Utility links">
+    
+    <ul class="devsite-footer-utility-list">
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//policies.google.com/privacy"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Privacy link"
+         >
+          Privacy
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="/license"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer License link"
+         >
+          License
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="/distribute/marketing-tools/brand-guidelines"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Brand guidelines link"
+         >
+          Brand guidelines
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 glue-cookie-notification-bar-control">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="#"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Manage cookies link"
+         
+           aria-hidden="true"
+         >
+          Manage cookies
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 devsite-footer-utility-button">
+        
+        <span class="devsite-footer-utility-description">Get news and tips by email</span>
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="/updates"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Subscribe link"
+         >
+          Subscribe
+        </a>
+        
+      </li>
+      
+    </ul>
+    
+    
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+  </nav>
+</div>
+          
+        </devsite-footer-utility>
+        <devsite-panel>
+          
+        </devsite-panel>
+        
+      </section></section>
+    <devsite-sitemask></devsite-sitemask>
+    <devsite-snackbar></devsite-snackbar>
+    <devsite-tooltip ></devsite-tooltip>
+    <devsite-heading-link></devsite-heading-link>
+    <devsite-analytics>
+      
+        <script type="application/json" analytics>[]</script>
+<script type="application/json" tag-management>{&#34;at&#34;: &#34;True&#34;, &#34;ga4&#34;: [{&#34;id&#34;: &#34;G-QFRN08RN6E&#34;, &#34;purpose&#34;: 0}], &#34;ga4p&#34;: [{&#34;id&#34;: &#34;G-QFRN08RN6E&#34;, &#34;purpose&#34;: 0}], &#34;gtm&#34;: [], &#34;parameters&#34;: {&#34;internalUser&#34;: &#34;False&#34;, &#34;language&#34;: {&#34;machineTranslated&#34;: &#34;False&#34;, &#34;requested&#34;: &#34;en&#34;, &#34;served&#34;: &#34;en&#34;}, &#34;pageType&#34;: &#34;codelab&#34;, &#34;projectName&#34;: null, &#34;signedIn&#34;: &#34;False&#34;, &#34;tenant&#34;: &#34;android&#34;, &#34;recommendations&#34;: {&#34;sourcePage&#34;: &#34;&#34;, &#34;sourceType&#34;: 0, &#34;sourceRank&#34;: 0, &#34;sourceIdenticalDescriptions&#34;: 0, &#34;sourceTitleWords&#34;: 0, &#34;sourceDescriptionWords&#34;: 0, &#34;experiment&#34;: &#34;&#34;}, &#34;experiment&#34;: {&#34;ids&#34;: &#34;&#34;}}}</script>
+      
+    </devsite-analytics>
+    
+      <devsite-badger></devsite-badger>
+    
+    
+    
+<android-fully-clickable
+    target="
+        .android-case-study .devsite-landing-row-item,
+        .android-editorial-and-updates-cards .devsite-card-content-wrapper,
+        .android-editorial-and-updates-cards .devsite-landing-row-item,
+        .android-grouped-resources .devsite-landing-row-item,
+        .android-grouped-resources-contained--primary .devsite-landing-row-item,
+        .android-grouped-resources-contained--secondary .devsite-landing-row-item,
+        .android-grouped-resources-contained--tertiary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--primary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--secondary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--tertiary .devsite-landing-row-item,
+        .android-guide-cards .devsite-landing-row-item,
+        .android-illustrated-resources-index .devsite-landing-row-item,
+        .android-illustrated-resources-primary .devsite-landing-row-item,
+        .android-illustrated-resources-secondary .devsite-landing-row-item,
+        .android-illustrated-resources-secondary-small .devsite-landing-row-item,
+        .android-illustrated-resources-tertiary .devsite-landing-row-item,
+        .android-illustrated-resources-tertiary-small .devsite-landing-row-item,
+        .android-promo .devsite-landing-row-item,
+        .android-quick-link,
+        .android-samples .devsite-card-wrapper,
+        .fully-clickable"
+    watch=".android-editorial-and-updates-cards, .android-samples, devsite-content"></android-fully-clickable>
+    
+<script nonce="CgkxFai2Z2rdri8JcPClY4vEZdqMHJ">
+  
+  (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+    t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+    E.parentNode.insertBefore(t,E);})(window, document, 'script',
+    'https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/js/app_loader.js', '[3,"en",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android","https://android-dot-devsite-v2-prod.appspot.com",1,null,["/_pwa/android/manifest.json","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/favicon.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png","https://fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,600italic,700,700italic|Roboto+Mono:400,500,700&display=swap"],1,null,[1,6,8,12,14,17,21,25,50,52,63,70,75,76,80,87,91,92,93,97,98,100,101,102,103,104,105,107,108,109,110,112,113,117,118,120,122,124,125,126,127,129,130,131,132,133,134,135,136,138,140,141,147,148,149,151,152,156,157,158,159,161,163,164,168,169,170,179,180,182,183,186,191,193,196],"AIzaSyAP-jjEJBzmIyKR4F-3XITp8yM9T1gEEI8","AIzaSyB6xiKGDR5O3Ak2okS4rLkauxGUG7XP0hg","developer.android.com","AIzaSyAQk0fBONSGUqCNznf6Krs82Ap1-NV6J4o","AIzaSyCCxcqdrZ_7QMeLCRY20bh_SXdAYqy70KY",null,null,null,["MiscFeatureFlags__developers_footer_image","DevPro__enable_vertex_credit_card","Profiles__enable_completequiz_endpoint","Profiles__enable_playlist_community_acl","Search__enable_suggestions_from_borg","Concierge__enable_pushui","DevPro__remove_eu_tax_intake_form","DevPro__enable_cloud_innovators_plus","Cloud__enable_llm_concierge_chat","Profiles__enable_completecodelab_endpoint","Profiles__enable_developer_profile_benefits_ui_redesign","Profiles__require_profile_eligibility_for_signin","Concierge__enable_actions_menu","Profiles__enable_user_type","DevPro__enable_google_one_card","DevPro__enable_nvidia_credits_card","DevPro__enable_developer_subscriptions","TpcFeatures__proxy_prod_host","TpcFeatures__enable_unmirrored_page_left_nav","Analytics__enable_clearcut_logging","Cloud__enable_cloud_shell","MiscFeatureFlags__emergency_css","Profiles__enable_release_notes_notifications","DevPro__enable_google_payments_buyflow","Search__enable_page_map","Cloud__cache_serialized_dynamic_content","Profiles__enable_join_program_group_endpoint","Profiles__enable_recognition_badges","Cloud__enable_cloud_shell_fte_user_flow","Profiles__enable_purchase_prompts","MiscFeatureFlags__enable_appearance_cookies","Cloud__enable_cloudx_experiment_ids","Profiles__enable_callout_notifications","Concierge__enable_remove_info_panel_tags","Profiles__enable_developer_profiles_callout","CloudShell__cloud_shell_button","Cloud__enable_free_trial_server_call","Experiments__reqs_query_experiments","MiscFeatureFlags__enable_view_transitions","DevPro__enable_free_benefits","MiscFeatureFlags__enable_project_body_class","EngEduTelemetry__enable_engedu_telemetry","DevPro__enable_firebase_workspaces_card","Cloud__enable_legacy_calculator_redirect","Profiles__enable_public_developer_profiles","Cloud__fast_free_trial","MiscFeatureFlags__enable_framebox_badge_methods","MiscFeatureFlags__enable_variable_operator_index_yaml","Profiles__enable_awarding_url","MiscFeatureFlags__enable_explicit_template_dependencies","Profiles__enable_stripe_subscription_management","Profiles__enable_profile_collections","Profiles__enable_dashboard_curated_recommendations","CloudShell__cloud_code_overflow_menu","MiscFeatureFlags__gdp_dashboard_reskin_enabled","MiscFeatureFlags__enable_firebase_utm","Search__enable_ai_eligibility_checks","Cloud__enable_cloud_dlp_service","DevPro__enable_code_assist","Significatio__enable_by_tenant","Profiles__enable_page_saving","MiscFeatureFlags__enable_project_variables","MiscFeatureFlags__enable_dark_theme","DevPro__enable_enterprise","MiscFeatureFlags__developers_footer_dark_image","Search__enable_ai_search_summaries_for_all","BookNav__enable_tenant_cache_key","Search__enable_dynamic_content_confidential_banner","Profiles__enable_complete_playlist_endpoint","DevPro__enable_embed_profile_creation","DevPro__enable_devpro_offers","MiscFeatureFlags__enable_variable_operator"],null,null,"AIzaSyBLEMok-5suZ67qRPzx0qUtbnLmyT_kCVE","https://developerscontentserving-pa.googleapis.com","AIzaSyCM4QpTRSqP5qI4Dvjt4OAScIN8sOUlO-k","https://developerscontentsearch-pa.googleapis.com",2,4,null,"https://developerprofiles-pa.googleapis.com",[3,"android","Android Developers","developer.android.com",null,"android-dot-devsite-v2-prod.appspot.com",null,null,[null,1,null,null,null,null,null,null,null,null,null,[1],null,null,null,null,null,null,[1],[1,null,null,[1,20],"/recommendations"],null,null,null,[1,null,1],[1,1,null,1,1]],null,[18,null,null,null,null,null,"/images/lockup.png","/images/touchicon-180.png",null,null,null,null,null,null,null,null,null,null,null,null,null,2,null,null,null,"/images/lockup-dark-theme.png",[]],[],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[6,1,14,15,20,22,23,28,29,37,43],null,[[null,null,1],[1,1]],[[null,null,null,null,null,null,null,[["G-QFRN08RN6E"],null,null,[["G-QFRN08RN6E",1]]],null,null,null,null,1],null,[[2,2],[1,1]]],null,4,null,null,null,null,null,null,null,null,null,null,null,null,null,"android.devsite.google"],null,"pk_live_5170syrHvgGVmSx9sBrnWtA5luvk9BwnVcvIi7HizpwauFG96WedXsuXh790rtij9AmGllqPtMLfhe2RSwD6Pn38V00uBCydV4m",1,null,"https://developerscontentinsights-pa.googleapis.com","AIzaSyCg-ZUslalsEbXMfIo9ZP8qufZgo3LSBDU","AIzaSyDxT0vkxnY_KeINtA4LSePJO-4MAZPMRsE","https://developers.googleapis.com",null,null,"AIzaSyBQom12tzI-rybN7Sf-KfeL4nwm-Rf7PmI\n",null,"https://developerslogging.googleapis.com"]')
+  
+</script>
+
+    <devsite-a11y-announce></devsite-a11y-announce>
+  </body>
+</html>

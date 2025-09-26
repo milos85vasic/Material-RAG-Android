@@ -1,0 +1,1942 @@
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html 
+      lang="en"
+      dir="ltr">
+  <head>
+    <meta name="google-signin-client-id" content="721724668570-nbkv1cfusk7kk4eni4pjvepaus73b13t.apps.googleusercontent.com">
+    <meta name="google-signin-scope"
+          content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award">
+    <meta property="og:site_name" content="Android Developers">
+    <meta property="og:type" content="website"><meta name="theme-color" content="#34a853"><meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <link rel="manifest" href="/_pwa/android/manifest.json"
+          crossorigin="use-credentials">
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="//apis.google.com" crossorigin>
+    <link rel="preconnect" href="//www.google-analytics.com" crossorigin><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,600italic,700,700italic|Roboto+Mono:400,500,700&display=swap">
+      <link rel="stylesheet"
+            href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block"><link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/css/app.css">
+      
+        <link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/css/dark-theme.css" disabled>
+      <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/favicon.svg">
+    <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/touchicon-180.png"><link rel="canonical" href="https://developer.android.com/codelabs/android-people"><link rel="search" type="application/opensearchdescription+xml"
+            title="Android Developers" href="https://developer.android.com/s/opensearch.xml">
+      <link rel="alternate" hreflang="en"
+          href="https://developer.android.com/codelabs/android-people" /><link rel="alternate" hreflang="x-default" href="https://developer.android.com/codelabs/android-people" /><link rel="alternate" hreflang="zh-Hans"
+          href="https://developer.android.com/codelabs/android-people?hl=zh-cn" /><title>(Deprecated) People: Conversations and Bubbles &nbsp;|&nbsp; Android Developers</title>
+
+<meta property="og:title" content="(Deprecated) People: Conversations and Bubbles &nbsp;|&nbsp; Android Developers"><meta name="description" content="This codelab demonstrates how to show conversational notifications as Bubbles on Android 11.">
+  <meta property="og:description" content="This codelab demonstrates how to show conversational notifications as Bubbles on Android 11."><meta property="og:url" content="https://developer.android.com/codelabs/android-people"><meta property="og:locale" content="en">
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+
+    
+      <link rel="stylesheet" href="/extras.css"></head>
+  <body class=""
+        template="codelab"
+        theme="android-theme"
+        type="codelab"
+        
+        
+        appearance
+        
+        layout="docs"
+        
+        
+        
+        
+        display-toc
+        pending>
+  
+    <devsite-progress type="indeterminate" id="app-progress"></devsite-progress>
+  
+  
+    <a href="#main-content" class="skip-link button">
+      
+      Skip to main content
+    </a>
+    <section class="devsite-wrapper">
+      <devsite-cookie-notification-bar></devsite-cookie-notification-bar><devsite-header role="banner">
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-header--inner" data-nosnippet>
+  <div class="devsite-top-logo-row-wrapper-wrapper">
+    <div class="devsite-top-logo-row-wrapper">
+      <div class="devsite-top-logo-row">
+        <button type="button" id="devsite-hamburger-menu"
+          class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+          data-category="Site-Wide Custom Events"
+          data-label="Navigation menu button"
+          visually-hidden
+          aria-label="Open menu">
+        </button>
+        
+<div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="androidDevelopers" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-dark-theme.png"
+            media="(prefers-color-scheme: dark)"
+            class="devsite-dark-theme">
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png" class="devsite-site-logo" alt="Android Developers">
+  </picture>
+  
+</a>
+
+
+
+</div>
+        <div class="devsite-top-logo-row-middle">
+          <div class="devsite-header-upper-tabs">
+            
+           </div>
+          
+<devsite-search
+    enable-signin
+    enable-search
+    enable-suggestions
+      enable-query-completion
+    
+    enable-search-summaries
+    
+    tenant-name="Android Developers"
+    
+    
+    
+    
+    
+    >
+  <form class="devsite-search-form" action="https://developer.android.com/s/results" method="GET">
+    <div class="devsite-search-container">
+      <button type="button"
+              search-open
+              class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+              
+              aria-label="Open search"></button>
+      <div class="devsite-searchbox">
+        <input
+          aria-activedescendant=""
+          aria-autocomplete="list"
+          
+          aria-label="Search"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          autocomplete="off"
+          class="devsite-search-field devsite-search-query"
+          name="q"
+          
+          placeholder="Search"
+          role="combobox"
+          type="text"
+          value=""
+          >
+          <div class="devsite-search-image material-icons" aria-hidden="true">
+            
+              <svg class="devsite-search-ai-image" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_6641_386)">
+                    <path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14167 15.375 4.875 14.125C3.625 12.8583 3 11.3167 3 9.5C3 7.68333 3.625 6.15 4.875 4.9C6.14167 3.63333 7.68333 3 9.5 3C10.0167 3 10.5167 3.05833 11 3.175C11.4833 3.275 11.9417 3.43333 12.375 3.65L10.825 5.2C10.6083 5.13333 10.3917 5.08333 10.175 5.05C9.95833 5.01667 9.73333 5 9.5 5C8.25 5 7.18333 5.44167 6.3 6.325C5.43333 7.19167 5 8.25 5 9.5C5 10.75 5.43333 11.8167 6.3 12.7C7.18333 13.5667 8.25 14 9.5 14C10.6667 14 11.6667 13.625 12.5 12.875C13.35 12.1083 13.8417 11.15 13.975 10H15.975C15.925 10.6333 15.7833 11.2333 15.55 11.8C15.3333 12.3667 15.05 12.8667 14.7 13.3L21 19.6L19.6 21ZM17.5 12C17.5 10.4667 16.9667 9.16667 15.9 8.1C14.8333 7.03333 13.5333 6.5 12 6.5C13.5333 6.5 14.8333 5.96667 15.9 4.9C16.9667 3.83333 17.5 2.53333 17.5 0.999999C17.5 2.53333 18.0333 3.83333 19.1 4.9C20.1667 5.96667 21.4667 6.5 23 6.5C21.4667 6.5 20.1667 7.03333 19.1 8.1C18.0333 9.16667 17.5 10.4667 17.5 12Z" fill="#5F6368"/>
+                  </g>
+                <defs>
+                <clipPath id="clip0_6641_386">
+                <rect width="24" height="24" fill="white"/>
+                </clipPath>
+                </defs>
+              </svg>
+            
+          </div>
+          <div class="devsite-search-shortcut-icon-container" aria-hidden="true">
+            <kbd class="devsite-search-shortcut-icon">/</kbd>
+          </div>
+      </div>
+    </div>
+  </form>
+  <button type="button"
+          search-close
+          class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+          
+          aria-label="Close search"></button>
+</devsite-search>
+
+        </div>
+
+        
+
+          
+
+          
+
+          <devsite-appearance-selector></devsite-appearance-selector>
+
+          
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+
+          
+            <a class="devsite-header-link devsite-top-button button gc-analytics-event "
+    href="https://developer.android.com/studio"
+    data-category="Site-Wide Custom Events"
+    data-label="Site header link: Android Studio"
+    >
+  Android Studio
+</a>
+          
+
+        
+
+        
+          <devsite-user 
+                        
+                        
+                          enable-profiles
+                        
+                        
+                        id="devsite-user">
+            
+              
+              <span class="button devsite-top-button" aria-hidden="true" visually-hidden>Sign in</span>
+            
+          </devsite-user>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
+  
+</devsite-header>
+      <devsite-book-nav scrollbars hidden>
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-book-nav-filter"
+     hidden>
+  <span class="filter-list-icon material-icons" aria-hidden="true"></span>
+  <input type="text"
+         placeholder="Filter"
+         
+         aria-label="Type to filter"
+         role="searchbox">
+  
+  <span class="filter-clear-button hidden"
+        data-title="Clear filter"
+        aria-label="Clear filter"
+        role="button"
+        tabindex="0"></span>
+</div>
+
+<nav class="devsite-book-nav devsite-nav nocontent"
+     aria-label="Side menu">
+  <div class="devsite-mobile-header">
+    <button type="button"
+            id="devsite-close-nav"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Close navigation"
+            aria-label="Close navigation">
+    </button>
+    <div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="androidDevelopers" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-dark-theme.png"
+            media="(prefers-color-scheme: dark)"
+            class="devsite-dark-theme">
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png" class="devsite-site-logo" alt="Android Developers">
+  </picture>
+  
+</a>
+
+
+</div>
+  </div>
+
+  <div class="devsite-book-nav-wrapper">
+    <div class="devsite-mobile-nav-top">
+      
+        <ul class="devsite-nav-list">
+          
+          
+    
+    
+<li class="devsite-nav-item">
+
+  
+  <a href="/studio"
+    
+       class="devsite-nav-title gc-analytics-event "
+    
+
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Android Studio"
+     track-type="navMenu"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Android Studio
+   </span>
+    
+  
+  </a>
+  
+
+</li>
+
+  
+          
+        </ul>
+      
+    </div>
+    
+  </div>
+</nav>
+        
+      </devsite-book-nav>
+      <section id="gc-wrapper">
+        <main role="main" id="main-content" class="devsite-main-content"
+            
+              
+              has-sidebar
+            >
+          <div class="devsite-sidebar">
+            <div class="devsite-sidebar-content">
+                
+                <devsite-toc class="devsite-nav"
+                            role="navigation"
+                            aria-label="On this page"
+                            depth="1"
+                            scrollbars
+                  ></devsite-toc>
+                <devsite-recommendations-sidebar class="nocontent devsite-nav">
+                </devsite-recommendations-sidebar>
+            </div>
+          </div>
+          <devsite-content>
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="devsite-article"><style>
+      body {
+        transition: opacity ease-in 0.2s;
+      }
+
+      body[unresolved] {
+        opacity: 0;
+        display: block;
+        overflow: hidden;
+        position: relative;
+      }
+      </style>
+  
+  
+  
+  
+  
+
+  <div class="devsite-article-meta nocontent" role="navigation">
+    
+    
+    <ul class="devsite-breadcrumb-list"
+  >
+  
+</ul>
+    
+  </div>
+  
+    <h1 class="devsite-page-title" tabindex="-1">
+      (Deprecated) People: Conversations and Bubbles<div class="devsite-actions" hidden data-nosnippet><devsite-feature-tooltip
+      ack-key="AckCollectionsBookmarkTooltipDismiss"
+      analytics-category="Site-Wide Custom Events"
+      analytics-action-show="Callout Profile displayed"
+      analytics-action-close="Callout Profile dismissed"
+      analytics-label="Create Collection Callout"
+      class="devsite-page-bookmark-tooltip nocontent"
+      dismiss-button="true"
+      id="devsite-collections-dropdown"
+      
+      dismiss-button-text="Dismiss"
+
+      
+      close-button-text="Got it">
+
+    
+    
+      <devsite-bookmark></devsite-bookmark>
+    
+
+    <span slot="popout-heading">
+      
+      Stay organized with collections
+    </span>
+    <span slot="popout-contents">
+      
+      Save and categorize content based on your preferences.
+    </span>
+  </devsite-feature-tooltip></div>
+  
+      
+    </h1>
+  
+
+  <devsite-toc class="devsite-nav"
+    depth="1"
+    devsite-toc-embedded
+    >
+  </devsite-toc>
+  
+    
+  <div class="devsite-article-body clearfix
+  ">
+
+  
+    
+    
+    <google-codelab-analytics gaid="UA-49880327-14" ga4id="G-JTFZSJVVVZ"></google-codelab-analytics>
+    <google-codelab codelab-gaid=""
+                    codelab-ga4id=""
+                    doc-id="1gErA_wGwd2Y0mgUruMPTXjh_PoJyNV5XdeVBeBt7ikE"
+                    id="android-people"
+                    title="(Deprecated) People: Conversations and Bubbles"
+                    no-tooltip=""
+                    environment="web"
+                    category=""
+                    feedback-link="https://github.com/android/codelab-android-people/issues"
+                    layout="paginated"
+                    >
+      
+        <google-codelab-step label="Overview" duration="2" step="0">
+          
+            <google-codelab-about codelab-title="(Deprecated) People: Conversations and Bubbles"
+                                  
+                                  last-updated="2024-12-11T15:48:17Z"
+                                  duration="16">
+            </google-codelab-about>
+          
+          <h2 class="step-title" id="0" data-text="Overview" tabindex="-1">
+              1. Overview
+          </h2>
+          <aside class="warning"><p> This codelab is deprecated and will be removed soon.</p>
+</aside>
+<p>In this codelab, you will learn how to show your notifications in the <em>Conversations</em> section of the notification shade. You will also learn how to show those notifications as <em>Bubbles</em>.</p>
+<p><a href="https://developer.android.com/guide/topics/ui/conversations" target="_blank">Conversations</a> are real-time communications that are bidirectional among two people or more. These conversations are presented in their own area in the system notifications shade. They can also be promoted as  <a href="https://developer.android.com/guide/topics/ui/bubbles" target="_blank">Bubbles</a>. Bubbles are round icons that float on top of other app content and follow the user wherever they go. Bubbles are great for showing ongoing events and actions that users want to keep easy access to.</p>
+<p>Bubbles are a great way to notify users of important ongoing information. You should, however, be mindful of when and when not to use Bubbles. They take up screen real estate and cover other app content. Use them only when it is important enough to draw the user&#39;s attention. Keep in mind that users can easily opt out of Bubbles and use normal notifications instead.</p>
+<p>This codelab uses a proof-of-concept chat app as its starting point. The app shows new incoming messages, which we&#39;ll assume for the purposes of this codelab that users will want to keep in mind for a while.</p>
+<table class="vertical-rules">
+<tr><td colspan="1" rowspan="1"><p><img src="/static/codelabs/android-people/img/9675e48b53e2d76a.png" srcset="https://developer.android.com/static/codelabs/android-people/img/9675e48b53e2d76a_36.png 36w,https://developer.android.com/static/codelabs/android-people/img/9675e48b53e2d76a_48.png 48w,https://developer.android.com/static/codelabs/android-people/img/9675e48b53e2d76a_72.png 72w,https://developer.android.com/static/codelabs/android-people/img/9675e48b53e2d76a_96.png 96w,https://developer.android.com/static/codelabs/android-people/img/9675e48b53e2d76a_480.png 480w,https://developer.android.com/static/codelabs/android-people/img/9675e48b53e2d76a_720.png 720w,https://developer.android.com/static/codelabs/android-people/img/9675e48b53e2d76a_856.png 856w,https://developer.android.com/static/codelabs/android-people/img/9675e48b53e2d76a_960.png 960w,https://developer.android.com/static/codelabs/android-people/img/9675e48b53e2d76a_1440.png 1440w,https://developer.android.com/static/codelabs/android-people/img/9675e48b53e2d76a_1920.png 1920w,https://developer.android.com/static/codelabs/android-people/img/9675e48b53e2d76a_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"><br><em>Conversations</em></p>
+</td><td colspan="1" rowspan="1"><p><img src="/static/codelabs/android-people/img/e0a9543b96077b0a.png" srcset="https://developer.android.com/static/codelabs/android-people/img/e0a9543b96077b0a_36.png 36w,https://developer.android.com/static/codelabs/android-people/img/e0a9543b96077b0a_48.png 48w,https://developer.android.com/static/codelabs/android-people/img/e0a9543b96077b0a_72.png 72w,https://developer.android.com/static/codelabs/android-people/img/e0a9543b96077b0a_96.png 96w,https://developer.android.com/static/codelabs/android-people/img/e0a9543b96077b0a_480.png 480w,https://developer.android.com/static/codelabs/android-people/img/e0a9543b96077b0a_720.png 720w,https://developer.android.com/static/codelabs/android-people/img/e0a9543b96077b0a_856.png 856w,https://developer.android.com/static/codelabs/android-people/img/e0a9543b96077b0a_960.png 960w,https://developer.android.com/static/codelabs/android-people/img/e0a9543b96077b0a_1440.png 1440w,https://developer.android.com/static/codelabs/android-people/img/e0a9543b96077b0a_1920.png 1920w,https://developer.android.com/static/codelabs/android-people/img/e0a9543b96077b0a_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"><em>Bubbles</em></p>
+</td></tr>
+</table>
+<h2 is-upgraded id="what-well-learn" data-text="What we'll learn" tabindex="-1">What we'll learn</h2>
+<ul>
+<li>How to show a conversational notification.</li>
+<li>How to support Bubbles.</li>
+<li>How to show a Bubble while the app is running in the foreground.</li>
+</ul>
+<h2 is-upgraded id="prerequisites" data-text="Prerequisites" tabindex="-1">Prerequisites</h2>
+<ul>
+<li>Basic Kotlin knowledge (this codelab is in Kotlin)</li>
+<li>Basic notification knowledge. You can learn more about notifications  <a href="https://developer.android.com/guide/topics/ui/notifiers/notifications" target="_blank">here</a> and by taking the  <a href="https://developer.android.com/codelabs/advanced-android-kotlin-training-notifications" target="_blank">Using Android Notifications codelab</a>.</li>
+<li>A device or emulator running Android 11 Beta 1 or later.</li>
+<li>Android Studio 4.0.0 or above.</li>
+</ul>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Get the sample code" duration="3" step="1">
+          
+          <h2 class="step-title" id="1" data-text="Get the sample code" tabindex="-1">
+              2. Get the sample code
+          </h2>
+          <p><strong>Download</strong> the codelab code:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Bash"><code translate="no" dir="ltr">$<span class="devsite-syntax-w"> </span>git<span class="devsite-syntax-w"> </span>clone<span class="devsite-syntax-w"> </span>https://github.com/android/codelab-android-people.git
+</code></pre></devsite-code>
+<p><strong>Import</strong> the project in Android Studio.</p>
+<p class="image-container"><img alt="cb493f79df0aabe2.png" style="width: 493.00px" src="/static/codelabs/android-people/img/cb493f79df0aabe2.png" srcset="https://developer.android.com/static/codelabs/android-people/img/cb493f79df0aabe2_36.png 36w,https://developer.android.com/static/codelabs/android-people/img/cb493f79df0aabe2_48.png 48w,https://developer.android.com/static/codelabs/android-people/img/cb493f79df0aabe2_72.png 72w,https://developer.android.com/static/codelabs/android-people/img/cb493f79df0aabe2_96.png 96w,https://developer.android.com/static/codelabs/android-people/img/cb493f79df0aabe2_480.png 480w,https://developer.android.com/static/codelabs/android-people/img/cb493f79df0aabe2_720.png 720w,https://developer.android.com/static/codelabs/android-people/img/cb493f79df0aabe2_856.png 856w,https://developer.android.com/static/codelabs/android-people/img/cb493f79df0aabe2_960.png 960w,https://developer.android.com/static/codelabs/android-people/img/cb493f79df0aabe2_1440.png 1440w,https://developer.android.com/static/codelabs/android-people/img/cb493f79df0aabe2_1920.png 1920w,https://developer.android.com/static/codelabs/android-people/img/cb493f79df0aabe2_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<aside class="special"><p><strong>Note</strong>: If you are running a newer version of Android Studio than the sample was created with, you may see a notification asking to update the Gradle version. Feel free to do that, or skip if you are short on time.</p>
+</aside>
+<p>Gradle will begin syncing. Depending on the internet connection speed and what other recent projects you have opened, this might take a few minutes.</p>
+<p>The project has multiple modules in it:</p>
+<ul>
+<li><strong><code translate="no" dir="ltr">app-start</code></strong> is the starting state for the codelab.</li>
+<li><strong><code translate="no" dir="ltr">app</code></strong> is the final state of the app after completing this codelab.</li>
+</ul>
+<p>Make sure that <strong><code translate="no" dir="ltr">app-start</code></strong> is selected in the combobox for the run configuration.</p>
+<p class="image-container"><img alt="96dd1af453ea4c79.png" style="width: 624.00px" src="/static/codelabs/android-people/img/96dd1af453ea4c79.png" srcset="https://developer.android.com/static/codelabs/android-people/img/96dd1af453ea4c79_36.png 36w,https://developer.android.com/static/codelabs/android-people/img/96dd1af453ea4c79_48.png 48w,https://developer.android.com/static/codelabs/android-people/img/96dd1af453ea4c79_72.png 72w,https://developer.android.com/static/codelabs/android-people/img/96dd1af453ea4c79_96.png 96w,https://developer.android.com/static/codelabs/android-people/img/96dd1af453ea4c79_480.png 480w,https://developer.android.com/static/codelabs/android-people/img/96dd1af453ea4c79_720.png 720w,https://developer.android.com/static/codelabs/android-people/img/96dd1af453ea4c79_856.png 856w,https://developer.android.com/static/codelabs/android-people/img/96dd1af453ea4c79_960.png 960w,https://developer.android.com/static/codelabs/android-people/img/96dd1af453ea4c79_1440.png 1440w,https://developer.android.com/static/codelabs/android-people/img/96dd1af453ea4c79_1920.png 1920w,https://developer.android.com/static/codelabs/android-people/img/96dd1af453ea4c79_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Check out how the app works now" duration="2" step="2">
+          
+          <h2 class="step-title" id="2" data-text="Check out how the app works now" tabindex="-1">
+              3. Check out how the app works now
+          </h2>
+          <p>The app we will work on is a chat app. Run the app from Android Studio, and you will see a list of chat contacts you can talk to.</p>
+<p class="image-container"><img alt="d5604d7c486c8426.png" style="width: 270.50px" src="/static/codelabs/android-people/img/d5604d7c486c8426.png" srcset="https://developer.android.com/static/codelabs/android-people/img/d5604d7c486c8426_36.png 36w,https://developer.android.com/static/codelabs/android-people/img/d5604d7c486c8426_48.png 48w,https://developer.android.com/static/codelabs/android-people/img/d5604d7c486c8426_72.png 72w,https://developer.android.com/static/codelabs/android-people/img/d5604d7c486c8426_96.png 96w,https://developer.android.com/static/codelabs/android-people/img/d5604d7c486c8426_480.png 480w,https://developer.android.com/static/codelabs/android-people/img/d5604d7c486c8426_720.png 720w,https://developer.android.com/static/codelabs/android-people/img/d5604d7c486c8426_856.png 856w,https://developer.android.com/static/codelabs/android-people/img/d5604d7c486c8426_960.png 960w,https://developer.android.com/static/codelabs/android-people/img/d5604d7c486c8426_1440.png 1440w,https://developer.android.com/static/codelabs/android-people/img/d5604d7c486c8426_1920.png 1920w,https://developer.android.com/static/codelabs/android-people/img/d5604d7c486c8426_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Pick one of the contacts and try sending a message. You will receive a reply in 5 seconds. If the chat screen is not in the foreground, the reply will be shown as a notification. Try sending a message and quickly navigating to the home screen.</p>
+<p class="image-container"><img alt="20b5d79d16fd03e0.png" style="width: 268.50px" src="/static/codelabs/android-people/img/20b5d79d16fd03e0.png" srcset="https://developer.android.com/static/codelabs/android-people/img/20b5d79d16fd03e0_36.png 36w,https://developer.android.com/static/codelabs/android-people/img/20b5d79d16fd03e0_48.png 48w,https://developer.android.com/static/codelabs/android-people/img/20b5d79d16fd03e0_72.png 72w,https://developer.android.com/static/codelabs/android-people/img/20b5d79d16fd03e0_96.png 96w,https://developer.android.com/static/codelabs/android-people/img/20b5d79d16fd03e0_480.png 480w,https://developer.android.com/static/codelabs/android-people/img/20b5d79d16fd03e0_720.png 720w,https://developer.android.com/static/codelabs/android-people/img/20b5d79d16fd03e0_856.png 856w,https://developer.android.com/static/codelabs/android-people/img/20b5d79d16fd03e0_960.png 960w,https://developer.android.com/static/codelabs/android-people/img/20b5d79d16fd03e0_1440.png 1440w,https://developer.android.com/static/codelabs/android-people/img/20b5d79d16fd03e0_1920.png 1920w,https://developer.android.com/static/codelabs/android-people/img/20b5d79d16fd03e0_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Conversational notifications" duration="3" step="3">
+          
+          <h2 class="step-title" id="3" data-text="Conversational notifications" tabindex="-1">
+              4. Conversational notifications
+          </h2>
+          <p>Now that you know how the app works, let&#39;s start by showing our notifications in the <em>Conversations</em> section of the notification shade.</p>
+<p>In order to make a notification considered as a conversation by the system, it has to meet these criteria:</p>
+<ul>
+<li>It uses  <a href="https://developer.android.com/reference/android/app/Notification.MessagingStyle" target="_blank"><code translate="no" dir="ltr">MessagingStyle</code></a>.</li>
+<li>It is associated with a conversation <em>shortcut</em>. A conversation shortcut is a  <a href="https://developer.android.com/training/sharing/receive#sharing-shortcuts-api" target="_blank">Sharing Shortcut</a> which works as a direct share target, and it is long-lived.</li>
+</ul>
+<h2 is-upgraded id="messagingstyle" data-text="MessagingStyle" tabindex="-1">MessagingStyle</h2>
+<ol type="1">
+<li>Open <code translate="no" dir="ltr">NotificationHelper.kt</code>. It is located at <code translate="no" dir="ltr">data/NotificationHelper.kt</code>. The method <code translate="no" dir="ltr">showNotification</code> is where the app shows all of its notifications. The notification currently uses the simple call of <code translate="no" dir="ltr">setContentText</code> to set the notification content. Find <strong>TODO 1</strong> and replace it with MessagingStyle.</li>
+</ol>
+<div></div><devsite-code><pre translate="no" dir="ltr" is-upgraded>.setStyle(
+    Notification.MessagingStyle(user)
+        .apply {
+            val lastId = chat.messages.last().id
+            for (message in chat.messages) {
+                val m = Notification.MessagingStyle.Message(
+                    message.text,
+                    message.timestamp,
+                    if (message.isIncoming) person else null
+                ).apply {
+                    if (message.photoUri != null) {
+                        setData(message.photoMimeType, message.photoUri)
+                    }
+                }
+                if (message.id &lt; lastId) {
+                    addHistoricMessage(m)
+                } else {
+                    addMessage(m)
+                }
+            }
+        }
+        .setGroupConversation(false)
+)
+.setWhen(chat.messages.last().timestamp)
+</pre></devsite-code>
+<h2 is-upgraded id="conversation-shortcuts" data-text="Conversation Shortcuts" tabindex="-1">Conversation Shortcuts</h2>
+<ol type="1" start="2">
+<li>In the same <code translate="no" dir="ltr">NotificationHelper.kt</code>, there&#39;s a method called <code translate="no" dir="ltr">updateShortcuts</code>. This method is called everytime a new notification is shown. We will create our dynamic shortcuts and register them to <code translate="no" dir="ltr">ShortcutManager</code>. Find <strong>TODO 2</strong> and add this implementation.</li>
+</ol>
+<div></div><devsite-code><pre translate="no" dir="ltr" is-upgraded>var shortcuts = Contact.CONTACTS.map { contact -&gt;
+    val icon = Icon.createWithAdaptiveBitmap(
+        context.resources.assets.open(contact.icon).use { input -&gt;
+            BitmapFactory.decodeStream(input)
+        }
+    )
+    ShortcutInfo.Builder(context, contact.shortcutId)
+        .setLocusId(LocusId(contact.shortcutId))
+        .setActivity(ComponentName(context, MainActivity::class.java))
+        .setShortLabel(contact.name)
+        .setIcon(icon)
+        .setLongLived(true)
+        .setCategories(setOf(&#34;com.example.android.bubbles.category.TEXT_SHARE_TARGET&#34;))
+        .setIntent(
+            Intent(context, MainActivity::class.java)
+                .setAction(Intent.ACTION_VIEW)
+                .setData(
+                    Uri.parse(
+                        &#34;https://android.example.com/chat/${contact.id}&#34;
+                    )
+                )
+        )
+        .setPerson(
+            Person.Builder()
+                .setName(contact.name)
+                .setIcon(icon)
+                .build()
+        )
+        .build()
+}
+if (importantContact != null) {
+    shortcuts = shortcuts.sortedByDescending { it.id == importantContact.shortcutId }
+}
+val maxCount = shortcutManager.maxShortcutCountPerActivity
+if (shortcuts.size &gt; maxCount) {
+    shortcuts = shortcuts.take(maxCount)
+}
+shortcutManager.addDynamicShortcuts(shortcuts)
+</pre></devsite-code>
+<p>In this implementation, we are converting all of our contacts into <code translate="no" dir="ltr">ShortcutInfo</code>, and setting them as our dynamic shortcuts by calling <code translate="no" dir="ltr">addDynamicShortcuts</code> at the end.</p>
+<p>The shortcuts have a category of &#34;<code translate="no" dir="ltr">com.example.android.bubbles.category.TEXT_SHARE_TARGET</code>&#34;. This category is defined in <code translate="no" dir="ltr">res/xml/shortcuts.xml</code> and it is used as our Direct Share targets.</p>
+<ol type="1" start="3">
+<li>If you check out <code translate="no" dir="ltr">MainActivity.kt</code>, you can see that it can already handle <code translate="no" dir="ltr">ACTION_SEND</code> intent for our contacts. We want to specify that this activity should handle intents coming from Direct Share. Find <strong>TODO 3</strong> in <code translate="no" dir="ltr">AndroidManifest.xml</code> and add the following element in MainActivity. This associates the activity with the dynamic shortcuts we created above.</li>
+</ol>
+<div></div><devsite-code><pre translate="no" dir="ltr" is-upgraded>    &lt;activity
+        android:name=&#34;com.example.android.people.MainActivity&#34;
+        ...&gt;
+        &lt;!-- ... --&gt;
+        &lt;meta-data
+            android:name=&#34;android.app.shortcuts&#34;
+            android:resource=&#34;@xml/shortcuts&#34; /&gt;
+    &lt;/activity&gt;
+</pre></devsite-code>
+<ol type="1" start="4">
+<li>The last step in this section is to associate the notification with the dynamic shortcut we just created. Find <strong>TODO 4</strong> in <code translate="no" dir="ltr">NotificationHelper.kt</code> and add the following configurations to <code translate="no" dir="ltr">Notification.Builder</code>.</li>
+</ol>
+<div></div><devsite-code><pre translate="no" dir="ltr" is-upgraded>            // ...
+            .setCategory(Notification.CATEGORY_MESSAGE)
+            .setShortcutId(chat.contact.shortcutId)
+            .setLocusId(LocusId(chat.contact.shortcutId))
+</pre></devsite-code>
+<p>With this <code translate="no" dir="ltr">setShortcutId</code>, the system can know that this notification corresponds to the specified dynamic shortcut. It is also recommended that you set <code translate="no" dir="ltr">LocusId</code> so that the system can accurately rank conversations based on app usage.</p>
+<table class="vertical-rules">
+<tr><td colspan="1" rowspan="1"><p><img src="/static/codelabs/android-people/img/258ef5af542951d3.png" srcset="https://developer.android.com/static/codelabs/android-people/img/258ef5af542951d3_36.png 36w,https://developer.android.com/static/codelabs/android-people/img/258ef5af542951d3_48.png 48w,https://developer.android.com/static/codelabs/android-people/img/258ef5af542951d3_72.png 72w,https://developer.android.com/static/codelabs/android-people/img/258ef5af542951d3_96.png 96w,https://developer.android.com/static/codelabs/android-people/img/258ef5af542951d3_480.png 480w,https://developer.android.com/static/codelabs/android-people/img/258ef5af542951d3_720.png 720w,https://developer.android.com/static/codelabs/android-people/img/258ef5af542951d3_856.png 856w,https://developer.android.com/static/codelabs/android-people/img/258ef5af542951d3_960.png 960w,https://developer.android.com/static/codelabs/android-people/img/258ef5af542951d3_1440.png 1440w,https://developer.android.com/static/codelabs/android-people/img/258ef5af542951d3_1920.png 1920w,https://developer.android.com/static/codelabs/android-people/img/258ef5af542951d3_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"><em>Dynamic shortcuts</em></p>
+</td><td colspan="1" rowspan="1"><p><img src="/static/codelabs/android-people/img/52ac08c0506b56ee.png" srcset="https://developer.android.com/static/codelabs/android-people/img/52ac08c0506b56ee_36.png 36w,https://developer.android.com/static/codelabs/android-people/img/52ac08c0506b56ee_48.png 48w,https://developer.android.com/static/codelabs/android-people/img/52ac08c0506b56ee_72.png 72w,https://developer.android.com/static/codelabs/android-people/img/52ac08c0506b56ee_96.png 96w,https://developer.android.com/static/codelabs/android-people/img/52ac08c0506b56ee_480.png 480w,https://developer.android.com/static/codelabs/android-people/img/52ac08c0506b56ee_720.png 720w,https://developer.android.com/static/codelabs/android-people/img/52ac08c0506b56ee_856.png 856w,https://developer.android.com/static/codelabs/android-people/img/52ac08c0506b56ee_960.png 960w,https://developer.android.com/static/codelabs/android-people/img/52ac08c0506b56ee_1440.png 1440w,https://developer.android.com/static/codelabs/android-people/img/52ac08c0506b56ee_1920.png 1920w,https://developer.android.com/static/codelabs/android-people/img/52ac08c0506b56ee_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"><em>Conversation Notification</em></p>
+</td></tr>
+</table>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Show a Bubble" duration="3" step="4">
+          
+          <h2 class="step-title" id="4" data-text="Show a Bubble" tabindex="-1">
+              5. Show a Bubble
+          </h2>
+          <p>A notification has to be sent to a  <a href="https://developer.android.com/training/notify-user/channels" target="_blank">notification channel</a>. This app uses one notification channel. Notice that the importance is set to <code translate="no" dir="ltr">IMPORTANCE_HIGH</code> in the <code translate="no" dir="ltr">setUpNotificationChannels</code> method. In order to show a notification as a bubble, the notification channel needs to be set to <strong><code translate="no" dir="ltr">IMPORTANCE_HIGH</code></strong>.</p>
+<p>A notification can be shown as a bubble by adding a  <code translate="no" dir="ltr">BubbleMetadata</code> to it. This can be done by calling <code translate="no" dir="ltr">Notification.Builder#setBubbleMetadata</code>.</p>
+<ol type="1" start="5">
+<li>Replace <strong>TODO 5</strong> in the <code translate="no" dir="ltr">showNotification</code> method with the following code:</li>
+</ol>
+<p><code translate="no" dir="ltr">NotificationHelper.kt</code> &gt; <code translate="no" dir="ltr">showNotification()</code></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="GAS"><code translate="no" dir="ltr"><span class="devsite-syntax-na">.setBubbleMetadata</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nf">Notification.BubbleMetadata</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-na">.Builder</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-nf">PendingIntent.getActivity</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-nf">context</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-nf">REQUEST_BUBBLE</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-nf">Intent</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-no">context</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-no">BubbleActivity</span><span class="devsite-syntax-p">::</span><span class="devsite-syntax-no">class.java</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-na">.setAction</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-no">Intent.ACTION_VIEW</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-na">.setData</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-no">contentUri</span><span class="devsite-syntax-p">),</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-nf">PendingIntent.FLAG_UPDATE_CURRENT</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-err">),</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-nf">icon</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-err">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-na">.setDesiredHeightResId</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-no">R.dimen.bubble_height</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-na">.build</span><span class="devsite-syntax-p">()</span>
+<span class="devsite-syntax-err">)</span>
+</code></pre></devsite-code>
+<p>In the code above, <code translate="no" dir="ltr">setIcon</code> sets the icon of the bubble.</p>
+<p><code translate="no" dir="ltr">setIntent</code> specifies the Activity to be launched as an &#34;expanded bubble&#34;. When the user taps on the bubble, the expanded bubble is opened and shows the corresponding chat history on top of the current screen. We use our <code translate="no" dir="ltr">BubbleActivity</code> as the expanded bubble. In order to use an Activity as an expanded bubble, it has to be configured with some attributes in the manifest file.</p>
+<ol type="1" start="6">
+<li>Open AndroidManifest.xml and find the definition of <code translate="no" dir="ltr">BubbleActivity</code> marked with a <strong>TODO 6</strong>. Add the following attributes to the element:</li>
+</ol>
+<p><code translate="no" dir="ltr">AndroidManifest.xml</code> &gt; <code translate="no" dir="ltr">BubbleActivity</code></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only"><code translate="no" dir="ltr">&lt;activity
+    android:name="com.example.android.people.BubbleActivity"
+    android:allowEmbedded="true"
+    android:documentLaunchMode="always"
+    android:resizeableActivity="true"&gt;
+    ...
+    
+&lt;/activity&gt;
+</code></pre></devsite-code>
+<p>These 3 attributes are required:</p>
+<ul>
+<li><code translate="no" dir="ltr">allowEmbedded="true"</code> - The expanded Bubble is embedded in the System UI.</li>
+<li><code translate="no" dir="ltr">resizeableActivity="true"</code> - The expanded Bubble is resized by the System UI.</li>
+<li><code translate="no" dir="ltr">documentLaunchMode="always"</code> - The System UI needs this attribute so it can create multiple instances of this Activity.</li>
+</ul>
+<ol type="1" start="4">
+<li>Now run the app from Android Studio. Send a message to one of the contacts and quickly close the app. You should now see a notification with a Bubble icon at the bottom right corner.</li>
+</ol>
+<p class="image-container"><img alt="edee048016da3145.png" style="width: 232.50px" src="/static/codelabs/android-people/img/edee048016da3145.png" srcset="https://developer.android.com/static/codelabs/android-people/img/edee048016da3145_36.png 36w,https://developer.android.com/static/codelabs/android-people/img/edee048016da3145_48.png 48w,https://developer.android.com/static/codelabs/android-people/img/edee048016da3145_72.png 72w,https://developer.android.com/static/codelabs/android-people/img/edee048016da3145_96.png 96w,https://developer.android.com/static/codelabs/android-people/img/edee048016da3145_480.png 480w,https://developer.android.com/static/codelabs/android-people/img/edee048016da3145_720.png 720w,https://developer.android.com/static/codelabs/android-people/img/edee048016da3145_856.png 856w,https://developer.android.com/static/codelabs/android-people/img/edee048016da3145_960.png 960w,https://developer.android.com/static/codelabs/android-people/img/edee048016da3145_1440.png 1440w,https://developer.android.com/static/codelabs/android-people/img/edee048016da3145_1920.png 1920w,https://developer.android.com/static/codelabs/android-people/img/edee048016da3145_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p><em>A notification with a Bubble icon</em></p>
+<p>Tap on the Bubble icon, and you should be able to see the notification as a bubble. After you tap it once, notifications from the same contact will be displayed as a Bubble automatically. Tap on the bubble and it should display the expanded bubble.</p>
+<table class="vertical-rules">
+<tr><td colspan="1" rowspan="1"><p><img src="/static/codelabs/android-people/img/68d81b027c0aaad.png" srcset="https://developer.android.com/static/codelabs/android-people/img/68d81b027c0aaad_36.png 36w,https://developer.android.com/static/codelabs/android-people/img/68d81b027c0aaad_48.png 48w,https://developer.android.com/static/codelabs/android-people/img/68d81b027c0aaad_72.png 72w,https://developer.android.com/static/codelabs/android-people/img/68d81b027c0aaad_96.png 96w,https://developer.android.com/static/codelabs/android-people/img/68d81b027c0aaad_480.png 480w,https://developer.android.com/static/codelabs/android-people/img/68d81b027c0aaad_720.png 720w,https://developer.android.com/static/codelabs/android-people/img/68d81b027c0aaad_856.png 856w,https://developer.android.com/static/codelabs/android-people/img/68d81b027c0aaad_960.png 960w,https://developer.android.com/static/codelabs/android-people/img/68d81b027c0aaad_1440.png 1440w,https://developer.android.com/static/codelabs/android-people/img/68d81b027c0aaad_1920.png 1920w,https://developer.android.com/static/codelabs/android-people/img/68d81b027c0aaad_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"><em>Bubble</em></p>
+</td><td colspan="1" rowspan="1"><p><img src="/static/codelabs/android-people/img/5764eed37b9d5554.png" srcset="https://developer.android.com/static/codelabs/android-people/img/5764eed37b9d5554_36.png 36w,https://developer.android.com/static/codelabs/android-people/img/5764eed37b9d5554_48.png 48w,https://developer.android.com/static/codelabs/android-people/img/5764eed37b9d5554_72.png 72w,https://developer.android.com/static/codelabs/android-people/img/5764eed37b9d5554_96.png 96w,https://developer.android.com/static/codelabs/android-people/img/5764eed37b9d5554_480.png 480w,https://developer.android.com/static/codelabs/android-people/img/5764eed37b9d5554_720.png 720w,https://developer.android.com/static/codelabs/android-people/img/5764eed37b9d5554_856.png 856w,https://developer.android.com/static/codelabs/android-people/img/5764eed37b9d5554_960.png 960w,https://developer.android.com/static/codelabs/android-people/img/5764eed37b9d5554_1440.png 1440w,https://developer.android.com/static/codelabs/android-people/img/5764eed37b9d5554_1920.png 1920w,https://developer.android.com/static/codelabs/android-people/img/5764eed37b9d5554_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"><em>Expanded Bubble</em></p>
+</td></tr>
+</table>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Show a foreground bubble" duration="2" step="5">
+          
+          <h2 class="step-title" id="5" data-text="Show a foreground bubble" tabindex="-1">
+              6. Show a foreground bubble
+          </h2>
+          <p>Apps might sometimes want to show a bubble while they are in the foreground. In this app, we want to &#34;pop&#34; a chat screen as a bubble so that users can pin a chat they want to keep in mind for the time being. We already have a menu button for that on the chat screen.</p>
+<p class="image-container"><img alt="d039a867009642f9.png" style="width: 257.50px" src="/static/codelabs/android-people/img/d039a867009642f9.png" srcset="https://developer.android.com/static/codelabs/android-people/img/d039a867009642f9_36.png 36w,https://developer.android.com/static/codelabs/android-people/img/d039a867009642f9_48.png 48w,https://developer.android.com/static/codelabs/android-people/img/d039a867009642f9_72.png 72w,https://developer.android.com/static/codelabs/android-people/img/d039a867009642f9_96.png 96w,https://developer.android.com/static/codelabs/android-people/img/d039a867009642f9_480.png 480w,https://developer.android.com/static/codelabs/android-people/img/d039a867009642f9_720.png 720w,https://developer.android.com/static/codelabs/android-people/img/d039a867009642f9_856.png 856w,https://developer.android.com/static/codelabs/android-people/img/d039a867009642f9_960.png 960w,https://developer.android.com/static/codelabs/android-people/img/d039a867009642f9_1440.png 1440w,https://developer.android.com/static/codelabs/android-people/img/d039a867009642f9_1920.png 1920w,https://developer.android.com/static/codelabs/android-people/img/d039a867009642f9_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Open <code translate="no" dir="ltr">NotificationHelper.kt</code> again. Tapping on the menu button calls the <code translate="no" dir="ltr">showNotification</code> method with the parameter <code translate="no" dir="ltr">fromUser</code> set to true. That&#39;s when we want to show this notification as a foreground bubble.</p>
+<p>Add the following lines to the BubbleMetadata we added in the last section:</p>
+<p><code translate="no" dir="ltr">NotificationHelper.kt</code> &gt; <code translate="no" dir="ltr">showNotification()</code></p>
+<div></div><devsite-code><pre translate="no" dir="ltr" is-upgraded>Notification.BubbleMetadata
+    // ...
+    .setDesiredHeightResId(R.dimen.bubble_height)
+    .apply {
+        if (fromUser) {
+            setAutoExpandBubble(true)
+            setSuppressNotification(true)
+        }
+    }
+    .build()
+</pre></devsite-code>
+<p><code translate="no" dir="ltr">setAutoExpandBubble</code> causes the bubble to be displayed in its expanded state by default. We also want to suppress the initial notification by calling <code translate="no" dir="ltr">setSuppressNotification</code>. These flags only work when your app is in the foreground.</p>
+<p class="image-container"><img alt="f676f5332aaa50ee.png" style="width: 270.50px" src="/static/codelabs/android-people/img/f676f5332aaa50ee.png" srcset="https://developer.android.com/static/codelabs/android-people/img/f676f5332aaa50ee_36.png 36w,https://developer.android.com/static/codelabs/android-people/img/f676f5332aaa50ee_48.png 48w,https://developer.android.com/static/codelabs/android-people/img/f676f5332aaa50ee_72.png 72w,https://developer.android.com/static/codelabs/android-people/img/f676f5332aaa50ee_96.png 96w,https://developer.android.com/static/codelabs/android-people/img/f676f5332aaa50ee_480.png 480w,https://developer.android.com/static/codelabs/android-people/img/f676f5332aaa50ee_720.png 720w,https://developer.android.com/static/codelabs/android-people/img/f676f5332aaa50ee_856.png 856w,https://developer.android.com/static/codelabs/android-people/img/f676f5332aaa50ee_960.png 960w,https://developer.android.com/static/codelabs/android-people/img/f676f5332aaa50ee_1440.png 1440w,https://developer.android.com/static/codelabs/android-people/img/f676f5332aaa50ee_1920.png 1920w,https://developer.android.com/static/codelabs/android-people/img/f676f5332aaa50ee_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Congratulations!" duration="1" step="6">
+          
+          <h2 class="step-title" id="6" data-text="Congratulations!" tabindex="-1">
+              7. Congratulations!
+          </h2>
+          <p>Congratulations! You now know how to show a conversation notification and a bubble.</p>
+<p>To learn more, refer to  <a href="https://developer.android.com/guide/topics/ui/conversations" target="_blank">Conversations</a> and  <a href="https://developer.android.com/guide/topics/ui/bubbles" target="_blank">Bubbles</a>.</p>
+
+
+        </google-codelab-step>
+      
+    </google-codelab>
+  
+  
+
+  
+</div>
+
+  
+    
+    
+    
+  
+
+  <div class="devsite-floating-action-buttons"></div></article>
+
+
+<devsite-content-footer class="nocontent">
+  <p>Except as otherwise noted, the content of this page is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</a>, and code samples are licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see the <a href="https://developers.google.com/site-policies">Google Developers Site Policies</a>. Java is a registered trademark of Oracle and/or its affiliates.</p>
+  
+</devsite-content-footer>
+
+
+<devsite-notification
+>
+</devsite-notification>
+
+
+  
+<div class="devsite-content-data">
+  
+  
+    <template class="devsite-content-data-template">
+      [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[],null,[]]
+    </template>
+  
+</div>
+            
+          </devsite-content>
+        </main>
+        <devsite-footer-promos class="devsite-footer">
+          
+            
+
+<nav class="devsite-footer-promos nocontent" aria-label="Promotions">
+  <ul class="devsite-footer-promos-list">
+    
+    <li class="devsite-footer-promo">
+      <a href="//x.com/AndroidDev"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer X Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-x_dt.svg"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="/_static/android/images/logo-x.svg"
+                loading="lazy"
+                alt="X">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          X
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Follow @AndroidDev on X</div>
+    </li>
+    
+    <li class="devsite-footer-promo">
+      <a href="//www.youtube.com/user/androiddevelopers"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer YouTube Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-youtube_dt.svg"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="//www.gstatic.com/images/icons/material/product/2x/youtube_48dp.png"
+                loading="lazy"
+                alt="YouTube">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          YouTube
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Check out Android Developers on YouTube</div>
+    </li>
+    
+    <li class="devsite-footer-promo">
+      <a href="//www.linkedin.com/showcase/androiddev"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer LinkedIn Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-linkedin_dt.svg"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="/_static/android/images/logo-linkedin.svg"
+                loading="lazy"
+                alt="LinkedIn">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          LinkedIn
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Connect with the Android Developers community on LinkedIn</div>
+    </li>
+    
+  </ul>
+</nav>
+
+          
+        </devsite-footer-promos>
+        <devsite-footer-linkboxes class="devsite-footer">
+          
+            
+<nav class="devsite-footer-linkboxes nocontent" aria-label="Footer links">
+  
+  <ul class="devsite-footer-linkboxes-list">
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">More Android</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com/enterprise/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Android for Enterprise
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com/security-center/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Security
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//source.android.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Source
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/news"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            News
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//android-developers.googleblog.com/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+          
+            Blog
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/podcasts"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 7)"
+            >
+            
+              
+              
+            
+          
+            Podcasts
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Discover</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/games"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Gaming
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/ml"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Machine Learning
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/health-and-fitness"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Health & Fitness
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/media"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Camera & Media
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/privacy"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            Privacy
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/training/connectivity/5g"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+              
+              
+            
+          
+            5G
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Android Devices</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/large-screens"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Large screens
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/wear"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Wear OS
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/chrome-os"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            ChromeOS devices
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/cars"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Android for cars
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/tv"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+              
+              
+            
+          
+            Android TV
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Releases</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/15"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android 15
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/14"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Android 14
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/13"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Android 13
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/12"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Android 12
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/11"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            Android 11
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/10"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+          
+            Android 10
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/pie"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 7)"
+            >
+            
+              
+              
+            
+          
+            Pie
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Documentation and Downloads</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/studio/intro"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android Studio guide
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/guide"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Developers guides
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/reference"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            API reference
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/studio"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Download Studio
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/ndk"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+              
+              
+            
+          
+            Android NDK
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Support</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//issuetracker.google.com/issues/new?component=190923&amp;template=841312"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Report platform bug
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//issuetracker.google.com/issues/new?component=192697"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Report documentation bug
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//support.google.com/googleplay/android-developer"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Google Play support
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://g.co/userresearch/androiddeveloperfooter"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+              
+              
+            
+          
+            Join research studies
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+  
+</nav>
+          
+        </devsite-footer-linkboxes>
+        <devsite-footer-utility class="devsite-footer">
+          
+            
+
+<div class="devsite-footer-utility nocontent">
+  
+  
+  <nav class="devsite-footer-sites" aria-label="Other Google Developers websites">
+    <a href="https://developers.google.com/"
+       class="devsite-footer-sites-logo-link gc-analytics-event"
+       data-category="Site-Wide Custom Events"
+       data-label="Footer Google Developers Link">
+      <picture>
+        
+        <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-google-for-developers-dark-theme.svg"
+                media="(prefers-color-scheme: none)"
+                class="devsite-dark-theme">
+        
+        <img class="devsite-footer-sites-logo"
+             src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-google-for-developers.svg"
+             loading="lazy"
+             alt="Google Developers">
+      </picture>
+    </a>
+    <ul class="devsite-footer-sites-list">
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.android.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Android Link"
+         
+         >
+          Android
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.chrome.com/home"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Chrome Link"
+         
+         >
+          Chrome
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//firebase.google.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Firebase Link"
+         
+         >
+          Firebase
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//cloud.google.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Google Cloud Platform Link"
+         
+         >
+          Google Cloud Platform
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developers.google.com/products/"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer All products Link"
+         
+         >
+          All products
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  
+
+  
+  <nav class="devsite-footer-utility-links" aria-label="Utility links">
+    
+    <ul class="devsite-footer-utility-list">
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//policies.google.com/privacy"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Privacy link"
+         >
+          Privacy
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="/license"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer License link"
+         >
+          License
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="/distribute/marketing-tools/brand-guidelines"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Brand guidelines link"
+         >
+          Brand guidelines
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 glue-cookie-notification-bar-control">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="#"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Manage cookies link"
+         
+           aria-hidden="true"
+         >
+          Manage cookies
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 devsite-footer-utility-button">
+        
+        <span class="devsite-footer-utility-description">Get news and tips by email</span>
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="/updates"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Subscribe link"
+         >
+          Subscribe
+        </a>
+        
+      </li>
+      
+    </ul>
+    
+    
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+  </nav>
+</div>
+          
+        </devsite-footer-utility>
+        <devsite-panel>
+          
+        </devsite-panel>
+        
+      </section></section>
+    <devsite-sitemask></devsite-sitemask>
+    <devsite-snackbar></devsite-snackbar>
+    <devsite-tooltip ></devsite-tooltip>
+    <devsite-heading-link></devsite-heading-link>
+    <devsite-analytics>
+      
+        <script type="application/json" analytics>[]</script>
+<script type="application/json" tag-management>{&#34;at&#34;: &#34;True&#34;, &#34;ga4&#34;: [{&#34;id&#34;: &#34;G-QFRN08RN6E&#34;, &#34;purpose&#34;: 0}], &#34;ga4p&#34;: [{&#34;id&#34;: &#34;G-QFRN08RN6E&#34;, &#34;purpose&#34;: 0}], &#34;gtm&#34;: [], &#34;parameters&#34;: {&#34;internalUser&#34;: &#34;False&#34;, &#34;language&#34;: {&#34;machineTranslated&#34;: &#34;False&#34;, &#34;requested&#34;: &#34;en&#34;, &#34;served&#34;: &#34;en&#34;}, &#34;pageType&#34;: &#34;codelab&#34;, &#34;projectName&#34;: null, &#34;signedIn&#34;: &#34;False&#34;, &#34;tenant&#34;: &#34;android&#34;, &#34;recommendations&#34;: {&#34;sourcePage&#34;: &#34;&#34;, &#34;sourceType&#34;: 0, &#34;sourceRank&#34;: 0, &#34;sourceIdenticalDescriptions&#34;: 0, &#34;sourceTitleWords&#34;: 0, &#34;sourceDescriptionWords&#34;: 0, &#34;experiment&#34;: &#34;&#34;}, &#34;experiment&#34;: {&#34;ids&#34;: &#34;&#34;}}}</script>
+      
+    </devsite-analytics>
+    
+      <devsite-badger></devsite-badger>
+    
+    
+    
+<android-fully-clickable
+    target="
+        .android-case-study .devsite-landing-row-item,
+        .android-editorial-and-updates-cards .devsite-card-content-wrapper,
+        .android-editorial-and-updates-cards .devsite-landing-row-item,
+        .android-grouped-resources .devsite-landing-row-item,
+        .android-grouped-resources-contained--primary .devsite-landing-row-item,
+        .android-grouped-resources-contained--secondary .devsite-landing-row-item,
+        .android-grouped-resources-contained--tertiary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--primary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--secondary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--tertiary .devsite-landing-row-item,
+        .android-guide-cards .devsite-landing-row-item,
+        .android-illustrated-resources-index .devsite-landing-row-item,
+        .android-illustrated-resources-primary .devsite-landing-row-item,
+        .android-illustrated-resources-secondary .devsite-landing-row-item,
+        .android-illustrated-resources-secondary-small .devsite-landing-row-item,
+        .android-illustrated-resources-tertiary .devsite-landing-row-item,
+        .android-illustrated-resources-tertiary-small .devsite-landing-row-item,
+        .android-promo .devsite-landing-row-item,
+        .android-quick-link,
+        .android-samples .devsite-card-wrapper,
+        .fully-clickable"
+    watch=".android-editorial-and-updates-cards, .android-samples, devsite-content"></android-fully-clickable>
+    
+<script nonce="90sOW3tiMzlkVd91vkh8y5eTjgPCvD">
+  
+  (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+    t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+    E.parentNode.insertBefore(t,E);})(window, document, 'script',
+    'https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/js/app_loader.js', '[3,"en",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android","https://android-dot-devsite-v2-prod.appspot.com",1,null,["/_pwa/android/manifest.json","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/favicon.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png","https://fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,600italic,700,700italic|Roboto+Mono:400,500,700&display=swap"],1,null,[1,6,8,12,14,17,21,25,50,52,63,70,75,76,80,87,91,92,93,97,98,100,101,102,103,104,105,107,108,109,110,112,113,116,117,118,120,122,124,125,126,127,129,130,131,132,133,134,135,136,138,140,141,147,148,149,151,152,156,157,158,159,161,163,164,168,169,170,179,180,182,183,186,191,193,196],"AIzaSyAP-jjEJBzmIyKR4F-3XITp8yM9T1gEEI8","AIzaSyB6xiKGDR5O3Ak2okS4rLkauxGUG7XP0hg","developer.android.com","AIzaSyAQk0fBONSGUqCNznf6Krs82Ap1-NV6J4o","AIzaSyCCxcqdrZ_7QMeLCRY20bh_SXdAYqy70KY",null,null,null,["Concierge__enable_pushui","MiscFeatureFlags__enable_project_variables","MiscFeatureFlags__emergency_css","Profiles__enable_profile_collections","MiscFeatureFlags__enable_view_transitions","DevPro__enable_code_assist","Significatio__enable_by_tenant","MiscFeatureFlags__developers_footer_image","Profiles__enable_page_saving","MiscFeatureFlags__enable_appearance_cookies","Cloud__enable_cloudx_experiment_ids","MiscFeatureFlags__enable_explicit_template_dependencies","DevPro__enable_google_payments_buyflow","MiscFeatureFlags__enable_variable_operator_index_yaml","Profiles__enable_completequiz_endpoint","MiscFeatureFlags__enable_dark_theme","Profiles__enable_public_developer_profiles","Concierge__enable_actions_menu","MiscFeatureFlags__enable_framebox_badge_methods","DevPro__enable_developer_subscriptions","DevPro__enable_vertex_credit_card","Cloud__enable_cloud_dlp_service","MiscFeatureFlags__gdp_dashboard_reskin_enabled","TpcFeatures__enable_unmirrored_page_left_nav","DevPro__remove_eu_tax_intake_form","TpcFeatures__proxy_prod_host","DevPro__enable_nvidia_credits_card","DevPro__enable_free_benefits","DevPro__enable_google_one_card","EngEduTelemetry__enable_engedu_telemetry","Profiles__enable_release_notes_notifications","Cloud__enable_llm_concierge_chat","Profiles__enable_developer_profile_benefits_ui_redesign","Search__enable_ai_eligibility_checks","Profiles__enable_stripe_subscription_management","CloudShell__cloud_shell_button","Profiles__require_profile_eligibility_for_signin","DevPro__enable_embed_profile_creation","Search__enable_ai_search_summaries_for_all","Search__enable_page_map","Profiles__enable_playlist_community_acl","Cloud__enable_cloud_shell_fte_user_flow","MiscFeatureFlags__developers_footer_dark_image","Cloud__enable_free_trial_server_call","DevPro__enable_cloud_innovators_plus","Cloud__cache_serialized_dynamic_content","DevPro__enable_devpro_offers","MiscFeatureFlags__enable_variable_operator","DevPro__enable_enterprise","Cloud__enable_legacy_calculator_redirect","Concierge__enable_remove_info_panel_tags","Cloud__enable_cloud_shell","MiscFeatureFlags__enable_project_body_class","Profiles__enable_user_type","DevPro__enable_firebase_workspaces_card","Cloud__fast_free_trial","MiscFeatureFlags__enable_firebase_utm","Profiles__enable_dashboard_curated_recommendations","Profiles__enable_purchase_prompts","Profiles__enable_recognition_badges","Experiments__reqs_query_experiments","BookNav__enable_tenant_cache_key","Analytics__enable_clearcut_logging","Profiles__enable_callout_notifications","Profiles__enable_awarding_url","CloudShell__cloud_code_overflow_menu","Profiles__enable_completecodelab_endpoint","Profiles__enable_developer_profiles_callout","Search__enable_suggestions_from_borg","Profiles__enable_complete_playlist_endpoint","Profiles__enable_join_program_group_endpoint","Search__enable_dynamic_content_confidential_banner"],null,null,"AIzaSyBLEMok-5suZ67qRPzx0qUtbnLmyT_kCVE","https://developerscontentserving-pa.googleapis.com","AIzaSyCM4QpTRSqP5qI4Dvjt4OAScIN8sOUlO-k","https://developerscontentsearch-pa.googleapis.com",2,4,null,"https://developerprofiles-pa.googleapis.com",[3,"android","Android Developers","developer.android.com",null,"android-dot-devsite-v2-prod.appspot.com",null,null,[null,1,null,null,null,null,null,null,null,null,null,[1],null,null,null,null,null,null,[1],[1,null,null,[1,20],"/recommendations"],null,null,null,[1,null,1],[1,1,null,1,1]],null,[18,null,null,null,null,null,"/images/lockup.png","/images/touchicon-180.png",null,null,null,null,null,null,null,null,null,null,null,null,null,2,null,null,null,"/images/lockup-dark-theme.png",[]],[],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[6,1,14,15,20,22,23,28,29,37,43],null,[[null,null,1],[1,1]],[[null,null,null,null,null,null,null,[["G-QFRN08RN6E"],null,null,[["G-QFRN08RN6E",1]]],null,null,null,null,1],null,[[2,2],[1,1]]],null,4,null,null,null,null,null,null,null,null,null,null,null,null,null,"android.devsite.google"],null,"pk_live_5170syrHvgGVmSx9sBrnWtA5luvk9BwnVcvIi7HizpwauFG96WedXsuXh790rtij9AmGllqPtMLfhe2RSwD6Pn38V00uBCydV4m",1,null,"https://developerscontentinsights-pa.googleapis.com","AIzaSyCg-ZUslalsEbXMfIo9ZP8qufZgo3LSBDU","AIzaSyDxT0vkxnY_KeINtA4LSePJO-4MAZPMRsE","https://developers.googleapis.com",null,null,"AIzaSyBQom12tzI-rybN7Sf-KfeL4nwm-Rf7PmI\n",null,"https://developerslogging.googleapis.com"]')
+  
+</script>
+
+    <devsite-a11y-announce></devsite-a11y-announce>
+  </body>
+</html>

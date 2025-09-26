@@ -1,0 +1,2192 @@
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html 
+      lang="en"
+      dir="ltr">
+  <head>
+    <meta name="google-signin-client-id" content="721724668570-nbkv1cfusk7kk4eni4pjvepaus73b13t.apps.googleusercontent.com">
+    <meta name="google-signin-scope"
+          content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award">
+    <meta property="og:site_name" content="Android Developers">
+    <meta property="og:type" content="website"><meta name="theme-color" content="#34a853"><meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <link rel="manifest" href="/_pwa/android/manifest.json"
+          crossorigin="use-credentials">
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="//apis.google.com" crossorigin>
+    <link rel="preconnect" href="//www.google-analytics.com" crossorigin><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,600italic,700,700italic|Roboto+Mono:400,500,700&display=swap">
+      <link rel="stylesheet"
+            href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block"><link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/css/app.css">
+      
+        <link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/css/dark-theme.css" disabled>
+      <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/favicon.svg">
+    <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/touchicon-180.png"><link rel="canonical" href="https://developer.android.com/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose"><link rel="search" type="application/opensearchdescription+xml"
+            title="Android Developers" href="https://developer.android.com/s/opensearch.xml">
+      <link rel="alternate" hreflang="en"
+          href="https://developer.android.com/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose" /><link rel="alternate" hreflang="x-default" href="https://developer.android.com/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose" /><link rel="alternate" hreflang="zh-Hans"
+          href="https://developer.android.com/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose?hl=zh-cn" /><link rel="alternate" hreflang="zh-Hant"
+          href="https://developer.android.com/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose?hl=zh-tw" /><link rel="alternate" hreflang="fr"
+          href="https://developer.android.com/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose?hl=fr" /><link rel="alternate" hreflang="id"
+          href="https://developer.android.com/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose?hl=id" /><link rel="alternate" hreflang="ja"
+          href="https://developer.android.com/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose?hl=ja" /><link rel="alternate" hreflang="ko"
+          href="https://developer.android.com/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose?hl=ko" /><link rel="alternate" hreflang="pt-BR"
+          href="https://developer.android.com/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose?hl=pt-br" /><link rel="alternate" hreflang="es-419"
+          href="https://developer.android.com/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose?hl=es-419" /><link rel="alternate" hreflang="vi"
+          href="https://developer.android.com/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose?hl=vi" /><title>Add keyboard, mouse, trackpad, and stylus support with Jetpack Compose &nbsp;|&nbsp; Android Developers</title>
+
+<meta property="og:title" content="Add keyboard, mouse, trackpad, and stylus support with Jetpack Compose &nbsp;|&nbsp; Android Developers"><meta name="description" content="Learn how to develop your apps to support keyboard and pointing devices, such as mouse and trackpad, with Compose.">
+  <meta property="og:description" content="Learn how to develop your apps to support keyboard and pointing devices, such as mouse and trackpad, with Compose."><meta property="og:url" content="https://developer.android.com/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose"><meta property="og:locale" content="en">
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+
+    
+      <link rel="stylesheet" href="/extras.css"></head>
+  <body class=""
+        template="codelab"
+        theme="android-theme"
+        type="codelab"
+        
+        
+        appearance
+        
+        layout="docs"
+        
+        
+        
+        
+        display-toc
+        pending>
+  
+    <devsite-progress type="indeterminate" id="app-progress"></devsite-progress>
+  
+  
+    <a href="#main-content" class="skip-link button">
+      
+      Skip to main content
+    </a>
+    <section class="devsite-wrapper">
+      <devsite-cookie-notification-bar></devsite-cookie-notification-bar><devsite-header role="banner">
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-header--inner" data-nosnippet>
+  <div class="devsite-top-logo-row-wrapper-wrapper">
+    <div class="devsite-top-logo-row-wrapper">
+      <div class="devsite-top-logo-row">
+        <button type="button" id="devsite-hamburger-menu"
+          class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+          data-category="Site-Wide Custom Events"
+          data-label="Navigation menu button"
+          visually-hidden
+          aria-label="Open menu">
+        </button>
+        
+<div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="androidDevelopers" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-dark-theme.png"
+            media="(prefers-color-scheme: dark)"
+            class="devsite-dark-theme">
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png" class="devsite-site-logo" alt="Android Developers">
+  </picture>
+  
+</a>
+
+
+
+</div>
+        <div class="devsite-top-logo-row-middle">
+          <div class="devsite-header-upper-tabs">
+            
+           </div>
+          
+<devsite-search
+    enable-signin
+    enable-search
+    enable-suggestions
+      enable-query-completion
+    
+    enable-search-summaries
+    
+    tenant-name="Android Developers"
+    
+    
+    
+    
+    
+    >
+  <form class="devsite-search-form" action="https://developer.android.com/s/results" method="GET">
+    <div class="devsite-search-container">
+      <button type="button"
+              search-open
+              class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+              
+              aria-label="Open search"></button>
+      <div class="devsite-searchbox">
+        <input
+          aria-activedescendant=""
+          aria-autocomplete="list"
+          
+          aria-label="Search"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          autocomplete="off"
+          class="devsite-search-field devsite-search-query"
+          name="q"
+          
+          placeholder="Search"
+          role="combobox"
+          type="text"
+          value=""
+          >
+          <div class="devsite-search-image material-icons" aria-hidden="true">
+            
+              <svg class="devsite-search-ai-image" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_6641_386)">
+                    <path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14167 15.375 4.875 14.125C3.625 12.8583 3 11.3167 3 9.5C3 7.68333 3.625 6.15 4.875 4.9C6.14167 3.63333 7.68333 3 9.5 3C10.0167 3 10.5167 3.05833 11 3.175C11.4833 3.275 11.9417 3.43333 12.375 3.65L10.825 5.2C10.6083 5.13333 10.3917 5.08333 10.175 5.05C9.95833 5.01667 9.73333 5 9.5 5C8.25 5 7.18333 5.44167 6.3 6.325C5.43333 7.19167 5 8.25 5 9.5C5 10.75 5.43333 11.8167 6.3 12.7C7.18333 13.5667 8.25 14 9.5 14C10.6667 14 11.6667 13.625 12.5 12.875C13.35 12.1083 13.8417 11.15 13.975 10H15.975C15.925 10.6333 15.7833 11.2333 15.55 11.8C15.3333 12.3667 15.05 12.8667 14.7 13.3L21 19.6L19.6 21ZM17.5 12C17.5 10.4667 16.9667 9.16667 15.9 8.1C14.8333 7.03333 13.5333 6.5 12 6.5C13.5333 6.5 14.8333 5.96667 15.9 4.9C16.9667 3.83333 17.5 2.53333 17.5 0.999999C17.5 2.53333 18.0333 3.83333 19.1 4.9C20.1667 5.96667 21.4667 6.5 23 6.5C21.4667 6.5 20.1667 7.03333 19.1 8.1C18.0333 9.16667 17.5 10.4667 17.5 12Z" fill="#5F6368"/>
+                  </g>
+                <defs>
+                <clipPath id="clip0_6641_386">
+                <rect width="24" height="24" fill="white"/>
+                </clipPath>
+                </defs>
+              </svg>
+            
+          </div>
+          <div class="devsite-search-shortcut-icon-container" aria-hidden="true">
+            <kbd class="devsite-search-shortcut-icon">/</kbd>
+          </div>
+      </div>
+    </div>
+  </form>
+  <button type="button"
+          search-close
+          class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+          
+          aria-label="Close search"></button>
+</devsite-search>
+
+        </div>
+
+        
+
+          
+
+          
+
+          <devsite-appearance-selector></devsite-appearance-selector>
+
+          
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+
+          
+            <a class="devsite-header-link devsite-top-button button gc-analytics-event "
+    href="https://developer.android.com/studio"
+    data-category="Site-Wide Custom Events"
+    data-label="Site header link: Android Studio"
+    >
+  Android Studio
+</a>
+          
+
+        
+
+        
+          <devsite-user 
+                        
+                        
+                          enable-profiles
+                        
+                        
+                        id="devsite-user">
+            
+              
+              <span class="button devsite-top-button" aria-hidden="true" visually-hidden>Sign in</span>
+            
+          </devsite-user>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
+  
+</devsite-header>
+      <devsite-book-nav scrollbars hidden>
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-book-nav-filter"
+     hidden>
+  <span class="filter-list-icon material-icons" aria-hidden="true"></span>
+  <input type="text"
+         placeholder="Filter"
+         
+         aria-label="Type to filter"
+         role="searchbox">
+  
+  <span class="filter-clear-button hidden"
+        data-title="Clear filter"
+        aria-label="Clear filter"
+        role="button"
+        tabindex="0"></span>
+</div>
+
+<nav class="devsite-book-nav devsite-nav nocontent"
+     aria-label="Side menu">
+  <div class="devsite-mobile-header">
+    <button type="button"
+            id="devsite-close-nav"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Close navigation"
+            aria-label="Close navigation">
+    </button>
+    <div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="androidDevelopers" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-dark-theme.png"
+            media="(prefers-color-scheme: dark)"
+            class="devsite-dark-theme">
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png" class="devsite-site-logo" alt="Android Developers">
+  </picture>
+  
+</a>
+
+
+</div>
+  </div>
+
+  <div class="devsite-book-nav-wrapper">
+    <div class="devsite-mobile-nav-top">
+      
+        <ul class="devsite-nav-list">
+          
+          
+    
+    
+<li class="devsite-nav-item">
+
+  
+  <a href="/studio"
+    
+       class="devsite-nav-title gc-analytics-event "
+    
+
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Android Studio"
+     track-type="navMenu"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Android Studio
+   </span>
+    
+  
+  </a>
+  
+
+</li>
+
+  
+          
+        </ul>
+      
+    </div>
+    
+  </div>
+</nav>
+        
+      </devsite-book-nav>
+      <section id="gc-wrapper">
+        <main role="main" id="main-content" class="devsite-main-content"
+            
+              
+              has-sidebar
+            >
+          <div class="devsite-sidebar">
+            <div class="devsite-sidebar-content">
+                
+                <devsite-toc class="devsite-nav"
+                            role="navigation"
+                            aria-label="On this page"
+                            depth="1"
+                            scrollbars
+                  ></devsite-toc>
+                <devsite-recommendations-sidebar class="nocontent devsite-nav">
+                </devsite-recommendations-sidebar>
+            </div>
+          </div>
+          <devsite-content>
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="devsite-article"><style>
+      body {
+        transition: opacity ease-in 0.2s;
+      }
+
+      body[unresolved] {
+        opacity: 0;
+        display: block;
+        overflow: hidden;
+        position: relative;
+      }
+      </style>
+  
+  
+  
+  
+  
+
+  <div class="devsite-article-meta nocontent" role="navigation">
+    
+    
+    <ul class="devsite-breadcrumb-list"
+  >
+  
+</ul>
+    
+  </div>
+  
+    <h1 class="devsite-page-title" tabindex="-1">
+      Add keyboard, mouse, trackpad, and stylus support with Jetpack Compose<div class="devsite-actions" hidden data-nosnippet><devsite-feature-tooltip
+      ack-key="AckCollectionsBookmarkTooltipDismiss"
+      analytics-category="Site-Wide Custom Events"
+      analytics-action-show="Callout Profile displayed"
+      analytics-action-close="Callout Profile dismissed"
+      analytics-label="Create Collection Callout"
+      class="devsite-page-bookmark-tooltip nocontent"
+      dismiss-button="true"
+      id="devsite-collections-dropdown"
+      
+      dismiss-button-text="Dismiss"
+
+      
+      close-button-text="Got it">
+
+    
+    
+      <devsite-bookmark></devsite-bookmark>
+    
+
+    <span slot="popout-heading">
+      
+      Stay organized with collections
+    </span>
+    <span slot="popout-contents">
+      
+      Save and categorize content based on your preferences.
+    </span>
+  </devsite-feature-tooltip></div>
+  
+      
+    </h1>
+  
+
+  <devsite-toc class="devsite-nav"
+    depth="1"
+    devsite-toc-embedded
+    >
+  </devsite-toc>
+  
+    
+  <div class="devsite-article-body clearfix
+  ">
+
+  
+    
+    
+    <google-codelab-analytics gaid="UA-49880327-14" ga4id="G-JTFZSJVVVZ"></google-codelab-analytics>
+    <google-codelab codelab-gaid=""
+                    codelab-ga4id=""
+                    doc-id="1rG749bF35cieO1r0HEymHUxIEnNboRRLxPcFLiVwsnY"
+                    id="large-screens/add-keyboard-and-mouse-support-with-compose"
+                    title="Add keyboard, mouse, trackpad, and stylus support with Jetpack Compose"
+                    no-tooltip=""
+                    environment="web"
+                    category=""
+                    feedback-link="https://github.com/android/large-screen-codelabs/issues"
+                    layout="paginated"
+                    >
+      
+        <google-codelab-step label="Introduction" duration="2" step="0">
+          
+            <google-codelab-about codelab-title="Add keyboard, mouse, trackpad, and stylus support with Jetpack Compose"
+                                  authors="A Googler"
+                                  last-updated="2024-07-26T00:53:00Z"
+                                  duration="69">
+            </google-codelab-about>
+          
+          <h2 class="step-title" id="0" data-text="Introduction" tabindex="-1">
+              1. Introduction
+          </h2>
+          <p>Your app is available for large-screen devices–such as tablets, foldables, and ChromeOS devices–when the app is available for standard phones.</p>
+<p>Users expect your app to offer a user experience on large screens that&#39;s equivalent to, or better than, the UX on small screens.</p>
+<p>Users are also more likely to use your app with a physical keyboard and pointing device—such as a mouse or trackpad—on large screen devices. Some large screen devices, such as Chromebooks, include a physical keyboard and pointing device. Others connect to USB or Bluetooth keyboards and pointing devices. Users expect to be able to  accomplish the same tasks when they&#39;re using your app with a physical keyboard and pointing device as they can with touch screens.</p>
+<aside class="special"><p><strong>Note:</strong> In this codelab, the pointing device is called <em>mouse</em> for simplicity. Your app handles mouse, trackpad, and stylus in the same manner.</p>
+</aside>
+<h2 is-upgraded id="prerequisites" data-text="Prerequisites" tabindex="-1"><strong>Prerequisites</strong></h2>
+<ul>
+<li>Experience building apps with Compose</li>
+<li>Basic knowledge of Kotlin, including lambdas and coroutines</li>
+</ul>
+<h2 is-upgraded id="what-you-build" data-text="What you build" tabindex="-1"><strong>What you build</strong></h2>
+<p>You add support for physical keyboard and mouse to a Jetpack Compose-based app. The steps consist of the following:</p>
+<ol type="1">
+<li>Check the app with the criteria defined in  <a href="https://developer.android.com/docs/quality-guidelines/large-screen-app-quality" target="_blank">the large screen app quality guidelines</a></li>
+<li>Review the audit result and figure out the issues related to physical keyboard and mouse support</li>
+<li>Fix the issues</li>
+</ol>
+<p>More specifically, you will update the sample app with the following:</p>
+<ul>
+<li>Keyboard navigation</li>
+<li>Keyboard shortcut to scroll down and up</li>
+<li>Keyboard Shortcuts Helper</li>
+</ul>
+<h2 is-upgraded id="what-you-learn" data-text="What you learn" tabindex="-1"><strong>What you learn</strong></h2>
+<ul>
+<li>How to audit your app for virtual device support</li>
+<li>How to manage keyboard navigation with Compose</li>
+<li>How to add keyboard shortcuts with Compose</li>
+</ul>
+<h2 is-upgraded id="what-you-need" data-text="What you need" tabindex="-1"><strong>What you need</strong></h2>
+<ul>
+<li>Android Studio Hedgehog or newer</li>
+<li>Any of the following devices to run the sample app:</li>
+<li>A large screen device with a physical keyboard and mouse</li>
+<li>An Android virtual device with a profile in the Desktop device definition category</li>
+</ul>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Set up" duration="1" step="1">
+          
+          <h2 class="step-title" id="1" data-text="Set up" tabindex="-1">
+              2. Set up
+          </h2>
+          <ol type="1">
+<li>Clone the large-screen-codelabs GitHub repository:</li>
+</ol>
+<div></div><devsite-code><pre translate="no" dir="ltr" is-upgraded>git clone https://github.com/android/large-screen-codelabs
+</pre></devsite-code>
+<p>Alternatively, you can download and unarchive the large-screen-codelabs zip file:</p>
+<p><a href="https://github.com/android/large-screen-codelabs/archive/refs/heads/main.zip" target="_blank"><button class="button button-primary button-with-icon"><span class="material-icons" aria-hidden="true" translate="no">file_download</span>Download source code</button></a></p>
+<ol type="1" start="2">
+<li>Navigate to the <code translate="no" dir="ltr">add-keyboard-and-mouse-support-with-compose</code> folder.</li>
+<li>In Android Studio, open the project. The <code translate="no" dir="ltr">add-keyboard-and-cursor-support-with-compose</code> folder contains one project.</li>
+<li>If you don&#39;t have an Android tablet or foldable devices, or a ChromeOS device with a physical keyboard and mouse, open <strong>Device Manager</strong> in Android Studio and then create any of the virtual devices in the <strong>Desktop</strong> category.</li>
+</ol>
+<p class="image-container"><img alt="Virtual devices in the Desktop category" style="width: 624.00px" src="/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/3bd32b0e196c0dc.png" srcset="https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/3bd32b0e196c0dc_36.png 36w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/3bd32b0e196c0dc_48.png 48w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/3bd32b0e196c0dc_72.png 72w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/3bd32b0e196c0dc_96.png 96w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/3bd32b0e196c0dc_480.png 480w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/3bd32b0e196c0dc_720.png 720w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/3bd32b0e196c0dc_856.png 856w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/3bd32b0e196c0dc_960.png 960w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/3bd32b0e196c0dc_1440.png 1440w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/3bd32b0e196c0dc_1920.png 1920w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/3bd32b0e196c0dc_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Explore the app" duration="5" step="2">
+          
+          <h2 class="step-title" id="2" data-text="Explore the app" tabindex="-1">
+              3. Explore the app
+          </h2>
+          <p>The sample app displays a list of articles. Users are able to read an article selected from the list.</p>
+<p>The app adaptively updates the layout according to the app&#39;s window width. There are three window classes to categorize the app&#39;s window width: compact, medium, and expanded.</p>
+<p class="image-container"><img alt="Window size classes on window width: compact, medium, and expanded. The application window with is smaller than  600 dp, the window width is categorized as compact. The window width is categorized as expanded when its width is greater than or equal to 640 dp. The winow does not belong to compact or expanded, its window size class is medium." style="width: 624.00px" src="/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/b59767a9f3293e0c.png" srcset="https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/b59767a9f3293e0c_36.png 36w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/b59767a9f3293e0c_48.png 48w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/b59767a9f3293e0c_72.png 72w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/b59767a9f3293e0c_96.png 96w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/b59767a9f3293e0c_480.png 480w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/b59767a9f3293e0c_720.png 720w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/b59767a9f3293e0c_856.png 856w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/b59767a9f3293e0c_960.png 960w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/b59767a9f3293e0c_1440.png 1440w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/b59767a9f3293e0c_1920.png 1920w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/b59767a9f3293e0c_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<h2 is-upgraded id="layout-for-the-compact-and-medium-window-size-classes" data-text="Layout for the compact and medium window size classes" tabindex="-1"><strong>Layout for the compact and medium window size classes</strong></h2>
+<p>The app uses a single pane layout. On the home screen, the app shows a list of articles. When the user selects an article from the list, a screen transition happens and the article is displayed.</p>
+<p>The global navigation is implemented with a  <a href="https://m3.material.io/components/navigation-drawer/overview" target="_blank">navigation drawer</a>.</p>
+<p class="image-container"><img alt="The  app is running on a Desktop emulator in a compact window. The article list is displayed." style="width: 624.00px" src="/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/7950af18174fbabd.png" srcset="https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/7950af18174fbabd_36.png 36w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/7950af18174fbabd_48.png 48w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/7950af18174fbabd_72.png 72w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/7950af18174fbabd_96.png 96w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/7950af18174fbabd_480.png 480w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/7950af18174fbabd_720.png 720w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/7950af18174fbabd_856.png 856w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/7950af18174fbabd_960.png 960w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/7950af18174fbabd_1440.png 1440w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/7950af18174fbabd_1920.png 1920w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/7950af18174fbabd_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<h2 is-upgraded id="layout-for-the-expanded-window-size-class" data-text="Layout for the expanded window size class" tabindex="-1"><strong>Layout for the expanded window size class</strong></h2>
+<p>The app uses a  <a href="https://developer.android.com/guide/topics/large-screens/large-screen-canonical-layouts#list-detail" target="_blank">list-detail layout</a>. The list pane shows an article list. The details pane shows the selected article.</p>
+<p>The global navigation is implemented with a  <a href="https://m3.material.io/components/navigation-rail/overview" target="_blank">navigation rail</a>.</p>
+<p class="image-container"><img alt="The app is running on a Desktop emulator in expanded window size class. " style="width: 624.00px" src="/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/d2641c1cda3914c6.png" srcset="https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/d2641c1cda3914c6_36.png 36w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/d2641c1cda3914c6_48.png 48w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/d2641c1cda3914c6_72.png 72w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/d2641c1cda3914c6_96.png 96w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/d2641c1cda3914c6_480.png 480w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/d2641c1cda3914c6_720.png 720w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/d2641c1cda3914c6_856.png 856w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/d2641c1cda3914c6_960.png 960w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/d2641c1cda3914c6_1440.png 1440w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/d2641c1cda3914c6_1920.png 1920w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/d2641c1cda3914c6_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Background" duration="10" step="3">
+          
+          <h2 class="step-title" id="3" data-text="Background" tabindex="-1">
+              4. Background
+          </h2>
+          <p>Compose provides a variety of APIs to help your app handle events from the physical keyboard and mouse. Some of the APIs enable keyboard and mouse event handling that&#39;s similar to handling touch events. As a result,  for many use cases, your app supports the physical keyboard and mouse without any development effort on your part.</p>
+<p>A typical example is the  <a href="https://developer.android.com/reference/kotlin/androidx/compose/foundation/package-summary?_gl=1*2epc3*_up*MQ..*_ga*MTc5ODEyOTg2NS4xNzA5MDgyMTk4*_ga_6HH9YJMN9M*MTcwOTA4MjE5Ny4xLjAuMTcwOTA4MjE5Ny4wLjAuMA..#(androidx.compose.ui.Modifier).clickable(kotlin.Boolean,kotlin.String,androidx.compose.ui.semantics.Role,kotlin.Function0)" target="_blank"><code translate="no" dir="ltr">clickable</code></a> modifier, which allows click detection. A finger tap is detected as a click. A mouse click and pressing the <code translate="no" dir="ltr">Enter</code> key are also detected as clicks. Your app enables users to interact with components regardless of the input device if your app detects clicks with the <code translate="no" dir="ltr">clickable</code> modifier.</p>
+<p>But, despite this high level of API support, some development effort is still required for physical keyboard and mouse support. One reason is that you need to find out the corner cases by testing your app. Some effort is also required to reduce the user friction that comes from the characteristics of the devices, such as the following:</p>
+<ul>
+<li>Users don&#39;t understand which components they can click</li>
+<li>Users can&#39;t move the keyboard focus as they expect</li>
+<li>Users can&#39;t scroll up or down when they are using the physical keyboard</li>
+</ul>
+<h2 is-upgraded id="keyboard-focus" data-text="Keyboard focus" tabindex="-1"><strong>Keyboard focus</strong></h2>
+<p>Keyboard focus is the main difference between the interaction with the physical keyboard and screen touches. Users can tap any component on the screen regardless of the position of the component they previously touched. In contrast, with keyboards, users need to select the component to interact with before the actual interaction starts. The selection is called <em>keyboard focus</em>.</p>
+<p>Users can move the keyboard focus with the <code translate="no" dir="ltr">Tab</code> key and direction (or arrow) keys. The keyboard focus  <a href="https://developer.android.com/jetpack/compose/touch-input/focus" target="_blank">moves only to the neighboring components by default</a>.</p>
+<p>Most of the friction for the physical keyboard is related to keyboard focus. The following list shows the typical issues:</p>
+<ul>
+<li>Users can&#39;t move the keyboard focus to the component they want to interact with</li>
+<li>The component does not detect clicks when users hit the <code translate="no" dir="ltr">Enter</code> key</li>
+<li>The keyboard focus moves differently from the user&#39;s expectation.</li>
+<li>Users need to hit many keys to move the keyboard focus to the component they want to interact with after screen transitions.</li>
+<li>Users aren&#39;t able to determine which component has keyboard focus as no visual cue indicates the keyboard focus</li>
+<li>Users aren&#39;t able to determine the default component that has focus when navigating to a new screen</li>
+</ul>
+<p>Visual indication of the keyboard focus is important, otherwise users can get lost in your app and they won&#39;t understand what happens when they hit the <code translate="no" dir="ltr">Enter</code> key. Highlighting is a typical visual cue to indicate keyboard focus. Users can see that the button in the right card has keyboard focus because the button is highlighted.</p>
+<p class="image-container"><img alt="53ee7662b764f2dd.png" style="width: 624.00px" src="/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/53ee7662b764f2dd.png" srcset="https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/53ee7662b764f2dd_36.png 36w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/53ee7662b764f2dd_48.png 48w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/53ee7662b764f2dd_72.png 72w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/53ee7662b764f2dd_96.png 96w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/53ee7662b764f2dd_480.png 480w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/53ee7662b764f2dd_720.png 720w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/53ee7662b764f2dd_856.png 856w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/53ee7662b764f2dd_960.png 960w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/53ee7662b764f2dd_1440.png 1440w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/53ee7662b764f2dd_1920.png 1920w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/53ee7662b764f2dd_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<h2 is-upgraded id="keyboard-shortcuts" data-text="Keyboard shortcuts" tabindex="-1">Keyboard shortcuts</h2>
+<p>Users expect that they can use common keyboard shortcuts when they are using your app with a physical keyboard. Some components enable standard keyboard shortcuts by default.  <a href="https://developer.android.com/reference/kotlin/androidx/compose/foundation/text/package-summary?_gl=1*1o0rex2*_up*MQ..*_ga*NTcyNzE1MjQxLjE3MDkwODg5NDY.*_ga_6HH9YJMN9M*MTcwOTA4ODk0Ni4xLjAuMTcwOTA4ODk0Ni4wLjAuMA..#BasicTextField(androidx.compose.ui.text.input.TextFieldValue,kotlin.Function1,androidx.compose.ui.Modifier,kotlin.Boolean,kotlin.Boolean,androidx.compose.ui.text.TextStyle,androidx.compose.foundation.text.KeyboardOptions,androidx.compose.foundation.text.KeyboardActions,kotlin.Boolean,kotlin.Int,kotlin.Int,androidx.compose.ui.text.input.VisualTransformation,kotlin.Function1,androidx.compose.foundation.interaction.MutableInteractionSource,androidx.compose.ui.graphics.Brush,kotlin.Function1)" target="_blank"><code translate="no" dir="ltr">BasicTextField</code></a> is a typical example. It enables users to use standard text-editing keyboard shortcuts, including the following:</p>
+<table class="vertical-rules">
+<tr><td colspan="1" rowspan="1"><p><strong>Shortcut</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>Feature</strong></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><code translate="no" dir="ltr">Ctrl+C</code></p>
+</td><td colspan="1" rowspan="1"><p>Copy</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><code translate="no" dir="ltr">Ctrl+X</code></p>
+</td><td colspan="1" rowspan="1"><p>Cut</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><code translate="no" dir="ltr">Ctrl+V</code></p>
+</td><td colspan="1" rowspan="1"><p>Paste</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><code translate="no" dir="ltr">Ctrl+Z</code></p>
+</td><td colspan="1" rowspan="1"><p>Undo</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><code translate="no" dir="ltr">Ctrl+Y</code></p>
+</td><td colspan="1" rowspan="1"><p>Redo</p>
+</td></tr>
+</table>
+<p>Your app can add keyboard shortcuts by handling  <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/input/key/KeyEvent" target="_blank">key events</a>. The  <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/input/key/package-summary?_gl=1*146ntp4*_up*MQ..*_ga*MTg2OTA4OTUzNC4xNzA5MDg5MTU0*_ga_6HH9YJMN9M*MTcwOTA4OTE1NC4xLjAuMTcwOTA4OTE1NC4wLjAuMA..#(androidx.compose.ui.Modifier).onKeyEvent(kotlin.Function1)" target="_blank"><code translate="no" dir="ltr">onKeyEvent</code></a> modifier and the  <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/input/key/package-summary?_gl=1*146ntp4*_up*MQ..*_ga*MTg2OTA4OTUzNC4xNzA5MDg5MTU0*_ga_6HH9YJMN9M*MTcwOTA4OTE1NC4xLjAuMTcwOTA4OTE1NC4wLjAuMA..#(androidx.compose.ui.Modifier).onPreviewKeyEvent(kotlin.Function1)" target="_blank"><code translate="no" dir="ltr">onPreviewKeyEvent</code></a> modifier allow you to monitor the key events.</p>
+<h2 is-upgraded id="pointing-devices:-mouse,-trackpad,-and-stylus" data-text="Pointing devices: Mouse, trackpad, and stylus" tabindex="-1">Pointing devices: M<strong>ouse, trackpad, and stylus</strong></h2>
+<p>Your app can handle mouse, trackpad, and stylus in the same manner. A tap on the trackpad is detected as a click with the <code translate="no" dir="ltr">clickable</code> modifier. A tap with the stylus is also detected as a click.</p>
+<p>It&#39;s important for users to be able to visually understand if they can click a component or not. That is why  <a href="https://developer.android.com/docs/quality-guidelines/large-screen-app-quality#LS-I9" target="_blank">hover state</a> is mentioned in the large screen app quality guidelines.</p>
+<p>Material3 Components support hover state by default. Material 3 offers  <a href="https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary?_gl=1*1v0hb5t*_up*MQ..*_ga*ODk4MjQxNjcuMTcwOTA5MDY3Ng..*_ga_6HH9YJMN9M*MTcwOTA5MDY3Ni4xLjAuMTcwOTA5MDY3Ni4wLjAuMA..#ripple(kotlin.Boolean,androidx.compose.ui.unit.Dp,androidx.compose.ui.graphics.Color)" target="_blank">the visual effect for hover state</a>. You can apply it to your interactive component with the  <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/Modifier?_gl=1*1ui505j*_up*MQ..*_ga*NjgxNjM5OTYzLjE3MDkwOTA4MTk.*_ga_6HH9YJMN9M*MTcwOTA5MDgxOS4xLjAuMTcwOTA5MDgxOS4wLjAuMA..#(androidx.compose.ui.Modifier).indication(androidx.compose.foundation.interaction.InteractionSource,androidx.compose.foundation.Indication)" target="_blank"><code translate="no" dir="ltr">indication</code></a> modifier.</p>
+<h2 is-upgraded id="scrolls" data-text="Scrolls" tabindex="-1"><strong>Scrolls</strong></h2>
+<p>Scrollable containers support mouse-wheel scrolling, scrolling gestures on the trackpad, and scrolling with the <code translate="no" dir="ltr">Page up</code> and <code translate="no" dir="ltr">Page down</code> keys by default.</p>
+<p>For horizontal scrolling, your app would be very user friendly if it showed left and right arrow buttons in hover state so that users can scroll the content by clicking the buttons.</p>
+<p class="image-container"><img alt="17feb4d3bf08831e.png" style="width: 521.23px" src="/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/17feb4d3bf08831e.png" srcset="https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/17feb4d3bf08831e_36.png 36w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/17feb4d3bf08831e_48.png 48w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/17feb4d3bf08831e_72.png 72w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/17feb4d3bf08831e_96.png 96w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/17feb4d3bf08831e_480.png 480w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/17feb4d3bf08831e_720.png 720w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/17feb4d3bf08831e_856.png 856w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/17feb4d3bf08831e_960.png 960w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/17feb4d3bf08831e_1440.png 1440w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/17feb4d3bf08831e_1920.png 1920w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/17feb4d3bf08831e_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<h2 is-upgraded id="configuration-changes-by-device-attachment-and-detachment" data-text="Configuration changes by device attachment and detachment" tabindex="-1"><strong>Configuration changes by device attachment and detachment</strong></h2>
+<p>Users can attach or detach a keyboard and mouse while your app is running. Users might connect a physical keyboard when they see a text field to input a large amount of text. A Bluetooth-connected mouse disconnects as the mouse goes into sleep mode. A USB-connected keyboard might be detached by accident.</p>
+<p>The attachment or detachment of peripheral hardware triggers  <a href="https://developer.android.com/guide/topics/resources/runtime-changes" target="_blank">configuration changes</a>. Your app should retain its state throughout the configuration changes. For more information, see  <a href="https://developer.android.com/topic/libraries/architecture/saving-states" target="_blank">Save UI states</a>.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Check the sample app with keyboard and mouse" duration="20" step="4">
+          
+          <h2 class="step-title" id="4" data-text="Check the sample app with keyboard and mouse" tabindex="-1">
+              5. Check the sample app with keyboard and mouse
+          </h2>
+          <p>To begin the development effort for physical keyboard and mouse support, start the sample app and confirm the following:</p>
+<ul>
+<li>Users should be able to move the keyboard focus to all interactive components</li>
+<li>Users should be able to &#34;click&#34; the focused component with the <code translate="no" dir="ltr">Enter</code> key</li>
+<li>Interactive components should show an indication when they get keyboard focus</li>
+<li>The keyboard focus moves as users expect (that is, according to established conventions) using the <code translate="no" dir="ltr">Tab</code> key, <code translate="no" dir="ltr">Shift+Tab</code>, and directional (arrow) keys</li>
+<li>Interactive components should have a hover state</li>
+<li>Users should be able to click the interactive components</li>
+<li>Context menu appears by right-clicking (secondary control-clicking) on the appropriate components, such as the ones where the context menu shows up with a long tap or text selection</li>
+</ul>
+<p>You should go through all items twice in this codelab: once for the single-pane layout and once for the list-detail layout.</p>
+<aside class="warning"><p><strong>Caution</strong>: In the <strong>Running Devices</strong> window in Android Studio,  enable keyboard and mouse input for the running emulator by selecting <strong>Hardware Input</strong> mode. Otherwise, the app won&#39;t receive all events triggered by the keyboard and mouse.</p>
+<p class="image-container"><img alt="Hardware Input mode is enabled on the Running Devices window. " style="width: 444.00px" src="/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/ab1705c291aa340b.png" srcset="https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/ab1705c291aa340b_36.png 36w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/ab1705c291aa340b_48.png 48w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/ab1705c291aa340b_72.png 72w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/ab1705c291aa340b_96.png 96w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/ab1705c291aa340b_480.png 480w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/ab1705c291aa340b_720.png 720w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/ab1705c291aa340b_856.png 856w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/ab1705c291aa340b_960.png 960w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/ab1705c291aa340b_1440.png 1440w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/ab1705c291aa340b_1920.png 1920w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/ab1705c291aa340b_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+</aside>
+<h2 is-upgraded id="issues-to-fix-in-this-codelab" data-text="Issues to fix in this codelab" tabindex="-1"><strong>Issues to fix in this codelab</strong></h2>
+<p>You should find issues. In this codelab, you fix the following:</p>
+<ul>
+<li>Users can&#39;t read the entire article with only the physical keyboard because they cannot scroll down the article</li>
+<li>Users can&#39;t determine whether the detail pane has keyboard focus or not</li>
+</ul>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Enable users to read the entire article in the details pane" duration="20" step="5">
+          
+          <h2 class="step-title" id="5" data-text="Enable users to read the entire article in the details pane" tabindex="-1">
+              6. Enable users to read the entire article in the details pane
+          </h2>
+          <p>The detail pane shows the selected article. Some articles are too long to read the entire article without scrolling. However, users are unable to scroll up and down the article with only the physical keyboard.</p>
+<p class="image-container"><img alt="4627289223e5cfbc.gif" style="width: 624.00px" src="/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/4627289223e5cfbc.gif"></p>
+<p>Scrollable containers, such as <code translate="no" dir="ltr">LazyColumn</code>, enable users to scroll down with the <code translate="no" dir="ltr">Page down</code> key. The root cause of the issue is that users cannot move keyboard focus to the detail pane.</p>
+<p>The component should be able to get keyboard focus to receive a keyboard event. The  <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/Modifier#(androidx.compose.ui.Modifier).focusable(kotlin.Boolean,androidx.compose.foundation.interaction.MutableInteractionSource)" target="_blank"><code translate="no" dir="ltr">focusable</code></a> modifier enables the modified component to get keyboard focus.</p>
+<p>To fix this issue, follow these steps:</p>
+<ol type="1">
+<li>Access the <code translate="no" dir="ltr">PostContent</code> composable function in the <code translate="no" dir="ltr">ui/article/PostContent.kt</code> file</li>
+<li>Modify the <code translate="no" dir="ltr">LazyColumn</code> composable function with the <code translate="no" dir="ltr">focusable</code> modifier</li>
+</ol>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL"><code translate="no" dir="ltr"><span class="devsite-syntax-nv">@OptIn</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nl">ExperimentalFoundationApi</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-err">:</span><span class="devsite-syntax-k">class</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-nv">@Composable</span>
+<span class="devsite-syntax-n">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">PostContent</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nl">post</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Post</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nl">modifier</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nl">contentPadding</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">PaddingValues</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">PaddingValues</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-mf">0.</span><span class="devsite-syntax-n">dp</span><span class="devsite-syntax-p">),</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-k">state</span><span class="devsite-syntax-err">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">LazyListState</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">rememberLazyListState</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nl">coroutineScope</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">CoroutineScope</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">rememberCoroutineScope</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nl">focusRequester</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">FocusRequester</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">remember</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">FocusRequester</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">}</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nl">header</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nv">@Composable</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">-</span>&gt;<span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Unit</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-vm">?</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">null</span>
+<span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">LazyColumn</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">contentPadding</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">contentPadding</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">padding</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">horizontal</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">defaultSpacerSize</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">focusable</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-k">state</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">state</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">{</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-o">//</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Code</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">layout</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">selected</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">article</span><span class="devsite-syntax-p">.</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-err">}</span>
+<span class="devsite-syntax-err">}</span>
+</code></pre></devsite-code>
+<aside class="warning"><p><strong>Caution</strong>: <code translate="no" dir="ltr">Page down</code> key and <code translate="no" dir="ltr">Page up</code> key trigger key events from unknown key on the virtual devices in the desktop category. Skip this step if you use the virtual devices.</p>
+</aside>
+<h2 is-upgraded id="indicate-the-article-has-keyboard-focus" data-text="Indicate the article has keyboard focus" tabindex="-1">Indicate the article has keyboard focus</h2>
+<p>Now, users can read the entire article by scrolling down the article with the <code translate="no" dir="ltr">Page down</code> key. However, it is difficult for them to understand if the <code translate="no" dir="ltr">PostContent</code> component has keyboard focus or not as no visual effect indicates it.</p>
+<p>Your app can visually indicate keyboard focus by associating an  <a href="https://developer.android.com/reference/kotlin/androidx/compose/foundation/Indication" target="_blank"><code translate="no" dir="ltr">Indication</code></a> with components. An Indication creates an object to render visual effects according to interactions. For example,  <a href="https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#ripple(kotlin.Boolean,androidx.compose.ui.unit.Dp,androidx.compose.ui.graphics.Color)" target="_blank">the default Indication for Material 3</a>highlights the component when it has the keyboard focus.</p>
+<p>The sample app has an <code translate="no" dir="ltr">Indication</code> called <code translate="no" dir="ltr">BorderIndication</code>. The indication shows a line next to the component that has keyboard focus (as in the following screenshot). The code is stored in the <code translate="no" dir="ltr">ui/components/BorderIndication.kt</code> file.</p>
+<p class="image-container"><img alt="A light gray line is displayed on the side of the article when the article has the keyboard focus." style="width: 624.00px" src="/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/c2c690298eaa54a8.png" srcset="https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/c2c690298eaa54a8_36.png 36w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/c2c690298eaa54a8_48.png 48w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/c2c690298eaa54a8_72.png 72w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/c2c690298eaa54a8_96.png 96w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/c2c690298eaa54a8_480.png 480w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/c2c690298eaa54a8_720.png 720w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/c2c690298eaa54a8_856.png 856w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/c2c690298eaa54a8_960.png 960w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/c2c690298eaa54a8_1440.png 1440w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/c2c690298eaa54a8_1920.png 1920w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/c2c690298eaa54a8_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>To make the <code translate="no" dir="ltr">PostConent</code> composable show the <code translate="no" dir="ltr">BorderIndication</code> when it has keyboard focus, follow these steps:</p>
+<ol type="1">
+<li>Access the <code translate="no" dir="ltr">PostContent</code> composable function in the <code translate="no" dir="ltr">ui/article/PostContent.kt</code> file</li>
+<li>Declare the <code translate="no" dir="ltr">interactionSource</code> value that is associated with the return value of the <code translate="no" dir="ltr">remember()</code> function</li>
+<li>Call the  <a href="https://developer.android.com/reference/kotlin/androidx/compose/foundation/interaction/package-summary?_gl=1*123tg94*_up*MQ..*_ga*MjE0MzU3MjE0MC4xNzExOTQzNzMy*_ga_6HH9YJMN9M*MTcxMTk0MzczMS4xLjAuMTcxMTk0MzczMS4wLjAuMA..#MutableInteractionSource()" target="_blank"><code translate="no" dir="ltr">MutableInteractionSource()</code></a> function in the <code translate="no" dir="ltr">remember()</code> function so that the created <code translate="no" dir="ltr">MutableInteractionSource</code> object is associated with the <code translate="no" dir="ltr">interactionSource</code> value</li>
+<li>Pass the <code translate="no" dir="ltr">interactionSource</code> value to the <code translate="no" dir="ltr">focusable</code> modifier using the interactionSource parameter</li>
+<li>Change the modifier of the <code translate="no" dir="ltr">PostContent</code> composable to call the <code translate="no" dir="ltr">focusable</code> modifier after the invocation of the <code translate="no" dir="ltr">indication</code> modifier</li>
+<li>Pass the <code translate="no" dir="ltr">interactionSource</code> value and the return value of the <code translate="no" dir="ltr">BorderIndication</code> function to the indication modifier</li>
+</ol>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL"><code translate="no" dir="ltr"><span class="devsite-syntax-nv">@OptIn</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nl">ExperimentalFoundationApi</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-err">:</span><span class="devsite-syntax-k">class</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-nv">@Composable</span>
+<span class="devsite-syntax-n">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">PostContent</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nl">post</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Post</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nl">modifier</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Modifier</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nl">contentPadding</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">PaddingValues</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">PaddingValues</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-mf">0.</span><span class="devsite-syntax-n">dp</span><span class="devsite-syntax-p">),</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-k">state</span><span class="devsite-syntax-err">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">LazyListState</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">rememberLazyListState</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nl">coroutineScope</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">CoroutineScope</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">rememberCoroutineScope</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nl">focusRequester</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">FocusRequester</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">remember</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">FocusRequester</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">}</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nl">header</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nv">@Composable</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">-</span>&gt;<span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Unit</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-vm">?</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">null</span>
+<span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">interactionSource</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">remember</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">MutableInteractionSource</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">}</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">LazyColumn</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">contentPadding</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">contentPadding</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">modifier</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">padding</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">horizontal</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">defaultSpacerSize</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">indication</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">interactionSource</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">BorderIndication</span><span class="devsite-syntax-p">())</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">focusable</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">interactionSource</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">interactionSource</span><span class="devsite-syntax-p">),</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-k">state</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">state</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">{</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-o">//</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Code</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">layout</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">selected</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">article</span><span class="devsite-syntax-p">.</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-err">}</span>
+<span class="devsite-syntax-err">}</span>
+</code></pre></devsite-code>
+<h2 is-upgraded id="add-keyboard-shortcuts-to-scroll-up-and-down" data-text="Add keyboard shortcuts to scroll up and down" tabindex="-1"><strong>Add keyboard shortcuts to scroll up and down</strong></h2>
+<p>It is a common feature to enable users to scroll up and down with the <code translate="no" dir="ltr">Spacebar</code>. Your app can implement the feature by adding a keyboard shortcut as the following table:</p>
+<table class="vertical-rules">
+<tr><td colspan="1" rowspan="1"><p><strong>Shortcut</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>Feature</strong></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><code translate="no" dir="ltr">Spacebar</code></p>
+</td><td colspan="1" rowspan="1"><p>Scroll down the article</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><code translate="no" dir="ltr">Shift + Spacebar</code></p>
+</td><td colspan="1" rowspan="1"><p>Scroll up the article</p>
+</td></tr>
+</table>
+<aside class="warning"><p><strong>Caution</strong>:  <code translate="no" dir="ltr">Spacebar</code> triggers no key event on the virtual devices in the desktop category when hardware input mode is enabled. Please use the  <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/input/key/Key#J()" target="_blank"><code translate="no" dir="ltr">J</code></a> key and the  <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/input/key/Key#K()" target="_blank"><code translate="no" dir="ltr">K</code></a> key if you use the virtual devices.</p>
+</aside>
+<p>The <code translate="no" dir="ltr">onKeyEvent</code> modifier enables your app to handle key events happening on a modified component. The modifier takes a lambda that is called with a <code translate="no" dir="ltr">KeyEvent</code> object describing the key event. The lambda should return a <code translate="no" dir="ltr">Boolean</code> value indicating whether the key event is consumed.</p>
+<p>The scroll position of a <code translate="no" dir="ltr">LazyColumn</code> and <code translate="no" dir="ltr">LazyRow</code> is captured in a <code translate="no" dir="ltr">LazyListState</code> object. Your app can trigger scrolling by calling the  <a href="https://developer.android.com/reference/kotlin/androidx/compose/foundation/gestures/ScrollableState#(androidx.compose.foundation.gestures.ScrollableState).animateScrollBy(kotlin.Float,androidx.compose.animation.core.AnimationSpec)" target="_blank"><code translate="no" dir="ltr">animateScrollBy()</code></a> suspend method over the <code translate="no" dir="ltr">LazyListState</code> object. The method scrolls down the <code translate="no" dir="ltr">LazyColumn</code> by the specified number of pixels. When the suspend function is called with a negative float value, the function scrolls up the <code translate="no" dir="ltr">LazyColumn</code>.</p>
+<p>To implement these keyboard shortcuts, follow these steps:</p>
+<ol type="1">
+<li>Access the <code translate="no" dir="ltr">PostContent</code> composable function in the <code translate="no" dir="ltr">ui/article/PostContent.kt</code> file</li>
+<li>Modify the <code translate="no" dir="ltr">LazyColumn</code> composable function with the <code translate="no" dir="ltr">onKeyEvent</code> modifier</li>
+<li>Add an <code translate="no" dir="ltr">if</code> expression to the lambda passed to the <code translate="no" dir="ltr">onKeyEvent</code> modifier as follows:</li>
+</ol>
+<ul>
+<li>Return <code translate="no" dir="ltr">true</code> if the following conditions are satisfied:</li>
+<li><code translate="no" dir="ltr">Spacebar</code> is pressed. You can detect it by testing whether the <code translate="no" dir="ltr">type</code> attribute is <code translate="no" dir="ltr">KeyType.KeyDown</code> and the <code translate="no" dir="ltr">key</code> attribute is <code translate="no" dir="ltr">Key.Spacebar</code></li>
+<li>The <code translate="no" dir="ltr">isCtrlPressed</code> attribute is false to ensure the <code translate="no" dir="ltr">Ctrl</code> key is not pressed</li>
+<li>The <code translate="no" dir="ltr">isAltPressed</code> attribute is false to ensure the <code translate="no" dir="ltr">Alt</code> key is not pressed</li>
+<li>The <code translate="no" dir="ltr">isMetaPressed</code> attribute is false to ensure the <code translate="no" dir="ltr">Meta</code> key (see note) is not pressed</li>
+<li>Return <code translate="no" dir="ltr">false</code> otherwise</li>
+</ul>
+<ol type="1" start="4">
+<li>Determine the scrolling with <code translate="no" dir="ltr">Spacebar</code> amount as follows:</li>
+</ol>
+<ul>
+<li><code translate="no" dir="ltr">-0.4f</code> when the <code translate="no" dir="ltr">Shift</code> key is pressed, which is described by the <code translate="no" dir="ltr">isShiftPressed</code> attribute of the given <code translate="no" dir="ltr">KeyEvent</code> object</li>
+<li><code translate="no" dir="ltr">0.4f</code> otherwise</li>
+</ul>
+<ol type="1" start="5">
+<li>Call the <code translate="no" dir="ltr">launch()</code> method over the <code translate="no" dir="ltr">coroutineScope</code>, which is a parameter of the <code translate="no" dir="ltr">PostContent</code> composable function</li>
+<li>Calculate the actual amount of the scroll by multiplying the relative scroll amount calculated in the previous step and <code translate="no" dir="ltr">state.layoutInfo.viewportSize.height</code> attribute in the lambda parameter of the <code translate="no" dir="ltr">launch</code> method. The attribute represents the height of the <code translate="no" dir="ltr">LazyColumn</code> called in the <code translate="no" dir="ltr">PostContent</code> composable function.</li>
+<li>Call the <code translate="no" dir="ltr">state.animateScrollBy()</code> method in the lambda for the <code translate="no" dir="ltr">launch()</code> method to trigger the vertical scroll</li>
+</ol>
+<aside class="special"><p><strong>Note:</strong> The Meta key is not present on all keyboards. On macOS keyboards, the Meta key is the Command key; on Windows keyboards, the Windows key; and on ChromeOS keyboards, the Search key.</p>
+</aside>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Carbon"><code translate="no" dir="ltr"><span class="devsite-syntax-err">@</span><span class="devsite-syntax-nx">OptIn</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">ExperimentalFoundationApi</span><span class="devsite-syntax-o">::</span><span class="devsite-syntax-kd">class</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-err">@</span><span class="devsite-syntax-nx">Composable</span>
+<span class="devsite-syntax-nx">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">PostContent</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">post</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Post</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">modifier</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Modifier</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">contentPadding</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">PaddingValues</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">PaddingValues</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-mi">0</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">dp</span><span class="devsite-syntax-p">),</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">state</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">LazyListState</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">rememberLazyListState</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">coroutineScope</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">CoroutineScope</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">rememberCoroutineScope</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">focusRequester</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">FocusRequester</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">remember</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">FocusRequester</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">},</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">header</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-err">@</span><span class="devsite-syntax-nx">Composable</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">-</span>&gt;<span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Unit</span><span class="devsite-syntax-p">)?</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">null</span>
+<span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">interactionSource</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">remember</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">MutableInteractionSource</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">LazyColumn</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">contentPadding</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">contentPadding</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">modifier</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">padding</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">horizontal</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">defaultSpacerSize</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">onKeyEvent</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-nx">it</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-k">type</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">==</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">KeyEventType</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">KeyDown</span><span class="devsite-syntax-w"> </span>&amp;&amp;
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-nx">it</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">key</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">==</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Key</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Spacebar</span><span class="devsite-syntax-w"> </span>&amp;&amp;
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-p">!</span><span class="devsite-syntax-nx">it</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">isCtrlPressed</span><span class="devsite-syntax-w"> </span>&amp;&amp;
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-p">!</span><span class="devsite-syntax-nx">it</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">isAltPressed</span><span class="devsite-syntax-w"> </span>&amp;&amp;
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-p">!</span><span class="devsite-syntax-nx">it</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">isMetaPressed</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-nx">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">relativeAmount</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">it</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">isShiftPressed</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                        </span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-m devsite-syntax-m-Double">0.4</span><span class="devsite-syntax-nx">f</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-p">}</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">else</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                        </span><span class="devsite-syntax-m devsite-syntax-m-Double">0.4</span><span class="devsite-syntax-nx">f</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-nx">coroutineScope</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">launch</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                        </span><span class="devsite-syntax-nx">state</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">animateScrollBy</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">relativeAmount</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">*</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">state</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">layoutInfo</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">viewportSize</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">height</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-kc">true</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-p">}</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">else</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-kc">false</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">indication</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">interactionSource</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">BorderIndication</span><span class="devsite-syntax-p">())</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">focusable</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">interactionSource</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">interactionSource</span><span class="devsite-syntax-p">),</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">state</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">state</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-c1">// Code to layout the selected article.</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<h2 is-upgraded id="let-users-know-the-keyboard-shortcuts" data-text="Let users know the keyboard shortcuts" tabindex="-1"><strong>Let users know the keyboard shortcuts</strong></h2>
+<p>Users are unable to take full advantage of the added keyboard unless they realize the shortcuts. Your app can let users know available shortcuts with the keyboard shortcut helper, which is a part of the Android system UI. Users can open the shortcut helper with <code translate="no" dir="ltr">Meta+/</code>.</p>
+<aside class="warning"><p><strong>Caution</strong>: <code translate="no" dir="ltr">Meta</code> key triggers key events from the unknown key on the virtual devices in the desktop category. Skip this step if you are using the virtual devices.</p>
+</aside>
+<p class="image-container"><img alt="Keyboard Shortcut Helper shows the keyboard shortcuts added in the previous section." style="width: 624.00px" src="/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/4b2d7fbb31e34d2a.png" srcset="https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/4b2d7fbb31e34d2a_36.png 36w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/4b2d7fbb31e34d2a_48.png 48w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/4b2d7fbb31e34d2a_72.png 72w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/4b2d7fbb31e34d2a_96.png 96w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/4b2d7fbb31e34d2a_480.png 480w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/4b2d7fbb31e34d2a_720.png 720w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/4b2d7fbb31e34d2a_856.png 856w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/4b2d7fbb31e34d2a_960.png 960w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/4b2d7fbb31e34d2a_1440.png 1440w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/4b2d7fbb31e34d2a_1920.png 1920w,https://developer.android.com/static/codelabs/large-screens/add-keyboard-and-mouse-support-with-compose/img/4b2d7fbb31e34d2a_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Your app overrides the  <a href="https://developer.android.com/reference/kotlin/android/view/Window.Callback#onprovidekeyboardshortcuts" target="_blank"><code translate="no" dir="ltr">onProvideKeyboardShortcuts()</code></a> method in your app&#39;s main activity to provide a list of keyboard shortcuts to the keyboard shortcuts helper.</p>
+<p>More specifically, your app provides several  <a href="https://developer.android.com/reference/kotlin/android/view/KeyboardShortcutGroup" target="_blank"><code translate="no" dir="ltr">KeyboardShortcutGroup</code></a> objects by adding them to the mutable list passed to <code translate="no" dir="ltr">onProvideKeyboardShortcuts()</code>. Each <code translate="no" dir="ltr">KeyboardShortcutGroup</code> represents a named category of keyboard shortcuts, which enables your app to group available keyboard shortcuts by purpose or context.</p>
+<p>The sample app has two keyboard shortcuts, <code translate="no" dir="ltr">Spacebar</code> and <code translate="no" dir="ltr">Shift+Spacebar</code>.</p>
+<p>To make these two shortcuts available in the keyboard shortcuts helper, follow these steps:</p>
+<ol type="1">
+<li>Open the <code translate="no" dir="ltr">MainActivity.kt</code> file</li>
+<li>Override the <code translate="no" dir="ltr">onProvideKeyboardShortcuts()</code> method in <code translate="no" dir="ltr">MainActivity</code></li>
+<li>Ensure the Android SDK version is Android 7.0 (API level 24) or higher so that the keyboard shortcuts helper is available.</li>
+<li>Confirm that the first parameter of the method is <em>not </em><code translate="no" dir="ltr">null</code></li>
+<li>Create a   <a href="https://developer.android.com/reference/android/view/KeyboardShortcutInfo" target="_blank"><code translate="no" dir="ltr">KeyboardShortcutInfo</code></a> object for the <code translate="no" dir="ltr">Spacebar</code> key with the following parameters:</li>
+</ol>
+<ul>
+<li>Description text</li>
+<li><code translate="no" dir="ltr">android.view.KeyEvent.KEYCODE_SPACE</code></li>
+<li><code translate="no" dir="ltr">0</code> (indicates no modifiers)</li>
+</ul>
+<ol type="1" start="6">
+<li>Create another <code translate="no" dir="ltr">KeyboardShortcutInfo</code> for <code translate="no" dir="ltr">Shift+Spacebar</code> with the following parameters:</li>
+</ol>
+<ul>
+<li>Description text</li>
+<li><code translate="no" dir="ltr">android.view.KeyEvent.KEYCODE_SPACE</code></li>
+<li><code translate="no" dir="ltr">android.view.KeyEvent.META_SHIFT_ON</code></li>
+</ul>
+<ol type="1" start="7">
+<li>Create an immutable list containing the two <code translate="no" dir="ltr">KeyboardShortcutInfo</code> objects</li>
+<li>Create a <code translate="no" dir="ltr">KeyboardShortcutGroup</code> object with the following parameters:</li>
+</ol>
+<ul>
+<li>Group name in text</li>
+<li>The immutable list from the previous step</li>
+</ul>
+<ol type="1" start="9">
+<li>Add the <code translate="no" dir="ltr">KeyboardShortcutGroup</code> object to the mutable list passed as the first parameter of the <code translate="no" dir="ltr">onProvideKeyboardShortcuts()</code> method</li>
+</ol>
+<p>The overridden method looks like this:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">   override fun onProvideKeyboardShortcuts(
+        data: MutableList&lt;KeyboardShortcutGroup&gt;?,
+        menu: Menu?,
+        deviceId: Int
+    ) {
+        if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.N &amp;&amp; data != null) {
+            val shortcutGroup = KeyboardShortcutGroup(
+                "To read articles",
+                listOf(
+                    KeyboardShortcutInfo("Scroll down", KeyEvent.KEYCODE_SPACE, 0), // 0 means no modifier key is pressed
+                    KeyboardShortcutInfo("Scroll up", KeyEvent.KEYCODE_SPACE, KeyEvent.META_SHIFT_ON),
+                )
+            )
+            data.add(shortcutGroup)
+        }
+    }
+</code></pre></devsite-code>
+<h2 is-upgraded id="run-it" data-text="Run it" tabindex="-1"><strong>Run it</strong></h2>
+<p>Now, users are able to read the entire article even by scrolling the article with the <code translate="no" dir="ltr">Spacebar</code>. You can try it by moving the keyboard focus to the article with the <code translate="no" dir="ltr">Tab</code> key or directional keys. You can see the message encouraging you to hit the <code translate="no" dir="ltr">Spacebar</code>.</p>
+<p>The keyboard shortcuts helper shows the two keyboard shortcuts you added (press <code translate="no" dir="ltr">Meta+/</code>). The added shortcuts are listed in the <strong>Current app</strong> tab.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Expedite keyboard navigation in the detail pane" duration="10" step="6">
+          
+          <h2 class="step-title" id="6" data-text="Expedite keyboard navigation in the detail pane" tabindex="-1">
+              7. Expedite keyboard navigation in the detail pane
+          </h2>
+          <p>Users need to press the <code translate="no" dir="ltr">Tab</code> key several times to move the keyboard focus to the detail pane when the app is running in the expanded window-size class. With the right directional key, users can move the keyboard focus from the article list to the article with a single action, but they still need to move the keyboard focus. The initial focus does not support the user&#39;s primary goal of reading the articles.</p>
+<p>Your app can request moving the keyboard focus to the specific component with a  <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/focus/FocusRequester" target="_blank"><code translate="no" dir="ltr">FocusRequester</code></a> object. The  <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/focus/package-summary#(androidx.compose.ui.Modifier).focusRequester(androidx.compose.ui.focus.FocusRequester)" target="_blank"><code translate="no" dir="ltr">focusRequester</code></a> modifier associates a <code translate="no" dir="ltr">FocusRequester</code> object with the modified component.  Your app can send the actual request for the focus movement by calling the  <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/focus/FocusRequester#requestFocus()" target="_blank"><code translate="no" dir="ltr">requestFocus()</code></a> method of the <code translate="no" dir="ltr">FocusRequester</code> object.</p>
+<aside class="warning"><p><strong>Caution:</strong> You should make sure that the <code translate="no" dir="ltr">FocusRequester</code> object is associated with a component before calling the <code translate="no" dir="ltr">requestFocus()</code> method. Otherwise, your app can crash.</p>
+</aside>
+<p>Sending a request to move the keyboard focus is a  <a href="https://developer.android.com/jetpack/compose/side-effects" target="_blank">side effect of the component</a>. Your app should call the method in the proper manner using the  <a href="https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#LaunchedEffect(kotlin.Any,kotlin.coroutines.SuspendFunction1)" target="_blank"><code translate="no" dir="ltr">LaunchedEffect</code></a> function.</p>
+<p>To set the <code translate="no" dir="ltr">PostContent</code> composable to get the keyboard focus when users select an article from the article list, follow these steps:</p>
+<ol type="1">
+<li>Access the <code translate="no" dir="ltr">PostContent</code> composable function in the <code translate="no" dir="ltr">ui/article/</code> <a href="http://postcontent.kt" target="_blank"><code translate="no" dir="ltr">PostContent.kt</code></a> file.</li>
+<li>Associate the <code translate="no" dir="ltr">focusRequester</code> value with the <code translate="no" dir="ltr">LazyColumn</code> composable function with the <code translate="no" dir="ltr">focusRequester</code> modifier. The focusRequester value is specified as an optional parameter of the <code translate="no" dir="ltr">PostContent</code> composable function.</li>
+<li>Call <code translate="no" dir="ltr">LaunchedEffect</code> with <code translate="no" dir="ltr">post</code>, the first parameter of  the <code translate="no" dir="ltr">PostContent</code> composable function, so that the passed lambda is called when the user selects an article.</li>
+<li>Call the <code translate="no" dir="ltr">focusRequester.requestFocus()</code> method in the lambda passed to the <code translate="no" dir="ltr">LaunchedEffect</code> function.</li>
+</ol>
+<p>The updated <code translate="no" dir="ltr">PostContent</code> composable looks like this:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Carbon"><code translate="no" dir="ltr"><span class="devsite-syntax-err">@</span><span class="devsite-syntax-nx">OptIn</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">ExperimentalFoundationApi</span><span class="devsite-syntax-o">::</span><span class="devsite-syntax-kd">class</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-err">@</span><span class="devsite-syntax-nx">Composable</span>
+<span class="devsite-syntax-nx">fun</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">PostContent</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">post</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Post</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">modifier</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Modifier</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">contentPadding</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">PaddingValues</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">PaddingValues</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-mi">0</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">dp</span><span class="devsite-syntax-p">),</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">state</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">LazyListState</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">rememberLazyListState</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">coroutineScope</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">CoroutineScope</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">rememberCoroutineScope</span><span class="devsite-syntax-p">(),</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">focusRequester</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">FocusRequester</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">remember</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">FocusRequester</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">},</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">header</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-err">@</span><span class="devsite-syntax-nx">Composable</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">-</span>&gt;<span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Unit</span><span class="devsite-syntax-p">)?</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">null</span>
+<span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">interactionSource</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">remember</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">MutableInteractionSource</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">LaunchedEffect</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">post</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">focusRequester</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">requestFocus</span><span class="devsite-syntax-p">()</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">LazyColumn</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">contentPadding</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">contentPadding</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">modifier</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">modifier</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">padding</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">horizontal</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">defaultSpacerSize</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">onKeyEvent</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">it</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-k">type</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">==</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">KeyEventType</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">KeyDown</span><span class="devsite-syntax-w"> &amp;&amp; </span><span class="devsite-syntax-nx">it</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">key</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">==</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Key</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Spacebar</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-nx">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">relativeAmount</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">it</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">isShiftPressed</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                        </span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-m devsite-syntax-m-Double">0.4</span><span class="devsite-syntax-nx">f</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-p">}</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">else</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                        </span><span class="devsite-syntax-m devsite-syntax-m-Double">0.4</span><span class="devsite-syntax-nx">f</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-nx">coroutineScope</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">launch</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                        </span><span class="devsite-syntax-nx">state</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">animateScrollBy</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">relativeAmount</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">*</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">state</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">layoutInfo</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">viewportSize</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">height</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-kc">true</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-p">}</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">else</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-kc">false</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">focusRequester</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">focusRequester</span><span class="devsite-syntax-p">),</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">indication</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">interactionSource</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">BorderIndication</span><span class="devsite-syntax-p">())</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">focusable</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">interactionSource</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">interactionSource</span><span class="devsite-syntax-p">),</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">state</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">state</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-c1">// Code to layout the selected article.</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<h2 is-upgraded id="run-it_1" data-text="Run it" tabindex="-1"><strong>Run it</strong></h2>
+<p>Now, the keyboard focus moves to the article when users choose an article from the article list. You can find that the message encourages you to use the <code translate="no" dir="ltr">Spacebar</code> to scroll down the article when you choose an article.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Congratulations" duration="1" step="7">
+          
+          <h2 class="step-title" id="7" data-text="Congratulations" tabindex="-1">
+              8. Congratulations
+          </h2>
+          <p>Well done! You added physical keyboard and mouse support to the sample app. As a result, users are able to select an article from the article list and read the selected article using only a physical keyboard or mouse.</p>
+<p>You learned the following things necessary to add physical keyboard and mouse support:</p>
+<ul>
+<li>How to check if your app supports a physical keyboard and mouse, including with an emulator</li>
+<li>How to manage the keyboard navigation with Compose</li>
+<li>How to add keyboard shortcuts with Compose</li>
+</ul>
+<p>You also added the physical keyboard and mouse support with a small amount of code modification.</p>
+<p>You&#39;re ready to add the physical keyboard and mouse support to your production app with Compose.</p>
+<p>And with a little more learning, you could add keyboard shortcuts for the following functionalities:</p>
+<ul>
+<li>Mark the selected article as liked.</li>
+<li>Bookmark the selected article.</li>
+<li>Share the selected article with other apps.</li>
+</ul>
+<h2 is-upgraded id="learn-more" data-text="Learn more" tabindex="-1">Learn more</h2>
+<ul>
+<li><a href="https://m3.material.io/foundations/interaction/inputs#b1ed8b26-0006-4e47-8092-43a8cf410b97" target="_blank">Inputs</a></li>
+<li><a href="https://developer.android.com/docs/quality-guidelines/large-screen-app-quality" target="_blank">Large screen app quality</a></li>
+<li><a href="https://developer.android.com/jetpack/compose/touch-input/pointer-input" target="_blank">Pointer input in Compose</a></li>
+<li><a href="https://developer.android.com/jetpack/compose/touch-input/focus" target="_blank">Focus in Compose</a></li>
+<li><a href="https://developer.android.com/jetpack/compose/touch-input/user-interactions/handling-interactions" target="_blank">Handling user interactions</a></li>
+</ul>
+
+
+        </google-codelab-step>
+      
+    </google-codelab>
+  
+  
+
+  
+</div>
+
+  
+    
+    
+    
+  
+
+  <div class="devsite-floating-action-buttons"></div></article>
+
+
+<devsite-content-footer class="nocontent">
+  <p>Except as otherwise noted, the content of this page is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</a>, and code samples are licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see the <a href="https://developers.google.com/site-policies">Google Developers Site Policies</a>. Java is a registered trademark of Oracle and/or its affiliates.</p>
+  
+</devsite-content-footer>
+
+
+<devsite-notification
+>
+</devsite-notification>
+
+
+  
+<div class="devsite-content-data">
+  
+  
+    <template class="devsite-content-data-template">
+      [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[],null,[]]
+    </template>
+  
+</div>
+            
+          </devsite-content>
+        </main>
+        <devsite-footer-promos class="devsite-footer">
+          
+            
+
+<nav class="devsite-footer-promos nocontent" aria-label="Promotions">
+  <ul class="devsite-footer-promos-list">
+    
+    <li class="devsite-footer-promo">
+      <a href="//x.com/AndroidDev"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer X Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-x_dt.svg"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="/_static/android/images/logo-x.svg"
+                loading="lazy"
+                alt="X">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          X
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Follow @AndroidDev on X</div>
+    </li>
+    
+    <li class="devsite-footer-promo">
+      <a href="//www.youtube.com/user/androiddevelopers"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer YouTube Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-youtube_dt.svg"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="//www.gstatic.com/images/icons/material/product/2x/youtube_48dp.png"
+                loading="lazy"
+                alt="YouTube">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          YouTube
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Check out Android Developers on YouTube</div>
+    </li>
+    
+    <li class="devsite-footer-promo">
+      <a href="//www.linkedin.com/showcase/androiddev"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer LinkedIn Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-linkedin_dt.svg"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="/_static/android/images/logo-linkedin.svg"
+                loading="lazy"
+                alt="LinkedIn">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          LinkedIn
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Connect with the Android Developers community on LinkedIn</div>
+    </li>
+    
+  </ul>
+</nav>
+
+          
+        </devsite-footer-promos>
+        <devsite-footer-linkboxes class="devsite-footer">
+          
+            
+<nav class="devsite-footer-linkboxes nocontent" aria-label="Footer links">
+  
+  <ul class="devsite-footer-linkboxes-list">
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">More Android</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com/enterprise/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Android for Enterprise
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com/security-center/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Security
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//source.android.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Source
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/news"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            News
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//android-developers.googleblog.com/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+          
+            Blog
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/podcasts"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 7)"
+            >
+            
+              
+              
+            
+          
+            Podcasts
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Discover</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/games"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Gaming
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/ml"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Machine Learning
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/health-and-fitness"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Health & Fitness
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/media"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Camera & Media
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/privacy"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            Privacy
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/training/connectivity/5g"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+              
+              
+            
+          
+            5G
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Android Devices</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/large-screens"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Large screens
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/wear"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Wear OS
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/chrome-os"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            ChromeOS devices
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/cars"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Android for cars
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/tv"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+              
+              
+            
+          
+            Android TV
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Releases</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/15"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android 15
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/14"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Android 14
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/13"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Android 13
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/12"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Android 12
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/11"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            Android 11
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/10"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+          
+            Android 10
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/pie"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 7)"
+            >
+            
+              
+              
+            
+          
+            Pie
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Documentation and Downloads</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/studio/intro"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android Studio guide
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/guide"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Developers guides
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/reference"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            API reference
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/studio"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Download Studio
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/ndk"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+              
+              
+            
+          
+            Android NDK
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Support</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//issuetracker.google.com/issues/new?component=190923&amp;template=841312"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Report platform bug
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//issuetracker.google.com/issues/new?component=192697"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Report documentation bug
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//support.google.com/googleplay/android-developer"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Google Play support
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://g.co/userresearch/androiddeveloperfooter"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+              
+              
+            
+          
+            Join research studies
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+  
+</nav>
+          
+        </devsite-footer-linkboxes>
+        <devsite-footer-utility class="devsite-footer">
+          
+            
+
+<div class="devsite-footer-utility nocontent">
+  
+  
+  <nav class="devsite-footer-sites" aria-label="Other Google Developers websites">
+    <a href="https://developers.google.com/"
+       class="devsite-footer-sites-logo-link gc-analytics-event"
+       data-category="Site-Wide Custom Events"
+       data-label="Footer Google Developers Link">
+      <picture>
+        
+        <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-google-for-developers-dark-theme.svg"
+                media="(prefers-color-scheme: none)"
+                class="devsite-dark-theme">
+        
+        <img class="devsite-footer-sites-logo"
+             src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-google-for-developers.svg"
+             loading="lazy"
+             alt="Google Developers">
+      </picture>
+    </a>
+    <ul class="devsite-footer-sites-list">
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.android.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Android Link"
+         
+         >
+          Android
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.chrome.com/home"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Chrome Link"
+         
+         >
+          Chrome
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//firebase.google.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Firebase Link"
+         
+         >
+          Firebase
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//cloud.google.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Google Cloud Platform Link"
+         
+         >
+          Google Cloud Platform
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developers.google.com/products/"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer All products Link"
+         
+         >
+          All products
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  
+
+  
+  <nav class="devsite-footer-utility-links" aria-label="Utility links">
+    
+    <ul class="devsite-footer-utility-list">
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//policies.google.com/privacy"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Privacy link"
+         >
+          Privacy
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="/license"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer License link"
+         >
+          License
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="/distribute/marketing-tools/brand-guidelines"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Brand guidelines link"
+         >
+          Brand guidelines
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 glue-cookie-notification-bar-control">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="#"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Manage cookies link"
+         
+           aria-hidden="true"
+         >
+          Manage cookies
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 devsite-footer-utility-button">
+        
+        <span class="devsite-footer-utility-description">Get news and tips by email</span>
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="/updates"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Subscribe link"
+         >
+          Subscribe
+        </a>
+        
+      </li>
+      
+    </ul>
+    
+    
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+  </nav>
+</div>
+          
+        </devsite-footer-utility>
+        <devsite-panel>
+          
+        </devsite-panel>
+        
+      </section></section>
+    <devsite-sitemask></devsite-sitemask>
+    <devsite-snackbar></devsite-snackbar>
+    <devsite-tooltip ></devsite-tooltip>
+    <devsite-heading-link></devsite-heading-link>
+    <devsite-analytics>
+      
+        <script type="application/json" analytics>[]</script>
+<script type="application/json" tag-management>{&#34;at&#34;: &#34;True&#34;, &#34;ga4&#34;: [{&#34;id&#34;: &#34;G-QFRN08RN6E&#34;, &#34;purpose&#34;: 0}], &#34;ga4p&#34;: [{&#34;id&#34;: &#34;G-QFRN08RN6E&#34;, &#34;purpose&#34;: 0}], &#34;gtm&#34;: [], &#34;parameters&#34;: {&#34;internalUser&#34;: &#34;False&#34;, &#34;language&#34;: {&#34;machineTranslated&#34;: &#34;False&#34;, &#34;requested&#34;: &#34;en&#34;, &#34;served&#34;: &#34;en&#34;}, &#34;pageType&#34;: &#34;codelab&#34;, &#34;projectName&#34;: null, &#34;signedIn&#34;: &#34;False&#34;, &#34;tenant&#34;: &#34;android&#34;, &#34;recommendations&#34;: {&#34;sourcePage&#34;: &#34;&#34;, &#34;sourceType&#34;: 0, &#34;sourceRank&#34;: 0, &#34;sourceIdenticalDescriptions&#34;: 0, &#34;sourceTitleWords&#34;: 0, &#34;sourceDescriptionWords&#34;: 0, &#34;experiment&#34;: &#34;&#34;}, &#34;experiment&#34;: {&#34;ids&#34;: &#34;&#34;}}}</script>
+      
+    </devsite-analytics>
+    
+      <devsite-badger></devsite-badger>
+    
+    
+    
+<android-fully-clickable
+    target="
+        .android-case-study .devsite-landing-row-item,
+        .android-editorial-and-updates-cards .devsite-card-content-wrapper,
+        .android-editorial-and-updates-cards .devsite-landing-row-item,
+        .android-grouped-resources .devsite-landing-row-item,
+        .android-grouped-resources-contained--primary .devsite-landing-row-item,
+        .android-grouped-resources-contained--secondary .devsite-landing-row-item,
+        .android-grouped-resources-contained--tertiary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--primary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--secondary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--tertiary .devsite-landing-row-item,
+        .android-guide-cards .devsite-landing-row-item,
+        .android-illustrated-resources-index .devsite-landing-row-item,
+        .android-illustrated-resources-primary .devsite-landing-row-item,
+        .android-illustrated-resources-secondary .devsite-landing-row-item,
+        .android-illustrated-resources-secondary-small .devsite-landing-row-item,
+        .android-illustrated-resources-tertiary .devsite-landing-row-item,
+        .android-illustrated-resources-tertiary-small .devsite-landing-row-item,
+        .android-promo .devsite-landing-row-item,
+        .android-quick-link,
+        .android-samples .devsite-card-wrapper,
+        .fully-clickable"
+    watch=".android-editorial-and-updates-cards, .android-samples, devsite-content"></android-fully-clickable>
+    
+<script nonce="v04UDPLftmxVYKdUcPsRhmjr6znlo5">
+  
+  (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+    t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+    E.parentNode.insertBefore(t,E);})(window, document, 'script',
+    'https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/js/app_loader.js', '[3,"en",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android","https://android-dot-devsite-v2-prod.appspot.com",1,null,["/_pwa/android/manifest.json","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/favicon.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png","https://fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,600italic,700,700italic|Roboto+Mono:400,500,700&display=swap"],1,null,[1,6,8,12,14,17,21,25,50,52,63,70,75,76,80,87,91,92,93,97,98,100,101,102,103,104,105,107,108,109,110,112,113,116,117,118,120,122,124,125,126,127,129,130,131,132,133,134,135,136,138,140,141,147,148,149,151,152,156,157,158,159,161,163,164,168,169,170,179,180,182,183,186,191,193,196],"AIzaSyAP-jjEJBzmIyKR4F-3XITp8yM9T1gEEI8","AIzaSyB6xiKGDR5O3Ak2okS4rLkauxGUG7XP0hg","developer.android.com","AIzaSyAQk0fBONSGUqCNznf6Krs82Ap1-NV6J4o","AIzaSyCCxcqdrZ_7QMeLCRY20bh_SXdAYqy70KY",null,null,null,["Profiles__enable_purchase_prompts","Profiles__enable_developer_profile_benefits_ui_redesign","DevPro__enable_code_assist","MiscFeatureFlags__enable_variable_operator_index_yaml","Cloud__cache_serialized_dynamic_content","Concierge__enable_actions_menu","Profiles__enable_complete_playlist_endpoint","Profiles__enable_join_program_group_endpoint","Profiles__enable_playlist_community_acl","CloudShell__cloud_shell_button","Profiles__require_profile_eligibility_for_signin","MiscFeatureFlags__developers_footer_dark_image","BookNav__enable_tenant_cache_key","DevPro__enable_google_one_card","Cloud__enable_cloud_shell","MiscFeatureFlags__gdp_dashboard_reskin_enabled","MiscFeatureFlags__enable_explicit_template_dependencies","Experiments__reqs_query_experiments","DevPro__remove_eu_tax_intake_form","Profiles__enable_completequiz_endpoint","DevPro__enable_embed_profile_creation","Cloud__fast_free_trial","Cloud__enable_free_trial_server_call","Search__enable_suggestions_from_borg","MiscFeatureFlags__enable_appearance_cookies","DevPro__enable_free_benefits","MiscFeatureFlags__enable_variable_operator","DevPro__enable_devpro_offers","MiscFeatureFlags__enable_firebase_utm","Profiles__enable_developer_profiles_callout","Search__enable_dynamic_content_confidential_banner","TpcFeatures__enable_unmirrored_page_left_nav","Profiles__enable_release_notes_notifications","MiscFeatureFlags__enable_dark_theme","MiscFeatureFlags__emergency_css","DevPro__enable_firebase_workspaces_card","Search__enable_page_map","MiscFeatureFlags__enable_project_variables","Profiles__enable_completecodelab_endpoint","EngEduTelemetry__enable_engedu_telemetry","Cloud__enable_cloud_dlp_service","Cloud__enable_cloudx_experiment_ids","Concierge__enable_remove_info_panel_tags","MiscFeatureFlags__enable_view_transitions","Profiles__enable_page_saving","CloudShell__cloud_code_overflow_menu","Search__enable_ai_search_summaries_for_all","DevPro__enable_enterprise","Significatio__enable_by_tenant","Cloud__enable_legacy_calculator_redirect","Profiles__enable_stripe_subscription_management","Cloud__enable_cloud_shell_fte_user_flow","MiscFeatureFlags__enable_framebox_badge_methods","TpcFeatures__proxy_prod_host","DevPro__enable_google_payments_buyflow","Concierge__enable_pushui","MiscFeatureFlags__developers_footer_image","Analytics__enable_clearcut_logging","Profiles__enable_profile_collections","DevPro__enable_vertex_credit_card","Profiles__enable_awarding_url","Profiles__enable_recognition_badges","Search__enable_ai_eligibility_checks","Profiles__enable_dashboard_curated_recommendations","Profiles__enable_callout_notifications","DevPro__enable_developer_subscriptions","DevPro__enable_cloud_innovators_plus","Profiles__enable_user_type","DevPro__enable_nvidia_credits_card","Cloud__enable_llm_concierge_chat","Profiles__enable_public_developer_profiles","MiscFeatureFlags__enable_project_body_class"],null,null,"AIzaSyBLEMok-5suZ67qRPzx0qUtbnLmyT_kCVE","https://developerscontentserving-pa.googleapis.com","AIzaSyCM4QpTRSqP5qI4Dvjt4OAScIN8sOUlO-k","https://developerscontentsearch-pa.googleapis.com",2,4,null,"https://developerprofiles-pa.googleapis.com",[3,"android","Android Developers","developer.android.com",null,"android-dot-devsite-v2-prod.appspot.com",null,null,[null,1,null,null,null,null,null,null,null,null,null,[1],null,null,null,null,null,null,[1],[1,null,null,[1,20],"/recommendations"],null,null,null,[1,null,1],[1,1,null,1,1]],null,[18,null,null,null,null,null,"/images/lockup.png","/images/touchicon-180.png",null,null,null,null,null,null,null,null,null,null,null,null,null,2,null,null,null,"/images/lockup-dark-theme.png",[]],[],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[6,1,14,15,20,22,23,28,29,37,43],null,[[null,null,1],[1,1]],[[null,null,null,null,null,null,null,[["G-QFRN08RN6E"],null,null,[["G-QFRN08RN6E",1]]],null,null,null,null,1],null,[[1,1],[2,2]]],null,4,null,null,null,null,null,null,null,null,null,null,null,null,null,"android.devsite.google"],null,"pk_live_5170syrHvgGVmSx9sBrnWtA5luvk9BwnVcvIi7HizpwauFG96WedXsuXh790rtij9AmGllqPtMLfhe2RSwD6Pn38V00uBCydV4m",1,null,"https://developerscontentinsights-pa.googleapis.com","AIzaSyCg-ZUslalsEbXMfIo9ZP8qufZgo3LSBDU","AIzaSyDxT0vkxnY_KeINtA4LSePJO-4MAZPMRsE","https://developers.googleapis.com",null,null,"AIzaSyBQom12tzI-rybN7Sf-KfeL4nwm-Rf7PmI\n",null,"https://developerslogging.googleapis.com"]')
+  
+</script>
+
+    <devsite-a11y-announce></devsite-a11y-announce>
+  </body>
+</html>

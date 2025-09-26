@@ -1,0 +1,2232 @@
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html 
+      lang="en"
+      dir="ltr">
+  <head>
+    <meta name="google-signin-client-id" content="721724668570-nbkv1cfusk7kk4eni4pjvepaus73b13t.apps.googleusercontent.com">
+    <meta name="google-signin-scope"
+          content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award">
+    <meta property="og:site_name" content="Android Developers">
+    <meta property="og:type" content="website"><meta name="theme-color" content="#34a853"><meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <link rel="manifest" href="/_pwa/android/manifest.json"
+          crossorigin="use-credentials">
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="//apis.google.com" crossorigin>
+    <link rel="preconnect" href="//www.google-analytics.com" crossorigin><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,600italic,700,700italic|Roboto+Mono:400,500,700&display=swap">
+      <link rel="stylesheet"
+            href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block"><link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/css/app.css">
+      
+        <link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/css/dark-theme.css" disabled>
+      <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/favicon.svg">
+    <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/touchicon-180.png"><link rel="canonical" href="https://developer.android.com/codelabs/android-proto-datastore"><link rel="search" type="application/opensearchdescription+xml"
+            title="Android Developers" href="https://developer.android.com/s/opensearch.xml">
+      <link rel="alternate" hreflang="en"
+          href="https://developer.android.com/codelabs/android-proto-datastore" /><link rel="alternate" hreflang="x-default" href="https://developer.android.com/codelabs/android-proto-datastore" /><link rel="alternate" hreflang="zh-Hans"
+          href="https://developer.android.com/codelabs/android-proto-datastore?hl=zh-cn" /><link rel="alternate" hreflang="fr"
+          href="https://developer.android.com/codelabs/android-proto-datastore?hl=fr" /><link rel="alternate" hreflang="id"
+          href="https://developer.android.com/codelabs/android-proto-datastore?hl=id" /><link rel="alternate" hreflang="ja"
+          href="https://developer.android.com/codelabs/android-proto-datastore?hl=ja" /><link rel="alternate" hreflang="ko"
+          href="https://developer.android.com/codelabs/android-proto-datastore?hl=ko" /><link rel="alternate" hreflang="pt-BR"
+          href="https://developer.android.com/codelabs/android-proto-datastore?hl=pt-br" /><link rel="alternate" hreflang="es-419"
+          href="https://developer.android.com/codelabs/android-proto-datastore?hl=es-419" /><title>Working with Proto DataStore &nbsp;|&nbsp; Android Developers</title>
+
+<meta property="og:title" content="Working with Proto DataStore &nbsp;|&nbsp; Android Developers"><meta name="description" content="In this codelab, you’ll modify a sample app to incorporate Jetpack Proto DataStore, a new and improved data store solution and replacement for SharedPreferences.">
+  <meta property="og:description" content="In this codelab, you’ll modify a sample app to incorporate Jetpack Proto DataStore, a new and improved data store solution and replacement for SharedPreferences."><meta property="og:url" content="https://developer.android.com/codelabs/android-proto-datastore"><meta property="og:locale" content="en">
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+
+    
+      <link rel="stylesheet" href="/extras.css"></head>
+  <body class=""
+        template="codelab"
+        theme="android-theme"
+        type="codelab"
+        
+        
+        appearance
+        
+        layout="docs"
+        
+        
+        
+        
+        display-toc
+        pending>
+  
+    <devsite-progress type="indeterminate" id="app-progress"></devsite-progress>
+  
+  
+    <a href="#main-content" class="skip-link button">
+      
+      Skip to main content
+    </a>
+    <section class="devsite-wrapper">
+      <devsite-cookie-notification-bar></devsite-cookie-notification-bar><devsite-header role="banner">
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-header--inner" data-nosnippet>
+  <div class="devsite-top-logo-row-wrapper-wrapper">
+    <div class="devsite-top-logo-row-wrapper">
+      <div class="devsite-top-logo-row">
+        <button type="button" id="devsite-hamburger-menu"
+          class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+          data-category="Site-Wide Custom Events"
+          data-label="Navigation menu button"
+          visually-hidden
+          aria-label="Open menu">
+        </button>
+        
+<div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="androidDevelopers" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-dark-theme.png"
+            media="(prefers-color-scheme: dark)"
+            class="devsite-dark-theme">
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png" class="devsite-site-logo" alt="Android Developers">
+  </picture>
+  
+</a>
+
+
+
+</div>
+        <div class="devsite-top-logo-row-middle">
+          <div class="devsite-header-upper-tabs">
+            
+           </div>
+          
+<devsite-search
+    enable-signin
+    enable-search
+    enable-suggestions
+      enable-query-completion
+    
+    enable-search-summaries
+    
+    tenant-name="Android Developers"
+    
+    
+    
+    
+    
+    >
+  <form class="devsite-search-form" action="https://developer.android.com/s/results" method="GET">
+    <div class="devsite-search-container">
+      <button type="button"
+              search-open
+              class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+              
+              aria-label="Open search"></button>
+      <div class="devsite-searchbox">
+        <input
+          aria-activedescendant=""
+          aria-autocomplete="list"
+          
+          aria-label="Search"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          autocomplete="off"
+          class="devsite-search-field devsite-search-query"
+          name="q"
+          
+          placeholder="Search"
+          role="combobox"
+          type="text"
+          value=""
+          >
+          <div class="devsite-search-image material-icons" aria-hidden="true">
+            
+              <svg class="devsite-search-ai-image" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_6641_386)">
+                    <path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14167 15.375 4.875 14.125C3.625 12.8583 3 11.3167 3 9.5C3 7.68333 3.625 6.15 4.875 4.9C6.14167 3.63333 7.68333 3 9.5 3C10.0167 3 10.5167 3.05833 11 3.175C11.4833 3.275 11.9417 3.43333 12.375 3.65L10.825 5.2C10.6083 5.13333 10.3917 5.08333 10.175 5.05C9.95833 5.01667 9.73333 5 9.5 5C8.25 5 7.18333 5.44167 6.3 6.325C5.43333 7.19167 5 8.25 5 9.5C5 10.75 5.43333 11.8167 6.3 12.7C7.18333 13.5667 8.25 14 9.5 14C10.6667 14 11.6667 13.625 12.5 12.875C13.35 12.1083 13.8417 11.15 13.975 10H15.975C15.925 10.6333 15.7833 11.2333 15.55 11.8C15.3333 12.3667 15.05 12.8667 14.7 13.3L21 19.6L19.6 21ZM17.5 12C17.5 10.4667 16.9667 9.16667 15.9 8.1C14.8333 7.03333 13.5333 6.5 12 6.5C13.5333 6.5 14.8333 5.96667 15.9 4.9C16.9667 3.83333 17.5 2.53333 17.5 0.999999C17.5 2.53333 18.0333 3.83333 19.1 4.9C20.1667 5.96667 21.4667 6.5 23 6.5C21.4667 6.5 20.1667 7.03333 19.1 8.1C18.0333 9.16667 17.5 10.4667 17.5 12Z" fill="#5F6368"/>
+                  </g>
+                <defs>
+                <clipPath id="clip0_6641_386">
+                <rect width="24" height="24" fill="white"/>
+                </clipPath>
+                </defs>
+              </svg>
+            
+          </div>
+          <div class="devsite-search-shortcut-icon-container" aria-hidden="true">
+            <kbd class="devsite-search-shortcut-icon">/</kbd>
+          </div>
+      </div>
+    </div>
+  </form>
+  <button type="button"
+          search-close
+          class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+          
+          aria-label="Close search"></button>
+</devsite-search>
+
+        </div>
+
+        
+
+          
+
+          
+
+          <devsite-appearance-selector></devsite-appearance-selector>
+
+          
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+
+          
+            <a class="devsite-header-link devsite-top-button button gc-analytics-event "
+    href="https://developer.android.com/studio"
+    data-category="Site-Wide Custom Events"
+    data-label="Site header link: Android Studio"
+    >
+  Android Studio
+</a>
+          
+
+        
+
+        
+          <devsite-user 
+                        
+                        
+                          enable-profiles
+                        
+                        
+                        id="devsite-user">
+            
+              
+              <span class="button devsite-top-button" aria-hidden="true" visually-hidden>Sign in</span>
+            
+          </devsite-user>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
+  
+</devsite-header>
+      <devsite-book-nav scrollbars hidden>
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-book-nav-filter"
+     hidden>
+  <span class="filter-list-icon material-icons" aria-hidden="true"></span>
+  <input type="text"
+         placeholder="Filter"
+         
+         aria-label="Type to filter"
+         role="searchbox">
+  
+  <span class="filter-clear-button hidden"
+        data-title="Clear filter"
+        aria-label="Clear filter"
+        role="button"
+        tabindex="0"></span>
+</div>
+
+<nav class="devsite-book-nav devsite-nav nocontent"
+     aria-label="Side menu">
+  <div class="devsite-mobile-header">
+    <button type="button"
+            id="devsite-close-nav"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Close navigation"
+            aria-label="Close navigation">
+    </button>
+    <div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="androidDevelopers" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-dark-theme.png"
+            media="(prefers-color-scheme: dark)"
+            class="devsite-dark-theme">
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png" class="devsite-site-logo" alt="Android Developers">
+  </picture>
+  
+</a>
+
+
+</div>
+  </div>
+
+  <div class="devsite-book-nav-wrapper">
+    <div class="devsite-mobile-nav-top">
+      
+        <ul class="devsite-nav-list">
+          
+          
+    
+    
+<li class="devsite-nav-item">
+
+  
+  <a href="/studio"
+    
+       class="devsite-nav-title gc-analytics-event "
+    
+
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Android Studio"
+     track-type="navMenu"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Android Studio
+   </span>
+    
+  
+  </a>
+  
+
+</li>
+
+  
+          
+        </ul>
+      
+    </div>
+    
+  </div>
+</nav>
+        
+      </devsite-book-nav>
+      <section id="gc-wrapper">
+        <main role="main" id="main-content" class="devsite-main-content"
+            
+              
+              has-sidebar
+            >
+          <div class="devsite-sidebar">
+            <div class="devsite-sidebar-content">
+                
+                <devsite-toc class="devsite-nav"
+                            role="navigation"
+                            aria-label="On this page"
+                            depth="1"
+                            scrollbars
+                  ></devsite-toc>
+                <devsite-recommendations-sidebar class="nocontent devsite-nav">
+                </devsite-recommendations-sidebar>
+            </div>
+          </div>
+          <devsite-content>
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="devsite-article"><style>
+      body {
+        transition: opacity ease-in 0.2s;
+      }
+
+      body[unresolved] {
+        opacity: 0;
+        display: block;
+        overflow: hidden;
+        position: relative;
+      }
+      </style>
+  
+  
+  
+  
+  
+
+  <div class="devsite-article-meta nocontent" role="navigation">
+    
+    
+    <ul class="devsite-breadcrumb-list"
+  >
+  
+</ul>
+    
+  </div>
+  
+    <h1 class="devsite-page-title" tabindex="-1">
+      Working with Proto DataStore<div class="devsite-actions" hidden data-nosnippet><devsite-feature-tooltip
+      ack-key="AckCollectionsBookmarkTooltipDismiss"
+      analytics-category="Site-Wide Custom Events"
+      analytics-action-show="Callout Profile displayed"
+      analytics-action-close="Callout Profile dismissed"
+      analytics-label="Create Collection Callout"
+      class="devsite-page-bookmark-tooltip nocontent"
+      dismiss-button="true"
+      id="devsite-collections-dropdown"
+      
+      dismiss-button-text="Dismiss"
+
+      
+      close-button-text="Got it">
+
+    
+    
+      <devsite-bookmark></devsite-bookmark>
+    
+
+    <span slot="popout-heading">
+      
+      Stay organized with collections
+    </span>
+    <span slot="popout-contents">
+      
+      Save and categorize content based on your preferences.
+    </span>
+  </devsite-feature-tooltip></div>
+  
+      
+    </h1>
+  
+
+  <devsite-toc class="devsite-nav"
+    depth="1"
+    devsite-toc-embedded
+    >
+  </devsite-toc>
+  
+    
+  <div class="devsite-article-body clearfix
+  ">
+
+  
+    
+    
+    <google-codelab-analytics gaid="UA-49880327-14" ga4id="G-JTFZSJVVVZ"></google-codelab-analytics>
+    <google-codelab codelab-gaid=""
+                    codelab-ga4id=""
+                    doc-id="1303bBesqxEas2vEf_467gf2FpMi6S8hz-YC12cCsDYE"
+                    id="android-proto-datastore"
+                    title="Working with Proto DataStore"
+                    no-tooltip=""
+                    environment="web"
+                    category=""
+                    feedback-link="https://github.com/android/codelab-android-datastore/issues"
+                    layout="paginated"
+                    >
+      
+        <google-codelab-step label="Introduction" duration="2" step="0">
+          
+            <google-codelab-about codelab-title="Working with Proto DataStore"
+                                  authors="Florina Muntenescu"
+                                  last-updated="2023-09-21T19:59:23Z"
+                                  duration="34">
+            </google-codelab-about>
+          
+          <h2 class="step-title" id="0" data-text="Introduction" tabindex="-1">
+              1. Introduction
+          </h2>
+          <h2 is-upgraded id="what-is-datastore" data-text="What is DataStore?" tabindex="-1"><strong>What is DataStore?</strong></h2>
+<p>DataStore is a new and improved data storage solution aimed at replacing SharedPreferences. Built on Kotlin coroutines and Flow, DataStore provides two different implementations: <strong>Proto DataStore</strong>, which lets you store <strong>typed objects</strong> (backed by  <a href="https://developers.google.com/protocol-buffers" target="_blank">protocol buffers</a>) and <strong>Preferences DataStore</strong>, which stores <strong>key-value pairs</strong>. Data is stored asynchronously, consistently, and transactionally, overcoming some of the drawbacks of SharedPreferences.</p>
+<aside class="special"><p>This codelab focuses on Proto DataStore. To learn hands-on how to use Preferences DataStore, check out this  <a href="https://codelabs.developers.google.com/codelabs/android-preferences-datastore" target="_blank">codelab</a>.</p>
+</aside>
+<h2 class="checklist" is-upgraded id="what-youll-learn" data-text="What you'll learn" tabindex="-1"><strong>What you'll learn</strong></h2>
+<ul class="checklist">
+<li>What DataStore is and why you should use it.</li>
+<li>How to add DataStore to your project.</li>
+<li>The differences between Preferences and Proto DataStore and the advantages of each.</li>
+<li>How to use Proto DataStore.</li>
+<li>How to migrate from SharedPreferences to Proto DataStore.</li>
+</ul>
+<h2 is-upgraded id="what-you-will-build" data-text="What you will build" tabindex="-1"><strong>What you will build</strong></h2>
+<p>In this codelab, you&#39;re going to start with a sample app that displays a list of tasks that can be filtered by their completed status and can be sorted by priority and deadline.</p>
+<p class="image-container"><img alt="429d889061f19c94.gif" style="width: 336.25px" src="/static/codelabs/android-proto-datastore/img/429d889061f19c94.gif"></p>
+<p>The boolean flag for the <em>Show completed tasks</em> filter is saved in memory. The sort order is persisted to disk using a <code translate="no" dir="ltr">SharedPreferences</code> object.</p>
+<p>As DataStore has two different implementations: Preferences DataStore and Proto DataStore, you will learn how to use <strong>Proto DataStore</strong> completing the following tasks in each implementation:</p>
+<ul>
+<li>Persist the completed status filter in DataStore.</li>
+<li>Migrate the sort order from SharedPreferences to DataStore.</li>
+</ul>
+<p>We recommend working through the Preferences DataStore codelab too, so you better understand the difference between the two.</p>
+<h2 is-upgraded id="what-youll-need" data-text="What you'll need" tabindex="-1"><strong>What you'll need</strong></h2>
+<ul>
+<li>Android Studio Arctic Fox.</li>
+<li>Familiarity with the following Architecture Components:  <a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData" target="_blank">LiveData</a>,  <a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/ViewModel" target="_blank">ViewModel</a>,  <a href="https://developer.android.com/topic/libraries/view-binding" target="_blank">View Binding</a> and with the architecture suggested in the  <a href="https://developer.android.com/topic/libraries/architecture/guide.html" target="_blank">Guide to app architecture</a>.</li>
+<li>Familiarity with  <a href="https://kotlinlang.org/docs/reference/coroutines-overview.html" target="_blank">coroutines</a> and Kotlin  <a href="https://kotlinlang.org/docs/reference/coroutines/flow.html" target="_blank">Flow</a>.</li>
+</ul>
+<p>For an introduction to Architecture Components, check out the  <a href="https://codelabs.developers.google.com/codelabs/android-room-with-a-view-kotlin/" target="_blank">Room with a View codelab</a>. For an introduction to Flow, check out the  <a href="https://codelabs.developers.google.com/codelabs/advanced-kotlin-coroutines" target="_blank">Advanced Coroutines with Kotlin Flow and LiveData codelab</a>.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Getting set up" duration="2" step="1">
+          
+          <h2 class="step-title" id="1" data-text="Getting set up" tabindex="-1">
+              2. Getting set up
+          </h2>
+          <p>In this step, you will download the code for the entire codelab and then run a simple example app.</p>
+<p>To get you started as quickly as possible, we have prepared a starter project for you to build on.</p>
+<p>If you have git installed, you can simply run the command below. To check whether git is installed, type <code translate="no" dir="ltr">git --version</code> in the terminal or command line and verify that it executes correctly.</p>
+<div></div><devsite-code><pre translate="no" dir="ltr" is-upgraded> git clone https://github.com/android/codelab-android-datastore
+</pre></devsite-code>
+<p>The initial state is in the <code translate="no" dir="ltr">master</code> branch. The solution code is located in the <a href="https://github.com/android/codelab-android-datastore/tree/proto_datastore" target="_blank"><code translate="no" dir="ltr">proto_datastore</code></a> branch.</p>
+<p>If you do not have git, you can click the following button to download all of the code for this codelab:</p>
+<p><a href="https://github.com/android/codelab-android-datastore/archive/master.zip" target="_blank">Download source code</a></p>
+<ol type="1">
+<li>Unzip the code, and then open the project in Android Studio Arctic Fox.</li>
+<li>Run the <strong>app</strong> run configuration on a device or emulator.</li>
+</ol>
+<p class="image-container"><img alt="89af884fa2d4e709.png" style="width: 624.00px" src="/static/codelabs/android-proto-datastore/img/89af884fa2d4e709.png" srcset="https://developer.android.com/static/codelabs/android-proto-datastore/img/89af884fa2d4e709_36.png 36w,https://developer.android.com/static/codelabs/android-proto-datastore/img/89af884fa2d4e709_48.png 48w,https://developer.android.com/static/codelabs/android-proto-datastore/img/89af884fa2d4e709_72.png 72w,https://developer.android.com/static/codelabs/android-proto-datastore/img/89af884fa2d4e709_96.png 96w,https://developer.android.com/static/codelabs/android-proto-datastore/img/89af884fa2d4e709_480.png 480w,https://developer.android.com/static/codelabs/android-proto-datastore/img/89af884fa2d4e709_720.png 720w,https://developer.android.com/static/codelabs/android-proto-datastore/img/89af884fa2d4e709_856.png 856w,https://developer.android.com/static/codelabs/android-proto-datastore/img/89af884fa2d4e709_960.png 960w,https://developer.android.com/static/codelabs/android-proto-datastore/img/89af884fa2d4e709_1440.png 1440w,https://developer.android.com/static/codelabs/android-proto-datastore/img/89af884fa2d4e709_1920.png 1920w,https://developer.android.com/static/codelabs/android-proto-datastore/img/89af884fa2d4e709_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>The app runs and displays the list of tasks:</p>
+<p class="image-container"><img alt="16eb4ceb800bf131.png" style="width: 327.03px" src="/static/codelabs/android-proto-datastore/img/16eb4ceb800bf131.png" srcset="https://developer.android.com/static/codelabs/android-proto-datastore/img/16eb4ceb800bf131_36.png 36w,https://developer.android.com/static/codelabs/android-proto-datastore/img/16eb4ceb800bf131_48.png 48w,https://developer.android.com/static/codelabs/android-proto-datastore/img/16eb4ceb800bf131_72.png 72w,https://developer.android.com/static/codelabs/android-proto-datastore/img/16eb4ceb800bf131_96.png 96w,https://developer.android.com/static/codelabs/android-proto-datastore/img/16eb4ceb800bf131_480.png 480w,https://developer.android.com/static/codelabs/android-proto-datastore/img/16eb4ceb800bf131_720.png 720w,https://developer.android.com/static/codelabs/android-proto-datastore/img/16eb4ceb800bf131_856.png 856w,https://developer.android.com/static/codelabs/android-proto-datastore/img/16eb4ceb800bf131_960.png 960w,https://developer.android.com/static/codelabs/android-proto-datastore/img/16eb4ceb800bf131_1440.png 1440w,https://developer.android.com/static/codelabs/android-proto-datastore/img/16eb4ceb800bf131_1920.png 1920w,https://developer.android.com/static/codelabs/android-proto-datastore/img/16eb4ceb800bf131_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Project overview" duration="5" step="2">
+          
+          <h2 class="step-title" id="2" data-text="Project overview" tabindex="-1">
+              3. Project overview
+          </h2>
+          <p>The app allows you to see a list of tasks. Each task has the following properties: name, completed status, priority, and deadline.</p>
+<p>To simplify the code we need to work with, the app allows you to do only two actions:</p>
+<ul>
+<li>Toggle <em>Show completed tasks</em> visibility - by default the tasks are hidden</li>
+<li>Sort the tasks by priority, by deadline or by deadline and priority</li>
+</ul>
+<p>The app follows the architecture recommended in the  <a href="https://developer.android.com/topic/libraries/architecture/guide.html" target="_blank">Guide to app architecture</a>. Here&#39;s what you will find in each package:</p>
+<p><strong><code translate="no" dir="ltr">data</code></strong></p>
+<ul>
+<li>The <code translate="no" dir="ltr">Task</code> model class.</li>
+<li><code translate="no" dir="ltr">TasksRepository</code> class - responsible for providing the tasks. For simplicity, it returns hardcoded data and exposes it via a <code translate="no" dir="ltr">Flow</code> to represent a more realistic scenario.</li>
+<li><code translate="no" dir="ltr">UserPreferencesRepository</code> class -  holds the <code translate="no" dir="ltr">SortOrder</code>, defined as an <code translate="no" dir="ltr">enum</code>. The current <strong>sort order is saved in SharedPreferences</strong> as a <code translate="no" dir="ltr">String</code>, based on the enum value name. It exposes synchronous methods to save and get the sort order.</li>
+</ul>
+<p><strong><code translate="no" dir="ltr">ui</code></strong></p>
+<ul>
+<li>Classes related to displaying an <code translate="no" dir="ltr">Activity</code> with a <code translate="no" dir="ltr">RecyclerView</code>.</li>
+<li>The <code translate="no" dir="ltr">TasksViewModel</code> class is responsible for the UI logic.</li>
+</ul>
+<p><code translate="no" dir="ltr">TasksViewModel</code> - holds all the elements necessary to build the data that needs to be displayed in the UI: the list of tasks, the <code translate="no" dir="ltr">showCompleted</code> and <code translate="no" dir="ltr">sortOrder</code> flags, wrapped in a <code translate="no" dir="ltr">TasksUiModel</code> object.  Every time one of these values changes, we have to reconstruct a new <code translate="no" dir="ltr">TasksUiModel</code>. To do this, we combine 3 elements:</p>
+<ul>
+<li>A <code translate="no" dir="ltr">Flow&lt;List&lt;Task&gt;&gt;</code> is retrieved from the <code translate="no" dir="ltr">TasksRepository</code>.</li>
+<li>A <code translate="no" dir="ltr">MutableStateFlow&lt;Boolean&gt;</code> holding the latest <code translate="no" dir="ltr">showCompleted</code> flag which is only kept <strong>in memory</strong>.</li>
+<li>A <code translate="no" dir="ltr">MutableStateFlow&lt;SortOrder&gt;</code> holding the latest <code translate="no" dir="ltr">sortOrder</code> value.</li>
+</ul>
+<p>To ensure that we&#39;re updating the UI correctly, only when the Activity is started, we expose a <code translate="no" dir="ltr">LiveData&lt;TasksUiModel&gt;</code>.</p>
+<p>We have a couple of problems with our code:</p>
+<ul>
+<li>We block the UI thread on disk IO when initializating <code translate="no" dir="ltr">UserPreferencesRepository.sortOrder</code>. This can result in UI jank.</li>
+<li>The <code translate="no" dir="ltr">showCompleted</code> flag is only kept in memory, so this means it will be reset every time the user opens the app. Like the <code translate="no" dir="ltr">SortOrder</code>, this should be persisted to survive closing the app.</li>
+<li>We&#39;re currently using SharedPreferences to persist data but we keep a <code translate="no" dir="ltr">MutableStateFlow</code> in memory, that we modify manually, to be able to be notified of changes. This breaks easily if the value is modified somewhere else in the application.</li>
+<li>In <code translate="no" dir="ltr">UserPreferencesRepository</code> we expose two methods for updating the sort order: <code translate="no" dir="ltr">enableSortByDeadline()</code> and <code translate="no" dir="ltr">enableSortByPriority()</code>. Both of these methods rely on the current sort order value but, if one is called before the other has finished, we would end up with the wrong final value. Even more, these methods can result in UI jank and Strict Mode violations as they&#39;re called on the UI thread.</li>
+</ul>
+<p>Although both the <code translate="no" dir="ltr">showCompleted</code> and <code translate="no" dir="ltr">sortOrder</code> flags are user preferences, currently they&#39;re represented as two different objects. So one of our goals will be to unify these two flags under a <code translate="no" dir="ltr">UserPreferences</code> class.</p>
+<p>Let&#39;s find out how to use DataStore to help us with these issues.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="DataStore - the basics" duration="5" step="3">
+          
+          <h2 class="step-title" id="3" data-text="DataStore - the basics" tabindex="-1">
+              4. DataStore - the basics
+          </h2>
+          <p>Often you might find yourself needing to store small or simple data sets. For this, in the past, you might have used SharedPreferences but this API also has a series of drawbacks. Jetpack DataStore library aims at addressing those issues, creating a simple, safer and asynchronous API for storing data. It provides 2 different implementations:</p>
+<ul>
+<li>Preferences DataStore</li>
+<li>Proto DataStore</li>
+</ul>
+<table class="vertical-rules">
+<tr><td colspan="1" rowspan="1"><p><strong>Feature</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>SharedPreferences</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>PreferencesDataStore</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>ProtoDataStore</strong></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Async API</p>
+</td><td colspan="1" rowspan="1"><p>✅ (only for reading changed values, via <a href="https://developer.android.com/reference/android/content/SharedPreferences.OnSharedPreferenceChangeListener" target="_blank">listener</a>)</p>
+</td><td colspan="1" rowspan="1"><p>✅ (via <code translate="no" dir="ltr">Flow</code> and RxJava 2 &amp; 3 <code translate="no" dir="ltr">Flowable</code>)</p>
+</td><td colspan="1" rowspan="1"><p>✅ (via <code translate="no" dir="ltr">Flow</code> and RxJava 2 &amp; 3 <code translate="no" dir="ltr">Flowable</code>)</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Synchronous API</p>
+</td><td colspan="1" rowspan="1"><p>✅ (but not safe to call on UI thread)</p>
+</td><td colspan="1" rowspan="1"><p>❌</p>
+</td><td colspan="1" rowspan="1"><p>❌</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Safe to call on UI thread</p>
+</td><td colspan="1" rowspan="1"><p>❌(1)</p>
+</td><td colspan="1" rowspan="1"><p>✅ (work is moved to <code translate="no" dir="ltr">Dispatchers.IO</code> under the hood)</p>
+</td><td colspan="1" rowspan="1"><p>✅ (work is moved to <code translate="no" dir="ltr">Dispatchers.IO</code> under the hood)</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Can signal errors</p>
+</td><td colspan="1" rowspan="1"><p>❌</p>
+</td><td colspan="1" rowspan="1"><p>✅</p>
+</td><td colspan="1" rowspan="1"><p>✅</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Safe from runtime exceptions</p>
+</td><td colspan="1" rowspan="1"><p>❌(2)</p>
+</td><td colspan="1" rowspan="1"><p>✅</p>
+</td><td colspan="1" rowspan="1"><p>✅</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Has a transactional API with strong consistency guarantees</p>
+</td><td colspan="1" rowspan="1"><p>❌</p>
+</td><td colspan="1" rowspan="1"><p>✅</p>
+</td><td colspan="1" rowspan="1"><p>✅</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Handles data migration</p>
+</td><td colspan="1" rowspan="1"><p>❌</p>
+</td><td colspan="1" rowspan="1"><p>✅</p>
+</td><td colspan="1" rowspan="1"><p>✅</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Type safety</p>
+</td><td colspan="1" rowspan="1"><p>❌</p>
+</td><td colspan="1" rowspan="1"><p>❌</p>
+</td><td colspan="1" rowspan="1"><p>✅ with <a href="https://developers.google.com/protocol-buffers" target="_blank">Protocol Buffers</a></p>
+</td></tr>
+</table>
+<p>(1) SharedPreferences has a synchronous API that can appear safe to call on the UI thread, but which actually does disk I/O operations. Furthermore, <code translate="no" dir="ltr">apply()</code> blocks the UI thread on <code translate="no" dir="ltr">fsync()</code>. Pending <code translate="no" dir="ltr">fsync()</code> calls are triggered every time any service starts or stops, and every time an activity starts or stops anywhere in your application. The UI thread is blocked on pending <code translate="no" dir="ltr">fsync()</code> calls scheduled by <code translate="no" dir="ltr">apply()</code>, often becoming a source of  <a href="https://developer.android.com/topic/performance/vitals/anr" target="_blank">ANRs</a>.</p>
+<p>(2) SharedPreferences throws parsing errors as runtime exceptions.</p>
+<h3 is-upgraded id="preferences-vs-proto-datastore" data-text="Preferences vs Proto DataStore" tabindex="-1"><strong>Preferences vs Proto DataStore</strong></h3>
+<p>While both Preferences and Proto DataStore allow saving data, they do this in different ways:</p>
+<ul>
+<li><strong>Preference DataStore</strong>, like SharedPreferences, accesses data based on keys, without defining a schema upfront.</li>
+<li><strong>Proto DataStore</strong> defines the schema using  <a href="https://developers.google.com/protocol-buffers" target="_blank">Protocol buffers</a>. Using Protobufs allows <strong>persisting strongly typed data</strong>. They are faster, smaller, simpler, and less ambiguous than XML and other similar data formats. While Proto DataStore requires you to learn a new serialization mechanism, we believe that the strongly typed advantage brought by Proto DataStore is worth it.</li>
+</ul>
+<h3 is-upgraded id="room-vs-datastore" data-text="Room vs DataStore" tabindex="-1"><strong>Room vs DataStore</strong></h3>
+<p>If you have a need for partial updates, referential integrity, or large/complex datasets, you should consider using Room instead of DataStore. DataStore is ideal for small or simple datasets and does not support partial updates or referential integrity.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Proto DataStore - overview" duration="2" step="4">
+          
+          <h2 class="step-title" id="4" data-text="Proto DataStore - overview" tabindex="-1">
+              5. Proto DataStore - overview
+          </h2>
+          <p>One of the downsides of SharedPreferences and Preferences DataStore is that there is no way to define a schema or to ensure that keys are accessed with the correct type. Proto DataStore addresses this problem by using  <a href="https://developers.google.com/protocol-buffers" target="_blank">Protocol buffers</a> to define the schema. Using protos DataStore knows what types are stored and will just provide them, removing the need for using keys.</p>
+<p>Let&#39;s see how to add Proto DataStore and Protobufs to the project, what Protocol buffers are and how to use them with Proto DataStore and how to migrate SharedPreferences to DataStore.</p>
+<h2 is-upgraded id="adding-dependencies" data-text="Adding dependencies" tabindex="-1"><strong>Adding dependencies</strong></h2>
+<p>To work with Proto DataStore and get Protobuf to generate code for our schema, we&#39;ll have to make several changes to your module&#39;s build.gradle file:</p>
+<ul>
+<li>Add the Protobuf plugin</li>
+<li>Add the Protobuf and Proto DataStore dependencies</li>
+<li>Configure Protobuf</li>
+</ul>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Carbon"><code translate="no" dir="ltr"><span class="devsite-syntax-nx">plugins</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-o">...</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">id</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"com.google.protobuf"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">version</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"0.8.17"</span>
+<span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-nx">dependencies</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">implementation</span><span class="devsite-syntax-w">  </span><span class="devsite-syntax-s">"androidx.datastore:datastore:1.0.0"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">implementation</span><span class="devsite-syntax-w">  </span><span class="devsite-syntax-s">"com.google.protobuf:protobuf-javalite:3.18.0"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-o">...</span>
+<span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-nx">protobuf</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">protoc</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">artifact</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"com.google.protobuf:protoc:21.7"</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-c1">// Generates the java Protobuf-lite code for the Protobufs in this project. See</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-c1">// https://github.com/google/protobuf-gradle-plugin#customizing-protobuf-compilation</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-c1">// for more information.</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">generateProtoTasks</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">all</span><span class="devsite-syntax-p">().</span><span class="devsite-syntax-nx">each</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">task</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">-</span>&gt;
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-nx">task</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">builtins</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-nx">java</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                    </span><span class="devsite-syntax-nx">option</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">'</span><span class="devsite-syntax-nx">lite</span><span class="devsite-syntax-err">'</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Defining and using protobuf objects" duration="5" step="5">
+          
+          <h2 class="step-title" id="5" data-text="Defining and using protobuf objects" tabindex="-1">
+              6. Defining and using protobuf objects
+          </h2>
+          <p>Protocol buffers are a mechanism for serializing structured data. You define how you want your data to be structured once and then the compiler generates source code to easily write and read the structured data.</p>
+<h2 is-upgraded id="create-the-proto-file" data-text="Create the proto file" tabindex="-1"><strong>Create the proto file</strong></h2>
+<p>You define your schema in a proto file. In our codelab we have 2 user preferences: <code translate="no" dir="ltr">show_completed</code> and <code translate="no" dir="ltr">sort_order</code>; currently they&#39;re represented as two different objects. So one of our goals is to unify these two flags under a <code translate="no" dir="ltr">UserPreferences</code> class that gets stored in DataStore. Instead of defining this class in Kotlin, we will define it in protobuf schema.</p>
+<p>Check out the  <a href="https://developers.google.com/protocol-buffers/docs/overview" target="_blank">Proto language guide</a> for in depth info on the syntax. In this codelab we&#39;re only going to focus on the types we need.</p>
+<p>Create a new file called <code translate="no" dir="ltr">user_prefs.proto</code> in the <code translate="no" dir="ltr">app/src/main/proto</code> directory. If you don&#39;t see this folder structure, switch to <strong>Project view</strong>. In protobufs, each structure is defined using a <code translate="no" dir="ltr">message</code> keyword and each member of the structure is defined inside the message, based on type and name and it gets assigned a 1-based order. Let&#39;s define a <code translate="no" dir="ltr">UserPreferences</code> message that, for now, just has a boolean value called <code translate="no" dir="ltr">show_completed</code>.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Carbon"><code translate="no" dir="ltr"><span class="devsite-syntax-nx">syntax</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"proto3"</span><span class="devsite-syntax-p">;</span>
+
+<span class="devsite-syntax-nx">option</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">java_package</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"com.codelab.android.datastore"</span><span class="devsite-syntax-p">;</span>
+<span class="devsite-syntax-nx">option</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">java_multiple_files</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">true</span><span class="devsite-syntax-p">;</span>
+
+<span class="devsite-syntax-nx">message</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">UserPreferences</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-c1">// filter for showing / hiding completed tasks</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-kt">bool</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">show_completed</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mi">1</span><span class="devsite-syntax-p">;</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<aside class="warning"><p>The <code translate="no" dir="ltr">UserPreferences</code> class is generated at compile time from the <code translate="no" dir="ltr">message</code> defined in the proto file. Make sure you rebuild the project.</p>
+</aside>
+<h3 is-upgraded id="create-the-serializer" data-text="Create the serializer" tabindex="-1"><strong>Create the serializer</strong></h3>
+<p>To tell DataStore how to read and write the data type we defined in the proto file, we need to implement a Serializer. The Serializer defines also the default value to be returned if there&#39;s no data on disk. Create a new file called <code translate="no" dir="ltr">UserPreferencesSerializer</code> in the <code translate="no" dir="ltr">data</code> package:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scalate Server Page"><code translate="no" dir="ltr">object<span class="devsite-syntax-w"> </span>UserPreferencesSerializer<span class="devsite-syntax-w"> </span>:<span class="devsite-syntax-w"> </span>Serializer&lt;UserPreferences&gt;<span class="devsite-syntax-w"> </span>{
+<span class="devsite-syntax-w">    </span>override<span class="devsite-syntax-w"> </span>val<span class="devsite-syntax-w"> </span>defaultValue:<span class="devsite-syntax-w"> </span>UserPreferences<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>UserPreferences.getDefaultInstance()
+<span class="devsite-syntax-w">    </span>override<span class="devsite-syntax-w"> </span>suspend<span class="devsite-syntax-w"> </span>fun<span class="devsite-syntax-w"> </span>readFrom(input:<span class="devsite-syntax-w"> </span>InputStream):<span class="devsite-syntax-w"> </span>UserPreferences<span class="devsite-syntax-w"> </span>{
+<span class="devsite-syntax-w">        </span>try<span class="devsite-syntax-w"> </span>{
+<span class="devsite-syntax-w">            </span>return<span class="devsite-syntax-w"> </span>UserPreferences.parseFrom(input)
+<span class="devsite-syntax-w">        </span>}<span class="devsite-syntax-w"> </span>catch<span class="devsite-syntax-w"> </span>(exception:<span class="devsite-syntax-w"> </span>InvalidProtocolBufferException)<span class="devsite-syntax-w"> </span>{
+<span class="devsite-syntax-w">            </span>throw<span class="devsite-syntax-w"> </span>CorruptionException("Cannot<span class="devsite-syntax-w"> </span>read<span class="devsite-syntax-w"> </span>proto.",<span class="devsite-syntax-w"> </span>exception)
+<span class="devsite-syntax-w">        </span>}
+<span class="devsite-syntax-w">    </span>}
+
+<span class="devsite-syntax-w">    </span>override<span class="devsite-syntax-w"> </span>suspend<span class="devsite-syntax-w"> </span>fun<span class="devsite-syntax-w"> </span>writeTo(t:<span class="devsite-syntax-w"> </span>UserPreferences,<span class="devsite-syntax-w"> </span>output:<span class="devsite-syntax-w"> </span>OutputStream)<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>t.writeTo(output)
+}
+</code></pre></devsite-code>
+<aside class="warning"><p>If the <code translate="no" dir="ltr">UserPreferences</code> object or related methods can&#39;t be found, clean and rebuild the project to ensure that Protobuf generates the object.</p>
+</aside>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Persisting data in Proto DataStore" duration="5" step="6">
+          
+          <h2 class="step-title" id="6" data-text="Persisting data in Proto DataStore" tabindex="-1">
+              7. Persisting data in Proto DataStore
+          </h2>
+          <h2 is-upgraded id="creating-the-datastore" data-text="Creating the DataStore" tabindex="-1"><strong>Creating the DataStore</strong></h2>
+<p>The <code translate="no" dir="ltr">showCompleted</code> flag is kept in memory, in <code translate="no" dir="ltr">TasksViewModel</code> but it should be stored in <code translate="no" dir="ltr">UserPreferencesRepository</code>, in a DataStore instance.</p>
+<p>To create a DataStore instance we use the <code translate="no" dir="ltr">dataStore</code> delegate, with the <code translate="no" dir="ltr">Context</code> as receiver. The delegate has two mandatory parameters:</p>
+<ul>
+<li>The name of the file that DataStore will act on.</li>
+<li>The serializer for the type used with DataStore. In our case: <code translate="no" dir="ltr">UserPreferencesSerializer</code>.</li>
+</ul>
+<p>For simplicity, in this codelab, let&#39;s do this in <code translate="no" dir="ltr">TasksActivity.kt</code>:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="GDScript"><code translate="no" dir="ltr"><span class="devsite-syntax-n">private</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">const</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">USER_PREFERENCES_NAME</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"user_preferences"</span>
+<span class="devsite-syntax-n">private</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">const</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">DATA_STORE_FILE_NAME</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"user_prefs.pb"</span>
+<span class="devsite-syntax-n">private</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">const</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">SORT_ORDER_KEY</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"sort_order"</span>
+
+<span class="devsite-syntax-n">private</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Context</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">userPreferencesStore</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">DataStore&lt;UserPreferences&gt;</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">by</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">dataStore</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">fileName</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">DATA_STORE_FILE_NAME</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">serializer</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">UserPreferencesSerializer</span>
+<span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-k">class</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">TasksActivity</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">AppCompatActivity</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">...</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>The <code translate="no" dir="ltr">dataStore</code> delegate ensures that we have a single instance of DataStore with that name in our application. Currently, <code translate="no" dir="ltr">UserPreferencesRepository</code> is implemented as a singleton, because it holds the <code translate="no" dir="ltr">sortOrderFlow</code> and avoids having it tied to the lifecycle of the <code translate="no" dir="ltr">TasksActivity</code>. Because <code translate="no" dir="ltr">UserPreferenceRepository</code> will just work with the data from DataStore and it won&#39;t create and hold any new objects, we can already remove the singleton implementation:</p>
+<ul>
+<li>Remove the <code translate="no" dir="ltr">companion object</code></li>
+<li>Make the <code translate="no" dir="ltr">constructor</code> public</li>
+</ul>
+<p>The <code translate="no" dir="ltr">UserPreferencesRepository</code> should get a <code translate="no" dir="ltr">DataStore</code> instance as a constructor parameter. For now, we can leave the <code translate="no" dir="ltr">Context</code> as a parameter as it&#39;s needed by SharedPreferences, but we&#39;ll remove it later on.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scalate Server Page"><code translate="no" dir="ltr">class<span class="devsite-syntax-w"> </span>UserPreferencesRepository(
+<span class="devsite-syntax-w">    </span>private<span class="devsite-syntax-w"> </span>val<span class="devsite-syntax-w"> </span>userPreferencesStore:<span class="devsite-syntax-w"> </span>DataStore&lt;UserPreferences&gt;,
+<span class="devsite-syntax-w">    </span>context:<span class="devsite-syntax-w"> </span>Context
+)<span class="devsite-syntax-w"> </span>{<span class="devsite-syntax-w"> </span>...<span class="devsite-syntax-w"> </span>}
+</code></pre></devsite-code>
+<aside class="special"><p>In a production application, the DataStore instance should be injected in the classes that need it, by using  <a href="https://developer.android.com/reference/kotlin/androidx/datastore/core/DataStoreFactory" target="_blank"><code translate="no" dir="ltr">DataStoreFactory</code></a>. Read more about  <a href="https://developer.android.com/training/dependency-injection" target="_blank">dependency injection</a> and  <a href="https://developer.android.com/training/dependency-injection/hilt-android" target="_blank">Hilt</a> in our docs.</p>
+</aside>
+<p>Let&#39;s update the construction of <code translate="no" dir="ltr">UserPreferencesRepository</code> in <code translate="no" dir="ltr">TasksActivity</code> and pass in the <code translate="no" dir="ltr">dataStore</code>:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only"><code translate="no" dir="ltr">viewModel = ViewModelProvider(
+    this,
+    TasksViewModelFactory(
+        TasksRepository,
+        UserPreferencesRepository(userPreferencesStore, this)
+    )
+).get(TasksViewModel::class.java)
+</code></pre></devsite-code>
+<h2 is-upgraded id="reading-data-from-proto-datastore" data-text="Reading data from Proto DataStore" tabindex="-1"><strong>Reading data from Proto DataStore</strong></h2>
+<p>Proto DataStore exposes the data stored in a <code translate="no" dir="ltr">Flow&lt;UserPreferences&gt;</code>. Let&#39;s create a public <code translate="no" dir="ltr">userPreferencesFlow: Flow&lt;UserPreferences&gt;</code> value that gets assigned <code translate="no" dir="ltr">dataStore.data</code>:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scalate Server Page"><code translate="no" dir="ltr">val<span class="devsite-syntax-w"> </span>userPreferencesFlow:<span class="devsite-syntax-w"> </span>Flow&lt;UserPreferences&gt;<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>userPreferencesStore.data
+</code></pre></devsite-code>
+<h3 is-upgraded id="handling-exceptions-while-reading-data" data-text="Handling exceptions while reading data" tabindex="-1"><strong>Handling exceptions while reading data</strong></h3>
+<p>As DataStore reads data from a file, <code translate="no" dir="ltr">IOException</code>s are thrown when an error occurs while reading data. We can handle these by using the  <a href="https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/catch.html" target="_blank"><code translate="no" dir="ltr">catch</code></a> Flow transformation and just log the error:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scalate Server Page"><code translate="no" dir="ltr">private<span class="devsite-syntax-w"> </span>val<span class="devsite-syntax-w"> </span>TAG:<span class="devsite-syntax-w"> </span>String<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>"UserPreferencesRepo"
+
+val<span class="devsite-syntax-w"> </span>userPreferencesFlow:<span class="devsite-syntax-w"> </span>Flow&lt;UserPreferences&gt;<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>userPreferencesStore.data
+<span class="devsite-syntax-w">    </span>.catch<span class="devsite-syntax-w"> </span>{<span class="devsite-syntax-w"> </span>exception<span class="devsite-syntax-w"> </span>-&gt;
+<span class="devsite-syntax-w">        </span>//<span class="devsite-syntax-w"> </span>dataStore.data<span class="devsite-syntax-w"> </span>throws<span class="devsite-syntax-w"> </span>an<span class="devsite-syntax-w"> </span>IOException<span class="devsite-syntax-w"> </span>when<span class="devsite-syntax-w"> </span>an<span class="devsite-syntax-w"> </span>error<span class="devsite-syntax-w"> </span>is<span class="devsite-syntax-w"> </span>encountered<span class="devsite-syntax-w"> </span>when<span class="devsite-syntax-w"> </span>reading<span class="devsite-syntax-w"> </span>data
+<span class="devsite-syntax-w">        </span>if<span class="devsite-syntax-w"> </span>(exception<span class="devsite-syntax-w"> </span>is<span class="devsite-syntax-w"> </span>IOException)<span class="devsite-syntax-w"> </span>{
+<span class="devsite-syntax-w">            </span>Log.e(TAG,<span class="devsite-syntax-w"> </span>"Error<span class="devsite-syntax-w"> </span>reading<span class="devsite-syntax-w"> </span>sort<span class="devsite-syntax-w"> </span>order<span class="devsite-syntax-w"> </span>preferences.",<span class="devsite-syntax-w"> </span>exception)
+<span class="devsite-syntax-w">            </span>emit(UserPreferences.getDefaultInstance())
+<span class="devsite-syntax-w">        </span>}<span class="devsite-syntax-w"> </span>else<span class="devsite-syntax-w"> </span>{
+<span class="devsite-syntax-w">            </span>throw<span class="devsite-syntax-w"> </span>exception
+<span class="devsite-syntax-w">        </span>}
+<span class="devsite-syntax-w">    </span>}
+</code></pre></devsite-code>
+<h2 is-upgraded id="writing-data-to-proto-datastore" data-text="Writing data to Proto DataStore" tabindex="-1"><strong>Writing data to Proto DataStore</strong></h2>
+<p>To write data, DataStore offers a suspending <code translate="no" dir="ltr">DataStore.updateData()</code> function, where we get as parameter the current state of <code translate="no" dir="ltr">UserPreferences</code>. To update it, we&#39;ll have to transform the preferences object to builder, set the new value and then build the new preferences.</p>
+<p><code translate="no" dir="ltr">updateData()</code> updates the data transactionally in an atomic read-write-modify operation. The coroutine completes once the data is persisted on disk.</p>
+<p>Let&#39;s create a suspend function that allows us to update the <code translate="no" dir="ltr">showCompleted</code> property of <code translate="no" dir="ltr">UserPreferences</code>, called <code translate="no" dir="ltr">updateShowCompleted()</code>, that calls <code translate="no" dir="ltr">dataStore.updateData()</code> and sets the new value:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only"><code translate="no" dir="ltr">suspend fun updateShowCompleted(completed: Boolean) {
+    userPreferencesStore.updateData { preferences -&gt;
+        preferences.toBuilder().setShowCompleted(completed).build()
+    }
+}
+</code></pre></devsite-code>
+<p>At this point, the app should compile but the functionality we just created in <code translate="no" dir="ltr">UserPreferencesRepository</code> is not used.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="SharedPreferences to Proto DataStore" duration="5" step="7">
+          
+          <h2 class="step-title" id="7" data-text="SharedPreferences to Proto DataStore" tabindex="-1">
+              8. SharedPreferences to Proto DataStore
+          </h2>
+          <h2 is-upgraded id="defining-the-data-to-be-saved-in-proto" data-text="Defining the data to be saved in proto" tabindex="-1"><strong>Defining the data to be saved in proto</strong></h2>
+<p>The sort order is saved in SharedPreferences. Let&#39;s move it to DataStore. To do this, let&#39;s start by updating <code translate="no" dir="ltr">UserPreferences</code> in the proto file to also store the sort order. As the <code translate="no" dir="ltr">SortOrder</code> is an <code translate="no" dir="ltr">enum</code> we will have to define it in our <code translate="no" dir="ltr">UserPreference</code>. <code translate="no" dir="ltr">enums</code> are defined in protobufs similarly to Kotlin.</p>
+<p>For enumerations, the default value is the first value listed in the enum&#39;s type definition. But, when migrating from SharedPreferences we need to know whether the value we got is the default value or the one previously set in SharedPreferences. To help with this, we define a new value to our <code translate="no" dir="ltr">SortOrder</code> enum: <code translate="no" dir="ltr">UNSPECIFIED</code> and list it first, so it can be the default value.</p>
+<p>Our <code translate="no" dir="ltr">user_prefs.proto</code> file should look like this:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="GDScript"><code translate="no" dir="ltr"><span class="devsite-syntax-n">syntax</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"proto3"</span><span class="devsite-syntax-p">;</span>
+
+<span class="devsite-syntax-n">option</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">java_package</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"com.codelab.android.datastore"</span><span class="devsite-syntax-p">;</span>
+<span class="devsite-syntax-n">option</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">java_multiple_files</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-bp">true</span><span class="devsite-syntax-p">;</span>
+
+<span class="devsite-syntax-n">message</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">UserPreferences</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-o">//</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">filter</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">for</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">showing</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">hiding</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">completed</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">tasks</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-nb devsite-syntax-nb-Type">bool</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">show_completed</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mi">1</span><span class="devsite-syntax-p">;</span>
+
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-o">//</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">defines</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">tasks</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">sorting</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">order</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">no</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">order</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">by</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">deadline</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">by</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">priority</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">by</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">deadline</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ow">and</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">priority</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-k">enum</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">SortOrder</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">UNSPECIFIED</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mi">0</span><span class="devsite-syntax-p">;</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">NONE</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mi">1</span><span class="devsite-syntax-p">;</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">BY_DEADLINE</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mi">2</span><span class="devsite-syntax-p">;</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">BY_PRIORITY</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mi">3</span><span class="devsite-syntax-p">;</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">BY_DEADLINE_AND_PRIORITY</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mi">4</span><span class="devsite-syntax-p">;</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-o">//</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">user</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">selected</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">tasks</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">sorting</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">order</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-n">SortOrder</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">sort_order</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mi">2</span><span class="devsite-syntax-p">;</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>Clean and rebuild your project to ensure that a new <code translate="no" dir="ltr">UserPreferences</code> object is generated, containing the new field.</p>
+<p>Now that <code translate="no" dir="ltr">SortOrder</code> is defined in the proto file, we can remove the declaration from <code translate="no" dir="ltr">UserPreferencesRepository</code>. Delete:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="GDScript"><code translate="no" dir="ltr"><span class="devsite-syntax-k">enum</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">class</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">SortOrder</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">NONE</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">BY_DEADLINE</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">BY_PRIORITY</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-n">BY_DEADLINE_AND_PRIORITY</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>Make sure the right <code translate="no" dir="ltr">SortOrder</code> import is used everywhere:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">com.codelab.android.datastore.UserPreferences.SortOrder</span>
+</code></pre></devsite-code>
+<aside class="special"><p>Once we modify the schema we don&#39;t need to do anything else to ensure that the new field is read from DataStore. The <code translate="no" dir="ltr">UserPreferences</code> object emitted by <code translate="no" dir="ltr">dataStore.data</code> will just contain all the fields defined in the proto file.</p>
+</aside>
+<p>In the <code translate="no" dir="ltr">TasksViewModel.filterSortTasks()</code> we&#39;re doing different actions based on the <code translate="no" dir="ltr">SortOrder</code> type. Now that we also added the <code translate="no" dir="ltr">UNSPECIFIED</code> option, we need to add another case for the <code translate="no" dir="ltr">when(sortOrder)</code> statement. As we don&#39;t want to handle other options than the ones we are right now, we can just throw an <code translate="no" dir="ltr">UnsupportedOperationException</code> in other cases.</p>
+<p>Our <code translate="no" dir="ltr">filterSortTasks()</code> function looks like this now:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">private fun filterSortTasks(
+    tasks: List&lt;Task&gt;,
+    showCompleted: Boolean,
+    sortOrder: SortOrder
+): List&lt;Task&gt; {
+    // filter the tasks
+    val filteredTasks = if (showCompleted) {
+        tasks
+    } else {
+        tasks.filter { !it.completed }
+    }
+    // sort the tasks
+    return when (sortOrder) {
+        SortOrder.UNSPECIFIED -&gt; filteredTasks
+        SortOrder.NONE -&gt; filteredTasks
+        SortOrder.BY_DEADLINE -&gt; filteredTasks.sortedByDescending { it.deadline }
+        SortOrder.BY_PRIORITY -&gt; filteredTasks.sortedBy { it.priority }
+        SortOrder.BY_DEADLINE_AND_PRIORITY -&gt; filteredTasks.sortedWith(
+            compareByDescending&lt;Task&gt; { it.deadline }.thenBy { it.priority }
+        )
+        // We shouldn't get any other values
+        else -&gt; throw UnsupportedOperationException("$sortOrder not supported")
+    }
+}
+</code></pre></devsite-code>
+<h2 is-upgraded id="migrating-from-sharedpreferences" data-text="Migrating from SharedPreferences" tabindex="-1"><strong>Migrating from SharedPreferences</strong></h2>
+<p>To help with migration, DataStore defines the <code translate="no" dir="ltr">SharedPreferencesMigration</code> class. The <code translate="no" dir="ltr">by dataStore</code> method that creates the DataStore (used in <code translate="no" dir="ltr">TasksActivity</code>), also exposes a <code translate="no" dir="ltr">produceMigrations</code> parameter. In this block we create the list of <code translate="no" dir="ltr">DataMigration</code>s that should be run for this DataStore instance. In our case, we have only one migration: the <code translate="no" dir="ltr">SharedPreferencesMigration</code>.</p>
+<p>When implementing a <code translate="no" dir="ltr">SharedPreferencesMigration</code>, the <code translate="no" dir="ltr">migrate</code> block gives us two parameters:</p>
+<ul>
+<li><code translate="no" dir="ltr">SharedPreferencesView</code> that allows us to retrieve data from SharedPreferences</li>
+<li><code translate="no" dir="ltr">UserPreferences</code> current data</li>
+</ul>
+<p>We will have to return a <code translate="no" dir="ltr">UserPreferences</code> object.</p>
+<p>When implementing the <code translate="no" dir="ltr">migrate</code> block, we&#39;ll have to do the following steps:</p>
+<ol type="1">
+<li>Check the <code translate="no" dir="ltr">sortOrder</code> value in <code translate="no" dir="ltr">UserPreferences</code>.</li>
+<li>If this is <code translate="no" dir="ltr">SortOrder.UNSPECIFIED</code> it means that we need to retrieve the value from SharedPreferences. If the <code translate="no" dir="ltr">SortOrder</code> is missing then we can use <code translate="no" dir="ltr">SortOrder.NONE</code> as default.</li>
+<li>Once we get the sort order, we&#39;ll have to convert the <code translate="no" dir="ltr">UserPreferences</code> object to builder, set the sort order and then build the object again by calling <code translate="no" dir="ltr">build()</code>. No other fields will be affected with this change.</li>
+<li>If the <code translate="no" dir="ltr">sortOrder</code> value in <code translate="no" dir="ltr">UserPreferences</code> is not <code translate="no" dir="ltr">SortOrder.UNSPECIFIED</code> we can just return the current data we got in <code translate="no" dir="ltr">migrate</code> since the migration must have already ran successfully.</li>
+</ol>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">private val sharedPrefsMigration = SharedPreferencesMigration(
+    context,
+    USER_PREFERENCES_NAME
+) { sharedPrefs: SharedPreferencesView, currentData: UserPreferences -&gt;
+    // Define the mapping from SharedPreferences to UserPreferences
+    if (currentData.sortOrder == SortOrder.UNSPECIFIED) {
+        currentData.toBuilder().setSortOrder(
+            SortOrder.valueOf(
+                sharedPrefs.getString(SORT_ORDER_KEY, SortOrder.NONE.name)!!
+            )
+        ).build()
+    } else {
+        currentData
+    }
+}
+</code></pre></devsite-code>
+<p>Now that we defined the migration logic, we need to tell DataStore that it should use it. For this, update the DataStore builder and assign to the <code translate="no" dir="ltr">migrations</code> parameter a new list that contains an instance of our <code translate="no" dir="ltr">SharedPreferencesMigration</code>:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Scalate Server Page"><code translate="no" dir="ltr">private<span class="devsite-syntax-w"> </span>val<span class="devsite-syntax-w"> </span>userPreferencesStore:<span class="devsite-syntax-w"> </span>DataStore&lt;UserPreferences&gt;<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>context.createDataStore(
+<span class="devsite-syntax-w">    </span>fileName<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>"user_prefs.pb",
+<span class="devsite-syntax-w">    </span>serializer<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>UserPreferencesSerializer,
+<span class="devsite-syntax-w">    </span>migrations<span class="devsite-syntax-w"> </span>=<span class="devsite-syntax-w"> </span>listOf(sharedPrefsMigration)
+)
+</code></pre></devsite-code>
+<h2 is-upgraded id="saving-the-sort-order-to-datastore" data-text="Saving the sort order to DataStore" tabindex="-1"><strong>Saving the sort order to DataStore</strong></h2>
+<p>To update the sort order when <code translate="no" dir="ltr">enableSortByDeadline()</code> and <code translate="no" dir="ltr">enableSortByPriority()</code> are called, we have to do the following:</p>
+<ul>
+<li>Call their respective functionalities in <code translate="no" dir="ltr">dataStore.updateData()</code>&#39;s lambda.</li>
+<li>As <code translate="no" dir="ltr">updateData()</code> is a suspend function, <code translate="no" dir="ltr">enableSortByDeadline()</code> and <code translate="no" dir="ltr">enableSortByPriority()</code> should also be made a suspend function.</li>
+<li>Use the current <code translate="no" dir="ltr">UserPreferences</code> received from <code translate="no" dir="ltr">updateData()</code> to construct the new sort order</li>
+<li>Update the <code translate="no" dir="ltr">UserPreferences</code> by converting it to builder, setting the new sort order and then building the preferences again.</li>
+</ul>
+<p>Here&#39;s how the <code translate="no" dir="ltr">enableSortByDeadline()</code> implementation looks like. We&#39;ll let you do the changes for <code translate="no" dir="ltr">enableSortByPriority()</code> by yourself.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc"><code translate="no" dir="ltr">suspend fun enableSortByDeadline(enable: Boolean) {
+    // updateData handles data transactionally, ensuring that if the sort is updated at the same
+    // time from another thread, we won't have conflicts
+    dataStore.updateData { preferences -&gt;
+        val currentOrder = preferences.sortOrder
+        val newSortOrder =
+            if (enable) {
+                if (currentOrder == SortOrder.BY_PRIORITY) {
+                    SortOrder.BY_DEADLINE_AND_PRIORITY
+                } else {
+                    SortOrder.BY_DEADLINE
+                }
+            } else {
+                if (currentOrder == SortOrder.BY_DEADLINE_AND_PRIORITY) {
+                    SortOrder.BY_PRIORITY
+                } else {
+                    SortOrder.NONE
+                }
+            }
+        preferences.toBuilder().setSortOrder(newSortOrder).build()
+    }
+}
+</code></pre></devsite-code>
+<p>Now you can remove the <code translate="no" dir="ltr">context</code> constructor parameter and all the usages of SharedPreferences.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Update TasksViewModel to use UserPreferencesRepository" duration="2" step="8">
+          
+          <h2 class="step-title" id="8" data-text="Update TasksViewModel to use UserPreferencesRepository" tabindex="-1">
+              9. Update TasksViewModel to use UserPreferencesRepository
+          </h2>
+          <p>Now that <code translate="no" dir="ltr">UserPreferencesRepository</code> stores both <code translate="no" dir="ltr">show_completed</code> and <code translate="no" dir="ltr">sort_order</code> flags in DataStore and exposes a <code translate="no" dir="ltr">Flow&lt;UserPreferences&gt;</code>, let&#39;s update the <code translate="no" dir="ltr">TasksViewModel</code> to use them.</p>
+<p>Remove <code translate="no" dir="ltr">showCompletedFlow</code> and <code translate="no" dir="ltr">sortOrderFlow</code> and instead, create a value called <code translate="no" dir="ltr">userPreferencesFlow</code> that gets initialized with <code translate="no" dir="ltr">userPreferencesRepository.userPreferencesFlow</code>:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only"><code translate="no" dir="ltr">private val userPreferencesFlow = userPreferencesRepository.userPreferencesFlow
+</code></pre></devsite-code>
+<p>In the <code translate="no" dir="ltr">tasksUiModelFlow</code> creation, replace <code translate="no" dir="ltr">showCompletedFlow</code> and <code translate="no" dir="ltr">sortOrderFlow</code> with <code translate="no" dir="ltr">userPreferencesFlow</code>. Replace the parameters accordingly.</p>
+<p>When calling <code translate="no" dir="ltr">filterSortTasks</code> pass in the <code translate="no" dir="ltr">showCompleted</code> and <code translate="no" dir="ltr">sortOrder</code> of the <code translate="no" dir="ltr">userPreferences</code>. Your code should look like this:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL"><code translate="no" dir="ltr"><span class="devsite-syntax-n">private</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">val</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">tasksUiModelFlow</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">combine</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">repository</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">tasks</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-n">userPreferencesFlow</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nl">tasks</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">List&lt;Task&gt;</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nl">userPreferences</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">UserPreferences</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">-</span>&gt;
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-k">return</span><span class="devsite-syntax-nv">@combine</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">TasksUiModel</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">tasks</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">filterSortTasks</span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-n">tasks</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-n">userPreferences</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">showCompleted</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-n">userPreferences</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">sortOrder</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-p">),</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">showCompleted</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">userPreferences</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">showCompleted</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">            </span><span class="devsite-syntax-n">sortOrder</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">userPreferences</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">sortOrder</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-err">}</span>
+</code></pre></devsite-code>
+<p>The <code translate="no" dir="ltr">showCompletedTasks()</code> function should now be updated to call <code translate="no" dir="ltr">userPreferencesRepository.updateShowCompleted()</code>. As this is a suspend function, create a new coroutine in the <code translate="no" dir="ltr">viewModelScope</code>:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only"><code translate="no" dir="ltr">fun showCompletedTasks(show: Boolean) {
+    viewModelScope.launch {
+        userPreferencesRepository.updateShowCompleted(show)
+    }
+}
+</code></pre></devsite-code>
+<p><code translate="no" dir="ltr">userPreferencesRepository</code> functions <code translate="no" dir="ltr">enableSortByDeadline()</code> and <code translate="no" dir="ltr">enableSortByPriority()</code> are now suspend functions so they should also be called in a new coroutine, launched in the <code translate="no" dir="ltr">viewModelScope</code>:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only"><code translate="no" dir="ltr">fun enableSortByDeadline(enable: Boolean) {
+    viewModelScope.launch {
+       userPreferencesRepository.enableSortByDeadline(enable)
+    }
+}
+
+fun enableSortByPriority(enable: Boolean) {
+    viewModelScope.launch {
+        userPreferencesRepository.enableSortByPriority(enable)
+    }
+}
+</code></pre></devsite-code>
+<h2 is-upgraded id="clean-up-userpreferencesrepository" data-text="Clean up UserPreferencesRepository" tabindex="-1">Clean up <code translate="no" dir="ltr">UserPreferencesRepository</code></h2>
+<p>Let&#39;s remove the fields and methods that are no longer needed. You should be able to delete the following:</p>
+<ul>
+<li><code translate="no" dir="ltr">_sortOrderFlow</code></li>
+<li><code translate="no" dir="ltr">sortOrderFlow</code></li>
+<li><code translate="no" dir="ltr">updateSortOrder()</code></li>
+<li><code translate="no" dir="ltr">private val sortOrder: SortOrder</code></li>
+<li><code translate="no" dir="ltr">private val sharedPreferences</code></li>
+</ul>
+<p>Our app should now compile successfully. Let&#39;s run it to see if the <code translate="no" dir="ltr">show_completed</code> and <code translate="no" dir="ltr">sort_order</code> flags are saved correctly.</p>
+<p>Check out the <code translate="no" dir="ltr">proto_datastore</code> branch of the codelab repo to compare your changes.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Wrap up" duration="1" step="9">
+          
+          <h2 class="step-title" id="9" data-text="Wrap up" tabindex="-1">
+              10. Wrap up
+          </h2>
+          <p>Now that you migrated to Proto DataStore, let&#39;s recap what we&#39;ve learned:</p>
+<ul>
+<li>SharedPreferences comes with a series of drawbacks - from synchronous API that can appear safe to call on the UI thread, no mechanism of signaling errors, lack of transactional API and more.</li>
+<li>DataStore is a replacement for SharedPreferences addressing most of the shortcomings of the API.</li>
+<li>DataStore has a fully asynchronous API using Kotlin coroutines and Flow, handles data migration, guarantees data consistency and handles data corruption.</li>
+</ul>
+
+
+        </google-codelab-step>
+      
+    </google-codelab>
+  
+  
+
+  
+</div>
+
+  
+    
+    
+    
+  
+
+  <div class="devsite-floating-action-buttons"></div></article>
+
+
+<devsite-content-footer class="nocontent">
+  <p>Except as otherwise noted, the content of this page is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</a>, and code samples are licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see the <a href="https://developers.google.com/site-policies">Google Developers Site Policies</a>. Java is a registered trademark of Oracle and/or its affiliates.</p>
+  
+</devsite-content-footer>
+
+
+<devsite-notification
+>
+</devsite-notification>
+
+
+  
+<div class="devsite-content-data">
+  
+  
+    <template class="devsite-content-data-template">
+      [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[],null,[]]
+    </template>
+  
+</div>
+            
+          </devsite-content>
+        </main>
+        <devsite-footer-promos class="devsite-footer">
+          
+            
+
+<nav class="devsite-footer-promos nocontent" aria-label="Promotions">
+  <ul class="devsite-footer-promos-list">
+    
+    <li class="devsite-footer-promo">
+      <a href="//x.com/AndroidDev"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer X Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-x_dt.svg"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="/_static/android/images/logo-x.svg"
+                loading="lazy"
+                alt="X">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          X
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Follow @AndroidDev on X</div>
+    </li>
+    
+    <li class="devsite-footer-promo">
+      <a href="//www.youtube.com/user/androiddevelopers"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer YouTube Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-youtube_dt.svg"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="//www.gstatic.com/images/icons/material/product/2x/youtube_48dp.png"
+                loading="lazy"
+                alt="YouTube">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          YouTube
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Check out Android Developers on YouTube</div>
+    </li>
+    
+    <li class="devsite-footer-promo">
+      <a href="//www.linkedin.com/showcase/androiddev"
+         class="devsite-footer-promo-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+       
+       
+         data-label="Footer LinkedIn Promo"
+       >
+        
+        
+        <picture>
+          
+          <source class="devsite-dark-theme"
+                  srcset="https://developer.android.com/_static/android/images/logo-linkedin_dt.svg"
+                  media="(prefers-color-scheme: dark)">
+          
+          <img class="devsite-footer-promo-icon"
+                src="/_static/android/images/logo-linkedin.svg"
+                loading="lazy"
+                alt="LinkedIn">
+        </picture>
+        
+        <span class="devsite-footer-promo-label">
+          LinkedIn
+        </span>
+      </a>
+      <div class="devsite-footer-promo-description">Connect with the Android Developers community on LinkedIn</div>
+    </li>
+    
+  </ul>
+</nav>
+
+          
+        </devsite-footer-promos>
+        <devsite-footer-linkboxes class="devsite-footer">
+          
+            
+<nav class="devsite-footer-linkboxes nocontent" aria-label="Footer links">
+  
+  <ul class="devsite-footer-linkboxes-list">
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">More Android</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com/enterprise/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Android for Enterprise
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.android.com/security-center/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Security
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//source.android.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Source
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/news"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            News
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//android-developers.googleblog.com/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+          
+            Blog
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/podcasts"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 7)"
+            >
+            
+              
+              
+            
+          
+            Podcasts
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Discover</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/games"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Gaming
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/ml"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Machine Learning
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/health-and-fitness"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Health & Fitness
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/media"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Camera & Media
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/privacy"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            Privacy
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/training/connectivity/5g"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+              
+              
+            
+          
+            5G
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Android Devices</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/large-screens"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Large screens
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/wear"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Wear OS
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/chrome-os"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            ChromeOS devices
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/cars"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Android for cars
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/tv"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+              
+              
+            
+          
+            Android TV
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Releases</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/15"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android 15
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/14"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Android 14
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/13"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Android 13
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/12"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Android 12
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/11"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            Android 11
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/10"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+          
+            Android 10
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/about/versions/pie"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 7)"
+            >
+            
+              
+              
+            
+          
+            Pie
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Documentation and Downloads</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/studio/intro"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Android Studio guide
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/guide"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Developers guides
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/reference"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            API reference
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/studio"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Download Studio
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/ndk"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+              
+              
+            
+          
+            Android NDK
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Support</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//issuetracker.google.com/issues/new?component=190923&amp;template=841312"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Report platform bug
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//issuetracker.google.com/issues/new?component=192697"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Report documentation bug
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//support.google.com/googleplay/android-developer"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Google Play support
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://g.co/userresearch/androiddeveloperfooter"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+              
+              
+            
+          
+            Join research studies
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+  
+</nav>
+          
+        </devsite-footer-linkboxes>
+        <devsite-footer-utility class="devsite-footer">
+          
+            
+
+<div class="devsite-footer-utility nocontent">
+  
+  
+  <nav class="devsite-footer-sites" aria-label="Other Google Developers websites">
+    <a href="https://developers.google.com/"
+       class="devsite-footer-sites-logo-link gc-analytics-event"
+       data-category="Site-Wide Custom Events"
+       data-label="Footer Google Developers Link">
+      <picture>
+        
+        <source srcset="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-google-for-developers-dark-theme.svg"
+                media="(prefers-color-scheme: none)"
+                class="devsite-dark-theme">
+        
+        <img class="devsite-footer-sites-logo"
+             src="https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup-google-for-developers.svg"
+             loading="lazy"
+             alt="Google Developers">
+      </picture>
+    </a>
+    <ul class="devsite-footer-sites-list">
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.android.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Android Link"
+         
+         >
+          Android
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.chrome.com/home"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Chrome Link"
+         
+         >
+          Chrome
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//firebase.google.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Firebase Link"
+         
+         >
+          Firebase
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//cloud.google.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Google Cloud Platform Link"
+         
+         >
+          Google Cloud Platform
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developers.google.com/products/"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer All products Link"
+         
+         >
+          All products
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  
+
+  
+  <nav class="devsite-footer-utility-links" aria-label="Utility links">
+    
+    <ul class="devsite-footer-utility-list">
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//policies.google.com/privacy"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Privacy link"
+         >
+          Privacy
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="/license"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer License link"
+         >
+          License
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="/distribute/marketing-tools/brand-guidelines"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Brand guidelines link"
+         >
+          Brand guidelines
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 glue-cookie-notification-bar-control">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="#"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Manage cookies link"
+         
+           aria-hidden="true"
+         >
+          Manage cookies
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 devsite-footer-utility-button">
+        
+        <span class="devsite-footer-utility-description">Get news and tips by email</span>
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="/updates"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Subscribe link"
+         >
+          Subscribe
+        </a>
+        
+      </li>
+      
+    </ul>
+    
+    
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+  </nav>
+</div>
+          
+        </devsite-footer-utility>
+        <devsite-panel>
+          
+        </devsite-panel>
+        
+      </section></section>
+    <devsite-sitemask></devsite-sitemask>
+    <devsite-snackbar></devsite-snackbar>
+    <devsite-tooltip ></devsite-tooltip>
+    <devsite-heading-link></devsite-heading-link>
+    <devsite-analytics>
+      
+        <script type="application/json" analytics>[]</script>
+<script type="application/json" tag-management>{&#34;at&#34;: &#34;True&#34;, &#34;ga4&#34;: [{&#34;id&#34;: &#34;G-QFRN08RN6E&#34;, &#34;purpose&#34;: 0}], &#34;ga4p&#34;: [{&#34;id&#34;: &#34;G-QFRN08RN6E&#34;, &#34;purpose&#34;: 0}], &#34;gtm&#34;: [], &#34;parameters&#34;: {&#34;internalUser&#34;: &#34;False&#34;, &#34;language&#34;: {&#34;machineTranslated&#34;: &#34;False&#34;, &#34;requested&#34;: &#34;en&#34;, &#34;served&#34;: &#34;en&#34;}, &#34;pageType&#34;: &#34;codelab&#34;, &#34;projectName&#34;: null, &#34;signedIn&#34;: &#34;False&#34;, &#34;tenant&#34;: &#34;android&#34;, &#34;recommendations&#34;: {&#34;sourcePage&#34;: &#34;&#34;, &#34;sourceType&#34;: 0, &#34;sourceRank&#34;: 0, &#34;sourceIdenticalDescriptions&#34;: 0, &#34;sourceTitleWords&#34;: 0, &#34;sourceDescriptionWords&#34;: 0, &#34;experiment&#34;: &#34;&#34;}, &#34;experiment&#34;: {&#34;ids&#34;: &#34;&#34;}}}</script>
+      
+    </devsite-analytics>
+    
+      <devsite-badger></devsite-badger>
+    
+    
+    
+<android-fully-clickable
+    target="
+        .android-case-study .devsite-landing-row-item,
+        .android-editorial-and-updates-cards .devsite-card-content-wrapper,
+        .android-editorial-and-updates-cards .devsite-landing-row-item,
+        .android-grouped-resources .devsite-landing-row-item,
+        .android-grouped-resources-contained--primary .devsite-landing-row-item,
+        .android-grouped-resources-contained--secondary .devsite-landing-row-item,
+        .android-grouped-resources-contained--tertiary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--primary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--secondary .devsite-landing-row-item,
+        .android-grouped-resources-uncontained--tertiary .devsite-landing-row-item,
+        .android-guide-cards .devsite-landing-row-item,
+        .android-illustrated-resources-index .devsite-landing-row-item,
+        .android-illustrated-resources-primary .devsite-landing-row-item,
+        .android-illustrated-resources-secondary .devsite-landing-row-item,
+        .android-illustrated-resources-secondary-small .devsite-landing-row-item,
+        .android-illustrated-resources-tertiary .devsite-landing-row-item,
+        .android-illustrated-resources-tertiary-small .devsite-landing-row-item,
+        .android-promo .devsite-landing-row-item,
+        .android-quick-link,
+        .android-samples .devsite-card-wrapper,
+        .fully-clickable"
+    watch=".android-editorial-and-updates-cards, .android-samples, devsite-content"></android-fully-clickable>
+    
+<script nonce="+EvI1FlevNAIKcf8KjVRqVGVomQ7T3">
+  
+  (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+    t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+    E.parentNode.insertBefore(t,E);})(window, document, 'script',
+    'https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/js/app_loader.js', '[3,"en",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android","https://android-dot-devsite-v2-prod.appspot.com",1,null,["/_pwa/android/manifest.json","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/favicon.svg","https://www.gstatic.com/devrel-devsite/prod/vc12d84b6edb3e25e1619b575cf813e1849a1c95098b711a6c56ab3968c9a4fa9/android/images/lockup.png","https://fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,600italic,700,700italic|Roboto+Mono:400,500,700&display=swap"],1,null,[1,6,8,12,14,17,21,25,50,52,63,70,75,76,80,87,91,92,93,97,98,100,101,102,103,104,105,107,108,109,110,112,113,117,118,120,122,124,125,126,127,129,130,131,132,133,134,135,136,138,140,141,147,148,149,151,152,156,157,158,159,161,163,164,168,169,170,179,180,182,183,186,191,193,196],"AIzaSyAP-jjEJBzmIyKR4F-3XITp8yM9T1gEEI8","AIzaSyB6xiKGDR5O3Ak2okS4rLkauxGUG7XP0hg","developer.android.com","AIzaSyAQk0fBONSGUqCNznf6Krs82Ap1-NV6J4o","AIzaSyCCxcqdrZ_7QMeLCRY20bh_SXdAYqy70KY",null,null,null,["Profiles__enable_profile_collections","Profiles__enable_complete_playlist_endpoint","Significatio__enable_by_tenant","Profiles__enable_join_program_group_endpoint","TpcFeatures__enable_unmirrored_page_left_nav","DevPro__enable_developer_subscriptions","Cloud__enable_cloud_dlp_service","Cloud__enable_llm_concierge_chat","Cloud__enable_free_trial_server_call","Search__enable_dynamic_content_confidential_banner","Cloud__enable_legacy_calculator_redirect","Profiles__enable_stripe_subscription_management","DevPro__enable_google_payments_buyflow","MiscFeatureFlags__gdp_dashboard_reskin_enabled","Search__enable_suggestions_from_borg","MiscFeatureFlags__enable_firebase_utm","Profiles__enable_dashboard_curated_recommendations","Profiles__enable_developer_profiles_callout","MiscFeatureFlags__developers_footer_image","Profiles__enable_callout_notifications","Search__enable_ai_search_summaries_for_all","Analytics__enable_clearcut_logging","Search__enable_page_map","EngEduTelemetry__enable_engedu_telemetry","Profiles__enable_completequiz_endpoint","Search__enable_ai_eligibility_checks","MiscFeatureFlags__enable_variable_operator_index_yaml","DevPro__enable_enterprise","MiscFeatureFlags__enable_explicit_template_dependencies","Cloud__enable_cloud_shell_fte_user_flow","Concierge__enable_actions_menu","DevPro__enable_embed_profile_creation","Profiles__enable_page_saving","Cloud__enable_cloud_shell","Cloud__enable_cloudx_experiment_ids","Profiles__enable_awarding_url","MiscFeatureFlags__enable_view_transitions","Profiles__enable_purchase_prompts","MiscFeatureFlags__enable_dark_theme","MiscFeatureFlags__enable_appearance_cookies","DevPro__enable_code_assist","Profiles__enable_user_type","MiscFeatureFlags__enable_project_variables","Concierge__enable_remove_info_panel_tags","Concierge__enable_pushui","CloudShell__cloud_code_overflow_menu","Profiles__require_profile_eligibility_for_signin","MiscFeatureFlags__enable_variable_operator","MiscFeatureFlags__developers_footer_dark_image","Profiles__enable_recognition_badges","DevPro__enable_free_benefits","CloudShell__cloud_shell_button","TpcFeatures__proxy_prod_host","Profiles__enable_release_notes_notifications","Experiments__reqs_query_experiments","BookNav__enable_tenant_cache_key","DevPro__enable_google_one_card","DevPro__enable_nvidia_credits_card","DevPro__enable_cloud_innovators_plus","DevPro__enable_devpro_offers","MiscFeatureFlags__emergency_css","DevPro__remove_eu_tax_intake_form","DevPro__enable_firebase_workspaces_card","Cloud__cache_serialized_dynamic_content","Profiles__enable_developer_profile_benefits_ui_redesign","MiscFeatureFlags__enable_project_body_class","DevPro__enable_vertex_credit_card","Profiles__enable_completecodelab_endpoint","Profiles__enable_public_developer_profiles","MiscFeatureFlags__enable_framebox_badge_methods","Profiles__enable_playlist_community_acl","Cloud__fast_free_trial"],null,null,"AIzaSyBLEMok-5suZ67qRPzx0qUtbnLmyT_kCVE","https://developerscontentserving-pa.googleapis.com","AIzaSyCM4QpTRSqP5qI4Dvjt4OAScIN8sOUlO-k","https://developerscontentsearch-pa.googleapis.com",2,4,null,"https://developerprofiles-pa.googleapis.com",[3,"android","Android Developers","developer.android.com",null,"android-dot-devsite-v2-prod.appspot.com",null,null,[null,1,null,null,null,null,null,null,null,null,null,[1],null,null,null,null,null,null,[1],[1,null,null,[1,20],"/recommendations"],null,null,null,[1,null,1],[1,1,null,1,1]],null,[18,null,null,null,null,null,"/images/lockup.png","/images/touchicon-180.png",null,null,null,null,null,null,null,null,null,null,null,null,null,2,null,null,null,"/images/lockup-dark-theme.png",[]],[],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[6,1,14,15,20,22,23,28,29,37,43],null,[[null,null,1],[1,1]],[[null,null,null,null,null,null,null,[["G-QFRN08RN6E"],null,null,[["G-QFRN08RN6E",1]]],null,null,null,null,1],null,[[1,1],[2,2]]],null,4,null,null,null,null,null,null,null,null,null,null,null,null,null,"android.devsite.google"],null,"pk_live_5170syrHvgGVmSx9sBrnWtA5luvk9BwnVcvIi7HizpwauFG96WedXsuXh790rtij9AmGllqPtMLfhe2RSwD6Pn38V00uBCydV4m",1,null,"https://developerscontentinsights-pa.googleapis.com","AIzaSyCg-ZUslalsEbXMfIo9ZP8qufZgo3LSBDU","AIzaSyDxT0vkxnY_KeINtA4LSePJO-4MAZPMRsE","https://developers.googleapis.com",null,null,"AIzaSyBQom12tzI-rybN7Sf-KfeL4nwm-Rf7PmI\n",null,"https://developerslogging.googleapis.com"]')
+  
+</script>
+
+    <devsite-a11y-announce></devsite-a11y-announce>
+  </body>
+</html>
